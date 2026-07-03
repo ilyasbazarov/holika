@@ -1,13 +1,13 @@
 # _ARCHITECT.md · Бутстрап архитекторской сессии
 
-> **Настройка репо (P0):** заменить `<owner>/<repo>` во всех URL на реальные при создании репо.
-> Канон метода — `_METHOD.md`. Этот файл — операционный вход роли, не замена метода.
+> **Доступ к репо:** только `curl` по SHA, приложенному человеком (см. §3). Канон метода — `_METHOD.md`.
+> Этот файл — операционный вход роли, не замена метода.
 
 > Вставь этот файл (или его raw-URL) в начало свежего чата-архитектора, когда нужно **обсудить,
 > посоветоваться или принять решение** по проекту: закрыть открытые вопросы, адъюдицировать ADR,
 > разрулить гэп/размытую формулировку/блокер, проверить архитектурную целостность шага.
 >
-> Это **консультационный** бутстрап. Он НЕ про генерацию брифа задачи — для этого `briefs/_GENERATOR.md`.
+> Это **консультационный** бутстрап. Он НЕ про генерацию брифа задачи — для этого `_GENERATOR.md`.
 > Один файл — одна роль.
 
 ---
@@ -23,7 +23,7 @@
 - **классифицировать гэп и поставить discovery-бриф** (`_METHOD.md` §11), когда знания в репо не хватает.
 
 НЕ бери для: написания прод-кода (это разработчик), механического применения патчей (это `_APPLIER.md`),
-генерации брифа готовой задачи (это `briefs/_GENERATOR.md`).
+генерации брифа готовой задачи (это `_GENERATOR.md`).
 
 ---
 
@@ -68,34 +68,53 @@ CONTEXT GAP: <что именно отсутствует и почему без 
 
 ## 3. Источник истины и как его читать
 
-Полная документация — в репо GitHub. Доступ — **read-only через curl** (write-доступа нет).
+Полная документация — в репо `ilyasbazarov/holika`. Доступ — **read-only**.
 
-**Корректный raw-URL** (репо плоский, файлы в корне):
+### ★★ ПРАВИЛО ДОСТУПА: только curl, только по SHA (жёстко)
+
+- **Ходи в репо ТОЛЬКО через `curl`.** НЕ полагайся на встроенный web-fetch/браузерный фетчер — он отдаёт
+  **закэшированную** версию. Коммиты в этом проекте летят часто → на устаревшем контенте работать
+  **запрещено** (это форма фабрикации, см. §2).
+- **Читай по commit-SHA, не по `main`.** Человек прикладывает актуальный SHA в начале сессии. Формат:
+  ```
+  curl -s https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/<FILE>.md
+  ```
+- SHA не приложен → **запроси его**, не читай `main` «чтобы не задерживать».
+- Двойной слэш (`/holika//00_...`) отдаёт **HTTP 400** — не терять сегмент SHA. Query-string
+  cache-busting НЕ работает.
+
+### Карта репо (все рабочие доки — copy-paste, подставить `<SHA>`)
+
 ```
-https://raw.githubusercontent.com/<owner>/<repo>/main/<FILE>.md
+# каркас метода/ролей
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/_METHOD.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/05_CONVENTIONS.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/_ARCHITECT.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/_APPLIER.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/_GENERATOR.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/08_TASK_BRIEF_TEMPLATE.md
+# живые доки проекта
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/04_ROADMAP.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/06_DECISIONS_LOG.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/07_STATE.md
+# миграция и источник (пока идёт переезд)
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/TZ-MIGRATE-TO-DOCS-METHOD.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/_SOURCE_MONOLITH.md
+# STABLE/доменные (появляются по мере P3–P5)
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/00_CHARTER.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/01_ARCHITECTURE.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/02_ERP_CONTRACTS.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/03_*_SPEC.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/09_GLOSSARY.md
 ```
-Брифы — в подпапке: `https://raw.githubusercontent.com/<owner>/<repo>/main/briefs/<TASK>.md`
+Брифы — в подпапке: `.../ilyasbazarov/holika/<SHA>/briefs/<TASK>.md`
 
-⚠️ Не теряй сегмент ветки. Формат строго `.../<owner>/<repo>/<branch>/<file>`. Двойной слэш
-(`/<repo>//00_...`) отдаёт **HTTP 400** — ветка съедена. Всегда `/main/`.
+**Обязательный контекст архитектора:** `_METHOD` + `00_CHARTER` + `04_ROADMAP` + `06_DECISIONS_LOG` +
+`07_STATE` (+ то, на что опирается конкретный вопрос). Остальное — по контексту, не всё ради объёма.
 
-**Перечитывание внутри сессии:** пиннить raw-URL по commit-SHA (`.../<owner>/<repo>/<SHA>/<file>`) —
-обход мутабельного CDN-кэша ветки `main`. Query-string cache-busting НЕ работает. SHA недоступен →
-запроси прямую вставку текста.
-
-**Обязательный контекст архитектора:**
-```
-_METHOD          — канон метода (роли, дисциплины, discovery-петля)
-00_CHARTER       — конституция, scope, граница контракта
-04_ROADMAP       — где мы в плане, зависимости, критерии приёмки
-06_DECISIONS_LOG — все ADR (append-only)
-07_STATE         — текущее состояние, открытые вопросы, GAP-реестр, контрольные цифры
-```
-Остальные (`01_ARCHITECTURE`, `02_*_CONTRACTS`, `03_*_SPEC`, `05_CONVENTIONS`, `08–10`) — **по контексту**,
-когда вопрос их касается. Грузить ровно то, на что опирается решение, не всё ради объёма.
-
-> **Во время миграции:** если целевой док ещё не создан — это ожидаемо, не CONTEXT GAP по факту
-> отсутствия. Источник фактов пока — `_SOURCE_MONOLITH.md` (заморожен) + уже мигрированные доки.
+> **Во время миграции:** если целевой док (`00–03`, `09`) ещё не создан — это ожидаемо, не CONTEXT GAP
+> по факту отсутствия. Источник фактов пока — `_SOURCE_MONOLITH.md` (заморожен) + уже мигрированные доки +
+> `TZ-MIGRATE-TO-DOCS-METHOD.md` (план миграции). «Текущий фокус» бери из `07_STATE`.
 
 ---
 

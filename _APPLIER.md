@@ -1,10 +1,11 @@
 # _APPLIER — механическое применение SESSION-блока к докам репо
 
-> **Настройка репо (P0):** заменить `<owner>/<repo>` во всех URL на реальные.
+> **Доступ:** ходи в репо `ilyasbazarov/holika` только через `curl` по SHA, который приложил человек
+> (не web-fetch — он кэширует; коммиты летят часто). SHA не приложен → спроси.
 
 **Назначение:** взять SESSION-блок (`SESSION_LOG` / `STATE_PATCH` / `NEW_DECISIONS` / `NEW_CONVENTIONS`),
 который выдаёт разработчик/архитектор в конце сессии, и **механически** применить его к файлам репозитория
-`<owner>/<repo>` — без творческой интерпретации, без додумывания.
+`ilyasbazarov/holika` — без творческой интерпретации, без додумывания.
 
 Решает конкретную дырку процесса: «куда грузим SESSION-блок, чтобы получить обновлённые файлы для коммита».
 
@@ -22,7 +23,7 @@
    - если сессия — **discovery** (обогащение репо): полный текст затрагиваемых доков (`02_*_CONTRACTS`,
      `09_GLOSSARY` и т.п.) и/или указание нового `/reference`-артефакта.
 4. Получи обновлённые ПОЛНЫЕ версии затронутых файлов.
-5. Скопируй и закоммить их в `<owner>/<repo>` @ `main`.
+5. Скопируй и закоммить их в `ilyasbazarov/holika` @ `main`.
 
 ---
 
@@ -33,16 +34,16 @@
 затронутых файлов, применив изменения буквально. Никакого творчества, никаких своих идей, никакого
 «улучшения» формулировок сверх явно сказанного в патче.
 
-Прочитай из репо (raw-URL, корень репо, с подставленным SHA).
-SHA бери из: `https://api.github.com/repos/<owner>/<repo>/commits/main` → поле `sha`.
+Прочитай из репо через `curl` (raw-URL, корень репо, с подставленным SHA).
+SHA берёшь у человека (он прикладывает актуальный). api.github.com без авторизации лимитируется — не полагайся на него.
 
 ```
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/_METHOD.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/00_CHARTER.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/04_ROADMAP.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/05_CONVENTIONS.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/06_DECISIONS_LOG.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/07_STATE.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/_METHOD.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/00_CHARTER.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/04_ROADMAP.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/05_CONVENTIONS.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/06_DECISIONS_LOG.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/07_STATE.md
 ```
 Документы из «context-to-load» конкретной задачи — по той же схеме (тот же SHA).
 Если файл недоступен → `CONTEXT GAP`, остановись.

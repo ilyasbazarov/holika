@@ -1,6 +1,5 @@
 # GENERATOR — Свежий чат, который генерит бриф следующей задачи
 
-> **Настройка репо (P0):** заменить `<owner>/<repo>` во всех URL на реальные.
 > Вставь это в НОВЫЙ чат. Механическая задача (расписана в `04_ROADMAP`) — средняя модель хватит.
 > Задача с суждением (нужны решения) — архитектор (дорогая модель).
 
@@ -9,27 +8,24 @@
 Ты генерируешь готовый task-brief для следующей задачи проекта, **читая репозиторий**. Ты НЕ выполняешь
 задачу — только собираешь бриф.
 
-## Перед чтением — закрепить актуальный коммит (обязательно)
+## ★★ ПРАВИЛО ДОСТУПА: только curl, только по SHA
 
-`.../main/<файл>` — указатель на ветку, подвержен документированному багу кэширования GitHub: задержка
-между пушем и обновлением raw-контента непредсказуема. Коммит-пиннутый URL (`.../<SHA>/<файл>`)
-контент-адресуем и багу не подвержен.
-
-1. Возьми текущий commit SHA ветки `main`: `https://api.github.com/repos/<owner>/<repo>/commits/main` → `sha`
-   (или попроси у человека / `git rev-parse main`).
-2. Во всех raw-URL ниже подставь этот SHA вместо `main`.
-3. SHA не дали — спроси явно. Не угадывай, не используй `main` по умолчанию «чтобы не задерживать».
+- Ходи в репо `ilyasbazarov/holika` **только через `curl`**. НЕ через web-fetch/браузерный фетчер — он
+  отдаёт закэшированную версию, а коммиты летят часто → устаревший контент запрещён (форма фабрикации).
+- Читай по commit-SHA, который **прикладывает человек** в начале сессии. `curl -s .../holika/<SHA>/<файл>`.
+- SHA не приложен → спроси явно. Не используй `main` по умолчанию «чтобы не задерживать».
+  (api.github.com для авто-получения SHA лимитируется без авторизации — не полагайся на него; бери SHA от человека.)
 
 ## Прочитай из репо (raw-URL, корень репо, с подставленным SHA)
 
 ```
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/_METHOD.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/00_CHARTER.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/04_ROADMAP.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/05_CONVENTIONS.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/06_DECISIONS_LOG.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/07_STATE.md
-https://raw.githubusercontent.com/<owner>/<repo>/<SHA>/08_TASK_BRIEF_TEMPLATE.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/_METHOD.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/00_CHARTER.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/04_ROADMAP.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/05_CONVENTIONS.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/06_DECISIONS_LOG.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/07_STATE.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/08_TASK_BRIEF_TEMPLATE.md
 ```
 Плюс спеки/контракты (`01`–`03`, `09`, `10`) по «context-to-load» задачи — по той же схеме (тот же SHA).
 Если файл недоступен → `CONTEXT GAP`, остановись.
