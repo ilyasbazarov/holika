@@ -1,6 +1,6 @@
 # 02 · ERP_CONTRACTS — Контракты ERP и граничных артефактов
 
-**Версия:** 0.1 (скелет, M-P3a) · **Статус:** STABLE
+**Версия:** 0.2 (7 слотов наполнены — stg/core/dim/API/UUID/семантика/валюты, M-P4-A-02) · **Статус:** STABLE
 **Назначение:** схемы таблиц всех слоёв (`stg`/`core`/`dim`); поведенческий контракт МойСклад API; UUID-справочники; семантика данных; спецификация референс-оракула (`/reference`).
 Секции — скелет: заголовок + указатель трассировки. Прод-наполнение прозой — P4.
 
@@ -8,31 +8,264 @@
 
 ## §схемы stg
 
-<!-- P4: из PR-23 (stg_msklad.fact_sales_staging, transaction_date_raw = STRING). -->
+**stg_msklad.fact_sales_staging** (TTL 14 дней):
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| run_id | STRING | ID запуска CF |
+| demand_id | STRING | ID отгрузки в МойСкладе |
+| position_id | STRING | ID позиции отгрузки |
+| transaction_date_raw | STRING | ⚠️ СТРОКА формата `'YYYY-MM-DD HH:MM:SS.mmm'`. Использовать `DATE(transaction_date_raw)` |
+| product_id | STRING | FK → `core.dim_products` |
+| agent_id | STRING | FK → `core.dim_counterparties` |
+| quantity | FLOAT64 | Количество |
+| price_kgs | FLOAT64 | Цена в KGS |
+| discount | FLOAT64 | Скидка %. NULL = 0% |
+| revenue_kgs | FLOAT64 | Выручка в KGS |
+| entity_type | STRING | 'product' или 'variant' |
+| sales_channel_id | STRING | UUID канала продаж из МойСклада |
+| sales_channel_name | STRING | Название канала |
+| project_id | STRING | UUID проекта из МойСклада |
+| project_name | STRING | Название проекта |
+| _loaded_at | TIMESTAMP | Время загрузки |
+
+*(PR-23)*
 
 ## §схемы core
 
-<!-- P4: из PR-24 (core.fact_sales_profit), PR-25 (core.fact_purchases — «не исчерпывающая»), PR-27 (fact_customer_invoices, fact_payments — схемы). ⚠ GAP Q-4: полная фактическая схема core/marts не задокументирована — дамп INFORMATION_SCHEMA.COLUMNS → /reference. -->
+**core.fact_sales_profit:**
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| transaction_id | STRING | MD5(demand_id + position_id) — суррогатный ключ |
+| transaction_date | DATE | Дата транзакции в Asia/Bishkek |
+| product_id | STRING | FK → `dim_products` |
+| entity_type | STRING | product/variant/bundle |
+| agent_id | STRING | FK → `dim_counterparties` |
+| sell_quantity | FLOAT64 | Продано штук |
+| return_quantity | FLOAT64 | Возвращено штук |
+| sell_sum_kgs | FLOAT64 | Выручка KGS |
+| return_sum_kgs | FLOAT64 | Сумма возвратов KGS |
+| revenue_kgs | FLOAT64 | Нетто выручка KGS |
+| cogs_kgs | FLOAT64 | Себестоимость KGS (FIFO, NULL если неизвестна) |
+| margin_kgs | FLOAT64 | Маржа KGS (NULL если нет COGS) |
+| revenue_usd | FLOAT64 | Выручка USD |
+| cogs_usd | FLOAT64 | Себестоимость USD |
+| margin_usd | FLOAT64 | Маржа USD |
+| discount | FLOAT64 | Скидка % |
+| sales_channel_id | STRING | UUID канала продаж из МойСклада |
+| sales_channel_name | STRING | Название канала (`COALESCE` → 'Не указан') |
+| project_id | STRING | UUID проекта из МойСклада |
+| project_name | STRING | Название проекта (`COALESCE` → 'Не указан') |
+| _loaded_at | TIMESTAMP | — |
+
+**core.fact_purchases** ⚠️ **схема не исчерпывающая** — восстановлена по дельте 2026-06-24, поля подтверждены только SQL-кодом `marts.in_transit`; таблица не была явно задокументирована в источнике:
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| purchase_order_id | STRING | UUID заказа поставщику — для JOIN/MERGE |
+| order_name | STRING | Человекочитаемый номер заказа (`order.get("name")`) — основной Dimension для BI вместо UUID |
+| position_id | STRING | UUID позиции заказа |
+| order_date | DATE | Дата создания заказа |
+| planned_delivery_date | DATE | Плановая дата поставки (может быть NULL) |
+| product_id | STRING | FK → `dim_products` |
+| supplier_id | STRING | FK → `dim_counterparties` (agent_id) |
+| status_id | STRING | UUID статуса заказа (см. §справочные данные) |
+| status_name | STRING | Денормализованное название статуса |
+| quantity_ordered | FLOAT64 | Заказано штук |
+| quantity_shipped | FLOAT64 | Отгружено поставщиком штук |
+| quantity_in_transit | FLOAT64 | В пути штук |
+| price_kgs | FLOAT64 | Цена в KGS |
+| in_transit_sum_kgs | FLOAT64 | Сумма в пути, KGS |
+| _loaded_at | TIMESTAMP | Время загрузки (по аналогии с другими `fact_*`, не подтверждено отдельно в дельте) |
+
+**⚠️ GAP Q-4 (факт):** список полей выше — не полный. Только то, что встречается в актуальном SQL `marts.in_transit`. Полная фактическая схема (и остальных таблиц core/marts) не задокументирована → discovery: дамп `INFORMATION_SCHEMA.COLUMNS` по всем таблицам core/marts в `/reference`.
+
+*(Схемы `fact_customer_invoices`/`fact_payments` (PR-27) — вне scope этой сессии по таблице шагов брифа M-P4-A-02; не переносятся здесь.)*
+
+*(PR-24, PR-25)*
 
 ## §схемы dim
 
-<!-- P4: из PR-26 (dim_products [weight, покрытие], dim_counterparties [SCD2, country], dim_fx_rates). Цифра покрытия weight — волатильна, живёт в 07_STATE. -->
+**core.dim_products:**
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| product_id | STRING | UUID товара в МойСкладе |
+| name | STRING | Название |
+| article | STRING | Артикул |
+| product_folder | STRING | Бренд |
+| parent_product_id | STRING | UUID родителя для variant |
+| entity_type | STRING | product/variant/bundle |
+| created | DATE | Дата создания |
+| shelf_life | TIMESTAMP | Срок годности (кастомное поле) |
+| qty_per_box | FLOAT64 | Количество в упаковке |
+| is_exclusive | BOOL | Эксклюзивный товар |
+| is_sunscreen | BOOL | Солнцезащитный |
+| updated_at | TIMESTAMP | Дата обновления в МойСкладе |
+| weight | FLOAT64 | Вес единицы в кг |
+| _loaded_at | TIMESTAMP | — |
+
+Покрытие поля `weight` — волатильная цифра, дом `07_STATE` §контрольные цифры (не в прозе спеки).
+
+**core.dim_counterparties:**
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| agent_id | STRING | UUID контрагента |
+| name | STRING | Наименование |
+| owner_employee_id | STRING | FK → `dim_employees` (текущий менеджер) |
+| owner_employee_skey | STRING | SCD2 суррогатный ключ |
+| country | STRING | Страна контрагента (кастомное поле, UUID `6d6cca1e-ed85-11f0-0a80-0b1a00a4547c`) |
+| scd2_valid_from | TIMESTAMP | — |
+| scd2_valid_to | TIMESTAMP | — |
+| scd2_is_current | BOOL | **JOIN всегда с** `AND scd2_is_current = TRUE` |
+| _loaded_at | TIMESTAMP | — |
+
+**core.dim_fx_rates:**
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| date | DATE | Дата курса |
+| rate_kgs_per_usd | FLOAT64 | KGS за 1 USD (официальный курс НБКР) |
+
+Источник с 2026-06-03: Bakai Bank OpenBanking API → `officialRates[currencySymbol=USD].rate`.
+
+*(PR-26)*
 
 ## §поведение МойСклад API
 
-<!-- P4: из PR-16 (sleep 0.25 при 429, expand+limit≤100, timeout=90), PR-33 правила 22–24, PR-34 правила 29/30 (DROP-DUP c PR-16), RB-18 (415 при Content-Type на GET). -->
+**Rate-limit и надёжность (PR-16, PR-34 правила 29–30 — DROP-DUP с PR-16 там, где пересекаются):**
+- `time.sleep(0.25)` обязателен в цикле пагинации — иначе 429/5xx от МойСклад.
+- При `expand=` (например `expand=expenseItem`) `limit` НЕ должен превышать 100 — иначе API молча игнорирует `expand` и возвращает `NULL` вместо вложенного объекта.
+- `timeout` в сетевой обёртке (`_api_get`/`helpers.py`) = 90 (не 30) для тяжёлых эндпоинтов (например `entity/purchaseorder/{id}/positions`). Декораторы ретраев (`tenacity`) не спасают от низкого базового `timeout`.
+
+**Правила curl/HTTP (PR-33 правила 22–24):**
+- GET-запросы: только `Authorization: Bearer $TOKEN`, без `Content-Type`. Для диагностики использовать Python `requests`, не `curl`.
+- `--compressed` обязателен для curl-запросов к МойСклад API.
+- `invoiceout` и `paymentout`: `expand=agent,state` и `expand=agent,expenseItem` соответственно — статус и агент приходят expanded без отдельного резолва.
+
+**Диагностика статус-кодов (RB-18):**
+- `429` — подождать 5 минут, перезапустить CF.
+- `503/502/504` — проверить https://status.moysklad.ru.
+- `401` — токен МойСклад истёк, обновить через Secret Manager.
+- `415` — GET-запросы к МойСклад API должны делаться через Python `requests`, не `curl` с `Content-Type` (дополняет правило 22).
+
+*(PR-16, PR-33 правила 22–24, PR-34 правила 29–30, RB-18)*
 
 ## §справочные данные (UUID-справочники)
 
-<!-- P4: из PR-32 (кастомные поля, статусы заказов, каналы, проекты, статусы invoiceout, статьи расходов + ИСКЛЮЧЕНО-флаги, метод проверки loss). ⚠ GAP Q-9: UUID статей на entity/loss не резолвлены — API-запрос. -->
+**Кастомные поля МойСклада:**
+
+| Поле | Сущность | UUID |
+|---|---|---|
+| Срок годности | Товар | `c8ae21e9-64a1-11ef-0a80-0bba00013abb` |
+| Страна | Контрагент | `6d6cca1e-ed85-11f0-0a80-0b1a00a4547c` |
+
+**Статусы заказов поставщику:**
+
+| UUID | Статус |
+|---|---|
+| `491d6da5-8b37-11ef-0a80-0762000253a8` | В пути |
+| `491d62b6-8b37-11ef-0a80-0762000253a7` | Прибыл |
+| `87b7a192-349f-11f1-0a80-1a0f000384c2` | Прибыл частично |
+| `87b7a5e5-349f-11f1-0a80-1a0f000384c3` | Отменен |
+
+⚠️ `IN_TRANSIT_STATUS_ID = 491d6da5...` (В пути). Не путать с `491d62b6...` (Прибыл).
+
+**Каналы продаж МойСклада:**
+
+| UUID | Канал |
+|---|---|
+| `0651f30b-4f5e-11ef-0a80-162a001acc2a` | UMAI Ozon |
+| `4a07eb32-2e47-11ef-0a80-0f4200606f40` | Оптовая торговля |
+| `7b1781c8-87d7-11ef-0a80-02960047ce13` | Джунхай |
+| `a015989a-03ff-11f0-0a80-13c10010e716` | Bloom WB |
+| `a53854e9-2ff2-11ef-0a80-14140018b87a` | UMAI WB |
+| `dd774cfb-1f75-11f1-0a80-19f10017e258` | К Глобал РФ Маркетплейсы |
+| `ddd4ee44-831b-11f0-0a80-0903001c5879` | ОФИС |
+| `f7e70716-4df6-11f1-0a80-0ee40053411d` | К Глобал |
+
+**Проекты МойСклада:**
+
+| UUID | Проект |
+|---|---|
+| `448dfc24-44fc-11ef-0a80-019e0028ceab` | Оптовая торговля |
+| `76add853-5252-11ef-0a80-0748004359fe` | Розница КР |
+| `b4b12ba7-2e47-11ef-0a80-0f420060821f` | Маркетплейсы |
+| `df1c6731-2e47-11ef-0a80-16e40062e908` | Жетиген Трейдинг |
+
+**Статусы счетов покупателям (invoiceout):**
+
+| UUID | Статус | Тип |
+|---|---|---|
+| `58dd1837-8b7f-11ef-0a80-024f0004c11e` | Новый | Regular |
+| `49279b1d-03b5-11f0-0a80-0b3d000268cb` | Ожидает оплату | Regular |
+| `58dd1fa9-8b7f-11ef-0a80-024f0004c11f` | Оплачено | Regular |
+| `bd263b12-9c30-11ef-0a80-0e4d000e9ad0` | Частично оплачен | Regular |
+| `bdbcc32d-a039-11ef-0a80-037a00bf3137` | Истечение срока оплаты | Unsuccessful |
+| `91d78b4f-8b2d-11ef-0a80-08b40001b6e2` | Платеж просрочен | Regular |
+| `91d78bd1-8b2d-11ef-0a80-08b40001b6e3` | Под реализацию | Regular |
+| `bdc330f2-a039-11ef-0a80-037a00bf313b` | Частичный возврат | Unsuccessful |
+| `bdc51a2a-a039-11ef-0a80-037a00bf3141` | Возврат | Unsuccessful |
+| `81b93e00-d410-11ef-0a80-0c92000f3848` | Маркетплейс | Regular |
+
+**Статьи расходов МойСклада (expenseitem):**
+
+| UUID | Статья | Примечание |
+|---|---|---|
+| `202adccb-fa31-11ee-0a80-0892007106c5` | Зарплата | — |
+| `202b391b-fa31-11ee-0a80-0892007106c6` | Маркетинг и реклама | — |
+| `d3fc695e-30ca-11ef-0a80-0151002574fc` | Логистика | — |
+| `d3fc97e4-30ca-11ef-0a80-0151002574fd` | Банк (комиссия) | — |
+| `8dbf9a86-0a01-11e4-a190-002590a32f46` | Налоги и сборы | — |
+| `13383bd4-ec83-11ef-0a80-07df0068bb36` | Вывод прибыли | Финансовая операция, не P&L |
+| `747218f2-ec89-11ef-0a80-0b6a006a92ef` | Выплата тела кредита | Финансовая операция, не P&L |
+| `61a39b6b-0bc9-11f0-0a80-16420018b8af` | Возврат займа собственнику | Финансовая операция, не P&L |
+| `8fc5c6be-f4cc-11ef-0a80-0d68000f49b4` | Неразнесенное списание | ⚠️ Требует разноски заказчиком |
+| `24c0e914-2d8c-11f1-0a80-11b0000c7043` | Перемещение исходящий | **ИСКЛЮЧЕНО из ETL** |
+| `4e1c05f2-0673-11e6-a655-0cc47a342ca4` | Перемещение | **ИСКЛЮЧЕНО из ETL** |
+| `8dbf9374-0a01-11e4-b9bf-002590a32f46` | Закупка товаров | **ИСКЛЮЧЕНО из ETL** |
+| `8dbf99a0-0a01-11e4-a743-002590a32f46` | Возврат | **ИСКЛЮЧЕНО из ETL** |
+
+**⚠️ GAP Q-9 (факт):** статьи расходов, обнаруженные на `entity/loss` (списание, а не на платежах) — UUID НЕ зафиксированы в источнике (видели только `expenseItem.name` через `expand`, bare UUID не резолвлены):
+
+| Статья | Где встречена | Примечание |
+|---|---|---|
+| Списания | `entity/loss`, 2 документа за май | Сумма документов (411 838,94) НЕ совпадает с П&Л (45 788,94) — не 1:1 |
+| Маркетинг и реклама | `entity/loss`, 5 документов за май | Та же статья ТАКЖЕ существует на `paymentout` (UUID `202b391b...` выше) |
+| Прочие расходы | `entity/loss`, 1 документ за май | Та же статья ТАКЖЕ существует на `paymentout` |
+| Комиссия | Не найдена ни на платежах, ни в проверенном срезе `entity/loss` за май | Открытый вопрос |
+| Обучение | Не найдена ни на платежах, ни в проверенном срезе `entity/loss` за май | Открытый вопрос |
+
+Метод проверки (`entity/loss`, май 2026, `expand=expenseItem`) — зафиксирован в источнике, перенесён как рецепт в `10_OPS_PLAYBOOK` (вне scope этой секции). Резолвинг UUID — не в этой сессии, блок Q-9.
+
+*(PR-32)*
 
 ## §семантика данных
 
-<!-- P4: из PR-33 правила 1–5, 7 (факты о полях/типах). -->
+1. `transaction_date_raw` в staging — STRING, не DATE. Всегда: `DATE(transaction_date_raw)`.
+2. `transaction_date` в `core.fact_sales_profit` — DATE. Без CAST.
+3. `revenue_kgs = 0` — пробники, не ошибка. При анализе: `AND revenue_kgs > 0`.
+4. `sell_quantity` часто NULL при `revenue > 0` — API-поведение.
+5. `is_in_transit` в `fact_purchases` ненадёжен — фильтровать только по `status_name`.
+7. `dim_counterparties`: JOIN всегда с `AND scd2_is_current = TRUE`.
+
+*(PR-33 правила 1–5, 7)*
 
 ## §валюты (мультивалютность)
 
-<!-- P4: из PR-33 правило 6 (минорные единицы валюты документа, rate.value; DROP-DUP c RB-38 контрактным фактом) + кандидат в ретро-ADR (06, P5). -->
+**Правило 6 (PR-33), контрактный факт — DROP-DUP с RB-38 §26 (минорные единицы):**
+
+Все денежные поля МойСклад API — в минорных единицах валюты ДОКУМЕНТА (× 0.01), НЕ всегда в тыйынах KGS. Аккаунт мультивалютный: KGS (база), USD (rate≈90), RUB (rate≈1.245), KZT (rate≈0.19) — см. `entity/currency`. После `÷100` результат в ВАЛЮТЕ ДОКУМЕНТА (`demand.rate.currency`), не в KGS.
+
+**Правило конвертации:** обязательно умножать на курс документа (`rate.value`, если задан, иначе текущий курс валюты) ПЕРЕД суммированием в KGS. Деление на 100 без этого умножения даёт системную недооценку (подтверждённый множитель ≈90x для USD-документов при курсе ≈90).
+
+Касается полей: `price`/`sum` в позициях документов, `sum`/`payedSum` в `invoiceout`, `sum` в `paymentout`/`cashout`.
+
+Ретро-ADR-кандидат (формализация задним числом) — вне scope этой сессии, P5.
+
+*(PR-33 правило 6, RB-38)*
 
 ## §семантика П&Л
 
