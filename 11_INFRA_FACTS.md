@@ -1,6 +1,6 @@
 # 11 · INFRA_FACTS — волатильные инфра-факты
 
-**Версия:** 0.1 (скелет + 11a, M-P4-B-11) · **Статус:** LIVING
+**Версия:** 0.2 (+ §CF/§секреты cf-finance/cf-fx, M-P4-A-03) · **Статус:** LIVING
 **Назначение:** канонический реестр волатильных инфра-фактов — URL/ревизии CF, Config ID SQ, расписания, IAM, секреты (имена). Обновляется часто, при каждом деплою/ротации секретов (ADR-004).
 **Состав по `00_CHARTER §карта документов` стр.53.**
 
@@ -8,9 +8,31 @@
 
 ## §CF (URL/ревизии)
 
-*(пусто — нет факта в источнике на момент M-P4-B-11; ожидается из брифа A-03: cf-fx URL/ревизии, PR-18ч)*
+**cf-finance** (конфигурация актуальна на 2026-06-25, PR-13):
+```bash
+gcloud functions deploy cf-finance \
+  --gen2 --runtime=python312 --region=asia-east1 \
+  --source=. --entry-point=main \
+  --trigger-http --allow-unauthenticated \
+  --service-account=etl-sa@msklad-bi-prod.iam.gserviceaccount.com \
+  --memory=512MB --timeout=1800s \
+  --set-secrets="MSKLAD_TOKEN=msklad-token:latest"
+```
+- Исходники: `/home/ilyasbazarov4/cf-finance` (Cloud Shell persistent disk)
+- Revision: `cf-finance-00006-piv` (история: `00001-wiv` первый деплой 2026-06-18 → `00005-wob` фикс таймаута 2026-06-25 → `00006-piv` фикс `trigger_marts()` 2026-06-25)
+- URI (Cloud Run native): `https://cf-finance-xw5u2boozq-de.a.run.app`
+- Legacy URL: `https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-finance`
+- Cloud Scheduler: `finance-daily-update`, `0 3 * * *`, `Asia/Bishkek`, HTTP POST на URI выше. `retryConfig.maxRetryDuration=0s` — ретраев НЕТ (DROP-DUP c RB-42; падение Scheduler тихо проглатывается, алерт только от мониторинга 5xx на Cloud Run).
+- ⚠️ Деплой с `--trigger-http --allow-unauthenticated` — нетипично для проекта (см. TD-SEC-01 в замороженном источнике).
 
-Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-07, PR-10, PR-13, PR-15, PR-18ч).
+**cf-fx** (после миграции 2026-06-03, PR-18):
+- Внешний источник (не собственный CF URL, а вызываемый API): `BAKAI_FX_URL = "https://openbanking-api.bakai.kg/api/Directory/GetRateDirectory"` (Bakai Bank OpenBanking API → `officialRates[USD].rate`, курс НБКР).
+- Ревизия/URL самой CF `cf-fx`: не зафиксированы в источнике на момент этой сессии → *(пусто, ожидает discovery)*.
+
+**cf-facts** — URL/ревизия: не зафиксированы в источнике на момент этой сессии → *(пусто, ожидает discovery)*.
+**cf-dq** — актуальная ревизия после T-1-фикса не подтверждена в источнике → **GAP Q-6** (см. `07_STATE`); последняя известная в источнике — `cf-dq-00006-lac` (⚠ дата этой ревизии предшествует T-1-фиксу 2026-06-24, канон не зафиксирован, не выдавать за актуальную).
+
+Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-13); PR-35 правило 41 (DROP-DUP); RB-42 (`maxRetryDuration=0s`).
 
 ## §SQ (Config ID + расписания)
 
@@ -32,10 +54,11 @@
 
 ## §секреты (имена)
 
-*(пусто — нет факта в источнике на момент M-P4-B-11)*
+- `bakai-fx-token` — Secret Manager, JWT-токен (Bearer auth) для Bakai OpenBanking API, используется `cf-fx` (PR-18). **TTL токена неизвестен → GAP Q-7** (см. `07_STATE`); рабочая DEFER-политика — ротация по факту 401 (`10_OPS_PLAYBOOK` §17).
+- `msklad-token` — Secret Manager, используется `cf-finance` (`MSKLAD_TOKEN`, PR-13).
 
-Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-18ч «cf-fx URL/секрет» — придёт из брифа A-03).
+Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-18 «cf-fx URL/секрет», PR-13).
 
 ---
 
-**Вне scope этой сессии:** CF-ревизии/URL/секреты cf-fx (→ бриф A-03); `10_OPS_PLAYBOOK`; схема датасета `audit` (Q-4); SQL audit-SQ в `/reference` (уже есть).
+**Вне scope этой сессии (M-P4-A-03):** URL/ревизия самих CF `cf-fx`/`cf-facts` (не зафиксированы в источнике — остаются пустыми слотами); `10_OPS_PLAYBOOK`; схема датасета `audit` (Q-4); IAM (RB-05, не в scope A-03).
