@@ -76,7 +76,7 @@
 | M-P4-09a | 09 §конвертация валют вх/исх | a | RB-38 п.26.6 | термин определён; связки → 03 §конвертация валют, 02 §валюты | — |
 | M-P4-11a | 11 §SQ — три audit-SQ | a | ADR-008 §Решение (1) + PR-21 | `sq_audit_dim_{products,counterparties,employees}_snapshot` (Config ID/расписание/стратегия) зафиксированы в `11 §SQ` | нет |
 
-> **Приписка (ADR-009 §1):** построение TO-BE raw-марта `marts.expenses` — **Epic-1**, вне M-P4.
+> **Приписка (ADR-009 §1, ~~superseded by ADR-012~~):** построение TO-BE raw-марта `marts.expenses` НЕ выполняется (решение владельца). Канон — правка существующего `sq_marts_expenses` (fact_payments-based). См. ADR-012 §3.
 > **Приписка (ADR-008 §Решение 1):** схема датасета `audit` → `/reference` (гейтится Q-4); SQL audit-SQ → `/reference/sql/` (гейтится Q-5) — не входят в `01d`/`11a`.
 
 ### Discovery-брифы (параллельная дорожка; закрытие 4 GAP — предмет отдельных задач, здесь только их место в порядке)
@@ -132,7 +132,7 @@
 | M-P5-Q1 | Приоритизация discovery-очереди | b | приоритеты P1 (Q-3/Q-4) → P2 (Q-9/Q-10) → P3 (Q-11) → P4 (Q-6/Q-12/Q-13) → P5/DEFER (Q-14/Q-7/Q-1-RECON) зафиксированы в `07_STATE` §Текущий фокус — **DONE** |
 | M-P5-E1 | Epic-1 header+scope → `04_ROADMAP` | b | «Верификация витрин + точечные правки», не постройка — **DONE** (этот патч) |
 | M-P5-B1 | Заготовка брифа E1-T1 | b | диагностический бриф Трек B (расходы), grounded-гипотеза ADR-012 — **TODO** |
-| M-P5-C | Reference-сиды консернов | a | `/reference/client_concerns_2026-07.md` + `/reference/expense_articles_client.md` — **TODO** |
+| M-P5-C | Reference-сиды консернов | a | `/reference/client_concerns_2026-07.md` + `/reference/expense_articles_client.md` — **DONE** (посеяны 2026-07-07) |
 | M-P5-S1 | `07_STATE` «полон» → STATE_PATCH | a | Q-18 заведён/закрыт, M-P5 статус, discovery-очередь, новые reference — **DONE** |
 | M-P5-AP | Apply: коммит всего | a | апрув человека — **в процессе** (коммитим по мере патчей, сессия за сессией) |
 
