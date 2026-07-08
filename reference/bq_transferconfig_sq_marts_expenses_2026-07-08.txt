@@ -1,0 +1,23 @@
+# Live-recheck transferConfig sq_marts_expenses — провенанс B-5 / ADR-012 §5
+
+Назначение: runtime-снимок (расписание/свежесть), дополняет SQL-снапшот sq_marts_expenses.sql @805450a (логика).
+Дата: 2026-07-08 · Исполнил: владелец (Cloud Shell, msklad-bi-prod) · Config: 6a22a243-0000-20fd-a458-883d24f4cad4
+
+## bq show --transfer_config (выдержки)
+nextRunTime      : 2026-07-09T11:10:00Z
+scheduleOptions  : {'timeBasedSchedule': {}}   # пустой объект — НЕ disabled/manual
+updateTime       : 2026-06-05T11:10:23Z
+
+## bq show marts.expenses (выдержки)
+creationTime     : 2026-06-05 11:10:25 UTC
+lastModifiedTime : 2026-07-08 11:10:02 UTC     # день сверки, ~11:10 UTC
+
+## Интерпретация (архитектор, 2026-07-08)
+- FROM = core.fact_payments — ПОДТВЕРЖДЕНО (load-bearing гейт §5 закрыт).
+- Расписание: НЕ ручной/on-demand. Пустой schedule + непустой nextRunTime = дефолт BQ DTS «every 24 hours»,
+  якорь = creationTime (11:10:25 UTC). Поведение: lastModifiedTime ежедневно ~11:10 UTC без перерыва >1 мес.
+  Референс: GCP docs «Scheduling queries» — при отсутствии --schedule дефолт = every 24 hours по creation time.
+- WRITE_TRUNCATE, group by expense_item_name, total_sum_usd = SUM(sum_kgs)/последний курс — не опровергнуто.
+
+## Смежное (не верифицировано → Q-21)
+- sq_marts_customer_invoices_ar (6a23f3ea-…): тот же пустой-schedule рендер в README D5; bq show не снят.
