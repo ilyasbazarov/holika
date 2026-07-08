@@ -126,9 +126,9 @@
 
 | ID | Что | Тип | Приёмка / примечание |
 |---|---|---|---|
-| M-P5-R1 | Ретро-ADR валюты → `06` | b | **ADR-010** (proposed), кросс-ссылка `02_ERP_CONTRACTS §валюты` + `09_GLOSSARY §конвертация валют` — **DONE** |
-| M-P5-R2 | Ретро-ADR Ghost Records → `06` | b | **ADR-011** (proposed), кросс-ссылка `03_PIPELINE_SPEC §fact_payments` — **DONE** |
-| M-P5-R3 | ADR-012 прод-март расходов → `06` | b | **ADR-012** (proposed); `ADR-009` §1 помечен `partially superseded`; Q-18 заведён и CLOSED в `07_STATE`; `03 §marts.expenses`/легаси-раздел приведены в соответствие — **DONE** |
+| M-P5-R1 | Ретро-ADR валюты → `06` | b | **ADR-010** (accepted), кросс-ссылка `02_ERP_CONTRACTS §валюты` + `09_GLOSSARY §конвертация валют` — **DONE** |
+| M-P5-R2 | Ретро-ADR Ghost Records → `06` | b | **ADR-011** (accepted), кросс-ссылка `03_PIPELINE_SPEC §fact_payments` — **DONE** |
+| M-P5-R3 | ADR-012 прод-март расходов → `06` | b | **ADR-012** (accepted, промоутнут M-P5-AP-2 после bq show-перепроверки); `ADR-009` §1 помечен `partially superseded`; Q-18 заведён и CLOSED в `07_STATE`; `03 §marts.expenses`/легаси-раздел приведены в соответствие — **DONE** |
 | M-P5-Q1 | Приоритизация discovery-очереди | b | приоритеты P1 (Q-3/Q-4) → P2 (Q-9/Q-10) → P3 (Q-11) → P4 (Q-6/Q-12/Q-13) → P5/DEFER (Q-14/Q-7/Q-1-RECON) зафиксированы в `07_STATE` §Текущий фокус — **DONE** |
 | M-P5-E1 | Epic-1 header+scope → `04_ROADMAP` | b | «Верификация витрин + точечные правки», не постройка — **DONE** (этот патч) |
 | M-P5-B1 | Заготовка брифа E1-T1 | b | диагностический бриф Трек B (расходы), grounded-гипотеза ADR-012 — **TODO** |
