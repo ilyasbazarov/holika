@@ -125,10 +125,8 @@
 
 ---
 
-## ⏳ ОЖИДАЮЩИЕ АПРУВА (статус `proposed`, не применены)
-
 ## ADR-012 · Прод-март расходов = `sq_marts_expenses` (fact_payments-based); TO-BE raw-март не строится
-- **Контекст:** требовалось установить, что реально питает страницу «Расходы» и совпадает ли это с ADR-006 (Q-18). Репо противоречиво: ADR-009 говорит, что Epic-1 строит TO-BE raw-март и ретайрит легаси; владелец говорит, что проект уже построен и переделывать заново не нужно. Разрешено фактом из `/reference/sql/sq_marts_expenses.sql` @ снапшот 2026-07-07 (SHA `805450a`, M-P4-D5) и `bq ls`: страница «Расходы» ← кастом-запрос LS `msklad_expenses` (тонкая обёртка, фильтр по `DATE(moment)`, без логики) ← таблица `msklad-bi-prod.marts.expenses` ← scheduled query `sq_marts_expenses` (Config `6a22a243-0000-20fd-a458-883d24f4cad4`), который читает только `core.fact_payments` = `paymentout+cashout` (2 из 4 источников, ADR-009 стр.106 / ADR-005 §4). Нет `loss`, нет `commissionreportin`. Расписание в transferConfig не задано (ручной/on-demand, WRITE_TRUNCATE). Группировка по `expense_item_name` (по имени, `COALESCE(…, 'Не указана')`); `total_sum_usd = SUM(sum_kgs) / последний курс` (единый текущий курс на всю историю). ADR-006 двухисточниковая методология (paymentout+cashout+loss+commissionreportin) в проде НЕ реализована — валидирована лишь ручной выгрузкой 2026-07-06.
+- **Контекст:** требовалось установить, что реально питает страницу «Расходы» и совпадает ли это с ADR-006 (Q-18). Репо противоречиво: ADR-009 говорит, что Epic-1 строит TO-BE raw-март и ретайрит легаси; владелец говорит, что проект уже построен и переделывать заново не нужно. Разрешено фактом из `/reference/sql/sq_marts_expenses.sql` @ снапшот 2026-07-07 (SHA `805450a`, M-P4-D5) и `bq ls`: страница «Расходы» ← кастом-запрос LS `msklad_expenses` (тонкая обёртка, фильтр по `DATE(moment)`, без логики) ← таблица `msklad-bi-prod.marts.expenses` ← scheduled query `sq_marts_expenses` (Config `6a22a243-0000-20fd-a458-883d24f4cad4`), который читает только `core.fact_payments` = `paymentout+cashout` (2 из 4 источников, ADR-009 стр.106 / ADR-005 §4). Нет `loss`, нет `commissionreportin`. Расписание: ежедневный автоматический прогон (BQ DTS default «every 24 hours», якорь = creationTime 2026-06-05 11:10:25 UTC → nextRunTime +24ч, фактические прогоны ~11:10 UTC, WRITE_TRUNCATE). ⚠ Исходная формулировка «ручной/on-demand» (снапшот D5 читал пустой timeBasedSchedule без nextRunTime) — исправлена по живой bq show-перепроверке 2026-07-08 (провенанс: /reference/bq_transferconfig_sq_marts_expenses_2026-07-08.txt). Группировка по `expense_item_name` (по имени, `COALESCE(…, 'Не указана')`); `total_sum_usd = SUM(sum_kgs) / последний курс` (единый текущий курс на всю историю). ADR-006 двухисточниковая методология (paymentout+cashout+loss+commissionreportin) в проде НЕ реализована — валидирована лишь ручной выгрузкой 2026-07-06.
 - **Решение:**
   1. Факт (канон): прод-витрина расходов = `marts.expenses`, строится `sq_marts_expenses` (Config `6a22a243-0000-20fd-a458-883d24f4cad4`) из `core.fact_payments`. LS `msklad_expenses` — date-filtered pass-through, без агрегации/исключений/FX.
   2. TO-BE raw-март из ADR-006/009 НЕ строится (решение владельца). Правится существующий `sq_marts_expenses`, а не заменяется новым мартом.
@@ -138,12 +136,10 @@
      ```bash
      bq show --transfer_config --project_id=msklad-bi-prod \
        projects/msklad-bi-prod/locations/asia-east1/transferConfigs/6a22a243-0000-20fd-a458-883d24f4cad4
-     # убедиться, что FROM всё ещё core.fact_payments и расписание не задано
+     # ПОДТВЕРЖДЕНО 2026-07-08: FROM = core.fact_payments (load-bearing гейт); расписание — ежедневный дефолт 24h (~11:10 UTC), НЕ manual (см. /reference/bq_transferconfig_sq_marts_expenses_2026-07-08.txt)
      bq show --format=prettyjson msklad-bi-prod:marts.expenses   # + свежесть последнего прогона
      ```
 - **Последствия:** `ADR-009` §1 (build-framing) → помечен `partially superseded by ADR-012`. `04_ROADMAP` Epic-1 → «верификация+правки», не постройка. `07_STATE` Q-18 → CLOSED (факт); Q-15 → CLOSED (supersedes ADR-009): канон = `sq_marts_expenses`, не ретайрится, а правится точечно. `03 §marts.expenses` — при наполнении прозой отразить: прод = fact_payments-март, ADR-006 = целевая методология правки.
-- **Статус:** proposed (промоушен в `accepted` — после `bq show`-перепроверки владельцем).
-
-> **Адъюдикация M-P5-AP (2026-07-08):** содержание одобрено архитектором; промоушен в `accepted` блокирован до предоставления владельцем `bq show --transfer_config` (Config `6a22a243-…`) + `bq show marts.expenses` (§5).
+- **Статус:** accepted (промоушен M-P5-AP-2, 2026-07-08: bq show-перепроверка выполнена владельцем — FROM=core.fact_payments подтверждён; §Контекст-расписание исправлено «ручной»→«ежедневный дефолт 24h»; правка контекста не затрагивает решения §1–§4).
 
 <!-- Новые ADR — append ниже. -->
