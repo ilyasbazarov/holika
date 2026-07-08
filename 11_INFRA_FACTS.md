@@ -43,8 +43,9 @@ gcloud functions deploy cf-finance \
 | `69fc93d1-0000-2d64-bdd1-30fd381336b4` | `sq_audit_dim_products_snapshot` | `msklad-bi-prod.audit.dim_products_snapshots` | every day 04:00 | ⚠ FAILED (as-is, не чинить — вне scope ADR-008/M-P4-11a) |
 | `69fc9c75-0000-2ab4-91b3-883d24f4db64` | `sq_audit_dim_counterparties_snapshot` | `msklad-bi-prod.audit.dim_counterparties_snapshots` | every day 04:00 | SUCCEEDED |
 | `69fc9d6e-0000-2ab4-91b3-883d24f4db64` | `sq_audit_dim_employees_snapshot` | `msklad-bi-prod.audit.dim_employees_snapshots` | every day 04:00 | SUCCEEDED |
+| `6a22a243-0000-20fd-a458-883d24f4cad4` | `sq_marts_expenses` | `msklad-bi-prod.marts.expenses` | every 24 hours (BQ DTS default, ~11:10 UTC; schedule-поле пустое, nextRunTime активен) | SUCCEEDED · провенанс live-recheck: `/reference/bq_transferconfig_sq_marts_expenses_2026-07-08.txt` (ADR-012) |
 
-Трассировка: ADR-008 §Решение (1) — дом Config ID/расписание/стратегия = `11 §SQ`; схема датасета `audit` → `/reference` (гейт Q-4); SQL → `/reference/sql/` (гейт Q-5, уже выгружен).
+Трассировка: ADR-008 §Решение (1) — дом Config ID/расписание/стратегия = `11 §SQ`; схема датасета `audit` → `/reference` (гейт Q-4); SQL → `/reference/sql/` (гейт Q-5, уже выгружен). ADR-012 §5/провенанс: живая bq show 2026-07-08, мед-реверификация расписания (выявлено дефолтное 24h, исходная формулировка ошибочно указывала «manual»).
 
 ## §IAM
 
