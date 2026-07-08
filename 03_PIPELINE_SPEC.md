@@ -264,6 +264,8 @@ WHERE p.status_name IN ('В пути', 'Прибыл частично')
 
 > **Статус (ADR-012):** методология ниже — ЦЕЛЕВАЯ, не построена как отдельный март. Прод-таблица `marts.expenses` строится легаси `sq_marts_expenses` (fact_payments-based, см. `§marts — SQL` выше). Epic-1/E1-T1 = точечные правки существующего SQL под эту методологию (в первую очередь `loss`+`commissionreportin`), не постройка нового марта.
 
+> **Статус (ADR-013, 2026-07-08 — решения владельца):** «Вывод прибыли» = движение капитала → вынесена из opex-тотала в отдельный блок «Капитал/распределение» (входит в «общий минус от котла», НЕ в «Операционные расходы»). «Налоги и сборы» = НАЧИСЛЕНИЕ из П&Л (2-й источник, не `fact_payments`) → показывается строкой «начислено, не платёж» (сноска), вне cash exact-match сверки. Форма механики обеих — гейт E1-T2 (задачи E1-T1-MECH / E1-T2-MECH-TAX).
+
 **ADR-006 (M-P3c, 2026-07-06): Построение марта расходов дашборда**
 
 **Входные источники:**
@@ -281,33 +283,34 @@ WHERE p.status_name IN ('В пути', 'Прибыл частично')
 
 | # | Категория | Источник | Статус |
 |---|---|---|---|
-| 1 | Налоги и сборы | paymentout+cashout+loss | active |
+| 1 | Налоги и сборы | П&Л (начисление, 2-й источник — ADR-013 §3) | active · НАЧИСЛЕНО, не платёж (сноска); вне cash exact-match |
 | 2 | Списания | paymentout+cashout+loss | active |
 | 3 | IT | paymentout+cashout+loss | active (нулевое в мае-2026) |
 | 4 | Аренда | paymentout+cashout+loss | active (нулевое в мае-2026) |
 | 5 | Банк-комиссия | paymentout+cashout+loss | active |
 | 6 | Бонусы | paymentout+cashout+loss | active |
 | 7 | Бухгалтерские услуги | paymentout+cashout+loss | active |
-| 8 | Вывод прибыли | paymentout+cashout+loss | active |
-| 9 | Зарплата | paymentout+cashout+loss | active |
-| 10 | Интернет и связь | paymentout+cashout+loss | active |
-| 11 | Коммунальные услуги | paymentout+cashout+loss | active |
-| 12 | Логистика | paymentout+cashout+loss | active |
-| 13 | Маркетинг и реклама | paymentout+cashout+loss | active |
-| 14 | Мой склад | paymentout+cashout+loss | active |
-| 15 | неразнесенные списания | paymentout+cashout+loss | active |
-| 16 | нотариальные и юр услуги | paymentout+cashout+loss | active |
-| 17 | Обучение | paymentout+cashout+loss | active |
-| 18 | Офисные расходы | paymentout+cashout+loss | active |
-| 19 | Охрана | paymentout+cashout+loss | active |
-| 20 | Покупка основных средств | paymentout+cashout+loss | active |
-| 21 | Прочие расходы | paymentout+cashout+loss | active |
-| 22 | Расходы маркетплейсов | paymentout+cashout+loss + commissionreportin | active (объединённая) |
-| 23 | Ремонт оборудования | paymentout+cashout+loss | active |
-| 24 | Тамож расходы | paymentout+cashout+loss | active |
-| 25 | Техника | paymentout+cashout+loss | active |
-| 26 | Топливо | paymentout+cashout+loss | active |
-| 27 | Фулфилмент | paymentout+cashout+loss | active (нулевое в мае-2026) |
+| 8 | Зарплата | paymentout+cashout+loss | active |
+| 9 | Интернет и связь | paymentout+cashout+loss | active |
+| 10 | Коммунальные услуги | paymentout+cashout+loss | active |
+| 11 | Логистика | paymentout+cashout+loss | active |
+| 12 | Маркетинг и реклама | paymentout+cashout+loss | active |
+| 13 | Мой склад | paymentout+cashout+loss | active |
+| 14 | неразнесенные списания | paymentout+cashout+loss | active |
+| 15 | нотариальные и юр услуги | paymentout+cashout+loss | active |
+| 16 | Обучение | paymentout+cashout+loss | active |
+| 17 | Офисные расходы | paymentout+cashout+loss | active |
+| 18 | Охрана | paymentout+cashout+loss | active |
+| 19 | Покупка основных средств | paymentout+cashout+loss | active |
+| 20 | Прочие расходы | paymentout+cashout+loss | active |
+| 21 | Расходы маркетплейсов | paymentout+cashout+loss + commissionreportin | active (объединённая) |
+| 22 | Ремонт оборудования | paymentout+cashout+loss | active |
+| 23 | Тамож расходы | paymentout+cashout+loss | active |
+| 24 | Техника | paymentout+cashout+loss | active |
+| 25 | Топливо | paymentout+cashout+loss | active |
+| 26 | Фулфилмент | paymentout+cashout+loss | active (нулевое в мае-2026) |
+
+> **«Вывод прибыли»** — вынесена в блок «Капитал/распределение» (ADR-013 §1), НЕ входит в 26 операционных категорий выше.
 
 **Исключения (не операционные расходы, не включаются в дашборд):**
 - Перемещение исходящий
@@ -315,7 +318,7 @@ WHERE p.status_name IN ('В пути', 'Прибыл частично')
 - Возврат займа собственнику
 - Выплата тела кредита
 - Проценты по кредиту
-- Возврат
+- Вывод прибыли
 
 **Ожидаемые нулевые значения в мае-2026 (подтверждены эталоном 2026-07-06):**
 - IT
