@@ -49,7 +49,12 @@ gcloud functions deploy cf-finance \
 
 ## §IAM
 
-*(пусто — нет факта в источнике на момент M-P4-B-11)*
+*(пусто — нет подтверждённого IAM-факта в источнике)*
+
+**Известная не-блокирующая аномалия (Q-28, DEFER):** в логе E1-T2 (2026-07-14) при
+`gcloud secrets versions access` — `Regional Access Boundary … 404 Gaia id not found for
+ilyasbazarov4@gmail.com`. Прогон отработал (токен резолвился). Триггер расследования: повтор ИЛИ появление
+в не-интерактивном / service-account прогоне. См. `07_STATE` Q-28.
 
 Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (RB-05 «аспект IAM»).
 
