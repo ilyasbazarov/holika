@@ -40,10 +40,11 @@ gcloud functions deploy cf-finance \
 
 | Config ID | displayName | Целевая таблица | Schedule | Состояние |
 |---|---|---|---|---|
-| `69fc93d1-0000-2d64-bdd1-30fd381336b4` | `sq_audit_dim_products_snapshot` | `msklad-bi-prod.audit.dim_products_snapshots` | every day 04:00 | ⚠ FAILED (as-is, не чинить — вне scope ADR-008/M-P4-11a) |
+| `69fc93d1-0000-2d64-bdd1-30fd381336b4` | `sq_audit_dim_products_snapshot` | `msklad-bi-prod.audit.dim_products_snapshots` | every day 04:00 (подтверждено run history 2026-07-17: 71 прогон, все 04:00 UTC) | ⚠ **FAILED с 2026-06-03** — schema drift (ADR-019): `Inserted row has wrong column count; Has 15, expected 14 at [2:1]`. Дельта = `weight` FLOAT64 (`core.dim_products` поз.14, в цели отсутствует); поз.1–13 идентичны; `snapshot_at` занимает поз.14 цели ⇒ `ALTER … ADD COLUMN` НЕ чинит (ADR-019 §3). Последний срез 2026-06-02 04:00:10; дыра 45 суток безвозвратна. Фикс = вариант E → задача `AUDIT-SNAPSHOT-FIX` (после Step 6 `E1-T3-MECH-FX`). Пометка «as-is, не чинить» СНЯТА (ADR-019). Провенанс: `/reference/sq_audit_dim_products_drift_2026-07-17.md` |
 | `69fc9c75-0000-2ab4-91b3-883d24f4db64` | `sq_audit_dim_counterparties_snapshot` | `msklad-bi-prod.audit.dim_counterparties_snapshots` | every day 04:00 | SUCCEEDED |
 | `69fc9d6e-0000-2ab4-91b3-883d24f4db64` | `sq_audit_dim_employees_snapshot` | `msklad-bi-prod.audit.dim_employees_snapshots` | every day 04:00 | SUCCEEDED |
 | `6a22a243-0000-20fd-a458-883d24f4cad4` | `sq_marts_expenses` | `msklad-bi-prod.marts.expenses` | every 24 hours (BQ DTS default, ~11:10 UTC; schedule-поле пустое, nextRunTime активен) | SUCCEEDED · провенанс live-recheck: `/reference/bq_transferconfig_sq_marts_expenses_2026-07-08.txt` (ADR-012) |
+| `6a23f3ea-0000-2952-853d-582429be7ecc` | `sq_marts_customer_invoices_ar` | `msklad-bi-prod.marts.customer_invoices_ar` | **фактически ежедневно, якорь ~10:00 UTC** (run history 2026-07-17: 43 прогона подряд, посл. 2026-07-17 10:00 UTC; поле `schedule` в конфиге НЕ снято — остаток Q-21) | SUCCEEDED · 0 не-OK / 43 · провенанс: `/reference/sq_fleet_health_2026-07-17.md` (ADR-020 §6) |
 
 Трассировка: ADR-008 §Решение (1) — дом Config ID/расписание/стратегия = `11 §SQ`; схема датасета `audit` → `/reference` (гейт Q-4); SQL → `/reference/sql/` (гейт Q-5, уже выгружен). ADR-012 §5/провенанс: живая bq show 2026-07-08, мед-реверификация расписания (выявлено дефолтное 24h, исходная формулировка ошибочно указывала «manual»).
 
