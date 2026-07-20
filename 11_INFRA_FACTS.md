@@ -13,7 +13,7 @@
 gcloud functions deploy cf-finance \
   --gen2 --runtime=python312 --region=asia-east1 \
   --source=. --entry-point=main \
-  --trigger-http --allow-unauthenticated \
+  --trigger-http \
   --service-account=etl-sa@msklad-bi-prod.iam.gserviceaccount.com \
   --memory=512MB --timeout=1800s \
   --set-secrets="MSKLAD_TOKEN=msklad-token:latest"
@@ -22,8 +22,9 @@ gcloud functions deploy cf-finance \
 - Revision: `cf-finance-00006-piv` (история: `00001-wiv` первый деплой 2026-06-18 → `00005-wob` фикс таймаута 2026-06-25 → `00006-piv` фикс `trigger_marts()` 2026-06-25)
 - URI (Cloud Run native): `https://cf-finance-xw5u2boozq-de.a.run.app`
 - Legacy URL: `https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-finance`
-- Cloud Scheduler: `finance-daily-update`, `0 3 * * *`, `Asia/Bishkek`, HTTP POST на URI выше. `retryConfig.maxRetryDuration=0s` — ретраев НЕТ (DROP-DUP c RB-42; падение Scheduler тихо проглатывается, алерт только от мониторинга 5xx на Cloud Run).
-- ⚠️ Деплой с `--trigger-http --allow-unauthenticated` — нетипично для проекта (см. TD-SEC-01 в замороженном источнике).
+- Cloud Scheduler: `finance-daily-update`, `0 3 * * *`, `Asia/Bishkek`, HTTP POST на URI выше. `attemptDeadline=180s`; серверный `--timeout` самой CF = `1800s` (≫ наблюдённый runtime 5+ мин — сервер укладывается с запасом; остаётся открытым Q-43: обрывает ли клиентский `attemptDeadline` серверную обработку). `retryConfig.maxRetryDuration=0s` — ретраев НЕТ (DROP-DUP c RB-42; падение Scheduler тихо проглатывается, алерт только от мониторинга 5xx на Cloud Run). Вызов аутентифицирован через `--oidc-service-account-email=etl-sa@msklad-bi-prod.iam.gserviceaccount.com` (ADR-022, с 2026-07-20).
+- ⚠️ TD-SEC-01 — подтверждённый инцидент 2026-07-20, устранён IAM-lockdown (ADR-022): `allUsers`-invoker снят, вызов только через `etl-sa` (OIDC).
+- Ops-следствие (ADR-022 §4, флаг, не гейт): после lockdown любой ручной/ad-hoc вызов `cf-finance` требует identity-token, анонимный `curl` больше не работает. `10_OPS_PLAYBOOK` не существует (Q-35, DEFER) — нота живёт здесь.
 
 **cf-fx** (после миграции 2026-06-03, PR-18):
 - Внешний источник (не собственный CF URL, а вызываемый API): `BAKAI_FX_URL = "https://openbanking-api.bakai.kg/api/Directory/GetRateDirectory"` (Bakai Bank OpenBanking API → `officialRates[USD].rate`, курс НБКР).
@@ -50,7 +51,7 @@ gcloud functions deploy cf-finance \
 
 ## §IAM
 
-*(пусто — нет подтверждённого IAM-факта в источнике)*
+**cf-finance (ADR-022, 2026-07-20):** `roles/run.invoker` предоставлен `etl-sa@msklad-bi-prod.iam.gserviceaccount.com`; привязка `allUsers` → `run.invoker` снята. Верификация 2026-07-20: анонимный запрос → `403`; вызов Scheduler (OIDC через тот же SA) → `200`.
 
 **Известная не-блокирующая аномалия (Q-28, DEFER):** в логе E1-T2 (2026-07-14) при
 `gcloud secrets versions access` — `Regional Access Boundary … 404 Gaia id not found for
