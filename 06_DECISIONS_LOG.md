@@ -272,4 +272,18 @@
 - **Последствия:** `05_CONVENTIONS.md` — две вставки (Часть I, Часть III); Часть II не трогается. `07_STATE` — Q-40 (DEFER). Апрув владельца на обе конвенции получен явно в сессии 2026-07-17 (`_METHOD §124` соблюдён).
 - **Статус:** §1–§4 accepted.
 
+## ADR-022 · IAM-lockdown публичных write-эндпоинтов CF в прод-таблицы (cf-finance); TD-SEC-01 подтверждён и устранён точечно
+- **Контекст:** в Шаге D cutover-сессии `E1-T3-MECH-FX-CUTOVER` (2026-07-20) вскрыт активный инцидент — `cf-finance` задеплоена с `--trigger-http --allow-unauthenticated` (TD-SEC-01, `11 §CF` стр.16/26). Анонимные вызовы с Google-инфраструктурных IP каждые 2–5 мин полностью перезаписывали `core.fact_payments` активным кодом функции, независимо от паузы Scheduler. Прямое нарушение границы контракта (`00_CHARTER §главный принцип`, ADR-002): бесконтрольная перезапись поверхности реконсиляции с оракулом. Ремедиация применена в проде в ходе сессии (через IAM-binding, НЕ редеплоем): снят `roles/run.invoker` для `allUsers`; создана привязка `etl-sa@msklad-bi-prod.iam.gserviceaccount.com` → `roles/run.invoker`; Scheduler-джоб `finance-daily-update` переведён на OIDC (`--oidc-service-account-email=etl-sa@…`). Верифицировано логами: анонимный запрос → `403`; Scheduler → успешный авторизованный вызов.
+- **Решение:**
+  - §1 Публичный неаутентифицированный доступ к CF, являющимся write-эндпоинтами в прод-таблицы, закрывается ПО УМОЛЧАНИЮ (политика, не point-fix). Read/utility-эндпоинты вне scope политики — их классификация = Q-42.
+  - §2 Ратификация live-ремедиации `cf-finance` (снятие `allUsers`, `etl-sa` `run.invoker`, Scheduler OIDC) как канонической модели вызова `cf-finance`.
+  - §3 TD-SEC-01: статус «потенциальный риск (замороженный источник)» → «подтверждённый инцидент; для `cf-finance` устранён». Дом статуса — `11 §CF` (не `00_CHARTER`: TD-SEC-01 там отсутствует).
+  - §4 Ops-следствие (флаг, не гейт): ручной/ad-hoc вызов `cf-finance` теперь требует identity-token, не анонимного `curl`. Нота — в `11 §CF` (`10_OPS_PLAYBOOK` не существует, Q-35 DEFER).
+- **Последствия:**
+  - `06`: настоящий ADR-022 (append). Кросс: ADR-002 / `00_CHARTER §главный принцип` (граница контракта), ADR-004 (`11` — LIVING, per-deploy), Q-42 (флот), Q-43 (тот же джоб).
+  - `11 §CF` (cf-finance deploy-блок): из канонической deploy-команды удалить `--allow-unauthenticated` — иначе следующий редеплой заново откроет дыру (live-lockdown был IAM-binding, не редеплой). Пометка стр.26 переписана; строка Scheduler дополнена OIDC-фактом; добавлена ops-нота §4.
+  - `11 §IAM` (было пусто, стр.53): внесён факт — `etl-sa@msklad-bi-prod.iam.gserviceaccount.com` → `roles/run.invoker` на `cf-finance`; `allUsers`-привязка снята; верификация 2026-07-20 (анон→403, Scheduler→200).
+  - `07_STATE`: TD-SEC-01/Q-42/Q-43/Q-31/«Текущий фокус» — см. STATE_PATCH сессии `E1-T3-CUTOVER-REVIEW-ADJ`.
+- **Статус:** §1 accepted · §2 accepted · §3 accepted · §4 accepted.
+
 --- END 06_DECISIONS_LOG.md ---
