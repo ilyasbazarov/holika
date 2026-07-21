@@ -19,7 +19,7 @@ gcloud functions deploy cf-finance \
   --set-secrets="MSKLAD_TOKEN=msklad-token:latest"
 ```
 - Исходники: `/home/ilyasbazarov4/cf-finance` (Cloud Shell persistent disk)
-- Revision: `cf-finance-00006-piv` (история: `00001-wiv` первый деплой 2026-06-18 → `00005-wob` фикс таймаута 2026-06-25 → `00006-piv` фикс `trigger_marts()` 2026-06-25)
+- Revision: доку. зафиксирована `cf-finance-00006-piv` (история: `00001-wiv` первый деплой 2026-06-18 → `00005-wob` фикс таймаута 2026-06-25 → `00006-piv` фикс `trigger_marts()` 2026-06-25). **Расхождение доку/факт:** фактически наблюдаемая ревизия (сессия Q43-D-DEADLINE-PROBE, 2026-07-21, лог вызова Cloud Run) — `cf-finance-00012-cik`. История промежуточных ревизий `00007…00011` не восстановлена (DEFER, археология); содержит ли `00012-cik` currency-fix (ADR-016) — не установлено. См. `07_STATE §Q-44/Q-45`, закрывается байт-точным снапшотом исходника
 - URI (Cloud Run native): `https://cf-finance-xw5u2boozq-de.a.run.app`
 - Legacy URL: `https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-finance`
 - Cloud Scheduler: `finance-daily-update`, `0 3 * * *`, `Asia/Bishkek`, HTTP POST на URI выше. `attemptDeadline=180s`; серверный `--timeout` самой CF = `1800s` (≫ наблюдённый runtime 5+ мин — сервер укладывается с запасом; остаётся открытым Q-43: обрывает ли клиентский `attemptDeadline` серверную обработку). `retryConfig.maxRetryDuration=0s` — ретраев НЕТ (DROP-DUP c RB-42; падение Scheduler тихо проглатывается, алерт только от мониторинга 5xx на Cloud Run). Вызов аутентифицирован через `--oidc-service-account-email=etl-sa@msklad-bi-prod.iam.gserviceaccount.com` (ADR-022, с 2026-07-20).
