@@ -286,4 +286,19 @@
   - `07_STATE`: TD-SEC-01/Q-42/Q-43/Q-31/«Текущий фокус» — см. STATE_PATCH сессии `E1-T3-CUTOVER-REVIEW-ADJ`.
 - **Статус:** §1 accepted · §2 accepted · §3 accepted · §4 accepted.
 
+## ADR-023 · attemptDeadline=180s — клиентский таймаут Scheduler, НЕ обрывает серверную обработку; raise = гигиена, не safety-гейт
+- **Контекст:** Q-43 спрашивал, обрывает ли истечение клиентского `attemptDeadline` серверную обработку `cf-finance` на середине MERGE (риск частичной записи в `core.fact_payments`). Единственный чистый прогон после IAM-lockdown ADR-022 (finance-daily-update, 2026-07-20T21:00Z / 03:00 Asia/Bishkek) триангулирован тремя независимыми источниками (провенанс `/reference/fin_sched_deadline_probe_2026-07-21.md`): Source A (Scheduler) — DEADLINE_EXCEEDED/504 @ T+180s, ретраев нет (maxRetryDuration=0s); Source B (Cloud Run, rev 00012-cik) — 200, latency 807s, все 5 маркеров run_etl(), SIGTERM отсутствует; Source C (BQ, решающий) — MERGE-job DONE, error_result=null, inserted=1449/updated=4937 @ T+~13м25с (~10 мин ПОСЛЕ клиентского 504).
+- **Решение:**
+  - §1 `attemptDeadline=180s` — чисто клиентский таймаут HTTP-вызова Scheduler; серверную обработку Cloud Run НЕ обрывает и не может в этой конфигурации (клиентская HTTP-отмена не убивает продолжающийся серверный запрос; инстанс не терминирован). Риск частичной записи из-за истечения этого дедлайна — фактом НЕ подтверждён. **accepted (доказано триангуляцией A/B/C).**
+  - §2 Область вердикта УЗКАЯ: §1 снимает статус safety-гейта с raise `attemptDeadline`; НЕ утверждает невозможность частичной записи вообще (n=1, это механистическая констатация одного контрпримера, не статистика). **accepted.**
+  - §3 Несущая гарантия целостности `core.fact_payments` не зависит от дедлайна и стоит независимо: (а) Cloud Run не обрывает in-flight запрос при отключении клиента; (б) запись = атомарный BQ MERGE + идемпотентный ghost-DELETE (ADR-011) — обрыв между MERGE и DELETE оставляет гхосты, снимаемые DELETE следующего прогона (восстановимо, не коррупция). **accepted.**
+  - §4 Raise `attemptDeadline` переквалифицирован из «обязательный пре-cutover safety-гейт» в **гигиену/шумоподавление ложных 504 в истории Scheduler**. Ложный 504 функциональных последствий не имеет: maxRetryDuration=0s ⇒ ретрая нет; монитор на 5xx Cloud Run, а Cloud Run вернул 200 ⇒ алерт не поднимается; 504 живёт только в истории джоба. **accepted.**
+  - §5 Форма/значение: владелец адаптировал рекомендацию архитектора (2026-07-21) — значение = **1800s** (= серверный `--timeout` и одновременно потолок `attemptDeadline` для HTTP-джоба Scheduler ⇒ ложный 504 исключён by construction, кроме реального серверного таймаута). Исполняет ЧЕЛОВЕК (архитектор не запускает); применяется Scheduler-side `gcloud scheduler jobs update http … --attempt-deadline=1800s` (§6), с read-back верификацией `attemptDeadline`+OIDC. **accepted (владелец).**
+  - §6 Guardrail применения: raise — правка Scheduler-джоба (`jobs update`, partial-update ⇒ OIDC сохраняется), НЕ редеплой cf-finance (ADR-022: lockdown allUsers был IAM-binding; редеплой рискует переоткрыть дыру / потерять OIDC). Тайминг развязан от Step 6 cutover — НЕ гейт, применимо в любой момент. После применения — верификация read-back'ом (ADR-021 §2), затем патч значения в `11 §CF` (LIVING, ADR-004). **accepted.**
+- **Последствия (blast radius):**
+  - `06`: настоящий ADR-023 (append). Кросс: ADR-011 (ghost-DELETE идемпотентность), ADR-021 §2 (верификация read-back; здесь — положительно подтверждённый случай, не «пусто=гэп»), ADR-022 (не редеплоить / OIDC), Q-43/Q-44/Q-45 (07_STATE).
+  - `07_STATE`: Q-43 → CLOSED (fact + decision); значение raise 1800s зафиксировано, исполнение — человеком.
+  - `11 §CF`: после подтверждённого `jobs update` — обновить `attemptDeadline=180s` → `1800s` в строке Scheduler (Scheduler-side; deploy-блок cf-finance не трогать).
+- **Статус:** §1–§6 accepted.
+
 --- END 06_DECISIONS_LOG.md ---
