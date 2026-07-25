@@ -239,10 +239,8 @@ def _merge_commission():
 @functions_framework.http
 def main(request):
     body = request.get_json(silent=True) or {}
-    start_date = body.get("start_date")
-    end_date = body.get("end_date")
-    if not start_date or not end_date:
-        return (json.dumps({"error": "start_date/end_date обязательны"}), 400)
+    start_date = body.get("start_date") or "2020-01-01"
+    end_date = body.get("end_date") or (datetime.datetime.utcnow() + datetime.timedelta(days=1)).strftime("%Y-%m-%d")
 
     loss_rows = fetch_loss(start_date, end_date)
     n_loss = _load_staging(loss_rows, BQ_STG_LOSS, LOSS_SCHEMA)

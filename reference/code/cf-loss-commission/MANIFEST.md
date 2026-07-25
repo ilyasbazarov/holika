@@ -7,26 +7,28 @@
 ## Ревизия и провенанс
 | Поле | Значение |
 |---|---|
-| `revision` | `cf-loss-commission-00006-dip` |
+| `revision` | `cf-loss-commission-00007-kuh` |
 | `entryPoint` | `main` |
-| `source.storageSource` | `gs://gcf-v2-sources-420804682491-asia-east1/cf-loss-commission/function-source.zip` (generation `1784981288510923`) |
-| `updateTime` | `2026-07-25T12:08:48.063835807Z` |
+| `source.storageSource` | `gs://gcf-v2-sources-420804682491-asia-east1/cf-loss-commission/function-source.zip` (generation `1784983258299919`) |
+| `updateTime` | `2026-07-25T12:41:34.158435921Z` |
 | `state` | `ACTIVE` |
 | `serviceAccountEmail` | `etl-sa@msklad-bi-prod.iam.gserviceaccount.com` |
 | `uri` | `https://cf-loss-commission-xw5u2boozq-de.a.run.app` |
 
-## Что изменилось относительно предыдущей ревизии `00004-div`
-- Курс валюты при отсутствии `rate.value` в документе: было — жёсткая единица (`1.0`); стало — запрос текущего курса через `entity/currency`.
-- Запись в `core.fact_commissionreportin`: было — позиционная вставка (риск молчаливой порчи данных); стало — вставка по явным именам колонок.
+## Что изменилось относительно предыдущей ревизии `00006-dip`
+- `start_date`/`end_date` больше не обязательны в теле запроса: при отсутствии — берётся весь период с `2020-01-01` по завтрашнюю дату (UTC). Нужно для автоматического ночного запуска (Cloud Scheduler), которому неоткуда взять даты самому.
+
+## Автозапуск (Cloud Scheduler)
+Задача `loss-commission-daily-update`, `asia-east1`, `0 3 * * *` (Asia/Bishkek), вызов через OIDC от `etl-sa@msklad-bi-prod.iam.gserviceaccount.com`, `attemptDeadline=1800s` (= серверный timeout функции), `maxRetryDuration=0s` (без повторов, по прецеденту `cf-finance`).
 
 ## sha256 (из задеплоенного архива)
 | Файл | sha256 |
 |---|---|
-| `main.py` | `24d58ddebc93c4e1dce464e419e09f7a1f20c5092f3c7fb8fd7c61054f805f70` |
+| `main.py` | `06895748a765ef0263e8b782148588543d596fea0bd47267398496a076739efd` |
 | `requirements.txt` | `4b25b2242cecaa781a0b7b1a9e25c1b4a66b3874f37dc1d05bbaa07e8aecc519` |
 
 ## Сверка disk vs deployed
-`main.py` и `requirements.txt`, скачанные напрямую из задеплоенного архива, побайтово совпали с файлами, использованными для деплоя (`diff -q`, без расхождений).
+`main.py`, скачанный напрямую из задеплоенного архива, побайтово совпал с файлом, использованным для деплоя (`diff -q`, без расхождений).
 
-## Доступ (IAM)
-`roles/run.invoker` явно выдан `etl-sa@msklad-bi-prod.iam.gserviceaccount.com` через Cloud Run. Открытого публичного доступа нет.
+## Известное открытое (не блокирует, для памяти)
+- Приёмочный критерий «конвертация проверена на ≥1 не-KGS документе» не закрыт живым тестом: по состоянию на 2026-07-25 ни одного документа не в сомах не найдено ни в `entity/loss` (128 документов), ни в `entity/commissionreportin` (191 документ) за всю историю аккаунта.
