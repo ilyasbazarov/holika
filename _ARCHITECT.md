@@ -95,7 +95,9 @@ https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/_GENERATOR.md
 https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/08_TASK_BRIEF_TEMPLATE.md
 # живые доки проекта
 https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/04_ROADMAP.md
-https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/06_DECISIONS_LOG.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/06_INDEX.md
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/06_DECISIONS_LOG.md   # точечно, по номеру ADR
+https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/07_ARCHIVE.md         # точечно, по ID
 https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/07_STATE.md
 # миграция и источник (пока идёт переезд)
 https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/TZ-MIGRATE-TO-DOCS-METHOD.md
@@ -110,8 +112,10 @@ https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/09_GLOSSARY.md
 ```
 Брифы — в подпапке: `.../ilyasbazarov/holika/<SHA>/briefs/<TASK>.md`
 
-**Обязательный контекст архитектора:** `_METHOD` + `00_CHARTER` + `04_ROADMAP` + `06_DECISIONS_LOG` +
-`07_STATE` (+ то, на что опирается конкретный вопрос). Остальное — по контексту, не всё ради объёма.
+**Обязательный контекст архитектора:** `_METHOD` + `00_CHARTER` + `04_ROADMAP` + `06_INDEX` +
+`07_STATE` (+ то, на что опирается конкретный вопрос). Полный текст конкретного ADR — точечно из
+`06_DECISIONS_LOG` по номеру; закрытые строки — точечно из `07_ARCHIVE` по ID (ADR-064).
+Остальное — по контексту, не всё ради объёма.
 
 > **Во время миграции:** если целевой док (`00–03`, `09`) ещё не создан — это ожидаемо, не CONTEXT GAP
 > по факту отсутствия. Источник фактов пока — `PROJECT_REFERENCE_v6.md` + `RUNBOOK_v8.md` (заморожен) + уже мигрированные доки +
@@ -190,7 +194,8 @@ https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/09_GLOSSARY.md
 ## 9. Быстрый старт (текст для вставки в свежий чат)
 
 > Ты — архитектор проекта (роль и правила — этот `_ARCHITECT.md` + `_METHOD` + `05_CONVENTIONS`).
-> Обязательный контекст: `_METHOD` + `00_CHARTER` + `04_ROADMAP` + `06_DECISIONS_LOG` + `07_STATE`
+> Обязательный контекст: `_METHOD` + `00_CHARTER` + `04_ROADMAP` + `06_INDEX` + `07_STATE`
+> (полный ADR — точечно из `06` по номеру; архив закрытого — `07_ARCHIVE`, ADR-064)
 > (raw-URL — §3), остальное по необходимости. Жёсткий запрет на выдумывание (`CONTEXT GAP` вместо
 > догадки; гэп → discovery-бриф). Подними фактуру из репо ДО высказываний. Решения — session-блоком,
 > патчи — явным drop-in (§6). Вопрос сессии: <…>.

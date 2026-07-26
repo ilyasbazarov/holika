@@ -32,7 +32,7 @@ curl -s https://raw.githubusercontent.com/ilyasbazarov/holika/<SHA>/07_STATE.md
 # метод и роли
 _METHOD.md · 05_CONVENTIONS.md · _ARCHITECT.md · _APPLIER.md · _GENERATOR.md · 08_TASK_BRIEF_TEMPLATE.md · _START_HERE.md
 # живые доки
-04_ROADMAP.md · 06_DECISIONS_LOG.md · 07_STATE.md
+04_ROADMAP.md · 06_INDEX.md (полный 06 — точечно) · 07_STATE.md (архив — 07_ARCHIVE.md)
 # миграция и источник
 TZ-MIGRATE-TO-DOCS-METHOD.md · PROJECT_REFERENCE_v6.md · RUNBOOK_v8.md · MIGRATION_MAP.md
 # STABLE/доменные (по мере P3–P5)
