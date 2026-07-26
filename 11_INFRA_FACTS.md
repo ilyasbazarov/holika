@@ -64,7 +64,7 @@ ilyasbazarov4@gmail.com`. Прогон отработал (токен резол
 
 ## §секреты (имена)
 
-- `bakai-fx-token` — Secret Manager, JWT-токен (Bearer auth) для Bakai OpenBanking API, используется `cf-fx` (PR-18). **TTL токена неизвестен → GAP Q-7** (см. `07_STATE`); рабочая DEFER-политика — ротация по факту 401 (`10_OPS_PLAYBOOK` §17).
+- `bakai-fx-token` — Secret Manager, JWT-токен (Bearer auth) для Bakai OpenBanking API, используется `cf-fx` (PR-18). **TTL токена неизвестен → GAP Q-7** (см. `07_STATE`); рабочая DEFER-политика — ротация по факту 401, процедура: `RUNBOOK_v8 §17` (заморожен). `10_OPS_PLAYBOOK` не существует — `Q-35`, DEFER; указатель исправлен сессией `FX-OUTBOUND-COVERAGE-ADJ`.
 - `msklad-token` — Secret Manager, используется `cf-finance` (`MSKLAD_TOKEN`, PR-13).
 
 Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-18 «cf-fx URL/секрет», PR-13).
