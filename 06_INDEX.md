@@ -81,3 +81,4 @@
 | ADR-069 | Q-74: глубина паритета = (c), якорь 2026-05-01; расширение назад — только явным ADR по замеру | accepted | введён сессией PIPELINE-AUDIT 2026-07-27 |
 | ADR-070 | Скаффолд пилота Claude Code: состав CLAUDE.md/.claude/, pre-commit hook, success-критерий; среда пилота = локальная машина владельца | accepted | введён сессией CC-PILOT-SCAFFOLD 2026-07-27 |
 | ADR-071 | Мандат Claude Code расширен на FX-MAY-WINDOW как тренировочный прогон; Q-75 отложен до замера; чтение локального клона вместо curl внутри Claude Code | accepted | введён сессией CC-PILOT-BOOTSTRAP 2026-07-27 |
+| ADR-072 | Фикс проверки №2 pre-commit (-PqE → -qE, локаль); фикстурный самотест как 6-й файл скаффолда; верификация пер-проверка; ADR-071 §7 superseded-in-part | accepted | введён сессией CC-HOOK-REVIEW 2026-07-27 |
