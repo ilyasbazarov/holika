@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Read", "Grep", "Glob",
+      "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git rev-parse:*)",
+      "Bash(git add:*)", "Bash(git commit:*)",
+      "Bash(date:*)", "Bash(cat:*)", "Bash(ls:*)",
+      "Bash(gcloud auth list:*)",
+      "Bash(gcloud * describe *)", "Bash(gcloud * list *)",
+      "Bash(bq show:*)", "Bash(bq ls:*)", "Bash(bq query --dry_run*)"
+    ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(bq query:*)",
+      "Bash(bq update:*)", "Bash(bq cp:*)", "Bash(bq mk:*)", "Bash(bq rm:*)",
+      "Bash(gcloud * deploy *)", "Bash(gcloud * run *)", "Bash(gcloud * create *)",
+      "Bash(gcloud * update *)", "Bash(gcloud * delete *)",
+      "Bash(gcloud scheduler *)", "Bash(gcloud secrets *)"
+    ],
+    "deny": [
+      "Bash(git push --force*)", "Bash(git reset --hard*)", "Bash(git rebase:*)",
+      "Bash(rm -rf:*)"
+    ]
+  }
+}
