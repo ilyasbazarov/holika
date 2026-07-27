@@ -15,7 +15,7 @@ done
 
 # 2. ADR-041: кириллические гомоглифы внутри ID (ADR-/Q-/B-/RQ-/E1-/M-P)
 if git diff --cached -U0 | grep -E '^\+' | \
-   LC_ALL=C.UTF-8 grep -qE '(ADR|RQ|E1|Q|B)[-–][0-9]*[МСЕАРОТНКВХ]|[МСЕАРОТНКВХ](DR-|Q-|-P)'; then
+   grep -qE '(ADR|RQ|E1|Q|B)[-–][0-9]*[МСЕАРОТНКВХ]|[МСЕАРОТНКВХ](DR-|Q-|-P)'; then
   fail "кириллица внутри идентификатора (ADR-041)"
 fi
 
