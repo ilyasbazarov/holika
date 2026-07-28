@@ -1,0 +1,23 @@
+=== date -u (start) ===
+Tue Jul 28 16:13:13 UTC 2026
+=== gcloud auth list (start) ===
+ilyasbazarov4@gmail.com
+token length (not value): 40
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+--- CANDIDATE: entity-purchaseorder (level ii, для Закупки в пути) ---
+URL: https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder?limit=1&expand=agent,state
+HTTP 200, bytes=10142
+top-level keys: ['context', 'meta', 'rows']
+snippet: {"context": {"employee": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/context/employee", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata", "type": "employee", "mediaType": "application/json"}}}, "meta": {"href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder?limit=1&expand=agent,state", "type": "purchaseorder", "mediaType": "application/json", "size": 211, "limit": 1, "offset": 0, "nextHref": "https://api.moysklad.ru/api/remap/1.2/entity/p
+
+--- CANDIDATE: entity-loss (level ii, для Расходы, уже канон в репо) ---
+URL: https://api.moysklad.ru/api/remap/1.2/entity/loss?limit=1&expand=expenseItem&momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00
+HTTP 200, bytes=6460
+top-level keys: ['context', 'meta', 'rows']
+snippet: {"context": {"employee": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/context/employee", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata", "type": "employee", "mediaType": "application/json"}}}, "meta": {"href": "https://api.moysklad.ru/api/remap/1.2/entity/loss?limit=1&expand=expenseItem&momentFrom=2026-05-01%2000:00:00&momentTo=2026-06-01%2000:00:00", "type": "loss", "mediaType": "application/json", "size": 128, "limit": 1, "offset": 0, "nextHref": "
+=== date -u (end) ===
+Tue Jul 28 16:14:13 UTC 2026
+=== gcloud auth list (end) ===
+ilyasbazarov4@gmail.com

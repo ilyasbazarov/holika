@@ -1,0 +1,98 @@
+=== date -u (start) ===
+Tue Jul 28 16:08:58 UTC 2026
+=== gcloud auth list (start) ===
+ilyasbazarov4@gmail.com
+=== read token into env var (not printed) ===
+token length (not value): 40
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+--- CANDIDATE: profit-byproduct (прибыльность по товарам) ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/profit/byproduct?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00
+HTTP 200, bytes=614488
+top-level keys: ['context', 'meta', 'rows']
+snippet: {"context": {"employee": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/context/employee", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata", "type": "employee", "mediaType": "application/json"}}}, "meta": {"href": "https://api.moysklad.ru/api/remap/1.2/report/profit/byproduct?momentFrom=2026-05-01%2000:00:00&momentTo=2026-06-01%2000:00:00", "type": "salesbyproduct", "mediaType": "application/json", "size": 279, "limit": 1000, "offset": 0}, "rows": [{"assortment": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/entity/product/44c7952d-9a9e-11f0-0a80-050c0003158b", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata", "type": "product", "mediaType": "application/json", "uuidHref": "https://online.moysklad.ru/app/#g
+
+--- CANDIDATE: profit-bycounterparty (прибыльность по контрагентам) ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/profit/bycounterparty?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00
+HTTP 200, bytes=54112
+top-level keys: ['context', 'meta', 'rows']
+snippet: {"context": {"employee": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/context/employee", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata", "type": "employee", "mediaType": "application/json"}}}, "meta": {"href": "https://api.moysklad.ru/api/remap/1.2/report/profit/bycounterparty?momentFrom=2026-05-01%2000:00:00&momentTo=2026-06-01%2000:00:00", "type": "salesbycounterparty", "mediaType": "application/json", "size": 64, "limit": 1000, "offset": 0}, "rows": [{"counterparty": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/3c080755-03ff-11f0-0a80-0c2c00104bbb", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata", "type": "counterparty", "mediaType": "application/json", "uuidHref": "https:/
+
+--- CANDIDATE: sales-byproduct ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/sales/byproduct?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00
+HTTP 404, bytes=191
+top-level keys: ['errors']
+snippet: {"errors": [{"error": "Неопознанный путь: https://api.moysklad.ru/api/remap/1.2/report/sales/byproduct", "code": 1002, "moreInfo": "https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#error_1002"}]}
+
+--- CANDIDATE: sales-bycounterparty ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/sales/bycounterparty?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00
+HTTP 404, bytes=196
+top-level keys: ['errors']
+snippet: {"errors": [{"error": "Неопознанный путь: https://api.moysklad.ru/api/remap/1.2/report/sales/bycounterparty", "code": 1002, "moreInfo": "https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#error_1002"}]}
+
+--- CANDIDATE: counterparty-debt (задолженность контрагентов / дебиторка) ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/counterparty/debt
+HTTP 404, bytes=193
+top-level keys: ['errors']
+snippet: {"errors": [{"error": "Неопознанный путь: https://api.moysklad.ru/api/remap/1.2/report/counterparty/debt", "code": 1002, "moreInfo": "https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#error_1002"}]}
+
+--- CANDIDATE: money-plotseries ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/money/plotseries?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00&interval=day
+HTTP 200, bytes=4086
+top-level keys: ['context', 'meta', 'credit', 'debit', 'series']
+snippet: {"context": {"employee": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/context/employee", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata", "type": "employee", "mediaType": "application/json"}}}, "meta": {"href": "https://api.moysklad.ru/api/remap/1.2/report/money/plotseries?momentFrom=2026-05-01%2000:00:00&momentTo=2026-06-01%2000:00:00&interval=day", "type": "moneyplotseries", "mediaType": "application/json"}, "credit": 277764177277, "debit": 246478205155, "series": [{"date": "2026-05-01 00:00:00", "credit": 0.0, "debit": 23781.0, "balance": -23781.0}, {"date": "2026-05-02 00:00:00", "credit": 7056000.0, "debit": 0.0, "balance": 7056000.0}, {"date": "2026-05-03 00:00:00", "credit": 0.0, "debit": 0.0, "balance": 0.0}, {"date": "2026-05-04 00:00:0
+
+--- CANDIDATE: money-byaccount ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/money/byaccount
+HTTP 200, bytes=29325
+top-level keys: ['context', 'meta', 'rows']
+snippet: {"context": {"employee": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/context/employee", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata", "type": "employee", "mediaType": "application/json"}}}, "meta": {"href": "https://api.moysklad.ru/api/remap/1.2/report/money/byaccount", "type": "moneyreport", "mediaType": "application/json"}, "rows": [{"organization": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/717cd8a5-da4d-11f0-0a80-103c0005e57f", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/organization", "type": "organization", "mediaType": "application/json"}, "name": "Holi Korea"}, "balance": -2938030144.0}, {"organization": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/entity/organization/60
+
+--- CANDIDATE: stock-all (остатки) ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/stock/all
+HTTP 200, bytes=746841
+top-level keys: ['context', 'meta', 'rows']
+snippet: {"context": {"employee": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/context/employee", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata", "type": "employee", "mediaType": "application/json"}}}, "meta": {"href": "https://api.moysklad.ru/api/remap/1.2/report/stock/all", "type": "stock", "mediaType": "application/json", "size": 328, "limit": 1000, "offset": 0}, "rows": [{"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/entity/product/c946bc43-4e9a-11f1-0a80-03e80005e8b5?expand=supplier", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata", "type": "product", "mediaType": "application/json", "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=c946985e-4e9a-11f1-0a80-03e80005e8b1"}, "stock": 787.0, "inTransit"
+
+--- CANDIDATE: stock-bystore ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/stock/bystore
+HTTP 200, bytes=505160
+top-level keys: ['context', 'meta', 'rows']
+snippet: {"context": {"employee": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/context/employee", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata", "type": "employee", "mediaType": "application/json"}}}, "meta": {"href": "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore", "type": "stockbystore", "mediaType": "application/json", "size": 345, "limit": 1000, "offset": 0}, "rows": [{"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/entity/product/c946bc43-4e9a-11f1-0a80-03e80005e8b5?expand=supplier", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata", "type": "product", "mediaType": "application/json", "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=c946985e-4e9a-11f1-0a80-03e80005e8b1"}, "stockByStore": 
+
+--- CANDIDATE: turnover-all (обороты) ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/turnover/all?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00
+HTTP 200, bytes=921247
+top-level keys: ['context', 'meta', 'rows']
+snippet: {"context": {"employee": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/context/employee", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata", "type": "employee", "mediaType": "application/json"}}}, "meta": {"href": "https://api.moysklad.ru/api/remap/1.2/report/turnover/all?momentFrom=2026-05-01%2000:00:00&momentTo=2026-06-01%2000:00:00", "type": "turnover", "mediaType": "application/json", "size": 354, "limit": 1000, "offset": 0}, "rows": [{"assortment": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/entity/product/44c7952d-9a9e-11f0-0a80-050c0003158b", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata", "type": "product", "mediaType": "application/json", "uuidHref": "https://online.moysklad.ru/app/#good/edit?i
+
+--- CANDIDATE: dashboard-money ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/dashboard/money
+HTTP 200, bytes=370
+top-level keys: ['sales', 'orders', 'money']
+snippet: {"sales": {"count": 9, "amount": 354650447, "movementAmount": -191132513.4198568}, "orders": {"count": 4, "amount": 190553702, "movementAmount": -365838848}, "money": {"income": 20931267229, "outcome": 16094748025, "balance": 29308290541, "todayMovement": 4836519204, "movement": 4836519204}}
+
+--- CANDIDATE: dashboard-orders ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/dashboard/orders
+HTTP 200, bytes=370
+top-level keys: ['sales', 'orders', 'money']
+snippet: {"sales": {"count": 9, "amount": 354650447, "movementAmount": -191132513.4198568}, "orders": {"count": 4, "amount": 190553702, "movementAmount": -365838848}, "money": {"income": 20931267229, "outcome": 16094748025, "balance": 29308290541, "todayMovement": 4836519204, "movement": 4836519204}}
+
+=== SUMMARY ===
+profit-byproduct (прибыльность по товарам) | https://api.moysklad.ru/api/remap/1.2/report/profit/byproduct?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00 | status=200
+profit-bycounterparty (прибыльность по контрагентам) | https://api.moysklad.ru/api/remap/1.2/report/profit/bycounterparty?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00 | status=200
+sales-byproduct | https://api.moysklad.ru/api/remap/1.2/report/sales/byproduct?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00 | status=404
+sales-bycounterparty | https://api.moysklad.ru/api/remap/1.2/report/sales/bycounterparty?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00 | status=404
+counterparty-debt (задолженность контрагентов / дебиторка) | https://api.moysklad.ru/api/remap/1.2/report/counterparty/debt | status=404
+money-plotseries | https://api.moysklad.ru/api/remap/1.2/report/money/plotseries?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00&interval=day | status=200
+money-byaccount | https://api.moysklad.ru/api/remap/1.2/report/money/byaccount | status=200
+stock-all (остатки) | https://api.moysklad.ru/api/remap/1.2/report/stock/all | status=200
+stock-bystore | https://api.moysklad.ru/api/remap/1.2/report/stock/bystore | status=200
+turnover-all (обороты) | https://api.moysklad.ru/api/remap/1.2/report/turnover/all?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00 | status=200
+dashboard-money | https://api.moysklad.ru/api/remap/1.2/report/dashboard/money | status=200
+dashboard-orders | https://api.moysklad.ru/api/remap/1.2/report/dashboard/orders | status=200
+=== date -u (end) ===
+Tue Jul 28 16:09:22 UTC 2026
+=== gcloud auth list (end) ===
+ilyasbazarov4@gmail.com

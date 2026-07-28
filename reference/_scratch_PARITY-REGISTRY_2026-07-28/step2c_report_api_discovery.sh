@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd /Users/ilyasbazarov/Desktop/msklad_project/holika
+
+echo "=== date -u (start) ==="
+date -u
+echo "=== gcloud auth list (start) ==="
+gcloud auth list --filter=status:ACTIVE --format='value(account)'
+
+export MSKLAD_TOKEN="$(gcloud secrets versions access latest --secret=msklad-token --project=msklad-bi-prod)"
+if [ -z "${MSKLAD_TOKEN}" ]; then
+  echo "TOKEN EMPTY - stop"
+  exit 1
+fi
+echo "token length (not value): ${#MSKLAD_TOKEN}"
+
+python3 - <<'PYEOF'
+import os, time, json
+import requests
+
+token = os.environ["MSKLAD_TOKEN"]
+headers = {"Authorization": f"Bearer {token}", "Accept-Encoding": "gzip"}
+BASE = "https://api.moysklad.ru/api/remap/1.2"
+
+candidates = [
+    ("entity/purchaseorder?limit=1&expand=agent,state", "entity-purchaseorder (level ii, для Закупки в пути)"),
+    ("entity/loss?limit=1&expand=expenseItem&momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00", "entity-loss (level ii, для Расходы, уже канон в репо)"),
+]
+
+for path, label in candidates:
+    url = f"{BASE}/{path}"
+    print(f"\n--- CANDIDATE: {label} ---")
+    print(f"URL: {url}")
+    try:
+        resp = requests.get(url, headers=headers, timeout=90)
+    except Exception as e:
+        print(f"EXCEPTION: {e}")
+        continue
+    time.sleep(0.25)
+    status = resp.status_code
+    body = resp.text
+    print(f"HTTP {status}, bytes={len(body)}")
+    try:
+        parsed = resp.json()
+        top_keys = list(parsed.keys()) if isinstance(parsed, dict) else f"<list len={len(parsed)}>"
+        print(f"top-level keys: {top_keys}")
+        print(f"snippet: {json.dumps(parsed, ensure_ascii=False)[:500]}")
+    except Exception as e:
+        print(f"NOT JSON: {e}; raw: {body[:400]}")
+PYEOF
+
+echo "=== date -u (end) ==="
+date -u
+echo "=== gcloud auth list (end) ==="
+gcloud auth list --filter=status:ACTIVE --format='value(account)'

@@ -1,0 +1,35 @@
+=== date -u (start) ===
+Tue Jul 28 16:10:56 UTC 2026
+=== gcloud auth list (start) ===
+ilyasbazarov4@gmail.com
+token length (not value): 40
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+--- CANDIDATE: profit-bysalesreturn (возвраты покупателей) ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/profit/bysalesreturn?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00
+HTTP 404, bytes=196
+top-level keys: ['errors']
+snippet: {"errors": [{"error": "Неопознанный путь: https://api.moysklad.ru/api/remap/1.2/report/profit/bysalesreturn", "code": 1002, "moreInfo": "https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#error_1002"}]}
+
+--- CANDIDATE: money-turnover ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/money/turnover?momentFrom=2026-05-01 00:00:00&momentTo=2026-06-01 00:00:00
+HTTP 404, bytes=190
+top-level keys: ['errors']
+snippet: {"errors": [{"error": "Неопознанный путь: https://api.moysklad.ru/api/remap/1.2/report/money/turnover", "code": 1002, "moreInfo": "https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#error_1002"}]}
+
+--- CANDIDATE: counterparty-debt-all ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/counterparty/debt/all
+HTTP 404, bytes=197
+top-level keys: ['errors']
+snippet: {"errors": [{"error": "Неопознанный путь: https://api.moysklad.ru/api/remap/1.2/report/counterparty/debt/all", "code": 1002, "moreInfo": "https://dev.moysklad.ru/doc/api/remap/1.2/#/errors#error_1002"}]}
+
+--- CANDIDATE: entity-invoiceout (level ii, для AR) ---
+URL: https://api.moysklad.ru/api/remap/1.2/entity/invoiceout?limit=1&expand=agent,state
+HTTP 200, bytes=15054
+top-level keys: ['context', 'meta', 'rows']
+snippet: {"context": {"employee": {"meta": {"href": "https://api.moysklad.ru/api/remap/1.2/context/employee", "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata", "type": "employee", "mediaType": "application/json"}}}, "meta": {"href": "https://api.moysklad.ru/api/remap/1.2/entity/invoiceout?limit=1&expand=agent,state", "type": "invoiceout", "mediaType": "application/json", "size": 4456, "limit": 1, "offset": 0, "nextHref": "https://api.moysklad.ru/api/remap/1.2/entity/invoiceout?expand=agent%2Cstate&limit=1&offset=1"}, "rows": [{"meta": {"href": "https://api.moysklad.ru/ap
+=== date -u (end) ===
+Tue Jul 28 16:11:01 UTC 2026
+=== gcloud auth list (end) ===
+ilyasbazarov4@gmail.com
