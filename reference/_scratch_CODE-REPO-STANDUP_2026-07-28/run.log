@@ -1,0 +1,85 @@
+Tue Jul 28 04:41:29 PM UTC 2026
+Credentialed Accounts
+
+ACTIVE: *
+ACCOUNT: ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== существование каталога ===
+total 52
+drwxrwxr-x  4 ilyasbazarov4 ilyasbazarov4 4096 Jul 14 17:09 .
+drwxr-x--- 37 ilyasbazarov4 ilyasbazarov4 4096 Jul 28 16:39 ..
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4  504 Jun 25 09:13 .gcloudignore
+drwxrwxr-x  7 ilyasbazarov4 ilyasbazarov4 4096 Jul 28 16:40 .git
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4 6550 Jul 20 15:16 main.py
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4 6548 Jun 25 08:25 main.py.bak
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4 6560 Jul 14 17:09 main.py.pre-e1t3-mech-fx.bak
+-rw-r--r--  1 ilyasbazarov4          1001 2615 Jun 25 08:24 patch_main_finance.py
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4 4096 Jul 20 15:16 __pycache__
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   75 Jun 18 20:14 requirements.txt
+=== существование .git ===
+.git ЕСТЬ
+--- git status ---
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   main.py
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gcloudignore
+	__pycache__/
+	main.py.bak
+	main.py.pre-e1t3-mech-fx.bak
+	patch_main_finance.py
+	requirements.txt
+
+--- git log (полная история, по одной строке на коммит) ---
+--- git log -1 (последний коммит целиком) ---
+fatal: your current branch 'master' does not have any commits yet
+git log -1 ПУСТ ИЛИ УПАЛ
+--- git rev-list --count --all (число коммитов) ---
+0
+--- git remote -v ---
+--- git branch -a ---
+--- diff .git-состояния HEAD против прод-снапшота main.py (если файл там есть) ---
+0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59  /home/ilyasbazarov4/cf-finance/main.py
+=== содержимое каталога верхнего уровня (на случай нестандартной структуры) ===
+/home/ilyasbazarov4/cf-finance
+/home/ilyasbazarov4/cf-finance/patch_main_finance.py
+/home/ilyasbazarov4/cf-finance/.gcloudignore
+/home/ilyasbazarov4/cf-finance/main.py.bak
+/home/ilyasbazarov4/cf-finance/__pycache__
+/home/ilyasbazarov4/cf-finance/__pycache__/main.cpython-312.pyc
+/home/ilyasbazarov4/cf-finance/requirements.txt
+/home/ilyasbazarov4/cf-finance/main.py.pre-e1t3-mech-fx.bak
+/home/ilyasbazarov4/cf-finance/.git
+/home/ilyasbazarov4/cf-finance/.git/description
+/home/ilyasbazarov4/cf-finance/.git/objects
+/home/ilyasbazarov4/cf-finance/.git/config
+/home/ilyasbazarov4/cf-finance/.git/refs
+/home/ilyasbazarov4/cf-finance/.git/branches
+/home/ilyasbazarov4/cf-finance/.git/HEAD
+/home/ilyasbazarov4/cf-finance/.git/info
+/home/ilyasbazarov4/cf-finance/.git/index
+/home/ilyasbazarov4/cf-finance/.git/hooks
+/home/ilyasbazarov4/cf-finance/main.py
+Credentialed Accounts
+
+ACTIVE: *
+ACCOUNT: ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Tue Jul 28 04:41:31 PM UTC 2026
