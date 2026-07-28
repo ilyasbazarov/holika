@@ -88,4 +88,3 @@ GROUP BY
   s.agent_id, s.agent_name, s.project_id, s.project_name,
   s.sales_channel_id, s.sales_channel_name,
   fx.rate_kgs_per_usd
-
