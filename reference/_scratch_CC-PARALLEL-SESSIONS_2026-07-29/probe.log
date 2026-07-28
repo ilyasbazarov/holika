@@ -1,0 +1,121 @@
+=== ANCHOR START ===
+Tue Jul 28 18:56:27 UTC 2026
+ROOT: /Users/ilyasbazarov/Desktop/msklad_project/holika
+
+=== G1: версия инструмента и режим деревьев ===
+2.1.220 (Claude Code)
+--- git worktree list ---
+/Users/ilyasbazarov/Desktop/msklad_project/holika  0251c36 [main]
+--- .claude/worktrees в gitignore? ---
+.git/info/exclude:11:**/.claude/worktrees/	.claude/worktrees/probe
+
+=== G1b: расхождение локального main и origin/main (ловушка baseRef) ===
+0251c36e67e83fd5ca7a495007cb7573d43346b4
+main
+локальных коммитов впереди origin/main:
+0
+--- git status --short ---
+?? .DS_Store
+?? reference/_scratch_CC-PARALLEL-SESSIONS_2026-07-29/
+
+=== G2: достижимость хука из связанного дерева ===
+Preparing worktree (new branch 'probe/hook-check')
+HEAD is now at 0251c36 docs: Q-4 STATE_PATCH — переприменён после гонки с параллельной сессией PARITY-REGISTRY
+--- git-dir и общий git-dir ---
+/Users/ilyasbazarov/Desktop/msklad_project/holika/.git/worktrees/_holika_probe_hook
+/Users/ilyasbazarov/Desktop/msklad_project/holika/.git
+--- что лежит в hooks/pre-commit ---
+lrwxr-xr-x  1 ilyasbazarov  staff  28 Jul 27 19:21 /Users/ilyasbazarov/Desktop/msklad_project/holika/.git/hooks/pre-commit -> ../../tools/hooks/pre-commit
+../../tools/hooks/pre-commit
+--- заведомо провальный коммит: правка 07_STATE без updated_at ---
+PRE-COMMIT FAIL: 07_STATE.md правится без обновления updated_at
+RC КОММИТА: 1
+--- уборка пробного дерева ---
+Deleted branch probe/hook-check (was 0251c36).
+--- состояние основного дерева после уборки ---
+?? .DS_Store
+?? reference/_scratch_CC-PARALLEL-SESSIONS_2026-07-29/
+
+=== G3: git-команды из транскриптов сессий ===
+BASE: /Users/ilyasbazarov/.claude/projects exists: True
+файлов транскриптов: 9
+---
+TS   : 2026-07-28T16:22:50.150Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/515d9bdc-d679-427b-a84d-4fe48a5e0b1e.jsonl
+CMD  : git add briefs/CODE-REPO-STANDUP-D1.md reference/_scratch_PARITY-REGISTRY_2026-07-28/ && git status
+---
+TS   : 2026-07-28T16:23:13.302Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/515d9bdc-d679-427b-a84d-4fe48a5e0b1e.jsonl
+CMD  : git commit -m "$(cat <<'EOF' | docs: бриф CODE-REPO-STANDUP шаг 1 (discovery .git) + провенанс сессии PARITY-REGISTRY |  | - briefs/CODE-REPO-STANDUP-D1.md: класс A, discovery локального .git в |   /home/ilyasbazarov4/cf-finance (ADR-017 §5, ADR-065); решение seed-from-git |   vs seed-from-zip вне scope шага. | - reference/_scratch_PARITY-REGISTRY_2026-07-28/: рабочие скрипты и логи |   прогонов discovery repor
+---
+TS   : 2026-07-28T07:17:07.757Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/5e4e79a4-f604-46f4-b31d-2789b2d68853.jsonl
+CMD  : git add 07_STATE.md 07_ARCHIVE.md && git status
+---
+TS   : 2026-07-28T07:17:15.600Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/5e4e79a4-f604-46f4-b31d-2789b2d68853.jsonl
+CMD  : git commit -m "$(cat <<'EOF' | docs: state patch 2026-07-28 FX-MAY-WINDOW |  | Тренировочный прогон FX-MAY-WINDOW исполнен (ADR-071 §1/ADR-073 §7): D2/D3 | установлены фактом, D1 — гэп наблюдения (нет ридера .xls), граница | ADR-059 §7 пересчитана ([87.2319; 87.45], вес ~292.56 USD). Q-70 сужен, | не закрыт. Строка FX-MAY-WINDOW READY -> DONE, перенесена в 07_ARCHIVE.md | (ADR-064). NEW_DECISIONS = нет. |  | Co-Aut
+---
+TS   : 2026-07-28T07:17:20.673Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/5e4e79a4-f604-46f4-b31d-2789b2d68853.jsonl
+CMD  : git commit -m "docs: state patch 2026-07-28 FX-MAY-WINDOW test" ; echo "EXIT: $?"
+---
+TS   : 2026-07-28T07:17:27.837Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/5e4e79a4-f604-46f4-b31d-2789b2d68853.jsonl
+CMD  : git commit -m "docs: state patch 2026-07-28 FX-MAY-WINDOW test" 2>&1; echo "EXIT: $?"
+---
+TS   : 2026-07-28T07:21:19.323Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/5e4e79a4-f604-46f4-b31d-2789b2d68853.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika | git commit --no-verify -m "$(cat <<'EOF' | docs: state patch 2026-07-28 FX-MAY-WINDOW |  | Тренировочный прогон FX-MAY-WINDOW исполнен (ADR-071 §1/ADR-073 §7): D2/D3 | установлены фактом, D1 - геп наблюдения (нет ридера .xls), граница | ADR-059 §7 пересчитана ([87.2319; 87.45], вес ~292.56 USD). Q-70 сужен, | не закрыт. Строка FX-MAY-WINDOW READY -> DONE, п
+---
+TS   : 2026-07-28T17:38:09.409Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/c5cedffc-3ee8-4ca5-ac78-531007736dc4.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika && git add 07_STATE.md reference/code_repo_standup_d1_2026-07-28.md reference/_scratch_CODE-REPO-STANDUP_2026-07-28/ && git status
+---
+TS   : 2026-07-28T17:38:19.287Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/c5cedffc-3ee8-4ca5-ac78-531007736dc4.jsonl
+CMD  : git commit -m "$(cat <<'EOF' | docs: CODE-REPO-STANDUP шаг 1 (discovery .git cf-finance) — .git есть, 0 коммитов |  | Локальный .git в /home/ilyasbazarov4/cf-finance/ существует (git init), но не несёт | ни одного коммита; remote не задан; staged-копия main.py устарела относительно | рабочей копии. sha256 main.py на диске подтверждён равным задеплоенной ревизии | cf-finance-00012-cik. Развилка seed-from-git/s
+---
+TS   : 2026-07-28T17:50:43.366Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/3c511694-383b-4eda-b4ef-10425f748e1e.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika | git add 02_ERP_CONTRACTS.md 07_STATE.md 07_ARCHIVE.md reference/schema_dump_2026-07-28.md reference/_scratch_Q-4_2026-07-28/ | git status --short
+---
+TS   : 2026-07-28T17:50:59.680Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/3c511694-383b-4eda-b4ef-10425f748e1e.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika | git commit -m "$(cat <<'EOF' | docs: Q-4 — дамп схем core/marts/audit/stg_msklad + патч 02_ERP_CONTRACTS/07_STATE |  | Полный дамп INFORMATION_SCHEMA.COLUMNS (40 таблиц, 542 колонки, 4 датасета) в | reference/schema_dump_2026-07-28.md. core.fact_purchases несёт полную схему | (GAP снят), fact_returns/fact_inventory/dim_employees и датасет audit (7 таблиц)
+---
+TS   : 2026-07-28T17:57:50.664Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/3c511694-383b-4eda-b4ef-10425f748e1e.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika | git add 07_STATE.md | git status --short | git commit -m "$(cat <<'EOF' | docs: Q-4 STATE_PATCH — переприменён после гонки с параллельной сессией PARITY-REGISTRY |  | Коммит bfd067e (Q-4) попал в гонку по 07_STATE.md с параллельной сессией | PARITY-REGISTRY, работавшей в этом же рабочем дереве в то же время; их | догоняющий коммит f189474 восстановил свою час
+---
+TS   : 2026-07-28T17:58:37.434Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/3c511694-383b-4eda-b4ef-10425f748e1e.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika | git add 07_STATE.md 07_ARCHIVE.md | git status --short | git commit -m "$(cat <<'EOF' | docs: Q-4 STATE_PATCH — переприменён после гонки с параллельной сессией PARITY-REGISTRY |  | Коммит bfd067e (Q-4) попал в гонку по 07_STATE.md с параллельной сессией | PARITY-REGISTRY, работавшей в этом же рабочем дереве в то же время; их | догоняющий коммит f189474 восста
+---
+TS   : 2026-07-28T11:43:36.116Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/1119ab51-fe40-4df1-8a06-f1d77f55681a.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika | git add 03_PIPELINE_SPEC.md | git commit -m "$(cat <<'EOF' | docs: ADR-062 patch 03 — граница деградации курса (FX-POLICY-EXPENSES) |  | Замер шага 1 брифа FX-POLICY-EXPENSES внесён в §политика исходящей | FX-конвертации как документированная граница деградации (ADR-062 §6): | 1027 платежей в core.fact_payments раньше min_date таблицы курсов | (2024-04-15 vs 
+---
+TS   : 2026-07-28T11:43:42.030Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/1119ab51-fe40-4df1-8a06-f1d77f55681a.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika | git add 07_STATE.md 07_ARCHIVE.md | git commit -m "$(cat <<'EOF' | docs: state patch 2026-07-28 FX-POLICY-EXPENSES |  | Закрыты строки FX-POLICY-EXPENSES и E1-T1-CUTOVER-VERIFY, дословно | перенесены в 07_ARCHIVE.md (ADR-064). Cutover sq_marts_expenses | исполнен 2026-07-28T11:38:21Z в сессии Claude Code (пилот ADR-066/ | ADR-070 §2, роль executor). Текущий ф
+---
+TS   : 2026-07-28T11:43:57.700Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/1119ab51-fe40-4df1-8a06-f1d77f55681a.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika | git add reference/sql/sq_marts_expenses.sql reference/sql/sq_marts_expenses_pre_fx_policy_2026-07-28.sql reference/fx_policy_expenses_2026-07-28.md | git commit -m "$(cat <<'EOF' | docs: cutover sq_marts_expenses — курс по дате операции (FX-POLICY-EXPENSES) |  | Снапшот reference/sql/sq_marts_expenses.sql приведён в соответствие | живому конфигу после cut
+---
+TS   : 2026-07-28T17:48:27.713Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/b00b6e7b-ba4d-41a0-920b-cfce671e24e6.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika | git add 06_DECISIONS_LOG.md 06_INDEX.md reference/architect_review_queue_2026-07-28-1.md | git diff --cached --stat | echo --- | git status
+---
+TS   : 2026-07-28T17:52:57.815Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/b00b6e7b-ba4d-41a0-920b-cfce671e24e6.jsonl
+CMD  : cd /Users/ilyasbazarov/Desktop/msklad_project/holika | date -u | gcloud auth list --filter=status:ACTIVE --format='value(account)' 2>&1 | git commit -m "$(cat <<'EOF' | docs: STATE_PATCH PARITY-REGISTRY (updated_at + строка ADR-078/review-queue) |  | ADR-078 и review-очередь этой сессии ушли в чужой коммит bfd067e | (параллельная сессия Q-4 закоммитила по всему рабочему дереву, включая | застейдженные этой сессие
+---
+TS   : 2026-07-28T16:21:35.116Z
+SESS : -Users-ilyasbazarov-Desktop-msklad-project-holika/15df53fe-d169-480c-accf-77416aa63d4b.jsonl
+CMD  : git add briefs/Q-4.md && git commit -m "$(cat <<'EOF' | docs: бриф Q-4 (дамп схем core/marts/audit/stg_msklad в /reference) |  | Класс A, мандат постоянный (07_STATE §Мандат Claude Code). Закрывает | GAP core.fact_purchases (неполная схема), fact_returns, fact_inventory, | dim_employees, датасет audit. |  | Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com> | EOF | )" | git status --short
+ВСЕГО СОВПАДЕНИЙ: 19
+
+=== ANCHOR END ===
+Tue Jul 28 18:56:30 UTC 2026
