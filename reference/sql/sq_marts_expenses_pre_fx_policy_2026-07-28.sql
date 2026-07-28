@@ -1,4 +1,10 @@
-WITH src AS (
+WITH fx AS (
+  SELECT rate_kgs_per_usd
+  FROM `msklad-bi-prod.core.dim_fx_rates`
+  ORDER BY date DESC
+  LIMIT 1
+),
+src AS (
   SELECT
     p.moment,
     p.payment_type,
@@ -72,12 +78,9 @@ SELECT
   s.sales_channel_name,
   COUNT(*)                                        AS payment_count,
   ROUND(SUM(s.sum_kgs), 2)                        AS total_sum_kgs,
-  ROUND(SUM(s.sum_kgs) / COALESCE(fx.rate_kgs_per_usd,
-    (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`
-     ORDER BY date DESC LIMIT 1)), 2)             AS total_sum_usd
+  ROUND(SUM(s.sum_kgs) / fx.rate_kgs_per_usd, 2)  AS total_sum_usd
 FROM src s
-LEFT JOIN `msklad-bi-prod.core.dim_fx_rates` fx
-  ON fx.date = s.moment
+LEFT JOIN fx ON TRUE
 WHERE s.moment IS NOT NULL
 GROUP BY
   s.moment, month_start, week_start, year_num, year_month,
