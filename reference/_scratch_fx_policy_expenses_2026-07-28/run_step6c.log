@@ -1,0 +1,23 @@
+=== ANCHOR START ===
+Tue Jul 28 11:38:07 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### Read-back после подмены (read-only) ###
+OK   query текст совпадает с sq_marts_expenses_new.sql
+OK   destination_table_name_template не изменился
+OK   write_disposition не изменился
+OK   partitioning_field не изменился
+OK   nextRunTime не изменился
+OK   scheduleOptionsV2 не изменился
+OK   state не изменился (SUCCEEDED)
+OK   ownerInfo не изменился
+OK   destinationDatasetId не изменился
+
+query bytes after: 3179
+ВСЕ ПРОВЕРКИ: OK
+
+=== ANCHOR END ===
+Tue Jul 28 11:38:10 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR END END ===

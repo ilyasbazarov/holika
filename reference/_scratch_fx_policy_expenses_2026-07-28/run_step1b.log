@@ -1,0 +1,149 @@
+=== ANCHOR START ===
+Tue Jul 28 08:57:39 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### Уточнение: строки без курса в апреле-2025, разбивка по дате (payments) ###
+[
+  {
+    "moment": "2025-04-01", 
+    "rows_without_fx": "11"
+  }, 
+  {
+    "moment": "2025-04-02", 
+    "rows_without_fx": "12"
+  }, 
+  {
+    "moment": "2025-04-03", 
+    "rows_without_fx": "18"
+  }, 
+  {
+    "moment": "2025-04-04", 
+    "rows_without_fx": "9"
+  }, 
+  {
+    "moment": "2025-04-05", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "moment": "2025-04-06", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "moment": "2025-04-07", 
+    "rows_without_fx": "18"
+  }, 
+  {
+    "moment": "2025-04-08", 
+    "rows_without_fx": "6"
+  }, 
+  {
+    "moment": "2025-04-09", 
+    "rows_without_fx": "6"
+  }, 
+  {
+    "moment": "2025-04-11", 
+    "rows_without_fx": "4"
+  }, 
+  {
+    "moment": "2025-04-13", 
+    "rows_without_fx": "2"
+  }, 
+  {
+    "moment": "2025-04-14", 
+    "rows_without_fx": "15"
+  }, 
+  {
+    "moment": "2025-04-15", 
+    "rows_without_fx": "16"
+  }, 
+  {
+    "moment": "2025-04-17", 
+    "rows_without_fx": "11"
+  }, 
+  {
+    "moment": "2025-04-18", 
+    "rows_without_fx": "15"
+  }, 
+  {
+    "moment": "2025-04-21", 
+    "rows_without_fx": "18"
+  }, 
+  {
+    "moment": "2025-04-22", 
+    "rows_without_fx": "9"
+  }, 
+  {
+    "moment": "2025-04-23", 
+    "rows_without_fx": "6"
+  }, 
+  {
+    "moment": "2025-04-24", 
+    "rows_without_fx": "5"
+  }, 
+  {
+    "moment": "2025-04-25", 
+    "rows_without_fx": "4"
+  }, 
+  {
+    "moment": "2025-04-28", 
+    "rows_without_fx": "3"
+  }
+]
+
+### Уточнение: строки без курса в апреле-2025, разбивка по дате (loss) ###
+[
+  {
+    "d": "2025-04-03", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "d": "2025-04-15", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "d": "2025-04-21", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "d": "2025-04-22", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "d": "2025-04-25", 
+    "rows_without_fx": "1"
+  }
+]
+
+### Уточнение: строки без курса в апреле-2025, разбивка по дате (commissionreportin) ###
+[
+  {
+    "d": "2025-04-01", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "d": "2025-04-08", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "d": "2025-04-14", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "d": "2025-04-21", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "d": "2025-04-24", 
+    "rows_without_fx": "1"
+  }, 
+  {
+    "d": "2025-04-28", 
+    "rows_without_fx": "1"
+  }
+]
+
+=== ANCHOR END ===
+Tue Jul 28 08:57:48 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR END END ===

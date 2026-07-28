@@ -1,0 +1,65 @@
+=== ANCHOR START ===
+Tue Jul 28 11:39:07 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### Статус ручного прогона по job_id (regoin-asia-east1) ###
+[
+  {
+    "creation_time": "2026-07-28 11:38:21", 
+    "end_time": "2026-07-28 11:38:23", 
+    "error_result": null, 
+    "job_id": "scheduled_query_6a68ac72-0000-2448-a943-f4f5e8096748", 
+    "state": "DONE"
+  }
+]
+
+### Май-2026 на проде после ручной пересборки новым SQL ###
+[
+  {
+    "may_kgs_sum": "1.02329032E7", 
+    "may_rows": "149", 
+    "may_usd_sum": "117053.73"
+  }
+]
+
+### Схема прод-таблицы после пересборки (17 колонок?) ###
+columns: 17
+moment
+month_start
+week_start
+year_num
+year_month
+payment_type
+expense_item_id
+expense_item_name
+agent_id
+agent_name
+project_id
+project_name
+sales_channel_id
+sales_channel_name
+payment_count
+total_sum_kgs
+total_sum_usd
+
+### payment_type — новые значения видны? ###
+[
+  {
+    "payment_type": "cashout"
+  }, 
+  {
+    "payment_type": "commission"
+  }, 
+  {
+    "payment_type": "loss"
+  }, 
+  {
+    "payment_type": "paymentout"
+  }
+]
+
+=== ANCHOR END ===
+Tue Jul 28 11:39:18 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR END END ===

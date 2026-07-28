@@ -1,0 +1,204 @@
+########## ЯКОРЬ (начало) ##########
+Mon Jul 27 15:35:56 UTC 2026
+ilyasbazarov4@gmail.com
+msklad-bi-prod
+
+########## 1. ОТКАТНЫЙ ТЕКСТ: снимаем ДЕЙСТВУЮЩИЙ запрос из живой конфигурации ##########
+   откатный текст сохранён: /Users/ilyasbazarov/holika_step1_20260727T153556Z/rollback_query.sql (1359 байт)
+   nextRunTime ДО правки: 2026-07-28T11:10:00Z
+   scheduleOptionsV2 ДО правки: {'timeBasedSchedule': {}}
+
+   ----- ДЕЙСТВУЮЩИЙ ЗАПРОС (начало) -----
+
+SELECT
+  p.moment,
+  DATE_TRUNC(p.moment, MONTH)                     AS month_start,
+  DATE_TRUNC(p.moment, WEEK(SATURDAY))             AS week_start,
+  EXTRACT(YEAR FROM p.moment)                      AS year_num,
+  FORMAT_DATE('%Y-%m', p.moment)                   AS year_month,
+  p.payment_type,
+  p.expense_item_id,
+  COALESCE(p.expense_item_name, 'Не указана')      AS expense_item_name,
+  p.agent_id,
+  COALESCE(p.agent_name, 'Не указан')              AS agent_name,
+  p.project_id,
+  COALESCE(p.project_name, 'Не указан')            AS project_name,
+  p.sales_channel_id,
+  COALESCE(p.sales_channel_name, 'Не указан')      AS sales_channel_name,
+  COUNT(*)                                         AS payment_count,
+  ROUND(SUM(p.sum_kgs), 2)                         AS total_sum_kgs,
+  ROUND(SUM(p.sum_kgs) / fx.rate_kgs_per_usd, 2)  AS total_sum_usd
+FROM `msklad-bi-prod.core.fact_payments` p
+LEFT JOIN (
+  SELECT rate_kgs_per_usd
+  FROM `msklad-bi-prod.core.dim_fx_rates`
+  ORDER BY date DESC
+  LIMIT 1
+) fx ON TRUE
+WHERE p.moment IS NOT NULL
+GROUP BY
+  p.moment, month_start, week_start, year_num, year_month,
+  p.payment_type, p.expense_item_id, p.expense_item_name,
+  p.agent_id, p.agent_name, p.project_id, p.project_name,
+  p.sales_channel_id, p.sales_channel_name,
+  fx.rate_kgs_per_usd
+ORDER BY p.moment DESC
+
+   ----- ДЕЙСТВУЮЩИЙ ЗАПРОС (конец) -----
+
+########## 2. ТИПЫ КОЛОНКИ moment В ТРЁХ ИСТОЧНИКАХ ##########
+   (в проверяемом тексте у loss и commission стоит CAST(... AS DATE), у payments — нет;
+    надо увидеть, что там за типы на самом деле)
+   core.fact_payments                     moment: DATE  mode=None
+   core.fact_loss                         moment: TIMESTAMP  mode=None
+   core.fact_commissionreportin           moment: TIMESTAMP  mode=None
+
+########## 3. СХЕМЫ marts.expenses И marts.expenses_staging — ПОКОЛОНОЧНО ##########
+   колонок: прод=17 staging=17
+    #  ПРОД                             STAGING                          совпадение
+    1  moment DATE                      moment DATE                      OK
+    2  month_start DATE                 month_start DATE                 OK
+    3  week_start DATE                  week_start DATE                  OK
+    4  year_num INTEGER                 year_num INTEGER                 OK
+    5  year_month STRING                year_month STRING                OK
+    6  payment_type STRING              payment_type STRING              OK
+    7  expense_item_id STRING           expense_item_id STRING           OK
+    8  expense_item_name STRING         expense_item_name STRING         OK
+    9  agent_id STRING                  agent_id STRING                  OK
+   10  agent_name STRING                agent_name STRING                OK
+   11  project_id STRING                project_id STRING                OK
+   12  project_name STRING              project_name STRING              OK
+   13  sales_channel_id STRING          sales_channel_id STRING          OK
+   14  sales_channel_name STRING        sales_channel_name STRING        OK
+   15  payment_count INTEGER            payment_count INTEGER            OK
+   16  total_sum_kgs FLOAT              total_sum_kgs FLOAT              OK
+   17  total_sum_usd FLOAT              total_sum_usd FLOAT              OK
+   ИТОГ: схемы идентичны по составу, порядку и типам
+
+########## 4. МАЙ-2026 НА STAGING: ПОСТАТЕЙНО ##########
++-----------------------------------+------------+-----+
+|         expense_item_name         |  sum_kgs   | cnt |
++-----------------------------------+------------+-----+
+| Вывод прибыли                     | 4246163.66 |  25 |
+| Налоги и сборы                    |  2168917.6 |  22 |
+| Маркетинг и реклама               | 1026901.54 |  15 |
+| Зарплата                          |   853962.0 |  27 |
+| Расходы маркетплейсов             |  580674.98 |   8 |
+| Списания                          |  411838.94 |   2 |
+| Бухгалтерские услуги              |   192250.0 |   4 |
+| Банк (комиссия)                   |  191459.01 | 105 |
+| Мой Склад                         |  172671.65 |   8 |
+| Бонусы                            |   100843.0 |   3 |
+| Прочие расходы                    |   83985.29 |  11 |
+| Нотариальные и юридические услуги |    58550.0 |   3 |
+| Интернет и связь                  |    53780.0 |   6 |
+| Техника                           |    31000.0 |   1 |
+| Охрана                            |    25228.0 |   1 |
+| Топливо                           |    11070.0 |   3 |
+| Покупка основных средств          |     7786.0 |   1 |
+| Офисные расходы                   |     6576.0 |   3 |
+| Логистика                         |     4386.0 |   8 |
+| Ремонт оборудования               |     3000.0 |   1 |
+| Коммунальные услуги               |    1859.53 |   2 |
++-----------------------------------+------------+-----+
+
+########## 5. МАЙ-2026 НА STAGING: АГРЕГАТЫ ДЛЯ СВЕРКИ С ЭТАЛОНОМ 10 232 903,20 ##########
++-----------------+--------------------+---------------+-----------+-----------+------------+----------+-------------------+
+| vsego_vse_stati | bez_peremescheniya | peremeschenie |  nalogi   | spisaniya | marketing  | prochie  | mp_plus_komissiya |
++-----------------+--------------------+---------------+-----------+-----------+------------+----------+-------------------+
+|    1.02329032E7 |       1.02329032E7 |           0.0 | 2168917.6 | 411838.94 | 1026901.54 | 83985.29 |         580674.98 |
++-----------------+--------------------+---------------+-----------+-----------+------------+----------+-------------------+
+
+########## 6. STAGING МИНУС ПРОД ПО МЕСЯЦАМ ##########
+   ВАЖНО: staging собран 2026-07-26T19:39Z, прод пересобран 2026-07-27T11:10Z.
+   Расхождение по свежим месяцам (июль) ожидаемо и означает разницу в дате сборки, а не дефект.
++---------+---------------+---------------+------------+
+|   ym    |    staging    |     prod      |   delta    |
++---------+---------------+---------------+------------+
+| 2024-04 |       11000.0 |       11000.0 |        0.0 |
+| 2024-05 |       54250.0 |       54250.0 |        0.0 |
+| 2024-06 |      195296.0 |      195296.0 |        0.0 |
+| 2024-07 |     182771.64 |      136477.0 |   46294.64 |
+| 2024-08 |     813865.26 |     222813.52 |  591051.74 |
+| 2024-09 |    1213039.69 |     407642.57 |  805397.12 |
+| 2024-10 |    3209300.02 |    2393630.61 |  815669.41 |
+| 2024-11 |    2774094.78 |    1581978.09 | 1192116.69 |
+| 2024-12 |     5704804.2 |    3601855.71 | 2102948.49 |
+| 2025-01 |    8772975.54 |    6694571.76 | 2078403.78 |
+| 2025-02 |    5845771.53 |    3316663.78 | 2529107.75 |
+| 2025-03 | 1.280561266E7 |    9720450.13 | 3085162.53 |
+| 2025-04 |    6671203.68 |    5521008.49 | 1150195.19 |
+| 2025-05 |    4463431.78 |    3414751.27 | 1048680.51 |
+| 2025-06 |    5077048.94 |    4586914.71 |  490134.23 |
+| 2025-07 |     791877.77 |     543467.78 |  248409.99 |
+| 2025-08 |    4870144.19 |     4048738.2 |  821405.99 |
+| 2025-09 |    5312762.04 |    5016245.33 |  296516.71 |
+| 2025-10 |    3554333.75 |    3420199.11 |  134134.64 |
+| 2025-11 |    5101296.21 |    4972490.87 |  128805.34 |
+| 2025-12 |    6680533.95 |    6025304.82 |  655229.13 |
+| 2026-01 |    5148613.86 |    4369922.12 |  778691.74 |
+| 2026-02 |     8865222.2 |    8713086.76 |  152135.44 |
+| 2026-03 |    8186867.66 |    7393599.65 |  793268.01 |
+| 2026-04 | 1.018699168E7 |    8851545.44 | 1335446.24 |
+| 2026-05 |  1.02329032E7 |    8600919.01 | 1631984.19 |
+| 2026-06 | 1.111822666E7 |    8763660.28 | 2354566.38 |
+| 2026-07 | 1.865174959E7 | 1.742465458E7 | 1227095.01 |
++---------+---------------+---------------+------------+
+
+########## 7. ЧТО ДАЛА ДЕЛЬТА: ТОЛЬКО НОВЫЕ ВЕТКИ, ПО МЕСЯЦАМ ##########
++------------+--------------+------------+
+| year_month | payment_type |  sum_kgs   |
++------------+--------------+------------+
+| 2024-07    | commission   |   46294.64 |
+| 2024-08    | commission   |  591051.74 |
+| 2024-09    | commission   |  805397.12 |
+| 2024-10    | commission   |  802601.44 |
+| 2024-10    | loss         |   13067.97 |
+| 2024-11    | commission   |  880673.77 |
+| 2024-11    | loss         |  311442.92 |
+| 2024-12    | commission   | 1860623.25 |
+| 2024-12    | loss         |  242325.24 |
+| 2025-01    | commission   | 1832166.12 |
+| 2025-01    | loss         |  246237.66 |
+| 2025-02    | commission   | 1242776.06 |
+| 2025-02    | loss         | 1286331.69 |
+| 2025-03    | commission   | 2539107.91 |
+| 2025-03    | loss         |  546054.62 |
+| 2025-04    | commission   |  999788.02 |
+| 2025-04    | loss         |  150407.17 |
+| 2025-05    | commission   |  889612.24 |
+| 2025-05    | loss         |  159068.27 |
+| 2025-06    | commission   |  329786.15 |
+| 2025-06    | loss         |  160348.08 |
+| 2025-07    | commission   |  211250.03 |
+| 2025-07    | loss         |   37159.96 |
+| 2025-08    | commission   |  198160.43 |
+| 2025-08    | loss         |  623245.56 |
+| 2025-09    | commission   |  155319.79 |
+| 2025-09    | loss         |  141196.92 |
+| 2025-10    | commission   |  120155.64 |
+| 2025-10    | loss         |    13979.0 |
+| 2025-11    | commission   |   90192.07 |
+| 2025-11    | loss         |   38613.27 |
+| 2025-12    | commission   |   454227.2 |
+| 2025-12    | loss         |  201001.93 |
+| 2026-01    | commission   |  617026.69 |
+| 2026-01    | loss         |  161665.05 |
+| 2026-02    | commission   |  152135.44 |
+| 2026-03    | commission   |  793268.01 |
+| 2026-04    | commission   |  418444.06 |
+| 2026-04    | loss         |  917002.18 |
+| 2026-05    | commission   |  438729.42 |
+| 2026-05    | loss         | 1193254.77 |
+| 2026-06    | commission   | 1774071.14 |
+| 2026-06    | loss         |  580495.24 |
+| 2026-07    | commission   | 1017864.87 |
+| 2026-07    | loss         |  209230.14 |
++------------+--------------+------------+
+
+########## ЯКОРЬ (конец) ##########
+Mon Jul 27 15:36:20 UTC 2026
+ilyasbazarov4@gmail.com
+
+########## КОМАНД ЗАПИСИ НЕТ: только show / query на чтение ##########
+ФАЙЛЫ (включая откатный текст): /Users/ilyasbazarov/holika_step1_20260727T153556Z

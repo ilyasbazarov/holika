@@ -1,0 +1,35 @@
+########## ЯКОРЬ (начало) ##########
+Mon Jul 27 15:53:20 UTC 2026
+ilyasbazarov4@gmail.com
+-- байт в конфигурации: 3114, ожидалось: 3114
+-- destination_table_name_template: было 'expenses' -> стало 'expenses'
+-- write_disposition: было 'WRITE_TRUNCATE' -> стало 'WRITE_TRUNCATE'
+-- partitioning_field: было '' -> стало ''
+-- nextRunTime: было '2026-07-28T11:10:00Z' -> стало '2026-07-28T11:10:00Z'
+-- scheduleOptionsV2: было {'timeBasedSchedule': {}} -> стало {'timeBasedSchedule': {}}
+-- scheduleOptions: было {} -> стало {}
+-- state: было 'SUCCEEDED' -> стало 'SUCCEEDED'
+-- destinationDatasetId: было 'marts' -> стало 'marts'
+-- dataSourceId: было 'scheduled_query' -> стало 'scheduled_query'
+-- ownerInfo: было {'email': 'ilyasbazarov4@gmail.com'} -> стало {'email': 'ilyasbazarov4@gmail.com'}
+
+-- итог:
+   OK   текст запроса совпадает с установочным байт в байт
+   OK   параметр destination_table_name_template не изменился
+   OK   параметр write_disposition не изменился
+   OK   параметр partitioning_field не изменился
+   OK   nextRunTime не изменился
+   OK   scheduleOptionsV2 не изменился
+   OK   scheduleOptions не изменился
+   OK   state не изменился
+   OK   destinationDatasetId не изменился
+   OK   dataSourceId не изменился
+   OK   ownerInfo не изменился
+   OK   ни один параметр не пропал
+
+ГОТОВО — можно запускать пересборку.
+
+########## ЯКОРЬ (конец) ##########
+Mon Jul 27 15:53:22 UTC 2026
+ilyasbazarov4@gmail.com
+########## КОМАНД ЗАПИСИ НЕТ ##########

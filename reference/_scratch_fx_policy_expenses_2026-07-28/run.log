@@ -1,0 +1,41 @@
+########## 1. ЯКОРЬ (начало) ##########
+-- date -u:
+Mon Jul 27 15:09:18 UTC 2026
+-- активный аккаунт:
+ilyasbazarov4@gmail.com
+-- проект:
+msklad-bi-prod
+
+########## 2. ЗАДАНИЯ BIGQUERY ЗА СУТКИ, ВСЕ ПОЛЬЗОВАТЕЛИ ##########
+-- окно с (epoch ms): 1785078559000
+FATAL Flags parsing error: Unknown command line flag 'all_users'. Did you mean: all_jobs ?
+Run 'bq.py help' to get help
+-- размер выдачи:        0 байт
+!! ПАРСИНГ НЕ УДАЛСЯ: Expecting value: line 1 column 1 (char 0) -- это гэп наблюдения, не 'заданий нет'
+
+########## 3. РАСПИСАНИЯ ДВУХ TRANSFERCONFIG ##########
+-- размер листинга конфигураций:    49678 байт
+-- конфигураций в листинге: 13
+   6a22a243-0000-20fd-a458-883d24f4cad4 -> projects/420804682491/locations/asia-east1/transferConfigs/6a22a243-0000-20fd-a458-883d24f4cad4
+   6a23f3ea-0000-2952-853d-582429be7ecc -> projects/420804682491/locations/asia-east1/transferConfigs/6a23f3ea-0000-2952-853d-582429be7ecc
+
+-- bq show --transfer_config #1 : projects/420804682491/locations/asia-east1/transferConfigs/6a22a243-0000-20fd-a458-883d24f4cad4
+   displayName: sq_marts_expenses
+   schedule: (поля в выдаче нет)
+   scheduleOptions: {}
+   nextRunTime: 2026-07-28T11:10:00Z
+   state: SUCCEEDED
+   disabled: (поля в выдаче нет)
+   destinationDatasetId: marts
+   dataSourceId: scheduled_query
+   updateTime: 2026-06-05T11:10:23.201634Z
+   userId: 8522307959247193051
+
+########## 4. ЯКОРЬ (конец) ##########
+-- date -u:
+Mon Jul 27 15:09:25 UTC 2026
+-- активный аккаунт:
+ilyasbazarov4@gmail.com
+
+########## КОМАНД ЗАПИСИ В СКРИПТЕ НЕТ: только ls / show / select-free чтение ##########
+СЫРЫЕ ВЫГРУЗКИ ЛЕЖАТ ЗДЕСЬ: /Users/ilyasbazarov/holika_cadence_20260727T150918Z

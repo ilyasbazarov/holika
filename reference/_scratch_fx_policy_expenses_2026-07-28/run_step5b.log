@@ -1,0 +1,9 @@
+=== ANCHOR START ===
+Tue Jul 28 11:28:54 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### (1) Автоматический прогон sq_marts_expenses сегодня, регион asia-east1 ###
+BigQuery error in query operation: Error processing job 'msklad-bi-
+prod:bqjob_r6d3eb6ae874eb907_0000019fa87c251c_1': Not found: Dataset msklad-bi-
+prod:asia-east1.INFORMATION_SCHEMA was not found in location asia-east1

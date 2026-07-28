@@ -1,0 +1,20 @@
+=== ANCHOR START ===
+Tue Jul 28 11:27:56 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### (1) Автоматический прогон sq_marts_expenses сегодня, слот ~11:10 UTC ###
+[]
+
+### (2) Май-2026 на проде (marts.expenses) против эталона 10 232 903,20 ###
+[
+  {
+    "gap_vs_oracle": "0.0", 
+    "may_kgs_sum": "1.02329032E7"
+  }
+]
+
+=== ANCHOR END ===
+Tue Jul 28 11:28:05 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR END END ===

@@ -1,0 +1,28 @@
+########## ЯКОРЬ ##########
+Mon Jul 27 15:49:11 UTC 2026
+-- проверки установочного текста:
+   OK   обёртка CREATE удалена
+   OK   текст начинается с WITH fx AS
+   OK   три ветки источников
+   OK   есть fact_payments
+   OK   есть fact_loss
+   OK   есть fact_commissionreportin
+   OK   есть фильтр 4 системных статей
+   OK   нет записи в expenses_staging
+   байт: 3114
+
+-- параметры ЖИВОЙ конфигурации (что там сейчас, кроме самого запроса):
+   destination_table_name_template: 'expenses'
+   partitioning_field: ''
+   query: <текст запроса, 1359 байт>
+   write_disposition: 'WRITE_TRUNCATE'
+
+-- сохранено:
+   /Users/ilyasbazarov/holika_newsql_20260727T153004Z/install_query.sql
+   /Users/ilyasbazarov/holika_newsql_20260727T153004Z/params.json  (ключей: 4, все прежние сохранены)
+
+ГОТОВО — можно вставлять команду подмены.
+
+########## ЯКОРЬ (конец) ##########
+Mon Jul 27 15:49:11 UTC 2026
+########## КОМАНД В ОБЛАКО НЕТ ##########

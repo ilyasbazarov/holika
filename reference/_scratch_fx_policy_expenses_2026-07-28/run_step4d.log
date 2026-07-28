@@ -1,0 +1,153 @@
+=== ANCHOR START ===
+Tue Jul 28 09:04:04 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### total_sum_usd по месяцам, второй прогон staging (после интервала + промежуточного шага) ###
+[
+  {
+    "rows_run2": "1", 
+    "usd_run2": "125.79", 
+    "year_month": "2024-04"
+  }, 
+  {
+    "rows_run2": "3", 
+    "usd_run2": "620.35", 
+    "year_month": "2024-05"
+  }, 
+  {
+    "rows_run2": "11", 
+    "usd_run2": "2233.23", 
+    "year_month": "2024-06"
+  }, 
+  {
+    "rows_run2": "10", 
+    "usd_run2": "2090.0", 
+    "year_month": "2024-07"
+  }, 
+  {
+    "rows_run2": "19", 
+    "usd_run2": "9306.62", 
+    "year_month": "2024-08"
+  }, 
+  {
+    "rows_run2": "22", 
+    "usd_run2": "13871.24", 
+    "year_month": "2024-09"
+  }, 
+  {
+    "rows_run2": "52", 
+    "usd_run2": "36698.72", 
+    "year_month": "2024-10"
+  }, 
+  {
+    "rows_run2": "71", 
+    "usd_run2": "31722.08", 
+    "year_month": "2024-11"
+  }, 
+  {
+    "rows_run2": "56", 
+    "usd_run2": "65235.04", 
+    "year_month": "2024-12"
+  }, 
+  {
+    "rows_run2": "104", 
+    "usd_run2": "100319.89", 
+    "year_month": "2025-01"
+  }, 
+  {
+    "rows_run2": "149", 
+    "usd_run2": "66847.06", 
+    "year_month": "2025-02"
+  }, 
+  {
+    "rows_run2": "154", 
+    "usd_run2": "146433.59", 
+    "year_month": "2025-03"
+  }, 
+  {
+    "rows_run2": "125", 
+    "usd_run2": "76285.96", 
+    "year_month": "2025-04"
+  }, 
+  {
+    "rows_run2": "141", 
+    "usd_run2": "51039.75", 
+    "year_month": "2025-05"
+  }, 
+  {
+    "rows_run2": "205", 
+    "usd_run2": "58071.18", 
+    "year_month": "2025-06"
+  }, 
+  {
+    "rows_run2": "77", 
+    "usd_run2": "9057.63", 
+    "year_month": "2025-07"
+  }, 
+  {
+    "rows_run2": "176", 
+    "usd_run2": "55706.84", 
+    "year_month": "2025-08"
+  }, 
+  {
+    "rows_run2": "193", 
+    "usd_run2": "60762.12", 
+    "year_month": "2025-09"
+  }, 
+  {
+    "rows_run2": "201", 
+    "usd_run2": "40648.49", 
+    "year_month": "2025-10"
+  }, 
+  {
+    "rows_run2": "190", 
+    "usd_run2": "58333.83", 
+    "year_month": "2025-11"
+  }, 
+  {
+    "rows_run2": "219", 
+    "usd_run2": "76398.51", 
+    "year_month": "2025-12"
+  }, 
+  {
+    "rows_run2": "101", 
+    "usd_run2": "58876.98", 
+    "year_month": "2026-01"
+  }, 
+  {
+    "rows_run2": "155", 
+    "usd_run2": "101374.75", 
+    "year_month": "2026-02"
+  }, 
+  {
+    "rows_run2": "151", 
+    "usd_run2": "93618.79", 
+    "year_month": "2026-03"
+  }, 
+  {
+    "rows_run2": "141", 
+    "usd_run2": "116494.58", 
+    "year_month": "2026-04"
+  }, 
+  {
+    "rows_run2": "149", 
+    "usd_run2": "117053.73", 
+    "year_month": "2026-05"
+  }, 
+  {
+    "rows_run2": "177", 
+    "usd_run2": "127149.03", 
+    "year_month": "2026-06"
+  }, 
+  {
+    "rows_run2": "128", 
+    "usd_run2": "222356.22", 
+    "year_month": "2026-07"
+  }
+]
+
+=== ANCHOR END ===
+Tue Jul 28 09:04:07 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR END END ===

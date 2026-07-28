@@ -1,0 +1,36 @@
+=== ANCHOR START ===
+Tue Jul 28 11:29:48 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### (1) Автоматический прогон sq_marts_expenses сегодня, 2026-07-28, слот ~11:10 UTC ###
+[
+  {
+    "creation_time": "2026-07-28 11:10:01", 
+    "end_time": "2026-07-28 11:10:02", 
+    "error_result": null, 
+    "job_id": "scheduled_query_6a68a256-0000-2448-a943-f4f5e8096748", 
+    "state": "DONE", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }
+]
+
+### (1б) Контроль инструмента: всего заданий с целью marts.expenses с 2026-07-13 (было 16 на прошлом замере, ожидание 17) ###
+[
+  {
+    "total_jobs": "17"
+  }
+]
+
+### (2) Май-2026 на проде (marts.expenses) против эталона 10 232 903,20 ###
+[
+  {
+    "gap_vs_oracle": "0.0", 
+    "may_kgs_sum": "1.02329032E7"
+  }
+]
+
+=== ANCHOR END ===
+Tue Jul 28 11:29:58 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR END END ===

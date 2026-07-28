@@ -1,0 +1,37 @@
+=== ANCHOR START ===
+Tue Jul 28 09:01:45 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### Когда прод marts.expenses пересобирался в последний раз (задания DTS по transferConfig) ###
+[]
+
+### core.fact_payments: строки за июль-2026, разбивка по _loaded_at (после/до вчерашней сборки прода) ###
+[
+  {
+    "loaded_after": "197", 
+    "loaded_before": "1", 
+    "total": "198"
+  }
+]
+
+### core.fact_loss + core.fact_commissionreportin: строки за июль-2026, разбивка по _loaded_at ###
+[
+  {
+    "loaded_after": "3", 
+    "loaded_before": "0", 
+    "src": "loss", 
+    "total": "3"
+  }, 
+  {
+    "loaded_after": "7", 
+    "loaded_before": "0", 
+    "src": "commission", 
+    "total": "7"
+  }
+]
+
+=== ANCHOR END ===
+Tue Jul 28 09:01:54 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR END END ===

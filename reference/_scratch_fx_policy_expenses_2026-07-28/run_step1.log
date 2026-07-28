@@ -1,0 +1,158 @@
+=== ANCHOR START ===
+Tue Jul 28 08:56:42 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### Замер 1: курс на последнюю дату таблицы core.dim_fx_rates ###
+[
+  {
+    "date": "2026-07-28", 
+    "rate_kgs_per_usd": "87.45"
+  }
+]
+
+### Замер 2: MIN(moment) по core.fact_payments против 2025-04-29 ###
+[
+  {
+    "fx_min_date": "2025-04-29", 
+    "min_moment": "2024-04-15", 
+    "payments_before_fx_min_date": "1027"
+  }
+]
+
+### Замер 3а: core.fact_payments — строки без курса на свою дату, по году-месяцу ###
+[
+  {
+    "rows_without_fx": "1", 
+    "year_month": "2024-04"
+  }, 
+  {
+    "rows_without_fx": "3", 
+    "year_month": "2024-05"
+  }, 
+  {
+    "rows_without_fx": "12", 
+    "year_month": "2024-06"
+  }, 
+  {
+    "rows_without_fx": "9", 
+    "year_month": "2024-07"
+  }, 
+  {
+    "rows_without_fx": "14", 
+    "year_month": "2024-08"
+  }, 
+  {
+    "rows_without_fx": "19", 
+    "year_month": "2024-09"
+  }, 
+  {
+    "rows_without_fx": "51", 
+    "year_month": "2024-10"
+  }, 
+  {
+    "rows_without_fx": "61", 
+    "year_month": "2024-11"
+  }, 
+  {
+    "rows_without_fx": "57", 
+    "year_month": "2024-12"
+  }, 
+  {
+    "rows_without_fx": "154", 
+    "year_month": "2025-01"
+  }, 
+  {
+    "rows_without_fx": "226", 
+    "year_month": "2025-02"
+  }, 
+  {
+    "rows_without_fx": "230", 
+    "year_month": "2025-03"
+  }, 
+  {
+    "rows_without_fx": "190", 
+    "year_month": "2025-04"
+  }
+]
+
+### Замер 3б: core.fact_loss — строки без курса на свою дату, по году-месяцу ###
+[
+  {
+    "rows_without_fx": "4", 
+    "year_month": "2024-10"
+  }, 
+  {
+    "rows_without_fx": "17", 
+    "year_month": "2024-11"
+  }, 
+  {
+    "rows_without_fx": "5", 
+    "year_month": "2024-12"
+  }, 
+  {
+    "rows_without_fx": "5", 
+    "year_month": "2025-01"
+  }, 
+  {
+    "rows_without_fx": "6", 
+    "year_month": "2025-02"
+  }, 
+  {
+    "rows_without_fx": "13", 
+    "year_month": "2025-03"
+  }, 
+  {
+    "rows_without_fx": "5", 
+    "year_month": "2025-04"
+  }
+]
+
+### Замер 3в: core.fact_commissionreportin — строки без курса на свою дату, по году-месяцу ###
+[
+  {
+    "rows_without_fx": "1", 
+    "year_month": "2024-07"
+  }, 
+  {
+    "rows_without_fx": "5", 
+    "year_month": "2024-08"
+  }, 
+  {
+    "rows_without_fx": "5", 
+    "year_month": "2024-09"
+  }, 
+  {
+    "rows_without_fx": "5", 
+    "year_month": "2024-10"
+  }, 
+  {
+    "rows_without_fx": "5", 
+    "year_month": "2024-11"
+  }, 
+  {
+    "rows_without_fx": "5", 
+    "year_month": "2024-12"
+  }, 
+  {
+    "rows_without_fx": "5", 
+    "year_month": "2025-01"
+  }, 
+  {
+    "rows_without_fx": "4", 
+    "year_month": "2025-02"
+  }, 
+  {
+    "rows_without_fx": "6", 
+    "year_month": "2025-03"
+  }, 
+  {
+    "rows_without_fx": "6", 
+    "year_month": "2025-04"
+  }
+]
+
+=== ANCHOR END ===
+Tue Jul 28 08:56:56 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR END END ===

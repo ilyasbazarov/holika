@@ -1,0 +1,415 @@
+=== ANCHOR START ===
+Tue Jul 28 09:00:07 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### Сверка 1: май-2026 в KGS (все статьи минус Перемещение исходящий плюс Налоги и сборы) ###
+[
+  {
+    "may_kgs_sum": "1.02329032E7"
+  }
+]
+
+### Сверка 2а: схема expenses_staging ###
+[
+  {
+    "name": "moment",
+    "type": "DATE"
+  },
+  {
+    "name": "month_start",
+    "type": "DATE"
+  },
+  {
+    "name": "week_start",
+    "type": "DATE"
+  },
+  {
+    "name": "year_num",
+    "type": "INTEGER"
+  },
+  {
+    "name": "year_month",
+    "type": "STRING"
+  },
+  {
+    "name": "payment_type",
+    "type": "STRING"
+  },
+  {
+    "name": "expense_item_id",
+    "type": "STRING"
+  },
+  {
+    "name": "expense_item_name",
+    "type": "STRING"
+  },
+  {
+    "name": "agent_id",
+    "type": "STRING"
+  },
+  {
+    "name": "agent_name",
+    "type": "STRING"
+  },
+  {
+    "name": "project_id",
+    "type": "STRING"
+  },
+  {
+    "name": "project_name",
+    "type": "STRING"
+  },
+  {
+    "name": "sales_channel_id",
+    "type": "STRING"
+  },
+  {
+    "name": "sales_channel_name",
+    "type": "STRING"
+  },
+  {
+    "name": "payment_count",
+    "type": "INTEGER"
+  },
+  {
+    "name": "total_sum_kgs",
+    "type": "FLOAT"
+  },
+  {
+    "name": "total_sum_usd",
+    "type": "FLOAT"
+  }
+]
+
+### Сверка 2б: схема marts.expenses (прод) ###
+[
+  {
+    "mode": "NULLABLE",
+    "name": "moment",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "month_start",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "week_start",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "year_num",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "year_month",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "payment_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "expense_item_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "expense_item_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "agent_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "agent_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "project_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "project_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "sales_channel_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "sales_channel_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "payment_count",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "total_sum_kgs",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "total_sum_usd",
+    "type": "FLOAT"
+  }
+]
+
+### Сверка 3: total_sum_usd за май-2026, staging vs прод ###
+[
+  {
+    "prod_may_rows": "149", 
+    "prod_may_usd": "117014.3", 
+    "staging_may_rows": "149", 
+    "staging_may_usd": "117053.73"
+  }
+]
+
+### Сверка 3б: дифф USD по месяцам, staging минус прод (только месяцы с ненулевой дельтой) ###
+[
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "125.79", 
+    "rows_prod": "1", 
+    "rows_stg": "1", 
+    "staging_usd": "125.79", 
+    "year_month": "2024-04"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "620.35", 
+    "rows_prod": "3", 
+    "rows_stg": "3", 
+    "staging_usd": "620.35", 
+    "year_month": "2024-05"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "2233.23", 
+    "rows_prod": "11", 
+    "rows_stg": "11", 
+    "staging_usd": "2233.23", 
+    "year_month": "2024-06"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "2090.0", 
+    "rows_prod": "10", 
+    "rows_stg": "10", 
+    "staging_usd": "2090.0", 
+    "year_month": "2024-07"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "9306.62", 
+    "rows_prod": "19", 
+    "rows_stg": "19", 
+    "staging_usd": "9306.62", 
+    "year_month": "2024-08"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "13871.24", 
+    "rows_prod": "22", 
+    "rows_stg": "22", 
+    "staging_usd": "13871.24", 
+    "year_month": "2024-09"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "36698.72", 
+    "rows_prod": "52", 
+    "rows_stg": "52", 
+    "staging_usd": "36698.72", 
+    "year_month": "2024-10"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "31722.08", 
+    "rows_prod": "71", 
+    "rows_stg": "71", 
+    "staging_usd": "31722.08", 
+    "year_month": "2024-11"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "65235.04", 
+    "rows_prod": "56", 
+    "rows_stg": "56", 
+    "staging_usd": "65235.04", 
+    "year_month": "2024-12"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "100319.89", 
+    "rows_prod": "104", 
+    "rows_stg": "104", 
+    "staging_usd": "100319.89", 
+    "year_month": "2025-01"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "66847.06", 
+    "rows_prod": "149", 
+    "rows_stg": "149", 
+    "staging_usd": "66847.06", 
+    "year_month": "2025-02"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "146433.59", 
+    "rows_prod": "154", 
+    "rows_stg": "154", 
+    "staging_usd": "146433.59", 
+    "year_month": "2025-03"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "76285.96", 
+    "rows_prod": "125", 
+    "rows_stg": "125", 
+    "staging_usd": "76285.96", 
+    "year_month": "2025-04"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "51039.75", 
+    "rows_prod": "141", 
+    "rows_stg": "141", 
+    "staging_usd": "51039.75", 
+    "year_month": "2025-05"
+  }, 
+  {
+    "delta_usd": "14.59", 
+    "prod_usd": "58056.59", 
+    "rows_prod": "205", 
+    "rows_stg": "205", 
+    "staging_usd": "58071.18", 
+    "year_month": "2025-06"
+  }, 
+  {
+    "delta_usd": "2.42", 
+    "prod_usd": "9055.21", 
+    "rows_prod": "77", 
+    "rows_stg": "77", 
+    "staging_usd": "9057.63", 
+    "year_month": "2025-07"
+  }, 
+  {
+    "delta_usd": "16.19", 
+    "prod_usd": "55690.65", 
+    "rows_prod": "176", 
+    "rows_stg": "176", 
+    "staging_usd": "55706.84", 
+    "year_month": "2025-08"
+  }, 
+  {
+    "delta_usd": "10.2", 
+    "prod_usd": "60751.92", 
+    "rows_prod": "193", 
+    "rows_stg": "193", 
+    "staging_usd": "60762.12", 
+    "year_month": "2025-09"
+  }, 
+  {
+    "delta_usd": "4.28", 
+    "prod_usd": "40644.21", 
+    "rows_prod": "201", 
+    "rows_stg": "201", 
+    "staging_usd": "40648.49", 
+    "year_month": "2025-10"
+  }, 
+  {
+    "delta_usd": "0.02", 
+    "prod_usd": "58333.81", 
+    "rows_prod": "190", 
+    "rows_stg": "190", 
+    "staging_usd": "58333.83", 
+    "year_month": "2025-11"
+  }, 
+  {
+    "delta_usd": "5.85", 
+    "prod_usd": "76392.66", 
+    "rows_prod": "219", 
+    "rows_stg": "219", 
+    "staging_usd": "76398.51", 
+    "year_month": "2025-12"
+  }, 
+  {
+    "delta_usd": "2.06", 
+    "prod_usd": "58874.92", 
+    "rows_prod": "101", 
+    "rows_stg": "101", 
+    "staging_usd": "58876.98", 
+    "year_month": "2026-01"
+  }, 
+  {
+    "delta_usd": "0.0", 
+    "prod_usd": "101374.75", 
+    "rows_prod": "155", 
+    "rows_stg": "155", 
+    "staging_usd": "101374.75", 
+    "year_month": "2026-02"
+  }, 
+  {
+    "delta_usd": "1.05", 
+    "prod_usd": "93617.74", 
+    "rows_prod": "151", 
+    "rows_stg": "151", 
+    "staging_usd": "93618.79", 
+    "year_month": "2026-03"
+  }, 
+  {
+    "delta_usd": "5.2", 
+    "prod_usd": "116489.38", 
+    "rows_prod": "141", 
+    "rows_stg": "141", 
+    "staging_usd": "116494.58", 
+    "year_month": "2026-04"
+  }, 
+  {
+    "delta_usd": "39.43", 
+    "prod_usd": "117014.3", 
+    "rows_prod": "149", 
+    "rows_stg": "149", 
+    "staging_usd": "117053.73", 
+    "year_month": "2026-05"
+  }, 
+  {
+    "delta_usd": "10.94", 
+    "prod_usd": "127138.09", 
+    "rows_prod": "177", 
+    "rows_stg": "177", 
+    "staging_usd": "127149.03", 
+    "year_month": "2026-06"
+  }, 
+  {
+    "delta_usd": "9071.48", 
+    "prod_usd": "213284.74", 
+    "rows_prod": "119", 
+    "rows_stg": "128", 
+    "staging_usd": "222356.22", 
+    "year_month": "2026-07"
+  }
+]
+
+=== ANCHOR END ===
+Tue Jul 28 09:00:20 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR END END ===

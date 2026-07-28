@@ -1,0 +1,761 @@
+########## 1. ЯКОРЬ (начало) ##########
+-- date -u:
+Mon Jul 27 15:13:14 UTC 2026
+-- активный аккаунт:
+ilyasbazarov4@gmail.com
+-- проект:
+msklad-bi-prod
+-- версия bq:
+This is BigQuery CLI 2.1.35
+
+########## 2. ЗАДАНИЯ BIGQUERY ЗА СУТКИ, ВСЕ ПОЛЬЗОВАТЕЛИ ##########
+-- окно с (epoch ms): 1785078796000
+-- какие флаги 'все пользователи' знает эта установка bq:
+                               --[no]all_jobs: DEPRECATED. Use --all instead
+   (в help такого флага не нашлось)
+-- пробую: bq ls -j --all_jobs
+   OK, флаг сработал: --all_jobs ; байт выдачи:  5982400
+-- всего заданий в выдаче: 640
+
+-- задания с целью в marts.* (это и есть фактическая каденция):
+   2026-07-26T15:34:03Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a65b5e8-0000-289f-8ecf-582429ab7b74
+   2026-07-26T17:34:02Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a65d2c5-0000-2626-998f-582429ce1190
+   2026-07-26T19:34:01Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a666567-0000-22ce-ad44-f403043d5328
+   2026-07-26T19:39:37Z  marts.expenses_staging             DONE                      ilyasbazarov4@gmail.com  bqjob_r4a62e606d0d607b2_0000019f9ff0aa48_1
+   2026-07-26T21:34:02Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a669055-0000-2ed9-ae0b-f403043d639c
+   2026-07-26T23:30:02Z  marts.weight_flow                  DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a65de19-0000-2f5c-95c0-34391606e50b
+   2026-07-26T23:34:01Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a66ffa0-0000-2d10-932d-240588817110
+   2026-07-27T01:34:03Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a66cf8a-0000-2c65-b505-582429adf2d4
+   2026-07-27T03:34:02Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a66c187-0000-2b69-b608-240588708414
+   2026-07-27T05:34:02Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a671a03-0000-2ed9-ae0b-f403043d639c
+   2026-07-27T07:34:03Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a6724f4-0000-26c2-894a-240588811924
+   2026-07-27T08:03:03Z  marts.gmroi                        DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a672d01-0000-2c65-b505-582429adf2d4
+   2026-07-27T08:04:02Z  marts.abc_xyz                      DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a6720a8-0000-2b13-9b3e-089e082b4104
+   2026-07-27T09:34:01Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a69c16e-0000-245b-b694-14c14ef5ea64
+   2026-07-27T10:00:05Z  marts.customer_invoices_ar         DONE       WRITE_TRUNCATE ilyasbazarov4@gmail.com  scheduled_query_6a66b6c7-0000-2c54-9aee-7474463c3a1d
+   2026-07-27T11:00:05Z  marts.inventory_health             DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a667088-0000-2edf-94a8-7474463b31ed
+   2026-07-27T11:10:01Z  marts.expenses                     DONE       WRITE_TRUNCATE ilyasbazarov4@gmail.com  scheduled_query_6a66c595-0000-22d8-883f-883d24f52624
+   2026-07-27T11:34:05Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a674913-0000-2f3e-8c4a-30fd381753c4
+   2026-07-27T12:02:03Z  marts.gmroi_by_folder              DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a674146-0000-29a1-89a6-7474463a3b35
+   2026-07-27T13:09:03Z  marts.in_transit                   DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a6780d0-0000-2e36-8336-089e082012f0
+   2026-07-27T13:09:04Z  marts.supplier_price_history       DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a67d19e-0000-215c-aeb2-883d24f4a2f4
+   2026-07-27T13:34:03Z  marts.sales_overview               DONE                      ilyasbazarov4@gmail.com  scheduled_query_6a66915a-0000-289f-8ecf-582429ab7b74
+
+-- все задания (контроль полноты выдачи):
+   2026-07-26T15:34:03Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-26T16:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9e2b0e95_5cbe_47a7_b44b_ea12d7ae0cd2 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:00:30Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:00:33Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:00:36Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0fd69acf_f962_4057_b5d6_c7535d6fe86e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:00:52Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:00:53Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:00:55Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:00:56Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:00:58Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:01:00Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:01:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonf94b9809324a87b98150a84bbebf31232863c94888cbbecb9d633bde485fd431 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:02:09Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:02:11Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon6888ad9257b3f40d79f28d88f1a2d9aa5edcc410fc186ac0f07d5326f12d4a10 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3a60be46_80f9_4431_ab4f_5a86df88caf1 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon710fd80da4e599d5a826d9ff34413dfcf17b6d15b6dc4a1a354f7ca20f035540 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7535b948_2101_411e_9553_0fd3a6644a77 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:02:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon60dcc957_3965_48dc_b3a5_fba67ec80537 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:02:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona8b145d7_2723_4622_83bb_24408ea351df DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:02:14Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon93770d5152feecda58d8280313f5b97c939e753a836632478eaf40e24a83a7f9 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T16:04:59Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon700f4f9ee2044f11062c5b237a453be4f8a16e32dba0ed2e47364010772f309e DONE       ilyasbazarov4@gmail.com
+   2026-07-26T16:57:50Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anone1324527aac6f72df7bd752be670f93043fe012e98f78f53db6a7ac01f90de50 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T16:57:53Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anonea6c99e8c8436bf175cf04346e46e99ce365819d2388fe9d72dbca5ef2153f52 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T17:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonea88b8e9_9597_4ea7_923d_9c46942dd957 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:22Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:24Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:27Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonafc1864b_22fb_4e12_b225_0cba22984581 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:47Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:48Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:50Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:51Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:53Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:56Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:00:59Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonf94b9809324a87b98150a84bbebf31232863c94888cbbecb9d633bde485fd431 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:02:03Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:02:06Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0190d698_36ca_40cb_9426_b6372baa17ff DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:02:06Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anondf5c15426cc0f36daa236aa3f33c5bd7777ef8c7d5caff5ece58f6038d572d4f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:02:06Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonf76903a5_56da_4dac_9be1_f5f3f287fb9d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:02:07Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc541bcdb_e0cd_4b4e_bdc1_96d8480bc6fa DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:02:07Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anone45ca8e65ab083f561f3ecbd3032b4d31b383922c447afebc1a5d1a54d9846d3 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:02:08Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anond47c6315_149b_4103_bc69_df43d80281a1 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:02:08Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonda169a3324fa80c0532d7be596a903c28a447c213e2ad0b4b88fe8f4989dc51c DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T17:34:02Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-26T18:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon441f4208_d8fd_4b7a_b79c_01a81046f2fd DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:00:32Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:00:33Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:00:35Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon8c126c2d_b8f9_4eaf_974b_04a230c9dccb DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:00:52Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:00:54Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:00:55Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:00:56Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:00:58Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:01:00Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:01:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonf94b9809324a87b98150a84bbebf31232863c94888cbbecb9d633bde485fd431 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:01:05Z  core.dim_fx_rates                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:08Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:10Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon97673660f1bd74d46bde4b8f93e4d6df6ad98daa51e88d41b3b696bcab90beca DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:10Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonbd1a9fb2_b803_4268_99aa_b5aef9d7f6d9 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:11Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0318e7de45d1dabc145675f7119df71549ff1ec2156c0fcf106a3018b2c9959e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:11Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anond977fd5a_dd7f_4d05_9383_2bc6fb05fd22 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon390ad60d_a068_4cb6_91e8_b398c9b11994 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon42af974a1c7e06a12ba60ce981b4acacb0e5c409a462a9bccf4a8643fe02cf3d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon8e90dce2_6849_4f40_8c25_1eecd2247a7b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon868030ec108a40d398aa49e86331bb1a7711dc32f53aa5b208bb3964c4b761bd DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:14Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:02:15Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon25cf8f82072a4a63f19e9a31db77f214a94bf4dba8c1672cd3bff7e660f0a781 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T18:05:00Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0f30479d_3e80_4b08_90c9_ea48101ef7bf DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:00:40Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:00:41Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:00:43Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonad089e1d_4e0f_4484_8867_b2cfa62dc8bb DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:01:05Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:01:07Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:01:09Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:01:10Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:01:12Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:01:13Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:01:16Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:19Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:20Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona5e7e0b311f962a72144dfa64eca0247c9eec32cbdda9f27af9046f052e41edc DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:21Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1bab0971_502f_42a2_9d01_75e7bbca3a32 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:21Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon52e9e7b4_b7a9_46d0_9fe4_abc9206b9de1 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:22Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9720ee05_7b61_46a7_bdc8_a866a5ccda83 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:22Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9737db04_2306_4f8a_b9b6_6f6f9cbafd53 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:22Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anone9eec751dfcc5847932a8922e31b0d6135dbeee6ed19e33385edb83bebed9eb3 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:23Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0bdf83a201c7750181a7ab1665f10fe840a7d88fc0cfdf9e10b29d026dd011bc DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:23Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon22a3d3b4961edd4639e3e0f539af56761e22cf0de1d49933d3d67358b8a18d5b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:24Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:02:25Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3067f64851f0263b03d7bf9df513404004ea29aa6cb6f3a755c81af21bd6711b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:05:26Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T19:14:36Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon41dc3305ac36d69fb6958ff83349f175620b429cc8a0c099483fe868cc41b3b8 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:14:39Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon6dede6c90c073f5c2a6ec7da538eb005ee59ed0bf02c81250bbd44a705a94f07 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:14:42Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon14a3b8233246fee516f962f9f8cb68776917db57e47f745db53908e1c76b1fa4 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:14:45Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon680a2ac5bdcc9423ff44fb856e438cbe4334c8548fb672a32f4d1a54025ae15f DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:14:48Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon6a1a37fe09e2df3bec0d4c0774ce0481f84df5054455fe070f3639520e806188 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:14:51Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon8819162ddaaf0ca96997604c90a9742ac45206ae874c997c89f2fdd619915c58 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:14:55Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon66657198e47f027013278cbb3ff3d4de8e5070692d5cb856444894e71fc4f53d DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:34:01Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:39:37Z  marts.expenses_staging             DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:39:41Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anonf3c88233310e76d823a2d72b00837c0ea1a3a0020a9a15093761d7f2ca814ea8 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:39:44Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon3926c7404a8fd300a870675de627576bbf5f6b60f56f3315c5ec1e4537d1ce99 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:39:47Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon2643986c89ce348d53de9f41a5e43045bd7b7bb5c1cd387636e28f27f777f230 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T19:39:50Z  _12584c14be40fb92791e8b32a747ff27b3c7bae7.anon857c2f7dd7367e17cbf15f683755278db16ac97c9b038ef0be7f81d498fc36b2 DONE       ilyasbazarov4@gmail.com
+   2026-07-26T20:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3eb82a43_e135_49ec_9d34_1f23a0b2863b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:00:43Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:00:44Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:00:45Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon73b872fc_e297_450a_b47c_6bbf99717c30 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:01:06Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:01:07Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:01:08Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:01:09Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:01:11Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:01:13Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:01:16Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:14Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:16Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon64eba118dd185e0a8b79005e61cb0611969c41d3257e714d39dbcd60d1939899 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:17Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0cf664ebdbcaddee102bdb6ac0b8b2bc4e3596aa36d6d8854c04a3f1de8c46b8 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:17Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3573847a_b822_4e7f_bed4_fc315b2c8082 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:17Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon8b348502_68d0_4568_837f_bfc3c0c70fb1 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:18Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2ed02ab183030c6aa73325f4992d0de1ca1e3309ba5a6f96039a2c95c94a4215 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:18Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon52355e26_4e68_4223_ade7_75d44ce54bd0 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:18Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonaec4b345_e95d_4122_9c8d_67d17ba197e5 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:19Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3e027b24df19b331e6f0869cae4f3894ff06973f2249313437423e5d53703713 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:19Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:02:21Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonf02fc91f69b947ea9a01dc6f76cad5db1f5dc27d67aa7ba015302dd017359298 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T20:05:07Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon678c23e1_9372_4a04_96ae_a15fdffe39a7 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:00:10Z  core.fact_inventory                DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:00:11Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:00:13Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:00:14Z  core.fact_loss                     DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:00:43Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:00:43Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:00:45Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7f2ac904_f69e_44b7_a92c_c2886b87e21b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:01:08Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:01:09Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:01:10Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:01:11Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:01:13Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:01:14Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:01:17Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:01:52Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:01:53Z  core.fact_commissionreportin       DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:22Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:24Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anone57a622b0cbffb42c0e3681980fc813ac98041b6089d7a2dfedaffcbaa553656 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:25Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon67706d99_76be_4200_89c5_27e06039df4b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:26Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1f2564a7_fd09_4270_8e1c_e4103530ee85 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:26Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1fce781f456f648ae6a1567e678a6abf0fbdfb4d12705bbe7ef4c4c2d4bee187 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:26Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anoncd5c4520_7bcc_4a31_85d9_7d49d0ca5091 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:27Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon109e36e739d05bf5abe2035ff32fec57e6006b9b1d32f91ca7f966227f1c0954 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:27Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon6d4d6482_bc0b_4f36_9bb5_7db44fea0639 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:28Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc45aa6be232159b6fabbdc08df61021481597421575238dc79405f1d04e26b0a DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:28Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:02:29Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon18ae12734cf9eb17d871d413b28424739792989b562e61bcd80fbd895014bf85 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:05:34Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:13:31Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:13:33Z  core.fact_payments                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:13:35Z  core.fact_payments                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T21:34:02Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-26T22:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon4ae2faa2_0504_4667_b44c_fd59647679b3 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:00:49Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:00:51Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:00:52Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon40af387d_99bc_4fa1_bcd1_3765f2e40421 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:01:10Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:01:11Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:01:12Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:01:14Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:01:16Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:01:17Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:01:20Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:18Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:20Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2765c617b3c790fb0417ebd4a4415162a3c5795867f9d0959c0a602a7e468251 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:21Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon5cb85d26_a273_4d8a_9191_6eae6e383474 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:21Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9678d92f_ff45_4062_be05_d1ca8abe2753 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:22Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0bedc575_a41f_4545_a1fa_0826d9f858ab DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:22Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon4ed0bc713b4cde73a5414206d1cd0effac2cd067330a36b54e05e7dd2c78cf2d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:23Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon83f35432_7118_4e71_8c4c_3499fb7c9beb DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:23Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anondd6668c9c0a1d01af155b85a7c0268b525c0a6b6adab5b4aefdc273f032fcb88 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:24Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7bb5b665f7b042a39cfb22b306ca0e97cbb1908b53c4154a3009668d90a95595 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:24Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:02:26Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2045d5a039022d997ada425e036c3681a3a7049775fc77a121ebc3962884519d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T22:05:23Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon42dcae9a_b506_48ff_a3d1_1c107611faf3 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:25Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:27Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:29Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona47b6ff6_c8d9_4685_aa80_4887eae67735 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:50Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:51Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:53Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:54Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:56Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:00:58Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:01:01Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:01Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2d999d58_7c57_4d64_89f3_1b0321d27e9e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon47b368b0_28b8_4ee3_afba_19fc3d3bdcbe DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon759609ec8b158b70cb83b7c55d36f067de1a5a2b517077195da7d8086b13ebed DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9ad4b35c57003600caccd277c8dc97817b8a24a734bd477d11fa2df3dfe30d51 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonbca23eaf_47e9_41e9_9279_daef945e6c47 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:05Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2aee75b2cde1feb417200b63dc898beec2e1d98e6c188154b964c9aec7f3f1d3 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:05Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona850ace2_2ba3_4165_85ef_ef7cbb3d1154 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:06Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc0968b57324b70b0948a0fdde8af0118fc23c79ca19ae7fe8d34af2a54602059 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:06Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:02:08Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon8705c0a315fe462ebe6e64c8cddc35cd36dd2e6b71febdaa1ef9bb773deabebc DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:04:50Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-26T23:30:02Z  marts.weight_flow                  DONE       ilyasbazarov4@gmail.com
+   2026-07-26T23:34:01Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-27T00:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9f819e11_538e_42d8_a14b_39afcd30cd6d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:00:33Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:00:35Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:00:37Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonaa9f91a5_36b7_4455_b43c_a696c3136dca DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:00:53Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:00:54Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:00:55Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:00:56Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:00:59Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:01:01Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:01:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:01:57Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:01:59Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7e93055c_05bc_4cd0_a9df_c8cb8b76811e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:01:59Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon8d5397a3c6a7dc09a46057410770ebf6669734f3237899a5fd87b0f5e92dfabc DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:01:59Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonb868e3bd_58b8_402b_9f27_6a71cb979f11 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:02:00Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon5c0d33f1_9c59_46d9_966b_d4143faeddcd DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:02:00Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon6372f7beda878f7131f9ced85415cddea7a60a3078937d063f17bb30abffb8cc DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:02:00Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anond02a9153_c0d0_44f8_bec7_0db422a863ea DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:02:01Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon62534d8c86b31e3b2011f54c893cc22de8db4529314b988990b80d7baf7f5383 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:02:01Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon80220f757d8b9deb55840ffce7bc54dc9a2924813c976796e64fd2aaa2322399 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:02:02Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:02:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anone1abe2ce49f916cca40d22cf0162ef45571d6e1593ad3511b9abc3ddce203884 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T00:04:52Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon23599f75_4c08_4bbc_97d7_dbca268fa98e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:28Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:30Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:31Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon248fd73d_8cc6_4302_b0c4_0ee320486564 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:49Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:50Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:51Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:52Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:54Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:55Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:00:58Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:53Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:55Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon11119791_9429_453e_92c6_0b6a9b30514f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:55Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona2c3d87d965ea2a5d8698ce2dce0882433c0519f59baf0e9280de2f79984cf7f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:56Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon26075d8c_7ce2_4030_acfe_96cacfa0b991 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:56Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon27e9e627537461168e8eddf76d78bbcf2a4be2bab8f2181b98e088d90a2827fc DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:56Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc0eaedc7_f12f_4e63_ae93_c1de30b6ddb5 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:57Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon4c553690945dca042f7d014c6ee4323a9cc5f7f3c0fe32c6347af6b988778c79 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:57Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon99e6842c_9f51_409b_88b5_e20bf6d3c5ff DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:58Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon562ee3c2dcca8206108e97adb8027fa6d065d06d1303370e876ce6892e98bded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:58Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:01:59Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac8c324e4241fabfe2de5d7bc826e2daf43638eba0fe6c9195b7a0bac4584d41 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:04:58Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T01:34:03Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-27T02:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3865145d_9678_4851_9072_20bcdd2062ae DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:30Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:32Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:33Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon43145955_b45a_40bf_9239_e81fb77bc1db DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:52Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:54Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:55Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:56Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:59Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:00:59Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:01:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:01:53Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:01:57Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon995c827f_fa7b_4d8f_99f0_bb1ba5cb9e9b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:01:57Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon99f52ad34bd9dee64f60a7ef44af7d8d73df09b83235bdcfe047f9197ab4d4fb DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:01:57Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonb3addd8f_48b9_48ab_9a21_adff7bfceb4a DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:01:58Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon27228e63d0ff2dd535bdf541910aa9e6cf3880d082173c0ed4ecf961da925a8b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:01:58Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc0ce77c2_ca70_4e5d_97a6_93821a74d5bf DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:01:59Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon202da24c_4003_43d4_88ae_f561e5d99262 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:01:59Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonbae7e446d72539c6ba79436678997faf86e261809123d0f69a9b8781c75ac7b1 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:02:00Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon60839a0f07edca8badfcb1e996e9b14ff3ea0cd608f945deb9ce13c79c691299 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:02:00Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:02:01Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0a720495040535755285d46223123fceae99f75b022377420247756f88ac0ba1 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T02:05:04Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonf9f5cb2a_c731_47e2_8801_7c9017282506 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:00:31Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:00:33Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:00:34Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0565954a_3345_47ad_a648_aa9bc9018f7f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:00:56Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:00:58Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:00:59Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:01:00Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:01:03Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:01:04Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:01:07Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:01:59Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:02:01Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon8acf563da0d1e181e5663a5269b1cb05dbf6dc2ef771f61779e3ad8a6961e530 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:02:01Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9c4b0eca_539c_4e0a_ba68_de22d9ea35da DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:02:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1d15721d_e916_4a9e_9125_50216beaae51 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:02:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon299c0273_4e51_45a5_bd8b_62b1a43d024b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:02:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon92fa72c96ab241a69e47b76c87c89c4c532c9f2d67a50f551450dc9991627474 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:02:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1b49ed8e_423d_4a6d_9423_6a59349c7e55 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:02:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2a21a798ec6e6aecff49bc002319db4f285990dbdbdfc90f5f57c9488fe537ec DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:02:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0953341a867577fc770d063d5fc34191117bc7bfb3c50c551b93da437376cc02 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:02:04Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:02:06Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon878bdd36e1444320324b0109916e3fb3538b301436e8f093187aad4f89ed0bf2 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:05:05Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T03:34:02Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-27T04:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon46636ab8_a07e_40c1_81f1_78c9f2e59679 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:00:04Z  audit.dim_employees_snapshots      DONE       ilyasbazarov4@gmail.com
+   2026-07-27T04:00:09Z  audit.dim_counterparties_snapshots DONE       ilyasbazarov4@gmail.com
+   2026-07-27T04:00:40Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:00:41Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:00:42Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonb497eb13_9a65_4300_aba0_b931cdc834f1 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:01:04Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:01:05Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:01:06Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:01:08Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:01:11Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:01:12Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:01:16Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:01Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon18feeabeb344d6a238e3cae9f0dd50ec24852d3528d1fd793851601836a5ec68 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1c6eb7c0_d72e_4961_af4e_e9a55549ead7 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anoncc6e3696_7aee_4e88_b837_e1cb2ae2e7c6 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:05Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3826e7c5d94236dcaa8612e60661fdc9be8c87450133c1c33c8c71fb6d9b0912 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:05Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon54cb165e_4e05_4624_b26b_a2c5497b5e01 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:05Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anondc872872_afa6_4f82_b0b7_ca72413eff9e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:06Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonfef36adbb5373b40139a58469404fa1abc90b3c932d8a6d3818e1e6b1c339e78 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:07Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon8fd6118d129019aab3c211dcad9e96e33b1c9285bcb5da5ea874cf3a0e912f38 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:07Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:02:08Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1e0cd923d41a070e2cc9eeec50a9f9ce21a914bb28cad687e63e8297a2c6f8c7 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T04:05:07Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anoncad0c583_2070_4ed3_a1f8_63eea7c28eac DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:00:38Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:00:40Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:00:42Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9730d841_d356_4161_81e5_d4efeada7ba5 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:00:59Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:01:00Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:01:01Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:01:02Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:01:05Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:01:06Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:01:09Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:07Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:09Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anond6ee999aa815a065314558d4d881f366d4547c492fac4386936b4581bcbaeaae DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:10Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon57523896_afa7_480d_8c8b_515e76714f74 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:10Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona15b9ccb_3e50_4a21_85a4_963bde9bc9b0 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:11Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2c189f3b_a523_4579_b913_37427b394274 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:11Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7882a486_91af_4c44_aadb_17833b55f65e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:11Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc34b25b5600276ba8bd87ebe58803923597f874b31c98b946c5b6d191d106ee2 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0c75bc7aa430102117e03b1111b2050cbda4b8dd84dbe69f7061d9a3ccccabcf DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2afceb064f4c3e21c2bb173990d2624eed2581d8046999c55407c7e6f4c4e126 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:13Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:02:15Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon115a24e7399f13ca079140ec3bbd237b2194c4b0d469398aaa51562b1591848d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:05:18Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T05:34:02Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-27T06:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anoncb8c665f_fae4_47ec_8eeb_4d21020efc41 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:00:45Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:00:46Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:00:48Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon8fa2f76d_d0f6_4d34_a708_4ce86dbc8000 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:01:07Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:01:08Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:01:09Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:01:10Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:01:14Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:01:15Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:01:18Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:10Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:11Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9bd6353360091427e6dea413c53141bebd54a4e535f72ec3199d94570617bf6b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon49319f0e_0923_48dc_84c2_3057e95ea420 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7d4c3484_ec83_445a_adf8_d88f154a8549 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon5fe0aeca_00de_4a4a_a77c_75c389744544 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9f12d35730abccbe1de87a3f1ce430d4d35910cc0f1f56d40d43b3e5d4a5c17a DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona9b38149_849d_4ad1_8bd4_32d2bdec32d0 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:14Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0736f52e3c3fa4e4a709734cab13701ea36a80d6589f63cf1081adc85780f4b1 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:15Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3962ac2b5fa4253840632cd9a2cb4ca5202e8862c433387a2ae6999aea82610f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:15Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:02:17Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc0377a7789ef6e5eb02246fc9c702e8ddd04a4e17593a3ebd05821aa35a9c5f4 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T06:05:27Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9c45f34c_34f8_4942_a712_6bdf22ea4411 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:00:37Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:00:38Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:00:40Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7ec82e95_79dc_4ea4_88b0_bae63ba14731 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:01:02Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:01:03Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:01:04Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:01:05Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:01:08Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:01:09Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:01:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:09Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:11Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona7acfd80_000a_4d39_9041_8ab02662757b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:11Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc72441e7ef0d39a2d960c0385ee29f161d62d411c46189e7a4182e028602cd47 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1fba7895_590d_491c_9d2e_14cc31422a84 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon411efcf44b8a00f0efd444a27fc26fa49a6d8fb21263c6a98a13b1f846143a24 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon91170442_7f2d_4fce_acd5_1420bb203e37 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3a7cb9d153ce9522b9fc8a9c5fd5ee7af9a62805b257cb0ff2396d30639078d9 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon873e2074_5b35_4b63_bcab_49e5773683d2 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:14Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon9f42f21cb4b6e2eabe40118822fcd8f8ae8c032233f790aecf92ecd079d11dd8 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:14Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:02:16Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon75e44fe5e09548f8861f70f680b2536c415bd550d40e08e8b1cd71f5086d3bfd DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:05:55Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T07:34:03Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-27T08:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon22d979b7_83c8_4045_8c88_664c08147f7f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:00:31Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:00:33Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:00:34Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona32cfbd8_0d6a_4743_bb30_9994e9aedf13 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:00:58Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:00:59Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:01:01Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:01:04Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:01:07Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:01:09Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:01:13Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:25Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:27Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anoncb121772a0992959c95611e568e2a44a5153775a9223652e6712043c4e071a62 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:28Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon07da160b649221ba87e11c6dac25b64ee809ff8e02c74d62bd07164a80634c1a DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:28Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon86b8c0b1_54b8_4a94_8450_6f8a8e326cc5 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:28Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonb0cc59e7_820b_40e3_aca9_1658104e550e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:29Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon954fab9f_f115_4ae9_88f5_e080a8eddef2 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:29Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc4b1caf5770a31e8783583b72ac845ef64e76728c923a0a11389d76e2d680cfd DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:29Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anond553cb64_2805_4084_bc66_54bba12962a7 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:30Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anoncb4372ceb9febd91f59ce1c5de9033ddbf8bff27f41eabfc0a9520994b104de2 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:30Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:02:32Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonca39803d9914bfd051d260f261e83be931e276941814ed6e3aefed55711f7f34 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T08:03:03Z  marts.gmroi                        DONE       ilyasbazarov4@gmail.com
+   2026-07-27T08:04:02Z  marts.abc_xyz                      DONE       ilyasbazarov4@gmail.com
+   2026-07-27T08:05:49Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon5a07c891_9cb8_4c1c_9743_4657b7f9c43d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:00:30Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:00:32Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:00:34Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc9f003e0_476c_49b3_bb89_ced1ffbf48d0 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:00:55Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:00:56Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:00:58Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:00:59Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:01:02Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:01:03Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:01:06Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:22Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:24Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon15f604072b4f2aba5a5086af72d149de4d765f0e17411341f5b1adcd05f02646 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:25Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2c615149_cefc_4221_89f0_aaf0cf57faad DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:25Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon63a143bb_d40a_42c7_a76a_322bc75f4d1a DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:26Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2dacec5359f1a84960e13782816d0e838ebb763378f7a289cd6bfde1d77c4e00 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:26Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anone2011880_2aba_4eb6_b548_f22449ae9949 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:27Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon6d08584f95ac5742079bee9ebfcc1f5c4685cfc9f133a8813d4d2cf3e2f35cac DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:27Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7c2b1e5b_044b_4fc5_b5ca_edf51f7f90c0 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:28Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon70905d2fc8bebb7d8d38d52dbb0a1453c897fc797f59733d935ff675efe58379 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:28Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:02:30Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3cf9c183dad84fcb7f04641f000fea40d170a0350b274449eb8de6601d2564a5 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:06:44Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T09:34:01Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-27T10:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona83b13fa_c629_46f1_a1f3_0ce36fd3a345 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:05Z  marts.customer_invoices_ar         DONE       ilyasbazarov4@gmail.com
+   2026-07-27T10:00:20Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:21Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:23Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0ec2a26a_7be4_4b29_ab3b_3a9a266994be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:50Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:51Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:53Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:55Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:57Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:00:59Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:01:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:12Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:15Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon77c7faf0b9f8af0003115d59bbc36351c2bcac7023028f64c60f286e7516db0d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:16Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon517accbfc17065a88e7351134f44ab6ccd7e756ce184e3a00cc18d036268d93f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:16Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc925325a_dfde_4f4c_9252_cd9e633b7531 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:16Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anone6bb0c5c_e51d_4d96_b9be_55d811c67536 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:17Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonb235c468_174a_4e18_9929_9dcba2a6527f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:17Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc294381c_c2fe_45ed_8a93_90f80b1aa7b0 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:18Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon87f69328b25d9425cefe25ad5ea31a2e7ecb2a72c9bf332f1fadffe4a1016d2a DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:18Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona918f9691c9e5346e94f45b9dbef431287801b5f13fff39e4e45bd3613b2de7c DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:19Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:02:21Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon819c112cb04ce9e8c4c26e547da879c72b1a3842ec9f88a008b05ba51fb3803d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T10:05:56Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon375b1776_77aa_46b4_ae77_1191372db77b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:05Z  marts.inventory_health             DONE       ilyasbazarov4@gmail.com
+   2026-07-27T11:00:22Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:23Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:26Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2f7ecd1f_e514_42c7_9e22_f980ceb5039d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:48Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:50Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:51Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:53Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:56Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:00:57Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:01:00Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:29Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:31Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0f413c1e_2e4a_42c0_b4ee_7dec04479c3e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:31Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona686b9768be0473f28293a07f4a2411b72596b487dd9b2fdfa4efd01d508a385 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:32Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anond6945dc8_6fbb_4b83_bfa6_03fc9215a032 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:32Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anoneaa9f20de4bd255056569c1de72bc86a90ab51b5d7b804d065b904db694eae0c DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:33Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon58f7eb2b_f0c5_4f52_9b2d_7e3e7af95cbe DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:33Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonab1f0aa58954242ff083d57da5e0aa76990d4bccecd58a914c2b6668e9963072 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:33Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anondfacf325_cfa1_4350_8f02_ee6f63133c20 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:34Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1eb5a70d9b5dbbd3bd5f25a0d0f910187a1671b4167788efaff40af17dc70f26 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:35Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:02:36Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1aa9d5359030d10ee0d49614954678a8c2a781209a3d0b83c559c9e7cc6eccf8 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:06:12Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T11:10:01Z  marts.expenses                     DONE       ilyasbazarov4@gmail.com
+   2026-07-27T11:34:05Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-27T12:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona12c2c1d_cfea_4bb0_9543_f2af1ec3e38f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:00:31Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:00:32Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:00:33Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon0d0041da_f5a6_4b81_a6ea_db2d8364c4a4 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:00:58Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:01:00Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:01:02Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:01:03Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:01:07Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:01:09Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:01:12Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:03Z  marts.gmroi_by_folder              DONE       ilyasbazarov4@gmail.com
+   2026-07-27T12:02:26Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:29Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon12a3ad5f_02d3_407d_9891_5994abc6abb5 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:29Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anond7f6e02b1d76ea3bb6a21710fa2c95d309f572c10c2f7c9e00a820335c5f5e9b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:30Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7eca6da9_368c_4c33_b9ad_d5189d91727f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:30Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonab16df27_9fd4_4c64_9893_3860e65b9350 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:30Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anond988fa2827061ed02cf6bd2ec5e5a558ec6fed182d0e145bb5071078ef7363ca DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:31Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonbdcada61_d589_4a91_a52a_37109c408ac6 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:31Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonda4e8aeae2891fae6fd30446f88bfb8c10de0739f6e2238617f4fd832d31babf DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:32Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2f8d5847b90f201de26c8970b298370a802f1f72395bc72117021e67e98e5017 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:32Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:02:34Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2a9d9b872c57d499af3669433cebffa409b4b3e40d6847a7e2f92dd17990bb6c DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T12:06:10Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anone2bbf13c_554f_4732_b15a_450bb6bc3de0 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:28Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:30Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:31Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1077b1e0_202a_4ecb_a86c_c13ffb34a091 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:52Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:53Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:55Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:56Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:00:59Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:01:00Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:01:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:26Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:28Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonf1e0bdcacfaa1bdd7fa88f324494353cccfe80d89d3c63b73b3c8a515664b03f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:29Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7574f0ba_ca34_4a1b_a9fc_c51242c33e99 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:29Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonbdffc1f4_c469_48dd_b08c_7a484283f88b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:30Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon6944a98af50b4bb961e9b609d7b92fc1509367788cb3b53dffea2d2de7d4324e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:30Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonfdd45cd6_5e90_44c8_8e80_c477c5c18909 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:31Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon59e711e8d3e66230a101cc931b973461b8d84c138886d15f8dba852bdf12477b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:31Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon6fab7d79_5cda_4bc7_9e15_6002d4ae536c DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:32Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon11911f4ed71971ce830d0906d732ed4a2354114f77af9d3eb99d802cc3fbf85d DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:33Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:02:35Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon947b306005f1260569507abdb301f1badc7be8938162fb443f513abd3a57223e DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:06:13Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T13:09:03Z  marts.in_transit                   DONE       ilyasbazarov4@gmail.com
+   2026-07-27T13:09:04Z  marts.supplier_price_history       DONE       ilyasbazarov4@gmail.com
+   2026-07-27T13:34:03Z  marts.sales_overview               DONE       ilyasbazarov4@gmail.com
+   2026-07-27T14:00:02Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon7c552082_ff0e_4df9_96c9_42209dcb6302 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:00:30Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:00:32Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:00:34Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon66666f21_8cd7_43f8_a81b_0a6bdbac5f64 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:00:55Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:00:57Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:00:58Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:01:00Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:01:02Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:01:04Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:01:08Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:29Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:32Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon248ea13e26f5e66b661316e68ebdcef2260c80b447c66ad8ba66d22f105d322c DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:32Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon5c87730b_5110_42d6_865f_74469a52f7d7 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:33Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon8ae897babe177d07254394d66de913d5798d5e7c84d0cda217b26885197a5a57 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:33Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonddad65f0_c521_4630_accc_04623e810c44 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:34Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon1d994d2f138de4fed5929f693b014863e6918725d769598e25f391903a830a04 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:34Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon8885dacd_7559_4cda_9063_94f4dfdd6f10 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:34Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonb8b15774_1c2d_40e6_84b3_b2b5c498ed48 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:35Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon3e9ed5ebe86925e7930feecfc5e4d6235092d005a1181ce3009c75a57ed3d8d5 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:35Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:02:37Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonb1ba5ef30d73ed248ffd97081b8a40527ee2db52df35b25e5386e0406ed4df64 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T14:05:55Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:03Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon737caeaa_f771_401b_bde3_a04215e70bc2 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:06Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:29Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:31Z  core.dim_products                  DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:32Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon822b6d15_b2eb_4dbf_92c8_3527e1224ab2 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:51Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:52Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:54Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:55Z  core.dim_counterparties            DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:00:59Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:01:01Z  core.dim_employees                 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:01:04Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonc01796cee174b02298f47bcba5f61ea5a893878283954f5b955017b8c56411be DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:37Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:39Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon26151d96_1ea3_4422_bb4c_0eec1b0c2664 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:39Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonf91901bc_03c2_40f5_8456_c93051d26a1f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:39Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonfea19fe120ecdd55ce0d02c2f509f42c4d74996ee9a8e2f8643d0d1e1d9a7098 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:40Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon6a0e2c91_6ee8_4c88_8feb_3123b8a65f50 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:40Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anondf49f60c8a9fe5c2df6441eba4d6a3adf94c45dd904ce2a51f8889d13fa28726 DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:41Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon2abfe251_b288_46a7_85a7_e50bae7f73dc DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:41Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anona607d1b0bea596b642f2d229939946b531ea7ae1419e14adaf8709decbdec23b DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:42Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anon19661d45d45d38a18f21af2222fcb1f782f65d37d9c4322d436ae23aed05ac4f DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:43Z  core.fact_sales_profit             DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:02:44Z  _6824e1bb5f69e5430bac082bddfd669cf3972cc2.anonfde36d1bd8bd38d25bf172de6efd2bb1a8ccd3292b030b20cfa1969eb3d37c4a DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+   2026-07-27T15:05:54Z  (без цели)                         DONE       etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+
+########## 3. РАСПИСАНИЯ TRANSFERCONFIG ##########
+-- байт листинга:    49678
+
+-- ПОБОЧНЫЕ ФАКТЫ: все конфигурации флота из уже полученного листинга (новых вызовов нет)
+   конфигураций: 13
+   sq_audit_dim_counterparties_snapshot       id=69fc9c75-0000-2ab4-91b3-883d24f4db64
+      schedule='every day 04:00' nextRunTime=2026-07-28T04:00:00Z state=SUCCEEDED dataset=
+   sq_audit_dim_employees_snapshot            id=69fc9d6e-0000-2ab4-91b3-883d24f4db64
+      schedule='every day 04:00' nextRunTime=2026-07-28T04:00:00Z state=SUCCEEDED dataset=
+   sq_audit_dim_products_snapshot             id=69fc93d1-0000-2d64-bdd1-30fd381336b4
+      schedule='every day 04:00' nextRunTime=2026-07-28T04:00:00Z state=FAILED dataset=
+   sq_marts_abc_xyz                           id=6a020b2c-0000-2dd6-96d2-883d24f52bd4
+      schedule='every 24 hours' nextRunTime=2026-07-28T08:04:00Z state=SUCCEEDED dataset=
+   sq_marts_customer_invoices_ar              id=6a23f3ea-0000-2952-853d-582429be7ecc
+      schedule='(поля нет)' nextRunTime=2026-07-28T10:00:00Z state=SUCCEEDED dataset=marts
+   sq_marts_expenses                          id=6a22a243-0000-20fd-a458-883d24f4cad4
+      schedule='(поля нет)' nextRunTime=2026-07-28T11:10:00Z state=SUCCEEDED dataset=marts
+   sq_marts_gmroi                             id=6a006664-0000-2739-86f5-7474463a7ac5
+      schedule='every 24 hours' nextRunTime=2026-07-28T08:03:00Z state=SUCCEEDED dataset=
+   sq_marts_gmroi_by_folder                   id=6a004e88-0000-2e7d-bf20-9898fbb40f95
+      schedule='every 24 hours' nextRunTime=2026-07-28T12:02:00Z state=SUCCEEDED dataset=marts
+   sq_marts_in_transit                        id=6a0aa537-0000-260f-b391-d43a2cee6b87
+      schedule='every 24 hours' nextRunTime=2026-07-28T13:09:00Z state=SUCCEEDED dataset=marts
+   sq_marts_inventory_health                  id=69fd92d9-0000-2372-ad37-582429aca3ec
+      schedule='every 24 hours' nextRunTime=2026-07-28T11:00:00Z state=SUCCEEDED dataset=
+   sq_marts_sales_overview                    id=69ff34b4-0000-2b2b-a390-14c14ef7af10
+      schedule='every 2 hours' nextRunTime=2026-07-27T15:34:00Z state=SUCCEEDED dataset=
+   sq_marts_supplier_price_history            id=6a0b0f25-0000-2893-be44-d43a2cc31f97
+      schedule='every 24 hours' nextRunTime=2026-07-28T13:09:00Z state=SUCCEEDED dataset=marts
+   sq_marts_weight_flow                       id=6a1f9418-0000-276f-a1e4-d4f547ee7418
+      schedule='every 24 hours' nextRunTime=2026-07-27T23:30:00Z state=SUCCEEDED dataset=marts
+
+-- bq show --transfer_config #1 : projects/420804682491/locations/asia-east1/transferConfigs/6a22a243-0000-20fd-a458-883d24f4cad4
+   displayName: sq_marts_expenses
+   schedule: (поля в выдаче НЕТ — это не то же, что пустое)
+   scheduleOptions: {}
+   nextRunTime: 2026-07-28T11:10:00Z
+   state: SUCCEEDED
+   disabled: (поля в выдаче НЕТ — это не то же, что пустое)
+   destinationDatasetId: marts
+   dataSourceId: scheduled_query
+   updateTime: 2026-06-05T11:10:23.201634Z
+   userId: 8522307959247193051
+   emailPreferences: {}
+   ownerInfo: {'email': 'ilyasbazarov4@gmail.com'}
+   notificationPubsubTopic: (поля в выдаче НЕТ — это не то же, что пустое)
+
+   -- полный набор ключей выдачи (для протокола):
+   dataSourceId, datasetRegion, destinationDatasetId, displayName, emailPreferences, name, nextRunTime, ownerInfo, params, scheduleOptions, scheduleOptionsV2, state, updateTime, userId
+
+-- bq show --transfer_config #2 : projects/420804682491/locations/asia-east1/transferConfigs/6a23f3ea-0000-2952-853d-582429be7ecc
+   displayName: sq_marts_customer_invoices_ar
+   schedule: (поля в выдаче НЕТ — это не то же, что пустое)
+   scheduleOptions: {}
+   nextRunTime: 2026-07-28T10:00:00Z
+   state: SUCCEEDED
+   disabled: (поля в выдаче НЕТ — это не то же, что пустое)
+   destinationDatasetId: marts
+   dataSourceId: scheduled_query
+   updateTime: 2026-06-05T10:00:27.182221Z
+   userId: 8522307959247193051
+   emailPreferences: {}
+   ownerInfo: {'email': 'ilyasbazarov4@gmail.com'}
+   notificationPubsubTopic: (поля в выдаче НЕТ — это не то же, что пустое)
+
+   -- полный набор ключей выдачи (для протокола):
+   dataSourceId, datasetRegion, destinationDatasetId, displayName, emailPreferences, name, nextRunTime, ownerInfo, params, scheduleOptions, scheduleOptionsV2, state, updateTime, userId
+
+########## 4. ЯКОРЬ (конец) ##########
+-- date -u:
+Mon Jul 27 15:13:35 UTC 2026
+-- активный аккаунт:
+ilyasbazarov4@gmail.com
+
+########## КОМАНД ЗАПИСИ НЕТ: только ls / show / help / version ##########
+СЫРЫЕ ВЫГРУЗКИ: /Users/ilyasbazarov/holika_cadence_20260727T151314Z

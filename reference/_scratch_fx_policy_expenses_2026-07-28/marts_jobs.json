@@ -1,0 +1,2873 @@
+[
+  {
+    "creation_time": "2026-07-13 01:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54b768-0000-2a3f-bb38-582429d0d650", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 03:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54b197-0000-29d6-ae9d-089e082b1f58", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 05:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54c884-0000-22be-a8cc-582429ab88c8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 07:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54ebb6-0000-2a2a-8ec6-14c14ef66e14", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 08:03:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54fd70-0000-22be-a8cc-582429ab88c8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 08:04:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a53fb5c-0000-2335-b717-ac3eb1440c1c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 09:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a55584c-0000-242f-b864-582429d29bf8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 10:00:06", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a559094-0000-27a2-b523-582429d21424", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 11:00:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54aecd-0000-221f-a4be-883d24f4f610", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 11:10:00", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54d30a-0000-22f9-91c1-f403043d52fc", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 11:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5490f6-0000-24fd-99df-30fd381795b8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 12:02:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5523f4-0000-2245-b568-c82add783c8c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54a408-0000-24fd-99df-30fd381795b8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 13:09:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54c887-0000-2880-87af-2405887387e8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 13:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5536ca-0000-2245-b568-c82add783c8c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 15:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a551a16-0000-235e-90e8-f4f5e80c7ef0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 17:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54af0e-0000-289c-b2f1-582429bc7380", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 19:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a55649c-0000-2e75-8daf-3c286d35280a", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 21:34:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a55c0e8-0000-2316-a6a7-f4f5e80f0ae4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 23:30:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a56715c-0000-2dfa-94a5-f4030439c5f4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 23:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a565cf4-0000-25e8-b9ec-883d24f43160", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 01:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a55771a-0000-29bd-abb7-f4f5e80dcc14", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 03:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a55c212-0000-2e75-8daf-3c286d35280a", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 05:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5553f2-0000-2bdb-8b32-582429bcf920", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 07:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a54ed80-0000-2335-b717-ac3eb1440c1c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 08:03:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a563f78-0000-283f-b819-089e0823aed4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 08:04:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a55e473-0000-2770-ae26-089e082b2eb0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 09:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a561a47-0000-2d57-933d-14223bc700f2", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 10:00:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a560596-0000-2dd9-905e-883d24f676e0", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 11:00:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5c21b0-0000-2d50-a420-3c286d356b5e", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 11:10:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a56f2a2-0000-25b8-a3ce-582429b712d4", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 11:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a55afdd-0000-289c-b2f1-582429bc7380", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 12:02:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a57a1c1-0000-248b-b331-14223bbac366", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a552c00-0000-2335-b717-ac3eb1440c1c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 13:09:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a578231-0000-22be-a8cc-582429ab88c8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 13:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a554d25-0000-2f3f-9754-c82add783178", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 15:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a56ddd8-0000-22f9-91c1-f403043d52fc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 17:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a567ad7-0000-2e75-8daf-3c286d35280a", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 19:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a56955a-0000-221f-a4be-883d24f4f610", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 21:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a57df97-0000-22be-a8cc-582429ab88c8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 23:30:06", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a562c3e-0000-2bdb-8b32-582429bcf920", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 23:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a578faf-0000-23bf-add7-582429c728b8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 01:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a56d06a-0000-297a-af49-d4f547efeaec", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 03:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a57be73-0000-23bf-add7-582429c728b8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 05:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a585126-0000-2a2a-8ec6-14c14ef66e14", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 07:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a56d2b5-0000-2770-ae26-089e082b2eb0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 08:03:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a577bb0-0000-2661-91f1-582429d22204", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 08:04:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a56948d-0000-2bdb-8b32-582429bcf920", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 09:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a575dd8-0000-2250-a621-f4030439cb30", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 10:00:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a57a745-0000-249a-96b2-089e082f831c", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 11:00:07", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a577575-0000-2ff9-be54-582429ad5d10", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 11:10:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a57ad50-0000-235e-90e8-f4f5e80c7ef0", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 11:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58912c-0000-22be-a8cc-582429ab88c8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 12:02:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a579c7d-0000-221f-a4be-883d24f4f610", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a56c7c6-0000-2bdb-8b32-582429bcf920", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 13:09:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58c428-0000-2a2a-8ec6-14c14ef66e14", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 13:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a57d54f-0000-229b-a4cd-883d24f4ee14", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 15:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a56f622-0000-289c-b2f1-582429bc7380", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 17:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a57bf08-0000-2d69-b381-582429d2cfac", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 19:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a56fb39-0000-2bdb-8b32-582429bcf920", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 21:34:06", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a580204-0000-26e6-bf58-c82add7926c8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 23:30:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a581eb3-0000-221e-846a-883d24f65dc4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 23:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a580536-0000-2e80-83a8-30fd38125a84", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 01:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a584fbd-0000-29ab-a063-f403043d4464", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 03:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a589d1f-0000-2e4f-ab94-3c286d36447e", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 05:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58d879-0000-2e0c-9c3b-f4f5e80a4b7c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 07:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a592cdb-0000-20b4-90bb-14223bba8cbe", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 08:03:08", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58c231-0000-259f-920d-582429ab37d0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 08:04:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5852b7-0000-24d6-b888-9898fbd4b5fd", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 09:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5942e2-0000-2fe9-b861-f4f5e805b7b8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 10:00:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58c3fb-0000-2478-bcb7-14c14ef178b8", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 11:00:12", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a587eed-0000-2f11-bcdf-7474463a4f9d", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 11:10:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58ba70-0000-2cfd-b62b-089e08314910", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 11:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58cd1a-0000-2158-a849-3c286d36078e", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 12:02:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58d1bd-0000-2d5f-8d86-14c14ef7b180", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58be7a-0000-271a-b3c5-089e0827fba4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 13:09:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5895fe-0000-2f11-bcdf-7474463a4f9d", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 13:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58f23a-0000-2b11-9485-582429c2e6f0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 15:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a58971b-0000-24d6-b888-9898fbd4b5fd", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 17:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a59a4ea-0000-2513-ad72-089e082f4dc4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 19:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a599b50-0000-23e8-8e99-883d24f52974", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 21:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a59d061-0000-279b-be4e-582429a60824", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 23:30:09", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a59a228-0000-201a-b32d-c82add76f5e8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 23:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5a02a4-0000-2700-a0e3-582429cbd104", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 01:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a597b80-0000-2be9-bf7e-582429c25f2c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 03:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5a1b15-0000-2fa0-9e12-089e08295cec", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 05:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a597cae-0000-2e80-83a8-30fd38125a84", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 07:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a59d234-0000-21da-9517-2405888139b0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 08:03:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5ac46b-0000-2463-a42d-582429cec764", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 08:04:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5a1800-0000-2d5f-8d86-14c14ef7b180", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 09:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a59cf29-0000-2e8c-9599-883d24f4a864", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 10:00:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5a5f72-0000-2a22-ab77-883d24f6efb8", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 11:00:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5a983d-0000-21a3-b945-089e082e5fdc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 11:10:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5b265d-0000-2063-8460-582429bc70e0", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 11:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5d8607-0000-2b0a-9a90-089e082fe210", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 12:02:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5aa52b-0000-2478-bcb7-14c14ef178b8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 13:09:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5a1e73-0000-25ce-a479-34391606f85b", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 13:09:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5add6c-0000-259f-920d-582429ab37d0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 13:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5a9248-0000-2a22-ab77-883d24f6efb8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 15:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5bb37b-0000-2700-a0e3-582429cbd104", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 17:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a59fcde-0000-2c33-8270-34391606d93b", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 19:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5b38be-0000-2478-bcb7-14c14ef178b8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 21:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5b2b9d-0000-2fe9-b861-f4f5e805b7b8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 23:30:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5c330a-0000-2700-a0e3-582429cbd104", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 23:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5bde9b-0000-2463-a42d-582429cec764", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 01:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5aee24-0000-2d5f-8d86-14c14ef7b180", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 03:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5bed06-0000-2da5-b88d-14c14ef99010", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 05:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5bdfac-0000-21a3-b945-089e082e5fdc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 07:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5adc1b-0000-28de-88c7-24058881d2dc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 08:03:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5aafa4-0000-2840-884a-582429cd63c4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 08:04:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e70be-0000-2fa0-9e12-089e08295cec", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 09:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5c799b-0000-2063-8460-582429bc70e0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 10:00:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5a4e99-0000-2f11-bcdf-7474463a4f9d", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 11:00:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5aba3c-0000-2e80-83a8-30fd38125a84", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 11:10:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5b66bf-0000-2e95-9af1-ac3eb15db26c", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 11:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5ad87f-0000-2840-884a-582429cd63c4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 12:02:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e7a23-0000-279b-be4e-582429a60824", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5a7110-0000-2f11-bcdf-7474463a4f9d", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 13:09:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5cd6c3-0000-259f-920d-582429ab37d0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 13:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5b7f2d-0000-2351-a5fb-ac3eb15dc044", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 15:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5d8a42-0000-2700-a0e3-582429cbd104", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 17:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5c6d13-0000-2dc1-947e-582429d30838", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 19:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5c028e-0000-2fda-8e1b-089e082917d8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 21:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5c0a81-0000-2351-a5fb-ac3eb15dc044", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 23:30:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5cace7-0000-2dc1-947e-582429d30838", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 23:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5b9dd6-0000-2be9-bf7e-582429c25f2c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 01:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5bb340-0000-2e8c-9599-883d24f4a864", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 03:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5d5591-0000-2fe9-b861-f4f5e805b7b8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 05:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5b77fa-0000-2859-815d-c82add78f1f8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 07:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f49dd-0000-23e8-8e99-883d24f52974", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 08:03:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f1726-0000-2cfd-b62b-089e08314910", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 08:04:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5d3ac2-0000-2dc1-947e-582429d30838", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 09:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5baa7f-0000-2859-815d-c82add78f1f8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 10:00:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5c9ffa-0000-2479-a930-089e082797e4", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 11:00:07", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5d04b9-0000-2351-a5fb-ac3eb15dc044", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 11:10:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61544d-0000-279b-be4e-582429a60824", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 11:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5cbf16-0000-2297-825a-ac3eb15d6f88", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 12:02:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5d7640-0000-2dc1-947e-582429d30838", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5d9cd0-0000-2e16-9b19-f4030439a8d8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 13:09:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5c35ae-0000-2be9-bf7e-582429c25f2c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 13:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5d540a-0000-2f9b-949a-d43a2cca088f", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 15:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e1780-0000-2158-a849-3c286d36078e", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 17:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5d7eca-0000-2d5f-8d86-14c14ef7b180", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 19:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5b94d0-0000-2f11-bcdf-7474463a4f9d", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 21:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5d6e5a-0000-27e6-921a-582429d2cdb8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 23:30:07", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e47b2-0000-2dc1-947e-582429d30838", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 23:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e0ea4-0000-2f9b-949a-d43a2cca088f", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 01:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5c0e24-0000-2105-8848-582429aee164", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 03:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e9aeb-0000-2e0c-9c3b-f4f5e80a4b7c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 05:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5df143-0000-248b-b7af-ac3eb155cdbc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 07:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e0d6b-0000-2e39-a254-582429d0ea48", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 08:03:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5fda22-0000-2463-a42d-582429cec764", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 08:04:00", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a619026-0000-2cfd-b62b-089e08314910", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 09:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e03de-0000-240b-bc66-f4f5e8095ec8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 10:00:06", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e3462-0000-2351-a5fb-ac3eb15dc044", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 11:00:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5dfc42-0000-2f32-a80a-2405886f26cc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 11:10:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5dfca7-0000-220c-8ce1-24058877dcf8", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 11:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e003a-0000-2cd1-8ed0-9898fbd4c61d", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 12:02:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e19c3-0000-20c1-b1e7-883d24f43244", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e56c6-0000-27d5-85d6-f4f5e8094420", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 13:09:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e135d-0000-2f32-a80a-2405886f26cc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 13:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e4ae2-0000-2cd1-9e38-089e0827b1f0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 15:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e77a8-0000-2f75-9043-f4f5e80aec20", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 17:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e41c8-0000-2f32-a80a-2405886f26cc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 19:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e8592-0000-2f89-b919-089e0827b2bc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 21:34:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e7bcf-0000-2902-8b17-24058880ff88", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 23:30:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5ef525-0000-2563-9b7a-582429c08924", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 23:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e7df6-0000-2f8b-ac70-d43a2cc23de7", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 01:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5ef4a7-0000-246b-92aa-14223bc8fc92", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 03:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5fb174-0000-2cd1-9e38-089e0827b1f0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 05:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5e9955-0000-2cd1-8ed0-9898fbd4c61d", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 07:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5eb5ea-0000-2ede-96dd-9898fbd4c04d", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 08:03:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5fd79f-0000-2563-9b7a-582429c08924", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 08:04:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f71f7-0000-2886-a688-582429c008b4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 09:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f54b6-0000-2a12-a9b1-30fd38123f08", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 10:00:06", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f7b41-0000-2d81-a889-f4f5e8093f7c", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 11:00:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f950b-0000-246b-92aa-14223bc8fc92", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 11:10:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f3c29-0000-2f89-b919-089e0827b2bc", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 11:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f9d07-0000-27d6-9fa1-14223bc90b5a", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 12:02:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5fc772-0000-2287-a729-14c14efc6a50", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 13:09:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5fe513-0000-2886-a688-582429c008b4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 13:09:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5facac-0000-220c-8ce1-24058877dcf8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 13:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f5f89-0000-21ef-be60-f4f5e80b2960", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 15:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a605073-0000-2153-9a0f-f4f5e80b4724", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 17:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f074f-0000-2cd1-8ed0-9898fbd4c61d", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 19:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5fe142-0000-2d81-a889-f4f5e8093f7c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 21:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a60173d-0000-20ae-85f0-c82add6dd0c8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 23:30:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5f83db-0000-2737-94b8-c82add787f98", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 23:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a601e6a-0000-21a3-9b7c-582429b2ab68", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 01:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5fde34-0000-28b8-9ea0-088bc8738996", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 03:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a60a8ab-0000-2886-a688-582429c008b4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 05:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a604f54-0000-26b4-8083-f403043d7ae8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 07:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a5fda13-0000-2737-94b8-c82add787f98", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 08:03:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61802e-0000-2988-957d-14c14ef7b5a8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 08:04:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a60fd8d-0000-2e4b-9199-f4030439b494", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 09:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a604d6b-0000-28b8-9ea0-088bc8738996", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 10:00:06", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a60ae9a-0000-20ae-85f0-c82add6dd0c8", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 11:00:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a609107-0000-2943-b655-24058882b6d8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 11:10:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a616976-0000-2f48-9696-582429a6f04c", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 11:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a619723-0000-2834-b388-f4f5e8096748", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 12:02:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6106c0-0000-29ff-9dac-f403043dc2cc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a60aedd-0000-280f-be87-f4f5e80b1a74", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 13:09:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61c84a-0000-2886-a688-582429c008b4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 13:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a613d2c-0000-2153-9a0f-f4f5e80b4724", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 15:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61362b-0000-229a-8f5c-f4f5e80589bc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 17:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a615df7-0000-2153-9a0f-f4f5e80b4724", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 19:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61166b-0000-27b8-a795-089e0827a1a4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 21:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61ee6e-0000-2439-a1aa-14c14ef92e20", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 23:30:06", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a60f6cb-0000-2a12-a9b1-30fd38123f08", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 23:34:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a60806c-0000-2737-94b8-c82add787f98", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 01:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61d924-0000-2ebc-88bb-f4f5e80e216c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 03:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61ceda-0000-2680-b6e4-14c14efd3858", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 05:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61d141-0000-27b8-a795-089e0827a1a4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 07:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61d7ad-0000-21a6-8ae2-582429d25458", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 08:03:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6196d1-0000-21ef-be60-f4f5e80b2960", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 08:04:00", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61fc20-0000-27b8-a795-089e0827a1a4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 09:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6122e5-0000-20c1-b1e7-883d24f43244", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 10:00:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a627f1e-0000-2e4b-9199-f4030439b494", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 11:00:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a657bf7-0000-2cd1-9e38-089e0827b1f0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 11:10:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6134eb-0000-20c1-b1e7-883d24f43244", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 11:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61aa98-0000-2943-b655-24058882b6d8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 12:02:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6218cc-0000-2ac2-8efa-c82add7ee6cc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6271b8-0000-2e33-a18e-240588813cc8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a62466f-0000-2526-a28e-f4f5e80941f0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 13:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6335bd-0000-2f48-9696-582429a6f04c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 15:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a628c62-0000-21a3-9b7c-582429b2ab68", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 17:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a62d4ab-0000-26b4-8083-f403043d7ae8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 19:34:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63a871-0000-2f48-9696-582429a6f04c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 21:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63d5e5-0000-2563-9b7a-582429c08924", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 23:30:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61bf8a-0000-2737-94b8-c82add787f98", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 23:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61a9a1-0000-20c1-b1e7-883d24f43244", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 01:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a61da91-0000-2737-94b8-c82add787f98", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 03:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a632b89-0000-21a3-9b7c-582429b2ab68", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 05:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a62d998-0000-2153-9a0f-f4f5e80b4724", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 07:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a618751-0000-291d-9534-582429d0df5c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 08:03:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6597fd-0000-2988-957d-14c14ef7b5a8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 08:04:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a630ee2-0000-2a12-a9b1-30fd38123f08", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 09:34:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6285cc-0000-2943-b655-24058882b6d8", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 10:00:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63f754-0000-2e4b-9199-f4030439b494", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 11:00:12", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a632ec8-0000-2030-96d7-883d24f6ed20", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 11:10:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63a23e-0000-21a3-9b7c-582429b2ab68", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 11:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63da25-0000-29ff-9dac-f403043dc2cc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 12:02:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a62328c-0000-20c1-b1e7-883d24f43244", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a634676-0000-2030-96d7-883d24f6ed20", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 13:09:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a664c79-0000-246b-92aa-14223bc8fc92", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 13:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a64c80d-0000-2fb9-9a38-2405887d5ffc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 15:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63ea4c-0000-21a3-9b7c-582429b2ab68", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 17:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a64d428-0000-2c0d-8ab5-582429aa7908", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 19:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63cf0e-0000-2277-8eda-c82add6e126c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 21:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63cf95-0000-2685-af80-34c7e93e422f", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 23:30:08", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63ed67-0000-2f19-aaf5-2405887a9398", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 23:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a647a52-0000-29ff-9dac-f403043dc2cc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 01:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a643fea-0000-280f-be87-f4f5e80b1a74", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 03:34:07", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63f5e1-0000-266f-8c17-30fd38137b8c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 05:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a647b0c-0000-21a3-9b7c-582429b2ab68", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 07:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6509ff-0000-2ebc-88bb-f4f5e80e216c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 08:03:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6274ee-0000-291d-9534-582429d0df5c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 08:04:00", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6673c5-0000-2563-9b7a-582429c08924", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 09:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6393f1-0000-2737-94b8-c82add787f98", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 10:00:08", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a651318-0000-2e33-a18e-240588813cc8", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 11:00:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66f610-0000-2c0d-8ab5-582429aa7908", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 11:10:09", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a62946b-0000-291d-9534-582429d0df5c", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 11:34:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a652f12-0000-2a12-a9b1-30fd38123f08", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 12:02:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a64a40e-0000-2b5f-8821-f4f5e80aebfc", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 13:09:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a63b029-0000-20f0-b918-582429be4e48", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 13:09:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a64c2a1-0000-2287-a729-14c14efc6a50", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 13:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a660701-0000-2f48-9696-582429a6f04c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 15:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a652197-0000-24aa-8282-14c14ef92894", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 17:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a64d8ca-0000-2edf-94a8-7474463b31ed", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 19:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a653c8a-0000-29ee-88a9-883d24f4a974", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 21:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a651831-0000-2c65-b505-582429adf2d4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 23:30:07", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a65033a-0000-2919-bc53-089e082f9398", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 23:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a65a262-0000-20dc-bf2d-14223bc72bbe", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 01:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6562b7-0000-29dc-908b-f403043bb688", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 03:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66151d-0000-2478-ad66-883d24f6c144", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 05:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a65a647-0000-2979-a087-089e0827ccd0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 07:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6579a8-0000-2ff8-8ef6-c82add7839c0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 08:03:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a65d32b-0000-25ce-875c-f4f5e80b1c90", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 08:04:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a65c4e7-0000-2a6d-85d1-883d24f22174", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 09:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a668be8-0000-20dc-bf2d-14223bc72bbe", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 10:00:08", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a660d7c-0000-21ff-8839-582429bd2d88", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 11:00:16", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a679ff2-0000-2b2b-af12-14223bbd5b46", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 11:10:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a65b16c-0000-2c54-9aee-7474463c3a1d", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 11:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6646ea-0000-2d10-932d-240588817110", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 12:02:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66751a-0000-2e56-a3a3-c82add78fcec", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66a617-0000-2478-ad66-883d24f6c144", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 13:09:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a65b447-0000-2f37-b41b-f4f5e80e6e94", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 13:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a67e9ab-0000-2b2b-af12-14223bbd5b46", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 15:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a65b5e8-0000-289f-8ecf-582429ab7b74", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 17:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a65d2c5-0000-2626-998f-582429ce1190", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 19:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a666567-0000-22ce-ad44-f403043d5328", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 19:39:37", 
+    "ds": "marts", 
+    "job_id": "bqjob_r4a62e606d0d607b2_0000019f9ff0aa48_1", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "expenses_staging", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 21:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a669055-0000-2ed9-ae0b-f403043d639c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 23:30:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a65de19-0000-2f5c-95c0-34391606e50b", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 23:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66ffa0-0000-2d10-932d-240588817110", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 01:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66cf8a-0000-2c65-b505-582429adf2d4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 03:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66c187-0000-2b69-b608-240588708414", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 05:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a671a03-0000-2ed9-ae0b-f403043d639c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 07:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6724f4-0000-26c2-894a-240588811924", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 08:03:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a672d01-0000-2c65-b505-582429adf2d4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 08:04:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6720a8-0000-2b13-9b3e-089e082b4104", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "abc_xyz", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 09:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a69c16e-0000-245b-b694-14c14ef5ea64", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 10:00:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66b6c7-0000-2c54-9aee-7474463c3a1d", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "customer_invoices_ar", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 11:00:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a667088-0000-2edf-94a8-7474463b31ed", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "inventory_health", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 11:10:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66c595-0000-22d8-883f-883d24f52624", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 11:34:05", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a674913-0000-2f3e-8c4a-30fd381753c4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 12:02:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a674146-0000-29a1-89a6-7474463a3b35", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "gmroi_by_folder", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 13:09:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6780d0-0000-2e36-8336-089e082012f0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "in_transit", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 13:09:04", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a67d19e-0000-215c-aeb2-883d24f4a2f4", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "supplier_price_history", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 13:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66915a-0000-289f-8ecf-582429ab7b74", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 15:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a67e570-0000-25ce-875c-f4f5e80b1c90", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 15:53:48", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6770e8-0000-2b13-9b3e-089e082b4104", 
+    "job_type": "QUERY", 
+    "statement_type": "SELECT", 
+    "tbl": "expenses", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 17:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a66bdb3-0000-289f-8ecf-582429ab7b74", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 19:34:02", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a67c4aa-0000-20d1-83b3-582429bc0674", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 21:34:06", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a67b4b2-0000-2311-8bba-582429aa2714", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 23:30:08", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6866b5-0000-2ed9-ae0b-f403043d639c", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "weight_flow", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 23:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a68cfbe-0000-2ce2-92a7-089e082fc4d0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 01:34:01", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a6a99c3-0000-2739-bc43-582429cd38f0", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 03:34:03", 
+    "ds": "marts", 
+    "job_id": "scheduled_query_6a68c10b-0000-2664-88d7-c82add6d5364", 
+    "job_type": "QUERY", 
+    "statement_type": "CREATE_TABLE_AS_SELECT", 
+    "tbl": "sales_overview", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }
+]

@@ -1,0 +1,61 @@
+=== ANCHOR START ===
+Tue Jul 28 09:03:01 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR START END ===
+
+### Месяцы, где core.dim_fx_rates несёт больше одного значения курса ###
+[
+  {
+    "distinct_rates": "6", 
+    "year_month": "2025-06"
+  }, 
+  {
+    "distinct_rates": "7", 
+    "year_month": "2025-07"
+  }, 
+  {
+    "distinct_rates": "11", 
+    "year_month": "2025-08"
+  }, 
+  {
+    "distinct_rates": "7", 
+    "year_month": "2025-09"
+  }, 
+  {
+    "distinct_rates": "4", 
+    "year_month": "2025-10"
+  }, 
+  {
+    "distinct_rates": "3", 
+    "year_month": "2025-11"
+  }, 
+  {
+    "distinct_rates": "4", 
+    "year_month": "2025-12"
+  }, 
+  {
+    "distinct_rates": "6", 
+    "year_month": "2026-01"
+  }, 
+  {
+    "distinct_rates": "8", 
+    "year_month": "2026-03"
+  }, 
+  {
+    "distinct_rates": "9", 
+    "year_month": "2026-04"
+  }, 
+  {
+    "distinct_rates": "4", 
+    "year_month": "2026-06"
+  }, 
+  {
+    "distinct_rates": "5", 
+    "year_month": "2026-07"
+  }
+]
+
+=== ANCHOR END ===
+Tue Jul 28 09:03:05 UTC 2026
+ilyasbazarov4@gmail.com
+=== ANCHOR END END ===

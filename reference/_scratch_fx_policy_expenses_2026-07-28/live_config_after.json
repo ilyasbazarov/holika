@@ -1,0 +1,25 @@
+{
+  "dataSourceId": "scheduled_query",
+  "datasetRegion": "asia-east1",
+  "destinationDatasetId": "marts",
+  "displayName": "sq_marts_expenses",
+  "emailPreferences": {},
+  "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a22a243-0000-20fd-a458-883d24f4cad4",
+  "nextRunTime": "2026-07-29T11:10:00Z",
+  "ownerInfo": {
+    "email": "ilyasbazarov4@gmail.com"
+  },
+  "params": {
+    "destination_table_name_template": "expenses",
+    "partitioning_field": "",
+    "query": "WITH src AS (\n  SELECT\n    p.moment,\n    p.payment_type,\n    p.expense_item_id,\n    COALESCE(p.expense_item_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430') AS expense_item_name,\n    p.agent_id,\n    COALESCE(p.agent_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d')         AS agent_name,\n    p.project_id,\n    COALESCE(p.project_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d')       AS project_name,\n    p.sales_channel_id,\n    COALESCE(p.sales_channel_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d') AS sales_channel_name,\n    p.sum_kgs\n  FROM `msklad-bi-prod.core.fact_payments` p\n  WHERE p.moment IS NOT NULL\n\n  UNION ALL\n\n  SELECT\n    CAST(l.moment AS DATE)                      AS moment,\n    'loss'                                      AS payment_type,\n    l.expense_item_id,\n    COALESCE(l.expense_item_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430') AS expense_item_name,\n    l.agent_id,\n    COALESCE(l.agent_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d')         AS agent_name,\n    l.project_id,\n    '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d'                                 AS project_name,\n    l.sales_channel_id,\n    '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d'                                 AS sales_channel_name,\n    l.sum_kgs\n  FROM `msklad-bi-prod.core.fact_loss` l\n  WHERE l.moment IS NOT NULL\n    AND l.applicable\n    AND COALESCE(l.expense_item_id, '') NOT IN (\n      '24c0e914-2d8c-11f1-0a80-11b0000c7043',\n      '4e1c05f2-0673-11e6-a655-0cc47a342ca4',\n      '8dbf9374-0a01-11e4-b9bf-002590a32f46',\n      '8dbf99a0-0a01-11e4-a743-002590a32f46'\n    )\n\n  UNION ALL\n\n  SELECT\n    CAST(c.moment AS DATE)       AS moment,\n    'commission'                 AS payment_type,\n    CAST(NULL AS STRING)         AS expense_item_id,\n    '\u0420\u0430\u0441\u0445\u043e\u0434\u044b \u043c\u0430\u0440\u043a\u0435\u0442\u043f\u043b\u0435\u0439\u0441\u043e\u0432'      AS expense_item_name,\n    c.agent_id,\n    '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d'                  AS agent_name,\n    CAST(NULL AS STRING)         AS project_id,\n    '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d'                  AS project_name,\n    CAST(NULL AS STRING)         AS sales_channel_id,\n    '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d'                  AS sales_channel_name,\n    c.sum_kgs\n  FROM `msklad-bi-prod.core.fact_commissionreportin` c\n  WHERE c.moment IS NOT NULL\n)\nSELECT\n  s.moment,\n  DATE_TRUNC(s.moment, MONTH)                     AS month_start,\n  DATE_TRUNC(s.moment, WEEK(SATURDAY))            AS week_start,\n  EXTRACT(YEAR FROM s.moment)                     AS year_num,\n  FORMAT_DATE('%Y-%m', s.moment)                  AS year_month,\n  s.payment_type,\n  s.expense_item_id,\n  s.expense_item_name,\n  s.agent_id,\n  s.agent_name,\n  s.project_id,\n  s.project_name,\n  s.sales_channel_id,\n  s.sales_channel_name,\n  COUNT(*)                                        AS payment_count,\n  ROUND(SUM(s.sum_kgs), 2)                        AS total_sum_kgs,\n  ROUND(SUM(s.sum_kgs) / COALESCE(fx.rate_kgs_per_usd,\n    (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n     ORDER BY date DESC LIMIT 1)), 2)             AS total_sum_usd\nFROM src s\nLEFT JOIN `msklad-bi-prod.core.dim_fx_rates` fx\n  ON fx.date = s.moment\nWHERE s.moment IS NOT NULL\nGROUP BY\n  s.moment, month_start, week_start, year_num, year_month,\n  s.payment_type, s.expense_item_id, s.expense_item_name,\n  s.agent_id, s.agent_name, s.project_id, s.project_name,\n  s.sales_channel_id, s.sales_channel_name,\n  fx.rate_kgs_per_usd\n",
+    "write_disposition": "WRITE_TRUNCATE"
+  },
+  "scheduleOptions": {},
+  "scheduleOptionsV2": {
+    "timeBasedSchedule": {}
+  },
+  "state": "SUCCEEDED",
+  "updateTime": "2026-07-28T11:37:07.664398Z",
+  "userId": "8522307959247193051"
+}
