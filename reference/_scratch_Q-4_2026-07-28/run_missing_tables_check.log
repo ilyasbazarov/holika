@@ -1,0 +1,616 @@
+=== UTC anchor (start) ===
+Tue Jul 28 17:40:47 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== columns for core.fact_purchases ===
+[
+  {
+    "column_name": "purchase_order_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "order_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "position_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "order_date", 
+    "data_type": "DATE", 
+    "is_nullable": "NO", 
+    "ordinal_position": "4", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "planned_delivery_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "supplier_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "quantity_ordered", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "quantity_shipped", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "quantity_in_transit", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "price_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "in_transit_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "currency_rate", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "status_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "status_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "is_in_transit", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "18", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "19", 
+    "table_name": "fact_purchases"
+  }
+]
+=== columns for core.fact_returns ===
+[
+  {
+    "column_name": "return_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "fact_returns"
+  }, 
+  {
+    "column_name": "return_type", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "2", 
+    "table_name": "fact_returns"
+  }, 
+  {
+    "column_name": "return_date", 
+    "data_type": "DATE", 
+    "is_nullable": "NO", 
+    "ordinal_position": "3", 
+    "table_name": "fact_returns"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_returns"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_returns"
+  }, 
+  {
+    "column_name": "quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_returns"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_returns"
+  }, 
+  {
+    "column_name": "cost_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_returns"
+  }, 
+  {
+    "column_name": "has_basis", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_returns"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "NO", 
+    "ordinal_position": "10", 
+    "table_name": "fact_returns"
+  }
+]
+=== columns for core.fact_sales_profit ===
+[
+  {
+    "column_name": "transaction_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "transaction_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "return_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "margin_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "cogs_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "margin_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "_week_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "sell_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "18", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "19", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "20", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "21", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "22", 
+    "table_name": "fact_sales_profit"
+  }
+]
+=== columns for core.fact_payments_stg ===
+[
+  {
+    "column_name": "payment_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "payment_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "payment_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "expense_item_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "expense_item_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "payment_purpose", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "fact_payments_stg"
+  }
+]
+=== columns for core.fact_sales_profit_byvariant_backup ===
+[
+  {
+    "column_name": "transaction_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "transaction_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "return_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "sell_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "margin_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "cogs_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "margin_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "_week_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }
+]
+=== UTC anchor (end) ===
+Tue Jul 28 17:41:00 UTC 2026
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

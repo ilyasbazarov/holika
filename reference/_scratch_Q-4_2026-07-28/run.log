@@ -1,0 +1,17 @@
+=== UTC anchor (start) ===
+Tue Jul 28 17:35:52 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== INFORMATION_SCHEMA.COLUMNS dump ===
+BigQuery error in query operation: Error processing job 'msklad-bi-
+prod:bqjob_r47da2598bfe11112_0000019fa9cc2162_1': Access Denied: Table msklad-
+bi-prod:region-asia-east1.INFORMATION_SCHEMA.COLUMNS: User does not have the
+required permissions ('bigquery.tables.list' permission(s) at the dataset level;
+and 'bigquery.tables.get' permission(s) at the table level) to query system
+entity msklad-bi-prod:region-asia-east1.INFORMATION_SCHEMA.COLUMNS.

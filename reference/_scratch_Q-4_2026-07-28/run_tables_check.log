@@ -1,0 +1,83 @@
+=== UTC anchor (start) ===
+Tue Jul 28 17:39:47 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== core.INFORMATION_SCHEMA.TABLES ===
+[
+  {
+    "table_name": "dim_counterparties", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "dim_employees", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "dim_fx_rates", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "dim_metadata_mappings", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "dim_products", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "fact_commissionreportin", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "fact_customer_invoices", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "fact_inventory", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "fact_loss", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "fact_payments", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "fact_payments_stg", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "fact_purchases", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "fact_returns", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "fact_sales_profit", 
+    "table_type": "BASE TABLE"
+  }, 
+  {
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_type": "BASE TABLE"
+  }
+]
+=== UTC anchor (end) ===
+Tue Jul 28 17:39:50 UTC 2026
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

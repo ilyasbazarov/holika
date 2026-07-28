@@ -1,0 +1,4368 @@
+=== UTC anchor (start) ===
+Tue Jul 28 17:42:58 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== dataset: core ===
+[
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "dim_counterparties", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "dim_counterparties", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "owner_employee_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "dim_counterparties", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "owner_employee_skey", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "dim_counterparties", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "country", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "dim_counterparties", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "scd2_valid_from", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "dim_counterparties", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "scd2_valid_to", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "dim_counterparties", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "scd2_is_current", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "dim_counterparties", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "dim_counterparties", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "employee_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "dim_employees", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "full_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "dim_employees", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "position", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "dim_employees", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "email", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "dim_employees", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "phone", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "dim_employees", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "updated_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "dim_employees", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "NO", 
+    "ordinal_position": "7", 
+    "table_name": "dim_employees", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "date", 
+    "data_type": "DATE", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "dim_fx_rates", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "rate_kgs_per_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "NO", 
+    "ordinal_position": "2", 
+    "table_name": "dim_fx_rates", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "field_name", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "dim_metadata_mappings", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "2", 
+    "table_name": "dim_metadata_mappings", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "current_uuid", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "3", 
+    "table_name": "dim_metadata_mappings", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "field_type", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "4", 
+    "table_name": "dim_metadata_mappings", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "last_verified", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "NO", 
+    "ordinal_position": "5", 
+    "table_name": "dim_metadata_mappings", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "notes", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "dim_metadata_mappings", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "article", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "parent_product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "6", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "created", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "shelf_life", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "qty_per_box", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "is_exclusive", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "is_sunscreen", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "updated_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "NO", 
+    "ordinal_position": "13", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "weight", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "dim_products", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "document_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_commissionreportin", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_commissionreportin", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_commissionreportin", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "currency_code", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_commissionreportin", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "rate_value", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_commissionreportin", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "reward_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_commissionreportin", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "commission_overhead_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_commissionreportin", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_commissionreportin", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_commissionreportin", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "invoice_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "invoice_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "state_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "state_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "payed_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "unpaid_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "payment_planned", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_customer_invoices", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "date_snapshot", 
+    "data_type": "DATE", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "2", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "stock", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "reserve", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "in_transit", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "quantity_available", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "stock_days", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "cost_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "NO", 
+    "ordinal_position": "11", 
+    "table_name": "fact_inventory", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "document_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "expense_item_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "expense_item_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "currency_code", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "rate_value", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "applicable", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_loss", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "payment_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "payment_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "payment_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "expense_item_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "expense_item_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "payment_purpose", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "fact_payments", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "payment_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "payment_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "payment_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "expense_item_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "expense_item_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "payment_purpose", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "fact_payments_stg", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "purchase_order_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "order_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "position_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "order_date", 
+    "data_type": "DATE", 
+    "is_nullable": "NO", 
+    "ordinal_position": "4", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "planned_delivery_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "supplier_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "quantity_ordered", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "quantity_shipped", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "quantity_in_transit", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "price_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "in_transit_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "currency_rate", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "status_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "status_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "is_in_transit", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "18", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "19", 
+    "table_name": "fact_purchases", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "return_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "fact_returns", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "return_type", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "2", 
+    "table_name": "fact_returns", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "return_date", 
+    "data_type": "DATE", 
+    "is_nullable": "NO", 
+    "ordinal_position": "3", 
+    "table_name": "fact_returns", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_returns", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_returns", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_returns", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_returns", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "cost_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_returns", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "has_basis", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_returns", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "NO", 
+    "ordinal_position": "10", 
+    "table_name": "fact_returns", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "transaction_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "transaction_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "return_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "margin_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "cogs_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "margin_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_week_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sell_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "18", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "19", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "20", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "21", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "22", 
+    "table_name": "fact_sales_profit", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "transaction_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "transaction_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "return_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "sell_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "margin_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "cogs_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "margin_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_week_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "fact_sales_profit_byvariant_backup", 
+    "table_schema": "core"
+  }
+]
+=== dataset: marts ===
+[
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "article", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "parent_product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "abc_class", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "revenue_90d_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "margin_90d_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "quantity_90d", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "active_days_90d", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "revenue_90d_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "xyz_class", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "cov", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "weeks_with_sales", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "avg_weekly_qty", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "abc_xyz", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "rate_kgs_per_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "18", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "_mart_refreshed_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "19", 
+    "table_name": "abc_xyz", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "country", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "state_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "state_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "invoice_count", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "total_invoiced_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "total_paid_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "total_unpaid_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "earliest_invoice_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "latest_invoice_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "overdue_count", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "customer_invoices_ar", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "month_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "week_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "year_num", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "year_month", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "payment_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "expense_item_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "expense_item_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "payment_count", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "total_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "total_sum_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "expenses", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "month_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "week_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "year_num", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "year_month", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "payment_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "expense_item_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "expense_item_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "payment_count", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "total_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "total_sum_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "expenses_staging", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "period_days", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "parent_product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "gross_profit_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "gross_margin_pct", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "avg_inventory_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "snapshot_count", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "gmroi", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "gross_profit_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "avg_inventory_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "rate_kgs_per_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_inventory_missing", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_cogs_zero", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "18", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "_mart_refreshed_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "19", 
+    "table_name": "gmroi", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "period_days", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_count", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "gross_profit_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "total_avg_inventory_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "gmroi_weighted", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "gross_profit_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "avg_inventory_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "products_no_inventory", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "products_no_cogs", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "rate_kgs_per_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "_mart_refreshed_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "gmroi_by_folder", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "order_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "purchase_order_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "position_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "order_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "planned_delivery_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "days_until_delivery", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_overdue", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "supplier_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "supplier_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "status_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "quantity_ordered", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "quantity_shipped", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "quantity_in_transit", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "price_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "in_transit_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "18", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "in_transit_sum_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "19", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "fx_rate_used", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "20", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "_mart_refreshed_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "21", 
+    "table_name": "in_transit", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "date_snapshot", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "article", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "parent_product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "stock", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "reserve", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "quantity_available", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "stock_days", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "cost_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "frozen_capital_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "frozen_capital_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "sold_quantity_30d", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "revenue_30d_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "active_days_30d", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "true_adt", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "18", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "calendar_adt", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "19", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "sold_quantity_7d", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "20", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "sold_quantity_90d", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "21", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "calendar_adt_90d", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "22", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "coverage_days_true_adt", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "23", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "coverage_days_90d_calendar", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "24", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_oos", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "25", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_toxic", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "26", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_stagnant", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "27", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_low_stock", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "28", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_overstock", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "29", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_zero_cost", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "30", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "rate_kgs_per_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "31", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "_mart_refreshed_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "32", 
+    "table_name": "inventory_health", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "transaction_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "week_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "month_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "iso_week_label", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "article", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "parent_product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "parent_product_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "counterparty_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "country", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "owner_employee_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "manager_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "manager_position", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "18", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "19", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "20", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "21", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "22", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "margin_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "23", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "margin_kgs_adjusted", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "24", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "margin_pct", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "25", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "discount_percent", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "26", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "return_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "27", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "28", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "return_no_basis_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "29", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "return_doc_count", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "30", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "net_revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "31", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "net_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "32", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "33", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "cogs_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "34", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "margin_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "35", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "return_sum_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "36", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "rate_kgs_per_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "37", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_cogs_missing", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "38", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "is_agent_missing", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "39", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "_mart_refreshed_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "40", 
+    "table_name": "sales_overview", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "order_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "supplier_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "supplier_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "status_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "quantity_ordered", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "price_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "price_usd", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "fx_rate_used", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "_mart_refreshed_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "supplier_price_history", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "flow_date", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "weight_flow", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "week_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "weight_flow", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "month_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "weight_flow", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "flow_direction", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "weight_flow", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "weight_kg", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "weight_flow", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "positions_total", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "weight_flow", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "positions_with_weight", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "weight_flow", 
+    "table_schema": "marts"
+  }, 
+  {
+    "column_name": "weight_coverage_pct", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "weight_flow", 
+    "table_schema": "marts"
+  }
+]
+=== dataset: audit ===
+[
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "owner_employee_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "country", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "instagram", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "telegram_username", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "telegram_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "vk", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "avito", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "max_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "max_username", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "responsible_employee_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "allowed_debt_sum", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "created_by_fintablo", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "updated_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "owner_employee_skey", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "scd2_valid_from", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "18", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "scd2_valid_to", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "19", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "scd2_is_current", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "20", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "snapshot_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "21", 
+    "table_name": "dim_counterparties_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "dim_counterparties_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "dim_counterparties_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "owner_employee_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "dim_counterparties_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "owner_employee_skey", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "dim_counterparties_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "country", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "dim_counterparties_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "scd2_valid_from", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "dim_counterparties_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "scd2_valid_to", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "dim_counterparties_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "scd2_is_current", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "dim_counterparties_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "dim_counterparties_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "snapshot_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "dim_counterparties_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "employee_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "dim_employees_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "full_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "dim_employees_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "position", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "dim_employees_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "email", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "dim_employees_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "phone", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "dim_employees_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "updated_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "dim_employees_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "dim_employees_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "snapshot_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "dim_employees_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "employee_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "dim_employees_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "full_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "dim_employees_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "position", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "dim_employees_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "email", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "dim_employees_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "phone", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "dim_employees_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "updated_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "dim_employees_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "dim_employees_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "snapshot_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "dim_employees_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "article", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "parent_product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "created", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "shelf_life", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "qty_per_box", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "is_exclusive", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "is_sunscreen", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "updated_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "snapshot_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "dim_products_initial", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "article", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "parent_product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "created", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "shelf_life", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "qty_per_box", 
+    "data_type": "INT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "is_exclusive", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "is_sunscreen", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "updated_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "snapshot_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "dim_products_snapshots", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "run_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "dq_runs", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "check_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "dq_runs", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "passed", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "dq_runs", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "detail", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "dq_runs", 
+    "table_schema": "audit"
+  }, 
+  {
+    "column_name": "checked_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "dq_runs", 
+    "table_schema": "audit"
+  }
+]
+=== dataset: stg_msklad ===
+[
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "byvariant_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "_week_start", 
+    "data_type": "DATE", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "byvariant_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "byvariant_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "sell_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "byvariant_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "byvariant_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "byvariant_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "return_cost_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "byvariant_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "profit_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "byvariant_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "byvariant_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "counterparties_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "counterparties_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "owner_employee_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "counterparties_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "country", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "counterparties_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "counterparties_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "employee_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "employees_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "full_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "employees_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "position", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "employees_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "employees_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "document_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_commissionreportin_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_commissionreportin_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_commissionreportin_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "currency_code", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_commissionreportin_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "rate_value", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_commissionreportin_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "reward_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_commissionreportin_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "commission_overhead_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_commissionreportin_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_commissionreportin_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_commissionreportin_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "document_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "expense_item_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "expense_item_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "currency_code", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "rate_value", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "applicable", 
+    "data_type": "BOOL", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_loss_stg", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "run_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "1", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "demand_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "order_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "position_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "transaction_date_raw", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "quantity", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "price_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "11", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "12", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "13", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "14", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "15", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "16", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "17", 
+    "table_name": "fact_sales_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "NO", 
+    "ordinal_position": "1", 
+    "table_name": "products_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "name", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "2", 
+    "table_name": "products_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "article", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "3", 
+    "table_name": "products_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "4", 
+    "table_name": "products_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "parent_product_id", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "5", 
+    "table_name": "products_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "6", 
+    "table_name": "products_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "created", 
+    "data_type": "STRING", 
+    "is_nullable": "YES", 
+    "ordinal_position": "7", 
+    "table_name": "products_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "shelf_life", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "8", 
+    "table_name": "products_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "weight", 
+    "data_type": "FLOAT64", 
+    "is_nullable": "YES", 
+    "ordinal_position": "9", 
+    "table_name": "products_staging", 
+    "table_schema": "stg_msklad"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "is_nullable": "YES", 
+    "ordinal_position": "10", 
+    "table_name": "products_staging", 
+    "table_schema": "stg_msklad"
+  }
+]
+=== UTC anchor (end) ===
+Tue Jul 28 17:43:09 UTC 2026
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

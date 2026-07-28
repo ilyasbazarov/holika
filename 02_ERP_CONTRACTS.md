@@ -59,31 +59,66 @@
 | project_name | STRING | Название проекта (`COALESCE` → 'Не указан') |
 | _loaded_at | TIMESTAMP | — |
 
-**core.fact_purchases** ⚠️ **схема не исчерпывающая** — восстановлена по дельте 2026-06-24, поля подтверждены только SQL-кодом `marts.in_transit`; таблица не была явно задокументирована в источнике:
+**core.fact_purchases** — полная фактическая схема (закрыт `Q-4`, трассировка: `/reference/schema_dump_2026-07-28.md §core.fact_purchases`, дамп `INFORMATION_SCHEMA.COLUMNS` 2026-07-28):
 
 | Колонка | Тип | Описание |
 |---|---|---|
-| purchase_order_id | STRING | UUID заказа поставщику — для JOIN/MERGE |
+| purchase_order_id | STRING | UUID заказа поставщику — для JOIN/MERGE (NOT NULL) |
 | order_name | STRING | Человекочитаемый номер заказа (`order.get("name")`) — основной Dimension для BI вместо UUID |
 | position_id | STRING | UUID позиции заказа |
-| order_date | DATE | Дата создания заказа |
+| order_date | DATE | Дата создания заказа (NOT NULL) |
 | planned_delivery_date | DATE | Плановая дата поставки (может быть NULL) |
 | product_id | STRING | FK → `dim_products` |
 | supplier_id | STRING | FK → `dim_counterparties` (agent_id) |
-| status_id | STRING | UUID статуса заказа (см. §справочные данные) |
-| status_name | STRING | Денормализованное название статуса |
 | quantity_ordered | FLOAT64 | Заказано штук |
 | quantity_shipped | FLOAT64 | Отгружено поставщиком штук |
 | quantity_in_transit | FLOAT64 | В пути штук |
 | price_kgs | FLOAT64 | Цена в KGS |
+| discount | FLOAT64 | Скидка % — **в дампе, не было в прежней частичной схеме** |
+| sum_kgs | FLOAT64 | Сумма позиции, KGS — **в дампе, не было в прежней частичной схеме** |
 | in_transit_sum_kgs | FLOAT64 | Сумма в пути, KGS |
-| _loaded_at | TIMESTAMP | Время загрузки (по аналогии с другими `fact_*`, не подтверждено отдельно в дельте) |
+| currency_rate | FLOAT64 | Курс валюты заказа — **в дампе, не было в прежней частичной схеме** |
+| status_id | STRING | UUID статуса заказа (см. §справочные данные) |
+| status_name | STRING | Денормализованное название статуса |
+| is_in_transit | BOOL | Флаг «в пути» — **в дампе, не было в прежней частичной схеме** |
+| _loaded_at | TIMESTAMP | Время загрузки |
 
-**⚠️ GAP Q-4 (факт):** список полей выше — не полный. Только то, что встречается в актуальном SQL `marts.in_transit`. Полная фактическая схема (и остальных таблиц core/marts) не задокументирована → discovery: дамп `INFORMATION_SCHEMA.COLUMNS` по всем таблицам core/marts в `/reference`.
+Прежняя частичная схема (восстановлена по дельте 2026-06-24 из SQL `marts.in_transit`) совпадала с дампом по всем 15 из 15 полей, включая типы; 4 поля (`discount`, `sum_kgs`, `currency_rate`, `is_in_transit`) в дельте не встречались и добавлены этим дампом. GAP Q-4 по этой таблице закрыт.
 
-*(Схемы `fact_customer_invoices`/`fact_payments` (PR-27) — вне scope этой сессии по таблице шагов брифа M-P4-A-02; не переносятся здесь.)*
+**core.fact_returns** — не документирована ранее, закрыт `Q-4` (трассировка: `/reference/schema_dump_2026-07-28.md §core.fact_returns`):
 
-*(PR-24, PR-25)*
+| Колонка | Тип | Описание |
+|---|---|---|
+| return_id | STRING | UUID возврата — суррогатный ключ (NOT NULL) |
+| return_type | STRING | Тип возврата (NOT NULL) |
+| return_date | DATE | Дата возврата (NOT NULL) |
+| product_id | STRING | FK → `dim_products` |
+| agent_id | STRING | FK → `dim_counterparties` |
+| quantity | FLOAT64 | Возвращено штук |
+| sum_kgs | FLOAT64 | Сумма возврата, KGS |
+| cost_kgs | FLOAT64 | Себестоимость возврата, KGS |
+| has_basis | BOOL | Есть основание (документ-основание) |
+| _loaded_at | TIMESTAMP | Время загрузки (NOT NULL) |
+
+**core.fact_inventory** — не документирована ранее, закрыт `Q-4` (трассировка: `/reference/schema_dump_2026-07-28.md §core.fact_inventory`):
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| date_snapshot | DATE | Дата среза остатков |
+| product_id | STRING | FK → `dim_products` |
+| entity_type | STRING | product/variant/bundle |
+| name | STRING | Денормализованное название товара |
+| stock | FLOAT64 | Остаток штук |
+| reserve | FLOAT64 | Резерв штук |
+| in_transit | FLOAT64 | В пути штук |
+| quantity_available | FLOAT64 | Доступно штук |
+| stock_days | FLOAT64 | Дней запаса |
+| cost_kgs | FLOAT64 | Себестоимость остатка, KGS |
+| _loaded_at | TIMESTAMP | Время загрузки |
+
+*(Схемы `fact_customer_invoices`/`fact_payments` (PR-27) — вне scope этой сессии по таблице шагов брифа M-P4-A-02; не переносятся здесь. `fact_payments_stg`, `fact_sales_profit_byvariant_backup` — присутствуют в дампе `/reference/schema_dump_2026-07-28.md`, но не документируются здесь: `_stg`/`_backup` вне scope Q-4 (не входят в перечень «неисчерпывающая»/недокументированные таблицы брифа).)*
+
+*(PR-24, PR-25; полная схема — Q-4, `/reference/schema_dump_2026-07-28.md`)*
 
 ## §схемы dim
 
@@ -99,7 +134,7 @@
 | entity_type | STRING | product/variant/bundle |
 | created | DATE | Дата создания |
 | shelf_life | TIMESTAMP | Срок годности (кастомное поле) |
-| qty_per_box | FLOAT64 | Количество в упаковке |
+| qty_per_box | INT64 | Количество в упаковке (**тип уточнён Q-4**: дамп `INFORMATION_SCHEMA.COLUMNS` 2026-07-28 показывает `INT64`, прежняя запись — `FLOAT64`; расхождение не примирено молча, зафиксировано, трассировка `/reference/schema_dump_2026-07-28.md §core.dim_products`) |
 | is_exclusive | BOOL | Эксклюзивный товар |
 | is_sunscreen | BOOL | Солнцезащитный |
 | updated_at | TIMESTAMP | Дата обновления в МойСкладе |
@@ -117,9 +152,21 @@
 | owner_employee_id | STRING | FK → `dim_employees` (текущий менеджер) |
 | owner_employee_skey | STRING | SCD2 суррогатный ключ |
 | country | STRING | Страна контрагента (кастомное поле, UUID `6d6cca1e-ed85-11f0-0a80-0b1a00a4547c`) |
-| scd2_valid_from | TIMESTAMP | — |
-| scd2_valid_to | TIMESTAMP | — |
+| scd2_valid_from | DATE | **тип уточнён Q-4**: дамп показывает `DATE`, прежняя запись — `TIMESTAMP`; расхождение зафиксировано, трассировка `/reference/schema_dump_2026-07-28.md §core.dim_counterparties` |
+| scd2_valid_to | DATE | **тип уточнён Q-4**, см. `scd2_valid_from` |
 | scd2_is_current | BOOL | **JOIN всегда с** `AND scd2_is_current = TRUE` |
+| _loaded_at | TIMESTAMP | — |
+
+**core.dim_employees** — не документирована ранее, закрыт `Q-4` (трассировка: `/reference/schema_dump_2026-07-28.md §core.dim_employees`); снимает блокирующее основание у `Q-39` (мина в `sq_audit_dim_employees_snapshot` — «решать нечего», пока `02` не несла схему):
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| employee_id | STRING | UUID сотрудника в МойСкладе |
+| full_name | STRING | ФИО |
+| position | STRING | Должность |
+| email | STRING | — |
+| phone | STRING | — |
+| updated_at | TIMESTAMP | Дата обновления в МойСкладе |
 | _loaded_at | TIMESTAMP | — |
 
 **core.dim_fx_rates:**
@@ -153,6 +200,95 @@
 **Политика исходящей конвертации — ВЫБРАНА** (`ADR-062`, владелец, 2026-07-26): форма курса применяется по типу метрики, критерий отнесения — наличие дневного зерна в строке витрины. Полная разметка флота и границы — `03 §marts §политика исходящей FX-конвертации`. Предусловие DEFER снято `ADR-061`.
 
 *(PR-26)*
+
+## §схемы audit
+
+Датасет `audit` — не документирован до `Q-4`; закрыт этой сессией (трассировка: `/reference/schema_dump_2026-07-28.md §audit`). 7 таблиц: снапшот-пары `_initial`/`_snapshots` по трём `dim_*` (`products`, `counterparties`, `employees`) + `dq_runs`. Расписания/Config ID/статус прогонов — дом `11_INFRA_FACTS.md §SQ`, здесь только схема колонок.
+
+**audit.dim_products_initial** и **audit.dim_products_snapshots** (идентичная схема, 14 колонок):
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| product_id | STRING | UUID товара |
+| name | STRING | Название |
+| article | STRING | Артикул |
+| product_folder | STRING | Бренд |
+| parent_product_id | STRING | UUID родителя для variant |
+| entity_type | STRING | product/variant/bundle |
+| created | DATE | Дата создания |
+| shelf_life | TIMESTAMP | Срок годности (кастомное поле) |
+| qty_per_box | INT64 | Количество в упаковке |
+| is_exclusive | BOOL | Эксклюзивный товар |
+| is_sunscreen | BOOL | Солнцезащитный |
+| updated_at | TIMESTAMP | Дата обновления в МойСкладе |
+| _loaded_at | TIMESTAMP | — |
+| snapshot_at | TIMESTAMP | Момент снятия среза (специфика audit) |
+
+**audit.dim_counterparties_initial** (21 колонка — шире `core.dim_counterparties`, несёт полный набор кастомных полей на момент первичной загрузки):
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| agent_id | STRING | UUID контрагента |
+| name | STRING | Наименование |
+| owner_employee_id | STRING | FK → `dim_employees` |
+| country | STRING | Страна контрагента |
+| instagram | STRING | Кастомное поле |
+| telegram_username | STRING | Кастомное поле |
+| telegram_id | STRING | Кастомное поле |
+| vk | STRING | Кастомное поле |
+| avito | STRING | Кастомное поле |
+| max_id | STRING | Кастомное поле |
+| max_username | STRING | Кастомное поле |
+| responsible_employee_id | STRING | Кастомное поле |
+| allowed_debt_sum | STRING | Кастомное поле (тип STRING в дампе, не FLOAT64/NUMERIC) |
+| created_by_fintablo | BOOL | Кастомное поле |
+| updated_at | TIMESTAMP | Дата обновления в МойСкладе |
+| _loaded_at | TIMESTAMP | — |
+| owner_employee_skey | STRING | SCD2 суррогатный ключ |
+| scd2_valid_from | STRING | **тип в дампе STRING**, не DATE/TIMESTAMP — расхождение с `core.dim_counterparties`, не примирено молча |
+| scd2_valid_to | STRING | см. `scd2_valid_from` |
+| scd2_is_current | BOOL | — |
+| snapshot_at | TIMESTAMP | Момент снятия среза |
+
+**audit.dim_counterparties_snapshots** (10 колонок — подмножество, ближе к `core.dim_counterparties`):
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| agent_id | STRING | UUID контрагента |
+| name | STRING | Наименование |
+| owner_employee_id | STRING | FK → `dim_employees` |
+| owner_employee_skey | STRING | SCD2 суррогатный ключ |
+| country | STRING | Страна контрагента |
+| scd2_valid_from | DATE | — |
+| scd2_valid_to | DATE | — |
+| scd2_is_current | BOOL | — |
+| _loaded_at | TIMESTAMP | — |
+| snapshot_at | TIMESTAMP | Момент снятия среза |
+
+**audit.dim_employees_initial** и **audit.dim_employees_snapshots** (идентичная схема, 8 колонок):
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| employee_id | STRING | UUID сотрудника |
+| full_name | STRING | ФИО |
+| position | STRING | Должность |
+| email | STRING | — |
+| phone | STRING | — |
+| updated_at | TIMESTAMP | Дата обновления в МойСкладе |
+| _loaded_at | TIMESTAMP | — |
+| snapshot_at | TIMESTAMP | Момент снятия среза |
+
+**audit.dq_runs:**
+
+| Колонка | Тип | Описание |
+|---|---|---|
+| run_id | STRING | ID прогона DQ |
+| check_name | STRING | Имя проверки |
+| passed | BOOL | Пройдена ли проверка |
+| detail | STRING | Детали результата |
+| checked_at | TIMESTAMP | Момент проверки |
+
+*(Полная схема — Q-4, `/reference/schema_dump_2026-07-28.md §audit`)*
 
 ## §поведение МойСклад API
 
@@ -329,5 +465,6 @@
 |---|---|---|---|---|
 | `/reference/pnl_2026-05.md` | П&Л расходы, май-2026 (seed #2, эталон 2026-07-06) | MoySkład UI, выгрузка 2026-07-06 | Точное совпадение на величинах `ORACLE`; гранулярность — статья П&Л; методология agr. — ADR-006 (paymentout+cashout+loss + entity/commissionreportin); нулевые значения — ожидаемы | посеян · границы accepted (ADR-006) |
 | `/reference/recon_2026-05.md` | выручка + «В пути», май-2026 | DEFER (ADR-005) | — | не посеян |
+| `reference/parity_registry.md` | реестр пар «поверхность МойСклад ↔ витрина/страница LS», все периоды/треки Epic-1 | сводный: ADR-067/068/069 + `reference/sql/*` + report-API/entity-API МойСклада (провенанс `reference/parity_report_api_2026-07-28.md`) | построчно по каждой паре реестра; статус — только по ссылке на артефакт-сверку (ADR-021 §2), отсутствие артефакта не читается как «сходится» | заведён 2026-07-28 (ADR-078); 1 из 7 пар численно сходится (Расходы, 0,00); остальные 6 — «требуется» (Q-78…Q-82) |
 
 <!-- P4: спецификация формата/границ эталона по мере закрытия Q-1. -->
