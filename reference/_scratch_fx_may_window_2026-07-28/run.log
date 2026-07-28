@@ -1,0 +1,292 @@
+==================================================================
+=== STEP 0 — UTC ANCHOR + IDENTITY (FIRST) =======================
+==================================================================
+Tue Jul 28 06:16:00 UTC 2026
+ilyasbazarov4@gmail.com
+msklad-bi-prod
+
+==================================================================
+=== STEP D1 — locate + read nbkr_dailyrus_raw.xls ================
+==================================================================
+--- gcloud storage ls -r (full bucket, filtering to nbkr) ---
+full listing saved,     8889 lines
+gs://msklad-raw-msklad-bi-prod/fx-rates/nbkr_cache.json
+gs://msklad-raw-msklad-bi-prod/fx-rates/nbkr_dailyrus_raw.xls
+
+--- stat on candidate object (path from repo lead, verified above) ---
+gs://msklad-raw-msklad-bi-prod/fx-rates/nbkr_dailyrus_raw.xls:
+  Creation Time:               2026-06-03T10:01:24Z
+  Update Time:                 2026-06-03T10:01:24Z
+  Storage Class Update Time:   2026-06-03T10:01:24Z
+  Storage Class:               STANDARD
+  Content-Length:              714752
+  Content-Type:                application/vnd.ms-excel
+  Hash (CRC32C):               ae2qFA==
+  Hash (MD5):                  gsPharvA32M7g2Mn/PaSsg==
+  ETag:                        CM7ds5Xo6pQDEAE=
+  Generation:                  1780480884928206
+  Metageneration:              1
+  ACL:
+  [
+    {
+      "entity": "project-owners-420804682491",
+      "projectTeam": {
+        "projectNumber": "420804682491",
+        "team": "owners"
+      },
+      "role": "OWNER"
+    },
+    {
+      "entity": "project-editors-420804682491",
+      "projectTeam": {
+        "projectNumber": "420804682491",
+        "team": "editors"
+      },
+      "role": "OWNER"
+    },
+    {
+      "entity": "project-viewers-420804682491",
+      "projectTeam": {
+        "projectNumber": "420804682491",
+        "team": "viewers"
+      },
+      "role": "READER"
+    },
+    {
+      "email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+      "entity": "user-etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+      "role": "OWNER"
+    }
+  ]
+TOTAL: 1 objects, 714752 bytes (698.00kiB)
+
+--- download candidate ---
+Copying gs://msklad-raw-msklad-bi-prod/fx-rates/nbkr_dailyrus_raw.xls to file:///private/tmp/claude-501/-Users-ilyasbazarov-Desktop-msklad-project-holika/5e4e79a4-f604-46f4-b31d-2789b2d68853/scratchpad/fx_may_window/nbkr_dailyrus_raw.xls
+  
+...................
+
+Average throughput: 5.0MiB/s
+-rw-r--r--@ 1 ilyasbazarov  wheel  714752 Jul 28 12:16 /private/tmp/claude-501/-Users-ilyasbazarov-Desktop-msklad-project-holika/5e4e79a4-f604-46f4-b31d-2789b2d68853/scratchpad/fx_may_window/nbkr_dailyrus_raw.xls
+--- byte-level check (first 64 bytes, hex) ---
+           d0  cf  11  e0  a1  b1  1a  e1  00  00  00  00  00  00  00  00
+           00  00  00  00  00  00  00  00  3b  00  03  00  fe  ff  09  00
+           06  00  00  00  00  00  00  00  00  00  00  00  0b  00  00  00
+           67  05  00  00  00  00  00  00  00  10  00  00  fe  ff  ff  ff
+           00  00  00  00  fe  ff  ff  ff  00  00  00  00  68  05  00  00
+--- file(1) type ---
+/private/tmp/claude-501/-Users-ilyasbazarov-Desktop-msklad-project-holika/5e4e79a4-f604-46f4-b31d-2789b2d68853/scratchpad/fx_may_window/nbkr_dailyrus_raw.xls: CDFV2 Microsoft Excel
+
+--- reader attempt 1: python3 + pandas ---
+PANDAS_IMPORT_FAIL: ModuleNotFoundError("No module named 'pandas'")
+
+--- reader attempt 2: python3 + openpyxl (raw, no pandas) ---
+OPENPYXL_FAIL: ModuleNotFoundError("No module named 'openpyxl'")
+
+--- reader attempt 3: python3 + xlrd (legacy .xls) ---
+XLRD_FAIL: ModuleNotFoundError("No module named 'xlrd'")
+
+--- reader attempt 4: libreoffice --headless --convert-to csv ---
+LIBREOFFICE_NOT_FOUND
+
+==================================================================
+=== STEP D2 — BigQuery job history over dim_fx_rates window ======
+==================================================================
+window: 2026-04-28T00:00:00Z .. 2026-06-05T00:00:00Z
+min_creation_time(ms)=1777334400000 max_creation_time(ms)=1780617600000
+
+--- D2(a) bq ls -j --all_users over window ---
+rc=1
+       2 /private/tmp/claude-501/-Users-ilyasbazarov-Desktop-msklad-project-holika/5e4e79a4-f604-46f4-b31d-2789b2d68853/scratchpad/fx_may_window/d2a_bq_ls_jobs.json
+FATAL Flags parsing error: Unknown command line flag 'all_users'. Did you mean: all_jobs ?
+Run 'bq.py help' to get help
+
+--- D2(b) INFORMATION_SCHEMA.JOBS_BY_PROJECT (region asia-east1) ---
+rc=0
+[
+  {
+    "creation_time": "2026-04-29 18:40:07", 
+    "job_id": "8097c9d4-3c77-405f-bf24-14dc82521789", 
+    "query": null, 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-04-29 18:45:08", 
+    "job_id": "738517ca-2013-4a2f-8a33-d13eac71a54d", 
+    "query": null, 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-04-29 18:54:55", 
+    "job_id": "4a989a87-a2d5-4847-b20f-14b63f8ae945", 
+    "query": null, 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-04-29 19:06:06", 
+    "job_id": "93579077-8422-4a98-b7d5-ec0c760da4bf", 
+    "query": null, 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-03 01:25:07", 
+    "job_id": "9ab36da2-397a-4cd0-882a-f8b3a32dfe25", 
+    "query": null, 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-07 06:38:17", 
+    "job_id": "bqjob_r44955dcaafd8e137_0000019e01289537_1", 
+    "query": "INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\nSELECT\n  missing_date,\n  last_rate.rate_kgs_per_usd\nFROM (\n  SELECT d AS missing_date\n  FROM UNNEST(\n    GENERATE_DATE_ARRAY(\n      DATE_ADD((SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`), INTERVAL 1 DAY),\n      CURRENT_DATE()\n    )\n  ) AS d\n) gaps\nCROSS JOIN (\n  SELECT rate_kgs_per_usd\n  FROM `msklad-bi-prod.core.dim_fx_rates`\n  ORDER BY date DESC LIMIT 1\n) last_rate\nWHERE gaps.missing_date NOT IN (\n  SELECT date FROM `msklad-bi-prod.core.dim_fx_rates`\n);", 
+    "statement_type": "INSERT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-05-11 10:10:03", 
+    "job_id": "bqjob_r57ef174d154b4e6d_0000019e1683e735_1", 
+    "query": "INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\nSELECT\n  d AS date,\n  (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n   ORDER BY date DESC LIMIT 1) AS rate_kgs_per_usd\nFROM UNNEST(GENERATE_DATE_ARRAY(\n  DATE_ADD((SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`), INTERVAL 1 DAY),\n  CURRENT_DATE()\n)) AS d\nWHERE d NOT IN (SELECT date FROM `msklad-bi-prod.core.dim_fx_rates`)", 
+    "statement_type": "INSERT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 06:24:48", 
+    "job_id": "bqjob_r2c347d69c98f0454_0000019e39c22fb1_1", 
+    "query": "INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\nSELECT d AS date,\n  (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n   ORDER BY date DESC LIMIT 1) AS rate_kgs_per_usd\nFROM UNNEST(GENERATE_DATE_ARRAY(\n  DATE_ADD((SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`), INTERVAL 1 DAY),\n  CURRENT_DATE()\n)) AS d\nWHERE d NOT IN (SELECT date FROM `msklad-bi-prod.core.dim_fx_rates`)", 
+    "statement_type": "INSERT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 22:01:22", 
+    "job_id": "cffac4f4-8414-4609-afab-fce72c92872f", 
+    "query": "\n    INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\n    SELECT\n      DATE('2026-05-19')                AS date,\n      MAX(rate_kgs_per_usd)          AS rate_kgs_per_usd  -- last known = MAX over max date\n    FROM `msklad-bi-prod.core.dim_fx_rates`\n    WHERE date = (SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`)\n      AND NOT EXISTS (\n        SELECT 1 FROM `msklad-bi-prod.core.dim_fx_rates` WHERE date = DATE('2026-05-19')\n      )\n    ", 
+    "statement_type": "INSERT", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-26 10:15:52", 
+    "job_id": "bqjob_rf4d86f37e0ecfaa_0000019e63c89b23_1", 
+    "query": "INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\nSELECT d AS date,\n  (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n   ORDER BY date DESC LIMIT 1) AS rate_kgs_per_usd\nFROM UNNEST(GENERATE_DATE_ARRAY(\n  DATE_ADD((SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`), INTERVAL 1 DAY),\n  CURRENT_DATE()\n)) AS d\nWHERE d NOT IN (SELECT date FROM `msklad-bi-prod.core.dim_fx_rates`);", 
+    "statement_type": "INSERT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-02 23:24:51", 
+    "job_id": "bqjob_r4b0c08b75f10a111_0000019e8aa7788a_1", 
+    "query": "INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\nSELECT d AS date,\n  (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n   ORDER BY date DESC LIMIT 1) AS rate_kgs_per_usd\nFROM UNNEST(GENERATE_DATE_ARRAY(\n  DATE_ADD((SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`), INTERVAL 1 DAY),\n  CURRENT_DATE()\n)) AS d\nWHERE d NOT IN (SELECT date FROM `msklad-bi-prod.core.dim_fx_rates`)", 
+    "statement_type": "INSERT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-03 10:26:47", 
+    "job_id": "3d86e330-4add-4030-8808-0128d3e8f798", 
+    "query": "\n    MERGE `msklad-bi-prod.core.dim_fx_rates` T\n    USING (\n        SELECT DATE('2026-06-03') AS date,\n               CAST(87.45 AS FLOAT64)          AS rate_kgs_per_usd\n    ) S\n    ON T.date = S.date\n    WHEN MATCHED THEN\n        UPDATE SET T.rate_kgs_per_usd = S.rate_kgs_per_usd\n    WHEN NOT MATCHED THEN\n        INSERT (date, rate_kgs_per_usd) VALUES (S.date, S.rate_kgs_per_usd)\n    ", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-06-03 18:01:10", 
+    "job_id": "b6752ee7-2de3-4ca7-af47-dbd8111e1391", 
+    "query": "\n    MERGE `msklad-bi-prod.core.dim_fx_rates` T\n    USING (\n        SELECT DATE('2026-06-04') AS date,\n               CAST(87.45 AS FLOAT64)          AS rate_kgs_per_usd\n    ) S\n    ON T.date = S.date\n    WHEN MATCHED THEN\n        UPDATE SET T.rate_kgs_per_usd = S.rate_kgs_per_usd\n    WHEN NOT MATCHED THEN\n        INSERT (date, rate_kgs_per_usd) VALUES (S.date, S.rate_kgs_per_usd)\n    ", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-06-04 18:01:13", 
+    "job_id": "56dd4abc-4ba5-46db-b23f-fa60942925d1", 
+    "query": "\n    MERGE `msklad-bi-prod.core.dim_fx_rates` T\n    USING (\n        SELECT DATE('2026-06-05') AS date,\n               CAST(87.45 AS FLOAT64)          AS rate_kgs_per_usd\n    ) S\n    ON T.date = S.date\n    WHEN MATCHED THEN\n        UPDATE SET T.rate_kgs_per_usd = S.rate_kgs_per_usd\n    WHEN NOT MATCHED THEN\n        INSERT (date, rate_kgs_per_usd) VALUES (S.date, S.rate_kgs_per_usd)\n    ", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }
+]
+
+==================================================================
+=== STEP D3 — identify pre-migration rate loader ==================
+==================================================================
+--- gcloud functions list ---
+NAME                STATUS  REGION  UPDATE_TIME
+cf-alert                            2026-05-13T12:26:59.838168198Z
+cf-dim                              2026-06-02T23:26:54.602045765Z
+cf-dq                               2026-06-18T10:59:43.806420420Z
+cf-facts                            2026-06-24T20:52:14.212484858Z
+cf-finance                          2026-07-20T15:21:20.499241635Z
+cf-fx                               2026-06-03T10:26:29.706432010Z
+cf-inventory                        2026-05-11T07:56:52.818673997Z
+cf-loss-commission                  2026-07-25T12:41:34.158435921Z
+
+--- gcloud run services list --region=asia-east1 ---
+NAME                URL                                                 LATEST_READY_REVISION_NAME
+cf-alert            https://cf-alert-xw5u2boozq-de.a.run.app            cf-alert-00001-bej
+cf-dim              https://cf-dim-xw5u2boozq-de.a.run.app              cf-dim-00014-net
+cf-dq               https://cf-dq-xw5u2boozq-de.a.run.app               cf-dq-00007-hot
+cf-facts            https://cf-facts-xw5u2boozq-de.a.run.app            cf-facts-00007-xir
+cf-finance          https://cf-finance-xw5u2boozq-de.a.run.app          cf-finance-00012-cik
+cf-fx               https://cf-fx-xw5u2boozq-de.a.run.app               cf-fx-00002-hin
+cf-inventory        https://cf-inventory-xw5u2boozq-de.a.run.app        cf-inventory-00003-vuf
+cf-loss-commission  https://cf-loss-commission-xw5u2boozq-de.a.run.app  cf-loss-commission-00007-kuh
+
+--- gcloud scheduler jobs list --location=asia-east1 ---
+ID                            SCHEDULE    STATE
+msklad-pipeline-hourly        0 * * * *   ENABLED
+cf-inventory-trigger          0 21 * * *  ENABLED
+loss-commission-daily-update  0 3 * * *   ENABLED
+finance-daily-update          0 3 * * *   ENABLED
+msklad-pipeline-weekly        0 1 * * 0   ENABLED
+
+--- gcloud workflows list --location=asia-east1 ---
+NAME                                                                           STATE
+projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-hourly  ACTIVE
+projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-weekly  ACTIVE
+
+--- candidates by name pattern (fx|rate|nbkr) across above listings ---
+cf-dim
+cf-alert
+cf-inventory
+cf-dq
+cf-fx
+cf-facts
+cf-loss-commission
+cf-finance
+cf-alert
+cf-dim
+cf-dq
+cf-facts
+cf-finance
+cf-fx
+cf-inventory
+cf-loss-commission
+msklad-pipeline-hourly
+cf-inventory-trigger
+loss-commission-daily-update
+finance-daily-update
+msklad-pipeline-weekly
+projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-hourly
+projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-weekly
+--- grep -iE 'fx|rate|nbkr' over all names ---
+cf-fx
+cf-fx
+
+==================================================================
+=== STEP 4 — MIN/MAX/COUNT border on core.dim_fx_rates ===========
+==================================================================
+[
+  {
+    "max_date": "2026-07-28", 
+    "max_rate": "87.45", 
+    "min_date": "2025-04-29", 
+    "min_rate": "87.2319", 
+    "n_distinct_rates": "55", 
+    "n_rows": "456"
+  }
+]
+
+==================================================================
+=== STEP 6 — UTC ANCHOR + IDENTITY (LAST) =========================
+==================================================================
+Tue Jul 28 06:16:55 UTC 2026
+ilyasbazarov4@gmail.com
+
+WORKDIR: /private/tmp/claude-501/-Users-ilyasbazarov-Desktop-msklad-project-holika/5e4e79a4-f604-46f4-b31d-2789b2d68853/scratchpad/fx_may_window

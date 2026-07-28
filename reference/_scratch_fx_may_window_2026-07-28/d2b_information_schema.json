@@ -1,0 +1,100 @@
+[
+  {
+    "creation_time": "2026-04-29 18:40:07", 
+    "job_id": "8097c9d4-3c77-405f-bf24-14dc82521789", 
+    "query": null, 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-04-29 18:45:08", 
+    "job_id": "738517ca-2013-4a2f-8a33-d13eac71a54d", 
+    "query": null, 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-04-29 18:54:55", 
+    "job_id": "4a989a87-a2d5-4847-b20f-14b63f8ae945", 
+    "query": null, 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-04-29 19:06:06", 
+    "job_id": "93579077-8422-4a98-b7d5-ec0c760da4bf", 
+    "query": null, 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-03 01:25:07", 
+    "job_id": "9ab36da2-397a-4cd0-882a-f8b3a32dfe25", 
+    "query": null, 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-07 06:38:17", 
+    "job_id": "bqjob_r44955dcaafd8e137_0000019e01289537_1", 
+    "query": "INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\nSELECT\n  missing_date,\n  last_rate.rate_kgs_per_usd\nFROM (\n  SELECT d AS missing_date\n  FROM UNNEST(\n    GENERATE_DATE_ARRAY(\n      DATE_ADD((SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`), INTERVAL 1 DAY),\n      CURRENT_DATE()\n    )\n  ) AS d\n) gaps\nCROSS JOIN (\n  SELECT rate_kgs_per_usd\n  FROM `msklad-bi-prod.core.dim_fx_rates`\n  ORDER BY date DESC LIMIT 1\n) last_rate\nWHERE gaps.missing_date NOT IN (\n  SELECT date FROM `msklad-bi-prod.core.dim_fx_rates`\n);", 
+    "statement_type": "INSERT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-05-11 10:10:03", 
+    "job_id": "bqjob_r57ef174d154b4e6d_0000019e1683e735_1", 
+    "query": "INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\nSELECT\n  d AS date,\n  (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n   ORDER BY date DESC LIMIT 1) AS rate_kgs_per_usd\nFROM UNNEST(GENERATE_DATE_ARRAY(\n  DATE_ADD((SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`), INTERVAL 1 DAY),\n  CURRENT_DATE()\n)) AS d\nWHERE d NOT IN (SELECT date FROM `msklad-bi-prod.core.dim_fx_rates`)", 
+    "statement_type": "INSERT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 06:24:48", 
+    "job_id": "bqjob_r2c347d69c98f0454_0000019e39c22fb1_1", 
+    "query": "INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\nSELECT d AS date,\n  (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n   ORDER BY date DESC LIMIT 1) AS rate_kgs_per_usd\nFROM UNNEST(GENERATE_DATE_ARRAY(\n  DATE_ADD((SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`), INTERVAL 1 DAY),\n  CURRENT_DATE()\n)) AS d\nWHERE d NOT IN (SELECT date FROM `msklad-bi-prod.core.dim_fx_rates`)", 
+    "statement_type": "INSERT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 22:01:22", 
+    "job_id": "cffac4f4-8414-4609-afab-fce72c92872f", 
+    "query": "\n    INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\n    SELECT\n      DATE('2026-05-19')                AS date,\n      MAX(rate_kgs_per_usd)          AS rate_kgs_per_usd  -- last known = MAX over max date\n    FROM `msklad-bi-prod.core.dim_fx_rates`\n    WHERE date = (SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`)\n      AND NOT EXISTS (\n        SELECT 1 FROM `msklad-bi-prod.core.dim_fx_rates` WHERE date = DATE('2026-05-19')\n      )\n    ", 
+    "statement_type": "INSERT", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-26 10:15:52", 
+    "job_id": "bqjob_rf4d86f37e0ecfaa_0000019e63c89b23_1", 
+    "query": "INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\nSELECT d AS date,\n  (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n   ORDER BY date DESC LIMIT 1) AS rate_kgs_per_usd\nFROM UNNEST(GENERATE_DATE_ARRAY(\n  DATE_ADD((SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`), INTERVAL 1 DAY),\n  CURRENT_DATE()\n)) AS d\nWHERE d NOT IN (SELECT date FROM `msklad-bi-prod.core.dim_fx_rates`);", 
+    "statement_type": "INSERT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-02 23:24:51", 
+    "job_id": "bqjob_r4b0c08b75f10a111_0000019e8aa7788a_1", 
+    "query": "INSERT INTO `msklad-bi-prod.core.dim_fx_rates` (date, rate_kgs_per_usd)\nSELECT d AS date,\n  (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n   ORDER BY date DESC LIMIT 1) AS rate_kgs_per_usd\nFROM UNNEST(GENERATE_DATE_ARRAY(\n  DATE_ADD((SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`), INTERVAL 1 DAY),\n  CURRENT_DATE()\n)) AS d\nWHERE d NOT IN (SELECT date FROM `msklad-bi-prod.core.dim_fx_rates`)", 
+    "statement_type": "INSERT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-03 10:26:47", 
+    "job_id": "3d86e330-4add-4030-8808-0128d3e8f798", 
+    "query": "\n    MERGE `msklad-bi-prod.core.dim_fx_rates` T\n    USING (\n        SELECT DATE('2026-06-03') AS date,\n               CAST(87.45 AS FLOAT64)          AS rate_kgs_per_usd\n    ) S\n    ON T.date = S.date\n    WHEN MATCHED THEN\n        UPDATE SET T.rate_kgs_per_usd = S.rate_kgs_per_usd\n    WHEN NOT MATCHED THEN\n        INSERT (date, rate_kgs_per_usd) VALUES (S.date, S.rate_kgs_per_usd)\n    ", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-06-03 18:01:10", 
+    "job_id": "b6752ee7-2de3-4ca7-af47-dbd8111e1391", 
+    "query": "\n    MERGE `msklad-bi-prod.core.dim_fx_rates` T\n    USING (\n        SELECT DATE('2026-06-04') AS date,\n               CAST(87.45 AS FLOAT64)          AS rate_kgs_per_usd\n    ) S\n    ON T.date = S.date\n    WHEN MATCHED THEN\n        UPDATE SET T.rate_kgs_per_usd = S.rate_kgs_per_usd\n    WHEN NOT MATCHED THEN\n        INSERT (date, rate_kgs_per_usd) VALUES (S.date, S.rate_kgs_per_usd)\n    ", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-06-04 18:01:13", 
+    "job_id": "56dd4abc-4ba5-46db-b23f-fa60942925d1", 
+    "query": "\n    MERGE `msklad-bi-prod.core.dim_fx_rates` T\n    USING (\n        SELECT DATE('2026-06-05') AS date,\n               CAST(87.45 AS FLOAT64)          AS rate_kgs_per_usd\n    ) S\n    ON T.date = S.date\n    WHEN MATCHED THEN\n        UPDATE SET T.rate_kgs_per_usd = S.rate_kgs_per_usd\n    WHEN NOT MATCHED THEN\n        INSERT (date, rate_kgs_per_usd) VALUES (S.date, S.rate_kgs_per_usd)\n    ", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }
+]

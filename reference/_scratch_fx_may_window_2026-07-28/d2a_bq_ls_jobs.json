@@ -1,0 +1,2 @@
+FATAL Flags parsing error: Unknown command line flag 'all_users'. Did you mean: all_jobs ?
+Run 'bq.py help' to get help

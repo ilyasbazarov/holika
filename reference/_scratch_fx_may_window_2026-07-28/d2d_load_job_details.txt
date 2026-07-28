@@ -1,0 +1,35 @@
+=== 8097c9d4-3c77-405f-bf24-14dc82521789 ===
+sourceUris: None
+destinationTable: {'datasetId': 'core', 'projectId': 'msklad-bi-prod', 'tableId': 'dim_fx_rates'}
+writeDisposition: WRITE_TRUNCATE
+sourceFormat: PARQUET
+outputRows: 366
+badRecords: 0
+=== 738517ca-2013-4a2f-8a33-d13eac71a54d ===
+sourceUris: None
+destinationTable: {'datasetId': 'core', 'projectId': 'msklad-bi-prod', 'tableId': 'dim_fx_rates'}
+writeDisposition: WRITE_TRUNCATE
+sourceFormat: PARQUET
+outputRows: 366
+badRecords: 0
+=== 4a989a87-a2d5-4847-b20f-14b63f8ae945 ===
+sourceUris: None
+destinationTable: {'datasetId': 'core', 'projectId': 'msklad-bi-prod', 'tableId': 'dim_fx_rates'}
+writeDisposition: WRITE_TRUNCATE
+sourceFormat: PARQUET
+outputRows: 366
+badRecords: 0
+=== 93579077-8422-4a98-b7d5-ec0c760da4bf ===
+sourceUris: None
+destinationTable: {'datasetId': 'core', 'projectId': 'msklad-bi-prod', 'tableId': 'dim_fx_rates'}
+writeDisposition: WRITE_TRUNCATE
+sourceFormat: PARQUET
+outputRows: 366
+badRecords: 0
+=== 9ab36da2-397a-4cd0-882a-f8b3a32dfe25 ===
+sourceUris: None
+destinationTable: {'datasetId': 'core', 'projectId': 'msklad-bi-prod', 'tableId': 'dim_fx_rates'}
+writeDisposition: WRITE_APPEND
+sourceFormat: PARQUET
+outputRows: 4
+badRecords: 0
