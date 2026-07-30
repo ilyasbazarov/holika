@@ -1,0 +1,25 @@
+{
+  "dataSourceId": "scheduled_query",
+  "datasetRegion": "asia-east1",
+  "destinationDatasetId": "marts",
+  "displayName": "sq_marts_in_transit",
+  "emailPreferences": {},
+  "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a0aa537-0000-260f-b391-d43a2cee6b87",
+  "nextRunTime": "2026-07-30T13:09:00Z",
+  "ownerInfo": {
+    "email": "ilyasbazarov4@gmail.com"
+  },
+  "params": {
+    "query": "CREATE OR REPLACE TABLE `msklad-bi-prod.marts.in_transit`\nCLUSTER BY supplier_id, product_id\nAS\nWITH latest_fx AS (\n  SELECT rate_kgs_per_usd\n  FROM `msklad-bi-prod.core.dim_fx_rates`\n  ORDER BY date DESC\n  LIMIT 1\n)\nSELECT\n  p.order_name,\n  p.purchase_order_id,\n  p.position_id,\n  p.order_date,\n  p.planned_delivery_date,\n  CASE\n    WHEN p.planned_delivery_date IS NULL THEN NULL\n    ELSE DATE_DIFF(p.planned_delivery_date, CURRENT_DATE(), DAY)\n  END AS days_until_delivery,\n  CASE\n    WHEN p.planned_delivery_date IS NOT NULL\n     AND p.planned_delivery_date < CURRENT_DATE() THEN TRUE\n    ELSE FALSE\n  END AS is_overdue,\n  p.product_id,\n  prod.name AS product_name,\n  prod.product_folder AS product_folder,\n  p.supplier_id,\n  sup.name AS supplier_name,\n  p.status_name,\n  p.quantity_ordered,\n  p.quantity_shipped,\n  p.quantity_in_transit,\n  p.price_kgs,\n  p.in_transit_sum_kgs,\n  ROUND(p.in_transit_sum_kgs / fx.rate_kgs_per_usd, 2) AS in_transit_sum_usd,\n  fx.rate_kgs_per_usd AS fx_rate_used,\n  CURRENT_TIMESTAMP() AS _mart_refreshed_at\nFROM `msklad-bi-prod.core.fact_purchases` p\nCROSS JOIN latest_fx fx\nLEFT JOIN `msklad-bi-prod.core.dim_products` prod\n  ON p.product_id = prod.product_id\nLEFT JOIN `msklad-bi-prod.core.dim_counterparties` sup\n  ON p.supplier_id = sup.agent_id\n  AND sup.scd2_is_current = TRUE\nWHERE p.status_name IN (\"\u0412 \u043f\u0443\u0442\u0438\", \"\u041f\u0440\u0438\u0431\u044b\u043b \u0447\u0430\u0441\u0442\u0438\u0447\u043d\u043e\")\n  AND p.in_transit_sum_kgs > 0"
+  },
+  "schedule": "every 24 hours",
+  "scheduleOptions": {},
+  "scheduleOptionsV2": {
+    "timeBasedSchedule": {
+      "schedule": "every 24 hours"
+    }
+  },
+  "state": "SUCCEEDED",
+  "updateTime": "2026-06-17T14:56:30.218458Z",
+  "userId": "8522307959247193051"
+}

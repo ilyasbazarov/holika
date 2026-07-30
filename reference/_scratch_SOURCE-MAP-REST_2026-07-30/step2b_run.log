@@ -1,0 +1,95 @@
+Thu Jul 30 10:49:27 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== describe cf-dim (storageSource) ===
+gcf-v2-sources-420804682491-asia-east1	cf-dim/function-source.zip	1780442726858863
+=== describe cf-dq (storageSource) ===
+gcf-v2-sources-420804682491-asia-east1	cf-dq/function-source.zip	1781780276907576
+=== describe cf-fx (storageSource) ===
+gcf-v2-sources-420804682491-asia-east1	cf-fx/function-source.zip	1780482326868744
+=== describe cf-alert (storageSource) ===
+gcf-v2-sources-420804682491-asia-east1	cf-alert/function-source.zip	1778675178481613
+=== скачивание + грep 'invoiceout'/'invoice' по каждому архиву ===
+--- cf-dim ---
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-dim/function-source.zip#1780442726858863 to file://./cf-dim/function-source.zip
+  
+..........................
+Archive:  ./cf-dim/function-source.zip
+  inflating: ./cf-dim/unpacked/config.py  
+  inflating: ./cf-dim/unpacked/dim_products.py  
+  inflating: ./cf-dim/unpacked/dim_employees.py  
+  inflating: ./cf-dim/unpacked/dim_counterparties.py  
+  inflating: ./cf-dim/unpacked/.DS_Store  
+  inflating: ./cf-dim/unpacked/main.py  
+  inflating: ./cf-dim/unpacked/requirements.txt  
+  inflating: ./cf-dim/unpacked/helpers.py  
+files:
+./cf-dim/unpacked/config.py
+./cf-dim/unpacked/dim_counterparties.py
+./cf-dim/unpacked/main.py
+./cf-dim/unpacked/dim_products.py
+./cf-dim/unpacked/helpers.py
+./cf-dim/unpacked/dim_employees.py
+grep invoiceout/invoice:
+  (нет совпадений)
+--- cf-dq ---
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1781780276907576 to file://./cf-dq/function-source.zip
+  
+......................
+Archive:  ./cf-dq/function-source.zip
+  inflating: ./cf-dq/unpacked/patch_dq.py  
+  inflating: ./cf-dq/unpacked/src.zip  
+  inflating: ./cf-dq/unpacked/function-source.zip  
+  inflating: ./cf-dq/unpacked/config.py  
+  inflating: ./cf-dq/unpacked/helpers.py  
+  inflating: ./cf-dq/unpacked/requirements.txt  
+  inflating: ./cf-dq/unpacked/function-source-patched.zip  
+  inflating: ./cf-dq/unpacked/main.py  
+files:
+./cf-dq/unpacked/config.py
+./cf-dq/unpacked/main.py
+./cf-dq/unpacked/patch_dq.py
+./cf-dq/unpacked/helpers.py
+grep invoiceout/invoice:
+  (нет совпадений)
+--- cf-fx ---
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-fx/function-source.zip#1780482326868744 to file://./cf-fx/function-source.zip
+  
+..........................
+Archive:  ./cf-fx/function-source.zip
+  inflating: ./cf-fx/unpacked/config.py  
+  inflating: ./cf-fx/unpacked/.DS_Store  
+  inflating: ./cf-fx/unpacked/main.py  
+  inflating: ./cf-fx/unpacked/requirements.txt  
+files:
+./cf-fx/unpacked/config.py
+./cf-fx/unpacked/main.py
+grep invoiceout/invoice:
+  (нет совпадений)
+--- cf-alert ---
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-alert/function-source.zip#1778675178481613 to file://./cf-alert/function-source.zip
+  
+...........................
+Archive:  ./cf-alert/function-source.zip
+  inflating: ./cf-alert/unpacked/requirements.txt  
+  inflating: ./cf-alert/unpacked/setup_alerts.sh  
+  inflating: ./cf-alert/unpacked/RUNBOOK.md  
+  inflating: ./cf-alert/unpacked/main.py  
+files:
+./cf-alert/unpacked/main.py
+grep invoiceout/invoice:
+  (нет совпадений)
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Thu Jul 30 10:50:22 UTC 2026
+PATH_PRINTED: reference/_scratch_SOURCE-MAP-REST_2026-07-30/probe-remaining-cf

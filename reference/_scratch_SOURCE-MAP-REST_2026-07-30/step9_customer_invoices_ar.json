@@ -1,0 +1,25 @@
+{
+  "dataSourceId": "scheduled_query",
+  "datasetRegion": "asia-east1",
+  "destinationDatasetId": "marts",
+  "displayName": "sq_marts_customer_invoices_ar",
+  "emailPreferences": {},
+  "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a23f3ea-0000-2952-853d-582429be7ecc",
+  "nextRunTime": "2026-07-31T10:00:00Z",
+  "ownerInfo": {
+    "email": "ilyasbazarov4@gmail.com"
+  },
+  "params": {
+    "destination_table_name_template": "customer_invoices_ar",
+    "partitioning_field": "",
+    "query": "\nSELECT\n  i.agent_id,\n  i.agent_name,\n  COALESCE(c.country, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430') AS country,\n  i.state_name,\n  i.state_id,\n  COUNT(DISTINCT i.invoice_id)        AS invoice_count,\n  ROUND(SUM(i.sum_kgs), 2)            AS total_invoiced_kgs,\n  ROUND(SUM(i.payed_sum_kgs), 2)      AS total_paid_kgs,\n  ROUND(SUM(i.unpaid_sum_kgs), 2)     AS total_unpaid_kgs,\n  MIN(i.moment)                       AS earliest_invoice_date,\n  MAX(i.moment)                       AS latest_invoice_date,\n  COUNTIF(\n    i.payment_planned IS NOT NULL\n    AND i.payment_planned < CURRENT_DATE()\n    AND i.unpaid_sum_kgs > 0\n  )                                   AS overdue_count\nFROM `msklad-bi-prod.core.fact_customer_invoices` i\nLEFT JOIN `msklad-bi-prod.core.dim_counterparties` c\n  ON i.agent_id = c.agent_id AND c.scd2_is_current = TRUE\nGROUP BY\n  i.agent_id, i.agent_name, c.country,\n  i.state_name, i.state_id\nORDER BY total_unpaid_kgs DESC\n",
+    "write_disposition": "WRITE_TRUNCATE"
+  },
+  "scheduleOptions": {},
+  "scheduleOptionsV2": {
+    "timeBasedSchedule": {}
+  },
+  "state": "SUCCEEDED",
+  "updateTime": "2026-06-05T10:00:27.182221Z",
+  "userId": "8522307959247193051"
+}

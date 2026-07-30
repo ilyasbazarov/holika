@@ -1,0 +1,6 @@
+GCP_PROJECT  = "msklad-bi-prod"
+GCS_RAW      = "msklad-raw-msklad-bi-prod"
+BQ_CORE      = f"{GCP_PROJECT}.core"
+SECRET_TOKEN = "msklad-token"
+NBKR_XLS_URL = "https://www.nbkr.kg/EXCEL/dailyrus.xls"
+FX_GCS_PATH  = "fx-rates/nbkr_dailyrus_raw.xls"

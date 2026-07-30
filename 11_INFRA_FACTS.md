@@ -35,7 +35,17 @@ gcloud functions deploy cf-finance \
 **cf-facts** — URL/ревизия: не зафиксированы в источнике на момент этой сессии → *(пусто, ожидает discovery)*.
 **cf-dq** — актуальная ревизия после T-1-фикса не подтверждена в источнике → **GAP Q-6** (см. `07_STATE`); последняя известная в источнике — `cf-dq-00006-lac` (⚠ дата этой ревизии предшествует T-1-фиксу 2026-06-24, канон не зафиксирован, не выдавать за актуальную).
 
-Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-13); PR-35 правило 41 (DROP-DUP); RB-42 (`maxRetryDuration=0s`).
+**cf-inventory** (факт, сессия `SOURCE-MAP-REST`, `2026-07-30T10:47:33Z`…`10:47:49Z`, `MANIFEST.md` — `reference/code/cf-inventory/MANIFEST.md`):
+- Регион: `asia-east1` (`gcloud functions list --filter="name:cf-inventory"`).
+- Revision: **`cf-inventory-00003-vuf`**, `createTime = 2026-05-07T09:09:33.031784952Z`, `updateTime = 2026-07-30T10:04:58.467601786Z`, `state: ACTIVE`.
+- `entryPoint`: `main`. `source.storageSource`: `gs://gcf-v2-sources-420804682491-asia-east1/cf-inventory/function-source.zip` (generation `1778486115150159`).
+- URI (Cloud Run native): `https://cf-inventory-xw5u2boozq-de.a.run.app`. Legacy URL: `https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-inventory`.
+- `serviceAccountEmail`: `etl-sa@msklad-bi-prod.iam.gserviceaccount.com`. `timeoutSeconds`: `540`. `availableMemory`: `512M`. `availableCpu`: `0.3333`. `maxInstanceCount`: `3`. `ingressSettings`: `ALLOW_ALL`.
+- `secretEnvironmentVariables`: `MSKLAD_TOKEN` ← секрет `msklad-token`, версия `latest`.
+- Триггер — HTTP (нет `eventTrigger` в описании). Cloud Scheduler `cf-inventory-trigger`, регион `asia-east1`, `schedule: 0 21 * * *`, `timeZone: UTC` (⇒ 03:00 KGT), `state: ENABLED`. `attemptDeadline: 180s` — **меньше** серверного `timeoutSeconds` (540s), тот же класс риска, что `ADR-023` устраняла у `finance-daily-update` (флаг, не фикс — фикс-форвард не производится этой сессией). OIDC `serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com`. `retryConfig`: `maxRetryDuration=0s`, `minBackoffDuration=5s`, `maxBackoffDuration=3600s`, `maxDoublings=5`.
+- Ранее в этом файле джоба `cf-inventory-trigger` упоминалась только строкой 27 (имя+расписание, инвентарь всех джобов, `E1-T1-MECH-PREP-ADJ`) — эта запись дополняет `attemptDeadline`/OIDC/retryConfig фактом.
+
+Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-13); PR-35 правило 41 (DROP-DUP); RB-42 (`maxRetryDuration=0s`); `cf-inventory` — `SOURCE-MAP-REST` (`ADR-079 §7b`).
 
 ## §SQ (Config ID + расписания)
 

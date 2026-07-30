@@ -1,0 +1,291 @@
+[
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "",
+    "displayName": "sq_audit_dim_products_snapshot",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/69fc93d1-0000-2d64-bdd1-30fd381336b4",
+    "nextRunTime": "2026-07-31T04:00:00Z",
+    "params": {
+      "query": "INSERT INTO `msklad-bi-prod.audit.dim_products_snapshots`\nSELECT *, CURRENT_TIMESTAMP() AS snapshot_at\nFROM `msklad-bi-prod.core.dim_products`;"
+    },
+    "schedule": "every day 04:00",
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every day 04:00"
+      }
+    },
+    "state": "FAILED",
+    "updateTime": "2026-05-07T13:27:24.984806Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "",
+    "displayName": "sq_audit_dim_counterparties_snapshot",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/69fc9c75-0000-2ab4-91b3-883d24f4db64",
+    "nextRunTime": "2026-07-31T04:00:00Z",
+    "params": {
+      "query": "INSERT INTO `msklad-bi-prod.audit.dim_counterparties_snapshots`\nSELECT *, CURRENT_TIMESTAMP() AS snapshot_at\nFROM `msklad-bi-prod.core.dim_counterparties`;"
+    },
+    "schedule": "every day 04:00",
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every day 04:00"
+      }
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-05-07T13:31:37.276483Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "",
+    "displayName": "sq_audit_dim_employees_snapshot",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/69fc9d6e-0000-2ab4-91b3-883d24f4db64",
+    "nextRunTime": "2026-07-31T04:00:00Z",
+    "params": {
+      "query": "INSERT INTO `msklad-bi-prod.audit.dim_employees_snapshots`\nSELECT *, CURRENT_TIMESTAMP() AS snapshot_at\nFROM `msklad-bi-prod.core.dim_employees`;"
+    },
+    "schedule": "every day 04:00",
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every day 04:00"
+      }
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-05-07T13:33:01.752556Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "",
+    "displayName": "sq_marts_inventory_health",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/69fd92d9-0000-2372-ad37-582429aca3ec",
+    "nextRunTime": "2026-07-30T11:00:00Z",
+    "params": {
+      "query": "-- =============================================================================\n-- marts.inventory_health\n-- Scheduled Query: \u0435\u0436\u0435\u0434\u043d\u0435\u0432\u043d\u043e \u0432 05:00 UTC (07:00 KGT) \u2014 \u043f\u043e\u0441\u043b\u0435 CF-Inventory (03:00 KGT)\n-- \u0438 CF-Dim (03:00 UTC).\n-- CREATE OR REPLACE TABLE \u2014 \u043f\u043e\u043b\u043d\u0430\u044f \u043f\u0435\u0440\u0435\u0441\u0431\u043e\u0440\u043a\u0430 \u0438\u0437 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0433\u043e \u0441\u043d\u044d\u043f\u0448\u043e\u0442\u0430.\n--\n-- \u041f\u0410\u0422\u0427 v1.1 (\u0414\u0435\u043d\u044c 2, \u041d\u0435\u0434\u0435\u043b\u044f 3):\n--   + sales_90d CTE \u2192 calendar_adt_90d (\u0441\u0433\u043b\u0430\u0436\u0435\u043d\u043d\u044b\u0439 ADT \u0434\u043b\u044f B2B \u0430\u043d\u0442\u0438-\u0441\u043f\u0430\u0439\u043a)\n--   + coverage_days_90d_calendar \u2014 \u0434\u043d\u0435\u0439 \u0437\u0430\u043f\u0430\u0441\u0430 \u043f\u043e 90\u0434 \u0441\u0433\u043b\u0430\u0436\u0435\u043d\u043d\u043e\u043c\u0443 ADT\n--   + COALESCE(product_folder, '\u0411\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438') \u2014 defensive fallback\n-- =============================================================================\n\nCREATE OR REPLACE TABLE `msklad-bi-prod.marts.inventory_health` AS\n\nWITH\n\n-- \u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0441\u043d\u044d\u043f\u0448\u043e\u0442 \u043e\u0441\u0442\u0430\u0442\u043a\u043e\u0432\nlatest_snapshot AS (\n  SELECT *\n  FROM `msklad-bi-prod.core.fact_inventory`\n  WHERE date_snapshot = (\n    SELECT MAX(date_snapshot)\n    FROM `msklad-bi-prod.core.fact_inventory`\n  )\n),\n\n-- \u041f\u0440\u043e\u0434\u0430\u0436\u0438 \u0437\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 30 \u0434\u043d\u0435\u0439 \u0434\u043b\u044f \u0440\u0430\u0441\u0447\u0451\u0442\u0430 ADT \u0438 \u0434\u0435\u0442\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0442\u043e\u043a\u0441\u0438\u0447\u043d\u043e\u0433\u043e \u0441\u0442\u043e\u043a\u0430\nsales_30d AS (\n  SELECT\n    product_id,\n    SUM(sell_quantity)                                                    AS sold_quantity_30d,\n    SUM(revenue_kgs)                                                      AS revenue_30d_kgs,\n    COUNT(DISTINCT transaction_date)                                      AS active_days_30d,\n    -- True ADT: \u0441\u0440\u0435\u0434\u043d\u0435\u0434\u043d\u0435\u0432\u043d\u044b\u0435 \u043f\u043e \u0410\u041a\u0422\u0418\u0412\u041d\u042b\u041c \u0434\u043d\u044f\u043c (\u0431\u0435\u0437 \u043d\u0443\u043b\u0435\u0432\u044b\u0445 \u0434\u043d\u0435\u0439)\n    -- \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0434\u043b\u044f is_toxic, is_low_stock \u0444\u043b\u0430\u0433\u043e\u0432\n    SAFE_DIVIDE(SUM(sell_quantity), NULLIF(COUNT(DISTINCT transaction_date), 0))\n                                                                          AS true_adt,\n    -- Calendar ADT 30\u0434: \u043f\u043e \u043a\u0430\u043b\u0435\u043d\u0434\u0430\u0440\u043d\u044b\u043c \u0434\u043d\u044f\u043c (\u0434\u043b\u044f \u0441\u043f\u0440\u0430\u0432\u043a\u0438)\n    SUM(sell_quantity) / 30.0                                             AS calendar_adt\n  FROM `msklad-bi-prod.core.fact_sales_profit`\n  WHERE transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)\n    AND revenue_kgs > 0  -- exclude sample giveaways\n  GROUP BY product_id\n),\n\n-- \u041f\u0440\u043e\u0434\u0430\u0436\u0438 \u0437\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 90 \u0434\u043d\u0435\u0439 \u2014 \u0441\u0433\u043b\u0430\u0436\u0435\u043d\u043d\u044b\u0439 ADT \u0434\u043b\u044f B2B\n-- \u041d\u0438\u0432\u0435\u043b\u0438\u0440\u0443\u0435\u0442 \u0441\u043f\u0430\u0439\u043a\u0438 \u0440\u0430\u0437\u043e\u0432\u044b\u0445 \u043a\u0440\u0443\u043f\u043d\u044b\u0445 \u043e\u043f\u0442\u043e\u0432\u044b\u0445 \u043e\u0442\u0433\u0440\u0443\u0437\u043e\u043a.\n-- coverage_days_90d_calendar = quantity_available / calendar_adt_90d\n-- \u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442 \u0440\u0435\u0430\u043b\u0438\u0441\u0442\u0438\u0447\u043d\u044b\u0439 \u0437\u0430\u043f\u0430\u0441 \u0432 \u0434\u043d\u044f\u0445 \u0431\u0435\u0437 \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u043e\u0432 \u043e\u0434\u043d\u043e\u0433\u043e \u043a\u0440\u0443\u043f\u043d\u043e\u0433\u043e \u0437\u0430\u043a\u0430\u0437\u0430.\nsales_90d AS (\n  SELECT\n    product_id,\n    SUM(sell_quantity)          AS sold_quantity_90d,\n    SUM(sell_quantity) / 90.0   AS calendar_adt_90d\n  FROM `msklad-bi-prod.core.fact_sales_profit`\n  WHERE transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY)\n    AND revenue_kgs > 0  -- exclude sample giveaways\n  GROUP BY product_id\n),\n\n-- \u041f\u0440\u043e\u0434\u0430\u0436\u0438 \u0437\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 7 \u0434\u043d\u0435\u0439 (\u0434\u043b\u044f is_stagnant)\nsales_7d AS (\n  SELECT\n    product_id,\n    SUM(sell_quantity) AS sold_quantity_7d\n  FROM `msklad-bi-prod.core.fact_sales_profit`\n  WHERE transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)\n    AND revenue_kgs > 0  -- exclude sample giveaways\n  GROUP BY product_id\n),\n\n-- \u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u044b\u0439 \u043a\u0443\u0440\u0441 USD\nlatest_fx AS (\n  SELECT rate_kgs_per_usd\n  FROM `msklad-bi-prod.core.dim_fx_rates`\n  WHERE date = (SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`)\n)\n\nSELECT\n  -- \u2500\u2500 \u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440\u044b \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  i.date_snapshot,\n  i.product_id,\n  p.name                                                          AS product_name,\n  p.article,\n  COALESCE(p.product_folder, '\u0411\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438')                    AS product_folder,\n  p.entity_type,\n  p.parent_product_id,\n\n  -- \u2500\u2500 \u041e\u0441\u0442\u0430\u0442\u043a\u0438 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  i.stock,\n  i.reserve,\n  i.quantity_available,\n  FLOOR(i.stock_days)                                            AS stock_days,\n\n  -- \u2500\u2500 \u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u044b\u0439 \u0441\u0440\u0435\u0437 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  i.cost_kgs,\n  ROUND(i.stock * i.cost_kgs, 2)                                 AS frozen_capital_kgs,\n  ROUND(SAFE_DIVIDE(i.stock * i.cost_kgs, fx.rate_kgs_per_usd), 2)\n                                                                  AS frozen_capital_usd,\n\n  -- \u2500\u2500 \u041f\u0440\u043e\u0434\u0430\u0436\u0438 30\u0434 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  COALESCE(s30.sold_quantity_30d, 0)                             AS sold_quantity_30d,\n  COALESCE(s30.revenue_30d_kgs, 0)                               AS revenue_30d_kgs,\n  COALESCE(s30.active_days_30d, 0)                               AS active_days_30d,\n  COALESCE(s30.true_adt, 0)                                      AS true_adt,\n  COALESCE(s30.calendar_adt, 0)                                  AS calendar_adt,\n  COALESCE(s7.sold_quantity_7d, 0)                               AS sold_quantity_7d,\n\n  -- \u2500\u2500 \u041f\u0440\u043e\u0434\u0430\u0436\u0438 90\u0434 (\u0441\u0433\u043b\u0430\u0436\u0435\u043d\u043d\u044b\u0435) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  COALESCE(s90.sold_quantity_90d, 0)                             AS sold_quantity_90d,\n  ROUND(COALESCE(s90.calendar_adt_90d, 0), 2)                    AS calendar_adt_90d,\n\n  -- \u2500\u2500 Coverage Days \u2014 \u0434\u0432\u0435 \u0432\u0435\u0440\u0441\u0438\u0438 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n  -- v1: True ADT 30\u0434 (\u043e\u043f\u0435\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0439, \u0447\u0443\u0432\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u0435\u043d \u043a \u0441\u043f\u0430\u0439\u043a\u0430\u043c)\n  -- \u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442 \u043a\u0440\u0438\u0442\u0438\u0447\u043d\u043e\u0441\u0442\u044c \u043f\u043e \u043d\u0435\u0434\u0430\u0432\u043d\u0438\u043c \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u043c \u0434\u043d\u044f\u043c \u043f\u0440\u043e\u0434\u0430\u0436.\n  -- \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0434\u043b\u044f is_low_stock \u0444\u043b\u0430\u0433\u0430.\n  CASE\n    WHEN COALESCE(s30.true_adt, 0) > 0\n    THEN ROUND(i.quantity_available / s30.true_adt, 1)\n    ELSE NULL\n  END                                                             AS coverage_days_true_adt,\n\n  -- v2: Calendar ADT 90\u0434 (\u0441\u0433\u043b\u0430\u0436\u0435\u043d\u043d\u044b\u0439, \u0430\u043d\u0442\u0438-\u0441\u043f\u0430\u0439\u043a, \u0434\u043b\u044f B2B \u043e\u043f\u0442\u0430)\n  -- \u041d\u0438\u0432\u0435\u043b\u0438\u0440\u0443\u0435\u0442 \u0440\u0430\u0437\u043e\u0432\u044b\u0435 \u043a\u0440\u0443\u043f\u043d\u044b\u0435 \u043e\u0442\u0433\u0440\u0443\u0437\u043a\u0438. \u0420\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u043e\u0432\u0430\u043d \u0434\u043b\u044f \u0438\u043d\u0432\u0435\u0441\u0442\u043e\u0440\u0430 \u0438 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0440\u0435\u0448\u0435\u043d\u0438\u0439.\n  -- \u041f\u0440\u0438\u043c\u0435\u0440: Dr.Althea 345 Cream: true_adt \u2192 0.6\u0434, calendar_90d \u2192 ~15\u0434 (\u0440\u0435\u0430\u043b\u044c\u043d\u044b\u0439 \u0437\u0430\u043f\u0430\u0441).\n  CASE\n    WHEN COALESCE(s90.calendar_adt_90d, 0) > 0\n    THEN ROUND(i.quantity_available / s90.calendar_adt_90d, 0)\n    ELSE NULL\n  END                                                             AS coverage_days_90d_calendar,\n\n  -- \u2500\u2500 \u0421\u0442\u0430\u0442\u0443\u0441\u043d\u044b\u0435 \u0444\u043b\u0430\u0433\u0438 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n  -- OOS: \u043d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0433\u043e \u0442\u043e\u0432\u0430\u0440\u0430\n  CASE\n    WHEN i.quantity_available <= 0 THEN TRUE\n    ELSE FALSE\n  END                                                             AS is_oos,\n\n  -- \u0422\u043e\u043a\u0441\u0438\u0447\u043d\u044b\u0439 \u0441\u0442\u043e\u043a: \u043d\u0435\u0442 \u043f\u0440\u043e\u0434\u0430\u0436 \u0437\u0430 30 \u0434\u043d\u0435\u0439 \u043f\u0440\u0438 \u043f\u043e\u043b\u043e\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u043c \u043e\u0441\u0442\u0430\u0442\u043a\u0435\n  CASE\n    WHEN (COALESCE(s30.sold_quantity_30d, 0) = 0 OR s30.sold_quantity_30d IS NULL)\n     AND i.stock > 0\n    THEN TRUE\n    ELSE FALSE\n  END                                                             AS is_toxic,\n\n  -- \u0421\u0442\u0430\u0433\u043d\u0430\u0446\u0438\u044f: \u0435\u0441\u0442\u044c \u043f\u0440\u043e\u0434\u0430\u0436\u0438 \u0437\u0430 30\u0434, \u043d\u043e \u043d\u0435\u0442 \u0437\u0430 7\u0434\n  CASE\n    WHEN COALESCE(s30.sold_quantity_30d, 0) > 0\n     AND COALESCE(s7.sold_quantity_7d, 0) = 0\n    THEN TRUE\n    ELSE FALSE\n  END                                                             AS is_stagnant,\n\n  -- is_low_stock: < 7 \u0434\u043d\u0435\u0439 \u043f\u043e True ADT 30\u0434 (\u043e\u043f\u0435\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0439 \u0441\u0438\u0433\u043d\u0430\u043b)\n  -- \u041d\u0430\u043c\u0435\u0440\u0435\u043d\u043d\u043e \u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d \u043d\u0430 true_adt \u2014 \u0434\u0430\u0451\u0442 \u0440\u0430\u043d\u043d\u0438\u0439 \u0441\u0438\u0433\u043d\u0430\u043b \u043f\u043e \u0431\u044b\u0441\u0442\u0440\u044b\u043c \u043f\u043e\u0437\u0438\u0446\u0438\u044f\u043c.\n  -- \u0414\u043b\u044f \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0430\u043d\u0430\u043b\u0438\u0437\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439 coverage_days_90d_calendar.\n  CASE\n    WHEN COALESCE(s30.true_adt, 0) > 0\n     AND i.quantity_available > 0\n     AND SAFE_DIVIDE(i.quantity_available, s30.true_adt) < 7\n    THEN TRUE\n    ELSE FALSE\n  END                                                             AS is_low_stock,\n\n  -- \u0418\u0437\u043b\u0438\u0448\u0435\u043a: \u0437\u0430\u043f\u0430\u0441 > 90 \u0434\u043d\u0435\u0439 \u043f\u043e True ADT \u0438 \u0435\u0441\u0442\u044c \u043f\u0440\u043e\u0434\u0430\u0436\u0438\n  CASE\n    WHEN COALESCE(s30.true_adt, 0) > 0\n     AND SAFE_DIVIDE(i.quantity_available, s30.true_adt) > 90\n    THEN TRUE\n    ELSE FALSE\n  END                                                             AS is_overstock,\n\n  -- \u041d\u0443\u043b\u0435\u0432\u0430\u044f \u0441\u0435\u0431\u0435\u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c\n  CASE WHEN i.cost_kgs = 0 THEN TRUE ELSE FALSE END               AS is_zero_cost,\n\n  -- \u2500\u2500 \u041c\u0435\u0442\u0430\u0434\u0430\u043d\u043d\u044b\u0435 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  fx.rate_kgs_per_usd,\n  CURRENT_TIMESTAMP()                                             AS _mart_refreshed_at\n\nFROM latest_snapshot i\n\nLEFT JOIN `msklad-bi-prod.core.dim_products` p\n  ON i.product_id = p.product_id\n\nLEFT JOIN sales_30d s30\n  ON i.product_id = s30.product_id\n\nLEFT JOIN sales_90d s90\n  ON i.product_id = s90.product_id\n\nLEFT JOIN sales_7d s7\n  ON i.product_id = s7.product_id\n\nCROSS JOIN latest_fx fx"
+    },
+    "schedule": "every 24 hours",
+    "scheduleOptions": {
+      "startTime": "2026-05-08T11:00:00Z"
+    },
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every 24 hours",
+        "startTime": "2026-05-08T11:00:00Z"
+      }
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-05-17T16:10:50.564749Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "",
+    "displayName": "sq_marts_sales_overview",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/69ff34b4-0000-2b2b-a390-14c14ef7af10",
+    "nextRunTime": "2026-07-30T11:34:00Z",
+    "params": {
+      "query": "-- =============================================================================\n-- marts.sales_overview\n-- Scheduled Query: \u043a\u0430\u0436\u0434\u044b\u0435 2 \u0447\u0430\u0441\u0430 (0 */2 * * *)\n-- CREATE OR REPLACE TABLE \u2014 \u043f\u043e\u043b\u043d\u0430\u044f \u043f\u0435\u0440\u0435\u0441\u0431\u043e\u0440\u043a\u0430 \u0438\u0437 core.fact_sales_profit.\n--\n-- \u26a0\ufe0f  TODO (\u041d\u0435\u0434\u0435\u043b\u044f 3, \u0414\u0435\u043d\u044c 1): \u0440\u0430\u0441\u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0431\u043b\u043e\u043a fact_returns JOIN\n-- \u043f\u043e\u0441\u043b\u0435 \u0442\u043e\u0433\u043e \u043a\u0430\u043a \u0431\u0443\u0434\u0435\u0442 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0430 \u0441\u0445\u0435\u043c\u0430 core.fact_returns.\n-- \u0421\u0435\u0439\u0447\u0430\u0441 return_sum_kgs / return_quantity = 0 (\u043f\u043b\u0435\u0439\u0441\u0445\u043e\u043b\u0434\u0435\u0440\u044b).\n-- \u0422\u0440\u0435\u043a\u0435\u0440: \u0410\u043f\u043f\u0435\u043d\u0434\u0438\u043a\u0441 \u041a, \u0441\u0435\u043a\u0446\u0438\u044f 9 \u2014 \"marts.sales_overview: \u0437\u0430\u043c\u0435\u043d\u0438\u0442\u044c\n-- return_sum_kgs \u043d\u0430 LEFT JOIN core.fact_returns\"\n-- =============================================================================\n\nCREATE OR REPLACE TABLE `msklad-bi-prod.marts.sales_overview` AS\n\nWITH\n\n-- \u2500\u2500 \u0411\u041b\u041e\u041a \u0412\u041e\u0417\u0412\u0420\u0410\u0422\u041e\u0412 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nreturns_agg AS (\n  SELECT\n    return_date,\n    product_id,\n    agent_id,\n    SUM(sum_kgs)      AS return_sum_kgs,\n    SUM(quantity)     AS return_quantity,\n    SUM(CASE WHEN NOT has_basis THEN sum_kgs ELSE 0 END) AS no_basis_sum_kgs,\n    COUNT(DISTINCT return_id)                            AS return_doc_count\n  FROM `msklad-bi-prod.core.fact_returns`\n  GROUP BY return_date, product_id, agent_id\n),\n-- \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\nmain AS (\n  SELECT\n    -- \u2500\u2500 \u0412\u0440\u0435\u043c\u0435\u043d\u043d\u043e\u0439 \u0441\u0440\u0435\u0437 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    f.transaction_date,\n    DATE_TRUNC(f.transaction_date, WEEK(SATURDAY)) AS week_start,\n    DATE_TRUNC(f.transaction_date, MONTH)           AS month_start,\n    FORMAT_DATE('%Y-W%V', f.transaction_date)       AS iso_week_label,\n\n    -- \u2500\u2500 \u041f\u0440\u043e\u0434\u0443\u043a\u0442 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    f.product_id,\n    p.name                                          AS product_name,\n    p.article,\n    p.product_folder,\n    p.entity_type,\n    p.parent_product_id,\n    p_parent.name                                   AS parent_product_name,\n\n    -- \u2500\u2500 \u041a\u043e\u043d\u0442\u0440\u0430\u0433\u0435\u043d\u0442 + \u043c\u0435\u043d\u0435\u0434\u0436\u0435\u0440 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    f.agent_id,\n    c.name                                          AS counterparty_name,\n    COALESCE(c.country, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430')               AS country,\n    c.owner_employee_id,\n    e.full_name                                     AS manager_name,\n    e.position                                      AS manager_position,\n\n    -- \u2500\u2500 \u041a\u0430\u043d\u0430\u043b \u043f\u0440\u043e\u0434\u0430\u0436 / \u041f\u0440\u043e\u0435\u043a\u0442 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    COALESCE(f.sales_channel_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d')     AS sales_channel_name,\n    COALESCE(f.project_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d')           AS project_name,\n\n    -- \u2500\u2500 \u041f\u0440\u043e\u0434\u0430\u0436\u0438 (KGS) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    f.sell_quantity,\n    ROUND(f.revenue_kgs, 2)                         AS revenue_kgs,\n    ROUND(COALESCE(f.cogs_kgs, 0), 2)               AS cogs_kgs,\n    ROUND(COALESCE(f.margin_kgs, 0), 2)             AS margin_kgs,\n\n    CASE\n      WHEN COALESCE(f.margin_kgs, 0) < 0 THEN 0\n      ELSE ROUND(COALESCE(f.margin_kgs, 0), 2)\n    END                                             AS margin_kgs_adjusted,\n\n    ROUND(\n      SAFE_DIVIDE(COALESCE(f.margin_kgs, 0), NULLIF(f.revenue_kgs, 0)),\n      4\n    )                                               AS margin_pct,\n    f.discount AS discount_percent,\n\n    -- \u2500\u2500 \u0412\u043e\u0437\u0432\u0440\u0430\u0442\u044b \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    COALESCE(r.return_quantity, 0)                  AS return_quantity,\n    COALESCE(r.return_sum_kgs, 0)                   AS return_sum_kgs,\n    COALESCE(r.no_basis_sum_kgs, 0)                 AS return_no_basis_sum_kgs,\n    COALESCE(r.return_doc_count, 0)                 AS return_doc_count,\n\n    -- \u2500\u2500 \u041d\u0435\u0442\u0442\u043e (\u043f\u0440\u043e\u0434\u0430\u0436\u0438 - \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u044b) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    ROUND(f.revenue_kgs - COALESCE(r.return_sum_kgs, 0), 2) AS net_revenue_kgs,\n    f.sell_quantity - COALESCE(r.return_quantity, 0)         AS net_quantity,\n\n    -- \u2500\u2500 USD \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    ROUND(COALESCE(f.revenue_usd, 0), 2)            AS revenue_usd,\n    ROUND(COALESCE(f.cogs_usd, 0), 2)               AS cogs_usd,\n    ROUND(COALESCE(f.margin_usd, 0), 2)             AS margin_usd,\n    ROUND(\n      SAFE_DIVIDE(COALESCE(r.return_sum_kgs, 0), NULLIF(fx.rate_kgs_per_usd, 0)),\n      2\n    )                                               AS return_sum_usd,\n    fx.rate_kgs_per_usd,\n\n    -- \u2500\u2500 \u0424\u043b\u0430\u0433\u0438 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430 \u0434\u0430\u043d\u043d\u044b\u0445 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    CASE WHEN f.cogs_kgs IS NULL THEN TRUE ELSE FALSE END AS is_cogs_missing,\n    CASE WHEN f.agent_id IS NULL THEN TRUE ELSE FALSE END AS is_agent_missing,\n\n    -- \u2500\u2500 \u041c\u0435\u0442\u0430\u0434\u0430\u043d\u043d\u044b\u0435 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    CURRENT_TIMESTAMP()                             AS _mart_refreshed_at\n\n  FROM `msklad-bi-prod.core.fact_sales_profit` f\n\n  LEFT JOIN `msklad-bi-prod.core.dim_products` p\n    ON f.product_id = p.product_id\n\n  LEFT JOIN `msklad-bi-prod.core.dim_products` p_parent\n    ON p.parent_product_id = p_parent.product_id\n\n  LEFT JOIN `msklad-bi-prod.core.dim_counterparties` c\n    ON f.agent_id = c.agent_id\n    AND c.scd2_is_current = TRUE\n\n  LEFT JOIN `msklad-bi-prod.core.dim_employees` e\n    ON c.owner_employee_id = e.employee_id\n\n  LEFT JOIN `msklad-bi-prod.core.dim_fx_rates` fx\n    ON f.transaction_date = fx.date\n\n  LEFT JOIN returns_agg r\n    ON f.transaction_date = r.return_date\n    AND f.product_id = r.product_id\n    AND COALESCE(f.agent_id, '') = COALESCE(r.agent_id, '')\n)\n\nSELECT * FROM main;"
+    },
+    "schedule": "every 2 hours",
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every 2 hours"
+      }
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-06-02T22:35:25.531861Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "marts",
+    "displayName": "sq_marts_gmroi_by_folder",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a004e88-0000-2e7d-bf20-9898fbb40f95",
+    "nextRunTime": "2026-07-30T12:02:00Z",
+    "params": {
+      "query": "CREATE OR REPLACE TABLE `msklad-bi-prod.marts.gmroi_by_folder` AS SELECT period_days, COALESCE(product_folder, \"\u0411\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438\") AS product_folder, COUNT(DISTINCT product_id) AS product_count, ROUND(SUM(revenue_kgs),2) AS revenue_kgs, ROUND(SUM(cogs_kgs),2) AS cogs_kgs, ROUND(SUM(gross_profit_kgs),2) AS gross_profit_kgs, ROUND(SUM(avg_inventory_kgs),2) AS total_avg_inventory_kgs, ROUND(SAFE_DIVIDE(SUM(gross_profit_kgs),NULLIF(SUM(avg_inventory_kgs),0))*(365.0/period_days),2) AS gmroi_weighted, ROUND(SUM(gross_profit_kgs)/MAX(rate_kgs_per_usd),2) AS gross_profit_usd, ROUND(SUM(avg_inventory_kgs)/MAX(rate_kgs_per_usd),2) AS avg_inventory_usd, COUNTIF(is_inventory_missing) AS products_no_inventory, COUNTIF(is_cogs_zero) AS products_no_cogs, MAX(rate_kgs_per_usd) AS rate_kgs_per_usd, CURRENT_TIMESTAMP() AS _mart_refreshed_at FROM `msklad-bi-prod.marts.gmroi` GROUP BY period_days, product_folder"
+    },
+    "schedule": "every 24 hours",
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every 24 hours"
+      }
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-05-11T12:02:05.701100Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "",
+    "displayName": "sq_marts_gmroi",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a006664-0000-2739-86f5-7474463a7ac5",
+    "nextRunTime": "2026-07-31T08:03:00Z",
+    "params": {
+      "query": "CREATE OR REPLACE TABLE `msklad-bi-prod.marts.gmroi` AS\nWITH periods AS (SELECT 30 AS days UNION ALL SELECT 90),\nsales_agg AS (\n  SELECT p.days, f.product_id, SUM(f.revenue_kgs) AS revenue_kgs, SUM(COALESCE(f.cogs_kgs,0)) AS cogs_kgs, SUM(f.revenue_kgs)-SUM(COALESCE(f.cogs_kgs,0)) AS gross_profit_kgs\n  FROM `msklad-bi-prod.core.fact_sales_profit` f CROSS JOIN periods p\n  WHERE f.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL p.days DAY)\n  GROUP BY p.days, f.product_id),\ninventory_agg AS (\n  SELECT p.days, i.product_id, COUNT(*) AS snapshot_count, AVG(i.stock * i.cost_kgs) AS avg_inventory_kgs\n  FROM `msklad-bi-prod.core.fact_inventory` i CROSS JOIN periods p\n  WHERE i.date_snapshot >= DATE_SUB(CURRENT_DATE(), INTERVAL p.days DAY)\n  GROUP BY p.days, i.product_id),\nlatest_fx AS (\n  SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n  WHERE date = (SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`))\nSELECT s.days AS period_days, s.product_id, p.name AS product_name, p.product_folder, p.parent_product_id,\n  ROUND(s.revenue_kgs,2) AS revenue_kgs, ROUND(s.cogs_kgs,2) AS cogs_kgs, ROUND(s.gross_profit_kgs,2) AS gross_profit_kgs,\n  ROUND(SAFE_DIVIDE(s.gross_profit_kgs,s.revenue_kgs),4) AS gross_margin_pct, ROUND(i.avg_inventory_kgs,2) AS avg_inventory_kgs,\n  COALESCE(i.snapshot_count,0) AS snapshot_count,\n  ROUND(SAFE_DIVIDE(s.gross_profit_kgs,NULLIF(i.avg_inventory_kgs,0))*(365.0/s.days),2) AS gmroi,\n  ROUND(s.revenue_kgs/fx.rate_kgs_per_usd,2) AS revenue_usd, ROUND(s.gross_profit_kgs/fx.rate_kgs_per_usd,2) AS gross_profit_usd,\n  ROUND(COALESCE(i.avg_inventory_kgs,0)/fx.rate_kgs_per_usd,2) AS avg_inventory_usd, fx.rate_kgs_per_usd,\n  CASE WHEN i.avg_inventory_kgs IS NULL THEN TRUE ELSE FALSE END AS is_inventory_missing,\n  CASE WHEN s.cogs_kgs=0 THEN TRUE ELSE FALSE END AS is_cogs_zero,\n  CURRENT_TIMESTAMP() AS _mart_refreshed_at\nFROM sales_agg s\nLEFT JOIN `msklad-bi-prod.core.dim_products` p ON s.product_id=p.product_id\nLEFT JOIN inventory_agg i ON s.product_id=i.product_id AND s.days=i.days\nCROSS JOIN latest_fx fx"
+    },
+    "schedule": "every 24 hours",
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every 24 hours"
+      }
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-05-11T08:03:59.003292Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "",
+    "displayName": "sq_marts_abc_xyz",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a020b2c-0000-2dd6-96d2-883d24f52bd4",
+    "nextRunTime": "2026-07-31T08:04:00Z",
+    "params": {
+      "query": "CREATE OR REPLACE TABLE `msklad-bi-prod.marts.abc_xyz` AS\nWITH\nsales_90d AS (\n  SELECT product_id, SUM(revenue_kgs) AS revenue_90d, SUM(sell_quantity) AS quantity_90d, SUM(COALESCE(margin_kgs,0)) AS margin_90d, COUNT(DISTINCT transaction_date) AS active_days\n  FROM `msklad-bi-prod.core.fact_sales_profit`\n  WHERE transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY)\n    AND revenue_kgs > 0\n  GROUP BY product_id),\nrevenue_ranked AS (\n  SELECT *, SUM(revenue_90d) OVER() AS total_revenue,\n    SUM(revenue_90d) OVER(ORDER BY revenue_90d DESC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_revenue\n  FROM sales_90d),\nabc AS (\n  SELECT *, CASE WHEN cumulative_revenue/total_revenue<=0.8 THEN \"A\" WHEN cumulative_revenue/total_revenue<=0.95 THEN \"B\" ELSE \"C\" END AS abc_class\n  FROM revenue_ranked),\nweekly_sales AS (\n  SELECT product_id, DATE_TRUNC(transaction_date,WEEK(SATURDAY)) AS week_start, SUM(sell_quantity) AS weekly_qty\n  FROM `msklad-bi-prod.core.fact_sales_profit`\n  WHERE transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY)\n    AND revenue_kgs > 0\n  GROUP BY product_id, week_start),\nxyz AS (\n  SELECT product_id, COUNT(*) AS weeks_with_sales, AVG(weekly_qty) AS avg_weekly_qty,\n    SAFE_DIVIDE(STDDEV(weekly_qty),NULLIF(AVG(weekly_qty),0)) AS cov,\n    CASE WHEN SAFE_DIVIDE(STDDEV(weekly_qty),NULLIF(AVG(weekly_qty),0))<=0.5 THEN \"X\"\n         WHEN SAFE_DIVIDE(STDDEV(weekly_qty),NULLIF(AVG(weekly_qty),0))<=1.0 THEN \"Y\" ELSE \"Z\" END AS xyz_class\n  FROM weekly_sales GROUP BY product_id),\nlatest_fx AS (\n  SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n  WHERE date=(SELECT MAX(date) FROM `msklad-bi-prod.core.dim_fx_rates`))\nSELECT COALESCE(a.product_id,x.product_id) AS product_id, p.name AS product_name, p.article, p.product_folder, p.entity_type, p.parent_product_id,\n  COALESCE(a.abc_class,\"C\") AS abc_class, ROUND(COALESCE(a.revenue_90d,0),2) AS revenue_90d_kgs, ROUND(COALESCE(a.margin_90d,0),2) AS margin_90d_kgs,\n  COALESCE(a.quantity_90d,0) AS quantity_90d, COALESCE(a.active_days,0) AS active_days_90d,\n  ROUND(COALESCE(a.revenue_90d,0)/fx.rate_kgs_per_usd,2) AS revenue_90d_usd,\n  COALESCE(x.xyz_class,\"Z\") AS xyz_class, ROUND(COALESCE(x.cov,0),4) AS cov,\n  COALESCE(x.weeks_with_sales,0) AS weeks_with_sales, ROUND(COALESCE(x.avg_weekly_qty,0),2) AS avg_weekly_qty,\n  CONCAT(COALESCE(a.abc_class,\"C\"),COALESCE(x.xyz_class,\"Z\")) AS abc_xyz,\n  fx.rate_kgs_per_usd, CURRENT_TIMESTAMP() AS _mart_refreshed_at\nFROM abc a FULL OUTER JOIN xyz x ON a.product_id=x.product_id\nLEFT JOIN `msklad-bi-prod.core.dim_products` p ON COALESCE(a.product_id,x.product_id)=p.product_id\nCROSS JOIN latest_fx fx"
+    },
+    "schedule": "every 24 hours",
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every 24 hours"
+      }
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-05-18T15:20:33.652420Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "marts",
+    "displayName": "sq_marts_in_transit",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a0aa537-0000-260f-b391-d43a2cee6b87",
+    "nextRunTime": "2026-07-30T13:09:00Z",
+    "params": {
+      "query": "CREATE OR REPLACE TABLE `msklad-bi-prod.marts.in_transit`\nCLUSTER BY supplier_id, product_id\nAS\nWITH latest_fx AS (\n  SELECT rate_kgs_per_usd\n  FROM `msklad-bi-prod.core.dim_fx_rates`\n  ORDER BY date DESC\n  LIMIT 1\n)\nSELECT\n  p.order_name,\n  p.purchase_order_id,\n  p.position_id,\n  p.order_date,\n  p.planned_delivery_date,\n  CASE\n    WHEN p.planned_delivery_date IS NULL THEN NULL\n    ELSE DATE_DIFF(p.planned_delivery_date, CURRENT_DATE(), DAY)\n  END AS days_until_delivery,\n  CASE\n    WHEN p.planned_delivery_date IS NOT NULL\n     AND p.planned_delivery_date < CURRENT_DATE() THEN TRUE\n    ELSE FALSE\n  END AS is_overdue,\n  p.product_id,\n  prod.name AS product_name,\n  prod.product_folder AS product_folder,\n  p.supplier_id,\n  sup.name AS supplier_name,\n  p.status_name,\n  p.quantity_ordered,\n  p.quantity_shipped,\n  p.quantity_in_transit,\n  p.price_kgs,\n  p.in_transit_sum_kgs,\n  ROUND(p.in_transit_sum_kgs / fx.rate_kgs_per_usd, 2) AS in_transit_sum_usd,\n  fx.rate_kgs_per_usd AS fx_rate_used,\n  CURRENT_TIMESTAMP() AS _mart_refreshed_at\nFROM `msklad-bi-prod.core.fact_purchases` p\nCROSS JOIN latest_fx fx\nLEFT JOIN `msklad-bi-prod.core.dim_products` prod\n  ON p.product_id = prod.product_id\nLEFT JOIN `msklad-bi-prod.core.dim_counterparties` sup\n  ON p.supplier_id = sup.agent_id\n  AND sup.scd2_is_current = TRUE\nWHERE p.status_name IN (\"\u0412 \u043f\u0443\u0442\u0438\", \"\u041f\u0440\u0438\u0431\u044b\u043b \u0447\u0430\u0441\u0442\u0438\u0447\u043d\u043e\")\n  AND p.in_transit_sum_kgs > 0"
+    },
+    "schedule": "every 24 hours",
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every 24 hours"
+      }
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-06-17T14:56:30.218458Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "marts",
+    "displayName": "sq_marts_supplier_price_history",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a0b0f25-0000-2893-be44-d43a2cc31f97",
+    "nextRunTime": "2026-07-30T13:09:00Z",
+    "params": {
+      "query": "CREATE OR REPLACE TABLE `msklad-bi-prod.marts.supplier_price_history`\nPARTITION BY order_date\nCLUSTER BY supplier_id, product_id\nAS\nSELECT\n  p.order_date,\n  p.product_id,\n  prod.name AS product_name,\n  prod.product_folder AS product_folder,\n  p.supplier_id,\n  sup.name AS supplier_name,\n  p.status_name,\n  p.quantity_ordered,\n  p.price_kgs,\n  ROUND(p.price_kgs / COALESCE(fx.rate_kgs_per_usd,\n    (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n     ORDER BY date DESC LIMIT 1)), 2) AS price_usd,\n  p.sum_kgs,\n  COALESCE(fx.rate_kgs_per_usd,\n    (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n     ORDER BY date DESC LIMIT 1)) AS fx_rate_used,\n  CURRENT_TIMESTAMP() AS _mart_refreshed_at\nFROM `msklad-bi-prod.core.fact_purchases` p\nLEFT JOIN `msklad-bi-prod.core.dim_products` prod\n  ON p.product_id = prod.product_id\nLEFT JOIN `msklad-bi-prod.core.dim_counterparties` sup\n  ON p.supplier_id = sup.agent_id\n  AND sup.scd2_is_current = TRUE\nLEFT JOIN `msklad-bi-prod.core.dim_fx_rates` fx\n  ON fx.date = p.order_date\nWHERE p.price_kgs > 0\n"
+    },
+    "schedule": "every 24 hours",
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every 24 hours"
+      }
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-05-18T13:09:28.003619Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "marts",
+    "displayName": "sq_marts_weight_flow",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a1f9418-0000-276f-a1e4-d4f547ee7418",
+    "nextRunTime": "2026-07-30T23:30:00Z",
+    "params": {
+      "query": "-- =============================================================================\n-- marts.weight_flow\n-- Scheduled Query: \u0435\u0436\u0435\u0434\u043d\u0435\u0432\u043d\u043e\n-- \u0412\u0435\u0441 \u043f\u0440\u0438\u043d\u044f\u0442\u044b\u0445 \u0442\u043e\u0432\u0430\u0440\u043e\u0432 (inbound) \u0438 \u043e\u0442\u0433\u0440\u0443\u0436\u0435\u043d\u043d\u044b\u0445 (outbound) \u043f\u043e \u0434\u0430\u0442\u0430\u043c.\n-- \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0434\u043b\u044f KPI \u043a\u043b\u0430\u0434\u043e\u0432\u0449\u0438\u043a\u043e\u0432.\n-- \u041f\u043e\u043a\u0440\u044b\u0442\u0438\u0435 ~32.6% \u2014 \u0440\u0430\u0441\u0442\u0451\u0442 \u043f\u043e \u043c\u0435\u0440\u0435 \u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f weight \u0432 \u041c\u043e\u0439\u0421\u043a\u043b\u0430\u0434\u0435.\n-- =============================================================================\n\nCREATE OR REPLACE TABLE `msklad-bi-prod.marts.weight_flow` AS\n\nWITH\n\noutbound AS (\n  SELECT\n    f.transaction_date                                    AS flow_date,\n    DATE_TRUNC(f.transaction_date, WEEK(SATURDAY))        AS week_start,\n    DATE_TRUNC(f.transaction_date, MONTH)                 AS month_start,\n    'outbound'                                            AS flow_direction,\n    ROUND(SUM(f.sell_quantity * COALESCE(p.weight, 0)), 2) AS weight_kg,\n    COUNT(*)                                              AS positions_total,\n    COUNTIF(COALESCE(p.weight, 0) > 0)                   AS positions_with_weight,\n    ROUND(\n      SAFE_DIVIDE(COUNTIF(COALESCE(p.weight, 0) > 0), COUNT(*)) * 100, 1\n    )                                                     AS weight_coverage_pct\n  FROM `msklad-bi-prod.core.fact_sales_profit` f\n  LEFT JOIN `msklad-bi-prod.core.dim_products` p\n    ON f.product_id = p.product_id\n  GROUP BY f.transaction_date\n),\n\ninbound AS (\n  SELECT\n    pu.order_date                                          AS flow_date,\n    DATE_TRUNC(pu.order_date, WEEK(SATURDAY))              AS week_start,\n    DATE_TRUNC(pu.order_date, MONTH)                       AS month_start,\n    'inbound'                                              AS flow_direction,\n    ROUND(SUM(pu.quantity_shipped * COALESCE(p.weight, 0)), 2) AS weight_kg,\n    COUNT(*)                                               AS positions_total,\n    COUNTIF(COALESCE(p.weight, 0) > 0)                    AS positions_with_weight,\n    ROUND(\n      SAFE_DIVIDE(COUNTIF(COALESCE(p.weight, 0) > 0), COUNT(*)) * 100, 1\n    )                                                      AS weight_coverage_pct\n  FROM `msklad-bi-prod.core.fact_purchases` pu\n  LEFT JOIN `msklad-bi-prod.core.dim_products` p\n    ON pu.product_id = p.product_id\n  WHERE pu.status_name IN ('\u041f\u0440\u0438\u0431\u044b\u043b', '\u041f\u0440\u0438\u0431\u044b\u043b \u0447\u0430\u0441\u0442\u0438\u0447\u043d\u043e')\n    AND pu.quantity_shipped > 0\n  GROUP BY pu.order_date\n)\n\nSELECT * FROM outbound\nUNION ALL\nSELECT * FROM inbound\nORDER BY flow_date DESC, flow_direction;"
+    },
+    "schedule": "every 24 hours",
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {
+        "schedule": "every 24 hours"
+      }
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-06-02T23:30:07.532584Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "marts",
+    "displayName": "sq_marts_expenses",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a22a243-0000-20fd-a458-883d24f4cad4",
+    "nextRunTime": "2026-07-30T11:10:00Z",
+    "params": {
+      "destination_table_name_template": "expenses",
+      "partitioning_field": "",
+      "query": "WITH src AS (\n  SELECT\n    p.moment,\n    p.payment_type,\n    p.expense_item_id,\n    COALESCE(p.expense_item_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430') AS expense_item_name,\n    p.agent_id,\n    COALESCE(p.agent_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d')         AS agent_name,\n    p.project_id,\n    COALESCE(p.project_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d')       AS project_name,\n    p.sales_channel_id,\n    COALESCE(p.sales_channel_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d') AS sales_channel_name,\n    p.sum_kgs\n  FROM `msklad-bi-prod.core.fact_payments` p\n  WHERE p.moment IS NOT NULL\n\n  UNION ALL\n\n  SELECT\n    CAST(l.moment AS DATE)                      AS moment,\n    'loss'                                      AS payment_type,\n    l.expense_item_id,\n    COALESCE(l.expense_item_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430') AS expense_item_name,\n    l.agent_id,\n    COALESCE(l.agent_name, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d')         AS agent_name,\n    l.project_id,\n    '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d'                                 AS project_name,\n    l.sales_channel_id,\n    '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d'                                 AS sales_channel_name,\n    l.sum_kgs\n  FROM `msklad-bi-prod.core.fact_loss` l\n  WHERE l.moment IS NOT NULL\n    AND l.applicable\n    AND COALESCE(l.expense_item_id, '') NOT IN (\n      '24c0e914-2d8c-11f1-0a80-11b0000c7043',\n      '4e1c05f2-0673-11e6-a655-0cc47a342ca4',\n      '8dbf9374-0a01-11e4-b9bf-002590a32f46',\n      '8dbf99a0-0a01-11e4-a743-002590a32f46'\n    )\n\n  UNION ALL\n\n  SELECT\n    CAST(c.moment AS DATE)       AS moment,\n    'commission'                 AS payment_type,\n    CAST(NULL AS STRING)         AS expense_item_id,\n    '\u0420\u0430\u0441\u0445\u043e\u0434\u044b \u043c\u0430\u0440\u043a\u0435\u0442\u043f\u043b\u0435\u0439\u0441\u043e\u0432'      AS expense_item_name,\n    c.agent_id,\n    '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d'                  AS agent_name,\n    CAST(NULL AS STRING)         AS project_id,\n    '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d'                  AS project_name,\n    CAST(NULL AS STRING)         AS sales_channel_id,\n    '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d'                  AS sales_channel_name,\n    c.sum_kgs\n  FROM `msklad-bi-prod.core.fact_commissionreportin` c\n  WHERE c.moment IS NOT NULL\n)\nSELECT\n  s.moment,\n  DATE_TRUNC(s.moment, MONTH)                     AS month_start,\n  DATE_TRUNC(s.moment, WEEK(SATURDAY))            AS week_start,\n  EXTRACT(YEAR FROM s.moment)                     AS year_num,\n  FORMAT_DATE('%Y-%m', s.moment)                  AS year_month,\n  s.payment_type,\n  s.expense_item_id,\n  s.expense_item_name,\n  s.agent_id,\n  s.agent_name,\n  s.project_id,\n  s.project_name,\n  s.sales_channel_id,\n  s.sales_channel_name,\n  COUNT(*)                                        AS payment_count,\n  ROUND(SUM(s.sum_kgs), 2)                        AS total_sum_kgs,\n  ROUND(SUM(s.sum_kgs) / COALESCE(fx.rate_kgs_per_usd,\n    (SELECT rate_kgs_per_usd FROM `msklad-bi-prod.core.dim_fx_rates`\n     ORDER BY date DESC LIMIT 1)), 2)             AS total_sum_usd\nFROM src s\nLEFT JOIN `msklad-bi-prod.core.dim_fx_rates` fx\n  ON fx.date = s.moment\nWHERE s.moment IS NOT NULL\nGROUP BY\n  s.moment, month_start, week_start, year_num, year_month,\n  s.payment_type, s.expense_item_id, s.expense_item_name,\n  s.agent_id, s.agent_name, s.project_id, s.project_name,\n  s.sales_channel_id, s.sales_channel_name,\n  fx.rate_kgs_per_usd\n",
+      "write_disposition": "WRITE_TRUNCATE"
+    },
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {}
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-07-28T11:37:07.664398Z",
+    "userId": "8522307959247193051"
+  },
+  {
+    "dataSourceId": "scheduled_query",
+    "datasetRegion": "asia-east1",
+    "destinationDatasetId": "marts",
+    "displayName": "sq_marts_customer_invoices_ar",
+    "emailPreferences": {},
+    "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a23f3ea-0000-2952-853d-582429be7ecc",
+    "nextRunTime": "2026-07-31T10:00:00Z",
+    "params": {
+      "destination_table_name_template": "customer_invoices_ar",
+      "partitioning_field": "",
+      "query": "\nSELECT\n  i.agent_id,\n  i.agent_name,\n  COALESCE(c.country, '\u041d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d\u0430') AS country,\n  i.state_name,\n  i.state_id,\n  COUNT(DISTINCT i.invoice_id)        AS invoice_count,\n  ROUND(SUM(i.sum_kgs), 2)            AS total_invoiced_kgs,\n  ROUND(SUM(i.payed_sum_kgs), 2)      AS total_paid_kgs,\n  ROUND(SUM(i.unpaid_sum_kgs), 2)     AS total_unpaid_kgs,\n  MIN(i.moment)                       AS earliest_invoice_date,\n  MAX(i.moment)                       AS latest_invoice_date,\n  COUNTIF(\n    i.payment_planned IS NOT NULL\n    AND i.payment_planned < CURRENT_DATE()\n    AND i.unpaid_sum_kgs > 0\n  )                                   AS overdue_count\nFROM `msklad-bi-prod.core.fact_customer_invoices` i\nLEFT JOIN `msklad-bi-prod.core.dim_counterparties` c\n  ON i.agent_id = c.agent_id AND c.scd2_is_current = TRUE\nGROUP BY\n  i.agent_id, i.agent_name, c.country,\n  i.state_name, i.state_id\nORDER BY total_unpaid_kgs DESC\n",
+      "write_disposition": "WRITE_TRUNCATE"
+    },
+    "scheduleOptions": {},
+    "scheduleOptionsV2": {
+      "timeBasedSchedule": {}
+    },
+    "state": "SUCCEEDED",
+    "updateTime": "2026-06-05T10:00:27.182221Z",
+    "userId": "8522307959247193051"
+  }
+]

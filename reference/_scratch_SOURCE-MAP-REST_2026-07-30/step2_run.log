@@ -1,0 +1,40 @@
+Thu Jul 30 10:47:33 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== скачивание архива (путь из describe Шага 1) ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-inventory/function-source.zip#1778486115150159 to file://./function-source.zip
+  
+.........................
+=== распаковка ===
+Archive:  function-source.zip
+  inflating: unpacked/.DS_Store      
+  inflating: unpacked/config.py      
+  inflating: unpacked/requirements.txt  
+  inflating: unpacked/main.py        
+  inflating: unpacked/helpers.py     
+=== содержимое ===
+unpacked/.DS_Store
+unpacked/config.py
+unpacked/requirements.txt
+unpacked/main.py
+unpacked/helpers.py
+=== sha256 по каждому файлу ===
+17e164862967ec0e0d448ff39da314ec5f78f78d090afa55324f80baa14d6d18  unpacked/.DS_Store
+741257fa557b824e4e42d91f5c87a6b651d63bf7a581b91e9dda3834bacc11fe  unpacked/config.py
+92a7f76a7a26eb89e05dcd36ba3d92dccdaa9416efc3c920a179fc225d195d46  unpacked/requirements.txt
+a2bd4c5e75f64838aaf6b75dcfa8d88e7f3dfe66b0edb93d3a012c61b4724da3  unpacked/main.py
+0d63885e5ee16dbf8286fc02760042b271206d58c908bae923acd52534564b74  unpacked/helpers.py
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Thu Jul 30 10:47:49 UTC 2026
+PATH_PRINTED: reference/_scratch_SOURCE-MAP-REST_2026-07-30/cf-inventory-extract
