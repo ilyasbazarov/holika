@@ -44,9 +44,9 @@
 | agent_id | STRING | FK → `dim_counterparties` |
 | sell_quantity | FLOAT64 | Продано штук |
 | return_quantity | FLOAT64 | Возвращено штук |
-| sell_sum_kgs | FLOAT64 | Выручка KGS |
-| return_sum_kgs | FLOAT64 | Сумма возвратов KGS |
-| revenue_kgs | FLOAT64 | Нетто выручка KGS |
+| sell_sum_kgs | FLOAT64 | Выручка KGS, ВАЛОВАЯ (до вычета возвратов) |
+| return_sum_kgs | FLOAT64 | Сумма возвратов KGS. ВНИМАНИЕ: в этой таблице всегда `0.0` (хардкод `cf-facts`, `bq_ops.py`); фактические возвраты живут в `core.fact_returns` (`Q-83`, `ADR-085 §4`) |
+| revenue_kgs | FLOAT64 | Валовая выручка KGS, тождественна `sell_sum_kgs` (`Q-83`). Нетто появляется только на уровне марта как валовая минус `core.fact_returns` того же периода (`ADR-085 §1`) |
 | cogs_kgs | FLOAT64 | Себестоимость KGS (FIFO, NULL если неизвестна) |
 | margin_kgs | FLOAT64 | Маржа KGS (NULL если нет COGS) |
 | revenue_usd | FLOAT64 | Выручка USD |
