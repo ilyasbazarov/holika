@@ -32,7 +32,43 @@ gcloud functions deploy cf-finance \
 - Внешний источник (не собственный CF URL, а вызываемый API): `BAKAI_FX_URL = "https://openbanking-api.bakai.kg/api/Directory/GetRateDirectory"` (Bakai Bank OpenBanking API → `officialRates[USD].rate`, курс НБКР).
 - Ревизия/URL самой CF `cf-fx`: не зафиксированы в источнике на момент этой сессии → *(пусто, ожидает discovery)*.
 
-**cf-facts** — URL/ревизия: не зафиксированы в источнике на момент этой сессии → *(пусто, ожидает discovery)*.
+**cf-facts** (снято сессией `SOURCE-MAP-SALES`, 2026-07-29/30; полная таблица метаданных и метод снятия —
+`reference/code/cf-facts/MANIFEST.md`):
+```bash
+gcloud functions deploy cf-facts \
+  --gen2 --runtime=python312 --region=asia-east1 \
+  --source=cf/cf_facts --entry-point=main \
+  --service-account=etl-sa@msklad-bi-prod.iam.gserviceaccount.com \
+  --memory=2048MB --timeout=540s --min-instances=1 \
+  --set-secrets="MSKLAD_TOKEN=msklad-token:latest"
+```
+(команда деплоя — из докстринга `main.py:20-26` в снапшоте, не наблюдённый факт живого деплоя)
+- Регион: **`asia-east1`**. Revision: **`cf-facts-00007-xir`**, `updateTime = 2026-07-29T04:05:10.487996910Z`,
+  `createTime = 2026-05-06T08:26:29.388991725Z`, `state: ACTIVE`.
+- Источник: `gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip`, `generation
+  1782334223015697`. Архив грязный (`.bak`/patch-скрипты/`.DS_Store`/вложенный устаревший `src.zip`) —
+  чистка вменена следующему деплою (`ADR-040`), см. `MANIFEST.md §Чистота архива`.
+- URI (Cloud Run native): `https://cf-facts-xw5u2boozq-de.a.run.app`
+- Legacy URL: `https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts`
+- `serviceAccountEmail`: `etl-sa@msklad-bi-prod.iam.gserviceaccount.com`. `timeoutSeconds: 540`.
+  `availableMemory: 2048M`, `availableCpu: 1`. `minInstanceCount: 1`, `maxInstanceCount: 5`.
+  `ingressSettings: ALLOW_ALL`.
+- Секреты (имена, не значения): `MSKLAD_TOKEN` ← `msklad-token:latest`.
+- Триггер: **`HTTP_TRIGGER`** (прямой HTTP, не Pub/Sub/Eventarc). Вызывающий Cloud Scheduler job не
+  идентифицирован этой сессией (не входил в шаги брифа буквально; `workflow.yaml`, оркестрирующий режимы
+  `hourly`/`weekly`/`promote`/`purchases`/`returns`, вне архива — остаток, не факт).
+- **Известная аномалия этой сессии (не факт о самой CF):** `gcloud functions describe cf-facts` вернул
+  `403`/billing-related ошибку трижды подряд, при том что `gcloud functions list` тем же аккаунтом отработал.
+  Прямая проверка `gcloud billing projects describe msklad-bi-prod` подтвердила `billingEnabled: false`;
+  владелец восстановил биллинг в ходе сессии (подтверждено повторной проверкой: `billingEnabled: true`).
+  Метаданные выше сняты эквивалентным путём (`functions list --format=json` + `run services describe`) до
+  восстановления и не переверены `describe` после. Провенанс — `reference/code/cf-facts/MANIFEST.md
+  §Известная аномалия сессии`, логи `reference/_scratch_SOURCE-MAP-SALES_2026-07-29/step1*.log`.
+- **Пересборку марта НЕ триггерит** — `grep -rn "trigger_marts" reference/code/cf-facts/` даёт 0 совпадений
+  (в отличие от `cf-finance.trigger_marts()`, `ADR-038`). `marts.sales_overview` обновляется исключительно
+  по собственному расписанию SQ, независимо от момента промоута в `core`.
+- MERGE в `core.fact_sales_profit` — явный `INSERT (колонки) VALUES (...)`, не `INSERT ROW`
+  (`bq_ops.py:258-303`) — соответствует C1/`ADR-030`.
 **cf-dq** — актуальная ревизия после T-1-фикса не подтверждена в источнике → **GAP Q-6** (см. `07_STATE`); последняя известная в источнике — `cf-dq-00006-lac` (⚠ дата этой ревизии предшествует T-1-фиксу 2026-06-24, канон не зафиксирован, не выдавать за актуальную).
 
 Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-13); PR-35 правило 41 (DROP-DUP); RB-42 (`maxRetryDuration=0s`).

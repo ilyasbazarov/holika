@@ -1,0 +1,17 @@
+Wed Jul 29 12:11:55 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+ERROR: (gcloud.functions.describe) ResponseError: status=[403], code=[], message=[Read access to project 'msklad-bi-prod' was denied: please check billing account associated and retry]
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Wed Jul 29 12:11:58 UTC 2026

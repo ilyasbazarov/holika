@@ -1,0 +1,30 @@
+Wed Jul 29 12:15:10 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Scheduler jobs, фильтр по cf-facts в URI ===
+ERROR: (gcloud.scheduler.jobs.list) PERMISSION_DENIED: This API method requires billing to be enabled. Please enable billing on project #msklad-bi-prod by visiting https://console.developers.google.com/billing/enable?project=msklad-bi-prod then retry. If you enabled billing for this project recently, wait a few minutes for the action to propagate to our systems and retry. This command is authenticated as ilyasbazarov4@gmail.com which is the active account specified by the [core/account] property.
+This API method requires billing to be enabled. Please enable billing on project #msklad-bi-prod by visiting https://console.developers.google.com/billing/enable?project=msklad-bi-prod then retry. If you enabled billing for this project recently, wait a few minutes for the action to propagate to our systems and retry.
+Google developers console billing
+https://console.developers.google.com/billing/enable?project=msklad-bi-prod
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: googleapis.com
+  metadata:
+    consoleUrl: https://console.developers.google.com/billing/enable?project=msklad-bi-prod
+    consumer: projects/msklad-bi-prod
+    containerInfo: msklad-bi-prod
+    service: cloudscheduler.googleapis.com
+  reason: BILLING_DISABLED
+[]
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Wed Jul 29 12:15:14 UTC 2026

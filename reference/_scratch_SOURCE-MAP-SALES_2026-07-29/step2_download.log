@@ -1,0 +1,19 @@
+Thu Jul 30 10:15:35 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1782334223015697 to file://reference/_scratch_SOURCE-MAP-SALES_2026-07-29/cf-facts-archive/function-source.zip
+  
+...........................
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Thu Jul 30 10:15:51 UTC 2026
