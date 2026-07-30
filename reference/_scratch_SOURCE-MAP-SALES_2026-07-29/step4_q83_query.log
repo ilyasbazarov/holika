@@ -1,0 +1,24 @@
+Thu Jul 30 10:30:16 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+[
+  {
+    "returns_sum_kgs": "570.0", 
+    "sales_return_sum_kgs": "0.0", 
+    "sales_revenue_kgs": "9.352299553E7", 
+    "sales_sell_sum_kgs": "9.352299553E7"
+  }
+]
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Thu Jul 30 10:30:20 UTC 2026

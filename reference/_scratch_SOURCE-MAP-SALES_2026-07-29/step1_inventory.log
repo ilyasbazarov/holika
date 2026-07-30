@@ -1,0 +1,36 @@
+Wed Jul 29 11:58:08 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== 1. инвентарь Cloud Functions (все регионы) ===
+NAME                STATE   ENVIRONMENT  UPDATE_TIME
+cf-alert            ACTIVE  GEN_2        2026-07-29T04:05:10.408057124Z
+cf-dim              ACTIVE  GEN_2        2026-07-29T04:05:10.265025433Z
+cf-dq               ACTIVE  GEN_2        2026-07-29T04:05:10.460216856Z
+cf-facts            ACTIVE  GEN_2        2026-07-29T04:05:10.487996910Z
+cf-finance          ACTIVE  GEN_2        2026-07-29T04:05:10.665534134Z
+cf-fx               ACTIVE  GEN_2        2026-07-29T04:05:10.548008733Z
+cf-inventory        ACTIVE  GEN_2        2026-07-29T04:05:10.425606068Z
+cf-loss-commission  ACTIVE  GEN_2        2026-07-29T04:05:10.665543748Z
+=== 2. инвентарь Cloud Run (gen2-функции видны и здесь) ===
+NAME                URL                                                 NAMESPACE
+cf-alert            https://cf-alert-xw5u2boozq-de.a.run.app            420804682491
+cf-dim              https://cf-dim-xw5u2boozq-de.a.run.app              420804682491
+cf-dq               https://cf-dq-xw5u2boozq-de.a.run.app               420804682491
+cf-facts            https://cf-facts-xw5u2boozq-de.a.run.app            420804682491
+cf-finance          https://cf-finance-xw5u2boozq-de.a.run.app          420804682491
+cf-fx               https://cf-fx-xw5u2boozq-de.a.run.app               420804682491
+cf-inventory        https://cf-inventory-xw5u2boozq-de.a.run.app        420804682491
+cf-loss-commission  https://cf-loss-commission-xw5u2boozq-de.a.run.app  420804682491
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Wed Jul 29 11:58:16 UTC 2026

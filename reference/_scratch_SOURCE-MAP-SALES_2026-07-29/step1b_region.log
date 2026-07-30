@@ -1,0 +1,18 @@
+Wed Jul 29 11:58:34 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== регион cf-facts из полного имени ресурса ===
+cf-facts
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Wed Jul 29 11:58:38 UTC 2026
