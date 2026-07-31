@@ -1,0 +1,280 @@
+=== СТАРТ ===
+Fri Jul 31 13:48:25 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Google Cloud SDK 577.0.0
+alpha 2026.07.17
+=== ЗАПУСК cloud-shell ssh (read-only) ===
+Waiting for your Cloud Shell machine to start...
+.....................................done.
+Listening on local port [61994].
+Tunnel stopped.
+Listening on local port [61999].
+--- whoami / pwd ---
+ilyasbazarov4
+/home/ilyasbazarov4
+--- ls -la HOME ---
+total 7092
+drwxr-x--- 37 ilyasbazarov4 ilyasbazarov4    4096 Jul 28 16:39 .
+drwxr-xr-x  4 root          root             4096 Apr 29 06:28 ..
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4       0 Jun 24 23:33 =
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4       0 Jun 24 23:33 0
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4       0 Jun 24 23:33 30
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4       0 Jun 24 23:33 5
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4       0 Jun 24 23:33 60
+-rw-------  1 ilyasbazarov4 ilyasbazarov4   23493 Jul 28 05:34 .bash_history
+-rw-r--r--  1 ilyasbazarov4 ilyasbazarov4     220 Mar 31  2024 .bash_logout
+-rw-r--r--  1 ilyasbazarov4 ilyasbazarov4    3809 Apr 24 07:11 .bashrc
+drwx------  8 ilyasbazarov4 ilyasbazarov4    4096 Jun 30 06:22 .cache
+drwxrwxr-x  3 ilyasbazarov4 ilyasbazarov4    4096 May  7 12:47 cf
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   21894 Jun  2 23:07 cf-dim-source.zip
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jun 18 10:57 cf-dq-debug
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4      55 Jul 14 13:50 cf_extract.log
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jun 24 20:29 cf-facts-debug
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   21894 Jun  2 23:06 cf-facts-source.zip
+drwxrwxr-x  4 ilyasbazarov4 ilyasbazarov4    4096 Jul 14 17:09 cf-finance
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jun 20 17:43 cf-ingest
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jul 22 11:29 cf-loss-commission
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jul 25 12:41 cf-loss-commission-deploy
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jul  1 10:33 cf-notify-deploy
+drwxrwxr-x  3 ilyasbazarov4 ilyasbazarov4    4096 Jun 30 04:32 cf-notify-src
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jun 30 06:11 cf-render-src
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    5156 Jul 25 18:06 check2.log
+-rw-r--r--  1 ilyasbazarov4          1001    7435 Jul 25 18:05 check2.sh
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4      42 Jul 25 14:44 check.log
+drwx------  5 ilyasbazarov4 ilyasbazarov4    4096 May  8 09:36 .codeoss
+drwxr-xr-x  5 ilyasbazarov4 ilyasbazarov4    4096 Jul 28 16:40 .config
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   15877 Jul 20 11:52 cutover_phase1.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   21911 Jul 20 12:05 cutover_phase2.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    6175 Jul 20 11:51 cutover.sh
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    5786 Jul 20 11:51 cutover.sh.bak-pre-location-fix
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jul  1 12:35 deploy-cf-notify
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    1645 Jun 27 00:45 diag_sanity029.sql
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    1326 Jun 27 00:22 diag_t_b_p4_3.sql
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jun 30 09:46 diag-tuple-test
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Apr 29 06:28 .docker
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    5286 Jul 22 08:58 e1t1_q31_final.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    5195 Jul 22 08:53 e1t1_q31_ONLY.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    2940 Jul 22 08:56 e1t1_q31_probe2.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   94469 Jul 14 06:28 e1t2_raw_rows_2026-05.json
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jul 20 17:00 e1t3_cutover_snapshot
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    2129 Jul 20 14:45 e1t3_diag.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    2990 Jul 20 14:45 e1t3_diag.py
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    4169 Jul 20 16:32 e1t3_ghost_check.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    2545 Jul 20 16:30 e1t3_ghost_check.py
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    5169 Jul 20 16:25 e1t3_missing_diag.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    2008 Jul 20 16:23 e1t3_missing_diag.py
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    3996 Jul 20 12:22 e1t3_prod_rediff.py
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    4411 Jul 20 16:35 e1t3_prod_rediff_v2.py
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    1645 Jul 20 16:20 e1t3_rediff_final.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    6874 Jul 20 14:38 e1t3_rediff_recheck.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4     493 Jul 20 16:47 e1t3_rediff_v2.log
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jul 17 12:41 ecom-seed
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    1513 Jul 25 11:34 extract_cf_loss_commission.sh
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    1861 Jul 25 12:12 extract_cf_loss_commission_v2.sh
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    3748 Jun 24 23:08 force_rebuild_in_transit.py
+drwxr-xr-x  4 ilyasbazarov4          1001    4096 Jun 29 14:53 functions
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jul 26 14:46 fx_check
+-rw-r--r--  1 ilyasbazarov4          1001    5842 Jul 26 16:09 fx_rate_fidelity_cont.sh
+-rw-r--r--  1 ilyasbazarov4          1001    6066 Jul 26 16:04 fx_rate_fidelity.sh
+drwxrwxr-x  5 ilyasbazarov4 ilyasbazarov4    4096 Jul 31 13:48 .gemini
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4      62 Jul 25 12:33 .gitconfig
+drwxrwxr-x  3 ilyasbazarov4 ilyasbazarov4    4096 May 18 13:36 .gsutil
+drwx------  2 ilyasbazarov4 ilyasbazarov4    4096 Jun 22 17:12 .gunicorn
+drwxrwxr-x  5 ilyasbazarov4 ilyasbazarov4    4096 Jul 25 12:30 holika
+drwxrwxr-x  3 ilyasbazarov4 ilyasbazarov4    4096 Jul 25 18:06 holika-check2
+drwxrwxr-x  5 ilyasbazarov4 ilyasbazarov4    4096 Jul 25 12:43 holika-code-snapshot
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    4876 Jul 28 05:27 holika_jobs_20260728T052721Z.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4     803 Jul 28 05:34 holika_who_20260728T053421Z.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4      70 Apr 29 06:36 lifecycle.json
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    3729 Jun 18 16:05 load_payments.py
+drwxrwxr-x  3 ilyasbazarov4 ilyasbazarov4    4096 Jun 19 08:30 .local
+-rw-r--r--  1 ilyasbazarov4          1001   10057 Jun 30 04:28 main_(1).py
+-rw-r--r--  1 ilyasbazarov4          1001    9973 Jun 30 02:53 main.py
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   93417 Jul 28 05:27 marts_jobs.json
+drwxrwxr-x  4 ilyasbazarov4 ilyasbazarov4    4096 May  8 05:53 msklad_project
+drwxrwxr-x  3 ilyasbazarov4 ilyasbazarov4    4096 May  8 06:28 .npm
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4 2442726 Jun 30 06:32 operational_protocol_v2_2026-06-11.xlsx
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4 3924915 Jun 29 07:50 operational_protocol_v2_latest.xlsx
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    2212 Jul  1 10:33 patch_adr069.py
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    2240 Jun 29 07:00 patch_dq.py
+-rw-r--r--  1 ilyasbazarov4          1001    2615 Jun 25 08:18 patch_main_finance_(1).py
+-rw-r--r--  1 ilyasbazarov4 ilyasbazarov4     807 Mar 31  2024 .profile
+-rwxr-xr-x  1 ilyasbazarov4 ilyasbazarov4     913 Jul 31 13:48 README-cloudshell.txt
+drwxrwxr-x  3 ilyasbazarov4 ilyasbazarov4    4096 Jul 22 17:01 reference
+-rw-r--r--  1 ilyasbazarov4          1001    2457 Jun 29 02:14 ref_strategic_protect_SEED.csv
+-rw-r--r--  1 ilyasbazarov4          1001      99 Jun 30 02:54 requirements.txt
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   37749 Jul 26 16:11 run2.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   13793 Jul 14 10:58 run_e1t3_full.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    6442 Jul 14 10:56 run_e1t3_layerA.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   32970 Jul 14 11:07 run_e1t3_systemic_scope.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    3312 Jul 28 16:41 run.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4     294 Jul 25 12:00 run_scan.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    3060 Jul 25 12:12 run_v2.log
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jun 19 08:30 .rustup
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    1887 Jul 25 12:00 scan_non_kgs_docs.py
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    2173 Jul 25 11:34 scan_non_kgs_docs.sh
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    1405 Jul 25 19:28 sched_readback.log
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    2620 Jul 25 19:35 sched_state_and_ingest.log
+-rw-r--r--  1 ilyasbazarov4          1001    2715 Jul  2 02:47 sch-nightly-resume_(1).sh
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    2328 Jul  2 02:49 sch-nightly-resume.sh
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4     160 Jun 24 22:58 sku_missing_retail_price_T-B-P4-1b.csv
+drwxrwxr-x  3 ilyasbazarov4 ilyasbazarov4    4096 Jul  7 06:05 sql
+-rw-r--r--  1 ilyasbazarov4 ilyasbazarov4    1648 Jul 28 16:41 step1_discover_git.sh
+-rw-r--r--  1 ilyasbazarov4 ilyasbazarov4       0 Apr 29 06:28 .sudo_as_admin_successful
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jul  1 12:12 T-B-MIGRATE-01-context
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    7137 Jun 25 00:02 td_recon_04_payments_diagnose.py
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4     426 Jun 27 01:35 verify_dq_report.sql
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    1382 Jun 23 21:08 verify_p4-1b.sh
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4    3434 Jun 23 20:53 verify_p4-1.sh
+drwxr-xr-x  2 ilyasbazarov4 ilyasbazarov4    4096 May  8 06:28 .vscode
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4       0 Jun 24 23:33 v.target_qty
+-rw-rw-r--  1 ilyasbazarov4 ilyasbazarov4   12776 Jul  7 06:13 wf-nightly-current.yaml
+drwxrwxr-x  2 ilyasbazarov4 ilyasbazarov4    4096 Jun 30 12:17 workflows
+--- NDJSON/JSONL во всём HOME ---
+--- файлы с mtime 2026-06-01..2026-06-10 ---
+2026-06-02 21894 /home/ilyasbazarov4/cf-dim-source.zip
+2026-06-02 21894 /home/ilyasbazarov4/cf-facts-source.zip
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T15_18_31_468Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T15_18_37_915Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T16_17_02_818Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T16_17_09_482Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T21_09_27_363Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T21_09_33_890Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T21_15_48_306Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T21_15_53_437Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T21_52_00_645Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T21_52_05_762Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T23_19_15_823Z-debug-0.log
+2026-06-02 848 /home/ilyasbazarov4/.npm/_logs/2026-06-02T23_19_23_173Z-debug-0.log
+2026-06-03 6148 /home/ilyasbazarov4/cf-facts-debug/.DS_Store
+2026-06-03 848 /home/ilyasbazarov4/.npm/_logs/2026-06-03T07_50_41_625Z-debug-0.log
+2026-06-03 848 /home/ilyasbazarov4/.npm/_logs/2026-06-03T07_50_47_103Z-debug-0.log
+2026-06-03 848 /home/ilyasbazarov4/.npm/_logs/2026-06-03T08_45_02_841Z-debug-0.log
+2026-06-03 848 /home/ilyasbazarov4/.npm/_logs/2026-06-03T08_45_09_287Z-debug-0.log
+2026-06-03 848 /home/ilyasbazarov4/.npm/_logs/2026-06-03T09_29_54_929Z-debug-0.log
+2026-06-03 848 /home/ilyasbazarov4/.npm/_logs/2026-06-03T09_30_03_354Z-debug-0.log
+2026-06-03 848 /home/ilyasbazarov4/.npm/_logs/2026-06-03T10_11_56_257Z-debug-0.log
+2026-06-03 848 /home/ilyasbazarov4/.npm/_logs/2026-06-03T10_12_02_995Z-debug-0.log
+2026-06-03 848 /home/ilyasbazarov4/.npm/_logs/2026-06-03T10_22_00_694Z-debug-0.log
+2026-06-03 848 /home/ilyasbazarov4/.npm/_logs/2026-06-03T10_22_08_397Z-debug-0.log
+2026-06-05 848 /home/ilyasbazarov4/.npm/_logs/2026-06-05T08_40_53_065Z-debug-0.log
+2026-06-05 848 /home/ilyasbazarov4/.npm/_logs/2026-06-05T08_41_00_801Z-debug-0.log
+2026-06-05 848 /home/ilyasbazarov4/.npm/_logs/2026-06-05T09_58_12_445Z-debug-0.log
+2026-06-05 848 /home/ilyasbazarov4/.npm/_logs/2026-06-05T09_58_18_437Z-debug-0.log
+--- grep по содержимому: invoiceout / customer_invoices / bq load ---
+/home/ilyasbazarov4/marts_jobs.json
+/home/ilyasbazarov4/holika/MIGRATION_MAP.md
+/home/ilyasbazarov4/holika/reference/bq_transferconfig_sq_marts_expenses_2026-07-08.txt
+/home/ilyasbazarov4/holika/reference/sql/README.md
+/home/ilyasbazarov4/holika/reference/sql/sq_marts_customer_invoices_ar.sql
+/home/ilyasbazarov4/holika/06_DECISIONS_LOG.md
+/home/ilyasbazarov4/holika/RUNBOOK_v8.md
+/home/ilyasbazarov4/holika/02_ERP_CONTRACTS.md
+/home/ilyasbazarov4/holika/PROJECT_REFERENCE_v6.md
+/home/ilyasbazarov4/holika/03_PIPELINE_SPEC.md
+/home/ilyasbazarov4/holika/01_ARCHITECTURE.md
+/home/ilyasbazarov4/holika/11_INFRA_FACTS.md
+/home/ilyasbazarov4/holika/07_STATE.md
+/home/ilyasbazarov4/e1t1_q31_ONLY.log
+/home/ilyasbazarov4/e1t1_q31_final.log
+--- все .py / .ipynb / .sh в HOME ---
+2026-04-29 0 /home/ilyasbazarov4/.gemini/extensions/vertex/src/vertex/__init__.py
+2026-04-29 1004 /home/ilyasbazarov4/.gemini/extensions/vertex/dev-setup.sh
+2026-04-29 10747 /home/ilyasbazarov4/.gemini/extensions/vertex/src/vertex/tools.py
+2026-04-29 11540 /home/ilyasbazarov4/.gemini/extensions/vertex/src/vertex/prompt_optimizer/prompt_optimizer.py
+2026-04-29 1169 /home/ilyasbazarov4/.gemini/extensions/vertex/src/vertex/prompt_optimizer/utils.py
+2026-04-29 1269 /home/ilyasbazarov4/.gemini/extensions/vertex/run.sh
+2026-04-29 1535 /home/ilyasbazarov4/.gemini/extensions/vertex/src/vertex/server.py
+2026-04-29 30836 /home/ilyasbazarov4/.gemini/extensions/vertex/src/vertex/prompt_optimizer/analyzer.py
+2026-04-29 3645 /home/ilyasbazarov4/.gemini/extensions/vertex/src/vertex/prompt_optimizer/storage.py
+2026-04-29 3957 /home/ilyasbazarov4/.gemini/extensions/vertex/tests/test_tools.py
+2026-05-06 4379 /home/ilyasbazarov4/cf-facts-debug/fetch_byvariant.py
+2026-05-06 7533 /home/ilyasbazarov4/cf-facts-debug/deploy_and_workflow.sh
+2026-05-07 1183 /home/ilyasbazarov4/cf/cf_dq/helpers.py
+2026-05-07 1183 /home/ilyasbazarov4/cf-dq-debug/helpers.py
+2026-05-07 5440 /home/ilyasbazarov4/cf/cf_dq/main.py
+2026-05-07 668 /home/ilyasbazarov4/cf/cf_dq/config.py
+2026-05-08 10107 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/dataframes/vscodeDataFrame.py
+2026-05-08 11889 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/getVariableInfo/vscodeGetVariableInfo.py
+2026-05-08 11928 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/visualstudio_py_testlauncher.py
+2026-05-08 12381 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/kernel_interrupt_daemon.py
+2026-05-08 1404 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/shell_exec.py
+2026-05-08 1457 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/getJupyterVariableShape.py
+2026-05-08 1632 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/getServerInfo.py
+2026-05-08 1716 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/kernel/addRunCellHook.py
+2026-05-08 173 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/getJupyterKernelspecVersion.py
+2026-05-08 202 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/jupyter_nbInstalled.py
+2026-05-08 2045 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/install_debugpy.py
+2026-05-08 20470 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/getVariableInfo/vscodeGetVariablesForProvider.py
+2026-05-08 2159375 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/get-pip.py
+2026-05-08 2298 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/getJupyterVariableDataFrameRows.py
+2026-05-08 250 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/printEnvVariables.py
+2026-05-08 2799 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/tests/logParser.py
+2026-05-08 2828 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/symbolProvider.py
+2026-05-08 2928 /home/ilyasbazarov4/.codeoss/data/User/workspaceStorage/-5b7e4bdc/ms-python.python/pythonrc.py
+2026-05-08 318 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/getJupyterKernels.py
+2026-05-08 320 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/printEnvVariablesToFile.py
+2026-05-08 346 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/interpreterInfo.py
+2026-05-08 3479 /home/ilyasbazarov4/cf-facts-debug/config.py
+2026-05-08 5224 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/getJupyterVariableDataFrameInfo.py
+2026-05-08 5573 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/aggregateTestResults.py
+2026-05-08 5776 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/winapi.py
+2026-05-08 712 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/printJupyterDataDir.py
+2026-05-08 7314 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/printJupyWidgetEntryPoints.py
+2026-05-08 889 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/dummyJupyter.py
+2026-05-08 94 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/vscode_datascience_helpers/__init__.py
+2026-05-08 984 /home/ilyasbazarov4/.codeoss/extensions/ms-toolsai.jupyter-2025.9.1-universal/pythonFiles/testlauncher.py
+2026-05-11 11765 /home/ilyasbazarov4/cf-facts-debug/main.py
+2026-05-26 705 /home/ilyasbazarov4/cf-dq-debug/config.py
+2026-06-17 1043 /home/ilyasbazarov4/cf-facts-debug/patch_code.py
+2026-06-17 19834 /home/ilyasbazarov4/cf-facts-debug/bq_ops.py
+2026-06-18 2739 /home/ilyasbazarov4/cf-dq-debug/patch_dq.py
+2026-06-18 3729 /home/ilyasbazarov4/load_payments.py
+2026-06-18 447 /home/ilyasbazarov4/cf-facts-debug/patch_timeout.py
+2026-06-18 5595 /home/ilyasbazarov4/cf-facts-debug/helpers.py
+2026-06-18 6381 /home/ilyasbazarov4/cf-dq-debug/main.py
+2026-06-19 101522 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/data_transfer_service/async_client.py
+2026-06-19 118724 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/data_transfer_service/client.py
+2026-06-19 1470 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/data_transfer_service/transports/__init__.py
+2026-06-19 158954 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/data_transfer_service/transports/rest.py
+2026-06-19 19246 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/data_transfer_service/transports/base.py
+2026-06-19 25264 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/types/transfer.py
+2026-06-19 27823 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/data_transfer_service/pagers.py
+2026-06-19 2795 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/types/__init__.py
+2026-06-19 3334 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer/__init__.py
+2026-06-19 36891 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/data_transfer_service/transports/rest_base.py
+2026-06-19 38000 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/data_transfer_service/transports/grpc.py
+2026-06-19 42672 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/types/datatransfer.py
+2026-06-19 46901 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/data_transfer_service/transports/grpc_asyncio.py
+2026-06-19 600 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/__init__.py
+2026-06-19 653 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer/gapic_version.py
+2026-06-19 653 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/gapic_version.py
+2026-06-19 7316 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/__init__.py
+2026-06-19 789 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/google/cloud/bigquery_datatransfer_v1/services/data_transfer_service/__init__.py
+2026-06-20 0 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/pandas/core/computation/__init__.py
+2026-06-20 0 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/pandas/core/dtypes/__init__.py
+2026-06-20 0 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/pandas/core/indexes/__init__.py
+2026-06-20 0 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/pandas/core/__init__.py
+2026-06-20 0 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/pandas/core/interchange/__init__.py
+2026-06-20 0 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/pandas/core/methods/__init__.py
+2026-06-20 0 /home/ilyasbazarov4/.local/lib/python3.12/site-packages/pandas/core/_numba/__init__.py
+--- .bash_history: строки с bq load / invoice ---
+--- КОНЕЦ УДАЛЁННОЙ ЧАСТИ ---
+Tunnel stopped.
+Starting your Cloud Shell machine...
+RC_SSH=0
+=== ФИНИШ ===
+Fri Jul 31 13:49:00 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
