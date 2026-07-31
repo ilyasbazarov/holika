@@ -154,7 +154,7 @@
 | country | STRING | Страна контрагента (кастомное поле, UUID `6d6cca1e-ed85-11f0-0a80-0b1a00a4547c`) |
 | scd2_valid_from | DATE | **тип уточнён Q-4**: дамп показывает `DATE`, прежняя запись — `TIMESTAMP`; расхождение зафиксировано, трассировка `/reference/schema_dump_2026-07-28.md §core.dim_counterparties` |
 | scd2_valid_to | DATE | **тип уточнён Q-4**, см. `scd2_valid_from` |
-| scd2_is_current | BOOL | **JOIN всегда с** `AND scd2_is_current = TRUE` |
+| scd2_is_current | BOOL | **JOIN всегда с** `AND scd2_is_current = TRUE` — осознанное свойство паритета (`ADR-089`), не примирение: МойСклад не хранит атрибуты контрагента по документу, только по сущности текущим значением, поэтому текущий вид ЕСТЬ матч оракулу для любого периода |
 | _loaded_at | TIMESTAMP | — |
 
 **core.dim_employees** — не документирована ранее, закрыт `Q-4` (трассировка: `/reference/schema_dump_2026-07-28.md §core.dim_employees`); снимает блокирующее основание у `Q-39` (мина в `sq_audit_dim_employees_snapshot` — «решать нечего», пока `02` не несла схему):
