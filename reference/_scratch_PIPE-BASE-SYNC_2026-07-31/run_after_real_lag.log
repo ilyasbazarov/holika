@@ -1,0 +1,26 @@
+дерево: связанное (/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/PIPE-BASE-SYNC)
+
+== рабочее дерево ==
+изменённых файлов: 4
+ M CLAUDE.md
+ M _ASSEMBLER.md
+ M tools/session_status.sh
+?? reference/_scratch_PIPE-BASE-SYNC_2026-07-31/
+
+== буфер reference/_inbox ==
+файлов кроме .gitkeep: 0
+
+== рабочие деревья ==
+деревьев: 2 (норма вне сессий: 1)
+/Users/ilyasbazarov/Desktop/msklad_project/holika                           55ccf20 [main]
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/PIPE-BASE-SYNC  55ccf20 [s/PIPE-BASE-SYNC]
+
+== ветки сессий ==
+веток s/*: 1
+s/PIPE-BASE-SYNC
+
+== отставание от origin/main ==
+отставание от origin/main: 1
+
+== вердикт ==
+НЕ ЧИСТО: локальная база отстаёт от origin/main (ADR-086 §4)
