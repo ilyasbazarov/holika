@@ -1,0 +1,761 @@
+Fri Jul 31 13:05:43 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== job 1: CREATE_TABLE ===
+{
+  "configuration": {
+    "jobType": "QUERY",
+    "query": {
+      "destinationTable": {
+        "datasetId": "core",
+        "projectId": "msklad-bi-prod",
+        "tableId": "fact_customer_invoices"
+      },
+      "priority": "INTERACTIVE",
+      "query": "CREATE TABLE IF NOT EXISTS `msklad-bi-prod.core.fact_customer_invoices`\n(\n  invoice_id        STRING    NOT NULL,\n  invoice_name      STRING,\n  moment            DATE,\n  agent_id          STRING,\n  agent_name        STRING,\n  state_id          STRING,\n  state_name        STRING,\n  sum_kgs           FLOAT64,\n  payed_sum_kgs     FLOAT64,\n  unpaid_sum_kgs    FLOAT64,\n  payment_planned   DATE,\n  sales_channel_id  STRING,\n  sales_channel_name STRING,\n  _loaded_at        TIMESTAMP\n);",
+      "useLegacySql": false
+    }
+  },
+  "etag": "CiQHYmn/LpUzqfdXLrzFHw==",
+  "id": "msklad-bi-prod:asia-east1.bqjob_r15d696c9f4d48773_0000019e96f835a9_1",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "bqjob_r15d696c9f4d48773_0000019e96f835a9_1",
+    "location": "asia-east1",
+    "projectId": "msklad-bi-prod"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "user:ilyasbazarov4@gmail.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/jobs/bqjob_r15d696c9f4d48773_0000019e96f835a9_1?location=asia-east1",
+  "statistics": {
+    "creationTime": "1780649309837",
+    "endTime": "1780649310071",
+    "query": {
+      "billingTier": 0,
+      "cacheHit": false,
+      "ddlOperationPerformed": "CREATE",
+      "ddlTargetTable": {
+        "datasetId": "core",
+        "projectId": "msklad-bi-prod",
+        "tableId": "fact_customer_invoices"
+      },
+      "schema": {
+        "fields": [
+          {
+            "mode": "REQUIRED",
+            "name": "invoice_id",
+            "type": "STRING"
+          },
+          {
+            "name": "invoice_name",
+            "type": "STRING"
+          },
+          {
+            "name": "moment",
+            "type": "DATE"
+          },
+          {
+            "name": "agent_id",
+            "type": "STRING"
+          },
+          {
+            "name": "agent_name",
+            "type": "STRING"
+          },
+          {
+            "name": "state_id",
+            "type": "STRING"
+          },
+          {
+            "name": "state_name",
+            "type": "STRING"
+          },
+          {
+            "name": "sum_kgs",
+            "type": "FLOAT"
+          },
+          {
+            "name": "payed_sum_kgs",
+            "type": "FLOAT"
+          },
+          {
+            "name": "unpaid_sum_kgs",
+            "type": "FLOAT"
+          },
+          {
+            "name": "payment_planned",
+            "type": "DATE"
+          },
+          {
+            "name": "sales_channel_id",
+            "type": "STRING"
+          },
+          {
+            "name": "sales_channel_name",
+            "type": "STRING"
+          },
+          {
+            "name": "_loaded_at",
+            "type": "TIMESTAMP"
+          }
+        ]
+      },
+      "statementType": "CREATE_TABLE",
+      "totalBytesBilled": "0",
+      "totalBytesProcessed": "0",
+      "totalPartitionsProcessed": "0",
+      "totalSlotMs": "0",
+      "transferredBytes": "0"
+    },
+    "startTime": "1780649309950",
+    "totalBytesProcessed": "0",
+    "totalSlotMs": "0"
+  },
+  "status": {
+    "state": "DONE"
+  },
+  "user_email": "ilyasbazarov4@gmail.com"
+}
+=== job 2: MERGE ===
+{
+  "configuration": {
+    "jobType": "QUERY",
+    "query": {
+      "destinationTable": {
+        "datasetId": "core",
+        "projectId": "msklad-bi-prod",
+        "tableId": "fact_customer_invoices"
+      },
+      "priority": "INTERACTIVE",
+      "query": "\nMERGE `msklad-bi-prod.core.fact_customer_invoices` T\nUSING `msklad-bi-prod.core.fact_customer_invoices_stg` S\nON T.invoice_id = S.invoice_id\nWHEN MATCHED THEN UPDATE SET\n  T.invoice_name       = S.invoice_name,\n  T.moment             = S.moment,\n  T.agent_id           = S.agent_id,\n  T.agent_name         = S.agent_name,\n  T.state_id           = S.state_id,\n  T.state_name         = S.state_name,\n  T.sum_kgs            = S.sum_kgs,\n  T.payed_sum_kgs      = S.payed_sum_kgs,\n  T.unpaid_sum_kgs     = S.unpaid_sum_kgs,\n  T.payment_planned    = S.payment_planned,\n  T.sales_channel_id   = S.sales_channel_id,\n  T.sales_channel_name = S.sales_channel_name,\n  T._loaded_at         = S._loaded_at\nWHEN NOT MATCHED THEN INSERT (\n  invoice_id, invoice_name, moment, agent_id, agent_name,\n  state_id, state_name, sum_kgs, payed_sum_kgs, unpaid_sum_kgs,\n  payment_planned, sales_channel_id, sales_channel_name, _loaded_at\n) VALUES (\n  S.invoice_id, S.invoice_name, S.moment, S.agent_id, S.agent_name,\n  S.state_id, S.state_name, S.sum_kgs, S.payed_sum_kgs, S.unpaid_sum_kgs,\n  S.payment_planned, S.sales_channel_id, S.sales_channel_name, S._loaded_at\n)\n",
+      "useLegacySql": false
+    }
+  },
+  "etag": "rw+4+xv0hJkOlaBFqKmpug==",
+  "id": "msklad-bi-prod:asia-east1.9026b571-70bc-475d-84eb-06a393692929",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "9026b571-70bc-475d-84eb-06a393692929",
+    "location": "asia-east1",
+    "projectId": "msklad-bi-prod"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "user:ilyasbazarov4@gmail.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/jobs/9026b571-70bc-475d-84eb-06a393692929?location=asia-east1",
+  "statistics": {
+    "creationTime": "1780650427040",
+    "endTime": "1780650428610",
+    "finalExecutionDurationMs": "800",
+    "query": {
+      "billingTier": 1,
+      "cacheHit": false,
+      "dmlStats": {
+        "deletedRowCount": "0",
+        "dmlMode": "COARSE_GRAINED_DML",
+        "fineGrainedDmlUnusedReason": "TABLE_NOT_ENROLLED",
+        "insertedRowCount": "4058",
+        "updatedRowCount": "0"
+      },
+      "estimatedBytesProcessed": "1270384",
+      "metadataCacheStatistics": {
+        "tableMetadataCacheUsage": [
+          {
+            "explanation": "Table does not have CMETA.",
+            "tableReference": {
+              "datasetId": "core",
+              "projectId": "msklad-bi-prod",
+              "tableId": "fact_customer_invoices_stg"
+            },
+            "unusedReason": "OTHER_REASON"
+          },
+          {
+            "explanation": "Table does not have CMETA.",
+            "tableReference": {
+              "datasetId": "core",
+              "projectId": "msklad-bi-prod",
+              "tableId": "fact_customer_invoices"
+            },
+            "unusedReason": "OTHER_REASON"
+          }
+        ]
+      },
+      "numDmlAffectedRows": "4058",
+      "queryPlan": [
+        {
+          "completedParallelInputs": "1",
+          "computeMode": "BIGQUERY",
+          "computeMsAvg": "4",
+          "computeMsMax": "4",
+          "computeRatioAvg": 0.020512820512820513,
+          "computeRatioMax": 0.020512820512820513,
+          "endMs": "1780650427405",
+          "id": "0",
+          "name": "S00: Input",
+          "parallelInputs": "1",
+          "readMsAvg": "0",
+          "readMsMax": "0",
+          "readRatioAvg": 0,
+          "readRatioMax": 0,
+          "recordsRead": "0",
+          "recordsWritten": "0",
+          "shuffleOutputBytes": "0",
+          "shuffleOutputBytesSpilled": "0",
+          "slotMs": "7",
+          "startMs": "1780650427400",
+          "status": "COMPLETE",
+          "steps": [
+            {
+              "kind": "READ",
+              "substeps": [
+                "$20:invoice_id, $21:$file_temp_id, $22:$row_temp_id",
+                "FROM msklad-bi-prod.core.fact_customer_invoices"
+              ]
+            },
+            {
+              "kind": "COMPUTE",
+              "substeps": [
+                "$220 := 1"
+              ]
+            },
+            {
+              "kind": "WRITE",
+              "substeps": [
+                "$20, $21, $22, $220",
+                "TO __stage00_output"
+              ]
+            }
+          ],
+          "waitMsAvg": "2",
+          "waitMsMax": "2",
+          "waitRatioAvg": 0.010256410256410256,
+          "waitRatioMax": 0.010256410256410256,
+          "writeMsAvg": "0",
+          "writeMsMax": "0",
+          "writeRatioAvg": 0,
+          "writeRatioMax": 0
+        },
+        {
+          "completedParallelInputs": "100",
+          "computeMode": "BIGQUERY",
+          "computeMsAvg": "9",
+          "computeMsMax": "18",
+          "computeRatioAvg": 0.046153846153846156,
+          "computeRatioMax": 0.09230769230769231,
+          "endMs": "1780650427447",
+          "id": "1",
+          "inputStages": [
+            "0"
+          ],
+          "name": "S01: Coalesce",
+          "parallelInputs": "100",
+          "readMsAvg": "0",
+          "readMsMax": "0",
+          "readRatioAvg": 0,
+          "readRatioMax": 0,
+          "recordsRead": "0",
+          "recordsWritten": "0",
+          "shuffleOutputBytes": "0",
+          "shuffleOutputBytesSpilled": "0",
+          "slotMs": "2382",
+          "startMs": "1780650427409",
+          "status": "COMPLETE",
+          "steps": [
+            {
+              "kind": "READ",
+              "substeps": [
+                "FROM __stage00_output"
+              ]
+            }
+          ],
+          "waitMsAvg": "2",
+          "waitMsMax": "3",
+          "waitRatioAvg": 0.010256410256410256,
+          "waitRatioMax": 0.015384615384615385,
+          "writeMsAvg": "6",
+          "writeMsMax": "27",
+          "writeRatioAvg": 0.03076923076923077,
+          "writeRatioMax": 0.13846153846153847
+        },
+        {
+          "completedParallelInputs": "1",
+          "computeMode": "BIGQUERY",
+          "computeMsAvg": "72",
+          "computeMsMax": "72",
+          "computeRatioAvg": 0.36923076923076925,
+          "computeRatioMax": 0.36923076923076925,
+          "endMs": "1780650427490",
+          "id": "2",
+          "inputStages": [
+            "1"
+          ],
+          "name": "S02: Join+",
+          "parallelInputs": "1",
+          "readMsAvg": "4",
+          "readMsMax": "4",
+          "readRatioAvg": 0.020512820512820513,
+          "readRatioMax": 0.020512820512820513,
+          "recordsRead": "4058",
+          "recordsWritten": "4058",
+          "shuffleOutputBytes": "1698315",
+          "shuffleOutputBytesSpilled": "0",
+          "slotMs": "56",
+          "startMs": "1780650427416",
+          "status": "COMPLETE",
+          "steps": [
+            {
+              "kind": "READ",
+              "substeps": [
+                "$1:invoice_id, $2:invoice_name, $3:moment, $4:agent_id, $5:agent_name, $6:state_id, $7:state_name, $8:sum_kgs, $9:payed_sum_kgs, $10:unpaid_sum_kgs, $11:payment_planned, $12:sales_channel_id, $13:sales_channel_name, $14:_loaded_at",
+                "FROM msklad-bi-prod.core.fact_customer_invoices_stg"
+              ]
+            },
+            {
+              "kind": "READ",
+              "substeps": [
+                "$20, $21, $22, $220",
+                "FROM __stage01_output"
+              ]
+            },
+            {
+              "kind": "AGGREGATE",
+              "substeps": [
+                "GROUP BY $250 := $151, $251 := $152, $252 := $140",
+                "$110 := ANY_AND_CHECK_FOR_UPDATE($171)",
+                "$111 := ANY_AND_CHECK_FOR_UPDATE($170)",
+                "$112 := ANY_AND_CHECK_FOR_UPDATE($172)",
+                "$113 := ANY_AND_CHECK_FOR_UPDATE($173)",
+                "$114 := ANY_AND_CHECK_FOR_UPDATE($174)",
+                "$115 := ANY_AND_CHECK_FOR_UPDATE($175)",
+                "$116 := ANY_AND_CHECK_FOR_UPDATE($176)",
+                "$117 := ANY_AND_CHECK_FOR_UPDATE($177)",
+                "$118 := ANY_AND_CHECK_FOR_UPDATE($178)",
+                "$119 := ANY_AND_CHECK_FOR_UPDATE($179)",
+                "$120 := ANY_AND_CHECK_FOR_UPDATE($180)",
+                "$121 := ANY_AND_CHECK_FOR_UPDATE($181)",
+                "$122 := ANY_AND_CHECK_FOR_UPDATE($182)",
+                "$123 := ANY_AND_CHECK_FOR_UPDATE($183)",
+                "$124 := ANY_AND_CHECK_FOR_UPDATE($184)",
+                "$125 := ANY_AND_CHECK_FOR_UPDATE($185)"
+              ]
+            },
+            {
+              "kind": "COMPUTE",
+              "substeps": [
+                "$140 := if(equal($170, 10001), $150, NULL)"
+              ]
+            },
+            {
+              "kind": "COMPUTE",
+              "substeps": [
+                "$150 := UNIQUE_ROW_ID()",
+                "$151 := if(equal($170, 10001), SAFE_EXPR(CAST(add(1000000000, abs(mod(farm_fingerprint($160), 1000000000))) AS UINT64)), $230)",
+                "$152 := if(equal($170, 10001), 18446744073709551615, $231)"
+              ]
+            },
+            {
+              "kind": "COMPUTE",
+              "substeps": [
+                "$160 := UNIQUE_ROW_ID()"
+              ]
+            },
+            {
+              "kind": "FILTER",
+              "substeps": [
+                "not(equal($170, 0))"
+              ]
+            },
+            {
+              "kind": "COMPUTE",
+              "substeps": [
+                "$170 := if($190, 10001, $200)",
+                "$171 := if($190, 2, if(not(is_null($232)), 1, -1))",
+                "$172 := if($190, $233, NULL)",
+                "$173 := if($190, $234, NULL)",
+                "$174 := if($190, $235, NULL)",
+                "$175 := if($190, $236, NULL)",
+                "$176 := if($190, $237, NULL)",
+                "$177 := if($190, $238, NULL)",
+                "$178 := if($190, $239, NULL)",
+                "$179 := if($190, $240, NULL)",
+                "$180 := if($190, $241, NULL)",
+                "$181 := if($190, $242, NULL)",
+                "$182 := if($190, $243, NULL)",
+                "$183 := if($190, $244, NULL)",
+                "$184 := if($190, $245, NULL)",
+                "$185 := if($190, $246, NULL)"
+              ]
+            },
+            {
+              "kind": "COMPUTE",
+              "substeps": [
+                "$190 := and(equal($200, 0), is_null($232))"
+              ]
+            },
+            {
+              "kind": "COMPUTE",
+              "substeps": [
+                "$200 := if(not(is_null($232)), 10002, 0)",
+                "$201 := if(not(is_null($232)), $234, NULL)",
+                "$202 := if(not(is_null($232)), $235, NULL)",
+                "$203 := if(not(is_null($232)), $236, NULL)",
+                "$204 := if(not(is_null($232)), $237, NULL)",
+                "$205 := if(not(is_null($232)), $238, NULL)",
+                "$206 := if(not(is_null($232)), $239, NULL)",
+                "$207 := if(not(is_null($232)), $240, NULL)",
+                "$208 := if(not(is_null($232)), $241, NULL)",
+                "$209 := if(not(is_null($232)), $242, NULL)",
+                "$210 := if(not(is_null($232)), $243, NULL)",
+                "$211 := if(not(is_null($232)), $244, NULL)",
+                "$212 := if(not(is_null($232)), $245, NULL)",
+                "$213 := if(not(is_null($232)), $246, NULL)"
+              ]
+            },
+            {
+              "kind": "JOIN",
+              "substeps": [
+                "$233 := $1, $234 := $2, $235 := $3, $236 := $4, $237 := $5, $238 := $6, $239 := $7, $240 := $8, $241 := $9, $242 := $10, $243 := $11, $244 := $12, $245 := $13, $246 := $14, $230 := $21, $231 := $22",
+                "LEFT OUTER HASH JOIN EACH  WITH ALL  ON $1 = $20"
+              ]
+            },
+            {
+              "kind": "WRITE",
+              "substeps": [
+                "$110, $111, $112, $113, $114, $115, $116, $117, $118, $119, $120, $121, $122, $123, $124, $125",
+                "TO __stage02_output",
+                "BY HASH($250, $251, $252)"
+              ]
+            }
+          ],
+          "waitMsAvg": "4",
+          "waitMsMax": "4",
+          "waitRatioAvg": 0.020512820512820513,
+          "waitRatioMax": 0.020512820512820513,
+          "writeMsAvg": "3",
+          "writeMsMax": "3",
+          "writeRatioAvg": 0.015384615384615385,
+          "writeRatioMax": 0.015384615384615385
+        },
+        {
+          "completedParallelInputs": "1",
+          "computeMode": "BIGQUERY",
+          "computeMsAvg": "44",
+          "computeMsMax": "44",
+          "computeRatioAvg": 0.22564102564102564,
+          "computeRatioMax": 0.22564102564102564,
+          "endMs": "1780650427526",
+          "id": "3",
+          "inputStages": [
+            "2"
+          ],
+          "name": "S03: Aggregate",
+          "parallelInputs": "1",
+          "readMsAvg": "0",
+          "readMsMax": "0",
+          "readRatioAvg": 0,
+          "readRatioMax": 0,
+          "recordsRead": "4058",
+          "recordsWritten": "4058",
+          "shuffleOutputBytes": "1561450",
+          "shuffleOutputBytesSpilled": "0",
+          "slotMs": "30",
+          "startMs": "1780650427496",
+          "status": "COMPLETE",
+          "steps": [
+            {
+              "kind": "READ",
+              "substeps": [
+                "$110, $111, $112, $113, $114, $115, $116, $117, $118, $119, $120, $121, $122, $123, $124, $125",
+                "FROM __stage02_output"
+              ]
+            },
+            {
+              "kind": "AGGREGATE",
+              "substeps": [
+                "GROUP BY $260 := $250, $261 := $251, $262 := $252",
+                "$80 := ANY_AND_CHECK_FOR_UPDATE($110)",
+                "$81 := ANY_AND_CHECK_FOR_UPDATE($111)",
+                "$82 := ANY_AND_CHECK_FOR_UPDATE($112)",
+                "$83 := ANY_AND_CHECK_FOR_UPDATE($113)",
+                "$84 := ANY_AND_CHECK_FOR_UPDATE($114)",
+                "$85 := ANY_AND_CHECK_FOR_UPDATE($115)",
+                "$86 := ANY_AND_CHECK_FOR_UPDATE($116)",
+                "$87 := ANY_AND_CHECK_FOR_UPDATE($117)",
+                "$88 := ANY_AND_CHECK_FOR_UPDATE($118)",
+                "$89 := ANY_AND_CHECK_FOR_UPDATE($119)",
+                "$90 := ANY_AND_CHECK_FOR_UPDATE($120)",
+                "$91 := ANY_AND_CHECK_FOR_UPDATE($121)",
+                "$92 := ANY_AND_CHECK_FOR_UPDATE($122)",
+                "$93 := ANY_AND_CHECK_FOR_UPDATE($123)",
+                "$94 := ANY_AND_CHECK_FOR_UPDATE($124)",
+                "$95 := ANY_AND_CHECK_FOR_UPDATE($125)"
+              ]
+            },
+            {
+              "kind": "WRITE",
+              "substeps": [
+                "$80, $81, $82, $83, $84, $85, $86, $87, $88, $89, $90, $91, $92, $93, $94, $95",
+                "TO __stage03_output",
+                "BY HASH($260)"
+              ]
+            }
+          ],
+          "waitMsAvg": "1",
+          "waitMsMax": "1",
+          "waitRatioAvg": 0.005128205128205128,
+          "waitRatioMax": 0.005128205128205128,
+          "writeMsAvg": "3",
+          "writeMsMax": "3",
+          "writeRatioAvg": 0.015384615384615385,
+          "writeRatioMax": 0.015384615384615385
+        },
+        {
+          "completedParallelInputs": "1",
+          "computeMode": "BIGQUERY",
+          "computeMsAvg": "74",
+          "computeMsMax": "74",
+          "computeRatioAvg": 0.37948717948717947,
+          "computeRatioMax": 0.37948717948717947,
+          "endMs": "1780650427566",
+          "id": "4",
+          "inputStages": [
+            "3"
+          ],
+          "name": "S04: Sort+",
+          "parallelInputs": "1",
+          "readMsAvg": "0",
+          "readMsMax": "0",
+          "readRatioAvg": 0,
+          "readRatioMax": 0,
+          "recordsRead": "4058",
+          "recordsWritten": "4058",
+          "shuffleOutputBytes": "1313912",
+          "shuffleOutputBytesSpilled": "0",
+          "slotMs": "73",
+          "startMs": "1780650427532",
+          "status": "COMPLETE",
+          "steps": [
+            {
+              "kind": "READ",
+              "substeps": [
+                "$80, $81, $82, $83, $84, $85, $86, $87, $88, $89, $90, $91, $92, $93, $94, $95",
+                "FROM __stage03_output"
+              ]
+            },
+            {
+              "kind": "COMPUTE",
+              "substeps": [
+                "$30 := if(equal(2, $50), $311, $60)",
+                "$31 := if(equal(2, $50), $312, if(equal(1, $50), $325, $61))",
+                "$32 := if(equal(2, $50), $313, if(equal(1, $50), $326, $62))",
+                "$33 := if(equal(2, $50), $314, if(equal(1, $50), $327, $63))",
+                "$34 := if(equal(2, $50), $315, if(equal(1, $50), $328, $64))",
+                "$35 := if(equal(2, $50), $316, if(equal(1, $50), $329, $65))",
+                "$36 := if(equal(2, $50), $317, if(equal(1, $50), $330, $66))",
+                "$37 := if(equal(2, $50), $318, if(equal(1, $50), $331, $67))",
+                "$38 := if(equal(2, $50), $319, if(equal(1, $50), $332, $68))",
+                "$39 := if(equal(2, $50), $320, if(equal(1, $50), $333, $69))",
+                "$40 := if(equal(2, $50), $321, if(equal(1, $50), $334, $70))",
+                "$41 := if(equal(2, $50), $322, if(equal(1, $50), $335, $71))",
+                "$42 := if(equal(2, $50), $323, if(equal(1, $50), $336, $72))",
+                "$43 := if(equal(2, $50), $324, if(equal(1, $50), $337, $73))",
+                "$44 := if(equal(-1, $50), 'REINSERT', if(in($50, 1), 'UPDATE', NULL))"
+              ]
+            },
+            {
+              "kind": "COMPUTE",
+              "substeps": [
+                "$50 := if(not($74), -1, $310)"
+              ]
+            },
+            {
+              "kind": "MERGE",
+              "substeps": [
+                "FILE $299 ROW $300",
+                "$60:invoice_id, $61:invoice_name, $62:moment, $63:agent_id, $64:agent_name, $65:state_id, $66:state_name, $67:sum_kgs, $68:payed_sum_kgs, $69:unpaid_sum_kgs, $70:payment_planned, $71:sales_channel_id, $72:sales_channel_name, $73:_loaded_at",
+                "INTO msklad-bi-prod.core.fact_customer_invoices"
+              ]
+            },
+            {
+              "kind": "SORT",
+              "substeps": [
+                "$260 ASC, $261 DESC"
+              ]
+            },
+            {
+              "kind": "WRITE",
+              "substeps": [
+                "$30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44",
+                "TO __stage04_output"
+              ]
+            }
+          ],
+          "waitMsAvg": "2",
+          "waitMsMax": "2",
+          "waitRatioAvg": 0.010256410256410256,
+          "waitRatioMax": 0.010256410256410256,
+          "writeMsAvg": "3",
+          "writeMsMax": "3",
+          "writeRatioAvg": 0.015384615384615385,
+          "writeRatioMax": 0.015384615384615385
+        },
+        {
+          "completedParallelInputs": "50",
+          "computeMode": "BIGQUERY",
+          "computeMsAvg": "9",
+          "computeMsMax": "15",
+          "computeRatioAvg": 0.046153846153846156,
+          "computeRatioMax": 0.07692307692307693,
+          "endMs": "1780650427588",
+          "id": "5",
+          "inputStages": [
+            "4"
+          ],
+          "name": "S05: Coalesce",
+          "parallelInputs": "50",
+          "readMsAvg": "0",
+          "readMsMax": "0",
+          "readRatioAvg": 0,
+          "readRatioMax": 0,
+          "recordsRead": "4058",
+          "recordsWritten": "4058",
+          "shuffleOutputBytes": "1313912",
+          "shuffleOutputBytesSpilled": "0",
+          "slotMs": "574",
+          "startMs": "1780650427572",
+          "status": "COMPLETE",
+          "steps": [
+            {
+              "kind": "READ",
+              "substeps": [
+                "FROM __stage04_output"
+              ]
+            }
+          ],
+          "waitMsAvg": "2",
+          "waitMsMax": "2",
+          "waitRatioAvg": 0.010256410256410256,
+          "waitRatioMax": 0.010256410256410256,
+          "writeMsAvg": "1",
+          "writeMsMax": "2",
+          "writeRatioAvg": 0.005128205128205128,
+          "writeRatioMax": 0.010256410256410256
+        },
+        {
+          "completedParallelInputs": "1",
+          "computeMode": "BIGQUERY",
+          "computeMsAvg": "59",
+          "computeMsMax": "59",
+          "computeRatioAvg": 0.30256410256410254,
+          "computeRatioMax": 0.30256410256410254,
+          "endMs": "1780650427916",
+          "id": "6",
+          "inputStages": [
+            "5"
+          ],
+          "name": "S06: Output",
+          "parallelInputs": "1",
+          "readMsAvg": "0",
+          "readMsMax": "0",
+          "readRatioAvg": 0,
+          "readRatioMax": 0,
+          "recordsRead": "4058",
+          "recordsWritten": "4058",
+          "shuffleOutputBytes": "0",
+          "shuffleOutputBytesSpilled": "0",
+          "slotMs": "252",
+          "startMs": "1780650427766",
+          "status": "COMPLETE",
+          "steps": [
+            {
+              "kind": "READ",
+              "substeps": [
+                "$30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44",
+                "FROM __stage05_output"
+              ]
+            },
+            {
+              "kind": "EXPORT",
+              "substeps": [
+                "$30:invoice_id, $31:invoice_name, $32:moment, $33:agent_id, $34:agent_name, $35:state_id, $36:state_name, $37:sum_kgs, $38:payed_sum_kgs, $39:unpaid_sum_kgs, $40:payment_planned, $41:sales_channel_id, $42:sales_channel_name, $43:_loaded_at, $44:_CHANGE_TYPE",
+                "TO core.fact_customer_invoices"
+              ]
+            },
+            {
+              "kind": "WRITE",
+              "substeps": [
+                "$30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43",
+                "TO __stage06_output"
+              ]
+            }
+          ],
+          "waitMsAvg": "195",
+          "waitMsMax": "195",
+          "waitRatioAvg": 1,
+          "waitRatioMax": 1,
+          "writeMsAvg": "124",
+          "writeMsMax": "124",
+          "writeRatioAvg": 0.6358974358974359,
+          "writeRatioMax": 0.6358974358974359
+        }
+      ],
+      "referencedTables": [
+        {
+          "datasetId": "core",
+          "projectId": "msklad-bi-prod",
+          "tableId": "fact_customer_invoices_stg"
+        },
+        {
+          "datasetId": "core",
+          "projectId": "msklad-bi-prod",
+          "tableId": "fact_customer_invoices"
+        }
+      ],
+      "statementType": "MERGE",
+      "timeline": [
+        {
+          "activeUnits": "0",
+          "completedUnits": "155",
+          "elapsedMs": "725",
+          "pendingUnits": "0",
+          "totalSlotMs": "3377"
+        },
+        {
+          "completedUnits": "155",
+          "elapsedMs": "676",
+          "estimatedRunnableUnits": "0",
+          "pendingUnits": "0",
+          "totalSlotMs": "3377"
+        }
+      ],
+      "totalBytesBilled": "20971520",
+      "totalBytesProcessed": "1270384",
+      "totalPartitionsProcessed": "0",
+      "totalSlotMs": "3377",
+      "transferredBytes": "0"
+    },
+    "startTime": "1780650427275",
+    "totalBytesProcessed": "1270384",
+    "totalSlotMs": "3377"
+  },
+  "status": {
+    "state": "DONE"
+  },
+  "user_email": "ilyasbazarov4@gmail.com"
+}
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Fri Jul 31 13:05:48 UTC 2026

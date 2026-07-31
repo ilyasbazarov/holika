@@ -1,0 +1,154 @@
+Fri Jul 31 13:07:28 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+{
+  "configuration": {
+    "jobType": "LOAD",
+    "load": {
+      "destinationTable": {
+        "datasetId": "core",
+        "projectId": "msklad-bi-prod",
+        "tableId": "fact_customer_invoices_stg"
+      },
+      "schema": {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "invoice_id",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "invoice_name",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "moment",
+            "type": "DATE"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "agent_id",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "agent_name",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "state_id",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "state_name",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "sum_kgs",
+            "type": "FLOAT"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "payed_sum_kgs",
+            "type": "FLOAT"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "unpaid_sum_kgs",
+            "type": "FLOAT"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "payment_planned",
+            "type": "DATE"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "sales_channel_id",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "sales_channel_name",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "_loaded_at",
+            "type": "TIMESTAMP"
+          }
+        ]
+      },
+      "sourceFormat": "NEWLINE_DELIMITED_JSON",
+      "writeDisposition": "WRITE_TRUNCATE"
+    }
+  },
+  "etag": "nGhEC9vyr34+RTTNpQQ0/w==",
+  "id": "msklad-bi-prod:asia-east1.fcd260f7-1fef-42ba-bfb1-101fd0f4b7ca",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  },
+  "jobReference": {
+    "jobId": "fcd260f7-1fef-42ba-bfb1-101fd0f4b7ca",
+    "location": "asia-east1",
+    "projectId": "msklad-bi-prod"
+  },
+  "kind": "bigquery#job",
+  "principal_subject": "user:ilyasbazarov4@gmail.com",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/jobs/fcd260f7-1fef-42ba-bfb1-101fd0f4b7ca?location=asia-east1",
+  "statistics": {
+    "completionRatio": 0,
+    "creationTime": "1780650425454",
+    "endTime": "1780650426739",
+    "finalExecutionDurationMs": "781",
+    "load": {
+      "badRecords": "0",
+      "inputFileBytes": "2367736",
+      "inputFiles": "1",
+      "outputBytes": "1270384",
+      "outputRows": "4058",
+      "timeline": [
+        {
+          "activeUnits": "1",
+          "completedUnits": "0",
+          "elapsedMs": "455",
+          "estimatedRunnableUnits": "0",
+          "pendingUnits": "1",
+          "totalSlotMs": "303"
+        },
+        {
+          "completedUnits": "1",
+          "elapsedMs": "640",
+          "estimatedRunnableUnits": "0",
+          "pendingUnits": "0",
+          "totalSlotMs": "303"
+        }
+      ]
+    },
+    "reservation_id": "default-pipeline",
+    "startTime": "1780650425545",
+    "totalSlotMs": "303"
+  },
+  "status": {
+    "state": "DONE"
+  },
+  "user_email": "ilyasbazarov4@gmail.com"
+}
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Fri Jul 31 13:07:33 UTC 2026

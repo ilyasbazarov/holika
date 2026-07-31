@@ -105,6 +105,19 @@ gcloud functions deploy cf-facts \
 Повторный замер каденции (13–28.07, 319 заданий с целью в `marts.*`) исполнен через
 `INFORMATION_SCHEMA.JOBS_BY_PROJECT` — `/reference/bq_jobs_2026-07-28.md §2`.
 
+## §Ручные/разовые загрузки (не CF)
+
+**`core.fact_customer_invoices`** (факт, сессия `SOURCE-MAP-INVOICES`, `2026-07-31T13:04Z…13:07Z` по
+`date -u`, `reference/source_map_invoices_2026-07-30.md`): загружена ОДНИМ ручным прогоном
+`2026-06-05T08:48:29Z…09:07:07Z` от личного аккаунта `ilyasbazarov4@gmail.com` — не задеплоенной CF,
+не через `etl-sa@msklad-bi-prod.iam.gserviceaccount.com` (ни одна из 8 живых CF не совпадает по
+принципалу). Последовательность: `CREATE TABLE` → `bq load` локального NDJSON-файла (4058 строк,
+`sourceUris` в конфиге задания отсутствует ⇒ не GCS-источник) в `core.fact_customer_invoices_stg` →
+`MERGE` (явный `INSERT (колонки)`, C1-совместимо) в целевую таблицу. Повторных загрузок с той даты по
+`2026-07-31` не было (`distinct_load_dates=1`). Исходный файл/скрипт, сформировавший NDJSON, этой
+сессией не найден и не искался (вне метода — не код CF, не BigQuery job history); его существование —
+открытый вопрос владельцу (`Q-82` дополнение, `07_STATE`).
+
 ## §IAM
 
 **cf-finance (ADR-022, 2026-07-20):** `roles/run.invoker` предоставлен `etl-sa@msklad-bi-prod.iam.gserviceaccount.com`; привязка `allUsers` → `run.invoker` снята. Верификация 2026-07-20: анонимный запрос → `403`; вызов Scheduler (OIDC через тот же SA) → `200`.

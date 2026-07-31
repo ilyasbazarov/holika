@@ -1,0 +1,24 @@
+Fri Jul 31 13:04:06 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+[
+  {
+    "distinct_load_dates": "1", 
+    "max_loaded_at": "2026-06-05 09:06:57", 
+    "min_loaded_at": "2026-06-05 09:06:57", 
+    "row_count": "4058"
+  }
+]
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Fri Jul 31 13:04:25 UTC 2026
