@@ -1,0 +1,77 @@
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/report/stock/all?limit=1",
+    "type" : "stock",
+    "mediaType" : "application/json",
+    "size" : 312,
+    "limit" : 1,
+    "offset" : 0,
+    "nextHref" : "https://api.moysklad.ru/api/remap/1.2/report/stock/all?limit=1&offset=1"
+  },
+  "rows" : [ {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/c946bc43-4e9a-11f1-0a80-03e80005e8b5?expand=supplier",
+      "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type" : "product",
+      "mediaType" : "application/json",
+      "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=c946985e-4e9a-11f1-0a80-03e80005e8b1"
+    },
+    "stock" : 423.0,
+    "inTransit" : 0.0,
+    "reserve" : 10.0,
+    "quantity" : 413.0,
+    "name" : "Anua Azelaic Acid 3 Cica Skin Clarifying Toner 250ml",
+    "price" : 77995.31205673759,
+    "salePrice" : 0.0,
+    "uom" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+        "type" : "uom",
+        "mediaType" : "application/json"
+      },
+      "name" : "шт"
+    },
+    "folder" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/58004ce4-30d0-11ef-0a80-015100259566",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/productfolder/metadata",
+        "type" : "productfolder",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=58004ce4-30d0-11ef-0a80-015100259566"
+      },
+      "name" : "ANUA"
+    },
+    "image" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/download/6dcabafc-b3e8-4f0c-9cea-ae8ca9fb0b4b",
+        "mediaType" : "application/octet-stream"
+      },
+      "title" : "ануа 2",
+      "filename" : "ануа 2.jpg",
+      "size" : 26622,
+      "updated" : "2026-06-02 06:50:33.865",
+      "miniature" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/download/6dcabafc-b3e8-4f0c-9cea-ae8ca9fb0b4b?miniature=true",
+        "mediaType" : "application/octet-stream",
+        "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/552b5d08-e7c9-46a4-8918-cbd5321bbf9d"
+      },
+      "tiny" : {
+        "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/8f62dfba-6eda-42d6-95a0-995cc40d1ab7/t.png",
+        "mediaType" : "application/octet-stream"
+      }
+    },
+    "externalCode" : "G3gH9GCjjN0G-IfQMErFp3",
+    "stockDays" : 60.29
+  } ]
+}

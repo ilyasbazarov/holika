@@ -1,0 +1,44 @@
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/report/profit/bycounterparty?momentFrom=2026-05-01%2000:00:00&momentTo=2026-06-01%2000:00:00&limit=1",
+    "type" : "salesbycounterparty",
+    "mediaType" : "application/json",
+    "size" : 64,
+    "limit" : 1,
+    "offset" : 0,
+    "nextHref" : "https://api.moysklad.ru/api/remap/1.2/report/profit/bycounterparty?momentFrom=2026-05-01%2000%3A00%3A00&momentTo=2026-06-01%2000%3A00%3A00&limit=1&offset=1"
+  },
+  "rows" : [ {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/3c080755-03ff-11f0-0a80-0c2c00104bbb",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=3c080755-03ff-11f0-0a80-0c2c00104bbb"
+      },
+      "name" : "Bloom WB (Договор)"
+    },
+    "salesCount" : 3.0,
+    "salesAvgCheck" : 629030.0,
+    "sellSum" : 1887090.9999999998,
+    "sellCostSum" : 837440.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1049650.9999999998,
+    "margin" : 1.2534044230034387,
+    "salesMargin" : 0.5562270181989104
+  } ]
+}

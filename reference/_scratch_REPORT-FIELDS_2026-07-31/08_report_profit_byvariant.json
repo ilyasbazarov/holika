@@ -1,0 +1,74 @@
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/report/profit/byvariant?momentFrom=2026-05-01%2000:00:00&momentTo=2026-06-01%2000:00:00&limit=1",
+    "type" : "salesbyvariant",
+    "mediaType" : "application/json",
+    "size" : 279,
+    "limit" : 1,
+    "offset" : 0,
+    "nextHref" : "https://api.moysklad.ru/api/remap/1.2/report/profit/byvariant?momentFrom=2026-05-01%2000%3A00%3A00&momentTo=2026-06-01%2000%3A00%3A00&limit=1&offset=1"
+  },
+  "rows" : [ {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/44c7952d-9a9e-11f0-0a80-050c0003158b",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=44c78900-9a9e-11f0-0a80-050c00031587"
+      },
+      "name" : "Anua Green Lemon Vita C Blemish Serum Mask 25ml (10 шт)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/508b30ef-e45e-4b0a-b62e-3c33ceebe0c7",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "96CE0E2D-B138-48DA-8566-A77D04D1B9F4",
+        "filename" : "96CE0E2D-B138-48DA-8566-A77D04D1B9F4.jpg",
+        "size" : 1949354,
+        "updated" : "2026-03-07 13:02:05.319",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/508b30ef-e45e-4b0a-b62e-3c33ceebe0c7?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/7be02303-7203-4075-94e8-debb41277c9d"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/e50f5a77-2de0-4835-9019-e1f390c294fd/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 27.0,
+    "sellPrice" : 80100.0,
+    "sellCost" : 120487.48148148147,
+    "sellSum" : 2162700.0,
+    "sellCostSum" : 3253162.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : -1090462.0,
+    "margin" : -0.33520064478805545,
+    "salesMargin" : -0.5042132519535765
+  } ]
+}

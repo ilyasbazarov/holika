@@ -1,0 +1,55 @@
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore?limit=1",
+    "type" : "stockbystore",
+    "mediaType" : "application/json",
+    "size" : 317,
+    "limit" : 1,
+    "offset" : 0,
+    "nextHref" : "https://api.moysklad.ru/api/remap/1.2/report/stock/bystore?limit=1&offset=1"
+  },
+  "rows" : [ {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/c946bc43-4e9a-11f1-0a80-03e80005e8b5?expand=supplier",
+      "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+      "type" : "product",
+      "mediaType" : "application/json",
+      "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=c946985e-4e9a-11f1-0a80-03e80005e8b1"
+    },
+    "stockByStore" : [ {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/store/b1fe15f8-44fb-11ef-0a80-114f002a2936",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type" : "store",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#warehouse/edit?id=b1fe15f8-44fb-11ef-0a80-114f002a2936"
+      },
+      "name" : "Дордой склад (Holi Korea)",
+      "stock" : 423.0,
+      "reserve" : 10.0,
+      "inTransit" : 0.0
+    }, {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/store/7e7e80b3-5a68-11f1-0a80-0ca700070a5d",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type" : "store",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#warehouse/edit?id=7e7e80b3-5a68-11f1-0a80-0ca700070a5d"
+      },
+      "name" : "Офис Склад",
+      "stock" : 0.0,
+      "reserve" : 0.0,
+      "inTransit" : 0.0
+    } ]
+  } ]
+}
