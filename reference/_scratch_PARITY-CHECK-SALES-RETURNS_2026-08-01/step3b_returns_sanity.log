@@ -1,0 +1,40 @@
+=== date -u (начало) ===
+Sat Aug  1 10:51:06 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== токен прочитан, длина: 40 символов ===
+=== entity/salesreturn май-2026, БЕЗ applicable ===
+0
+=== entity/salesreturn ВСЕ документы (без фильтра периода), moment + applicable + name ===
+11
+2024-12-20 09:33:00.000 applicable=true name=00001
+2025-01-20 09:11:00.000 applicable=true name=00002
+2025-01-20 15:49:00.000 applicable=true name=00003
+2025-03-10 15:02:00.000 applicable=true name=00004
+2025-04-10 14:21:00.000 applicable=true name=00005
+2025-06-25 13:50:00.000 applicable=true name=00006
+2026-06-24 11:06:00.000 applicable=true name=00007
+2026-07-01 15:33:00.000 applicable=true name=00008
+2026-07-15 13:44:00.000 applicable=true name=00009
+2026-07-22 12:39:00.000 applicable=true name=00010
+2026-07-22 15:26:00.000 applicable=true name=00011
+=== entity/retailsalesreturn май-2026 (второй источник core.fact_returns по fetch_returns.py) ===
+8
+=== проверка token не в артефактах ===
+0 совпадений — чисто
+=== date -u (конец) ===
+Sat Aug  1 10:51:10 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

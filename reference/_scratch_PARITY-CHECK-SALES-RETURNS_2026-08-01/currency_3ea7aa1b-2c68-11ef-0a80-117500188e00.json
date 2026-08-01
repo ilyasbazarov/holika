@@ -1,0 +1,33 @@
+{
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+    "type" : "currency",
+    "mediaType" : "application/json",
+    "uuidHref" : "https://online.moysklad.ru/app/#currency/edit?id=3ea7aa1b-2c68-11ef-0a80-117500188e00"
+  },
+  "id" : "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+  "system" : true,
+  "name" : "доллар",
+  "fullName" : "Доллар США",
+  "rate" : 90.0,
+  "multiplicity" : 1,
+  "indirect" : false,
+  "rateUpdateType" : "manual",
+  "code" : "840",
+  "isoCode" : "USD",
+  "majorUnit" : {
+    "gender" : "masculine",
+    "s1" : "доллар",
+    "s2" : "доллара",
+    "s5" : "долларов"
+  },
+  "minorUnit" : {
+    "gender" : "masculine",
+    "s1" : "цент",
+    "s2" : "цента",
+    "s5" : "центов"
+  },
+  "archived" : false,
+  "default" : false
+}

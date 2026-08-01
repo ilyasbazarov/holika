@@ -1,0 +1,40 @@
+=== date -u (начало) ===
+Sat Aug  1 10:52:08 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== токен прочитан, длина: 40 символов ===
+meta.size:
+8
+moment + applicable + name + sum:
+2026-05-28 11:30:00.000 applicable=true name=00001 sum=10000.0
+2026-05-28 12:34:00.000 applicable=true name=00002 sum=0.0
+2026-05-28 12:39:00.000 applicable=true name=00003 sum=10000.0
+2026-05-28 12:46:00.000 applicable=true name=00004 sum=10000.0
+2026-05-28 12:49:00.000 applicable=true name=00005 sum=12000.0
+2026-05-28 12:51:00.000 applicable=true name=00006 sum=0.0
+2026-05-28 12:54:00.000 applicable=true name=00007 sum=0.0
+2026-05-31 10:23:00.000 applicable=true name=00008 sum=15000.0
+=== полоса интерфейс/возвраты [21:00;24:00) UTC ===
+0
+=== полоса продажи/возвраты [18:00;24:00) UTC ===
+0
+=== вне обеих полос ===
+8
+=== проверка token не в артефактах ===
+0 совпадений — чисто
+=== date -u (конец) ===
+Sat Aug  1 10:52:10 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

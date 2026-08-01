@@ -1,0 +1,28 @@
+=== date -u (начало) ===
+Sat Aug  1 10:51:31 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+[
+  {
+    "has_basis": "true", 
+    "n_rows": "8", 
+    "return_type": "retailsalesreturn", 
+    "sum_kgs": "570.0"
+  }
+]
+=== date -u (конец) ===
+Sat Aug  1 10:51:34 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

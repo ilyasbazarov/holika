@@ -1,0 +1,33 @@
+{
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/1fb4954e-fa31-11ee-0a80-08920071069f",
+    "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+    "type" : "currency",
+    "mediaType" : "application/json",
+    "uuidHref" : "https://online.moysklad.ru/app/#currency/edit?id=1fb4954e-fa31-11ee-0a80-08920071069f"
+  },
+  "id" : "1fb4954e-fa31-11ee-0a80-08920071069f",
+  "system" : true,
+  "name" : "сом",
+  "fullName" : "Киргизский сом",
+  "rate" : 1.0,
+  "multiplicity" : 1,
+  "indirect" : false,
+  "rateUpdateType" : "manual",
+  "code" : "417",
+  "isoCode" : "KGS",
+  "majorUnit" : {
+    "gender" : "masculine",
+    "s1" : "сом",
+    "s2" : "сома",
+    "s5" : "сомов"
+  },
+  "minorUnit" : {
+    "gender" : "masculine",
+    "s1" : "тыйын",
+    "s2" : "тыйына",
+    "s5" : "тыйынов"
+  },
+  "archived" : false,
+  "default" : true
+}
