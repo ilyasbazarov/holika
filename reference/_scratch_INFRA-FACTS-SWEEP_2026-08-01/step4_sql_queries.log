@@ -1,0 +1,73 @@
+Sat Aug  1 12:44:19 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Q-47a: total rows core.fact_loss ===
+[
+  {
+    "total_rows": "129"
+  }
+]
+=== Q-47b: non-KGS rows core.fact_loss (currency_code column, confirmed by live schema step0) ===
+[
+  {
+    "non_kgs_rows": "0"
+  }
+]
+=== Q-55: three COUNTIF on core.fact_loss ===
+[
+  {
+    "agent_name_nn": "0", 
+    "project_id_nn": "0", 
+    "sales_channel_id_nn": "0", 
+    "total": "129"
+  }
+]
+=== Q-11: marts.abc_xyz distribution by xyz_class ===
+[
+  {
+    "cnt": "28", 
+    "xyz_class": "X"
+  }, 
+  {
+    "cnt": "164", 
+    "xyz_class": "Y"
+  }, 
+  {
+    "cnt": "338", 
+    "xyz_class": "Z"
+  }
+]
+=== Q-11: marts.abc_xyz distribution by abc_class ===
+[
+  {
+    "abc_class": "A", 
+    "cnt": "112"
+  }, 
+  {
+    "abc_class": "B", 
+    "cnt": "151"
+  }, 
+  {
+    "abc_class": "C", 
+    "cnt": "267"
+  }
+]
+=== Q-11: marts.abc_xyz total rows (coverage) ===
+[
+  {
+    "total_rows": "530"
+  }
+]
+Sat Aug  1 12:44:35 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

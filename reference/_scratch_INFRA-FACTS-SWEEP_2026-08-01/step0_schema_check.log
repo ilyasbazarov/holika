@@ -1,0 +1,218 @@
+Sat Aug  1 12:39:52 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq show core.fact_loss ===
+{
+  "creationTime": "1784719747045",
+  "etag": "2GiEzQmhBZSgRDXGt/Dt9g==",
+  "id": "msklad-bi-prod:core.fact_loss",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1785531618341",
+  "location": "asia-east1",
+  "numActiveLogicalBytes": "17595",
+  "numActivePhysicalBytes": "2533186",
+  "numBytes": "17595",
+  "numCurrentPhysicalBytes": "319119",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numPartitions": "101",
+  "numRows": "129",
+  "numTimeTravelPhysicalBytes": "2214067",
+  "numTotalLogicalBytes": "17595",
+  "numTotalPhysicalBytes": "2533186",
+  "partitionDefinition": {
+    "partitionedColumn": [
+      {
+        "field": "moment"
+      }
+    ]
+  },
+  "schema": {
+    "fields": [
+      {
+        "name": "document_id",
+        "type": "STRING"
+      },
+      {
+        "name": "moment",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "expense_item_id",
+        "type": "STRING"
+      },
+      {
+        "name": "expense_item_name",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_id",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_name",
+        "type": "STRING"
+      },
+      {
+        "name": "project_id",
+        "type": "STRING"
+      },
+      {
+        "name": "sales_channel_id",
+        "type": "STRING"
+      },
+      {
+        "name": "currency_code",
+        "type": "STRING"
+      },
+      {
+        "name": "rate_value",
+        "type": "FLOAT"
+      },
+      {
+        "name": "sum_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "_loaded_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "applicable",
+        "type": "BOOLEAN"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/datasets/core/tables/fact_loss",
+  "tableReference": {
+    "datasetId": "core",
+    "projectId": "msklad-bi-prod",
+    "tableId": "fact_loss"
+  },
+  "timePartitioning": {
+    "field": "moment",
+    "type": "DAY"
+  },
+  "type": "TABLE"
+}
+=== bq show marts.abc_xyz ===
+{
+  "creationTime": "1785571443561",
+  "etag": "6n06nzFClP21tEctrlZUlQ==",
+  "id": "msklad-bi-prod:marts.abc_xyz",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1785571443562",
+  "location": "asia-east1",
+  "numActiveLogicalBytes": "143043",
+  "numActivePhysicalBytes": "223151",
+  "numBytes": "143043",
+  "numCurrentPhysicalBytes": "37243",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "530",
+  "numTimeTravelPhysicalBytes": "185908",
+  "numTotalLogicalBytes": "143043",
+  "numTotalPhysicalBytes": "223151",
+  "schema": {
+    "fields": [
+      {
+        "name": "product_id",
+        "type": "STRING"
+      },
+      {
+        "name": "product_name",
+        "type": "STRING"
+      },
+      {
+        "name": "article",
+        "type": "STRING"
+      },
+      {
+        "name": "product_folder",
+        "type": "STRING"
+      },
+      {
+        "name": "entity_type",
+        "type": "STRING"
+      },
+      {
+        "name": "parent_product_id",
+        "type": "STRING"
+      },
+      {
+        "name": "abc_class",
+        "type": "STRING"
+      },
+      {
+        "name": "revenue_90d_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "margin_90d_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "quantity_90d",
+        "type": "FLOAT"
+      },
+      {
+        "name": "active_days_90d",
+        "type": "INTEGER"
+      },
+      {
+        "name": "revenue_90d_usd",
+        "type": "FLOAT"
+      },
+      {
+        "name": "xyz_class",
+        "type": "STRING"
+      },
+      {
+        "name": "cov",
+        "type": "FLOAT"
+      },
+      {
+        "name": "weeks_with_sales",
+        "type": "INTEGER"
+      },
+      {
+        "name": "avg_weekly_qty",
+        "type": "FLOAT"
+      },
+      {
+        "name": "abc_xyz",
+        "type": "STRING"
+      },
+      {
+        "name": "rate_kgs_per_usd",
+        "type": "FLOAT"
+      },
+      {
+        "name": "_mart_refreshed_at",
+        "type": "TIMESTAMP"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/datasets/marts/tables/abc_xyz",
+  "tableReference": {
+    "datasetId": "marts",
+    "projectId": "msklad-bi-prod",
+    "tableId": "abc_xyz"
+  },
+  "type": "TABLE"
+}
+Sat Aug  1 12:39:56 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

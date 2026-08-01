@@ -1,0 +1,21 @@
+Sat Aug  1 12:43:09 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Q-14: JOBS_BY_PROJECT search for LOAD jobs referencing GCS raw bucket, any location ===
+--- location=asia-east1 ---
+[]
+--- location=US ---
+[]
+Sat Aug  1 12:43:16 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

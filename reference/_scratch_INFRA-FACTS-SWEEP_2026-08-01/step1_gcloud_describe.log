@@ -1,0 +1,428 @@
+Sat Aug  1 12:42:13 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Q-6: gcloud functions describe cf-dq (gen2) ===
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/420804682491/locations/asia-east1/builds/6d96a07e-9c9b-4dfd-8d65-a5a1fcdf0398
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts
+  entryPoint: main
+  runtime: python312
+  serviceAccount: projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1781780276907576'
+      object: cf-dq/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1781780276907576'
+      object: cf-dq/function-source.zip
+createTime: '2026-05-07T12:53:10.388923634Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/msklad-bi-prod/locations/asia-east1/functions/cf-dq
+satisfiesPzi: true
+serviceConfig:
+  allTrafficOnLatestRevision: true
+  availableCpu: '0.3333'
+  availableMemory: 512M
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceCount: 6
+  maxInstanceRequestConcurrency: 1
+  minInstanceCount: 1
+  revision: cf-dq-00007-hot
+  service: projects/msklad-bi-prod/locations/asia-east1/services/cf-dq
+  serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  timeoutSeconds: 120
+  uri: https://cf-dq-xw5u2boozq-de.a.run.app
+state: ACTIVE
+updateTime: '2026-07-30T10:04:58.501779835Z'
+url: https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-dq
+RC_Q6_GEN2=0
+=== Q-6 fallback: gcloud functions describe cf-dq (no --gen2, if above failed) ===
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/420804682491/locations/asia-east1/builds/6d96a07e-9c9b-4dfd-8d65-a5a1fcdf0398
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts
+  entryPoint: main
+  runtime: python312
+  serviceAccount: projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1781780276907576'
+      object: cf-dq/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1781780276907576'
+      object: cf-dq/function-source.zip
+createTime: '2026-05-07T12:53:10.388923634Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/msklad-bi-prod/locations/asia-east1/functions/cf-dq
+satisfiesPzi: true
+serviceConfig:
+  allTrafficOnLatestRevision: true
+  availableCpu: '0.3333'
+  availableMemory: 512M
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceCount: 6
+  maxInstanceRequestConcurrency: 1
+  minInstanceCount: 1
+  revision: cf-dq-00007-hot
+  service: projects/msklad-bi-prod/locations/asia-east1/services/cf-dq
+  serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  timeoutSeconds: 120
+  uri: https://cf-dq-xw5u2boozq-de.a.run.app
+state: ACTIVE
+updateTime: '2026-07-30T10:04:58.501779835Z'
+url: https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-dq
+RC_Q6_NOFLAG=0
+=== Q-12: gcloud functions describe cf-alert (gen2) ===
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/420804682491/locations/asia-east1/builds/dfad8be4-d265-4e00-aa12-5a51d925a48a
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts
+  entryPoint: main
+  runtime: python312
+  serviceAccount: projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1778675178481613'
+      object: cf-alert/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1778675178481613'
+      object: cf-alert/function-source.zip
+createTime: '2026-05-13T12:23:18.665754631Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/msklad-bi-prod/locations/asia-east1/functions/cf-alert
+satisfiesPzi: true
+serviceConfig:
+  allTrafficOnLatestRevision: true
+  availableCpu: '0.1666'
+  availableMemory: 256M
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceRequestConcurrency: 1
+  revision: cf-alert-00001-bej
+  secretEnvironmentVariables:
+  - key: TELEGRAM_BOT_TOKEN
+    projectId: '420804682491'
+    secret: telegram-bot-token
+    version: latest
+  - key: TELEGRAM_CHAT_ID
+    projectId: '420804682491'
+    secret: telegram-chat-id
+    version: latest
+  service: projects/msklad-bi-prod/locations/asia-east1/services/cf-alert
+  serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  timeoutSeconds: 30
+  uri: https://cf-alert-xw5u2boozq-de.a.run.app
+state: ACTIVE
+updateTime: '2026-07-30T10:04:58.439199216Z'
+url: https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-alert
+RC_Q12_GEN2=0
+=== Q-12 fallback: gcloud functions describe cf-alert (no --gen2) ===
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/420804682491/locations/asia-east1/builds/dfad8be4-d265-4e00-aa12-5a51d925a48a
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts
+  entryPoint: main
+  runtime: python312
+  serviceAccount: projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1778675178481613'
+      object: cf-alert/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1778675178481613'
+      object: cf-alert/function-source.zip
+createTime: '2026-05-13T12:23:18.665754631Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/msklad-bi-prod/locations/asia-east1/functions/cf-alert
+satisfiesPzi: true
+serviceConfig:
+  allTrafficOnLatestRevision: true
+  availableCpu: '0.1666'
+  availableMemory: 256M
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceRequestConcurrency: 1
+  revision: cf-alert-00001-bej
+  secretEnvironmentVariables:
+  - key: TELEGRAM_BOT_TOKEN
+    projectId: '420804682491'
+    secret: telegram-bot-token
+    version: latest
+  - key: TELEGRAM_CHAT_ID
+    projectId: '420804682491'
+    secret: telegram-chat-id
+    version: latest
+  service: projects/msklad-bi-prod/locations/asia-east1/services/cf-alert
+  serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  timeoutSeconds: 30
+  uri: https://cf-alert-xw5u2boozq-de.a.run.app
+state: ACTIVE
+updateTime: '2026-07-30T10:04:58.439199216Z'
+url: https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-alert
+RC_Q12_NOFLAG=0
+=== Q-13: gcloud workflows describe msklad-pipeline-weekly ===
+createTime: '2026-05-08T06:06:20.438282639Z'
+name: projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-weekly
+revisionCreateTime: '2026-05-11T07:41:00.886980408Z'
+revisionId: 000003-fa9
+serviceAccount: projects/msklad-bi-prod/serviceAccounts/etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+sourceContents: |-
+  main:
+    params: [args]
+    steps:
+
+      # ── INIT ───────────────────────────────────────────────────────────────────
+      - init:
+          assign:
+            - run_id: ${sys.now()}
+            - cf_dim:       "https://cf-dim-xw5u2boozq-de.a.run.app"
+            - cf_fx:        "https://cf-fx-xw5u2boozq-de.a.run.app"
+            - cf_facts:     "https://cf-facts-xw5u2boozq-de.a.run.app"
+            - cf_dq:        "https://cf-dq-xw5u2boozq-de.a.run.app"
+
+      # ── STEP 1: обновление справочников ───────────────────────────────────────
+      - step_dim:
+          try:
+            call: http.post
+            args:
+              url: ${cf_dim}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+              timeout: 540
+            result: dim_result
+          except:
+            as: e
+            steps:
+              - log_dim_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_dim FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_dim:
+                  raise: ${e}
+
+      # ── STEP 2: курсы НБКР ────────────────────────────────────────────────────
+      - step_fx:
+          try:
+            call: http.post
+            args:
+              url: ${cf_fx}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+              timeout: 180
+            result: fx_result
+          except:
+            as: e
+            steps:
+              - log_fx_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_fx FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_fx:
+                  raise: ${e}
+
+      # ── STEP 3: загрузка отгрузок + byvariant (90d rolling) ───────────────────
+      - step_facts:
+          try:
+            call: http.post
+            args:
+              url: ${cf_facts}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+                mode: "weekly"
+              timeout: 600
+            result: facts_result
+          except:
+            as: e
+            steps:
+              - log_facts_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_facts FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_facts:
+                  raise: ${e}
+
+      # ── STEP 4: DQ Gate ───────────────────────────────────────────────────────
+      - step_dq:
+          try:
+            call: http.post
+            args:
+              url: ${cf_dq}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+              timeout: 120
+            result: dq_result
+          except:
+            as: e
+            steps:
+              - log_dq_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_dq CRASHED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: CRITICAL
+              - raise_dq:
+                  raise: ${e}
+
+      # ── STEP 5: decode DQ response (Л-02: Workflows не авто-парсит JSON body) ─
+      - parse_dq_result:
+          assign:
+            - dq_parsed: ${json.decode(dq_result.body)}
+
+      # ── STEP 6: проверка результата DQ ────────────────────────────────────────
+      - check_dq:
+          switch:
+            - condition: ${not(dq_parsed.passed)}
+              steps:
+                - log_dq_failed:
+                    call: sys.log
+                    args:
+                      text: ${"[WEEKLY] DQ Gate FAILED run_id=" + run_id + " details=" + json.encode_to_string(dq_parsed)}
+                      severity: CRITICAL
+                - raise_dq_failed:
+                    raise: "DQ Gate failed — promote blocked"
+
+      # ── STEP 7: promote staging → core (90d window) ───────────────────────────
+      - step_promote:
+          try:
+            call: http.post
+            args:
+              url: ${cf_facts}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+                mode: "promote"
+                window_days: 90
+              timeout: 540
+            result: promote_result
+          except:
+            as: e
+            steps:
+              - log_promote_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_promote:
+                  raise: ${e}
+
+      # ── STEP 8: закупки — полный refresh ──────────────────────────────────────
+      # WRITE_TRUNCATE: ~173 заказа × ~30 позиций. Статусы (В пути / Прибыл)
+      # захватываются на каждом прогоне. Не блокирует promote при ошибке.
+      - step_purchases:
+          try:
+            call: http.post
+            args:
+              url: ${cf_facts}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+                mode: "purchases"
+              timeout: 300
+            result: purchases_result
+          except:
+            as: e
+            steps:
+              - log_purchases_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_purchases FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_purchases:
+                  raise: ${e}
+
+      # ── STEP 9: возвраты покупателей (90d rolling) ────────────────────────────
+      # После promote — независимая таблица, вне DQ-цепочки продаж.
+      # 0 записей за окно — не ошибка (early return guard в CF-Facts).
+      - step_returns:
+          try:
+            call: http.post
+            args:
+              url: ${cf_facts}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+                mode: "returns"
+                window_days: 90
+              timeout: 300
+            result: returns_result
+          except:
+            as: e
+            steps:
+              - log_returns_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_returns FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_returns:
+                  raise: ${e}
+
+      # ── DONE ──────────────────────────────────────────────────────────────────
+      - done:
+          steps:
+            - log_success:
+                call: sys.log
+                args:
+                  text: ${"[WEEKLY] Pipeline COMPLETED run_id=" + run_id}
+                  severity: INFO
+            - return_result:
+                return: ${promote_result.body}
+state: ACTIVE
+updateTime: '2026-07-30T10:04:58.556441498Z'
+RC_Q13=0
+Sat Aug  1 12:42:27 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

@@ -1,0 +1,923 @@
+Sat Aug  1 12:43:34 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Q-14: ALL LOAD-type jobs targeting core.* dataset, any location, full history window ===
+--- location=asia-east1 ---
+[
+  {
+    "creation_time": "2026-04-29 18:40:07", 
+    "dest_dataset": "core", 
+    "dest_table": "dim_fx_rates", 
+    "job_id": "8097c9d4-3c77-405f-bf24-14dc82521789", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-04-29 18:45:08", 
+    "dest_dataset": "core", 
+    "dest_table": "dim_fx_rates", 
+    "job_id": "738517ca-2013-4a2f-8a33-d13eac71a54d", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-04-29 18:54:55", 
+    "dest_dataset": "core", 
+    "dest_table": "dim_fx_rates", 
+    "job_id": "4a989a87-a2d5-4847-b20f-14b63f8ae945", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-04-29 19:06:06", 
+    "dest_dataset": "core", 
+    "dest_table": "dim_fx_rates", 
+    "job_id": "93579077-8422-4a98-b7d5-ec0c760da4bf", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-03 01:25:07", 
+    "dest_dataset": "core", 
+    "dest_table": "dim_fx_rates", 
+    "job_id": "9ab36da2-397a-4cd0-882a-f8b3a32dfe25", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-03 01:25:59", 
+    "dest_dataset": "core", 
+    "dest_table": "dim_products", 
+    "job_id": "630af6c3-3ac8-4775-9d87-765d9a51867a", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-03 01:36:13", 
+    "dest_dataset": "core", 
+    "dest_table": "dim_counterparties", 
+    "job_id": "da5fda95-bcd4-4410-afc4-df3c8fb42690", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-03 01:37:29", 
+    "dest_dataset": "core", 
+    "dest_table": "dim_employees", 
+    "job_id": "1d9e26d0-d7d4-44b5-ad3e-2ba0361d24d4", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-03 02:05:02", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_sales_profit", 
+    "job_id": "9b188c25-cf69-4784-bae7-d43af105639d", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-03 02:23:45", 
+    "dest_dataset": "core", 
+    "dest_table": "dim_products", 
+    "job_id": "ad741926-4429-46f5-a7e4-2255544e5966", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-03 02:26:12", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_sales_profit", 
+    "job_id": "be6cc2bb-f14c-4859-b580-6440698758e8", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-03 02:37:49", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "1aafd030-fbc4-4dda-8977-9bc69b3df631", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "bootstrap-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-07 09:12:53", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "6cab4615-b12c-4501-ae75-f8b716d0b0cb", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-07 09:21:30", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "031d549f-c1c3-4fb3-932d-b18098271dfe", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-07 09:38:35", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "4dfef23a-ae6d-4d41-9522-f704e71a6c89", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-07 09:50:14", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "980fd1bc-4f39-4506-95ae-dfb17b92c425", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-07 09:51:30", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "d799323c-48ec-4f48-a327-0ed3d25c0f5d", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-07 11:02:06", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "12a853e8-c917-4bcd-870f-0e9ef020dd64", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-07 13:55:15", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_returns", 
+    "job_id": "69d51a9c-a090-4dd4-8ef5-8b1a45dc9f6e", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-05-07 21:00:21", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "a43cc98c-604c-4f15-b643-c4ad094fc6ec", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-08 21:00:14", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "366984dc-ea08-48d5-bada-bf7ba812b073", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-09 21:00:11", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "3ff21e9a-6fa0-46aa-b585-18f91ed88585", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-10 21:00:17", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "5e83ffcf-3edc-4336-acfa-a5e694354cfb", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-11 07:23:42", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_returns", 
+    "job_id": "21c74bac-f425-470a-aeb7-31686e52b844", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-11 07:26:57", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_returns", 
+    "job_id": "75c84b9f-7fef-490d-a14b-e71d6ea10b34", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-11 21:00:15", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "b36861c2-c69b-45ff-9c46-e0771d3327ae", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-12 21:00:12", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "94825a53-b4e6-4339-a513-27642ee1aa7d", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-13 21:00:15", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "af5b8999-18f1-45a4-bebb-0ad225ae8abb", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-14 21:00:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "c5ac0cfe-47fe-4383-9d48-b0cb19194c27", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-15 21:00:22", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "c509f50c-2b0d-4c0a-bd99-b16105cb1460", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-16 21:00:15", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "25f1752a-2ca1-4b10-94bf-46b9e6b184be", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-17 21:00:12", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "60611c26-b04d-433e-ac86-9deeed5bad51", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 11:39:40", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "37cf53f6-4ee9-446a-b5ca-23e26831d06d", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 13:30:32", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "88855433-a704-4f2f-acdd-9aad9518556e", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 14:04:20", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "a43ba955-5e26-4d72-a46b-b4eab4540b94", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 15:04:26", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "48207a37-e8b8-4f05-9dfd-8c4c0b3db1c6", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 16:04:18", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "fad46cf9-ed5f-4a7d-993d-a1433a3604ad", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 17:04:41", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "d4b37969-c4e5-4c78-8376-1cdcb96bdf3f", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 18:04:10", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "50990138-c019-4a80-bd14-e19685e61500", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 19:04:41", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "289d295b-dcb7-4dec-8c3d-63ae1a35de83", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 20:03:48", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "e681140b-bfd0-40e7-9ad9-ef4a7414a489", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 21:00:17", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "4b8b2be8-765d-4438-83de-c55210519219", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 21:04:26", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "96a97e39-fa3d-4c9b-a245-55b323c4f895", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 22:04:16", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "d6076604-15f3-4565-89a5-3d34f26af1e5", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-18 23:04:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "a1fc4825-032b-4d2a-94d7-8c126849257c", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 00:04:25", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "24723dd7-43e9-4f16-8770-fcf487f9c20d", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 01:04:10", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "3f39db56-d09b-411c-9d25-4fdd923c0a99", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 02:04:08", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "22ed880a-ea5b-40d3-b65f-d111e3c3ee91", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 03:04:08", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "9b4291c9-553a-4db8-938d-2a73030905fc", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 04:04:20", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "0f93c31c-8847-473e-8700-a94e90873619", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 05:04:44", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "74c136ce-2293-432b-842e-630f8e68d85f", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 06:04:36", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "6eb2eb36-15c3-4767-8b76-bd7bf17705c8", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 07:04:40", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "1809a74c-3090-4087-b06a-57a95471b3a2", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 08:04:46", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "802e7536-fd7b-45e8-a0a3-dd549fcaff74", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 09:04:33", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "1d2947a6-7d99-4343-931d-969a3ef96a62", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 10:04:39", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "95824f3f-51f1-42b1-811a-ff24400ee3a0", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 11:04:32", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "c63a9f3e-76f4-4a12-9733-d886b7918cdc", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 12:04:53", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "14bdc30a-e0a0-4df9-925d-c19dee3c5a48", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 13:04:37", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "f83857a0-33b7-4c9d-a30e-7d1f41681621", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 14:04:37", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "faf69ffb-e147-4351-b484-4dccb7fb0c17", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 15:04:45", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "1afabd36-faa6-4096-93a0-e805d9953673", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 16:04:23", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "635cedce-52d3-49eb-a21e-caec5929b279", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 17:04:18", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "5f59880f-eb2f-403c-94f4-fb35552ba0b8", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 18:04:14", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "ab44dccd-3632-40fd-996f-021866ff77fc", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 19:04:14", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "8d1617d0-dd48-4e3f-95e5-507dc189603e", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 20:04:00", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "f3ffe453-2568-4c0e-a930-c282642ec968", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 21:00:16", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "59d269cc-61f3-494f-aabf-cbd980f777af", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 21:04:19", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "4ac4672d-7568-44ac-8697-0dc395037d8d", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 22:04:12", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "742990e2-b4c3-483c-b220-31eea4764ab9", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-19 23:04:00", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "fb62d102-457c-48cc-8626-f54bc1c3ced2", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 00:03:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "3d448d5b-044b-4856-928c-011c3ebc4d2a", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 01:04:10", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "627e2687-ee02-40e5-b11c-85242335d1e5", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 02:04:26", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "6bbdc816-f028-4e1b-9cb5-4336bcd3dd89", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 03:04:25", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "17eced78-1117-4d6a-a3c5-71308e0645ce", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 04:04:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "ae004b2d-2fb3-4ce2-88ed-2f7a7740a474", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 05:04:29", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "30c56356-ba65-4102-8ae3-d39cc40e4be8", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 06:04:33", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "2e533fab-6642-4f65-9c8b-45c81e6910c7", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 07:04:28", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "1bc43689-f032-4b6d-b2f6-42bd7969ae67", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 08:04:47", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "b04d0869-8512-4951-b01d-328da56feb7f", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 09:04:38", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "68dfb202-9d31-4b9e-b933-2a97a9b90ab2", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 10:04:40", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "7bf793bb-f063-4915-9b2c-b56d4fb847d8", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 11:04:30", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "5c8a9652-e880-46ef-8910-c54c86e7af5b", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 12:04:31", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "8dd47b7e-5394-45b6-a237-0ebe6c2699eb", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 13:04:32", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "e5c089b4-e17f-448e-a6c7-98ea55455ed6", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 14:04:35", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "4d6b6005-7131-4151-b228-d8572dcccf8d", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 15:04:33", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "ce11cd6f-0b73-4bcf-b05f-1647fbaea71e", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 16:04:25", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "8f06c690-a01b-42d4-95ff-bc5b34a9224d", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 18:04:19", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "85b1a214-518e-4990-9ed3-c5060191e278", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 19:04:19", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "6794e18f-0011-4678-a31e-989ddbc4c1da", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 20:04:22", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "89629daa-465d-4287-becb-ed23067073d2", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 21:00:20", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_inventory", 
+    "job_id": "c3533692-b1fa-463e-aa0c-132d816b8023", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 21:04:19", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "6dd7aa9e-a8ee-4b0c-aa0d-694995f6a798", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 22:04:08", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "8e6203f9-0904-4a6a-9e65-c2ae788dad7c", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-20 23:04:10", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "d01b2f20-09a2-44d9-9ce3-20e12dcf74e0", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-21 00:04:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "e3f15c09-bcb5-4528-8131-e14f5a3179c4", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-21 01:04:16", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "37546a88-b4eb-4113-b0bd-2b0374807f09", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-21 02:03:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "360df6b5-bddb-43e1-b706-dd909247c597", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-21 03:04:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "4b5d046f-0c05-49ac-8bb0-3ab09ae42111", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-21 04:04:35", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "f5b8a073-b495-4a86-8ddf-a19d57b81c4c", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-05-21 05:04:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "job_id": "6666f7be-fce7-4eb5-afc9-58c61714b028", 
+    "job_type": "LOAD", 
+    "statement_type": null, 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }
+]
+--- location=US ---
+Waiting on bqjob_r4851e8ba9db36162_0000019fbd59fe27_1 ... (0s) Current status: DONE   
+[]
+Sat Aug  1 12:43:42 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
