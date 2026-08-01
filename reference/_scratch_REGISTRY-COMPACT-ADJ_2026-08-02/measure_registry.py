@@ -9,7 +9,11 @@ txt = '\n'.join(lines)
 st = [i for i, l in enumerate(lines, 1) if l.startswith('## Открытые вопросы')][0]
 en = [i for i, l in enumerate(lines, 1) if l.startswith('## Контрольные цифры')][0] - 1
 rows = [l for l in lines[st-1:en] if l.startswith('|') and not set(l) <= set('|- ')][1:]
-cols = [[c.strip() for c in r.strip('|').split('|')] for r in rows]
+# Разрез ТОЛЬКО по неэкранированным '|': в тексте строк встречается \| внутри регулярных
+# выражений (Q-76). Наивный split('|') давал ложную картину колонок и завышал разнообразие «Типа».
+def split_cells(l):
+    return [p.strip() for p in re.split(r'(?<!\\)\|', l)[1:-1]]
+cols = [split_cells(r) for r in rows]
 
 print("== 1. МЕСТО РЕЕСТРА В ФАЙЛЕ ==")
 print("07_STATE.md: %d симв.  реестр: %d симв. (%.1f%%), строк данных: %d"
@@ -60,6 +64,8 @@ print("\n== 6. КОЛОНКА «ТИП» КАК КЛАССИФИКАТОР ==")
 t = Counter(c[2] for c in cols if len(c) > 2)
 print("различных значений: %d на %d строк; встречается однажды: %d значений"
       % (len(t), len(rows), sum(1 for v in t.values() if v == 1)))
+bad = [c[0] for c in cols if len(c) != 4]
+print("строк с побитой разметкой ячеек (неэкранированный '|' внутри текста): %s" % (bad or 'нет'))
 
 print("\n== 7. СМЕТА ИНДЕКСА (вариант C) ==")
 def clean(s):

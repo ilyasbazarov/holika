@@ -121,6 +121,20 @@ c4_good_ref()  { printf '# FILE: 07_STATE.md\n\n**updated_at:** 2026-01-02\n\n| 
 c4_good_arch() { printf '# FILE: 07_STATE.md\n\n**updated_at:** 2026-01-02\n\n| Q-100 | первая |\n' > 07_STATE.md
                  printf '# FILE: 07_ARCHIVE.md\n\n- Q-101 закрыт\n' > 07_ARCHIVE.md; }
 
+# ADR-0NN §1/§5vii: проверка 9 — множества ID индекса 07_STATE и полного текста 07_GAPS.
+# Индекс задаётся ВНУТРИ раздела «Открытые вопросы»; строка вне раздела в множество не входит.
+IDX_HDR='# FILE: 07_STATE.md\n\n**updated_at:** 2026-01-02\n\n## Открытые вопросы / GAP-реестр\n\n| ID | Статус |\n|---|---|\n'
+GAPS_HDR='# FILE: 07_GAPS.md\n\n| ID | Вопрос |\n|---|---|\n'
+c9_good() { printf "$IDX_HDR"'| `Q-100` | OPEN |\n| `Q-101` | DEFER |\n\n## Контрольные цифры\n' > 07_STATE.md
+            printf "$GAPS_HDR"'| Q-100 | первая |\n| Q-101 | вторая |\n'                          > 07_GAPS.md; }
+c9_bad()  { printf "$IDX_HDR"'| `Q-100` | OPEN |\n\n## Контрольные цифры\n'                       > 07_STATE.md
+            printf "$GAPS_HDR"'| Q-100 | первая |\n| Q-101 | вторая |\n'                          > 07_GAPS.md; }
+# проверка 4, расширенная на 07_GAPS: строка исчезла из полного текста без 07_ARCHIVE
+c10_seed()     { c9_good; sed -i.bak 's/2026-01-02/2026-01-01/' 07_STATE.md; rm -f 07_STATE.md.bak; }
+c10_bad_gone() { printf "$IDX_HDR"'| `Q-100` | OPEN |\n\n## Контрольные цифры\n' > 07_STATE.md
+                 printf "$GAPS_HDR"'| Q-100 | первая |\n'                          > 07_GAPS.md; }
+c10_good_arch(){ c10_bad_gone; printf '# FILE: 07_ARCHIVE.md\n\n- Q-101 закрыт\n' > 07_ARCHIVE.md; }
+
 all_cases() {
   echo "проверка 1 (ADR-054, имя в первой строке):"
   run_case "1-bad$SFX"  bad  c1_bad
@@ -143,6 +157,12 @@ all_cases() {
   run_case "7-bad$SFX"  bad  c7_bad
   echo "ADR-074 ось легитимного композита (ложное срабатывание проверки 2):"
   run_case "8-good$SFX" good c8_good
+  echo "проверка 9 (ADR-0NN §1, индекс 07_STATE против полного текста 07_GAPS):"
+  run_case "9-good$SFX" good c9_good
+  run_case "9-bad$SFX"  bad  c9_bad
+  echo "проверка 4, расширенная на 07_GAPS (исчезновение строки из полного текста):"
+  run_case_hist "10-bad-gone$SFX"    bad  c10_seed c10_bad_gone
+  run_case_hist "10-good-archive$SFX" good c10_seed c10_good_arch
 }
 
 echo "SELFTEST pre-commit"

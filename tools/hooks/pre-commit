@@ -41,13 +41,15 @@ fi
 # ADR-074 §7: сравниваются множества ID удалённых и добавленных строк. Переформулировка строки
 # (ID есть и там, и там) больше не срабатывает: это был документированный ложный позитив,
 # вынуждавший --no-verify на каждой правке существующей строки.
-d4=$(git diff --cached -U0 -- 07_STATE.md || true)
+# ADR-0NN §1: после разреза реестра строки живут в 07_GAPS.md — проверка обязана смотреть
+# оба файла, иначе закрытие строки потеряло бы защиту ровно в момент переезда.
+d4=$(git diff --cached -U0 -- 07_STATE.md 07_GAPS.md || true)
 gone_ids=$(comm -23 \
   <(printf '%s\n' "$d4" | grep -oE "^\-\| ${ID_ROW} \|" | sed -E 's/^\-\| //; s/ \|$//' | sort -u) \
   <(printf '%s\n' "$d4" | grep -oE "^\+\| ${ID_ROW} \|" | sed -E 's/^\+\| //; s/ \|$//' | sort -u) || true)
 if [ -n "$gone_ids" ]; then
   staged | grep -q '^07_ARCHIVE.md$' \
-    || fail "строки исчезли из 07_STATE, 07_ARCHIVE.md не в коммите (ADR-064): $(printf '%s' "$gone_ids" | tr '\n' ' ')"
+    || fail "строки исчезли из 07_STATE/07_GAPS, 07_ARCHIVE.md не в коммите (ADR-064): $(printf '%s' "$gone_ids" | tr '\n' ' ')"
 fi
 
 # 5. Правка 07_STATE => обновлён updated_at
@@ -55,4 +57,22 @@ if staged | grep -q '^07_STATE.md$'; then
   n=$(git diff --cached -- 07_STATE.md | grep -cE '^\+\*\*updated_at:\*\*' || true)
   [ "$n" -gt 0 ] || fail "07_STATE.md правится без обновления updated_at"
 fi
+# 6. ADR-0NN §1/§5vii: индекс реестра в 07_STATE и полный текст в 07_GAPS несут ОДНО множество ID.
+# Пара заводится/снимается одним коммитом; расхождение означает, что строка потерялась в одном
+# из двух файлов — ровно тот риск, которым оплачен разрез.
+if git cat-file -e :07_GAPS.md 2>/dev/null && staged | grep -qE '^(07_STATE|07_GAPS)\.md$'; then
+  # awk, не sed: BSD sed (macOS) не понимает 't; d', и проверка молча падала бы с rc=1
+  ids_of() { awk -F'|' '/^\|/ { v=$2; gsub(/`/,"",v); gsub(/^ +| +$/,"",v);
+                                 if (v!="" && v!="ID" && v !~ /^-+$/) print v }' | sort -u; }
+  idx_ids=$(git show :07_STATE.md | awk '/^## Открытые вопросы/{f=1;next} /^## /{f=0} f' | ids_of)
+  full_ids=$(git show :07_GAPS.md | ids_of)
+  only_idx=$(comm -23 <(printf '%s\n' "$idx_ids") <(printf '%s\n' "$full_ids"))
+  only_full=$(comm -13 <(printf '%s\n' "$idx_ids") <(printf '%s\n' "$full_ids"))
+  if [ -n "$only_idx" ] || [ -n "$only_full" ]; then
+    [ -n "$only_idx" ]  && printf 'только в индексе 07_STATE: %s\n' "$(printf '%s' "$only_idx"  | tr '\n' ' ')" >&2
+    [ -n "$only_full" ] && printf 'только в 07_GAPS.md      : %s\n' "$(printf '%s' "$only_full" | tr '\n' ' ')" >&2
+    fail "множества ID индекса 07_STATE и 07_GAPS.md расходятся (ADR-0NN §1)"
+  fi
+fi
+
 echo "pre-commit: инварианты ADR-054/041/064 пройдены"
