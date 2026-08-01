@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Разрез GAP-реестра на индекс (07_STATE) и полный текст (07_GAPS.md). ADR-0NN §1/§2, вариант C.
 
-Применяется ПРОХОДОМ СБОРКИ, не сессией (CLAUDE.md §Конец сессии: 07_STATE правит сборка).
+Применяется ИМЕНОВАННЫМ коммитом того же прохода, СРАЗУ ПОСЛЕ коммита сборки (ADR-0NN §7/§8).
+Форма коммита — прецедент 519e71d, пришедший следом за 9461bf5. Порядок обязателен: строку
+REGISTRY-COLUMN-SPLIT в реестр заводит коммит сборки, и без неё скрипт откажет по расхождению
+множеств ID.
     python3 reference/_scratch_REGISTRY-COMPACT-ADJ_2026-08-02/apply_split.py --check
     python3 reference/_scratch_REGISTRY-COMPACT-ADJ_2026-08-02/apply_split.py --apply
 
@@ -15,16 +18,18 @@
 import sys, os, re, subprocess
 
 BASE_SHA   = "519e71de958652b5508bdaabe3272af2bf950324"   # база, на которой снят индекс
-STATE_BLOB = "d981f603ec980b73af90e0fb37ee4baee1ebe61f"                             # git hash-object 07_STATE.md на базе
+ROWHASH = "row_hashes.tsv"                                # ID -> sha256 строки на момент снимка
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODE = sys.argv[1] if len(sys.argv) > 1 else "--check"
 if MODE not in ("--check", "--apply"):
     print("неизвестный режим: %s" % MODE); sys.exit(2)
 
-blob = subprocess.run(["git", "hash-object", "07_STATE.md"], capture_output=True, text=True).stdout.strip()
-if blob != STATE_BLOB:
-    print("ОТКАЗ: 07_STATE.md изменён (blob=%s, ожидался %s)." % (blob, STATE_BLOB))
-    print("Индекс снят на базе %s и протух — пересними." % BASE_SHA[:7]); sys.exit(2)
+# Предохранитель привязан к СТРОКАМ РЕЕСТРА, а не к blob всего 07_STATE.md: между снимком
+# индекса и применением файл законно правит проход сборки (абзац деталей, шапка, новая строка
+# задачи). Хэш всего файла ловил бы эти правки как порчу и делал скрипт неприменимым в реальном
+# порядке работ. Проверяется то, что действительно обязано быть неизменным: дословный текст
+# каждой снятой строки. Строка, добавленная ПОСЛЕ снимка, допускается, но обязана быть в индексе
+# и печатается отдельной строкой отчёта — молчаливого расширения набора нет.
 
 lines = open("07_STATE.md").read().split("\n")
 st = [i for i, l in enumerate(lines, 1) if l.startswith("## Открытые вопросы")][0]
@@ -33,6 +38,29 @@ tbl = [(i, l) for i, l in enumerate(lines[st-1:en], start=st) if l.startswith("|
 head_i, sep_i = tbl[0][0], tbl[1][0]
 rows = [(i, l) for i, l in tbl[2:] if not set(l) <= set("|- ")]
 reg_ids = [l.strip("|").split("|")[0].strip().strip("`") for _, l in rows]
+
+import hashlib
+want = {}
+for ln in open(os.path.join(HERE, ROWHASH)):
+    if ln.strip():
+        k, v = ln.rstrip("\n").split("\t")
+        want[k] = v
+changed, added = [], []
+for _, l in rows:
+    rid = l.strip("|").split("|")[0].strip().strip("`")
+    h = hashlib.sha256(l.encode()).hexdigest()
+    if rid not in want:
+        added.append(rid)
+    elif want[rid] != h:
+        changed.append(rid)
+missing = [k for k in want if k not in reg_ids]
+if changed or missing:
+    print("ОТКАЗ: строки реестра изменились после снимка индекса (база %s)." % BASE_SHA[:7])
+    if changed: print("  текст изменён: %s" % " ".join(changed))
+    if missing: print("  строка исчезла: %s" % " ".join(missing))
+    print("Пересними индекс — он описывает уже не то, что лежит в файле."); sys.exit(2)
+if added:
+    print("строки, добавленные после снимка (допустимо, обязаны быть в индексе): %s" % " ".join(added))
 
 idx_all = [l.rstrip("\n") for l in open(os.path.join(HERE, "index_draft.md")) if l.startswith("| `")]
 idx_ids = [l.strip("|").split("|")[0].strip().strip("` ") for l in idx_all]
