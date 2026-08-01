@@ -1,0 +1,112 @@
+Sat Aug  1 02:09:43 PM UTC 2026
+Credentialed Accounts
+
+ACTIVE: *
+ACCOUNT: ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== существующая заготовка (только чтение, не трогаем) ===
+total 44
+drwxrwxr-x 7 ilyasbazarov4 ilyasbazarov4 4096 Jul 28 16:41 .
+drwxrwxr-x 4 ilyasbazarov4 ilyasbazarov4 4096 Jul 14 17:09 ..
+drwxrwxr-x 2 ilyasbazarov4 ilyasbazarov4 4096 Jun 25 09:05 branches
+-rw-rw-r-- 1 ilyasbazarov4 ilyasbazarov4   67 Jun 25 09:05 config
+-rw-rw-r-- 1 ilyasbazarov4 ilyasbazarov4   73 Jun 25 09:05 description
+-rw-rw-r-- 1 ilyasbazarov4 ilyasbazarov4   23 Jun 25 09:05 HEAD
+drwxrwxr-x 2 ilyasbazarov4 ilyasbazarov4 4096 Jun 25 09:05 hooks
+-rw-rw-r-- 1 ilyasbazarov4 ilyasbazarov4  137 Jun 25 09:05 index
+drwxrwxr-x 2 ilyasbazarov4 ilyasbazarov4 4096 Jun 25 09:05 info
+drwxrwxr-x 6 ilyasbazarov4 ilyasbazarov4 4096 Jun 25 09:05 objects
+drwxrwxr-x 4 ilyasbazarov4 ilyasbazarov4 4096 Jun 25 09:05 refs
+=== новый каталог ===
+=== скачать архив по generation ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-finance/function-source.zip#1784560843778541 to file:///home/ilyasbazarov4/cf-finance-coderepo/function-source.zip
+  
+
+sha256 архива: 04c337f4c31cfa3bb63a7c6ffc913f9f52ef387d4001d89ee2ff494fa2d0b202 (ожидалось 04c337f4c31cfa3bb63a7c6ffc913f9f52ef387d4001d89ee2ff494fa2d0b202)
+=== распаковать во временный каталог, проверить main.py ===
+/home/ilyasbazarov4/cf-finance-coderepo/archive
+/home/ilyasbazarov4/cf-finance-coderepo/archive/patch_main_finance.py
+/home/ilyasbazarov4/cf-finance-coderepo/archive/main.py.bak
+/home/ilyasbazarov4/cf-finance-coderepo/archive/__pycache__
+/home/ilyasbazarov4/cf-finance-coderepo/archive/__pycache__/main.cpython-312.pyc
+/home/ilyasbazarov4/cf-finance-coderepo/archive/requirements.txt
+/home/ilyasbazarov4/cf-finance-coderepo/archive/main.py.pre-e1t3-mech-fx.bak
+/home/ilyasbazarov4/cf-finance-coderepo/archive/main.py
+sha256 main.py: 0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59 (ожидалось 0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59)
+=== .gitignore (ADR-094 §4 / ADR-040: *.bak, __pycache__/, разовые patch-скрипты) ===
+*.bak
+__pycache__/
+patch_main_finance.py
+function-source.zip
+archive/
+=== копируем только легитимное содержимое в корень репо ===
+=== git init + первый коммит (byte-for-byte архив минус игнор) ===
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/ilyasbazarov4/cf-finance-coderepo/.git/
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   main.py
+	new file:   requirements.txt
+
+[master (root-commit) 4317047] Seed from deployed revision cf-finance-00012-cik (generation 1784560843778541)
+ 3 files changed, 154 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 main.py
+ create mode 100644 requirements.txt
+4317047 Seed from deployed revision cf-finance-00012-cik (generation 1784560843778541)
+commit 4317047333d6311d7439e8e7215de3b3638a4ddd
+Author: Ilyas Bazarov <ilyasbazarov4@gmail.com>
+Date:   Sat Aug 1 14:09:49 2026 +0000
+
+    Seed from deployed revision cf-finance-00012-cik (generation 1784560843778541)
+
+ .gitignore       |   5 ++
+ main.py          | 145 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ requirements.txt |   4 ++
+ 3 files changed, 154 insertions(+)
+=== ПЕРВЫЙ КОММИТ: сверка sha256 закоммиченных файлов против архива ===
+0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59  /home/ilyasbazarov4/cf-finance-coderepo/main.py
+5b9dfa54877cc7b48885be34cd1bf4c125435bb9f19f1e0dd856def14e4b6d92  /home/ilyasbazarov4/cf-finance-coderepo/requirements.txt
+=== расхождение рабочей копии disk vs архив (ADR-094 §4) ===
+sha256 /home/ilyasbazarov4/cf-finance/main.py = 0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59
+СОВПАДАЕТ с архивом — расхождений в main.py нет, второй коммит по main.py не нужен
+sha256 /home/ilyasbazarov4/cf-finance/requirements.txt = 5b9dfa54877cc7b48885be34cd1bf4c125435bb9f19f1e0dd856def14e4b6d92 (архив: 5b9dfa54877cc7b48885be34cd1bf4c125435bb9f19f1e0dd856def14e4b6d92)
+=== заготовка /home/ilyasbazarov4/cf-finance/.git — подтверждение, что не тронута ===
+total 44
+drwxrwxr-x 7 ilyasbazarov4 ilyasbazarov4 4096 Jul 28 16:41 .
+drwxrwxr-x 4 ilyasbazarov4 ilyasbazarov4 4096 Jul 14 17:09 ..
+drwxrwxr-x 2 ilyasbazarov4 ilyasbazarov4 4096 Jun 25 09:05 branches
+-rw-rw-r-- 1 ilyasbazarov4 ilyasbazarov4   67 Jun 25 09:05 config
+-rw-rw-r-- 1 ilyasbazarov4 ilyasbazarov4   73 Jun 25 09:05 description
+-rw-rw-r-- 1 ilyasbazarov4 ilyasbazarov4   23 Jun 25 09:05 HEAD
+drwxrwxr-x 2 ilyasbazarov4 ilyasbazarov4 4096 Jun 25 09:05 hooks
+-rw-rw-r-- 1 ilyasbazarov4 ilyasbazarov4  137 Jun 25 09:05 index
+drwxrwxr-x 2 ilyasbazarov4 ilyasbazarov4 4096 Jun 25 09:05 info
+drwxrwxr-x 6 ilyasbazarov4 ilyasbazarov4 4096 Jun 25 09:05 objects
+drwxrwxr-x 4 ilyasbazarov4 ilyasbazarov4 4096 Jun 25 09:05 refs
+Sat Aug  1 02:09:49 PM UTC 2026
+Credentialed Accounts
+
+ACTIVE: *
+ACCOUNT: ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
