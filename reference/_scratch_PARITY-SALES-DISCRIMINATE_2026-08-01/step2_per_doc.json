@@ -1,0 +1,1145 @@
+[
+  {
+    "id": "021c712b-5016-11f1-0a80-145c0042c648",
+    "moment_utc": "2026-05-15 07:24:00.000",
+    "updated_utc": "2026-05-21 13:32:31.032",
+    "date_bishkek": "2026-05-15",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 48412000,
+    "sum_kgs_converted": 484120.0
+  },
+  {
+    "id": "06733e4c-4a9c-11f1-0a80-0fc700a1541e",
+    "moment_utc": "2026-05-08 08:09:00.000",
+    "updated_utc": "2026-05-15 13:52:11.174",
+    "date_bishkek": "2026-05-08",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 78204000,
+    "sum_kgs_converted": 782040.0
+  },
+  {
+    "id": "0776f495-4535-11f1-0a80-1a3700a88fb3",
+    "moment_utc": "2026-05-01 11:09:00.000",
+    "updated_utc": "2026-06-15 11:28:00.019",
+    "date_bishkek": "2026-05-01",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 37611000,
+    "sum_kgs_converted": 376110.0
+  },
+  {
+    "id": "0c1e139d-4e98-11f1-0a80-1885004ce4be",
+    "moment_utc": "2026-05-13 09:50:00.000",
+    "updated_utc": "2026-06-11 19:04:32.070",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 148550.0,
+    "sum_kgs_converted": 133695.0
+  },
+  {
+    "id": "0d508ba3-4c2f-11f1-0a80-0fc701c7e14e",
+    "moment_utc": "2026-05-10 08:13:00.000",
+    "updated_utc": "2026-06-11 20:29:43.289",
+    "date_bishkek": "2026-05-10",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 300090.0,
+    "sum_kgs_converted": 270081.0
+  },
+  {
+    "id": "0eed8f77-4b6e-11f1-0a80-0fc70140e9e5",
+    "moment_utc": "2026-05-09 09:12:00.000",
+    "updated_utc": "2026-05-13 14:06:51.611",
+    "date_bishkek": "2026-05-09",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 475400.0,
+    "sum_kgs_converted": 4754.0
+  },
+  {
+    "id": "114e19b0-5814-11f1-0a80-1b8001911765",
+    "moment_utc": "2026-05-25 11:31:00.000",
+    "updated_utc": "2026-07-28 11:50:59.677",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 2746960.0,
+    "sum_kgs_converted": 2472264.0
+  },
+  {
+    "id": "1174ddee-5819-11f1-0a80-1b800194bd73",
+    "moment_utc": "2026-05-25 12:06:00.000",
+    "updated_utc": "2026-06-08 17:35:43.325",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 2178400.0,
+    "sum_kgs_converted": 21784.0
+  },
+  {
+    "id": "11bf4aec-5819-11f1-0a80-1b800194bdc1",
+    "moment_utc": "2026-05-25 12:06:00.000",
+    "updated_utc": "2026-06-08 17:35:39.682",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 2104400.0,
+    "sum_kgs_converted": 21044.0
+  },
+  {
+    "id": "11faa41c-5819-11f1-0a80-1b800194be10",
+    "moment_utc": "2026-05-25 12:06:00.000",
+    "updated_utc": "2026-06-08 17:35:41.962",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 2178400.0,
+    "sum_kgs_converted": 21784.0
+  },
+  {
+    "id": "12cf4bc2-5819-11f1-0a80-1b800194becf",
+    "moment_utc": "2026-05-25 12:06:00.000",
+    "updated_utc": "2026-06-08 17:35:41.487",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 2104400.0,
+    "sum_kgs_converted": 21044.0
+  },
+  {
+    "id": "13529015-46a6-11f1-0a80-103e001a2ca1",
+    "moment_utc": "2026-05-03 07:10:00.000",
+    "updated_utc": "2026-06-15 13:50:58.802",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 58240.0,
+    "sum_kgs_converted": 52416.0
+  },
+  {
+    "id": "139adce7-492e-11f1-0a80-105200c09128",
+    "moment_utc": "2026-05-06 12:29:00.000",
+    "updated_utc": "2026-05-26 07:59:53.197",
+    "date_bishkek": "2026-05-06",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 511570.0,
+    "sum_kgs_converted": 460413.0
+  },
+  {
+    "id": "14b7d25d-4b58-11f1-0a80-0fc70131e06c",
+    "moment_utc": "2026-05-09 06:35:00.000",
+    "updated_utc": "2026-07-21 14:05:18.656",
+    "date_bishkek": "2026-05-09",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 1055952196,
+    "sum_kgs_converted": 12513033.52
+  },
+  {
+    "id": "1780b23e-5a7f-11f1-0a80-1b890066f1c7",
+    "moment_utc": "2026-05-28 13:22:00.000",
+    "updated_utc": "2026-06-11 17:08:27.082",
+    "date_bishkek": "2026-05-28",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 55974.0,
+    "sum_kgs_converted": 50376.6
+  },
+  {
+    "id": "19c7e203-460a-11f1-0a80-1a370115465d",
+    "moment_utc": "2026-05-02 12:34:00.000",
+    "updated_utc": "2026-05-25 11:49:51.420",
+    "date_bishkek": "2026-05-02",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 535600.0,
+    "sum_kgs_converted": 482040.0
+  },
+  {
+    "id": "1ee335fe-5d9d-11f1-0a80-1b900204613a",
+    "moment_utc": "2026-05-30 12:34:00.000",
+    "updated_utc": "2026-07-06 13:14:57.911",
+    "date_bishkek": "2026-05-30",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 651900.0,
+    "sum_kgs_converted": 586710.0
+  },
+  {
+    "id": "20f779fc-5a4e-11f1-0a80-1b89003e23ef",
+    "moment_utc": "2026-05-28 07:31:00.000",
+    "updated_utc": "2026-06-11 17:08:27.608",
+    "date_bishkek": "2026-05-28",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 394945.0,
+    "sum_kgs_converted": 355450.5
+  },
+  {
+    "id": "23134940-49ea-11f1-0a80-0fc7003c8b59",
+    "moment_utc": "2026-05-07 10:55:00.000",
+    "updated_utc": "2026-06-04 07:50:55.212",
+    "date_bishkek": "2026-05-07",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 3790600.0,
+    "sum_kgs_converted": 37906.0
+  },
+  {
+    "id": "23786744-49ea-11f1-0a80-0fc7003c8c21",
+    "moment_utc": "2026-05-07 10:55:00.000",
+    "updated_utc": "2026-06-04 07:50:32.209",
+    "date_bishkek": "2026-05-07",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 3356100.0,
+    "sum_kgs_converted": 33561.0
+  },
+  {
+    "id": "23a03563-572c-11f1-0a80-1b8001116a16",
+    "moment_utc": "2026-05-24 07:50:00.000",
+    "updated_utc": "2026-06-25 15:04:18.114",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 679200.0,
+    "sum_kgs_converted": 611280.0
+  },
+  {
+    "id": "2443ed56-49ea-11f1-0a80-0fc7003c8ccd",
+    "moment_utc": "2026-05-07 10:55:00.000",
+    "updated_utc": "2026-06-04 07:51:08.267",
+    "date_bishkek": "2026-05-07",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 3356100.0,
+    "sum_kgs_converted": 33561.0
+  },
+  {
+    "id": "24c52526-4e96-11f1-0a80-1885004b5913",
+    "moment_utc": "2026-05-13 09:36:00.000",
+    "updated_utc": "2026-05-20 20:33:42.269",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 200020.0,
+    "sum_kgs_converted": 180018.0
+  },
+  {
+    "id": "258f7179-49ea-11f1-0a80-0fc7003c8d91",
+    "moment_utc": "2026-05-07 10:55:00.000",
+    "updated_utc": "2026-06-04 07:50:44.219",
+    "date_bishkek": "2026-05-07",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 3790600.0,
+    "sum_kgs_converted": 37906.0
+  },
+  {
+    "id": "26c531ab-5828-11f1-0a80-1b8001a0cf03",
+    "moment_utc": "2026-05-25 13:54:00.000",
+    "updated_utc": "2026-06-11 17:06:22.617",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 296310.0,
+    "sum_kgs_converted": 2963.1
+  },
+  {
+    "id": "286cbaa9-4dc6-11f1-0a80-0fc702f1fbb2",
+    "moment_utc": "2026-05-12 08:48:00.000",
+    "updated_utc": "2026-06-14 10:28:20.290",
+    "date_bishkek": "2026-05-12",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 74696100,
+    "sum_kgs_converted": 746961.0
+  },
+  {
+    "id": "29511a09-46b3-11f1-0a80-103e00209816",
+    "moment_utc": "2026-05-03 08:44:00.000",
+    "updated_utc": "2026-05-12 21:01:49.571",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 33360771,
+    "sum_kgs_converted": 398661.21
+  },
+  {
+    "id": "34a3ae9b-4e9c-11f1-0a80-18850050c5dc",
+    "moment_utc": "2026-05-13 10:20:00.000",
+    "updated_utc": "2026-06-02 10:24:10.120",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 4462200.0,
+    "sum_kgs_converted": 44622.0
+  },
+  {
+    "id": "34ba9289-49f0-11f1-0a80-0fc70040c7f4",
+    "moment_utc": "2026-05-07 11:39:00.000",
+    "updated_utc": "2026-05-14 07:43:13.569",
+    "date_bishkek": "2026-05-07",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 53346657,
+    "sum_kgs_converted": 632157.89
+  },
+  {
+    "id": "34ca037a-572f-11f1-0a80-1b800113010e",
+    "moment_utc": "2026-05-24 08:12:00.000",
+    "updated_utc": "2026-05-28 12:13:52.784",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 173160.0,
+    "sum_kgs_converted": 155844.0
+  },
+  {
+    "id": "351cecb8-5b25-11f1-0a80-1b90003f14dd",
+    "moment_utc": "2026-05-29 09:11:00.000",
+    "updated_utc": "2026-06-11 20:33:08.390",
+    "date_bishkek": "2026-05-29",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 354800.0,
+    "sum_kgs_converted": 3548.0
+  },
+  {
+    "id": "37d65e7e-58bd-11f1-0a80-1b8001fc14ca",
+    "moment_utc": "2026-05-26 07:41:00.000",
+    "updated_utc": "2026-06-15 10:25:12.066",
+    "date_bishkek": "2026-05-26",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 2360862.0,
+    "sum_kgs_converted": 29864.9
+  },
+  {
+    "id": "38ab3f90-5746-11f1-0a80-1b80011fb5a3",
+    "moment_utc": "2026-05-24 10:57:00.000",
+    "updated_utc": "2026-05-26 13:42:52.572",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 8460975.0,
+    "sum_kgs_converted": 101531.7
+  },
+  {
+    "id": "39f47691-543b-11f1-0a80-1b7a00525695",
+    "moment_utc": "2026-05-20 14:01:00.000",
+    "updated_utc": "2026-07-21 14:05:43.577",
+    "date_bishkek": "2026-05-20",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 566195624,
+    "sum_kgs_converted": 6794347.49
+  },
+  {
+    "id": "3cde7e85-5745-11f1-0a80-1b80011f4928",
+    "moment_utc": "2026-05-24 10:50:00.000",
+    "updated_utc": "2026-07-07 10:49:15.986",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 5277700.0,
+    "sum_kgs_converted": 52777.0
+  },
+  {
+    "id": "3d623956-451d-11f1-0a80-1a37009b2751",
+    "moment_utc": "2026-05-01 08:18:00.000",
+    "updated_utc": "2026-06-15 13:50:30.738",
+    "date_bishkek": "2026-05-01",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 1852720.0,
+    "sum_kgs_converted": 1667448.0
+  },
+  {
+    "id": "3ede27a8-5b2b-11f1-0a80-1b900043f8ea",
+    "moment_utc": "2026-05-29 09:54:00.000",
+    "updated_utc": "2026-06-23 14:11:13.525",
+    "date_bishkek": "2026-05-29",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 5907600.0,
+    "sum_kgs_converted": 59076.0
+  },
+  {
+    "id": "3f7c96ac-4c30-11f1-0a80-0fc701c8a144",
+    "moment_utc": "2026-05-10 08:22:00.000",
+    "updated_utc": "2026-05-15 08:02:32.510",
+    "date_bishkek": "2026-05-10",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 14475165,
+    "sum_kgs_converted": 171530.71
+  },
+  {
+    "id": "409e746e-483b-11f1-0a80-1052002f9170",
+    "moment_utc": "2026-05-05 07:31:00.000",
+    "updated_utc": "2026-06-03 11:58:55.522",
+    "date_bishkek": "2026-05-05",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 7086240.0,
+    "sum_kgs_converted": 70862.4
+  },
+  {
+    "id": "413cbc1e-4c30-11f1-0a80-0fc701c8a407",
+    "moment_utc": "2026-05-10 08:22:00.000",
+    "updated_utc": "2026-07-25 09:10:44.234",
+    "date_bishkek": "2026-05-10",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 162962.0,
+    "sum_kgs_converted": 146665.8
+  },
+  {
+    "id": "428b9924-5738-11f1-0a80-1b80011801bc",
+    "moment_utc": "2026-05-24 09:17:00.000",
+    "updated_utc": "2026-05-28 07:46:57.097",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 3777312.0,
+    "sum_kgs_converted": 47783.0
+  },
+  {
+    "id": "42c2fcdf-57f7-11f1-0a80-1b80017c852c",
+    "moment_utc": "2026-05-25 08:04:00.000",
+    "updated_utc": "2026-06-23 14:19:29.802",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 2097580.0,
+    "sum_kgs_converted": 1887822.0
+  },
+  {
+    "id": "42f5a037-4d1d-11f1-0a80-0fc70272fe09",
+    "moment_utc": "2026-05-11 12:39:00.000",
+    "updated_utc": "2026-06-11 20:30:50.913",
+    "date_bishkek": "2026-05-11",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 135606.0,
+    "sum_kgs_converted": 122045.4
+  },
+  {
+    "id": "43c441b7-5293-11f1-0a80-145c02151b8f",
+    "moment_utc": "2026-05-18 11:26:00.000",
+    "updated_utc": "2026-06-02 10:24:48.021",
+    "date_bishkek": "2026-05-18",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 12672130,
+    "sum_kgs_converted": 126721.3
+  },
+  {
+    "id": "47f0935d-4eb7-11f1-0a80-188500690586",
+    "moment_utc": "2026-05-13 13:34:00.000",
+    "updated_utc": "2026-05-20 20:33:43.821",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 38270.0,
+    "sum_kgs_converted": 34443.0
+  },
+  {
+    "id": "4b643db7-5822-11f1-0a80-1b80019ca4ce",
+    "moment_utc": "2026-05-25 13:12:00.000",
+    "updated_utc": "2026-07-06 13:14:57.911",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 3589478.0,
+    "sum_kgs_converted": 3230530.2
+  },
+  {
+    "id": "4ec09bec-4df8-11f1-0a80-1c8a0053cab5",
+    "moment_utc": "2026-05-12 14:44:00.000",
+    "updated_utc": "2026-05-12 14:48:11.442",
+    "date_bishkek": "2026-05-12",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 165000000,
+    "sum_kgs_converted": 1980000.0
+  },
+  {
+    "id": "4f0bf4b7-4a9c-11f1-0a80-0fc700a18baf",
+    "moment_utc": "2026-05-08 08:11:00.000",
+    "updated_utc": "2026-07-01 10:46:22.928",
+    "date_bishkek": "2026-05-08",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 163767083,
+    "sum_kgs_converted": 1940639.93
+  },
+  {
+    "id": "5062ccb0-5690-11f1-0a80-1b8000c01569",
+    "moment_utc": "2026-05-23 13:15:00.000",
+    "updated_utc": "2026-06-23 14:12:14.094",
+    "date_bishkek": "2026-05-23",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 213747840,
+    "sum_kgs_converted": 2137478.4
+  },
+  {
+    "id": "54dffae5-5824-11f1-0a80-1b80019e0579",
+    "moment_utc": "2026-05-25 13:27:00.000",
+    "updated_utc": "2026-06-08 17:35:44.091",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 31788520,
+    "sum_kgs_converted": 317885.2
+  },
+  {
+    "id": "5598488e-4789-11f1-0a80-103e0090249b",
+    "moment_utc": "2026-05-04 10:17:00.000",
+    "updated_utc": "2026-06-10 11:58:05.154",
+    "date_bishkek": "2026-05-04",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 4275200.0,
+    "sum_kgs_converted": 42752.0
+  },
+  {
+    "id": "586f2931-5754-11f1-0a80-1b8001287b03",
+    "moment_utc": "2026-05-24 12:38:00.000",
+    "updated_utc": "2026-06-29 10:24:30.491",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 380800.0,
+    "sum_kgs_converted": 342720.0
+  },
+  {
+    "id": "5919e98b-5017-11f1-0a80-145c0043b854",
+    "moment_utc": "2026-05-15 07:34:00.000",
+    "updated_utc": "2026-06-11 20:31:57.438",
+    "date_bishkek": "2026-05-15",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 22500.0,
+    "sum_kgs_converted": 20250.0
+  },
+  {
+    "id": "5a394a99-49fa-11f1-0a80-0fc700483bac",
+    "moment_utc": "2026-05-07 12:51:00.000",
+    "updated_utc": "2026-06-18 10:20:54.244",
+    "date_bishkek": "2026-05-07",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 583753.0,
+    "sum_kgs_converted": 525377.7
+  },
+  {
+    "id": "5df4c72b-4e89-11f1-0a80-18850041184a",
+    "moment_utc": "2026-05-13 08:05:00.000",
+    "updated_utc": "2026-06-03 11:58:55.522",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 1129950.0,
+    "sum_kgs_converted": 11299.5
+  },
+  {
+    "id": "626b5b8a-4c53-11f1-0a80-0fc701e30c2f",
+    "moment_utc": "2026-05-10 12:34:00.000",
+    "updated_utc": "2026-06-23 14:17:28.132",
+    "date_bishkek": "2026-05-10",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 330650.0,
+    "sum_kgs_converted": 297585.0
+  },
+  {
+    "id": "6358eddd-4d20-11f1-0a80-0fc70275c603",
+    "moment_utc": "2026-05-11 13:01:00.000",
+    "updated_utc": "2026-06-11 20:30:50.342",
+    "date_bishkek": "2026-05-11",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 64449000,
+    "sum_kgs_converted": 644490.0
+  },
+  {
+    "id": "6422a47f-4518-11f1-0a80-1a370098d619",
+    "moment_utc": "2026-05-01 07:44:00.000",
+    "updated_utc": "2026-06-15 11:25:46.703",
+    "date_bishkek": "2026-05-01",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 315974430,
+    "sum_kgs_converted": 3159744.3
+  },
+  {
+    "id": "66d202e6-5369-11f1-0a80-1b7500625165",
+    "moment_utc": "2026-05-19 12:59:00.000",
+    "updated_utc": "2026-06-16 07:10:28.564",
+    "date_bishkek": "2026-05-19",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 2851918.0,
+    "sum_kgs_converted": 28519.18
+  },
+  {
+    "id": "6afe8854-46a7-11f1-0a80-103e001ad1ff",
+    "moment_utc": "2026-05-03 07:20:00.000",
+    "updated_utc": "2026-05-25 07:54:00.353",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 220940.0,
+    "sum_kgs_converted": 198846.0
+  },
+  {
+    "id": "6b7fbd8b-5434-11f1-0a80-1b7a004d7ba3",
+    "moment_utc": "2026-05-20 13:12:00.000",
+    "updated_utc": "2026-06-11 18:56:51.581",
+    "date_bishkek": "2026-05-20",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 4020000.0,
+    "sum_kgs_converted": 40200.0
+  },
+  {
+    "id": "6d06e7e3-5736-11f1-0a80-1b80011700fc",
+    "moment_utc": "2026-05-24 09:04:00.000",
+    "updated_utc": "2026-05-25 19:46:52.919",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 7229500.0,
+    "sum_kgs_converted": 72295.0
+  },
+  {
+    "id": "6ea45861-52a6-11f1-0a80-145c02283f0b",
+    "moment_utc": "2026-05-18 13:43:00.000",
+    "updated_utc": "2026-06-15 10:30:17.628",
+    "date_bishkek": "2026-05-18",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 3443000.0,
+    "sum_kgs_converted": 34430.0
+  },
+  {
+    "id": "6fc2114e-58d4-11f1-0a80-1b80020da603",
+    "moment_utc": "2026-05-26 10:28:00.000",
+    "updated_utc": "2026-07-11 15:11:58.112",
+    "date_bishkek": "2026-05-26",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 247481.0,
+    "sum_kgs_converted": 222732.9
+  },
+  {
+    "id": "701e455e-4e9a-11f1-0a80-1885004f28ea",
+    "moment_utc": "2026-05-13 10:07:00.000",
+    "updated_utc": "2026-06-15 13:50:03.597",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 379820.0,
+    "sum_kgs_converted": 341838.0
+  },
+  {
+    "id": "7530e45a-4e89-11f1-0a80-188500412aa5",
+    "moment_utc": "2026-05-13 08:06:00.000",
+    "updated_utc": "2026-06-03 11:58:55.522",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 2808000.0,
+    "sum_kgs_converted": 28080.0
+  },
+  {
+    "id": "7561d085-492d-11f1-0a80-105200c043e6",
+    "moment_utc": "2026-05-06 12:25:00.000",
+    "updated_utc": "2026-06-23 14:17:28.132",
+    "date_bishkek": "2026-05-06",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 567120.0,
+    "sum_kgs_converted": 510408.0
+  },
+  {
+    "id": "77d61c9b-46b6-11f1-0a80-103e0022488b",
+    "moment_utc": "2026-05-03 09:08:00.000",
+    "updated_utc": "2026-05-14 12:15:19.967",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 126990.0,
+    "sum_kgs_converted": 1269.9
+  },
+  {
+    "id": "795fc55e-46a5-11f1-0a80-103e0019ee50",
+    "moment_utc": "2026-05-03 07:06:00.000",
+    "updated_utc": "2026-06-04 08:11:28.553",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 94500.0,
+    "sum_kgs_converted": 85050.0
+  },
+  {
+    "id": "79c3e19c-4c5a-11f1-0a80-0fc701e90ee3",
+    "moment_utc": "2026-05-10 13:24:00.000",
+    "updated_utc": "2026-06-11 18:54:18.193",
+    "date_bishkek": "2026-05-10",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 2974200.0,
+    "sum_kgs_converted": 29742.0
+  },
+  {
+    "id": "7a0b9208-4a9c-11f1-0a80-0fc700a1aa28",
+    "moment_utc": "2026-05-08 08:12:00.000",
+    "updated_utc": "2026-07-01 10:45:37.791",
+    "date_bishkek": "2026-05-08",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 296086480,
+    "sum_kgs_converted": 3508624.79
+  },
+  {
+    "id": "7f2863cb-5a7f-11f1-0a80-1b8900675204",
+    "moment_utc": "2026-05-28 13:25:00.000",
+    "updated_utc": "2026-06-11 17:08:26.009",
+    "date_bishkek": "2026-05-28",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 41790.0,
+    "sum_kgs_converted": 37611.0
+  },
+  {
+    "id": "80a8f42f-4d1d-11f1-0a80-0fc702733065",
+    "moment_utc": "2026-05-11 12:40:00.000",
+    "updated_utc": "2026-06-11 20:30:52.888",
+    "date_bishkek": "2026-05-11",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 267030.0,
+    "sum_kgs_converted": 240327.0
+  },
+  {
+    "id": "874e961f-573b-11f1-0a80-1b800119c33c",
+    "moment_utc": "2026-05-24 09:41:00.000",
+    "updated_utc": "2026-05-29 10:27:01.885",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 14565250,
+    "sum_kgs_converted": 174783.0
+  },
+  {
+    "id": "8a8fb2c7-57f7-11f1-0a80-1b80017ca06b",
+    "moment_utc": "2026-05-25 08:06:00.000",
+    "updated_utc": "2026-07-07 11:46:02.117",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 5281200.0,
+    "sum_kgs_converted": 52812.0
+  },
+  {
+    "id": "8e9113e3-4e89-11f1-0a80-188500414311",
+    "moment_utc": "2026-05-13 08:06:00.000",
+    "updated_utc": "2026-06-03 11:58:55.522",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 5769900.0,
+    "sum_kgs_converted": 57699.0
+  },
+  {
+    "id": "8efc2256-5a4a-11f1-0a80-1b89003b6b49",
+    "moment_utc": "2026-05-28 07:06:00.000",
+    "updated_utc": "2026-06-29 07:39:22.943",
+    "date_bishkek": "2026-05-28",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 22118400,
+    "sum_kgs_converted": 221184.0
+  },
+  {
+    "id": "8f08fc62-476a-11f1-0a80-143b00082a5d",
+    "moment_utc": "2026-05-04 06:37:00.000",
+    "updated_utc": "2026-06-15 11:26:41.651",
+    "date_bishkek": "2026-05-04",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 122106240,
+    "sum_kgs_converted": 1221062.4
+  },
+  {
+    "id": "98699cbf-5827-11f1-0a80-1b8001a04598",
+    "moment_utc": "2026-05-25 13:50:00.000",
+    "updated_utc": "2026-07-07 11:46:02.117",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 4312900.0,
+    "sum_kgs_converted": 43129.0
+  },
+  {
+    "id": "996ad755-5827-11f1-0a80-1b8001a046a5",
+    "moment_utc": "2026-05-25 13:50:00.000",
+    "updated_utc": "2026-07-07 11:46:02.117",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 4849300.0,
+    "sum_kgs_converted": 48493.0
+  },
+  {
+    "id": "9bc31155-46b6-11f1-0a80-103e00224b04",
+    "moment_utc": "2026-05-03 09:09:00.000",
+    "updated_utc": "2026-06-15 13:50:30.738",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 611760.0,
+    "sum_kgs_converted": 550584.0
+  },
+  {
+    "id": "a63e50f2-4848-11f1-0a80-10520037a70e",
+    "moment_utc": "2026-05-05 09:07:00.000",
+    "updated_utc": "2026-06-11 15:19:40.609",
+    "date_bishkek": "2026-05-05",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 486360.0,
+    "sum_kgs_converted": 437724.0
+  },
+  {
+    "id": "a7c439bf-57f3-11f1-0a80-1b80017a946e",
+    "moment_utc": "2026-05-25 07:39:00.000",
+    "updated_utc": "2026-06-30 08:12:21.320",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 16416000,
+    "sum_kgs_converted": 164160.0
+  },
+  {
+    "id": "a7e0c5c2-51a3-11f1-0a80-145c0169ef86",
+    "moment_utc": "2026-05-17 06:51:00.000",
+    "updated_utc": "2026-06-11 20:32:31.763",
+    "date_bishkek": "2026-05-17",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 507280.0,
+    "sum_kgs_converted": 456552.0
+  },
+  {
+    "id": "a99a1193-4c58-11f1-0a80-0fc701e7a54a",
+    "moment_utc": "2026-05-10 13:11:00.000",
+    "updated_utc": "2026-05-19 08:26:46.383",
+    "date_bishkek": "2026-05-10",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 30822586,
+    "sum_kgs_converted": 365247.64
+  },
+  {
+    "id": "ab7fd0e0-57f7-11f1-0a80-1b80017cb670",
+    "moment_utc": "2026-05-25 08:07:00.000",
+    "updated_utc": "2026-07-07 11:46:02.117",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 7642900.0,
+    "sum_kgs_converted": 76429.0
+  },
+  {
+    "id": "ae12f753-4534-11f1-0a80-1a3700a868ef",
+    "moment_utc": "2026-05-01 11:06:00.000",
+    "updated_utc": "2026-06-03 11:58:55.522",
+    "date_bishkek": "2026-05-01",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 7551000.0,
+    "sum_kgs_converted": 75510.0
+  },
+  {
+    "id": "af91f13f-4a9c-11f1-0a80-0fc700a1d82c",
+    "moment_utc": "2026-05-08 08:13:00.000",
+    "updated_utc": "2026-07-01 10:46:22.928",
+    "date_bishkek": "2026-05-08",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 295568328,
+    "sum_kgs_converted": 3502484.69
+  },
+  {
+    "id": "b187b6b7-49ea-11f1-0a80-0fc7003cecc5",
+    "moment_utc": "2026-05-07 10:59:00.000",
+    "updated_utc": "2026-06-10 12:07:01.102",
+    "date_bishkek": "2026-05-07",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 2942200.0,
+    "sum_kgs_converted": 29422.0
+  },
+  {
+    "id": "b2291fc5-5b14-11f1-0a80-1b900032bf32",
+    "moment_utc": "2026-05-29 07:13:00.000",
+    "updated_utc": "2026-06-11 20:33:08.038",
+    "date_bishkek": "2026-05-29",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 73600.0,
+    "sum_kgs_converted": 736.0
+  },
+  {
+    "id": "b2e80c62-4a9a-11f1-0a80-0fc700a0647c",
+    "moment_utc": "2026-05-08 07:59:00.000",
+    "updated_utc": "2026-06-15 11:27:27.826",
+    "date_bishkek": "2026-05-08",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 38969800,
+    "sum_kgs_converted": 389698.0
+  },
+  {
+    "id": "b8ab11e7-4845-11f1-0a80-10520035e1e8",
+    "moment_utc": "2026-05-05 08:46:00.000",
+    "updated_utc": "2026-05-18 07:04:59.400",
+    "date_bishkek": "2026-05-05",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 3877200.0,
+    "sum_kgs_converted": 38772.0
+  },
+  {
+    "id": "ba02c148-46a7-11f1-0a80-103e001ae920",
+    "moment_utc": "2026-05-03 07:22:00.000",
+    "updated_utc": "2026-06-03 11:58:55.522",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 3494250.0,
+    "sum_kgs_converted": 34942.5
+  },
+  {
+    "id": "ba1d8419-4e85-11f1-0a80-1885003e78d1",
+    "moment_utc": "2026-05-13 07:39:00.000",
+    "updated_utc": "2026-06-20 14:13:04.878",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 556708.0,
+    "sum_kgs_converted": 501037.2
+  },
+  {
+    "id": "c29992db-57f6-11f1-0a80-1b80017c3633",
+    "moment_utc": "2026-05-25 08:01:00.000",
+    "updated_utc": "2026-05-26 13:38:25.211",
+    "date_bishkek": "2026-05-25",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 2596489.0,
+    "sum_kgs_converted": 32845.59
+  },
+  {
+    "id": "c2eb3896-501c-11f1-0a80-145c0048205c",
+    "moment_utc": "2026-05-15 08:13:00.000",
+    "updated_utc": "2026-06-11 20:31:57.745",
+    "date_bishkek": "2026-05-15",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 230919.0,
+    "sum_kgs_converted": 2309.19
+  },
+  {
+    "id": "c62b1d8c-5729-11f1-0a80-1b8001102ff6",
+    "moment_utc": "2026-05-24 07:33:00.000",
+    "updated_utc": "2026-07-06 13:10:13.704",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 5470000.0,
+    "sum_kgs_converted": 4923000.0
+  },
+  {
+    "id": "c6c06a63-5729-11f1-0a80-1b8001103040",
+    "moment_utc": "2026-05-24 07:33:00.000",
+    "updated_utc": "2026-07-06 13:10:13.704",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 728140.0,
+    "sum_kgs_converted": 655326.0
+  },
+  {
+    "id": "c723de57-46b3-11f1-0a80-103e0020ec5e",
+    "moment_utc": "2026-05-03 08:48:00.000",
+    "updated_utc": "2026-06-15 11:35:06.783",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 12084075,
+    "sum_kgs_converted": 120840.75
+  },
+  {
+    "id": "caae9380-4b8d-11f1-0a80-0fc701596a8a",
+    "moment_utc": "2026-05-09 12:59:00.000",
+    "updated_utc": "2026-06-29 08:06:55.242",
+    "date_bishkek": "2026-05-09",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 444480528,
+    "sum_kgs_converted": 5267094.26
+  },
+  {
+    "id": "cb12ae58-566e-11f1-0a80-1b8000aabb5d",
+    "moment_utc": "2026-05-23 09:15:00.000",
+    "updated_utc": "2026-06-11 15:21:14.169",
+    "date_bishkek": "2026-05-23",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 69576.0,
+    "sum_kgs_converted": 62618.4
+  },
+  {
+    "id": "ccd59bcb-4a9c-11f1-0a80-0fc700a1e7c1",
+    "moment_utc": "2026-05-08 08:14:00.000",
+    "updated_utc": "2026-07-01 11:59:59.543",
+    "date_bishkek": "2026-05-08",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 257890573,
+    "sum_kgs_converted": 3056003.29
+  },
+  {
+    "id": "d259fa63-4c2e-11f1-0a80-0fc701c7ac65",
+    "moment_utc": "2026-05-10 08:12:00.000",
+    "updated_utc": "2026-06-11 18:51:54.470",
+    "date_bishkek": "2026-05-10",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 4651965.0,
+    "sum_kgs_converted": 46519.65
+  },
+  {
+    "id": "d2a93924-4c2e-11f1-0a80-0fc701c7acd4",
+    "moment_utc": "2026-05-10 08:12:00.000",
+    "updated_utc": "2026-06-11 18:51:55.092",
+    "date_bishkek": "2026-05-10",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 6059454.0,
+    "sum_kgs_converted": 60594.54
+  },
+  {
+    "id": "d36e9b89-4c2e-11f1-0a80-0fc701c7adae",
+    "moment_utc": "2026-05-10 08:12:00.000",
+    "updated_utc": "2026-06-11 18:51:53.946",
+    "date_bishkek": "2026-05-10",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 5184120.0,
+    "sum_kgs_converted": 51841.2
+  },
+  {
+    "id": "d39658bd-573c-11f1-0a80-1b80011a7b01",
+    "moment_utc": "2026-05-24 09:50:00.000",
+    "updated_utc": "2026-06-30 08:24:39.060",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 14620166,
+    "sum_kgs_converted": 182752.08
+  },
+  {
+    "id": "d6da67ac-49d5-11f1-0a80-0fc7002febc0",
+    "moment_utc": "2026-05-07 08:30:00.000",
+    "updated_utc": "2026-05-29 10:25:49.503",
+    "date_bishkek": "2026-05-07",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 1284210.0,
+    "sum_kgs_converted": 12842.1
+  },
+  {
+    "id": "d7e49406-46b0-11f1-0a80-103e001f87da",
+    "moment_utc": "2026-05-03 08:27:00.000",
+    "updated_utc": "2026-05-26 07:44:59.481",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 80803800,
+    "sum_kgs_converted": 808038.0
+  },
+  {
+    "id": "d8086087-5a7e-11f1-0a80-1b890066af0f",
+    "moment_utc": "2026-05-28 13:20:00.000",
+    "updated_utc": "2026-06-25 15:07:20.882",
+    "date_bishkek": "2026-05-28",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 2284425.0,
+    "sum_kgs_converted": 2055982.5
+  },
+  {
+    "id": "d8225690-46b0-11f1-0a80-103e001f8806",
+    "moment_utc": "2026-05-03 08:27:00.000",
+    "updated_utc": "2026-07-22 10:55:29.998",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 33783840,
+    "sum_kgs_converted": 337838.4
+  },
+  {
+    "id": "d8ab1009-46b0-11f1-0a80-103e001f885c",
+    "moment_utc": "2026-05-03 08:27:00.000",
+    "updated_utc": "2026-05-12 21:01:49.571",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 20977796,
+    "sum_kgs_converted": 250684.66
+  },
+  {
+    "id": "d8df2a13-46b0-11f1-0a80-103e001f8894",
+    "moment_utc": "2026-05-03 08:27:00.000",
+    "updated_utc": "2026-05-18 08:52:59.970",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 2343600.0,
+    "sum_kgs_converted": 23436.0
+  },
+  {
+    "id": "da3e83b9-5a4a-11f1-0a80-1b89003ba2c5",
+    "moment_utc": "2026-05-28 07:08:00.000",
+    "updated_utc": "2026-07-06 13:11:48.589",
+    "date_bishkek": "2026-05-28",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 85725.0,
+    "sum_kgs_converted": 77152.5
+  },
+  {
+    "id": "daa802f9-51d9-11f1-0a80-145c01924a9b",
+    "moment_utc": "2026-05-17 13:19:00.000",
+    "updated_utc": "2026-07-07 11:46:02.117",
+    "date_bishkek": "2026-05-17",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 24357600,
+    "sum_kgs_converted": 243576.0
+  },
+  {
+    "id": "dab6a7e5-4e94-11f1-0a80-1885004a24ff",
+    "moment_utc": "2026-05-13 09:27:00.000",
+    "updated_utc": "2026-06-11 15:19:40.609",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 673480.0,
+    "sum_kgs_converted": 606132.0
+  },
+  {
+    "id": "de613b07-536c-11f1-0a80-1b7500650d12",
+    "moment_utc": "2026-05-19 13:24:00.000",
+    "updated_utc": "2026-06-30 08:25:32.086",
+    "date_bishkek": "2026-05-19",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 238500.0,
+    "sum_kgs_converted": 2385.0
+  },
+  {
+    "id": "e2bb857d-5737-11f1-0a80-1b800117bd5f",
+    "moment_utc": "2026-05-24 09:14:00.000",
+    "updated_utc": "2026-06-02 10:24:48.021",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 4736610.0,
+    "sum_kgs_converted": 47366.1
+  },
+  {
+    "id": "e68de4e4-46a8-11f1-0a80-103e001b8262",
+    "moment_utc": "2026-05-03 07:31:00.000",
+    "updated_utc": "2026-06-23 14:17:28.132",
+    "date_bishkek": "2026-05-03",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 5472500.0,
+    "sum_kgs_converted": 4925250.0
+  },
+  {
+    "id": "e98a7030-58c5-11f1-0a80-1b80020269b2",
+    "moment_utc": "2026-05-31 08:44:00.000",
+    "updated_utc": "2026-06-10 10:47:10.533",
+    "date_bishkek": "2026-05-31",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 111324709,
+    "sum_kgs_converted": 1335896.51
+  },
+  {
+    "id": "ec893c20-536b-11f1-0a80-1b7500643769",
+    "moment_utc": "2026-05-19 13:17:00.000",
+    "updated_utc": "2026-06-19 15:31:39.202",
+    "date_bishkek": "2026-05-19",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 6290640.0,
+    "sum_kgs_converted": 62906.4
+  },
+  {
+    "id": "ee5ed685-5338-11f1-0a80-1b75003bf57c",
+    "moment_utc": "2026-05-19 07:12:00.000",
+    "updated_utc": "2026-06-08 11:58:34.004",
+    "date_bishkek": "2026-05-19",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 35773460,
+    "sum_kgs_converted": 357734.6
+  },
+  {
+    "id": "eebbb88b-5a77-11f1-0a80-1b890060184b",
+    "moment_utc": "2026-05-28 12:30:00.000",
+    "updated_utc": "2026-07-21 12:16:51.661",
+    "date_bishkek": "2026-05-28",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 239200.0,
+    "sum_kgs_converted": 215280.0
+  },
+  {
+    "id": "f4e54b87-4b6d-11f1-0a80-0fc70140e44c",
+    "moment_utc": "2026-05-09 09:11:00.000",
+    "updated_utc": "2026-07-06 13:12:25.590",
+    "date_bishkek": "2026-05-09",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 474300.0,
+    "sum_kgs_converted": 4743.0
+  },
+  {
+    "id": "f662554b-5b2d-11f1-0a80-1b9000465479",
+    "moment_utc": "2026-05-29 10:13:00.000",
+    "updated_utc": "2026-06-11 07:07:26.547",
+    "date_bishkek": "2026-05-29",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 6823800.0,
+    "sum_kgs_converted": 68238.0
+  },
+  {
+    "id": "f98f1b07-4e88-11f1-0a80-18850040cf60",
+    "moment_utc": "2026-05-13 08:02:00.000",
+    "updated_utc": "2026-06-29 08:07:22.702",
+    "date_bishkek": "2026-05-13",
+    "currency_id": "9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+    "sum_minor": 213453750,
+    "sum_kgs_converted": 2561445.0
+  },
+  {
+    "id": "f9d0d1dc-501a-11f1-0a80-145c0046d43a",
+    "moment_utc": "2026-05-15 08:00:00.000",
+    "updated_utc": "2026-06-11 20:31:58.114",
+    "date_bishkek": "2026-05-15",
+    "currency_id": "1fb4954e-fa31-11ee-0a80-08920071069f",
+    "sum_minor": 35964000,
+    "sum_kgs_converted": 359640.0
+  },
+  {
+    "id": "ff973d47-5731-11f1-0a80-1b8001148928",
+    "moment_utc": "2026-05-24 08:32:00.000",
+    "updated_utc": "2026-06-29 07:42:00.250",
+    "date_bishkek": "2026-05-24",
+    "currency_id": "3ea7aa1b-2c68-11ef-0a80-117500188e00",
+    "sum_minor": 1400210.0,
+    "sum_kgs_converted": 1260189.0
+  }
+]
