@@ -1,0 +1,123 @@
+=== ЯКОРЬ НАЧАЛА ===
+Sat Aug  1 08:06:56 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== A. sha256 всех четырёх версий файла ===
+src/main.py                                                0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59
+src/main.py.pre-e1t3-mech-fx.bak                           7a5d8dcd7866a887eb940accab709487eb27cba42a3446478b83678c67fa181d
+src/main.py.bak                                            86d743e5e85d8162f8d4314b5ef1c8f33b2fce67ba084e275cfb6e8147ac0eed
+cf-finance/main.py                                         7a5d8dcd7866a887eb940accab709487eb27cba42a3446478b83678c67fa181d
+
+=== B. Умножение на курс — ПЕЧАТАЕМ СТРОКИ, не метку (ADR-044) ===
+--- /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/src/main.py ---
+68:                        * ((row.get("rate") or {}).get("value") or 1.0)
+--- /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/src/main.py.pre-e1t3-mech-fx.bak ---
+  (нет ни одного совпадения)
+--- /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/src/main.py.bak ---
+  (нет ни одного совпадения)
+--- /Users/ilyasbazarov/Desktop/msklad_project/holika/reference/code/cf-finance/main.py ---
+  (нет ни одного совпадения)
+
+=== C. Все места вычисления sum_kgs в задеплоенном файле ===
+66:                    "sum_kgs": float(
+93:                bigquery.SchemaField("sum_kgs", "FLOAT64"),
+110:           T.payment_purpose = S.payment_purpose, T.sum_kgs = S.sum_kgs, T._loaded_at = S._loaded_at
+114:           payment_purpose, sum_kgs, _loaded_at
+118:           S.payment_purpose, S.sum_kgs, S._loaded_at
+--- каждое место с контекстом 6 строк ---
+66:                    "sum_kgs": float(
+67-                        ((row.get("sum") or 0) / 100.0)
+68-                        * ((row.get("rate") or {}).get("value") or 1.0)
+69-                    ),
+70-                    "_loaded_at": datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+71-                })
+72-            url = resp_json.get("meta", {}).get("nextHref")
+--
+93:                bigquery.SchemaField("sum_kgs", "FLOAT64"),
+94-                bigquery.SchemaField("_loaded_at", "TIMESTAMP"),
+95-            ]
+96-        )
+97-        bq.load_table_from_json(records, STG_TABLE, job_config=job_config).result()
+98-        
+99-        print("Running MERGE...")
+
+=== D. Чем задеплоенный main.py отличается от .pre-e1t3-mech-fx.bak ===
+различия есть, полный текст в diff_bak_vs_deployed.txt:
+--- /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/src/main.py.pre-e1t3-mech-fx.bak	2026-07-14 17:09:38
++++ /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/src/main.py	2026-07-20 15:16:00
+@@ -49,7 +49,6 @@
+                 
+                 expense_id = parse_href(row.get("expenseItem"))
+                 
+-                # Забираем ВСЕ транзакции, чтобы MERGE увидел изменения статусов
+                 records.append({
+                     "payment_id": row.get("id"),
+                     "payment_name": str(row.get("name")) if row.get("name") is not None else None,
+@@ -64,7 +63,10 @@
+                     "sales_channel_id": parse_href(row.get("salesChannel")),
+                     "sales_channel_name": row.get("salesChannel", {}).get("name"),
+                     "payment_purpose": row.get("paymentPurpose"),
+-                    "sum_kgs": float((row.get("sum") or 0) / 100.0),
++                    "sum_kgs": float(
++                        ((row.get("sum") or 0) / 100.0)
++                        * ((row.get("rate") or {}).get("value") or 1.0)
++                    ),
+                     "_loaded_at": datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+                 })
+             url = resp_json.get("meta", {}).get("nextHref")
+
+=== E. Чем задеплоенный main.py отличается от снимка-провенанса в репо ===
+различий строк: 8
+--- первые 60 строк diff ---
+--- /Users/ilyasbazarov/Desktop/msklad_project/holika/reference/code/cf-finance/main.py	2026-07-27 16:22:21
++++ /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/src/main.py	2026-07-20 15:16:00
+@@ -49,7 +49,6 @@
+                 
+                 expense_id = parse_href(row.get("expenseItem"))
+                 
+-                # Забираем ВСЕ транзакции, чтобы MERGE увидел изменения статусов
+                 records.append({
+                     "payment_id": row.get("id"),
+                     "payment_name": str(row.get("name")) if row.get("name") is not None else None,
+@@ -64,7 +63,10 @@
+                     "sales_channel_id": parse_href(row.get("salesChannel")),
+                     "sales_channel_name": row.get("salesChannel", {}).get("name"),
+                     "payment_purpose": row.get("paymentPurpose"),
+-                    "sum_kgs": float((row.get("sum") or 0) / 100.0),
++                    "sum_kgs": float(
++                        ((row.get("sum") or 0) / 100.0)
++                        * ((row.get("rate") or {}).get("value") or 1.0)
++                    ),
+                     "_loaded_at": datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+                 })
+             url = resp_json.get("meta", {}).get("nextHref")
+
+=== F. Расхождение метаданных: ревизия от 07-20, updateTime функции 07-30 ===
+--- сборки Cloud Build за период (кто и когда собирал) ---
+ID                                    CREATE_TIME                STATUS   GENERATION
+c2bb2087-8733-4a94-a5e4-91e7d2f3773c  2026-07-25T12:40:58+00:00  SUCCESS
+5e8b9ed6-90b1-4edf-8f3c-8e32bfa59c5c  2026-07-25T12:08:08+00:00  SUCCESS
+6c45b8a0-d0b6-441f-9b03-6cadabbb8b85  2026-07-25T12:06:10+00:00  SUCCESS
+08a581ba-5382-4742-8a89-9cc915dfd1ab  2026-07-24T17:47:50+00:00  SUCCESS
+b80acc07-8064-411e-a8e6-43dd96dcfc0a  2026-07-24T17:42:45+00:00  SUCCESS
+0c26bfc5-cb2f-4d4c-82ed-b770522e2593  2026-07-22T15:54:44+00:00  SUCCESS
+f352bfe9-7436-44fc-b54d-922f27ae0105  2026-07-22T11:29:30+00:00  SUCCESS
+31cf7c79-4b2d-45e5-b8b7-4530dc57eec5  2026-07-20T15:20:44+00:00  SUCCESS
+8befb69d-07f6-4a32-aa43-4434494b6da3  2026-07-20T15:10:29+00:00  SUCCESS
+fd6ccf76-d0c6-4551-9a32-2521f1922ed1  2026-07-20T15:09:24+00:00  SUCCESS
+
+=== ЯКОРЬ КОНЦА ===
+Sat Aug  1 08:06:59 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
