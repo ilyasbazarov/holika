@@ -1,0 +1,30 @@
+=== Sigma demand.sum конвертированная по суткам (Asia/Bishkek, из moment UTC) ===
+2026-05-01	n=4	sum_kgs=5278812.30
+2026-05-02	n=1	sum_kgs=482040.00
+2026-05-03	n=13	sum_kgs=7787857.43
+2026-05-04	n=2	sum_kgs=1263814.40
+2026-05-05	n=3	sum_kgs=547358.40
+2026-05-06	n=2	sum_kgs=970821.00
+2026-05-07	n=8	sum_kgs=1342733.69
+2026-05-08	n=6	sum_kgs=13179490.70
+2026-05-09	n=4	sum_kgs=17789624.78
+2026-05-10	n=9	sum_kgs=1439807.54
+2026-05-11	n=3	sum_kgs=1006862.40
+2026-05-12	n=2	sum_kgs=2726961.00
+2026-05-13	n=11	sum_kgs=4500308.70
+2026-05-15	n=4	sum_kgs=866319.19
+2026-05-17	n=2	sum_kgs=700128.00
+2026-05-18	n=2	sum_kgs=161151.30
+2026-05-19	n=4	sum_kgs=451545.18
+2026-05-20	n=2	sum_kgs=6834547.49
+2026-05-23	n=2	sum_kgs=2200096.80
+2026-05-24	n=13	sum_kgs=8627646.87
+2026-05-25	n=15	sum_kgs=8414989.09
+2026-05-26	n=2	sum_kgs=252597.80
+2026-05-28	n=7	sum_kgs=3013037.10
+2026-05-29	n=4	sum_kgs=131598.00
+2026-05-30	n=1	sum_kgs=586710.00
+2026-05-31	n=1	sum_kgs=1335896.51
+ИТОГО: n=127 sum_kgs=91892755.66
+PATH: reference/_scratch_PARITY-SALES-DISCRIMINATE_2026-08-01/step2_by_day.json
+PATH: reference/_scratch_PARITY-SALES-DISCRIMINATE_2026-08-01/step2_per_doc.json
