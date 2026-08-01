@@ -1,0 +1,39 @@
+=== date -u (начало) ===
+Sat Aug  1 18:45:27 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== токен прочитан, длина: 40 символов ===
+=== Шаг 2: entity/retaildemand, май-2026 (форма окна как у step5 entity/demand) ===
+=== ключи rows[0] entity/retaildemand (ADR-079 §6 форма логирования) ===
+["accountId","advancePaymentSum","agent","applicable","cashSum","cheque","created","externalCode","files","fiscal","group","id","meta","moment","name","noCashSum","organization","owner","payedSum","positions","prepaymentCashSum","prepaymentNoCashSum","prepaymentQrSum","printed","published","qrSum","rate","retailShift","retailStore","shared","state","store","sum","syncId","taxSystem","updated","vatEnabled","vatIncluded","vatSum"]
+entity/retaildemand: meta.size=506, страниц собрано, offset финальный=600
+entity/retaildemand май-2026: meta.size=506
+entity/retaildemand май-2026: сумма поля sum (сырые минорные единицы) = 118842200.00
+entity/retaildemand май-2026: сумма поля sum, KGS (/100) = 1188422.00
+=== Шаг 3: проверка прочтения 639 = 127 + retaildemand ===
+639 - 127 = 512
+meta.size(entity/retaildemand) = 506
+НЕ СОВПАЛО: 512 != 506
+=== Шаг 4: report/profit/bycounterparty, momentTo симметричный (2026-05-31 23:59:59) ===
+bycounterparty (momentTo симметричный): meta.size=64, offset финальный=100
+report/profit/bycounterparty momentTo=2026-05-31 23:59:59: sellSum сумма = 9323420580.10
+report/profit/bycounterparty momentTo=2026-06-01 00:00:00 (прежний замер, REPORT-FIELDS/PARITY-CHECK-SALES-RETURNS) = 93234205.80
+разность (симметричный - прежний) = 9230186374.30
+=== проверка: токен не в артефактах этого шага ===
+0 совпадений — чисто
+=== date -u (конец) ===
+Sat Aug  1 18:45:37 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
