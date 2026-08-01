@@ -1,0 +1,22 @@
+--- /Users/ilyasbazarov/Desktop/msklad_project/holika/reference/code/cf-finance/main.py	2026-07-27 16:22:21
++++ /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/src/main.py	2026-07-20 15:16:00
+@@ -49,7 +49,6 @@
+                 
+                 expense_id = parse_href(row.get("expenseItem"))
+                 
+-                # Забираем ВСЕ транзакции, чтобы MERGE увидел изменения статусов
+                 records.append({
+                     "payment_id": row.get("id"),
+                     "payment_name": str(row.get("name")) if row.get("name") is not None else None,
+@@ -64,7 +63,10 @@
+                     "sales_channel_id": parse_href(row.get("salesChannel")),
+                     "sales_channel_name": row.get("salesChannel", {}).get("name"),
+                     "payment_purpose": row.get("paymentPurpose"),
+-                    "sum_kgs": float((row.get("sum") or 0) / 100.0),
++                    "sum_kgs": float(
++                        ((row.get("sum") or 0) / 100.0)
++                        * ((row.get("rate") or {}).get("value") or 1.0)
++                    ),
+                     "_loaded_at": datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+                 })
+             url = resp_json.get("meta", {}).get("nextHref")

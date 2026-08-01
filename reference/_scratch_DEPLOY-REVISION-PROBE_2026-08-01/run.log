@@ -1,0 +1,114 @@
+=== ЯКОРЬ НАЧАЛА ===
+Sat Aug  1 08:05:46 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+msklad-bi-prod
+
+=== ШАГ 1. Какая ревизия обслуживает трафик СЕЙЧАС ===
+cf-finance-00012-cik	{'latestRevision': True, 'percent': 100, 'revisionName': 'cf-finance-00012-cik'}
+--- полный список ревизий с долей трафика ---
+NAME                  STATUS  CREATION_TIMESTAMP
+cf-finance-00012-cik  True    2026-07-20T15:21:13.049536Z
+cf-finance-00011-qem  True    2026-07-20T15:10:59.559177Z
+cf-finance-00010-qer  True    2026-07-20T15:09:58.197952Z
+cf-finance-00009-nob  True    2026-07-20T12:05:11.417371Z
+cf-finance-00008-taj  True    2026-07-20T11:58:38.681935Z
+cf-finance-00007-lon  True    2026-07-14T17:29:39.468627Z
+cf-finance-00006-piv  True    2026-06-25T09:14:27.849622Z
+cf-finance-00005-wob  True    2026-06-25T00:35:41.813657Z
+cf-finance-00004-sef  True    2026-06-19T08:29:15.740376Z
+cf-finance-00003-kes  True    2026-06-18T20:16:03.812901Z
+cf-finance-00002-wuf  True    2026-06-18T19:54:47.811401Z
+cf-finance-00001-wiv  True    2026-06-18T19:36:50.157090Z
+
+=== ШАГ 2. Откуда взят исходник задеплоенной сборки ===
+{
+  "buildConfig": {
+    "build": "projects/420804682491/locations/asia-east1/builds/31cf7c79-4b2d-45e5-b8b7-4530dc57eec5",
+    "source": {
+      "storageSource": {
+        "bucket": "gcf-v2-sources-420804682491-asia-east1",
+        "generation": "1784560843778541",
+        "object": "cf-finance/function-source.zip"
+      }
+    }
+  },
+  "serviceConfig": {
+    "revision": "cf-finance-00012-cik"
+  },
+  "updateTime": "2026-07-30T10:04:58.604346800Z"
+}
+bucket=[gcf-v2-sources-420804682491-asia-east1] object=[cf-finance/function-source.zip] generation=[1784560843778541]
+
+=== ШАГ 3. Скачать архив исходников ИМЕННО этой сборки (по generation) ===
+источник: gs://gcf-v2-sources-420804682491-asia-east1/cf-finance/function-source.zip#1784560843778541
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-finance/function-source.zip#1784560843778541 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/function-source.zip
+  
+..........................
+-rw-r--r--@ 1 ilyasbazarov  staff  12490 Aug  1 14:06 /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/function-source.zip
+04c337f4c31cfa3bb63a7c6ffc913f9f52ef387d4001d89ee2ff494fa2d0b202  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/function-source.zip
+
+=== ШАГ 4. Распаковать и посчитать sha256 main.py задеплоенной сборки ===
+requirements.txt
+main.py.pre-e1t3-mech-fx.bak
+__pycache__/main.cpython-312.pyc
+main.py.bak
+patch_main_finance.py
+main.py
+--- sha256 ---
+0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DEPLOY-REVISION-PROBE/reference/_scratch_DEPLOY-REVISION-PROBE_2026-08-01/src/main.py
+
+=== ШАГ 5. Конвертер задеплоенной сборки: есть ли множитель на курс ===
+--- все строки с rate.value / rate[ / rateValue ---
+(совпадений нет)
+--- окрестность строки 69 (контекст 12 строк) ---
+                    "expense_item_id": expense_id,
+                    "expense_item_name": row.get("expenseItem", {}).get("name"),
+                    "agent_id": parse_href(row.get("agent")),
+                    "agent_name": row.get("agent", {}).get("name"),
+                    "project_id": parse_href(row.get("project")),
+                    "project_name": row.get("project", {}).get("name"),
+                    "sales_channel_id": parse_href(row.get("salesChannel")),
+                    "sales_channel_name": row.get("salesChannel", {}).get("name"),
+                    "payment_purpose": row.get("paymentPurpose"),
+                    "sum_kgs": float(
+                        ((row.get("sum") or 0) / 100.0)
+                        * ((row.get("rate") or {}).get("value") or 1.0)
+                    ),
+                    "_loaded_at": datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+                })
+            url = resp_json.get("meta", {}).get("nextHref")
+
+    if records:
+        print(f"Loading {len(records)} records to STG...")
+        
+        job_config = bigquery.LoadJobConfig(
+            write_disposition="WRITE_TRUNCATE",
+            schema=[
+                bigquery.SchemaField("payment_id", "STRING"),
+                bigquery.SchemaField("payment_name", "STRING"),
+
+=== ШАГ 6. sha256 снимка-провенанса в репо (до-фиксовая версия по записи) ===
+7a5d8dcd7866a887eb940accab709487eb27cba42a3446478b83678c67fa181d  /Users/ilyasbazarov/Desktop/msklad_project/holika/reference/code/cf-finance/main.py
+--- есть ли множитель на курс в снимке ---
+(совпадений нет)
+
+=== ШАГ 7. Диск Cloud Shell — доступен ли отсюда ===
+(машина сессии — локальный Mac владельца; диск Cloud Shell есть удалённая машина.
+ Если доступа нет, третья колонка таблицы приёмки остаётся незаполненной С НАЗВАННОЙ ПРИЧИНОЙ,
+ вердикт по Q-95 при этом выводим из сравнения «задеплоенное против снимка».)
+
+=== ЯКОРЬ КОНЦА ===
+Sat Aug  1 08:06:06 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

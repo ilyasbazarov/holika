@@ -1,0 +1,16 @@
+{
+  "buildConfig": {
+    "build": "projects/420804682491/locations/asia-east1/builds/31cf7c79-4b2d-45e5-b8b7-4530dc57eec5",
+    "source": {
+      "storageSource": {
+        "bucket": "gcf-v2-sources-420804682491-asia-east1",
+        "generation": "1784560843778541",
+        "object": "cf-finance/function-source.zip"
+      }
+    }
+  },
+  "serviceConfig": {
+    "revision": "cf-finance-00012-cik"
+  },
+  "updateTime": "2026-07-30T10:04:58.604346800Z"
+}
