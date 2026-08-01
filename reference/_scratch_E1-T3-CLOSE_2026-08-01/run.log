@@ -1,0 +1,92 @@
+=== ЯКОРЬ НАЧАЛА ===
+Sat Aug  1 09:36:56 UTC 2026
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== Инвентарь fact_payments по типу документа ===
+[
+  {
+    "docs": "4253", 
+    "first_doc": "2024-04-15", 
+    "last_doc": "2026-07-31", 
+    "loaded_max": "2026-07-31", 
+    "loaded_min": "2026-07-07", 
+    "payment_type": "paymentout", 
+    "sum_kgs": "1.2809265007E8"
+  }, 
+  {
+    "docs": "766", 
+    "first_doc": "2024-06-18", 
+    "last_doc": "2026-07-21", 
+    "loaded_max": "2026-07-31", 
+    "loaded_min": "2026-07-31", 
+    "payment_type": "cashout", 
+    "sum_kgs": "1.079007477E7"
+  }
+]
+
+=== Зона паритета (moment >= 2026-05-01) помесячно ===
+[
+  {
+    "docs": "244", 
+    "loaded_max": "2026-07-31", 
+    "loaded_min": "2026-07-31", 
+    "payment_type": "paymentout", 
+    "sum_kgs": "8600919.01", 
+    "ym": "2026-05"
+  }, 
+  {
+    "docs": "6", 
+    "loaded_max": "2026-07-31", 
+    "loaded_min": "2026-07-31", 
+    "payment_type": "cashout", 
+    "sum_kgs": "504186.0", 
+    "ym": "2026-06"
+  }, 
+  {
+    "docs": "598", 
+    "loaded_max": "2026-07-31", 
+    "loaded_min": "2026-07-22", 
+    "payment_type": "paymentout", 
+    "sum_kgs": "8259474.27", 
+    "ym": "2026-06"
+  }, 
+  {
+    "docs": "1", 
+    "loaded_max": "2026-07-31", 
+    "loaded_min": "2026-07-31", 
+    "payment_type": "cashout", 
+    "sum_kgs": "11160.0", 
+    "ym": "2026-07"
+  }, 
+  {
+    "docs": "244", 
+    "loaded_max": "2026-07-31", 
+    "loaded_min": "2026-07-07", 
+    "payment_type": "paymentout", 
+    "sum_kgs": "2.645608184E7", 
+    "ym": "2026-07"
+  }
+]
+
+=== Строки зоны паритета, НЕ переписанные после деплоя правки (2026-07-20) ===
+[
+  {
+    "_loaded_at": "2026-07-07 21:01:30", 
+    "agent_name": "ООО \"ВАЛЕН СЕРВИС\"", 
+    "expense_item_name": "Бухгалтерские услуги", 
+    "moment": "2026-07-03", 
+    "payment_id": "23167c6f-76d1-11f1-0a80-0556001964ca", 
+    "payment_name": "05662", 
+    "payment_purpose": "Оплата по счету №17 от 02 июля 2026 г. за Бухгалтерский учет за Август Сумма 30000-00 Без налога (НДС)", 
+    "payment_type": "paymentout", 
+    "sum_kgs": "30000.0"
+  }
+]
+
+=== ЯКОРЬ КОНЦА ===
+Sat Aug  1 09:37:05 UTC 2026
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
