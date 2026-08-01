@@ -1,6 +1,7 @@
 ---
 name: generator
 description: Генерация task-brief следующей задачи по 08_TASK_BRIEF_TEMPLATE. Читает репо, собирает бриф, задачу НЕ выполняет. Использовать, когда задача в очереди есть, а брифа под неё нет.
+model: sonnet
 tools: Read, Grep, Glob, Write
 ---
 

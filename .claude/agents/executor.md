@@ -1,6 +1,7 @@
 ---
 name: executor
 description: Исполнение ОДНОГО брифа из briefs/. Пишет код/SQL, гоняет read-only и staging-команды; всё не-идемпотентное — только через подтверждение владельца.
+model: sonnet
 tools: Read, Grep, Glob, Bash, Edit, Write
 ---
 

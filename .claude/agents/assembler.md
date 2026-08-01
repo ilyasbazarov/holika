@@ -1,6 +1,7 @@
 ---
 name: assembler
 description: Проход сборки буфера session-блоков. Сливает ветки сессий, применяет накопленные блоки к 07_STATE/06/07_ARCHIVE одним коммитом, раздаёт номера ADR, убирает деревья. Использовать, когда непустой reference/_inbox/ или есть неслитые ветки s/*.
+model: sonnet
 tools: Read, Grep, Glob, Bash, Edit
 ---
 
