@@ -1,0 +1,1429 @@
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/report/profit/bycounterparty?momentFrom=2026-05-01+00%3a00%3a00&momentTo=2026-06-01+00%3a00%3a00&limit=100&offset=0",
+    "type" : "salesbycounterparty",
+    "mediaType" : "application/json",
+    "size" : 64,
+    "limit" : 100,
+    "offset" : 0
+  },
+  "rows" : [ {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/3c080755-03ff-11f0-0a80-0c2c00104bbb",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=3c080755-03ff-11f0-0a80-0c2c00104bbb"
+      },
+      "name" : "Bloom WB (Договор)"
+    },
+    "salesCount" : 3.0,
+    "salesAvgCheck" : 629030.0,
+    "sellSum" : 1887090.9999999998,
+    "sellCostSum" : 837440.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1049650.9999999998,
+    "margin" : 1.2534044230034387,
+    "salesMargin" : 0.5562270181989104
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/13564a08-87c0-11ef-0a80-1568002f3f8d",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=13564a08-87c0-11ef-0a80-1568002f3f8d"
+      },
+      "name" : "Cosmelovers (Договор) ИП Сарлыкова Бермет Азаматовна"
+    },
+    "salesCount" : 5.0,
+    "salesAvgCheck" : 9288780.0,
+    "sellSum" : 46443900,
+    "sellCostSum" : 59056580,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : -12612680,
+    "margin" : -0.21356942782667065,
+    "salesMargin" : -0.27156806383615506
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/926f8764-1c4e-11f1-0a80-17f00037f252",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=926f8764-1c4e-11f1-0a80-17f00037f252"
+      },
+      "name" : "KoreaLab.By ( Договор Беларусь ) +375291841810"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 18275207,
+    "sellSum" : 18275207.4,
+    "sellCostSum" : 13599654,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 4675553.3999999985,
+    "margin" : 0.3437994378386391,
+    "salesMargin" : 0.2558413317924917
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/deb32c34-990c-11ef-0a80-19eb00083704",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=deb32c34-990c-11ef-0a80-19eb00083704"
+      },
+      "name" : "Mask Shop ООО \"КО ЭКСПО\" (ДОГОВОР РФ) +79099714344"
+    },
+    "salesCount" : 4.0,
+    "salesAvgCheck" : 678398007,
+    "sellSum" : 2713592026.74,
+    "sellCostSum" : 1876656019,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 836936007.7399998,
+    "margin" : 0.44597198381937453,
+    "salesMargin" : 0.30842366851492453
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/4d66683b-421c-11f1-0a80-1a2c002f094e",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=4d66683b-421c-11f1-0a80-1a2c002f094e"
+      },
+      "name" : "TOO \"GLAMA\" Аблов +7 705 333 8405 (ДОГОВОР КЗ)"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 126018855,
+    "sellSum" : 126018855,
+    "sellCostSum" : 77978775,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 48040080,
+    "margin" : 0.6160661026029199,
+    "salesMargin" : 0.38121343032358135
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/0276f431-2ff5-11ef-0a80-11d40019917f",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=0276f431-2ff5-11ef-0a80-11d40019917f"
+      },
+      "name" : "UMAI WB (Договор КР)"
+    },
+    "salesCount" : 3.0,
+    "salesAvgCheck" : 70379139,
+    "sellSum" : 211137417,
+    "sellCostSum" : 124564935,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 86572482,
+    "margin" : 0.694998813269561,
+    "salesMargin" : 0.41002908546522576
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/173eb7d9-87c0-11ef-0a80-1568002f41f6",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=173eb7d9-87c0-11ef-0a80-1568002f41f6"
+      },
+      "name" : "Абдубаитова Асель (ДОГОВОР КР) +996709500823"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 4109950.0,
+    "sellSum" : 8219900.0,
+    "sellCostSum" : 6306330.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1913570.0,
+    "margin" : 0.3034363885175688,
+    "salesMargin" : 0.2327972359761068
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/75d7c694-78f9-11f0-0a80-077d000b5e09",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=75d7c694-78f9-11f0-0a80-077d000b5e09"
+      },
+      "name" : "Азия Ритейл (Договор Беларусь)"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 52537851,
+    "sellSum" : 52537851,
+    "sellCostSum" : 41902579,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 10635272,
+    "margin" : 0.25380948509159773,
+    "salesMargin" : 0.20243066279966415
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1b4ace0c-87c0-11ef-0a80-1568002f44af",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1b4ace0c-87c0-11ef-0a80-1568002f44af"
+      },
+      "name" : "Айнура  an_koreanshop +77477408877"
+    },
+    "salesCount" : 4.0,
+    "salesAvgCheck" : 150881805,
+    "sellSum" : 603527220,
+    "sellCostSum" : 489192463,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 114334757,
+    "margin" : 0.2337214197840165,
+    "salesMargin" : 0.18944424246515346
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/135e605e-87c0-11ef-0a80-1568002f3f91",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=135e605e-87c0-11ef-0a80-1568002f3f91"
+      },
+      "name" : "Акбуура Ош 0707 91 00 91 (ДОГОВОР КР) ИП Медербек кызы Акбуура"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 5907600.0,
+    "sellSum" : 5907600.0,
+    "sellCostSum" : 4621421.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1286179.0,
+    "margin" : 0.2783081221122248,
+    "salesMargin" : 0.2177159929582233
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/6105a91a-0665-11f0-0a80-13cf00465dfa",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=6105a91a-0665-11f0-0a80-13cf00465dfa"
+      },
+      "name" : "АЛИМКУЛОВ АМИН ИЛХОМОВИЧ"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 126990.0,
+    "sellSum" : 126990.0,
+    "sellCostSum" : 115850.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 11140.0,
+    "margin" : 0.0961588260681916,
+    "salesMargin" : 0.08772344279077093
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1a20a637-87c0-11ef-0a80-1568002f4395",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1a20a637-87c0-11ef-0a80-1568002f4395"
+      },
+      "name" : "Анна Егоровна  ( без договора) +79644264252   0776442007"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 4778300.0,
+    "sellSum" : 4778299.856511627,
+    "sellCostSum" : 3597944.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1180355.8565116273,
+    "margin" : 0.3280639877973719,
+    "salesMargin" : 0.24702423287711794
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/341f4e48-3a00-11f0-0a80-1961002a8696",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=341f4e48-3a00-11f0-0a80-1961002a8696"
+      },
+      "name" : "Артемьева Валерия Staybeauty__cosmetics 996557882727"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 4275200.0,
+    "sellSum" : 4275200.0,
+    "sellCostSum" : 7964648.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : -3689448.0,
+    "margin" : -0.46322800455211577,
+    "salesMargin" : -0.8629883982035929
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/c99cd119-8f67-11ef-0a80-08c2006d17a3",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=c99cd119-8f67-11ef-0a80-08c2006d17a3"
+      },
+      "name" : "Асель Holi"
+    },
+    "salesCount" : 4.0,
+    "salesAvgCheck" : 313555.0,
+    "sellSum" : 1254219.0,
+    "sellCostSum" : 909825.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 344394.0,
+    "margin" : 0.37852773885087787,
+    "salesMargin" : 0.2745884092012639
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/b3667c34-3ca3-11f0-0a80-15ce0025d38d",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=b3667c34-3ca3-11f0-0a80-15ce0025d38d"
+      },
+      "name" : "Асель Токтосунова @optovye_ceny01 0706552277"
+    },
+    "salesCount" : 9.0,
+    "salesAvgCheck" : 18429260,
+    "sellSum" : 165863340,
+    "sellCostSum" : 133153698,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 32709642,
+    "margin" : 0.2456532750596232,
+    "salesMargin" : 0.19720838854444867
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/17c94d22-87c0-11ef-0a80-1568002f4242",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=17c94d22-87c0-11ef-0a80-1568002f4242"
+      },
+      "name" : "Асиф Керимли Алматы The Beauty Store +77478155521"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 13028850,
+    "sellSum" : 26057700,
+    "sellCostSum" : 19960729,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 6096971.0,
+    "margin" : 0.30544831303506004,
+    "salesMargin" : 0.23397962982151144
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/dd0cd653-b162-11ef-0a80-0432002f1c49",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=dd0cd653-b162-11ef-0a80-0432002f1c49"
+      },
+      "name" : "Баталиева Сида Дагестан ( без договора) +79288762999"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 45655200,
+    "sellSum" : 45655200,
+    "sellCostSum" : 36195138,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 9460062.0,
+    "margin" : 0.26136278303456106,
+    "salesMargin" : 0.2072066708721022
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2af3d8db-0ad3-11f0-0a80-003500181b18",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=2af3d8db-0ad3-11f0-0a80-003500181b18"
+      },
+      "name" : "Бегимай Тимур Алматы Koreansklad_kz"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 47700000,
+    "sellSum" : 95400000,
+    "sellCostSum" : 75673750,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 19726250,
+    "margin" : 0.2606749368175887,
+    "salesMargin" : 0.20677410901467508
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/eaa08c42-95b9-11ef-0a80-003b001e945e",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=eaa08c42-95b9-11ef-0a80-003b001e945e"
+      },
+      "name" : "Вегас Яна Бишкек 996704071135 (договор)"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 32786180,
+    "sellSum" : 65572360,
+    "sellCostSum" : 52823462,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 12748898,
+    "margin" : 0.24134915655471434,
+    "salesMargin" : 0.19442487657909524
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1d8b7921-87c0-11ef-0a80-1568002f4611",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1d8b7921-87c0-11ef-0a80-1568002f4611"
+      },
+      "name" : "Диана NANA skinstore Шымкент +7 701 882 9090"
+    },
+    "salesCount" : 3.0,
+    "salesAvgCheck" : 97722600,
+    "sellSum" : 293167800,
+    "sellCostSum" : 222444600,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 70723200,
+    "margin" : 0.31793624120342767,
+    "salesMargin" : 0.24123795314492247
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1cdfcc31-8ca4-11f0-0a80-0ee00030259b",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1cdfcc31-8ca4-11f0-0a80-0ee00030259b"
+      },
+      "name" : "Дидаева Савдат , Чеченская республика, г Грозный +79283238750"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 50103680,
+    "sellSum" : 50103680.4,
+    "sellCostSum" : 39237272,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 10866408.399999999,
+    "margin" : 0.2769409759169801,
+    "salesMargin" : 0.21687844711703053
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1d9924e3-87c0-11ef-0a80-1568002f4615",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1d9924e3-87c0-11ef-0a80-1568002f4615"
+      },
+      "name" : "Динар тате Алматы +77029472121"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 13799925,
+    "sellSum" : 27599850,
+    "sellCostSum" : 22123100,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 5476750.0,
+    "margin" : 0.24755798238040772,
+    "salesMargin" : 0.19843404946041376
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/13dea99d-87c0-11ef-0a80-1568002f3fcf",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=13dea99d-87c0-11ef-0a80-1568002f3fcf"
+      },
+      "name" : "Жылдыз НАШ ОСОО Адеко-Глобал 0550324446 (ДОГОВОР КР)"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 1284210.0,
+    "sellSum" : 1284210.0,
+    "sellCostSum" : 990676.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 293534.0,
+    "margin" : 0.29629667015250183,
+    "salesMargin" : 0.22857165105395538
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/d84e705f-9148-11ef-0a80-0de10017d34e",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=d84e705f-9148-11ef-0a80-0de10017d34e"
+      },
+      "name" : "Илияз WB (Договор) ИП Женишбекова Альбина Женишбековна"
+    },
+    "salesCount" : 5.0,
+    "salesAvgCheck" : 43733860,
+    "sellSum" : 218669300,
+    "sellCostSum" : 177560919,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 41108381,
+    "margin" : 0.23151705471855544,
+    "salesMargin" : 0.18799338087239503
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/c83ba598-f8b7-11ef-0a80-075400159b8a",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=c83ba598-f8b7-11ef-0a80-075400159b8a"
+      },
+      "name" : "Инесса Косинская (Договор Беларусь) г. Гомель +375257800025"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 3284558.0,
+    "sellSum" : 3284558.035,
+    "sellCostSum" : 2542013.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 742545.0350000001,
+    "margin" : 0.2921090627781999,
+    "salesMargin" : 0.22607152228321037
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1d94c00d-87c0-11ef-0a80-1568002f4613",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1d94c00d-87c0-11ef-0a80-1568002f4613"
+      },
+      "name" : "Инна Андрей Алматы +77017888000"
+    },
+    "salesCount" : 3.0,
+    "salesAvgCheck" : 25330980,
+    "sellSum" : 75992940,
+    "sellCostSum" : 59873571,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 16119369,
+    "margin" : 0.26922344418040467,
+    "salesMargin" : 0.21211666504809523
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/b2c49334-f066-11f0-0a80-0c49000a9f1e",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=b2c49334-f066-11f0-0a80-0c49000a9f1e"
+      },
+      "name" : "ИП Верейкин Евгений Сергеевич (Договор РФ)"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 98402718,
+    "sellSum" : 196805436.91322398,
+    "sellCostSum" : 156754892,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 40050544.91322398,
+    "margin" : 0.2554978948486277,
+    "salesMargin" : 0.2035032443279663
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/2e272f9e-49ca-11f1-0a80-164900032559",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=2e272f9e-49ca-11f1-0a80-164900032559"
+      },
+      "name" : "ИП Красовский Владимир Россия Федор +79260090240  (Договор РФ)"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 36524765,
+    "sellSum" : 36524764.739999995,
+    "sellCostSum" : 26446031,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 10078733.739999995,
+    "margin" : 0.3811057220646832,
+    "salesMargin" : 0.2759424683976759
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/45a88789-944c-11f0-0a80-143000174b9b",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=45a88789-944c-11f0-0a80-143000174b9b"
+      },
+      "name" : "ИП Лигай Даяна +996 705 445 044 (ДОГОВОР КР) Di Store"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 21716000,
+    "sellSum" : 43432000,
+    "sellCostSum" : 35238000,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 8194000.0,
+    "margin" : 0.23253306090016457,
+    "salesMargin" : 0.18866273715233006
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/0f93b55b-4b51-11f0-0a80-1b8200069c87",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=0f93b55b-4b51-11f0-0a80-1b8200069c87"
+      },
+      "name" : "ИП Лигай Леон Di Store +996705445044 (ДОГОВОР КР)"
+    },
+    "salesCount" : 7.0,
+    "salesAvgCheck" : 112958159,
+    "sellSum" : 790707110,
+    "sellCostSum" : 575127982,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 215579128,
+    "margin" : 0.3748367924132754,
+    "salesMargin" : 0.272640937805656
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/19975d73-87c0-11ef-0a80-1568002f434d",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=19975d73-87c0-11ef-0a80-1568002f434d"
+      },
+      "name" : "Ислом Ташкент +998909104373 КОД 41179"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 34183800,
+    "sellSum" : 34183800,
+    "sellCostSum" : 24858694,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 9325106.0,
+    "margin" : 0.3751245338954654,
+    "salesMargin" : 0.27279313592988497
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a4fb0cc7-483a-11f1-0a80-16450002b6be",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=a4fb0cc7-483a-11f1-0a80-16450002b6be"
+      },
+      "name" : "Исмаилова Асел г.Ош Serene cosmetics +996770092092"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 3877200.0,
+    "sellSum" : 3877200.0,
+    "sellCostSum" : 2923021.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 954179.0,
+    "margin" : 0.32643590312898874,
+    "salesMargin" : 0.24610002063344683
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/54310501-dae2-11ef-0a80-1a9b00326346",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=54310501-dae2-11ef-0a80-1a9b00326346"
+      },
+      "name" : "Камбаралиева Асылгул brand_cosmetics_toktogul"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 2851918.0,
+    "sellSum" : 2851918.0,
+    "sellCostSum" : 2438234.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 413684.0,
+    "margin" : 0.16966542177658095,
+    "salesMargin" : 0.14505466145941082
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/134e40c0-87c0-11ef-0a80-1568002f3f85",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=134e40c0-87c0-11ef-0a80-1568002f3f85"
+      },
+      "name" : "Кересова Мирабэлла +996558921888 (ДОГОВОР)"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 16416000,
+    "sellSum" : 16416000,
+    "sellCostSum" : 13165288,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 3250712.0,
+    "margin" : 0.24691537321477508,
+    "salesMargin" : 0.19802095516569196
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/f4201bf6-6390-11f0-0a80-0fa2000d75eb",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=f4201bf6-6390-11f0-0a80-0fa2000d75eb"
+      },
+      "name" : "Кристина Петрович (Договор Беларусь) , г. Бобруйск +375447980465"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 18469935,
+    "sellSum" : 36939870,
+    "sellCostSum" : 30065833,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 6874037.0,
+    "margin" : 0.22863284712583876,
+    "salesMargin" : 0.18608720063172934
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/13ca2f68-87c0-11ef-0a80-1568002f3fc5",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=13ca2f68-87c0-11ef-0a80-1568002f3fc5"
+      },
+      "name" : "Кыялбек к Ак-Бермет Ош suluu_luk (Без договора)"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 3443000.0,
+    "sellSum" : 3443000.0,
+    "sellCostSum" : 2553250.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 889750.0,
+    "margin" : 0.3484774307255458,
+    "salesMargin" : 0.2584228870171362
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1c050410-87c0-11ef-0a80-1568002f452a",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1c050410-87c0-11ef-0a80-1568002f452a"
+      },
+      "name" : "Лаура Карабалаева (Айнура) +77780074698"
+    },
+    "salesCount" : 6.0,
+    "salesAvgCheck" : 229730550,
+    "sellSum" : 1378383300,
+    "sellCostSum" : 1044855703,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 333527597,
+    "margin" : 0.31920924204401846,
+    "salesMargin" : 0.24197013776937082
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/44e9a6d2-3150-11f0-0a80-18b10010a933",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=44e9a6d2-3150-11f0-0a80-18b10010a933"
+      },
+      "name" : "Малика Holi"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 238500.0,
+    "sellSum" : 238500.0,
+    "sellCostSum" : 190313.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 48187.0,
+    "margin" : 0.2531986779673485,
+    "salesMargin" : 0.202041928721174
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/3bc7785d-98fd-11ef-0a80-0db500119edc",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=3bc7785d-98fd-11ef-0a80-0db500119edc"
+      },
+      "name" : "Мария, Чита Россия +79245731605"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 6261836.0,
+    "sellSum" : 6261835.5,
+    "sellCostSum" : 5161382.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1100453.5,
+    "margin" : 0.21320907849874327,
+    "salesMargin" : 0.1757397651215845
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/58ff235d-00e3-11f1-0a80-0fd40009ec40",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=58ff235d-00e3-11f1-0a80-0fd40009ec40"
+      },
+      "name" : "Могильная Виктория (Договор Беларусь), г. Минск RUB+375297744746"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 17153071,
+    "sellSum" : 17153070.765,
+    "sellCostSum" : 13272119,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 3880951.7650000006,
+    "margin" : 0.29241387641265115,
+    "salesMargin" : 0.22625405201026116
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1c180bb8-87c0-11ef-0a80-1568002f4534",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1c180bb8-87c0-11ef-0a80-1568002f4534"
+      },
+      "name" : "Муслима г.Хасавюрт  +79282247800"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 26773434,
+    "sellSum" : 53546868,
+    "sellCostSum" : 42435161,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 11111707,
+    "margin" : 0.2618514160933665,
+    "salesMargin" : 0.20751366821305028
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/b624ec8a-30a0-11f0-0a80-13730015d09a",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=b624ec8a-30a0-11f0-0a80-13730015d09a"
+      },
+      "name" : "Мухаммед  Алматы Kosmetika.optom.KosmoMir"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 3444300.0,
+    "sellSum" : 3444300.0,
+    "sellCostSum" : 2720287.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 724013.0,
+    "margin" : 0.26615316692687196,
+    "salesMargin" : 0.21020613767674123
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1a1d27c2-87c0-11ef-0a80-1568002f4393",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1a1d27c2-87c0-11ef-0a80-1568002f4393"
+      },
+      "name" : "Оксана Ташкент Kshopkorea +998909385015 Код 40501"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 27008100,
+    "sellSum" : 27008100,
+    "sellCostSum" : 21107997,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 5900103.0,
+    "margin" : 0.2795197952700108,
+    "salesMargin" : 0.21845679629444503
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7c3fe9d4-3d5d-11f1-0a80-18470008e119",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=7c3fe9d4-3d5d-11f1-0a80-18470008e119"
+      },
+      "name" : "Омарова Джамиля +79288001009"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 32467293,
+    "sellSum" : 64934585.52050001,
+    "sellCostSum" : 47822021,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 17112564.52050001,
+    "margin" : 0.35783858905712096,
+    "salesMargin" : 0.2635354392937109
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/9a374416-01ba-11f1-0a80-0161000b548b",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=9a374416-01ba-11f1-0a80-0161000b548b"
+      },
+      "name" : "ООО \"Космо Азия \" ( Договор Беларусь )"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 17478300,
+    "sellSum" : 17478300,
+    "sellCostSum" : 13398195,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 4080105.0,
+    "margin" : 0.3045264679309414,
+    "salesMargin" : 0.2334383206604761
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/31d135bc-4df8-11f1-0a80-1c8a0053c5b4",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=31d135bc-4df8-11f1-0a80-1c8a0053c5b4"
+      },
+      "name" : "ООО \"РВБ\""
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 278300.0,
+    "sellSum" : 278300.0,
+    "sellCostSum" : 102867.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 175433.0,
+    "margin" : 1.7054351735736435,
+    "salesMargin" : 0.6303736974487963
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/e45a26ed-2811-11f1-0a80-044100186df6",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=e45a26ed-2811-11f1-0a80-044100186df6"
+      },
+      "name" : "ООО \"ХОЛЛИШОП\" Москва ( ДОГОВОР РФ)"
+    },
+    "salesCount" : 4.0,
+    "salesAvgCheck" : 300193818,
+    "sellSum" : 1200775270.46475,
+    "sellCostSum" : 788744140,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 412031130.46475005,
+    "margin" : 0.522388832536683,
+    "salesMargin" : 0.3431375883559601
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/d9178675-9a75-11ef-0a80-0db400187262",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=d9178675-9a75-11ef-0a80-0db400187262"
+      },
+      "name" : "Оптовый клиент"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 325555.0,
+    "sellSum" : 651110.0,
+    "sellCostSum" : 510607.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 140503.0,
+    "margin" : 0.2751685738738403,
+    "salesMargin" : 0.2157899586859363
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/c8e0e417-a993-11f0-0a80-1cc2001a2c92",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=c8e0e417-a993-11f0-0a80-1cc2001a2c92"
+      },
+      "name" : "Осмонова Жамиля @lady_beauty_karakol +996500225275 (ДОГОВОР КР)"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 2343600.0,
+    "sellSum" : 2343600.0,
+    "sellCostSum" : 1759161.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 584439.0,
+    "margin" : 0.3322259872746156,
+    "salesMargin" : 0.2493766001024066
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/e2918f64-9dba-11ef-0a80-06b2000b84c9",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=e2918f64-9dba-11ef-0a80-06b2000b84c9"
+      },
+      "name" : "ОсОО Бонита Бета 2  +996 705 337 377 (ДОГОВОР КР)"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 2984500.0,
+    "sellSum" : 5969000.0,
+    "sellCostSum" : 4648040.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1320960.0,
+    "margin" : 0.28419721000679865,
+    "salesMargin" : 0.22130340090467415
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/a8ffa574-9dbb-11ef-0a80-1508000bda71",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=a8ffa574-9dbb-11ef-0a80-1508000bda71"
+      },
+      "name" : "ОсОО Бонита Бишкек Парк  +996 705 337 377 (договор КР )"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 2984500.0,
+    "sellSum" : 5969000.0,
+    "sellCostSum" : 4648038.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1320962.0,
+    "margin" : 0.284197762582836,
+    "salesMargin" : 0.22130373596917408
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/635cc9be-9dbb-11ef-0a80-0c9d000b8ff9",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=635cc9be-9dbb-11ef-0a80-0c9d000b8ff9"
+      },
+      "name" : "ОсОО Бонита Гум +996 705 337 377 (Договор КР)"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 2730250.0,
+    "sellSum" : 5460500.0,
+    "sellCostSum" : 4250349.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1210151.0,
+    "margin" : 0.28471803138989293,
+    "salesMargin" : 0.22161908250160245
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/8fbf1455-8b72-11ef-0a80-024f0003a87f",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=8fbf1455-8b72-11ef-0a80-024f0003a87f"
+      },
+      "name" : "ОсОО Бонита  Цум +996 705 337 377 (договор КР)"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 2730250.0,
+    "sellSum" : 5460500.0,
+    "sellCostSum" : 4250352.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1210148.0,
+    "margin" : 0.28471712460520915,
+    "salesMargin" : 0.22161853310136437
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/94b7d0af-58dc-11f1-0a80-17640042da89",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=94b7d0af-58dc-11f1-0a80-17640042da89"
+      },
+      "name" : "ОсОО Сонун фармация г.Ош 996706442224 (ДОГОВОР КР)"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 6823800.0,
+    "sellSum" : 6823800.0,
+    "sellCostSum" : 5306976.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1516824.0,
+    "margin" : 0.28581700765181517,
+    "salesMargin" : 0.22228435768926402
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/e842aacd-49c3-11f1-0a80-190d00022781",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=e842aacd-49c3-11f1-0a80-190d00022781"
+      },
+      "name" : "Разуев Роберт Махачкала +79887856222"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 13369500,
+    "sellSum" : 13369500,
+    "sellCostSum" : 10189813,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 3179687.0,
+    "margin" : 0.3120456675701506,
+    "salesMargin" : 0.23783140730767793
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/202e678f-fa31-11ee-0a80-0892007106d1",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=202e678f-fa31-11ee-0a80-0892007106d1"
+      },
+      "name" : "Розничный покупатель"
+    },
+    "salesCount" : 506.0,
+    "salesAvgCheck" : 234866.0,
+    "sellSum" : 118842200.00073999,
+    "sellCostSum" : 81771439,
+    "returnCount" : 8.0,
+    "returnAvgCheck" : 7125.0,
+    "returnSum" : 57000.0,
+    "returnCostSum" : 7200.0,
+    "profit" : 37020961.00073999,
+    "margin" : 0.45277692856335383,
+    "salesMargin" : 0.31166307755940437
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/18a13a53-87c0-11ef-0a80-1568002f42aa",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=18a13a53-87c0-11ef-0a80-1568002f42aa"
+      },
+      "name" : "Руслан Алматы +77471880101"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 107051625,
+    "sellSum" : 214103250,
+    "sellCostSum" : 168712544,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 45390706,
+    "margin" : 0.269041678370993,
+    "salesMargin" : 0.2120038159159191
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/178ba7b4-87c0-11ef-0a80-1568002f4222",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=178ba7b4-87c0-11ef-0a80-1568002f4222"
+      },
+      "name" : "Сабира Джалалабад 0779808867 (договор)"
+    },
+    "salesCount" : 3.0,
+    "salesAvgCheck" : 9830938.0,
+    "sellSum" : 29492815,
+    "sellCostSum" : 22818370,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 6674445.0,
+    "margin" : 0.2925031454919873,
+    "salesMargin" : 0.22630749218072266
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/7c8e0b64-3644-11f1-0a80-0f75001fe637",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=7c8e0b64-3644-11f1-0a80-0f75001fe637"
+      },
+      "name" : "Санам Шымкент SANAM_BEAUTYLAB +7 775 333 0504"
+    },
+    "salesCount" : 3.0,
+    "salesAvgCheck" : 18280020,
+    "sellSum" : 54840060,
+    "sellCostSum" : 43021739,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 11818321,
+    "margin" : 0.27470579466813283,
+    "salesMargin" : 0.2155052529118312
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/198983f0-87c0-11ef-0a80-1568002f4345",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=198983f0-87c0-11ef-0a80-1568002f4345"
+      },
+      "name" : "Таня Казарян Астана +7 778 900 9325"
+    },
+    "salesCount" : 2.0,
+    "salesAvgCheck" : 13384800,
+    "sellSum" : 26769600,
+    "sellCostSum" : 20000443,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 6769157.0,
+    "margin" : 0.3384503533246739,
+    "salesMargin" : 0.2528673196461658
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/79dc242a-1baf-11f1-0a80-138a002eeb35",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=79dc242a-1baf-11f1-0a80-138a002eeb35"
+      },
+      "name" : "ТараКосМикс (Договор Беларусь )"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 10153170,
+    "sellSum" : 10153170,
+    "sellCostSum" : 7751432.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 2401738.0,
+    "margin" : 0.30984442616538477,
+    "salesMargin" : 0.23655055514681622
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/d9c5534e-2383-11f1-0a80-1902000d4968",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=d9c5534e-2383-11f1-0a80-1902000d4968"
+      },
+      "name" : "Тимофеева Лидия Сергеевна Россия, г. Чита"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 2986491.0,
+    "sellSum" : 2986490.764999999,
+    "sellCostSum" : 2157416.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 829074.7649999992,
+    "margin" : 0.384290635185796,
+    "salesMargin" : 0.27760834713312743
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1352596a-87c0-11ef-0a80-1568002f3f89",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1352596a-87c0-11ef-0a80-1568002f3f89"
+      },
+      "name" : "Эргешева Алтынай Avenue_cosmeticskg (Договор КР)"
+    },
+    "salesCount" : 3.0,
+    "salesAvgCheck" : 5298513.0,
+    "sellSum" : 15895539,
+    "sellCostSum" : 12478991,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 3416548.0,
+    "margin" : 0.2737839942347904,
+    "salesMargin" : 0.21493753687748496
+  }, {
+    "counterparty" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1b704b24-49cc-11f1-0a80-105300026094",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1b704b24-49cc-11f1-0a80-105300026094"
+      },
+      "name" : "Яковлев Федор  Бишкек +996227032683 (ДОГОВОР КР)"
+    },
+    "salesCount" : 1.0,
+    "salesAvgCheck" : 2974200.0,
+    "sellSum" : 2974200.0,
+    "sellCostSum" : 2135328.0,
+    "returnCount" : 0.0,
+    "returnAvgCheck" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 838872.0,
+    "margin" : 0.3928539315739783,
+    "salesMargin" : 0.28204962679039747
+  } ]
+}

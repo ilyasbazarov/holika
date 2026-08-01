@@ -1,0 +1,31 @@
+=== date -u (начало) ===
+Sat Aug  1 10:56:31 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+токен прочитан, длина: 40
+1fb4954e-fa31-11ee-0a80-08920071069f -> KGS
+3ea7aa1b-2c68-11ef-0a80-117500188e00 -> USD
+9ac2585d-8036-11ef-0a80-0d7a00094bfe -> RUB
+=== доля выручки по валютам (raw sum, минорные единицы, без конвертации) ===
+9ac2585d-8036-11ef-0a80-0d7a00094bfe: n=21 raw_sum=3769083300.00
+1fb4954e-fa31-11ee-0a80-08920071069f: n=64 raw_sum=1459622811.00
+3ea7aa1b-2c68-11ef-0a80-117500188e00: n=42 raw_sum=36054573.00
+=== выручка КОНВЕРТИРОВАННАЯ по rate.value (минорные единицы * rate.value / 100) ===
+revenue_converted_kgs=91892755.66
+=== токен не в артефактах ===
+0 совпадений
+=== date -u (конец) ===
+Sat Aug  1 10:56:39 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

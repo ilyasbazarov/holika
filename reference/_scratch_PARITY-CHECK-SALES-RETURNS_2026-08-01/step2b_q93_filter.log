@@ -1,0 +1,55 @@
+=== date -u (начало) ===
+Sat Aug  1 10:49:30 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== токен прочитан, длина: 40 символов ===
+=== q93f_zero_api : filter=moment>=2026-07-01 15:33:00;moment<=2026-07-01 15:33:00 ===
+meta.size:
+1
+id документа №00008 присутствует в rows:
+true
+moments в rows:
+2026-07-01 15:33:00.000
+=== q93f_narrow_api : filter=moment>=2026-07-01 15:32:00;moment<=2026-07-01 15:34:00 ===
+meta.size:
+1
+id документа №00008 присутствует в rows:
+true
+moments в rows:
+2026-07-01 15:33:00.000
+=== q93f_upper_excl_test : filter=moment>=2026-07-01 15:32:00;moment<2026-07-01 15:33:00 ===
+meta.size:
+0
+id документа №00008 присутствует в rows:
+false
+moments в rows:
+=== q93f_zero_plus3 : filter=moment>=2026-07-01 18:33:00;moment<=2026-07-01 18:33:00 ===
+meta.size:
+0
+id документа №00008 присутствует в rows:
+false
+moments в rows:
+=== q93f_control_far : filter=moment>=2026-07-01 10:00:00;moment<=2026-07-01 10:01:00 ===
+meta.size:
+0
+id документа №00008 присутствует в rows:
+false
+moments в rows:
+=== проверка token не в артефактах ===
+0 совпадений — чисто
+=== date -u (конец) ===
+Sat Aug  1 10:49:34 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
