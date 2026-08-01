@@ -55,7 +55,9 @@ git rev-parse HEAD
 
 > Актуальный SHA: СЮДА_SHA, читать только через curl по этому SHA.
 > Ты — архитектор проекта holika. Роль и правила: `_ARCHITECT.md` в корне репо, плюс `_METHOD.md`
-> и `05_CONVENTIONS.md`. Обязательный контекст: `_METHOD`, `00`, `04`, `06_INDEX`, `07_STATE`.
+> и `05_CONVENTIONS.md`. Обязательный контекст: `_METHOD`, `00`, `04`, `05_CONVENTIONS`, `06_INDEX`,
+> `07_STATE` (состав приведён к `CLAUDE.md §Старт` п.2 решением `ADR-093 §1`; `05_CONVENTIONS`
+> обязателен, потому что правило языка ответов живёт операционно только там).
 > Репозиторий `ilyasbazarov/holika`, читать по SHA через curl, не через браузерный фетчер.
 > Anti-improvisation: гэп есть `CONTEXT GAP` и вопрос мне, не догадка.
 >
