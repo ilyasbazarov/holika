@@ -1,0 +1,65 @@
+=== ЯКОРЬ НАЧАЛА ===
+Sat Aug  1 20:52:36 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== Q3'. Зона паритета: строки core.fact_sales_profit по трём контрагентам-маркетплейсам ===
+[
+  {
+    "agent_id": "31d135bc-4df8-11f1-0a80-1c8a0053c5b4", 
+    "days": "1", 
+    "first_date": "2026-05-12", 
+    "last_date": "2026-05-12", 
+    "revenue_kgs": "1980000.0", 
+    "rows_cnt": "2"
+  }
+]
+
+=== Q4'. Та же выборка в разрезе суток (провенанс, построчно по датам) ===
+[
+  {
+    "agent_id": "31d135bc-4df8-11f1-0a80-1c8a0053c5b4", 
+    "revenue_kgs": "1980000.0", 
+    "rows_cnt": "2", 
+    "transaction_date": "2026-05-12"
+  }
+]
+
+=== Q5'. Контроль зоны паритета целиком ===
+[
+  {
+    "max_date": "2026-08-01", 
+    "min_date": "2026-05-01", 
+    "revenue_kgs": "2.9324773941E8", 
+    "rows_cnt": "7120"
+  }
+]
+
+=== Q6'. Доля трёх контрагентов в зоне паритета (та же выборка, один запрос) ===
+[
+  {
+    "grp": "прочие", 
+    "revenue_kgs": "2.9126773941E8", 
+    "rows_cnt": "7118"
+  }, 
+  {
+    "grp": "маркетплейсы", 
+    "revenue_kgs": "1980000.0", 
+    "rows_cnt": "2"
+  }
+]
+
+=== ЯКОРЬ КОНЦА ===
+Sat Aug  1 20:52:48 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

@@ -1,0 +1,35 @@
+=== ЯКОРЬ НАЧАЛА ===
+Sat Aug  1 20:58:23 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+токен прочитан, длина строки: 40 символов (значение не печатается)
+
+=== URL запроса (без токена) ===
+https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin?filter=moment%3E%3D2026-05-01%2000%3A00%3A00%3Bmoment%3C2026-06-01%2000%3A00%3A00&expand=positions,agent,rate.currency&limit=100&offset=0
+
+
+HTTP_STATUS=200
+
+=== контроль тела ответа ===
+-rw-r--r--@ 1 ilyasbazarov  staff  726445 Aug  2 02:58 reference/_scratch_SALES-PERIMETER-CONFIRM_2026-08-02/commissionreportin_may_page_0.json
+meta: {"href": "https://api.moysklad.ru/api/remap/1.2/entity/commissionreportin?filter=moment%3E%3D2026-05-01%2000%3A00%3A00%3Bmoment%3C2026-06-01%2000%3A00%3A00&expand=positions,agent,rate.currency&limit=100&offset=0", "type": "commissionreportin", "mediaType": "application/json", "size": 7, "limit": 100
+rows в теле: 7
+ключи rows[0] (ADR-079 §6): accountId, agent, applicable, attributes, commissionPeriodEnd, commissionPeriodStart, commitentSum, contract, created, externalCode, files, group, id, meta, moment, name, organization, organizationAccount, payedSum, positions, printed, published, rate, returnToCommissionerPositions, rewardPercent, rewardType, salesChannel, shared, state, sum, updated, vatEnabled
+позиций в rows[0]: 2
+ключи positions.rows[0]: accountId, assortment, id, meta, price, quantity, reward, vat, vatEnabled
+
+=== ЯКОРЬ КОНЦА ===
+Sat Aug  1 20:58:26 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

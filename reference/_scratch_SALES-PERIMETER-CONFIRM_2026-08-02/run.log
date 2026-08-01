@@ -1,0 +1,146 @@
+=== ЯКОРЬ НАЧАЛА ===
+Sat Aug  1 20:50:31 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== Q0. Контроль таблицы: всего строк в core.fact_commissionreportin ===
+[
+  {
+    "docs_total": "192", 
+    "moment_max": "2026-07-27 16:05:00", 
+    "moment_min": "2024-07-28 15:15:00", 
+    "rows_total": "192"
+  }
+]
+
+=== Q1. Май-2026: документы commissionreportin в разрезе agent_id ===
+--- окно: moment >= 2026-05-01 00:00:00 UTC AND moment < 2026-06-01 00:00:00 UTC
+--- (дословно тот же фильтр, что у загрузчика, reference/code/cf-loss-commission/main.py:129)
+[
+  {
+    "agent_id": "0276f431-2ff5-11ef-0a80-11d40019917f", 
+    "docs": "3", 
+    "overhead_kgs": "375418.42", 
+    "reward_kgs": "63332.93", 
+    "total_kgs": "438751.35"
+  }, 
+  {
+    "agent_id": "3c080755-03ff-11f0-0a80-0c2c00104bbb", 
+    "docs": "3", 
+    "overhead_kgs": "0.0", 
+    "reward_kgs": "311.4", 
+    "total_kgs": "311.4"
+  }, 
+  {
+    "agent_id": "31d135bc-4df8-11f1-0a80-1c8a0053c5b4", 
+    "docs": "1", 
+    "overhead_kgs": "0.0", 
+    "reward_kgs": "-333.33", 
+    "total_kgs": "-333.33"
+  }
+]
+
+=== Q2. Май-2026: построчно, документ за документом (провенанс, не агрегат) ===
+[
+  {
+    "agent_id": "3c080755-03ff-11f0-0a80-0c2c00104bbb", 
+    "commission_overhead_sum_kgs": "0.0", 
+    "currency_code": "KGS", 
+    "document_id": "2eb652fb-47b9-11f1-0a80-1b3800d317b6", 
+    "moment": "2026-05-04 16:00:00", 
+    "rate_value": "1.0", 
+    "reward_sum_kgs": "108.07", 
+    "sum_kgs": "108.07"
+  }, 
+  {
+    "agent_id": "0276f431-2ff5-11ef-0a80-11d40019917f", 
+    "commission_overhead_sum_kgs": "83296.62", 
+    "currency_code": "KGS", 
+    "document_id": "30637918-47b9-11f1-0a80-1b3800d317e4", 
+    "moment": "2026-05-04 16:00:00", 
+    "rate_value": "1.0", 
+    "reward_sum_kgs": "15696.67", 
+    "sum_kgs": "98993.29"
+  }, 
+  {
+    "agent_id": "3c080755-03ff-11f0-0a80-0c2c00104bbb", 
+    "commission_overhead_sum_kgs": "0.0", 
+    "currency_code": "KGS", 
+    "document_id": "67f6b8ed-4d39-11f1-0a80-1451014a0021", 
+    "moment": "2026-05-11 16:00:00", 
+    "rate_value": "1.0", 
+    "reward_sum_kgs": "139.79", 
+    "sum_kgs": "139.79"
+  }, 
+  {
+    "agent_id": "0276f431-2ff5-11ef-0a80-11d40019917f", 
+    "commission_overhead_sum_kgs": "153359.59", 
+    "currency_code": "KGS", 
+    "document_id": "891a4982-52b9-11f1-0a80-1b710115e8b2", 
+    "moment": "2026-05-18 16:00:00", 
+    "rate_value": "1.0", 
+    "reward_sum_kgs": "21786.7", 
+    "sum_kgs": "175146.29"
+  }, 
+  {
+    "agent_id": "0276f431-2ff5-11ef-0a80-11d40019917f", 
+    "commission_overhead_sum_kgs": "138762.21", 
+    "currency_code": "KGS", 
+    "document_id": "ba41ef3e-5839-11f1-0a80-0e0601973a62", 
+    "moment": "2026-05-25 16:00:00", 
+    "rate_value": "1.0", 
+    "reward_sum_kgs": "25849.56", 
+    "sum_kgs": "164611.77"
+  }, 
+  {
+    "agent_id": "3c080755-03ff-11f0-0a80-0c2c00104bbb", 
+    "commission_overhead_sum_kgs": "0.0", 
+    "currency_code": "KGS", 
+    "document_id": "62e858ec-5881-11f1-0a80-181602b216fa", 
+    "moment": "2026-05-26 00:33:00", 
+    "rate_value": "1.0", 
+    "reward_sum_kgs": "63.54", 
+    "sum_kgs": "63.54"
+  }, 
+  {
+    "agent_id": "31d135bc-4df8-11f1-0a80-1c8a0053c5b4", 
+    "commission_overhead_sum_kgs": "0.0", 
+    "currency_code": "KGS", 
+    "document_id": "62ea072a-5881-11f1-0a80-08d2029c50f2", 
+    "moment": "2026-05-26 00:33:00", 
+    "rate_value": "1.0", 
+    "reward_sum_kgs": "-333.33", 
+    "sum_kgs": "-333.33"
+  }
+]
+
+=== Q3. Зона паритета (transaction_date >= 2026-05-01): отгрузки entity/demand,
+===     выписанные на трёх контрагентов-маркетплейсов — масштаб дефекта признания выручки ===
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r61d7de176330ae17_0000019fbf17fc18_1': Unrecognized name: demand_id
+at [2:24]
+
+=== Q4. Та же выборка построчно по документам (провенанс) ===
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r66411fe185cc69f4_0000019fbf1803e2_1': Unrecognized name: demand_id
+at [1:8]
+
+=== Q5. Контроль зоны паритета: верхняя граница данных в core.fact_sales_profit ===
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r4e00b14f4f73b15_0000019fbf180aa9_1': Unrecognized name: demand_id at
+[2:24]
+
+=== ЯКОРЬ КОНЦА ===
+Sat Aug  1 20:50:53 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
