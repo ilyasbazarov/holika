@@ -1,0 +1,89 @@
+Sat Aug  1 20:23:41 UTC 2026
+HEAD: 0cc54b1ee4f336ae6512853b9223278049cfd25f
+
+########## К1 обе без брифа, класс A, наборы разные -> ожидание RC 0
+== FX-MAY-WINDOW-D1-TAIL: 1 путей · класс A · источник: 07_STATE §Мандат (задача без брифа, ADR-086 §1) ==
+reference/fx_may_window_d1_tail_<date>.md
+
+== METHOD-PROMOTE-LOCAL-RULES: 1 путей · класс A · источник: 07_STATE §Мандат (задача без брифа, ADR-086 §1) ==
+_METHOD.md
+
+== пересечения ==
+FX-MAY-WINDOW-D1-TAIL x METHOD-PROMOTE-LOCAL-RULES: пересечения нет
+== вердикт ==
+ПАРАЛЛЕЛЬ ДОПУСТИМА по файлам и по классу
+RC=0
+
+########## К2 задача целиком класса B -> ожидание RC 1
+== AUDIT-COUNTERPARTIES-SNAPSHOT-RETIRE: класс B ==
+КЛАСС B НЕ ПАРАЛЛЕЛИТСЯ НИКОГДА (ADR-082 §1)
+== вердикт ==
+ПАРАЛЛЕЛЬ ЗАПРЕЩЕНА: AUDIT-COUNTERPARTIES-SNAPSHOT-RETIRE есть задача класса B (ADR-082 §1). Запускать по одной.
+RC=1
+
+########## К3 смешанный класс + строка без «Пишет:» -> ожидание RC 3 (отказ, не тихий пропуск)
+== INGEST-CURRENCY-ASSERT: ВНИМАНИЕ, класс смешанный (A/B) ==
+Параллель допустима ТОЛЬКО для шагов класса A; шаги класса B не параллелятся (ADR-082 §1).
+
+== INGEST-CURRENCY-ASSERT: 2 путей · класс A/B · источник: 07_STATE §Мандат (задача без брифа, ADR-086 §1) ==
+reference/ingest_currency_assert_<date>.md
+reference/code/
+
+== INGEST-MOMENT-ZONE-FIX: ВНИМАНИЕ, класс смешанный (A/B) ==
+Параллель допустима ТОЛЬКО для шагов класса A; шаги класса B не параллелятся (ADR-082 §1).
+
+ПРОВЕРКА: у INGEST-MOMENT-ZONE-FIX источник найден (07_STATE §Мандат (задача без брифа, ADR-086 §1)), но набор пуст — ОТКАЗ (ADR-021 §2)
+RC=3
+
+########## К4 бриф имеет приоритет над таблицей -> ожидание RC 0
+== SOURCE-MAP-REST: 9 путей · класс A · источник: briefs/SOURCE-MAP-REST.md ==
+reference/code/cf-inventory/
+reference/code/cf-facts/
+reference/source_map_rest_2026-07-29.md
+reference/_scratch_SOURCE-MAP-REST_<YYYY-MM-DD>/
+reference/sql/sq_marts_in_transit_<YYYY-MM-DD>.sql
+reference/sql/sq_marts_inventory_health_<YYYY-MM-DD>.sql
+reference/sql/sq_marts_customer_invoices_ar_<YYYY-MM-DD>.sql
+11_INFRA_FACTS.md
+reference/_inbox/session_SOURCE-MAP-REST_<YYYY-MM-DD>.md
+
+== FX-MAY-WINDOW-D1-TAIL: 1 путей · класс A · источник: 07_STATE §Мандат (задача без брифа, ADR-086 §1) ==
+reference/fx_may_window_d1_tail_<date>.md
+
+== пересечения ==
+SOURCE-MAP-REST x FX-MAY-WINDOW-D1-TAIL: пересечения нет
+== вердикт ==
+ПАРАЛЛЕЛЬ ДОПУСТИМА по файлам и по классу
+RC=0
+
+########## К5 задачи нет нигде -> ожидание RC 3
+ПРОВЕРКА: у NO-SUCH-TASK нет ни briefs/NO-SUCH-TASK.md, ни строк в 07_STATE §Мандат — ОТКАЗ (ADR-102)
+RC=3
+
+########## К6 реальное пересечение по каталогу-предку reference/code/ -> ожидание RC 1
+== SOURCE-MAP-REST: 9 путей · класс A · источник: briefs/SOURCE-MAP-REST.md ==
+reference/code/cf-inventory/
+reference/code/cf-facts/
+reference/source_map_rest_2026-07-29.md
+reference/_scratch_SOURCE-MAP-REST_<YYYY-MM-DD>/
+reference/sql/sq_marts_in_transit_<YYYY-MM-DD>.sql
+reference/sql/sq_marts_inventory_health_<YYYY-MM-DD>.sql
+reference/sql/sq_marts_customer_invoices_ar_<YYYY-MM-DD>.sql
+11_INFRA_FACTS.md
+reference/_inbox/session_SOURCE-MAP-REST_<YYYY-MM-DD>.md
+
+== INGEST-CURRENCY-ASSERT: ВНИМАНИЕ, класс смешанный (A/B) ==
+Параллель допустима ТОЛЬКО для шагов класса A; шаги класса B не параллелятся (ADR-082 §1).
+
+== INGEST-CURRENCY-ASSERT: 2 путей · класс A/B · источник: 07_STATE §Мандат (задача без брифа, ADR-086 §1) ==
+reference/ingest_currency_assert_<date>.md
+reference/code/
+
+== пересечения ==
+SOURCE-MAP-REST x INGEST-CURRENCY-ASSERT: ПЕРЕСЕЧЕНИЕ
+reference/code/cf-facts <-> reference/code
+reference/code/cf-inventory <-> reference/code
+== вердикт ==
+ПАРАЛЛЕЛЬ ЗАПРЕЩЕНА: пересечение наборов либо класс B (ADR-082 §1). Запускать по одной.
+RC=1
+Sat Aug  1 20:23:41 UTC 2026
