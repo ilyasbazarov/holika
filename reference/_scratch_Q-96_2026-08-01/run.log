@@ -1,0 +1,119 @@
+=== ЯКОРЬ НАЧАЛА ===
+Sat Aug  1 09:24:17 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+msklad-bi-prod
+
+=== ШАГ 1. Два документа-маркера: что в core СЕЙЧАС ===
+[
+  {
+    "_loaded_at": "2026-07-31 21:07:43", 
+    "moment": "2026-05-15", 
+    "payment_id": "8837df1b-50e5-11f1-0a80-0bfd003170f9", 
+    "payment_name": "04744", 
+    "payment_type": "paymentout", 
+    "sum_kgs": "900000.0"
+  }, 
+  {
+    "_loaded_at": "2026-07-31 21:05:02", 
+    "moment": "2026-05-31", 
+    "payment_id": "585c8eaf-5f66-11f1-0a80-132d0026fc3b", 
+    "payment_name": "05287", 
+    "payment_type": "paymentout", 
+    "sum_kgs": "937.5"
+  }
+]
+
+=== ШАГ 2. Агрегат мая-2026 по core.fact_payments (слой B эталона) ===
+[
+  {
+    "docs": "244", 
+    "loaded_max": "2026-07-31 21:11:28", 
+    "loaded_min": "2026-07-31 21:00:25", 
+    "sum_kgs": "8600919.01"
+  }
+]
+
+=== ШАГ 3. Тот же агрегат БЕЗ фильтра по типу (на случай иной разметки payment_type) ===
+[
+  {
+    "docs": "244", 
+    "loaded_max": "2026-07-31 21:11:28", 
+    "loaded_min": "2026-07-31 21:00:25", 
+    "payment_type": "paymentout", 
+    "sum_kgs": "8600919.01"
+  }
+]
+
+=== ШАГ 4. Когда строки мая переписывались в последний раз (распределение по суткам) ===
+[
+  {
+    "docs": "244", 
+    "loaded_day": "2026-07-31"
+  }
+]
+
+=== ШАГ 5. Инвесторская поверхность: тот же май в marts.expenses (слой C эталона) ===
+[
+  {
+    "rows_cnt": "149", 
+    "total_sum_kgs": "1.02329032E7"
+  }
+]
+
+=== ШАГ 6. Схема marts.expenses (если Шаг 5 не сошёлся по именам колонок) ===
+[
+  {
+    "mode": "NULLABLE",
+    "name": "moment",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "month_start",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "week_start",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "year_num",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "year_month",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "payment_type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "expense_item_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "expense_item_name",
+    "type": "STRING"
+
+=== ЯКОРЬ КОНЦА ===
+Sat Aug  1 09:24:35 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
