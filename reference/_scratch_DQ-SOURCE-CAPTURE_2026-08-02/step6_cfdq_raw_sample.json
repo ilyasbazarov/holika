@@ -1,0 +1,116 @@
+[
+  {
+    "httpRequest": {
+      "latency": "3.033846499s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "107.178.198.105",
+      "requestMethod": "POST",
+      "requestSize": "1198",
+      "requestUrl": "https://cf-dq-xw5u2boozq-de.a.run.app/",
+      "responseSize": "803",
+      "serverIp": "34.143.77.2",
+      "status": 200,
+      "userAgent": "GoogleCloudWorkflows; (+https://cloud.google.com/workflows/docs)"
+    },
+    "insertId": "6a6f5bf60004457e5d6c1e99",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-dq",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f72986d034199d942fe5d5999ad011a4f567ae276fd6636e22c641b7d75ac93e8dbfc33d52a5e448f65efd076ac105fa82843c5cda750e0a7aacdfcd40fe5b6b632d61ea9fd6f7dbdd"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-02T15:02:14.282510073Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-dq",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-dq-00007-hot",
+        "service_name": "cf-dq"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "afc59425a7fa3d5e",
+    "timestamp": "2026-08-02T15:02:11.233665Z",
+    "trace": "projects/msklad-bi-prod/traces/b58919916175252fcea4d2ace88b2aa4",
+    "traceSampled": true
+  },
+  {
+    "httpRequest": {
+      "latency": "3.163395959s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "107.178.198.66",
+      "requestMethod": "POST",
+      "requestSize": "1198",
+      "requestUrl": "https://cf-dq-xw5u2boozq-de.a.run.app/",
+      "responseSize": "803",
+      "serverIp": "34.143.78.2",
+      "status": 200,
+      "userAgent": "GoogleCloudWorkflows; (+https://cloud.google.com/workflows/docs)"
+    },
+    "insertId": "6a6f4dd800047f95c7e8ece9",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-dq",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f72986d034199d942fe5d5999ad011a4f567ae276fd6636e22c641b7d75ac93e8dbfc33d52a5e448f65efd076ac105fa82843c5cda750e0a7aacdfcd40fe5b6b632d61ea9fd6f7dbdd"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-02T14:02:00.298184535Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-dq",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-dq-00007-hot",
+        "service_name": "cf-dq"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "101e266da4fa9c6a",
+    "timestamp": "2026-08-02T14:01:57.117818Z",
+    "trace": "projects/msklad-bi-prod/traces/14526b7c8ffdf862dacdbe2d1153ab19",
+    "traceSampled": true
+  },
+  {
+    "httpRequest": {
+      "latency": "3.981915602s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "107.178.198.103",
+      "requestMethod": "POST",
+      "requestSize": "1198",
+      "requestUrl": "https://cf-dq-xw5u2boozq-de.a.run.app/",
+      "responseSize": "803",
+      "serverIp": "34.143.79.2",
+      "status": 200,
+      "userAgent": "GoogleCloudWorkflows; (+https://cloud.google.com/workflows/docs)"
+    },
+    "insertId": "6a6f3fd600033d8d881b4415",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-dq",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f72986d034199d942fe5d5999ad011a4f567ae276fd6636e22c641b7d75ac93e8dbfc33d52a5e448f65efd076ac105fa82843c5cda750e0a7aacdfcd40fe5b6b632d61ea9fd6f7dbdd"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-02T13:02:14.224813326Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-dq",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-dq-00007-hot",
+        "service_name": "cf-dq"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "d1e2ae088fec2d76",
+    "timestamp": "2026-08-02T13:02:10.214100Z",
+    "trace": "projects/msklad-bi-prod/traces/61e463231015bfb13bd83433ddea1e14",
+    "traceSampled": true
+  }
+]

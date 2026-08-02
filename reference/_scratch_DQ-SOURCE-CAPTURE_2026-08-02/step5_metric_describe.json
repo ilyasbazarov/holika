@@ -1,0 +1,16 @@
+{
+  "createTime": "2026-05-13T13:31:24.749457729Z",
+  "description": "DQ Gate провалил проверку качества данных",
+  "filter": "resource.type=\"cloud_run_revision\"\nresource.labels.service_name=\"cf-dq\"\njsonPayload.message=~\"DQ.*FAILED|dq_gate.*fail|check failed\"\nseverity>=ERROR",
+  "metricDescriptor": {
+    "description": "DQ Gate провалил проверку качества данных",
+    "metricKind": "DELTA",
+    "name": "projects/msklad-bi-prod/metricDescriptors/logging.googleapis.com/user/msklad_dq_gate_failed",
+    "type": "logging.googleapis.com/user/msklad_dq_gate_failed",
+    "unit": "1",
+    "valueType": "INT64"
+  },
+  "name": "msklad_dq_gate_failed",
+  "resourceName": "projects/msklad-bi-prod/metrics/msklad_dq_gate_failed",
+  "updateTime": "2026-05-13T13:31:24.749457729Z"
+}

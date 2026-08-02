@@ -1,0 +1,43 @@
+{
+  "alertStrategy": {
+    "autoClose": "7200s"
+  },
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "perSeriesAligner": "ALIGN_COUNT"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "duration": "0s",
+        "filter": "resource.type=\"cloud_run_revision\" AND metric.type=\"logging.googleapis.com/user/msklad_dq_gate_failed\""
+      },
+      "displayName": "DQ Gate failed > 0",
+      "name": "projects/msklad-bi-prod/alertPolicies/11146409152309763101/conditions/11146409152309761974"
+    }
+  ],
+  "creationRecord": {
+    "mutateTime": "2026-05-13T13:40:07.345325831Z",
+    "mutatedBy": "ilyasbazarov4@gmail.com"
+  },
+  "displayName": "msklad-dq-gate-failed",
+  "documentation": {
+    "content": "DQ Gate отклонил данные. Staging не промоутнут. Runbook §2.",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "mutationRecord": {
+    "mutateTime": "2026-05-13T13:40:07.345325831Z",
+    "mutatedBy": "ilyasbazarov4@gmail.com"
+  },
+  "name": "projects/msklad-bi-prod/alertPolicies/11146409152309763101",
+  "notificationChannels": [
+    "projects/msklad-bi-prod/notificationChannels/876055528317282377",
+    "projects/msklad-bi-prod/notificationChannels/13959469767726741244"
+  ]
+}

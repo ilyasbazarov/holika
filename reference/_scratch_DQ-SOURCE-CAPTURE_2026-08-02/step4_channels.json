@@ -1,0 +1,34 @@
+{
+  "creationRecord": {
+    "mutateTime": "2026-05-13T13:31:20.536654938Z"
+  },
+  "displayName": "msklad-alerts-email",
+  "enabled": true,
+  "labels": {
+    "email_address": "beksultan.aiv@gmail.com"
+  },
+  "mutationRecords": [
+    {
+      "mutateTime": "2026-05-13T13:31:20.536654938Z"
+    }
+  ],
+  "name": "projects/msklad-bi-prod/notificationChannels/876055528317282377",
+  "type": "email"
+}
+{
+  "creationRecord": {
+    "mutateTime": "2026-05-13T13:31:21.804406575Z"
+  },
+  "displayName": "msklad-alerts-telegram",
+  "enabled": true,
+  "labels": {
+    "url": "https://cf-alert-xw5u2boozq-de.a.run.app"
+  },
+  "mutationRecords": [
+    {
+      "mutateTime": "2026-05-13T13:31:21.804406575Z"
+    }
+  ],
+  "name": "projects/msklad-bi-prod/notificationChannels/13959469767726741244",
+  "type": "webhook_tokenauth"
+}

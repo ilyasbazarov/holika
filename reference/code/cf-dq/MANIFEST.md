@@ -1,0 +1,60 @@
+# MANIFEST · /reference/code/cf-dq/ — снапшот исходника (DQ-SOURCE-CAPTURE)
+
+**Тип:** discovery-снапшот (`_METHOD §11`), не оракул, не прод-код.
+**Источник:** прямое снятие через `gcloud functions describe` + `gsutil cp` задеплоенного архива (не обходной путь — `describe` отработал без `403`).
+**Дата снятия (UTC):** `2026-08-02T15:01:49Z…15:02:00Z` (`step1_run.log`).
+**Скрипт:** `reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/step1_capture_source.sh`, лог `step1_run.log`.
+
+---
+
+## Ревизия и провенанс (`gcloud functions describe cf-dq --gen2 --region=asia-east1 --project=msklad-bi-prod`)
+
+| Поле | Значение |
+|---|---|
+| `serviceConfig.revision` | `cf-dq-00007-hot` (совпадает с `11_INFRA_FACTS §CF`) |
+| `buildConfig.entryPoint` | `main` |
+| `buildConfig.runtime` | `python312` |
+| `buildConfig.source.storageSource` | `gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip` (generation `1781780276907576`) |
+| `updateTime` (сервиса) | `2026-07-30T10:04:58.501779835Z` (метаданная-правка массовой сессии того дня, не передеплой кода — тот же вывод, что уже зафиксирован `11_INFRA_FACTS.md:76`) |
+| `state` | `ACTIVE` |
+
+Ревизия `cf-dq-00007-hot` создана `2026-06-18T10:59:31Z` (`11_INFRA_FACTS.md §cf-dq`, история ревизий не переснималась этой сессией — уже зафиксирована).
+
+## Состав задеплоенного архива
+
+Распакованный `function-source.zip` несёт 8 записей, из них 5 — исполняемые модули функции, 3 — **вложенные архивы** (см. раздел «Известная аномалия» ниже):
+
+| Файл | sha256 | Роль |
+|---|---|---|
+| `main.py` | `9693010ae04cd14859b7ed53bba25fa28cbf1962a9b127c012a75d521d86ea09` | Точка входа (`entryPoint=main`), 6 DQ-чеков |
+| `helpers.py` | `0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146` | BQ-клиент, `run_scalar`/`run_row`, запись в `audit.dq_runs` |
+| `config.py` | `7a818364c78fdf21cb32d8ce52d54da0972a6de511d1f6023fb8ea812fc543b6` | Константы: пороги, имена датасетов/таблиц, секреты |
+| `requirements.txt` | `587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516` | Зависимости |
+| `patch_dq.py` | `bb1bc968b81573431c5f7c912539918d51d1ee18cd34b040a109ccf213eeb22a` | Патч-скрипт, применённый к `main.py` (см. ниже) |
+
+sha256 всех пяти файлов посчитан напрямую с диска (`shasum -a 256`), не транскрипцией — расхождение класса `E1-T3-D-CFSRC` (`patch_main_finance.py`, `07_STATE`) здесь структурно исключено.
+
+## Известная аномалия архива (не факт о логике функции)
+
+Архив несёт три вложенных ZIP-файла: `src.zip` (`2026-06-18T10:55`), `function-source.zip` (`2026-05-26T09:53`),
+`function-source-patched.zip` (`2026-05-26T09:54`) — **самореференциальные остатки предыдущей упаковки**,
+тот же класс мусора в задеплоенном архиве, что `main.py.bak` у `cf-finance` (`ADR-040`, `07_STATE` E1-T3-D-CFSRC).
+Их `main.py` (идентичен во всех трёх, sha256 `b3c6f6c…c99d`) несёт **дозфиксовую** версию `check_drift`
+(T-0/`max_d`/`today_rev`, без комментария «Изменено на T-1»), датирован `2026-05-26` — совпадает с ревизией
+`cf-dq-00006-lac` (`2026-05-26T09:56:13Z`). Не влияет на исполняемый код: `entryPoint=main` резолвится в
+топоуровневый `main.py` архива, вложенные zip Python-раннтаймом не исполняются. Оставлены как найдены,
+не удалены (`ADR-043`), лежат в `reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/source_unzipped/`.
+
+## Патч, применённый к текущей ревизии
+
+`patch_dq.py` — скрипт, переписывающий функцию `check_drift` в `main.py` целиком (посимвольное сравнение
+текста `new_func` внутри `patch_dq.py` с телом `check_drift` в задеплоенном `main.py` — идентичны). `mtime`
+`main.py` и `patch_dq.py` в архиве совпадают (`2026-06-18 10:57`), тот же день, что создание ревизии
+`cf-dq-00007-hot` (`10:59:31Z`) — патч применён и упакован непосредственно перед этим деплоем. Разбор — в
+основном артефакте `reference/dq_source_capture_2026-08-02.md §3`.
+
+## Итог по критерию приёмки
+
+Снята вся точка входа (`main.py`) и её прямые зависимости (`helpers.py`, `config.py`, `requirements.txt`)
+плюс патч-скрипт (`patch_dq.py`), задокументированный отдельно. sha256 — прямой с диска, не транскрипция.
+Способ снятия — **прямой** (`gcloud functions describe` без `403`), обходной путь не понадобился.

@@ -1,0 +1,42 @@
+=== date -u (start) ===
+Sun Aug  2 15:08:08 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== testing msklad_workflow_execution_failed EXACT filter, 30d ===
+MATCH COUNT (30d, up to 20 shown): 20
+2026-08-02T15:02:14.473149813Z msklad-pipeline-hourly FAILED
+2026-08-02T14:02:00.551678803Z msklad-pipeline-hourly FAILED
+2026-08-02T13:02:14.544209043Z msklad-pipeline-hourly FAILED
+2026-08-02T12:02:29.042500404Z msklad-pipeline-hourly FAILED
+2026-08-02T11:02:16.912823503Z msklad-pipeline-hourly FAILED
+2026-08-02T10:02:07.171465678Z msklad-pipeline-hourly FAILED
+2026-08-02T09:02:22.230919283Z msklad-pipeline-hourly FAILED
+2026-08-02T08:02:02.223193749Z msklad-pipeline-hourly FAILED
+2026-08-02T07:02:19.974818775Z msklad-pipeline-hourly FAILED
+2026-08-02T06:02:28.743332208Z msklad-pipeline-hourly FAILED
+2026-08-02T05:02:10.581812248Z msklad-pipeline-hourly FAILED
+2026-08-02T04:02:30.726789879Z msklad-pipeline-hourly FAILED
+2026-08-02T03:02:12.679091461Z msklad-pipeline-hourly FAILED
+2026-08-02T02:02:15.643330573Z msklad-pipeline-hourly FAILED
+2026-08-02T01:09:21.738523033Z msklad-pipeline-weekly FAILED
+2026-08-02T01:02:05.764581656Z msklad-pipeline-hourly FAILED
+2026-08-02T00:02:00.996660731Z msklad-pipeline-hourly FAILED
+2026-08-01T23:02:05.236054770Z msklad-pipeline-hourly FAILED
+2026-08-01T22:02:15.667725056Z msklad-pipeline-hourly FAILED
+2026-08-01T21:02:10.802159927Z msklad-pipeline-hourly FAILED
+=== date -u (end) ===
+Sun Aug  2 15:08:12 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

@@ -1,0 +1,54 @@
+=== date -u (start) ===
+Sun Aug  2 15:07:54 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== metric msklad_workflow_execution_failed definition ===
+{
+  "createTime": "2026-05-13T13:31:27.426578941Z",
+  "description": "Cloud Workflow завершился со статусом FAILED или CANCELLED",
+  "filter": "resource.type=\"workflows.googleapis.com/Workflow\"\nresource.labels.workflow_id=~\"^msklad-pipeline\"\njsonPayload.state=~\"FAILED|CANCELLED\"",
+  "metricDescriptor": {
+    "description": "Cloud Workflow завершился со статусом FAILED или CANCELLED",
+    "metricKind": "DELTA",
+    "name": "projects/msklad-bi-prod/metricDescriptors/logging.googleapis.com/user/msklad_workflow_execution_failed",
+    "type": "logging.googleapis.com/user/msklad_workflow_execution_failed",
+    "unit": "1",
+    "valueType": "INT64"
+  },
+  "name": "msklad_workflow_execution_failed",
+  "resourceName": "projects/msklad-bi-prod/metrics/msklad_workflow_execution_failed",
+  "updateTime": "2026-05-13T13:31:27.426578941Z"
+}
+=== metric msklad_workflow_execution_any definition ===
+{
+  "createTime": "2026-05-13T13:31:30.279564302Z",
+  "description": "Любое завершение workflow msklad-pipeline-hourly",
+  "filter": "resource.type=\"workflows.googleapis.com/Workflow\"\nresource.labels.workflow_id=\"msklad-pipeline-hourly\"\njsonPayload.state=~\"SUCCEEDED|FAILED|CANCELLED\"",
+  "metricDescriptor": {
+    "description": "Любое завершение workflow msklad-pipeline-hourly",
+    "metricKind": "DELTA",
+    "name": "projects/msklad-bi-prod/metricDescriptors/logging.googleapis.com/user/msklad_workflow_execution_any",
+    "type": "logging.googleapis.com/user/msklad_workflow_execution_any",
+    "unit": "1",
+    "valueType": "INT64"
+  },
+  "name": "msklad_workflow_execution_any",
+  "resourceName": "projects/msklad-bi-prod/metrics/msklad_workflow_execution_any",
+  "updateTime": "2026-05-13T13:31:30.279564302Z"
+}
+=== date -u (end) ===
+Sun Aug  2 15:07:57 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
