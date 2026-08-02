@@ -1,0 +1,34 @@
+=== date -u (start) ===
+Sun Aug  2 15:01:49 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud functions describe cf-dq ===
+=== describe stderr ===
+STORAGE_SOURCE=gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip
+=== gsutil cp gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip ===
+=== unzip ===
+=== contents ===
+reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/source_unzipped/config.py
+reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/source_unzipped/requirements.txt
+reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/source_unzipped/src.zip
+reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/source_unzipped/function-source.zip
+reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/source_unzipped/main.py
+reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/source_unzipped/patch_dq.py
+reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/source_unzipped/helpers.py
+reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/source_unzipped/function-source-patched.zip
+=== date -u (end) ===
+Sun Aug  2 15:02:00 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

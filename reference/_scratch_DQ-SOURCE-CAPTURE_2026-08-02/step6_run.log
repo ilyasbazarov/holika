@@ -1,0 +1,59 @@
+=== date -u (start) ===
+Sun Aug  2 15:06:22 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== time series for msklad_dq_gate_failed, last 90 days ===
+window: 2026-05-04T15:06:23Z .. 2026-08-02T15:06:23Z
+ERROR: (gcloud.monitoring) Invalid choice: 'time-series'.
+Maybe you meant:
+  gcloud monitoring dashboards list
+  gcloud monitoring policies list
+  gcloud monitoring snoozes list
+  gcloud monitoring uptime list-configs
+  gcloud monitoring uptime list-ips
+  gcloud auth list
+  gcloud network-management network-monitoring-providers monitoring-points list
+  gcloud ai model-monitoring-jobs list
+  gcloud monitoring dashboards create
+  gcloud monitoring dashboards delete
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS
+=== point count ===
+parse error / empty: Expecting value: line 1 column 1 (char 0)
+=== does cf-dq itself emit jsonPayload logs at all? sample raw log entry structure ===
+entries: 3
+---
+resource.type: cloud_run_revision
+resource.labels: {'configuration_name': 'cf-dq', 'location': 'asia-east1', 'project_id': 'msklad-bi-prod', 'revision_name': 'cf-dq-00007-hot', 'service_name': 'cf-dq'}
+severity: INFO
+has textPayload: False
+has jsonPayload: False
+---
+resource.type: cloud_run_revision
+resource.labels: {'configuration_name': 'cf-dq', 'location': 'asia-east1', 'project_id': 'msklad-bi-prod', 'revision_name': 'cf-dq-00007-hot', 'service_name': 'cf-dq'}
+severity: INFO
+has textPayload: False
+has jsonPayload: False
+---
+resource.type: cloud_run_revision
+resource.labels: {'configuration_name': 'cf-dq', 'location': 'asia-east1', 'project_id': 'msklad-bi-prod', 'revision_name': 'cf-dq-00007-hot', 'service_name': 'cf-dq'}
+severity: INFO
+has textPayload: False
+has jsonPayload: False
+=== date -u (end) ===
+Sun Aug  2 15:06:25 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

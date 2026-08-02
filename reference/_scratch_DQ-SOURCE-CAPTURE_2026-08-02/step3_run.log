@@ -1,0 +1,35 @@
+=== date -u (start) ===
+Sun Aug  2 15:05:00 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Cloud Monitoring alert policies (grep cf-alert / DQ / severity) ===
+policy count: 4
+- msklad-dq-gate-failed | notif channels: ['projects/msklad-bi-prod/notificationChannels/876055528317282377', 'projects/msklad-bi-prod/notificationChannels/13959469767726741244']
+- msklad-cf-error | notif channels: ['projects/msklad-bi-prod/notificationChannels/876055528317282377', 'projects/msklad-bi-prod/notificationChannels/13959469767726741244']
+- msklad-workflow-silent-skip | notif channels: ['projects/msklad-bi-prod/notificationChannels/876055528317282377', 'projects/msklad-bi-prod/notificationChannels/13959469767726741244']
+- msklad-workflow-execution-failed | notif channels: ['projects/msklad-bi-prod/notificationChannels/876055528317282377', 'projects/msklad-bi-prod/notificationChannels/13959469767726741244']
+=== Cloud Logging sinks (look for cf-alert / pubsub destinations) ===
+sink count: 2
+- _Required -> logging.googleapis.com/projects/msklad-bi-prod/locations/global/buckets/_Required | filter: LOG_ID("cloudaudit.googleapis.com/activity") OR LOG_ID("externalaudit.googleapis.com/activity") OR LOG_ID("cloudaudit.googleapis.com/system_event") OR LOG_ID("externalaudit.googleapis.com/system_event") OR LOG_ID("cloudaudit.googleapis.com/access_transparency") OR LOG_ID("externalaudit.googleapis.com/access_transparency")
+- _Default -> logging.googleapis.com/projects/msklad-bi-prod/locations/global/buckets/_Default | filter: NOT LOG_ID("cloudaudit.googleapis.com/activity") AND NOT LOG_ID("externalaudit.googleapis.com/activity") AND NOT LOG_ID("cloudaudit.googleapis.com/system_event") AND NOT LOG_ID("externalaudit.googleapis.com/system_event") AND NOT LOG_ID("cloudaudit.googleapis.com/access_transparency") AND NOT LOG_ID("externalaudit.googleapis.com/access_transparency")
+=== Pub/Sub topics/subscriptions mentioning alert ===
+[]
+=== cf-alert trigger (event vs http) ===
+eventTrigger: None
+serviceConfig.ingressSettings: ALLOW_ALL
+=== date -u (end) ===
+Sun Aug  2 15:05:06 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

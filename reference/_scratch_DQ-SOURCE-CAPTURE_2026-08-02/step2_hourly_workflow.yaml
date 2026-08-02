@@ -1,0 +1,162 @@
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - run_id: ${sys.now()}
+          - cf_dim:       "https://cf-dim-xw5u2boozq-de.a.run.app"
+          - cf_fx:        "https://cf-fx-xw5u2boozq-de.a.run.app"
+          - cf_facts:     "https://cf-facts-xw5u2boozq-de.a.run.app"
+          - cf_dq:        "https://cf-dq-xw5u2boozq-de.a.run.app"
+    - step_dim:
+        try:
+          call: http.post
+          args:
+            url: ${cf_dim}
+            auth:
+              type: OIDC
+            body:
+              run_id: ${run_id}
+            timeout: 540
+          result: dim_result
+        except:
+          as: e
+          steps:
+            - log_dim_error:
+                call: sys.log
+                args:
+                  text: ${"[HOURLY] step_dim FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                  severity: ERROR
+            - raise_dim:
+                raise: ${e}
+    - step_fx:
+        try:
+          call: http.post
+          args:
+            url: ${cf_fx}
+            auth:
+              type: OIDC
+            body:
+              run_id: ${run_id}
+            timeout: 180
+          result: fx_result
+        except:
+          as: e
+          steps:
+            - log_fx_error:
+                call: sys.log
+                args:
+                  text: ${"[HOURLY] step_fx FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                  severity: ERROR
+            - raise_fx:
+                raise: ${e}
+    - step_facts:
+        try:
+          call: http.post
+          args:
+            url: ${cf_facts}
+            auth:
+              type: OIDC
+            body:
+              run_id: ${run_id}
+              mode: "hourly"
+            timeout: 600
+          result: facts_result
+        except:
+          as: e
+          steps:
+            - log_facts_error:
+                call: sys.log
+                args:
+                  text: ${"[HOURLY] step_facts FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                  severity: ERROR
+            - raise_facts:
+                raise: ${e}
+    - step_dq:
+        try:
+          call: http.post
+          args:
+            url: ${cf_dq}
+            auth:
+              type: OIDC
+            body:
+              run_id: ${run_id}
+            timeout: 120
+          result: dq_result
+        except:
+          as: e
+          steps:
+            - log_dq_error:
+                call: sys.log
+                args:
+                  text: ${"[HOURLY] step_dq CRASHED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                  severity: CRITICAL
+            - raise_dq:
+                raise: ${e}
+    - parse_dq_result:
+        assign:
+          - dq_parsed: ${json.decode(dq_result.body)}
+    - check_dq:
+        switch:
+          - condition: ${not(dq_parsed.passed)}
+            steps:
+              - log_dq_failed:
+                  call: sys.log
+                  args:
+                    text: ${"[HOURLY] DQ Gate FAILED run_id=" + run_id + " details=" + json.encode_to_string(dq_parsed)}
+                    severity: CRITICAL
+              - raise_dq_failed:
+                  raise: "DQ Gate failed — promote blocked"
+    - step_promote:
+        try:
+          call: http.post
+          args:
+            url: ${cf_facts}
+            auth:
+              type: OIDC
+            body:
+              run_id: ${run_id}
+              mode: "promote"
+              window_days: 7
+            timeout: 300
+          result: promote_result
+        except:
+          as: e
+          steps:
+            - log_promote_error:
+                call: sys.log
+                args:
+                  text: ${"[HOURLY] step_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                  severity: ERROR
+            - raise_promote:
+                raise: ${e}
+    - step_purchases:
+        try:
+          call: http.post
+          args:
+            url: ${cf_facts}
+            auth:
+              type: OIDC
+            body:
+              run_id: ${run_id}
+              mode: "purchases"
+              window_days: 90
+            timeout: 300
+          result: purchases_result
+        except:
+          as: e
+          steps:
+            - log_purchases_warning:
+                call: sys.log
+                args:
+                  text: ${"[HOURLY] step_purchases FAILED (non-blocking) run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                  severity: WARNING
+    - done:
+        steps:
+          - log_success:
+              call: sys.log
+              args:
+                text: ${"[HOURLY] Pipeline COMPLETED run_id=" + run_id}
+                severity: INFO
+          - return_result:
+              return: ${promote_result.body}

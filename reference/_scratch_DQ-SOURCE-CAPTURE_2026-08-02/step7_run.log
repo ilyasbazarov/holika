@@ -1,0 +1,23 @@
+=== date -u (start) ===
+Sun Aug  2 15:06:40 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== testing metric's EXACT filter over 90 days ===
+MATCH COUNT (90d, up to 10 shown): 0
+[]
+=== date -u (end) ===
+Sun Aug  2 15:07:24 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

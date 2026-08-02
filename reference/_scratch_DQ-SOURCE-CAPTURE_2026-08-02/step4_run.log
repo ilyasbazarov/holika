@@ -1,0 +1,102 @@
+=== date -u (start) ===
+Sun Aug  2 15:05:21 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== msklad-dq-gate-failed policy detail ===
+POLICY_NAME=projects/msklad-bi-prod/alertPolicies/11146409152309763101
+{
+  "alertStrategy": {
+    "autoClose": "7200s"
+  },
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "perSeriesAligner": "ALIGN_COUNT"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "duration": "0s",
+        "filter": "resource.type=\"cloud_run_revision\" AND metric.type=\"logging.googleapis.com/user/msklad_dq_gate_failed\""
+      },
+      "displayName": "DQ Gate failed > 0",
+      "name": "projects/msklad-bi-prod/alertPolicies/11146409152309763101/conditions/11146409152309761974"
+    }
+  ],
+  "creationRecord": {
+    "mutateTime": "2026-05-13T13:40:07.345325831Z",
+    "mutatedBy": "ilyasbazarov4@gmail.com"
+  },
+  "displayName": "msklad-dq-gate-failed",
+  "documentation": {
+    "content": "DQ Gate отклонил данные. Staging не промоутнут. Runbook §2.",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "mutationRecord": {
+    "mutateTime": "2026-05-13T13:40:07.345325831Z",
+    "mutatedBy": "ilyasbazarov4@gmail.com"
+  },
+  "name": "projects/msklad-bi-prod/alertPolicies/11146409152309763101",
+  "notificationChannels": [
+    "projects/msklad-bi-prod/notificationChannels/876055528317282377",
+    "projects/msklad-bi-prod/notificationChannels/13959469767726741244"
+  ]
+}
+=== notification channels detail ===
+--- projects/msklad-bi-prod/notificationChannels/876055528317282377 ---
+{
+  "creationRecord": {
+    "mutateTime": "2026-05-13T13:31:20.536654938Z"
+  },
+  "displayName": "msklad-alerts-email",
+  "enabled": true,
+  "labels": {
+    "email_address": "beksultan.aiv@gmail.com"
+  },
+  "mutationRecords": [
+    {
+      "mutateTime": "2026-05-13T13:31:20.536654938Z"
+    }
+  ],
+  "name": "projects/msklad-bi-prod/notificationChannels/876055528317282377",
+  "type": "email"
+}
+--- projects/msklad-bi-prod/notificationChannels/13959469767726741244 ---
+{
+  "creationRecord": {
+    "mutateTime": "2026-05-13T13:31:21.804406575Z"
+  },
+  "displayName": "msklad-alerts-telegram",
+  "enabled": true,
+  "labels": {
+    "url": "https://cf-alert-xw5u2boozq-de.a.run.app"
+  },
+  "mutationRecords": [
+    {
+      "mutateTime": "2026-05-13T13:31:21.804406575Z"
+    }
+  ],
+  "name": "projects/msklad-bi-prod/notificationChannels/13959469767726741244",
+  "type": "webhook_tokenauth"
+}
+=== date -u (end) ===
+Sun Aug  2 15:05:24 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

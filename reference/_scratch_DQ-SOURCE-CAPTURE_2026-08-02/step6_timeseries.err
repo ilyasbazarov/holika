@@ -1,0 +1,15 @@
+ERROR: (gcloud.monitoring) Invalid choice: 'time-series'.
+Maybe you meant:
+  gcloud monitoring dashboards list
+  gcloud monitoring policies list
+  gcloud monitoring snoozes list
+  gcloud monitoring uptime list-configs
+  gcloud monitoring uptime list-ips
+  gcloud auth list
+  gcloud network-management network-monitoring-providers monitoring-points list
+  gcloud ai model-monitoring-jobs list
+  gcloud monitoring dashboards create
+  gcloud monitoring dashboards delete
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS

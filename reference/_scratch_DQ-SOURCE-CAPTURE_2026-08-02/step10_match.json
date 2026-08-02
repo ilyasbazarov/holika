@@ -1,0 +1,562 @@
+[
+  {
+    "insertId": "1sddudjcevn",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T15:02:14Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "d66ea58c-4c92-4ad9-ad8f-2deef354c6cb",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T15:02:15.223915535Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T15:02:14.473149813Z"
+  },
+  {
+    "insertId": "1grppipchi0",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T14:02:00Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "a0af2459-5fc5-47e3-9c06-0f0c4eb31ba8",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T14:02:01.340059454Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T14:02:00.551678803Z"
+  },
+  {
+    "insertId": "1y802xxc2qx",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T13:02:14Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "d022a76a-a81f-40b7-b997-86502f7f7482",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T13:02:15.173767075Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T13:02:14.544209043Z"
+  },
+  {
+    "insertId": "1amgyvoc2ld",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T12:02:29Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "e70b753a-b95f-4b9c-97e8-a4ce77c617c5",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T12:02:29.962114242Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T12:02:29.042500404Z"
+  },
+  {
+    "insertId": "1iyppfjceg2",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T11:02:16Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "8a71fb9d-ff6e-4f2f-9176-023ddd1dff5c",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T11:02:17.365480480Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T11:02:16.912823503Z"
+  },
+  {
+    "insertId": "ix1en0cdsl",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T10:02:07Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "ec87c389-a12e-4c60-907a-1f2b0a37daf4",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T10:02:07.271704888Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T10:02:07.171465678Z"
+  },
+  {
+    "insertId": "1nylrm2cg0y",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T09:02:22Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "3d33546d-3e0c-47fb-af49-caca2ad2545e",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T09:02:22.954436119Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T09:02:22.230919283Z"
+  },
+  {
+    "insertId": "1rjrz5ice17",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T08:02:02Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "7bf2e510-a859-493b-aabb-f3b011ff707a",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T08:02:02.590215081Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T08:02:02.223193749Z"
+  },
+  {
+    "insertId": "dlzuy8cdpq",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T07:02:19Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "0d872bdc-c3eb-4eaf-b2bb-a2bd5e7e29c2",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T07:02:20.582409274Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T07:02:19.974818775Z"
+  },
+  {
+    "insertId": "v4tpxlcdqs",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T06:02:28Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "025da3c0-178e-4da0-b54a-98d05ae9c904",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T06:02:29.170382774Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T06:02:28.743332208Z"
+  },
+  {
+    "insertId": "1sddudjcdi3",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T05:02:10Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "18bc61a9-73eb-4e4f-b5ea-25d10aa6446b",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T05:02:11.005966827Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T05:02:10.581812248Z"
+  },
+  {
+    "insertId": "v4tpxlcdg9",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T04:02:30Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "9c260db7-51d2-4deb-a36e-58341eaa0688",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T04:02:30.847050770Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T04:02:30.726789879Z"
+  },
+  {
+    "insertId": "tpy3fgcd89",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T03:02:12Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "54801bd2-3ac8-4247-9fa2-1de3dcc65921",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T03:02:13.588955078Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T03:02:12.679091461Z"
+  },
+  {
+    "insertId": "ix1en0ccny",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T02:02:15Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "9ce76a65-c282-4d50-a612-a99ed4efff47",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T02:02:16.068344786Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T02:02:15.643330573Z"
+  },
+  {
+    "insertId": "12bmj9qc71u",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T01:09:21Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 123: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 123"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "5aa84f42-d333-470d-b0b9-a107ce85878c",
+      "workflows.googleapis.com/revision_id": "000003-fa9"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T01:09:22.246594686Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-weekly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T01:09:21.738523033Z"
+  },
+  {
+    "insertId": "1nylrm2cemt",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T01:02:05Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "9a5916bf-b0fe-4c89-b0f5-789f95fa5dd6",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T01:02:06.439494941Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T01:02:05.764581656Z"
+  },
+  {
+    "insertId": "1iyppfjccre",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T00:02:00Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "a03739cf-9a9c-44db-96a5-acfee7f7c0b9",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T00:02:01.756012919Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T00:02:00.996660731Z"
+  },
+  {
+    "insertId": "15e2e9vcen3",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-01T23:02:05Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "a99e26da-b11e-4c57-b52f-8f30de690963",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-01T23:02:06.153165383Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-01T23:02:05.236054770Z"
+  },
+  {
+    "insertId": "1j9aebgcca9",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-01T22:02:15Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "58e002bb-9c52-441d-90ea-360125b92a3c",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-01T22:02:15.858817076Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-01T22:02:15.667725056Z"
+  },
+  {
+    "insertId": "dlzuy8cc7u",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-01T21:02:10Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "9020f71f-7fd1-4ca5-b145-8a1f0cb5b98c",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-01T21:02:11.507012562Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-01T21:02:10.802159927Z"
+  }
+]

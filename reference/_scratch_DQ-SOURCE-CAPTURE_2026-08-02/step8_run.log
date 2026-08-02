@@ -1,0 +1,154 @@
+=== date -u (start) ===
+Sun Aug  2 15:07:42 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== msklad-workflow-execution-failed ===
+{
+  "alertStrategy": {
+    "autoClose": "3600s"
+  },
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "perSeriesAligner": "ALIGN_COUNT"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "duration": "0s",
+        "filter": "resource.type=\"workflows.googleapis.com/Workflow\" AND metric.type=\"logging.googleapis.com/user/msklad_workflow_execution_failed\""
+      },
+      "displayName": "Workflow failed > 0",
+      "name": "projects/msklad-bi-prod/alertPolicies/6957487447036511751/conditions/6957487447036512432"
+    }
+  ],
+  "creationRecord": {
+    "mutateTime": "2026-05-13T13:40:10.354483971Z",
+    "mutatedBy": "ilyasbazarov4@gmail.com"
+  },
+  "displayName": "msklad-workflow-execution-failed",
+  "documentation": {
+    "content": "Workflow завершился с ошибкой. Runbook §7.",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "mutationRecord": {
+    "mutateTime": "2026-05-13T13:40:10.354483971Z",
+    "mutatedBy": "ilyasbazarov4@gmail.com"
+  },
+  "name": "projects/msklad-bi-prod/alertPolicies/6957487447036511751",
+  "notificationChannels": [
+    "projects/msklad-bi-prod/notificationChannels/876055528317282377",
+    "projects/msklad-bi-prod/notificationChannels/13959469767726741244"
+  ]
+}
+
+=== msklad-cf-error ===
+{
+  "alertStrategy": {
+    "autoClose": "3600s"
+  },
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "perSeriesAligner": "ALIGN_SUM"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "duration": "0s",
+        "filter": "resource.type=\"cloud_run_revision\" AND metric.type=\"run.googleapis.com/request_count\" AND metric.labels.response_code_class=\"5xx\""
+      },
+      "displayName": "CF 5xx > 0",
+      "name": "projects/msklad-bi-prod/alertPolicies/15642682455001599993/conditions/15642682455001595918"
+    }
+  ],
+  "creationRecord": {
+    "mutateTime": "2026-05-13T13:37:05.996590461Z",
+    "mutatedBy": "ilyasbazarov4@gmail.com"
+  },
+  "displayName": "msklad-cf-error",
+  "documentation": {
+    "content": "CF вернула HTTP 5xx. Раздел Runbook: §1.",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "mutationRecord": {
+    "mutateTime": "2026-05-13T13:37:05.996590461Z",
+    "mutatedBy": "ilyasbazarov4@gmail.com"
+  },
+  "name": "projects/msklad-bi-prod/alertPolicies/15642682455001599993",
+  "notificationChannels": [
+    "projects/msklad-bi-prod/notificationChannels/876055528317282377",
+    "projects/msklad-bi-prod/notificationChannels/13959469767726741244"
+  ]
+}
+
+=== msklad-workflow-silent-skip ===
+{
+  "alertStrategy": {
+    "autoClose": "14400s"
+  },
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionAbsent": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "3600s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "perSeriesAligner": "ALIGN_COUNT"
+          }
+        ],
+        "duration": "7200s",
+        "filter": "resource.type=\"workflows.googleapis.com/Workflow\" AND metric.type=\"logging.googleapis.com/user/msklad_workflow_execution_any\""
+      },
+      "displayName": "No hourly executions in 2h",
+      "name": "projects/msklad-bi-prod/alertPolicies/17238713730472887954/conditions/17238713730472886499"
+    }
+  ],
+  "creationRecord": {
+    "mutateTime": "2026-05-13T13:40:13.066750753Z",
+    "mutatedBy": "ilyasbazarov4@gmail.com"
+  },
+  "displayName": "msklad-workflow-silent-skip",
+  "documentation": {
+    "content": "Hourly pipeline не запускался более 2 часов. Проверь Cloud Scheduler. Runbook §7.5.",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "mutationRecord": {
+    "mutateTime": "2026-05-13T13:40:13.066750753Z",
+    "mutatedBy": "ilyasbazarov4@gmail.com"
+  },
+  "name": "projects/msklad-bi-prod/alertPolicies/17238713730472887954",
+  "notificationChannels": [
+    "projects/msklad-bi-prod/notificationChannels/876055528317282377",
+    "projects/msklad-bi-prod/notificationChannels/13959469767726741244"
+  ]
+}
+
+=== date -u (end) ===
+Sun Aug  2 15:07:46 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
