@@ -1,0 +1,527 @@
+=== date -u (start) ===
+Sun Aug  2 19:39:58 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Workflow-логи (severity=CRITICAL, DQ Gate FAILED) вокруг 2026-07-21T17:00-18:03Z ===
+[]
+=== Workflow-логи (severity=CRITICAL) вокруг 2026-07-25T18:00Z..2026-07-26T18:03Z (ключевой кейс) ===
+[
+  {
+    "insertId": "1vq5o0ff8edi54",
+    "labels": {
+      "execution_id": "5f3f6c56-70a6-44f4-a935-3024bc249e1f",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-25T18:02:17.978779657Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785002402.648608 details={\"checks\":[{\"detail\":\"staging_count=684\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=36216.41\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785002402.648608,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-25T18:02:17.978779657Z"
+  },
+  {
+    "insertId": "1l5thynf9vi2w5",
+    "labels": {
+      "execution_id": "044f9fa8-51f0-4933-8958-2b6cbfacc4fb",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-25T19:01:58.716773100Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785006003.1200163 details={\"checks\":[{\"detail\":\"staging_count=684\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=36216.41\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785006003.1200163,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-25T19:01:58.716773100Z"
+  },
+  {
+    "insertId": "eq5mtdfb98m06",
+    "labels": {
+      "execution_id": "4a46caa1-ed55-4a55-afeb-35f84d86b7e2",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-25T20:01:50.544825554Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785009602.7090433 details={\"checks\":[{\"detail\":\"staging_count=684\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=36216.41\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785009602.7090433,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-25T20:01:50.544825554Z"
+  },
+  {
+    "insertId": "wij8rtfa3cnsp",
+    "labels": {
+      "execution_id": "5f65e55f-8851-4d75-8179-942013b2a6e5",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-25T21:01:52.822438106Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785013202.750936 details={\"checks\":[{\"detail\":\"staging_count=684\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=36216.41\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785013202.750936,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-25T21:01:52.822438106Z"
+  },
+  {
+    "insertId": "fblvgmfa5n0s2",
+    "labels": {
+      "execution_id": "c2c6d91e-69a3-4c45-ad6e-a4d37ebff362",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-25T22:02:29.446048609Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785016802.4079313 details={\"checks\":[{\"detail\":\"staging_count=684\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=36216.41\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785016802.4079313,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-25T22:02:29.446048609Z"
+  },
+  {
+    "insertId": "ht4ys3fc86gsu",
+    "labels": {
+      "execution_id": "091588f5-3093-4c64-ae4f-10d82184cd96",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-25T23:02:01.379268879Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785020402.622859 details={\"checks\":[{\"detail\":\"staging_count=684\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=36216.41\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785020402.622859,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-25T23:02:01.379268879Z"
+  },
+  {
+    "insertId": "17wlygbfad6smg",
+    "labels": {
+      "execution_id": "4f0925b0-5398-477f-ab4b-ecb0182a0012",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T00:02:22.028905837Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785024002.46941 details={\"checks\":[{\"detail\":\"staging_count=679\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33901.86\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785024002.46941,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T00:02:22.028905837Z"
+  },
+  {
+    "insertId": "rt4ucdfa6z9ne",
+    "labels": {
+      "execution_id": "612e2e98-344f-417a-9f8f-8e3de5b579df",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T01:02:50.875061113Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785027602.6972744 details={\"checks\":[{\"detail\":\"staging_count=679\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33901.86\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785027602.6972744,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T01:02:50.875061113Z"
+  },
+  {
+    "insertId": "akgv3of7xiire",
+    "labels": {
+      "execution_id": "01f7d0b1-1922-4343-ae8b-d75c2f4c77ed",
+      "revision_id": "000003-fa9"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T01:08:38.029760945Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-weekly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[WEEKLY] DQ Gate FAILED run_id=1785027601.0694113 details={\"checks\":[{\"detail\":\"staging_count=6450\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=40830.19\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785027601.0694113,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T01:08:38.029760945Z"
+  },
+  {
+    "insertId": "1j8fv9bf4o57zb",
+    "labels": {
+      "execution_id": "a47ea855-7207-4939-932d-96e2d0187fc7",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T02:02:22.295724556Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785031202.6392944 details={\"checks\":[{\"detail\":\"staging_count=679\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33901.86\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785031202.6392944,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T02:02:22.295724556Z"
+  },
+  {
+    "insertId": "1lhtng7fav9ior",
+    "labels": {
+      "execution_id": "12eee78c-2c08-4d36-a0e8-f9a70db79820",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T03:02:00.129526321Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785034802.755264 details={\"checks\":[{\"detail\":\"staging_count=679\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33901.86\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785034802.755264,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T03:02:00.129526321Z"
+  },
+  {
+    "insertId": "ricvwqfczcrsj",
+    "labels": {
+      "execution_id": "4575b239-4fa7-41e0-9e3a-75d04aee5a54",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T04:02:09.618604128Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785038402.7511878 details={\"checks\":[{\"detail\":\"staging_count=679\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33901.86\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785038402.7511878,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T04:02:09.618604128Z"
+  },
+  {
+    "insertId": "1j9wx2cfbsyfig",
+    "labels": {
+      "execution_id": "8c44734c-a4f9-4b52-b000-c2a5f663b77e",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T05:02:12.556183012Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785042002.6856954 details={\"checks\":[{\"detail\":\"staging_count=679\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33901.86\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785042002.6856954,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T05:02:12.556183012Z"
+  },
+  {
+    "insertId": "icm4s4fap3zub",
+    "labels": {
+      "execution_id": "2ed33a3b-0e04-43a7-96b7-5d5f21823235",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T06:02:02.866567819Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785045602.7615874 details={\"checks\":[{\"detail\":\"staging_count=679\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33901.86\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785045602.7615874,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T06:02:02.866567819Z"
+  },
+  {
+    "insertId": "eq5mtdfbwt4va",
+    "labels": {
+      "execution_id": "9ae55304-ac09-42c4-9112-a78967782da7",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T07:02:30.449796933Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785049202.6946888 details={\"checks\":[{\"detail\":\"staging_count=679\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33901.86\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785049202.6946888,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T07:02:30.449796933Z"
+  },
+  {
+    "insertId": "65zeuzf7bqvd6",
+    "labels": {
+      "execution_id": "3f60d83d-31db-4dd6-888f-dca353320d56",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T08:02:26.916219350Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785052802.729139 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785052802.729139,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T08:02:26.916219350Z"
+  },
+  {
+    "insertId": "kkd6t6fb7w19m",
+    "labels": {
+      "execution_id": "b9dd45d1-4150-4ad6-bbfb-8ae8128c2ad9",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T09:02:39.130265127Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785056402.4981651 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785056402.4981651,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T09:02:39.130265127Z"
+  },
+  {
+    "insertId": "16hwfgyfblzfe2",
+    "labels": {
+      "execution_id": "3bb28e24-dee4-4cec-8e6d-809a619f06ba",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T10:02:22.888394074Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785060002.4559941 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785060002.4559941,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T10:02:22.888394074Z"
+  },
+  {
+    "insertId": "p0j5w5fc6vig5",
+    "labels": {
+      "execution_id": "fe2276ec-7bac-4ec9-b904-495ead64aedc",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T11:02:05.847962539Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785063602.5197666 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785063602.5197666,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T11:02:05.847962539Z"
+  },
+  {
+    "insertId": "1rlq35zf8o95jf",
+    "labels": {
+      "execution_id": "c3ab188d-2710-4c93-b1f4-e662fb3f80d9",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T12:02:33.531744490Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785067202.4489102 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785067202.4489102,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T12:02:33.531744490Z"
+  },
+  {
+    "insertId": "8vuskgfcekhdv",
+    "labels": {
+      "execution_id": "8fbc854f-2546-400c-86dd-6e91e2a3e335",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T13:02:12.432443587Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785070802.6901364 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785070802.6901364,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T13:02:12.432443587Z"
+  },
+  {
+    "insertId": "tq4sw1fcdtjiv",
+    "labels": {
+      "execution_id": "f9f32010-37ac-4fb6-ba4d-aad302cd9fe9",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T14:02:18.479603429Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785074402.420293 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785074402.420293,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T14:02:18.479603429Z"
+  },
+  {
+    "insertId": "1w9a57ufc6kjf2",
+    "labels": {
+      "execution_id": "22dba8ff-ea2f-4419-9a9c-a39912758d22",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T15:02:19.168672841Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785078002.4720683 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785078002.4720683,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T15:02:19.168672841Z"
+  },
+  {
+    "insertId": "xvzu5vfczf55t",
+    "labels": {
+      "execution_id": "bcdcc045-3fc5-4331-9305-f619289cb26c",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T16:02:14.775386426Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785081602.7991025 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785081602.7991025,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T16:02:14.775386426Z"
+  },
+  {
+    "insertId": "1bgsus5faxgeea",
+    "labels": {
+      "execution_id": "018262cd-0f50-4787-abc9-1fc85c454a58",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T17:02:09.432409204Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785085202.647563 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785085202.647563,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T17:02:09.432409204Z"
+  }
+]
+=== Workflow-логи (severity=CRITICAL) вокруг 2026-07-28T20:00Z..21:03Z ===
+[]
+=== date -u (end) ===
+Sun Aug  2 19:40:03 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

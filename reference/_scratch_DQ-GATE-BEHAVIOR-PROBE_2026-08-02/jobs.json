@@ -1,0 +1,3692 @@
+[
+  {
+    "creation_time": "2026-07-15 00:01:53", 
+    "end_time": "2026-07-15 00:01:54", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "74bb06fb-a9c2-4f2b-8d8e-a35d8af42910", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 01:02:24", 
+    "end_time": "2026-07-15 01:02:26", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "76211bbf-af61-410d-82dc-92776794630a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 02:02:09", 
+    "end_time": "2026-07-15 02:02:11", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4bff71a8-3d04-4baa-8c25-8bd8c2746ee2", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 03:02:03", 
+    "end_time": "2026-07-15 03:02:05", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2669fc25-27e8-43e7-b54f-11c7a4090af4", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 04:02:01", 
+    "end_time": "2026-07-15 04:02:03", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5300a52c-24f3-490d-aa35-77d791697fba", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 05:02:13", 
+    "end_time": "2026-07-15 05:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "122a5c0b-fc49-471a-9220-918e93d872d8", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 06:02:12", 
+    "end_time": "2026-07-15 06:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2491a089-906a-4c24-abb5-35e28c388d9e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 07:02:19", 
+    "end_time": "2026-07-15 07:02:21", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "bf93bb3c-57ce-4b96-9658-3c7ac4849cda", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 08:02:04", 
+    "end_time": "2026-07-15 08:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "df1fe691-4916-4f38-9502-6d599ff4a91a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 09:02:35", 
+    "end_time": "2026-07-15 09:02:36", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "392d78df-ae9d-4882-81ea-cd6637baad1b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 10:02:27", 
+    "end_time": "2026-07-15 10:02:28", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "298ed483-1792-4fff-861a-69df60247d79", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 11:02:17", 
+    "end_time": "2026-07-15 11:02:19", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "009d42df-8473-4b5c-89e9-4820916daae4", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 12:02:22", 
+    "end_time": "2026-07-15 12:02:24", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "c4886dc3-4d10-44d6-8ae6-e8b7d240ea89", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 13:02:58", 
+    "end_time": "2026-07-15 13:03:00", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "cb54a047-30b8-4659-b2d8-789049e77a4b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 14:02:12", 
+    "end_time": "2026-07-15 14:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ef3d6ca5-21ba-4c4d-bda5-c3addb1eaca8", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 15:02:31", 
+    "end_time": "2026-07-15 15:02:33", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4c70b088-0c7e-4ccb-810d-9027058494fd", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 16:01:59", 
+    "end_time": "2026-07-15 16:02:01", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e2025e20-5aa8-402f-af1e-ba244d0f3660", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 17:02:17", 
+    "end_time": "2026-07-15 17:02:19", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d1f81f66-371e-4564-9ad2-30c6aecfe160", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 18:02:15", 
+    "end_time": "2026-07-15 18:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "22f04cf0-2232-4a9a-bea5-901189462a10", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 19:02:13", 
+    "end_time": "2026-07-15 19:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2d5bf7da-69d0-4f45-a455-b64802ddd778", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 20:02:02", 
+    "end_time": "2026-07-15 20:02:03", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b29ff8ef-cc8a-4c1f-a14c-14e6dfce8c9e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 21:02:07", 
+    "end_time": "2026-07-15 21:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a31ac714-803a-4269-901d-32b1c30591ad", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 22:02:21", 
+    "end_time": "2026-07-15 22:02:22", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5610352f-5cac-41bf-a05f-d00c48e833b6", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 23:02:12", 
+    "end_time": "2026-07-15 23:02:13", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a2e364cb-581b-4710-be11-52c5d9421168", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 00:02:14", 
+    "end_time": "2026-07-16 00:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e207805e-4ca3-4fd5-8aac-1e20dfc39b3c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 01:02:12", 
+    "end_time": "2026-07-16 01:02:13", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "73f0b57c-7991-434b-bddd-5b2948e263ce", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 02:02:06", 
+    "end_time": "2026-07-16 02:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5c1a98c9-f365-497a-a8b2-b4db642fdbfb", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 03:01:56", 
+    "end_time": "2026-07-16 03:01:58", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2300602a-c1d7-4d51-a055-2ac362112e18", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 04:01:55", 
+    "end_time": "2026-07-16 04:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "50be695f-25eb-4602-870c-0f47fb7875f9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 05:02:14", 
+    "end_time": "2026-07-16 05:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "24c32524-f7a7-4834-a315-e9ebff459324", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 06:02:02", 
+    "end_time": "2026-07-16 06:02:03", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1a6fbc03-bc68-4394-a710-e38813d87062", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 07:02:12", 
+    "end_time": "2026-07-16 07:02:13", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4b26c19a-4f76-4578-ac54-9e65138ba592", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 08:02:02", 
+    "end_time": "2026-07-16 08:02:04", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2b248e06-7d2c-40b1-99ff-4571030b04dd", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 09:02:23", 
+    "end_time": "2026-07-16 09:02:25", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "56c0135a-a221-44eb-bff0-38a08148118c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 10:01:56", 
+    "end_time": "2026-07-16 10:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4809d758-6280-4868-9843-2d34d9d8f4b9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 11:02:04", 
+    "end_time": "2026-07-16 11:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d7ba67cb-0e1e-4541-b4bc-667489dde979", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 12:02:07", 
+    "end_time": "2026-07-16 12:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "52f818c0-70ec-46ba-afc9-f9cc16b2c65e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 13:02:09", 
+    "end_time": "2026-07-16 13:02:10", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b2abddf9-2a9a-410d-ac95-1f823ff75cb9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 14:02:15", 
+    "end_time": "2026-07-16 14:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "68ef0873-f943-4b2e-ab28-f72ea7206742", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 15:02:05", 
+    "end_time": "2026-07-16 15:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "669e6ecd-dfd7-4137-986c-258bf1774fce", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 16:02:08", 
+    "end_time": "2026-07-16 16:02:10", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9be93cf9-e131-41c9-8c8b-e844ec627dcb", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 17:02:06", 
+    "end_time": "2026-07-16 17:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "54d6dcd5-cfb5-4486-b9c2-dcdfe76c7dea", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 18:02:07", 
+    "end_time": "2026-07-16 18:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "c5cb3586-7f3a-496c-830f-0e7f3f65a914", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 19:01:58", 
+    "end_time": "2026-07-16 19:01:59", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4b58ce00-98eb-42f6-b183-5314398feaa4", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 20:02:03", 
+    "end_time": "2026-07-16 20:02:04", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "147cd65a-8fca-453c-af17-bb48e90daa27", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 21:02:46", 
+    "end_time": "2026-07-16 21:02:47", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "245beaa9-9409-434a-879a-ed6d742e5bd2", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 22:02:18", 
+    "end_time": "2026-07-16 22:02:19", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ffe47bcb-d98b-494c-88ae-e71fc8e3c06e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 23:01:58", 
+    "end_time": "2026-07-16 23:02:00", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e8383135-83a7-4d5e-a91a-6dc7a5747ffc", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 00:01:49", 
+    "end_time": "2026-07-17 00:01:50", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "26c7a1c4-3e6f-430c-b99e-4ba7a3d2d71e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 01:01:47", 
+    "end_time": "2026-07-17 01:01:48", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e8acc80a-18ae-41b1-9730-c327d9fc2595", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 02:01:47", 
+    "end_time": "2026-07-17 02:01:48", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "40625f97-26b1-4330-994e-b9c4d9a0e999", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 03:01:52", 
+    "end_time": "2026-07-17 03:01:53", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "71f501e5-5bc4-4474-9060-6cb46ec18f6a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 04:01:56", 
+    "end_time": "2026-07-17 04:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "0a0d3080-cbf4-4f96-85c5-e0092c9c433f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 05:02:02", 
+    "end_time": "2026-07-17 05:02:04", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "76b71864-5597-4430-93ff-67ecaadda984", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 06:01:56", 
+    "end_time": "2026-07-17 06:01:58", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a0f84dfc-6f52-4446-8a31-91602796b981", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 07:02:04", 
+    "end_time": "2026-07-17 07:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a92121eb-74c8-4b58-aedc-c3eb94fe1c26", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 08:02:05", 
+    "end_time": "2026-07-17 08:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7d5d0ffe-9e4f-4067-82a5-59a283695b0a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 09:02:11", 
+    "end_time": "2026-07-17 09:02:13", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "20257e58-3621-4090-8da7-4a745ef567ee", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 10:02:12", 
+    "end_time": "2026-07-17 10:02:13", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "70e425fb-69da-44cc-80d4-3bf959bcc892", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 11:02:08", 
+    "end_time": "2026-07-17 11:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "573c04d8-7fb4-4676-a319-3549a3a23890", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 12:02:04", 
+    "end_time": "2026-07-17 12:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "61677537-7444-48fc-89ac-7564b7ebccf3", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 13:01:59", 
+    "end_time": "2026-07-17 13:02:00", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "39847397-ad03-414b-8c53-a150a139daf4", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 14:02:07", 
+    "end_time": "2026-07-17 14:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "c2dcef9b-400f-47ca-a5ee-829efc6e9e99", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 15:02:09", 
+    "end_time": "2026-07-17 15:02:11", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "bc6d6103-2397-4f1c-8074-5e0c30afae23", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 16:01:59", 
+    "end_time": "2026-07-17 16:02:00", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a7d82bc5-6172-40f8-a72a-1119a5260190", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 17:02:04", 
+    "end_time": "2026-07-17 17:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "fb74cfcd-e955-45cc-9fd1-c1b1410b30d5", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 18:01:51", 
+    "end_time": "2026-07-17 18:01:52", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5e09b389-cb5b-4669-85ef-af99ea498069", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 19:02:02", 
+    "end_time": "2026-07-17 19:02:03", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "fefce7d7-f4f0-43be-bcab-91fbf9ad5fd6", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 20:01:48", 
+    "end_time": "2026-07-17 20:01:49", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f208e8cd-3ba0-4dc6-90e4-9b6afcaa2bbb", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 21:01:53", 
+    "end_time": "2026-07-17 21:01:55", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "71db5d28-9f26-4667-aedd-e98bc8ad4a4f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 22:02:04", 
+    "end_time": "2026-07-17 22:02:05", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "57139d26-9eea-44e5-9301-41d15ca62f5e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 23:01:53", 
+    "end_time": "2026-07-17 23:01:55", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "94aa4597-1b6b-4096-8f58-4ca7ac4b76c0", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 00:02:08", 
+    "end_time": "2026-07-18 00:02:11", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "393731f3-64c3-4f28-98b7-4ac2d1002b0b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 01:01:52", 
+    "end_time": "2026-07-18 01:01:53", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8dfb57ab-1af8-44b9-a8ab-3d9c21776b2f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 02:02:00", 
+    "end_time": "2026-07-18 02:02:01", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "fdfb770f-bcca-4a5a-b4d6-e682e0bb321a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 03:01:44", 
+    "end_time": "2026-07-18 03:01:46", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "585e00f6-f0e4-4d8b-b676-45b1136122db", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 04:02:01", 
+    "end_time": "2026-07-18 04:02:04", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b4775d1b-89ce-4737-a9f8-79eb44c2c87d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 05:01:50", 
+    "end_time": "2026-07-18 05:01:52", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2c4a40b7-53a9-48ba-85a7-529960375a0d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 06:02:04", 
+    "end_time": "2026-07-18 06:02:05", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "80d37638-e63f-4d67-96c8-3d44f5fcc456", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 07:02:13", 
+    "end_time": "2026-07-18 07:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "77a01216-0605-4514-b128-0ffd4d0b6ce0", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 09:02:13", 
+    "end_time": "2026-07-18 09:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f39d794d-e8ba-428f-b80e-905c7076f0e1", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 10:02:14", 
+    "end_time": "2026-07-18 10:02:16", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f4ab6b1e-b271-4555-b88f-967d8b74b11b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 11:02:11", 
+    "end_time": "2026-07-18 11:02:13", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "43011add-dfbd-416d-9d17-81e1e2c41f49", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 12:02:10", 
+    "end_time": "2026-07-18 12:02:12", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "46c6e755-f98f-4e55-94fd-b57c4ec64022", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 13:02:12", 
+    "end_time": "2026-07-18 13:02:13", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "3d09108f-0b74-48f9-82ed-c21ed9f77750", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 14:01:53", 
+    "end_time": "2026-07-18 14:01:55", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "86b0cd03-bc97-44dd-bb88-267444442ccc", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 15:01:53", 
+    "end_time": "2026-07-18 15:01:55", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5027ec84-9504-4e21-808f-a0ce6c8f4c1d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 16:02:13", 
+    "end_time": "2026-07-18 16:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b7b631c0-84a1-4220-b77d-291e76d3db51", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 17:02:21", 
+    "end_time": "2026-07-18 17:02:23", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "cdc4451e-8ab4-431f-89ec-ed2ee6d50f1a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 18:02:13", 
+    "end_time": "2026-07-18 18:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5757209c-0b20-4447-a90d-3f98a688a2d9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 19:02:00", 
+    "end_time": "2026-07-18 19:02:02", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2216d1e8-c5c0-4606-b565-623d6e685cf9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 20:01:55", 
+    "end_time": "2026-07-18 20:01:56", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a86eca22-5aca-41ca-98d7-8b84f8cb68c8", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 21:01:41", 
+    "end_time": "2026-07-18 21:01:43", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "580ad869-b7d3-4981-a751-f79706c51c6b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 22:02:04", 
+    "end_time": "2026-07-18 22:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "76405c4d-ff9a-43f9-8510-41ba63e630ae", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 23:02:21", 
+    "end_time": "2026-07-18 23:02:23", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5211f215-bd36-4dea-9a23-2f534ace8f68", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 00:02:01", 
+    "end_time": "2026-07-19 00:02:02", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "195ec821-3bf7-49c9-adf6-06345e35050d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 01:01:47", 
+    "end_time": "2026-07-19 01:01:49", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e517aef2-c0ef-4b4a-b72a-d19918a60d49", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 01:08:45", 
+    "end_time": "2026-07-19 01:08:47", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5ce0f861-d0ce-4699-89b7-a48bc3cc98b9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 02:02:13", 
+    "end_time": "2026-07-19 02:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e6a3093e-1f79-4c1a-b2cd-fb50f2d24a8e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 03:01:59", 
+    "end_time": "2026-07-19 03:02:00", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ca700a6a-ce0a-4fc2-a429-0e16992f915b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 04:01:43", 
+    "end_time": "2026-07-19 04:01:45", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2fa62c9e-30bc-4c03-809b-a5df33efd690", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 05:01:47", 
+    "end_time": "2026-07-19 05:01:48", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "543c5c8a-8cd9-4e9c-868d-1e823a736191", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 06:01:47", 
+    "end_time": "2026-07-19 06:01:49", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "53ef1ab0-acbc-4821-b758-b9c32b405299", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 07:02:08", 
+    "end_time": "2026-07-19 07:02:10", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e828c0bb-601d-4950-b0e0-f0cb94cd7471", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 08:01:53", 
+    "end_time": "2026-07-19 08:01:54", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4974f6fd-64a1-4c7a-8301-6e6e9820f2a8", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 09:02:00", 
+    "end_time": "2026-07-19 09:02:01", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4575d77d-b4e1-4120-bac7-6c393923976d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 10:02:02", 
+    "end_time": "2026-07-19 10:02:04", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "c26882cc-ca24-489d-b38a-ff79c8e6d0d2", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 11:01:55", 
+    "end_time": "2026-07-19 11:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "bebb7420-6811-41f0-b996-83388b294f7b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 12:01:56", 
+    "end_time": "2026-07-19 12:01:58", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "27671977-5553-4bb9-a665-761efa5f4c63", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 13:02:07", 
+    "end_time": "2026-07-19 13:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d7e95d81-addb-46da-b877-142a4856b310", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 14:02:04", 
+    "end_time": "2026-07-19 14:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "30a2b96e-888b-40ac-bf10-93483d0d292a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 15:02:05", 
+    "end_time": "2026-07-19 15:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f093bd01-1182-41c9-a671-b88962ce38d9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 16:02:02", 
+    "end_time": "2026-07-19 16:02:04", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "091a6cc7-aa5b-42d5-a447-c74d43617c8b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 17:02:03", 
+    "end_time": "2026-07-19 17:02:04", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e7dd4756-2190-4363-a043-3ec32cc20483", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 18:01:58", 
+    "end_time": "2026-07-19 18:02:00", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "28dfc02b-20f4-4618-b5b9-0f721d15cf1c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 19:01:56", 
+    "end_time": "2026-07-19 19:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e4f9c20d-2635-4b58-8cc7-35a6b3182b4b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 20:02:03", 
+    "end_time": "2026-07-19 20:02:04", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "549a8360-48dd-473c-a58d-2447b0360263", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 21:02:08", 
+    "end_time": "2026-07-19 21:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "3babd9a8-364c-450b-b416-d649d47f3075", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 22:02:05", 
+    "end_time": "2026-07-19 22:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1f4b2297-478d-4825-916d-1450cd8d7e78", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 23:01:57", 
+    "end_time": "2026-07-19 23:01:58", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2095b723-d96e-4373-acab-633f237fcd71", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 00:02:00", 
+    "end_time": "2026-07-20 00:02:01", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1470a385-d69c-4f7b-a10f-779246360f29", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 01:01:54", 
+    "end_time": "2026-07-20 01:01:56", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e52a8075-d788-4200-a0e9-f47744c05645", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 02:02:01", 
+    "end_time": "2026-07-20 02:02:02", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5efa6662-92fd-47a0-a111-fe3a9f251bdf", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 03:01:46", 
+    "end_time": "2026-07-20 03:01:48", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "07ea8f98-de28-487d-b83c-975ce37a0464", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 04:01:57", 
+    "end_time": "2026-07-20 04:01:58", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "74159984-0094-42a6-8010-ebeacc6e2f55", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 05:02:03", 
+    "end_time": "2026-07-20 05:02:05", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8a6ee00a-a5f1-4a1f-8cc3-f3fc8d36eea3", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 06:02:05", 
+    "end_time": "2026-07-20 06:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "702e61f8-ef12-4145-a036-07402100c5f7", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 07:02:43", 
+    "end_time": "2026-07-20 07:02:45", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "3fa07937-4ce4-4824-a4b1-744fd812efad", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 08:02:36", 
+    "end_time": "2026-07-20 08:02:38", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4c6af65c-1566-4e47-8057-2ffddadd04f9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 09:02:23", 
+    "end_time": "2026-07-20 09:02:24", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1e972a11-b850-48a1-8d5b-5b1992fbfaee", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 10:02:29", 
+    "end_time": "2026-07-20 10:02:31", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9bdb844e-b22e-49a3-bded-07c5afddff9a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 11:02:02", 
+    "end_time": "2026-07-20 11:02:03", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5f6965e5-e857-4250-a885-c15f84b45400", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 12:02:45", 
+    "end_time": "2026-07-20 12:02:46", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e662bef5-7cae-4c78-89fc-e6f961041648", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 13:02:19", 
+    "end_time": "2026-07-20 13:02:21", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7763715f-09fa-4393-b416-7ce3367384ca", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 14:02:11", 
+    "end_time": "2026-07-20 14:02:13", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1bb2fcdf-2893-4d11-97f0-8e5e6cabe1c7", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 15:02:16", 
+    "end_time": "2026-07-20 15:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1b1ad3c8-50be-45ca-9182-2d9858d4fa1f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 16:03:21", 
+    "end_time": "2026-07-20 16:03:22", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d77cf239-5b94-4499-b9ac-fd0b5609baff", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 17:02:04", 
+    "end_time": "2026-07-20 17:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "6e45ee6b-e5c9-433e-b78f-812bc24c36d8", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 18:01:52", 
+    "end_time": "2026-07-20 18:01:54", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "dc39ee5d-d66a-407e-ab46-b5ed3b59575b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 19:02:03", 
+    "end_time": "2026-07-20 19:02:05", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a1a760c8-42fa-4a27-9ee5-c728df4213fe", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 20:01:44", 
+    "end_time": "2026-07-20 20:01:46", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "79d20da4-ac08-478a-9585-6a62bb5ab2d9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 21:01:59", 
+    "end_time": "2026-07-20 21:02:00", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d7f8f12a-191c-420d-9e0b-873ce3115f98", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 22:01:56", 
+    "end_time": "2026-07-20 22:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "34fa3171-c620-435a-a943-73902b19ffb0", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 23:01:57", 
+    "end_time": "2026-07-20 23:02:01", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b29a2526-fb28-4bd5-b46a-f4bf38dcdae7", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 00:03:47", 
+    "end_time": "2026-07-21 00:03:48", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "418dada1-580e-4388-bf02-5a845c69609d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 01:02:01", 
+    "end_time": "2026-07-21 01:02:02", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "272d93ce-e27a-499b-a206-fc0e34ed4636", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 02:02:04", 
+    "end_time": "2026-07-21 02:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b853b088-dabc-4ad5-8f55-08b7db2af76d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 03:02:03", 
+    "end_time": "2026-07-21 03:02:04", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "dcdc680e-f1d5-4055-83a1-38fc0f672df1", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 04:02:06", 
+    "end_time": "2026-07-21 04:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "006e0ffb-e840-4780-95b1-d80e5691741c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 05:02:07", 
+    "end_time": "2026-07-21 05:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "84ab455f-6b3e-46b9-9f0c-8c4bcfc23309", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 06:02:10", 
+    "end_time": "2026-07-21 06:02:11", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "17453c85-0b1c-400e-8041-c1fa2a5440ae", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 07:02:33", 
+    "end_time": "2026-07-21 07:02:34", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "33f4437c-97cd-4746-81b4-d7a3ab598386", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 08:02:33", 
+    "end_time": "2026-07-21 08:02:34", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7a148c2d-cdc2-4f8f-85da-d5446c7938ff", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 09:02:38", 
+    "end_time": "2026-07-21 09:02:40", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2a76e12d-fd57-4bef-9e4d-d4e20621c644", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 10:02:42", 
+    "end_time": "2026-07-21 10:02:43", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "baaad018-9150-44a1-81df-95d0b284794b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 11:02:28", 
+    "end_time": "2026-07-21 11:02:30", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2bf01c59-09e8-4541-b37f-a370271bd7fe", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 12:02:35", 
+    "end_time": "2026-07-21 12:02:37", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8c037371-4409-4169-825f-2c90fc0d3765", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 13:02:30", 
+    "end_time": "2026-07-21 13:02:32", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "36f0cb76-fa8a-47ad-b3d2-6861c7bfd53c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 14:02:23", 
+    "end_time": "2026-07-21 14:02:25", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f0706600-d74e-46a4-826e-90936789465c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 15:02:13", 
+    "end_time": "2026-07-21 15:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "38f530bc-361e-4ae4-8115-3f29923abc2f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 16:02:17", 
+    "end_time": "2026-07-21 16:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "0c813b2c-bb9e-4d2d-aa70-bec4dde9b0ee", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 18:02:09", 
+    "end_time": "2026-07-21 18:02:11", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "35d5c704-6109-4379-b1dc-5766c0516855", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 19:01:50", 
+    "end_time": "2026-07-21 19:01:51", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d84a1dc0-d346-4a7e-9ad0-31d72c40d07a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 20:02:25", 
+    "end_time": "2026-07-21 20:02:29", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5a093253-c489-4fa9-a490-0ff9e4cd3917", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 21:02:07", 
+    "end_time": "2026-07-21 21:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "bad910e9-7fab-4d28-9c6a-1a57020d879a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 22:02:29", 
+    "end_time": "2026-07-21 22:02:31", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b22d08b9-2916-4ae9-bbf2-ec8a22814879", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 23:02:27", 
+    "end_time": "2026-07-21 23:02:28", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f580c6ac-06b3-45c7-91ff-5174596c1a89", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 00:02:35", 
+    "end_time": "2026-07-22 00:02:37", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1791b252-dc18-45c6-8375-e634d4282a7a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 01:01:56", 
+    "end_time": "2026-07-22 01:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "dfeb8c83-0917-4720-b270-5bac420fdff6", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 02:01:54", 
+    "end_time": "2026-07-22 02:01:56", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9d5f028d-c893-4e02-a844-cf24ca181c40", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 03:02:07", 
+    "end_time": "2026-07-22 03:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "18449ae5-6c67-4dbf-a5c6-f87cf5c2c420", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 04:01:59", 
+    "end_time": "2026-07-22 04:02:00", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "3ae9a3cb-1bf8-4f17-a7ff-b6e529502029", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 05:01:56", 
+    "end_time": "2026-07-22 05:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "29bd0505-12bd-4f14-a801-33699afd4015", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 06:02:09", 
+    "end_time": "2026-07-22 06:02:10", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "80b081c9-f839-45a9-a5ce-e3ccf3ce07a1", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 07:02:06", 
+    "end_time": "2026-07-22 07:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "c1d0884e-3b48-4aaa-ac59-864ed4c9e18b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 08:02:17", 
+    "end_time": "2026-07-22 08:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "45ed2eb9-b2d2-4f03-bab6-f410c4a0f564", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 09:02:18", 
+    "end_time": "2026-07-22 09:02:19", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "eb7bc391-9643-4336-9706-f2eaaec070c7", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 10:02:30", 
+    "end_time": "2026-07-22 10:02:32", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "345d9679-20ef-4c49-9c7b-2592aaf1d720", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 11:02:18", 
+    "end_time": "2026-07-22 11:02:20", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d81c1f09-1ce3-48cb-b7dc-7ec9b060b614", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 12:02:28", 
+    "end_time": "2026-07-22 12:02:29", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "86a37e23-b57d-4ec6-9543-01c00e4f362f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 13:02:26", 
+    "end_time": "2026-07-22 13:02:28", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4ff5fd36-2af5-4f29-bec7-c8caeccec3a5", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 14:02:24", 
+    "end_time": "2026-07-22 14:02:25", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2744cbd8-f0fa-4e3e-8f7d-3db6a6237c79", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 15:02:15", 
+    "end_time": "2026-07-22 15:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "eecd7622-5e85-4f7a-95e4-9db7bd1b55dc", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 16:02:18", 
+    "end_time": "2026-07-22 16:02:20", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "02276ab2-a7a6-4b1f-a4fe-10ebfa8cf45a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 17:02:25", 
+    "end_time": "2026-07-22 17:02:26", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9805992f-2fb4-4b1b-96aa-a2aa275638c7", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 18:02:09", 
+    "end_time": "2026-07-22 18:02:11", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "c4d1c8eb-5836-4ab4-8026-d06bbd170cff", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 19:02:09", 
+    "end_time": "2026-07-22 19:02:10", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "26a53c4f-8d1d-4da6-9945-82446dac269d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 20:02:11", 
+    "end_time": "2026-07-22 20:02:13", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8a858f9e-ea40-43da-ac2a-265f23eac9d8", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 21:02:31", 
+    "end_time": "2026-07-22 21:02:33", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "23b728bf-f173-44c7-8916-22b85e247b9c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 22:02:18", 
+    "end_time": "2026-07-22 22:02:19", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "dac6241b-c9c9-4fd6-9938-5580dc455879", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 23:02:15", 
+    "end_time": "2026-07-22 23:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5547528e-e781-4cfd-a6b9-6050eb5a57af", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 00:02:15", 
+    "end_time": "2026-07-23 00:02:16", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "93422cab-ffb8-4a71-bcf3-c287c24b9d79", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 01:01:58", 
+    "end_time": "2026-07-23 01:02:03", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "89ad98c9-c9df-483c-a30a-6c49fe305e5d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 02:01:58", 
+    "end_time": "2026-07-23 02:01:59", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "61600879-4b7c-4f14-b1d3-21f2baf3b074", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 03:02:01", 
+    "end_time": "2026-07-23 03:02:02", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "6ad5a3f5-e9e7-46f3-a00f-bf6a5358bded", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 05:02:16", 
+    "end_time": "2026-07-23 05:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f474d0b8-6754-4e6b-b82e-5d59f06879a8", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 06:02:25", 
+    "end_time": "2026-07-23 06:02:26", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "110a39ba-6d51-4aef-becd-168e36689502", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 07:02:29", 
+    "end_time": "2026-07-23 07:02:31", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7cc725d6-a146-4651-9678-5604643a9a7d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 08:02:18", 
+    "end_time": "2026-07-23 08:02:19", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7c06b4fe-62f6-4a51-8b4f-e36e21d31c0a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 09:02:39", 
+    "end_time": "2026-07-23 09:02:40", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "db06f172-08ec-450d-81b5-8a55e840f08f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 10:02:25", 
+    "end_time": "2026-07-23 10:02:27", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "746aae30-8c52-4936-920a-437cb48b02e1", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 11:02:36", 
+    "end_time": "2026-07-23 11:02:39", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "6421dc41-9453-4aaf-a466-29f0ed50835c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 12:02:26", 
+    "end_time": "2026-07-23 12:02:27", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "cbce9cac-e05c-4646-9f79-4f251d487a4d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 13:02:32", 
+    "end_time": "2026-07-23 13:02:34", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "0f74ba2d-9ccd-499e-b22a-9aecb5bd0fa7", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 14:02:14", 
+    "end_time": "2026-07-23 14:02:16", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "00af5e23-9a08-45c7-94c8-6fa543cd5e62", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 15:02:17", 
+    "end_time": "2026-07-23 15:02:19", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "60e39358-d4da-4e44-9482-3fc0d8cc9db9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 16:02:21", 
+    "end_time": "2026-07-23 16:02:23", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a5f724de-a991-4d44-bc34-e5b0529ad5e4", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 17:02:17", 
+    "end_time": "2026-07-23 17:02:19", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5af57a62-0239-4b6e-a786-aeaed66206ba", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 18:02:14", 
+    "end_time": "2026-07-23 18:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "176f92a3-b319-49ac-a0d5-83247d1afe5f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 19:02:10", 
+    "end_time": "2026-07-23 19:02:12", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "df9818b6-4dd0-442e-8ee4-d3fe50e47b62", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 20:02:05", 
+    "end_time": "2026-07-23 20:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4b9874bc-9f18-4c2b-9a54-ae702d147e33", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 21:02:17", 
+    "end_time": "2026-07-23 21:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "76347aa8-8739-4d03-b489-287c5d2d8cd1", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 22:02:13", 
+    "end_time": "2026-07-23 22:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "fb4a72df-58a8-4712-9d76-e70563e0f271", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 23:02:13", 
+    "end_time": "2026-07-23 23:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e40fd891-711b-4cb3-a88b-9bfe397e8730", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 00:02:21", 
+    "end_time": "2026-07-24 00:02:22", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "400dd1c3-05da-40b8-92fc-3cfde535e747", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 01:01:56", 
+    "end_time": "2026-07-24 01:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "34a86203-cbd7-44a2-ad06-4722d07b2296", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 02:02:07", 
+    "end_time": "2026-07-24 02:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "67ad794e-77f4-41cf-bda2-a1040feb9140", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 03:02:30", 
+    "end_time": "2026-07-24 03:02:31", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d445775b-cdde-4611-a26b-9c56b9bf86b0", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 04:02:08", 
+    "end_time": "2026-07-24 04:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d8ebdcb1-5e46-4ea3-a930-dbead123724d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 05:02:15", 
+    "end_time": "2026-07-24 05:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5bc8ddd3-6a80-44d9-9e29-1043d32d0de5", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 06:02:18", 
+    "end_time": "2026-07-24 06:02:20", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ba64d3a4-3071-4c94-8697-fd6940b53819", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 07:02:07", 
+    "end_time": "2026-07-24 07:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "634449cc-fb57-4d58-9f1d-8d6e5c51a2b8", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 08:02:14", 
+    "end_time": "2026-07-24 08:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "cba17fe5-0675-4bb2-ab40-f784f5bc7f33", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 09:02:45", 
+    "end_time": "2026-07-24 09:02:46", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "368c55fd-dcad-4968-813b-9a1fc76028e3", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 10:02:33", 
+    "end_time": "2026-07-24 10:02:35", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "555800d9-436f-414e-9bf2-c2d2adba4d8e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 11:02:13", 
+    "end_time": "2026-07-24 11:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5154ca07-23d8-49b3-ba55-e1394968b130", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 12:02:33", 
+    "end_time": "2026-07-24 12:02:35", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "59a60a5b-fd23-48d3-95d5-45769a59b843", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 13:02:19", 
+    "end_time": "2026-07-24 13:02:21", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "0c7eadcf-239a-4bbb-aa5e-7ebb6a39026f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 14:02:23", 
+    "end_time": "2026-07-24 14:02:25", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b7d5eb9e-274c-4817-b44b-708b9f331257", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 15:02:16", 
+    "end_time": "2026-07-24 15:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a2b46a5a-fb0e-4439-8d47-6124dd18ba5d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 16:02:13", 
+    "end_time": "2026-07-24 16:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "0d05a100-c5dc-4750-b191-4010deb2b4f7", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 17:02:21", 
+    "end_time": "2026-07-24 17:02:22", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "bbe9a38a-b110-45f4-9a48-aef8009a97af", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 18:02:21", 
+    "end_time": "2026-07-24 18:02:22", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "fa3c15be-17a5-4c06-ba7d-0fc358be50c6", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 19:02:11", 
+    "end_time": "2026-07-24 19:02:12", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d2cab2d8-1088-46b2-a55d-f4414bbe1220", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 20:02:16", 
+    "end_time": "2026-07-24 20:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f83d47df-31bb-4c1c-a1ab-34ef646af00b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 21:02:19", 
+    "end_time": "2026-07-24 21:02:20", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "66fc9774-9930-4ceb-9210-4f8ba49150b4", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 22:02:05", 
+    "end_time": "2026-07-24 22:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "da6103ed-00f1-4d43-a28f-3e13cf13ca54", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 23:02:06", 
+    "end_time": "2026-07-24 23:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "436fd89d-0dbe-4b83-af76-05c4b317c53c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 00:02:07", 
+    "end_time": "2026-07-25 00:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d81f1a52-eb4e-4d5d-80a3-8e046d36c5ba", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 01:02:08", 
+    "end_time": "2026-07-25 01:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8146bf88-84f3-4264-ba13-aafbff26ba3d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 02:02:01", 
+    "end_time": "2026-07-25 02:02:03", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e933b5d4-b3d5-4d76-aac4-436d1f8aee48", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 03:02:05", 
+    "end_time": "2026-07-25 03:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7b2c3a7a-2987-4f7b-8956-d84625eeca98", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 04:02:14", 
+    "end_time": "2026-07-25 04:02:16", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2137391f-1a9e-4ed8-8ade-9a94d85e0521", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 05:02:13", 
+    "end_time": "2026-07-25 05:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d8b4ff03-441a-4f9e-9827-f501a5207446", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 06:02:16", 
+    "end_time": "2026-07-25 06:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "be45c113-d69c-425b-bc79-37d90f92815d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 07:02:14", 
+    "end_time": "2026-07-25 07:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "fd9921a5-94d5-40e6-8320-65d09c578a9c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 08:02:20", 
+    "end_time": "2026-07-25 08:02:22", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "413510c5-4805-4ac1-b8fd-ef30acfeeec3", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 09:02:20", 
+    "end_time": "2026-07-25 09:02:23", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "537946c7-8bbd-4829-b1e4-f445f2e3ff92", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 10:02:24", 
+    "end_time": "2026-07-25 10:02:26", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "bb8c2dca-081c-4143-867b-b9e2539b69cc", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 11:02:21", 
+    "end_time": "2026-07-25 11:02:23", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "c7f177fa-6d04-408e-a961-b9ee20ac8cd1", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 12:02:15", 
+    "end_time": "2026-07-25 12:02:16", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ad10a6bc-066f-4b5c-94b2-b955ff712e28", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 13:02:19", 
+    "end_time": "2026-07-25 13:02:21", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a303db36-88b2-4238-88c6-f9ae01da2c58", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 14:02:13", 
+    "end_time": "2026-07-25 14:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "495edeea-1e98-4b48-b71c-288a0417dd83", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 15:02:08", 
+    "end_time": "2026-07-25 15:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "3b4d9b4c-01c6-4031-98b4-8bb85f3ab0e5", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 16:02:27", 
+    "end_time": "2026-07-25 16:02:28", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "010f6769-0fe2-4e91-8681-8456a7d5cde8", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 17:02:14", 
+    "end_time": "2026-07-25 17:02:16", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "36e20bd3-0615-44e6-896a-6e7729d62584", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 18:02:14", 
+    "end_time": "2026-07-26 18:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b75625ce-8bf9-4c51-9ca5-a21c09a80211", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 19:02:24", 
+    "end_time": "2026-07-26 19:02:25", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "db566ea4-5fd6-40ad-b287-9e0b5d80f03a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 20:02:19", 
+    "end_time": "2026-07-26 20:02:21", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f896270c-f9ef-4663-a54b-9f66d60ace43", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 21:02:28", 
+    "end_time": "2026-07-26 21:02:29", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d84358bc-92e4-47d7-83c8-92dee471c49d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 22:02:24", 
+    "end_time": "2026-07-26 22:02:26", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8597a314-6acb-434a-a858-f6b0f208bd24", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 23:02:06", 
+    "end_time": "2026-07-26 23:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "be709a69-f237-413e-8625-5f1c6730a96a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 00:02:02", 
+    "end_time": "2026-07-27 00:02:03", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8ea0cdda-dc3d-4dde-85e9-741e4e2a2901", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 01:01:58", 
+    "end_time": "2026-07-27 01:01:59", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b93a36c5-1cb3-4bde-afbc-9f11e37f2683", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 02:02:00", 
+    "end_time": "2026-07-27 02:02:01", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "bb7748d3-6a4a-4f71-a60a-52d67bf516c1", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 03:02:04", 
+    "end_time": "2026-07-27 03:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "06965be3-4708-4528-92f5-3712ebd21d31", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 04:02:07", 
+    "end_time": "2026-07-27 04:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "3aea0126-b10c-451a-9d84-f6a95483c646", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 05:02:13", 
+    "end_time": "2026-07-27 05:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "0ea62a5d-427a-4077-b2a3-a10cc8c098eb", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 06:02:15", 
+    "end_time": "2026-07-27 06:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1b63c17f-3c03-4d57-a1ac-28714c16a176", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 07:02:14", 
+    "end_time": "2026-07-27 07:02:16", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9fc47502-26d5-4919-8404-f9bf4ac4c3d4", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 08:02:30", 
+    "end_time": "2026-07-27 08:02:32", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f203936d-d156-408d-b336-ea68fc0b15b8", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 09:02:28", 
+    "end_time": "2026-07-27 09:02:29", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1804f923-a085-42cc-89fc-420be87f04ef", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 10:02:19", 
+    "end_time": "2026-07-27 10:02:20", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9413c167-71a0-47ec-89f0-550f0aaac2e7", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 11:02:35", 
+    "end_time": "2026-07-27 11:02:36", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "883a83d5-acc6-43a5-9aa5-8107af200229", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 12:02:32", 
+    "end_time": "2026-07-27 12:02:34", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4997bd09-e7a5-4e76-94da-37e9de35f1a4", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 13:02:33", 
+    "end_time": "2026-07-27 13:02:35", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "78b4d225-355b-4f56-96fe-4ca4f03da855", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 14:02:35", 
+    "end_time": "2026-07-27 14:02:37", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a203c78e-59cc-44cb-829c-2f6187996daa", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 15:02:43", 
+    "end_time": "2026-07-27 15:02:44", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "cbdb96af-a2dd-468b-9a74-89b5d8648a1b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 16:02:20", 
+    "end_time": "2026-07-27 16:02:22", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "db19eb95-43b7-4582-95c8-97c40226e3ff", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 17:02:32", 
+    "end_time": "2026-07-27 17:02:33", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "62ee8786-fe7f-426c-b5e3-b7345f19e0ce", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 18:02:26", 
+    "end_time": "2026-07-27 18:02:27", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e433c4a2-7b5e-45c5-8b6e-0ae7e991f9bf", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 19:02:30", 
+    "end_time": "2026-07-27 19:02:32", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9bf1bc54-4055-45ab-8aae-f7790a369e85", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 20:01:59", 
+    "end_time": "2026-07-27 20:02:00", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ec3ce311-23f3-40a4-a329-3886edf8a910", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 21:02:10", 
+    "end_time": "2026-07-27 21:02:11", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "75bd6138-b089-4861-81b4-7cb62d242bf2", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 22:02:35", 
+    "end_time": "2026-07-27 22:02:36", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "16366efb-d175-4202-94f0-cc67bc67e219", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 23:02:05", 
+    "end_time": "2026-07-27 23:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "859d98b6-299d-46c0-94ef-312f90c1f50c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 00:02:06", 
+    "end_time": "2026-07-28 00:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7b064d06-6dee-4e1f-b04e-53e9d4a83295", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 01:01:57", 
+    "end_time": "2026-07-28 01:01:59", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "95b6b779-98ed-4752-a964-0f2369d48716", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 02:02:26", 
+    "end_time": "2026-07-28 02:02:28", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "03bea6e8-cc77-45f1-947b-d9dc66bea339", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 03:02:13", 
+    "end_time": "2026-07-28 03:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8dd239c7-8c77-4434-9107-885b5b308e1d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 04:02:08", 
+    "end_time": "2026-07-28 04:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2ec98a33-c814-4003-8d70-41f21d01be8c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 05:02:05", 
+    "end_time": "2026-07-28 05:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "541bf591-4519-4e5b-907a-0cc986cb2f08", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 06:02:16", 
+    "end_time": "2026-07-28 06:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "34b3d838-61df-48c7-9d3d-d17ef16cbc5b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 07:02:40", 
+    "end_time": "2026-07-28 07:02:41", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d2a46288-67e3-4ab0-9423-1dac11d79e2c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 08:02:44", 
+    "end_time": "2026-07-28 08:02:45", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ae99b139-b933-4144-8829-43f65ae42aec", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 09:02:37", 
+    "end_time": "2026-07-28 09:02:38", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "28e65f57-2186-4fbd-b668-049b1d98858f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 10:02:47", 
+    "end_time": "2026-07-28 10:02:48", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a8893f5d-53f5-44b7-8de4-2905104b478d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 11:02:17", 
+    "end_time": "2026-07-28 11:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "12560b98-0ea7-445b-abc0-e2f3ab99b474", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 12:02:55", 
+    "end_time": "2026-07-28 12:02:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "653fcfbc-eccf-4f5b-b061-8d6527d06143", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 13:02:41", 
+    "end_time": "2026-07-28 13:02:43", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "012dd463-76c0-44c8-aea5-e86990beb209", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 14:02:36", 
+    "end_time": "2026-07-28 14:02:37", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "477cb467-8715-4037-93c6-cf935bbbe043", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 15:02:29", 
+    "end_time": "2026-07-28 15:02:31", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "86ce6ed3-20aa-44b6-ac3e-cdd96ac30add", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 16:02:21", 
+    "end_time": "2026-07-28 16:02:23", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b1224991-0090-407e-bbea-6d3bdf732d83", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 17:02:18", 
+    "end_time": "2026-07-28 17:02:20", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2d48de46-d57a-434d-955b-ef96f3794920", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 18:02:24", 
+    "end_time": "2026-07-28 18:02:25", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d80a44d0-935d-492f-85e5-7fc7520fa198", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 19:02:32", 
+    "end_time": "2026-07-28 19:02:33", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "0814e822-631b-42ea-b2f0-348a6794c695", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 21:02:17", 
+    "end_time": "2026-07-28 21:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "17214817-1791-4464-8f16-f3412deffe0a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 22:02:16", 
+    "end_time": "2026-07-28 22:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "6a5d639e-928e-4669-95c3-ae9591b114a7", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 23:02:13", 
+    "end_time": "2026-07-28 23:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d475d1ec-df2b-4b90-8972-2b780a67f8fc", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-29 00:02:04", 
+    "end_time": "2026-07-29 00:02:05", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d812b3b6-d0b5-4970-bfc1-3b37a425c37c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-29 01:02:16", 
+    "end_time": "2026-07-29 01:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e971d7a2-e96a-4a74-8996-7b9acbad9c07", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-29 02:01:52", 
+    "end_time": "2026-07-29 02:01:54", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9f1e6bb7-4ec9-4729-93d9-f9858a06915e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-29 03:02:07", 
+    "end_time": "2026-07-29 03:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "033f5664-df77-4b3d-a48e-4dd1bb1845bf", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-29 04:02:04", 
+    "end_time": "2026-07-29 04:02:05", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1600128d-0775-4266-ba9e-544af4b0b038", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 11:02:18", 
+    "end_time": "2026-07-30 11:02:20", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9faaddae-947d-4319-ad8f-1bc9e570deac", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 12:02:31", 
+    "end_time": "2026-07-30 12:02:33", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "fc50bed8-7157-411d-9257-2c5920ffd740", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 13:02:27", 
+    "end_time": "2026-07-30 13:02:29", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7dc441ad-d95d-4266-a8a2-8f6bcf812efc", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 14:02:34", 
+    "end_time": "2026-07-30 14:02:35", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2f45f54b-c283-4a48-9079-815797a626ee", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 15:02:12", 
+    "end_time": "2026-07-30 15:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "c004476d-f29c-41b9-b440-7acc301f170f", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 16:02:22", 
+    "end_time": "2026-07-30 16:02:24", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "43ee3549-3b22-4eb7-9908-d4aa639dfe4a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 17:02:20", 
+    "end_time": "2026-07-30 17:02:21", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "55da9c28-b579-48e5-86c1-cc3266ed4790", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 18:02:16", 
+    "end_time": "2026-07-30 18:02:19", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "952d08f5-836e-47a8-af1f-bf80c0acc2a4", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 19:01:53", 
+    "end_time": "2026-07-30 19:01:55", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "234c59e5-a706-4823-9541-d716bd1b9dc7", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 20:02:04", 
+    "end_time": "2026-07-30 20:02:05", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e72abd56-8f5c-487d-b990-f5f5f4e214cb", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 21:02:00", 
+    "end_time": "2026-07-30 21:02:01", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2631888e-8d69-4d54-83ce-c4302c53d028", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 22:02:07", 
+    "end_time": "2026-07-30 22:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5e1711a6-664c-473f-8794-56357277ed99", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-30 23:02:19", 
+    "end_time": "2026-07-30 23:02:20", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ace6fc41-49a9-4787-9081-dc28a4ce4166", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 00:02:12", 
+    "end_time": "2026-07-31 00:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e0513139-ffa4-43a1-bbc6-d655cac8aa43", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 01:02:07", 
+    "end_time": "2026-07-31 01:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "16b300fc-92ee-42e9-88df-7bb270377968", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 02:02:20", 
+    "end_time": "2026-07-31 02:02:22", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "79a86733-13b6-4eaf-95bf-37c0f1c15b8b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 03:02:12", 
+    "end_time": "2026-07-31 03:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "11ce11ae-5a8e-47b6-a48a-9daf3a60b507", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 04:02:01", 
+    "end_time": "2026-07-31 04:02:02", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "eedcb377-3ec5-44e6-947d-017d9211f79c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 05:02:11", 
+    "end_time": "2026-07-31 05:02:12", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "84396b7d-1ad0-44b3-a767-4f3e8a4e434a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 06:02:06", 
+    "end_time": "2026-07-31 06:02:07", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a82dfa06-e897-4325-80a6-db4609348fbd", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 07:02:23", 
+    "end_time": "2026-07-31 07:02:24", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a1113498-973b-4bd9-9ea3-7ca2b303d72c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 08:02:33", 
+    "end_time": "2026-07-31 08:02:34", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8f0a0c6a-ec2e-41e6-829f-5e7ab4905e4d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 09:02:51", 
+    "end_time": "2026-07-31 09:02:52", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "686ebdf8-9949-49e7-8976-4dd0f387a8d3", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 10:02:26", 
+    "end_time": "2026-07-31 10:02:29", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4cf59e53-1ed7-4d42-b38f-78f76f18bdaa", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 11:02:19", 
+    "end_time": "2026-07-31 11:02:20", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "5514c7c6-c0c1-477e-8b1c-d7874635296e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 12:02:44", 
+    "end_time": "2026-07-31 12:02:45", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "2ad75109-89c8-423e-8e63-897178177211", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 13:02:37", 
+    "end_time": "2026-07-31 13:02:38", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e95bdd01-95d6-406c-a697-920650a69a72", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 14:02:24", 
+    "end_time": "2026-07-31 14:02:26", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9111063c-93ef-4b5b-84c1-0ee816700ccb", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 15:02:37", 
+    "end_time": "2026-07-31 15:02:39", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f6b756cc-09c7-4d59-8954-8955a7f56a18", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 16:02:30", 
+    "end_time": "2026-07-31 16:02:31", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "533d88cd-cf4c-4c76-89d0-b0e2e7114c3b", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 17:02:23", 
+    "end_time": "2026-07-31 17:02:25", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f7ac6041-1e87-4dd4-ac6d-722cdb591e3d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 18:02:17", 
+    "end_time": "2026-07-31 18:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d8ff8772-e1d3-4b8c-9744-717a62c85bf1", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 19:02:16", 
+    "end_time": "2026-07-31 19:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "42b14179-79d7-44e6-9272-87efc55d5cb6", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 20:02:17", 
+    "end_time": "2026-07-31 20:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "bce2d5b0-a6b8-4364-891b-6cb90ca5bc13", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 21:02:28", 
+    "end_time": "2026-07-31 21:02:29", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "92f7f5a5-5901-4d2e-9a32-6d9d56937fbc", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 22:02:00", 
+    "end_time": "2026-07-31 22:02:01", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "55ca537f-e9e8-48de-9ba9-ca5fbccf1fd6", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 23:02:12", 
+    "end_time": "2026-07-31 23:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b6eaef1b-388e-4a8e-aba7-2d904a222847", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 00:02:00", 
+    "end_time": "2026-08-01 00:02:01", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "3e07af46-d057-4c46-b24d-f43be7cca9a9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 01:02:18", 
+    "end_time": "2026-08-01 01:02:19", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "fbca02a9-8a91-4b0b-bbf9-f37b47499611", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 02:02:02", 
+    "end_time": "2026-08-01 02:02:04", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8b9080c8-7215-490e-bc39-5509402d9505", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 03:02:15", 
+    "end_time": "2026-08-01 03:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "3cae7eda-ae46-40ba-80a2-0d897fc1f72e", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 04:02:00", 
+    "end_time": "2026-08-01 04:02:01", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "05a76f80-907a-4cfe-b3b7-706d1a5ac53a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 05:02:08", 
+    "end_time": "2026-08-01 05:02:10", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f9a5274e-ba49-4cb3-8b4f-ff74fb94e37c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 06:02:07", 
+    "end_time": "2026-08-01 06:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1b14c053-dab8-4cf4-ab8b-a99d0c7a4c6c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 07:02:10", 
+    "end_time": "2026-08-01 07:02:11", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "26eb055c-93c0-4b8b-af14-58e074eebe59", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 08:02:25", 
+    "end_time": "2026-08-01 08:02:27", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "4a9acd7c-bf64-42bd-b644-371cb22ba3fc", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 09:02:32", 
+    "end_time": "2026-08-01 09:02:34", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "10e2d55f-6b5a-4582-be6b-d834e2b615b1", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 10:02:10", 
+    "end_time": "2026-08-01 10:02:12", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ae45eda4-9969-43f6-afe4-f0d1564afb2c", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 11:02:28", 
+    "end_time": "2026-08-01 11:02:30", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "350be841-18e5-4f8f-a8e5-289628f386f4", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 12:02:13", 
+    "end_time": "2026-08-01 12:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "83709ebc-9ddf-43d6-9b21-6c9adb517df1", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 13:03:40", 
+    "end_time": "2026-08-01 13:03:41", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "fb40a77e-6ce6-4efc-9c09-1d5b5fd39c7d", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 14:02:13", 
+    "end_time": "2026-08-01 14:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7816a01f-01b1-4c23-9685-328a69a32bb9", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 15:02:08", 
+    "end_time": "2026-08-01 15:02:10", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8e2faeb5-3a6b-48c2-994c-091b7d035010", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 16:02:17", 
+    "end_time": "2026-08-01 16:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "eaeaf6df-fea0-43c8-9830-3cf266012f4a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 17:02:14", 
+    "end_time": "2026-08-01 17:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d849b7a2-c01c-4b55-b687-108444a3831a", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }
+]

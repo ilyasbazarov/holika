@@ -1,0 +1,63 @@
+=== date -u (start) ===
+Sun Aug  2 19:41:22 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Workflow-логи (severity=CRITICAL, DQ Gate FAILED) вокруг первого прогона ПОСЛЕ 2026-08-02T18:00Z (полночь Бишкек) ===
+[
+  {
+    "insertId": "1iel5r2f5q3vzz",
+    "labels": {
+      "execution_id": "5a36322f-76fa-428f-b2be-62bc2e1b98d5",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-08-02T18:02:18.928620013Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785693602.870655 details={\"checks\":[{\"detail\":\"staging_count=816\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=0, ma7=4774584, ratio=0.00, threshold=0.03 (weekend), target_date=2026-08-02\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-08-01, lag_days=2\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=40835.15\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785693602.870655,\"status\":\"FAILED\"}",
+    "timestamp": "2026-08-02T18:02:18.928620013Z"
+  },
+  {
+    "insertId": "1yilp97f5etitp",
+    "labels": {
+      "execution_id": "d6f2014a-baf1-4af3-b01a-7896548a684e",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-08-02T19:02:15.113280187Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785697202.4988062 details={\"checks\":[{\"detail\":\"staging_count=816\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=0, ma7=4774584, ratio=0.00, threshold=0.03 (weekend), target_date=2026-08-02\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-08-01, lag_days=2\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=40835.15\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785697202.4988062,\"status\":\"FAILED\"}",
+    "timestamp": "2026-08-02T19:02:15.113280187Z"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 19:41:24 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
