@@ -1,0 +1,152 @@
+{
+  "core": {
+    "dim_counterparties": {
+      "n_cols": 9,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    },
+    "dim_employees": {
+      "n_cols": 7,
+      "time_candidates": [
+        "updated_at",
+        "_loaded_at"
+      ]
+    },
+    "dim_fx_rates": {
+      "n_cols": 2,
+      "time_candidates": []
+    },
+    "dim_metadata_mappings": {
+      "n_cols": 6,
+      "time_candidates": []
+    },
+    "dim_products": {
+      "n_cols": 14,
+      "time_candidates": [
+        "updated_at",
+        "_loaded_at"
+      ]
+    },
+    "fact_commissionreportin": {
+      "n_cols": 9,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    },
+    "fact_customer_invoices": {
+      "n_cols": 14,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    },
+    "fact_inventory": {
+      "n_cols": 11,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    },
+    "fact_loss": {
+      "n_cols": 13,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    },
+    "fact_payments": {
+      "n_cols": 15,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    },
+    "fact_payments_stg": {
+      "n_cols": 15,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    },
+    "fact_purchases": {
+      "n_cols": 19,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    },
+    "fact_returns": {
+      "n_cols": 10,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    },
+    "fact_sales_profit": {
+      "n_cols": 22,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    },
+    "fact_sales_profit_byvariant_backup": {
+      "n_cols": 17,
+      "time_candidates": [
+        "_loaded_at"
+      ]
+    }
+  },
+  "marts": {
+    "abc_xyz": {
+      "n_cols": 19,
+      "time_candidates": [
+        "_mart_refreshed_at"
+      ]
+    },
+    "customer_invoices_ar": {
+      "n_cols": 12,
+      "time_candidates": []
+    },
+    "expenses": {
+      "n_cols": 17,
+      "time_candidates": []
+    },
+    "expenses_staging": {
+      "n_cols": 17,
+      "time_candidates": []
+    },
+    "gmroi": {
+      "n_cols": 19,
+      "time_candidates": [
+        "_mart_refreshed_at"
+      ]
+    },
+    "gmroi_by_folder": {
+      "n_cols": 14,
+      "time_candidates": [
+        "_mart_refreshed_at"
+      ]
+    },
+    "in_transit": {
+      "n_cols": 21,
+      "time_candidates": [
+        "_mart_refreshed_at"
+      ]
+    },
+    "inventory_health": {
+      "n_cols": 32,
+      "time_candidates": [
+        "_mart_refreshed_at"
+      ]
+    },
+    "sales_overview": {
+      "n_cols": 40,
+      "time_candidates": [
+        "_mart_refreshed_at"
+      ]
+    },
+    "supplier_price_history": {
+      "n_cols": 13,
+      "time_candidates": [
+        "_mart_refreshed_at"
+      ]
+    },
+    "weight_flow": {
+      "n_cols": 8,
+      "time_candidates": []
+    }
+  }
+}

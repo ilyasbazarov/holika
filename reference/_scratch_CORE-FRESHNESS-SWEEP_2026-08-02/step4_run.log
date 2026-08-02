@@ -1,0 +1,200 @@
+=== date -u (start) ===
+Sun Aug  2 11:43:02 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== JOBS_BY_PROJECT (24ч) — задания с целью core.fact_sales_profit (проверка почасовой промоции) ===
+[
+  {
+    "creation_time": "2026-08-01 17:02:14", 
+    "error_reason": null, 
+    "job_id": "d849b7a2-c01c-4b55-b687-108444a3831a", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 16:02:17", 
+    "error_reason": null, 
+    "job_id": "eaeaf6df-fea0-43c8-9830-3cf266012f4a", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 15:02:08", 
+    "error_reason": null, 
+    "job_id": "8e2faeb5-3a6b-48c2-994c-091b7d035010", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 14:02:13", 
+    "error_reason": null, 
+    "job_id": "7816a01f-01b1-4c23-9685-328a69a32bb9", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 13:03:40", 
+    "error_reason": null, 
+    "job_id": "fb40a77e-6ce6-4efc-9c09-1d5b5fd39c7d", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 12:02:13", 
+    "error_reason": null, 
+    "job_id": "83709ebc-9ddf-43d6-9b21-6c9adb517df1", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }
+]
+
+=== JOBS_BY_PROJECT (24ч) — задания с целью core.fact_purchases ===
+[
+  {
+    "creation_time": "2026-08-01 17:05:06", 
+    "error_reason": null, 
+    "job_id": "d72b7f37-7426-4e82-9bd6-b7e3df9a1421", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-08-01 16:05:33", 
+    "error_reason": null, 
+    "job_id": "c1e57cdc-9980-403e-bc4f-bc370471085d", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-08-01 15:05:13", 
+    "error_reason": null, 
+    "job_id": "78f9db26-0047-4c2f-9317-8027d3498bc6", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-08-01 14:05:26", 
+    "error_reason": null, 
+    "job_id": "c72be7db-8980-42f5-a378-dffb75ea01c8", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-08-01 13:06:45", 
+    "error_reason": null, 
+    "job_id": "94cb5047-87d7-4b5b-ad4c-71b8d39eeb2a", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-08-01 12:05:17", 
+    "error_reason": null, 
+    "job_id": "d3ae5256-0e14-4e73-bf52-2986fb5a3fb0", 
+    "state": "DONE", 
+    "statement_type": null
+  }
+]
+
+=== JOBS_BY_PROJECT (90 суток) — задания с целью core.dim_metadata_mappings ===
+[]
+
+=== JOBS_BY_PROJECT (90 суток) — задания с целью core.fact_sales_profit_byvariant_backup ===
+[]
+
+=== JOBS_BY_PROJECT (90 суток) — задания с целью core.fact_returns ===
+[
+  {
+    "creation_time": "2026-07-19 01:11:56", 
+    "job_id": "1b5ccb9f-9cc9-48c4-8246-15213d41c254", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-07-12 01:12:44", 
+    "job_id": "dd086289-085e-4ed4-8caf-96bd5f91758e", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-07-05 01:12:04", 
+    "job_id": "fe57a700-572a-4491-9365-1ef169b104f8", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-06-24 21:20:24", 
+    "job_id": "b8b53d73-8ba5-4154-9c87-fb5aedc3762f", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-06-24 21:04:25", 
+    "job_id": "39314b77-933a-4fef-bc0c-59ef65112767", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-06-24 20:45:34", 
+    "job_id": "f25fda1d-7b17-4553-ac94-2b99e1d755e0", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-06-21 01:12:32", 
+    "job_id": "009883b8-cd6b-4ab6-85ff-8148c07aa6c8", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-06-07 01:11:55", 
+    "job_id": "f9c7fc32-d020-4f7c-ab4a-fe7feeda20cc", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-05-31 01:12:16", 
+    "job_id": "94be3b32-cdbb-409f-987c-967f91c56c63", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-05-11 07:26:57", 
+    "job_id": "75c84b9f-7fef-490d-a14b-e71d6ea10b34", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-05-11 07:23:42", 
+    "job_id": "21c74bac-f425-470a-aeb7-31686e52b844", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-05-07 13:55:15", 
+    "job_id": "69d51a9c-a090-4dd4-8ef5-8b1a45dc9f6e", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-05-07 13:37:21", 
+    "job_id": "bqjob_r7cb32a1573abe547_0000019e02a83e07_1", 
+    "state": "DONE", 
+    "statement_type": "CREATE_TABLE"
+  }
+]
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Sun Aug  2 11:43:19 UTC 2026

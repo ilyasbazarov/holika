@@ -1,0 +1,578 @@
+=== date -u (start) ===
+Sun Aug  2 11:44:57 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== distinct _loaded_at за 24ч по core.dim_products (проверка фактической каденции cf-dim) ===
+[
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }, 
+  {
+    "_loaded_at": "2026-08-02 11:00:26", 
+    "n": "1"
+  }
+]
+
+=== JOBS_BY_PROJECT (24ч) — задания с целью core.dim_products ===
+[
+  {
+    "creation_time": "2026-08-02 11:00:34", 
+    "job_id": "d80e10a3-bf31-41f5-9240-d0daecc0180d", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:00:39", 
+    "job_id": "16f07012-b705-432f-86b1-23da91b2b853", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 09:00:39", 
+    "job_id": "dcb0fce0-f3f0-4ea7-bbb4-71523c3fedbc", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 08:00:27", 
+    "job_id": "4015bced-1ba3-4352-a466-f598a3a78e67", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 07:00:29", 
+    "job_id": "48d5747d-a50f-4e68-8bc6-194d04ede66f", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 06:00:36", 
+    "job_id": "15ab83a6-ffa2-430e-93f7-5dbded8cb1ca", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 05:00:24", 
+    "job_id": "711b86cd-6e26-4bc8-8305-665a43c06e6b", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 04:00:54", 
+    "job_id": "89c9ab0e-bccb-49ae-9576-14c0197b7959", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 03:00:34", 
+    "job_id": "8c0d612a-f803-4100-8603-4aafe142627e", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 02:00:43", 
+    "job_id": "2fec89f1-aced-400e-b4d5-49497570c8f9", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 01:00:35", 
+    "job_id": "d0cd6c4c-fc2c-4951-a10b-87efe2e2298c", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 01:00:24", 
+    "job_id": "489eed0b-a59b-49b3-9692-675b328136b7", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-02 00:00:34", 
+    "job_id": "6b23494b-fd0d-4dd1-84ee-8da0703d0a81", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 23:00:26", 
+    "job_id": "f5164c56-e585-4bbf-b54b-8c4c2fe505cc", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 22:00:39", 
+    "job_id": "ab332f85-d272-4a2e-aa1d-eabc0858b0a5", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 21:00:34", 
+    "job_id": "48281f27-694c-4f3f-a344-a1bdb89b5c46", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 20:00:32", 
+    "job_id": "d6f5da1b-e082-4fea-8f14-7dca3e9930f0", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 19:00:33", 
+    "job_id": "2c4cab59-0938-4b1b-8d3f-52ab2a5b09d2", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 18:00:29", 
+    "job_id": "99533047-fa61-4a70-9e7d-1b085faded45", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 17:00:33", 
+    "job_id": "fd4b5581-f3fa-4675-9cc5-dcc75a6e3cd0", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 16:00:39", 
+    "job_id": "1ad8f082-d494-4ea8-a616-2f27010f6052", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 15:00:30", 
+    "job_id": "2a7181be-e784-44f2-aaf7-1606cbdd4829", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 14:00:28", 
+    "job_id": "4c8afbf5-2285-4241-8206-ccf2028acf23", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 13:02:00", 
+    "job_id": "7dc1a8ac-dd01-405c-960e-77375a295737", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 12:00:28", 
+    "job_id": "06a5ac13-d2b1-4073-9a3d-bc4e2037108c", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }
+]
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Sun Aug  2 11:45:04 UTC 2026

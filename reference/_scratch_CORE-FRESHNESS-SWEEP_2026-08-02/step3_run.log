@@ -1,0 +1,206 @@
+=== date -u (start) ===
+Sun Aug  2 11:40:50 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== core.* — MIN/MAX/COUNT(DISTINCT)/COUNT(*) по _loaded_at, все 15 таблиц ===
+[
+  {
+    "max_loaded_at": "2026-08-02 11:00:58", 
+    "min_loaded_at": "2026-05-03 06:32:12", 
+    "n_distinct": "36", 
+    "n_rows": "6660", 
+    "table_name": "dim_counterparties"
+  }, 
+  {
+    "max_loaded_at": "2026-08-02 11:01:00", 
+    "min_loaded_at": "2026-05-03 06:32:15", 
+    "n_distinct": "21", 
+    "n_rows": "21", 
+    "table_name": "dim_employees"
+  }, 
+  {
+    "max_loaded_at": "2026-08-02 11:00:26", 
+    "min_loaded_at": "2026-07-01 06:00:20", 
+    "n_distinct": "4656", 
+    "n_rows": "4656", 
+    "table_name": "dim_products"
+  }, 
+  {
+    "max_loaded_at": "2026-08-01 21:01:09", 
+    "min_loaded_at": "2026-08-01 21:01:09", 
+    "n_distinct": "192", 
+    "n_rows": "192", 
+    "table_name": "fact_commissionreportin"
+  }, 
+  {
+    "max_loaded_at": "2026-06-05 09:06:57", 
+    "min_loaded_at": "2026-06-05 09:06:57", 
+    "n_distinct": "1", 
+    "n_rows": "4058", 
+    "table_name": "fact_customer_invoices"
+  }, 
+  {
+    "max_loaded_at": "2026-08-01 21:00:03", 
+    "min_loaded_at": "2026-05-03 02:37:39", 
+    "n_distinct": "88", 
+    "n_rows": "23292", 
+    "table_name": "fact_inventory"
+  }, 
+  {
+    "max_loaded_at": "2026-08-01 21:00:13", 
+    "min_loaded_at": "2026-08-01 21:00:13", 
+    "n_distinct": "129", 
+    "n_rows": "129", 
+    "table_name": "fact_loss"
+  }, 
+  {
+    "max_loaded_at": "2026-08-01 21:14:16", 
+    "min_loaded_at": "2026-07-07 21:01:30", 
+    "n_distinct": "71", 
+    "n_rows": "5020", 
+    "table_name": "fact_payments"
+  }, 
+  {
+    "max_loaded_at": "2026-08-01 21:14:16", 
+    "min_loaded_at": "2026-08-01 21:00:26", 
+    "n_distinct": "67", 
+    "n_rows": "6530", 
+    "table_name": "fact_payments_stg"
+  }, 
+  {
+    "max_loaded_at": "2026-08-01 17:02:16", 
+    "min_loaded_at": "2026-08-01 17:02:16", 
+    "n_distinct": "1", 
+    "n_rows": "4398", 
+    "table_name": "fact_purchases"
+  }, 
+  {
+    "max_loaded_at": "2026-07-19 01:11:56", 
+    "min_loaded_at": "2026-07-19 01:11:56", 
+    "n_distinct": "1", 
+    "n_rows": "24", 
+    "table_name": "fact_returns"
+  }, 
+  {
+    "max_loaded_at": "2026-08-01 17:02:14", 
+    "min_loaded_at": "2026-05-03 07:43:16", 
+    "n_distinct": "37", 
+    "n_rows": "36986", 
+    "table_name": "fact_sales_profit"
+  }, 
+  {
+    "max_loaded_at": "2026-05-03 02:25:38", 
+    "min_loaded_at": "2026-05-03 02:25:38", 
+    "n_distinct": "1", 
+    "n_rows": "12431", 
+    "table_name": "fact_sales_profit_byvariant_backup"
+  }
+]
+
+=== core.dim_employees / core.dim_products — вторая колонка времени updated_at ===
+[
+  {
+    "max_updated_at": "2026-04-06 10:02:44", 
+    "min_updated_at": "2024-10-12 21:42:35", 
+    "n_distinct": "14", 
+    "n_rows": "21", 
+    "table_name": "dim_employees"
+  }, 
+  {
+    "max_updated_at": "2026-05-02 13:23:33", 
+    "min_updated_at": "2024-08-05 13:51:57", 
+    "n_distinct": "215", 
+    "n_rows": "4656", 
+    "table_name": "dim_products"
+  }
+]
+
+=== core.dim_metadata_mappings — last_verified (единственная колонка времени) ===
+[
+  {
+    "max_v": "2026-04-29 19:13:59", 
+    "min_v": "2026-04-29 19:13:59", 
+    "n_distinct": "1", 
+    "n_rows": "19"
+  }
+]
+
+=== core.dim_fx_rates — колонки времени загрузки нет; бизнес-колонка date для контекста ===
+[
+  {
+    "max_date": "2026-08-02", 
+    "min_date": "2025-04-29", 
+    "n_distinct": "461", 
+    "n_rows": "461"
+  }
+]
+
+=== marts.* — MIN/MAX/COUNT(DISTINCT)/COUNT(*) по _mart_refreshed_at, 7 таблиц ===
+[
+  {
+    "max_r": "2026-08-02 08:04:01", 
+    "min_r": "2026-08-02 08:04:01", 
+    "n_distinct": "1", 
+    "n_rows": "522", 
+    "table_name": "abc_xyz"
+  }, 
+  {
+    "max_r": "2026-08-02 08:03:01", 
+    "min_r": "2026-08-02 08:03:01", 
+    "n_distinct": "1", 
+    "n_rows": "900", 
+    "table_name": "gmroi"
+  }, 
+  {
+    "max_r": "2026-08-01 12:02:01", 
+    "min_r": "2026-08-01 12:02:01", 
+    "n_distinct": "1", 
+    "n_rows": "62", 
+    "table_name": "gmroi_by_folder"
+  }, 
+  {
+    "max_r": "2026-08-01 13:09:02", 
+    "min_r": "2026-08-01 13:09:02", 
+    "n_distinct": "1", 
+    "n_rows": "268", 
+    "table_name": "in_transit"
+  }, 
+  {
+    "max_r": "2026-08-02 11:00:04", 
+    "min_r": "2026-08-02 11:00:04", 
+    "n_distinct": "1", 
+    "n_rows": "314", 
+    "table_name": "inventory_health"
+  }, 
+  {
+    "max_r": "2026-08-02 11:34:02", 
+    "min_r": "2026-08-02 11:34:02", 
+    "n_distinct": "1", 
+    "n_rows": "36986", 
+    "table_name": "sales_overview"
+  }, 
+  {
+    "max_r": "2026-08-01 13:09:02", 
+    "min_r": "2026-08-01 13:09:02", 
+    "n_distinct": "1", 
+    "n_rows": "4009", 
+    "table_name": "supplier_price_history"
+  }
+]
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Sun Aug  2 11:41:08 UTC 2026

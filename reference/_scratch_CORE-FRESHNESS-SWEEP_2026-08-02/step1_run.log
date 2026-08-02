@@ -1,0 +1,212 @@
+=== date -u (start) ===
+Sun Aug  2 11:27:37 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== __TABLES__ meta — dataset core (location asia-east1): table_id, table_type, row_count, creation_time, last_modified_time ===
+Waiting on bqjob_r70ec6f4c0584901d_0000019fc23ac360_1 ... (0s) Current status: DONE   
+[
+  {
+    "creation_time": "2026-05-03 06:18:57", 
+    "last_modified_time": "2026-08-02 11:00:59", 
+    "row_count": "6660", 
+    "table_id": "dim_counterparties", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-05-03 01:37:30", 
+    "last_modified_time": "2026-08-02 11:01:04", 
+    "row_count": "21", 
+    "table_id": "dim_employees", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-04-29 18:40:09", 
+    "last_modified_time": "2026-08-01 18:01:04", 
+    "row_count": "461", 
+    "table_id": "dim_fx_rates", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-04-29 19:13:58", 
+    "last_modified_time": "2026-04-29 19:14:01", 
+    "row_count": "19", 
+    "table_id": "dim_metadata_mappings", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-05-03 01:26:01", 
+    "last_modified_time": "2026-08-02 11:00:35", 
+    "row_count": "4656", 
+    "table_id": "dim_products", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-07-22 11:29:11", 
+    "last_modified_time": "2026-08-01 21:01:13", 
+    "row_count": "192", 
+    "table_id": "fact_commissionreportin", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-06-05 08:48:30", 
+    "last_modified_time": "2026-06-05 09:07:08", 
+    "row_count": "4058", 
+    "table_id": "fact_customer_invoices", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-05-03 02:37:50", 
+    "last_modified_time": "2026-08-01 21:00:16", 
+    "row_count": "23292", 
+    "table_id": "fact_inventory", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-07-22 11:29:07", 
+    "last_modified_time": "2026-08-01 21:00:19", 
+    "row_count": "129", 
+    "table_id": "fact_loss", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-06-05 10:52:56", 
+    "last_modified_time": "2026-08-01 21:14:21", 
+    "row_count": "5020", 
+    "table_id": "fact_payments", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-06-18 16:03:02", 
+    "last_modified_time": "2026-08-01 21:14:18", 
+    "row_count": "6530", 
+    "table_id": "fact_payments_stg", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-05-18 11:39:39", 
+    "last_modified_time": "2026-08-01 17:05:09", 
+    "row_count": "4398", 
+    "table_id": "fact_purchases", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-05-07 13:37:21", 
+    "last_modified_time": "2026-07-19 01:11:57", 
+    "row_count": "24", 
+    "table_id": "fact_returns", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-05-03 07:43:21", 
+    "last_modified_time": "2026-08-01 17:02:15", 
+    "row_count": "36986", 
+    "table_id": "fact_sales_profit", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-05-03 07:28:19", 
+    "last_modified_time": "2026-05-03 07:28:19", 
+    "row_count": "12431", 
+    "table_id": "fact_sales_profit_byvariant_backup", 
+    "table_type": "TABLE"
+  }
+]
+
+=== __TABLES__ meta — dataset marts (location asia-east1): table_id, table_type, row_count, creation_time, last_modified_time ===
+Waiting on bqjob_r368f175030b8c15c_0000019fc23acf62_1 ... (0s) Current status: DONE   
+[
+  {
+    "creation_time": "2026-08-02 08:04:02", 
+    "last_modified_time": "2026-08-02 08:04:02", 
+    "row_count": "522", 
+    "table_id": "abc_xyz", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-06-05 10:00:30", 
+    "last_modified_time": "2026-08-02 10:00:10", 
+    "row_count": "546", 
+    "table_id": "customer_invoices_ar", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-06-05 11:10:25", 
+    "last_modified_time": "2026-08-02 11:10:05", 
+    "row_count": "3221", 
+    "table_id": "expenses", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-07-26 19:39:38", 
+    "last_modified_time": "2026-07-28 09:03:15", 
+    "row_count": "3181", 
+    "table_id": "expenses_staging", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-08-02 08:03:03", 
+    "last_modified_time": "2026-08-02 08:03:03", 
+    "row_count": "900", 
+    "table_id": "gmroi", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-08-01 12:02:02", 
+    "last_modified_time": "2026-08-01 12:02:02", 
+    "row_count": "62", 
+    "table_id": "gmroi_by_folder", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-08-01 13:09:03", 
+    "last_modified_time": "2026-08-01 13:09:03", 
+    "row_count": "268", 
+    "table_id": "in_transit", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-08-02 11:00:05", 
+    "last_modified_time": "2026-08-02 11:00:05", 
+    "row_count": "314", 
+    "table_id": "inventory_health", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-08-02 09:34:04", 
+    "last_modified_time": "2026-08-02 09:34:04", 
+    "row_count": "36986", 
+    "table_id": "sales_overview", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-08-01 13:09:04", 
+    "last_modified_time": "2026-08-01 13:09:04", 
+    "row_count": "4009", 
+    "table_id": "supplier_price_history", 
+    "table_type": "TABLE"
+  }, 
+  {
+    "creation_time": "2026-08-01 23:30:08", 
+    "last_modified_time": "2026-08-01 23:30:08", 
+    "row_count": "532", 
+    "table_id": "weight_flow", 
+    "table_type": "TABLE"
+  }
+]
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Sun Aug  2 11:27:44 UTC 2026
