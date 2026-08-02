@@ -69,7 +69,24 @@ gcloud functions deploy cf-facts \
   по собственному расписанию SQ, независимо от момента промоута в `core`.
 - MERGE в `core.fact_sales_profit` — явный `INSERT (колонки) VALUES (...)`, не `INSERT ROW`
   (`bq_ops.py:258-303`) — соответствует C1/`ADR-030`.
-**cf-dq** — актуальная ревизия после T-1-фикса не подтверждена в источнике → **GAP Q-6** (см. `07_STATE`); последняя известная в источнике — `cf-dq-00006-lac` (⚠ дата этой ревизии предшествует T-1-фиксу 2026-06-24, канон не зафиксирован, не выдавать за актуальную).
+**cf-dq** (факт, замер сессии `FACTS-WORKFLOW-STOP-DIAG`, `2026-08-02`, скрипт
+`reference/_scratch_FACTS-WORKFLOW-STOP-DIAG_2026-08-02/step3_cf_revisions.sh`, лог `step3_run.log`;
+`gcloud functions describe cf-dq --region=asia-east1 --gen2` отработал без `403`):
+- Регион: `asia-east1`. `createTime` функции — `2026-05-07T12:53:10.388923634Z`.
+- Revision: **`cf-dq-00007-hot`**, создана `2026-06-18T10:59:31.089576Z`, `state: ACTIVE`;
+  `latestReadyRevisionName` совпадает. `updateTime` сервиса — `2026-07-30T10:04:58.501779835Z`
+  (метаданная-правка массовой сессии того дня, не передеплой кода).
+- История ревизий (полная, `gcloud run revisions list --service=cf-dq`): `00007-hot`
+  `2026-06-18`, `00006-lac` `2026-05-26`, `00005-pet` и `00004-teh` `2026-05-18`, `00003-reh`,
+  `00002-gov`, `00001-wiz` `2026-05-07`.
+- ⚠ **Расхождение с прозой доков, не закрытое этим фактом.** Прежняя редакция этой строки и
+  `03_PIPELINE_SPEC.md:88` говорят о «ревизии после T-1-фикса», датируя фикс `2026-06-24`. Ни одна
+  ревизия `cf-dq` этой датой не создана; ровно ей датирована ревизия ДРУГОЙ функции —
+  `cf-facts-00007-xir`, `2026-06-24T20:52:00.773262Z` (тот же лог). Наблюдаемое поведение гейта
+  стандарту T-1 соответствует (`target_date` = вчерашние бишкекские сутки). Разбор — при чтении
+  кода, задача `DQ-SOURCE-CAPTURE`; адъюдикация — `reference/facts_stop_diag_adj_2026-08-02.md §6`.
+- **Исходный код `cf-dq` в `reference/code/` НЕ снят** — остаток `Q-3`, закрывается
+  `DQ-SOURCE-CAPTURE`. Ревизия (прежний `GAP Q-6`) снята и закрыта этим фактом.
 
 **cf-inventory** (факт, сессия `SOURCE-MAP-REST`, `2026-07-30T10:47:33Z`…`10:47:49Z`, `MANIFEST.md` — `reference/code/cf-inventory/MANIFEST.md`):
 - Регион: `asia-east1` (`gcloud functions list --filter="name:cf-inventory"`).
