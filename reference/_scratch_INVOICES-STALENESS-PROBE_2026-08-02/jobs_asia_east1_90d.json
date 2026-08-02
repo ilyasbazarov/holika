@@ -1,0 +1,722 @@
+[
+  {
+    "creation_time": "2026-08-02 10:04:25", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anon2a34e572d74029faf19cc1ce8210a7ee4ce840d1f8596b02c003703274f78a99", 
+    "error_message": null, 
+    "job_id": "script_job_a48e445baaa1adf7e30ad785d1cda3bb_1", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:04:23", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anon1a2e261ed15770c6b19d426a91ee20a063a4d328fefd3712b11baab26dfc9e37", 
+    "error_message": null, 
+    "job_id": "script_job_978c7b23d83883a185b775418a8e9d44_0", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:04:23", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anon2a34e572d74029faf19cc1ce8210a7ee4ce840d1f8596b02c003703274f78a99", 
+    "error_message": null, 
+    "job_id": "bqjob_r46612909060121a9_0000019fc1ee8629_1", 
+    "state": "DONE", 
+    "statement_type": "SCRIPT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:04:20", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anon78d6833e2d0fb6fdbfe57751374ef08911358e7dc1b2989fa6911958b209ac52", 
+    "error_message": null, 
+    "job_id": "bqjob_r54ff0d9a11962d4e_0000019fc1ee7bf1_1", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:04:18", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anon7ab2ff4cbbd4cfd6cfe29862041d8a4e6f2d6bd57ca9d02b73be52b6ad5b7894", 
+    "error_message": null, 
+    "job_id": "bqjob_r5965af1fb584272e_0000019fc1ee7231_1", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:04:15", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anon463d29470ce3f39688bfcf71ba246ca131f65ba7df471f6bc97fd6ad71472aa3", 
+    "error_message": null, 
+    "job_id": "bqjob_ra23745de8ca1052_0000019fc1ee68b6_1", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:03:48", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anon58d8ce91e716f3cfc831f5205af4ce4c1be294159b91d0046e02d1a482b9eb09", 
+    "error_message": null, 
+    "job_id": "bqjob_r59d48f93c7b541ff_0000019fc1edffa8_1", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:03:46", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anon2e8c6ca9_d3d9_43d8_8beb_60bd0a511443", 
+    "error_message": null, 
+    "job_id": "bqjob_r211b67bfbdc9271c_0000019fc1edf4b6_1", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:00:09", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a70b3cf-0000-259f-bcfe-582429cd8d88", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-08-01 10:00:02", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a6e1252-0000-22d1-8f76-c82add7892a8", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 13:06:44", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anondc88eb7a_d048_48df_96f5_239b3c106c20", 
+    "error_message": null, 
+    "job_id": "bqjob_r3e4be745c7407d2c_0000019fb848bd06_1", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 13:05:10", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anonae2d1bef_1fa5_4f3a_9879_ef161ea460d9", 
+    "error_message": null, 
+    "job_id": "bqjob_r501c2bc4f374d26b_0000019fb8474cf0_1", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 13:04:24", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anonf7303981bf17578a274f50fa9dd36b7e027bb7d2fb5016c969744234dbce3357", 
+    "error_message": null, 
+    "job_id": "bqjob_r55126c5e252094e6_0000019fb8468f94_1", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-31 10:00:05", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a6cb916-0000-214e-93e0-582429d287b4", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-28 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a6880ce-0000-2448-a943-f4f5e8096748", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-27 10:00:05", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a66b6c7-0000-2c54-9aee-7474463c3a1d", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-26 10:00:08", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a660d7c-0000-21ff-8839-582429bd2d88", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-25 10:00:08", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a651318-0000-2e33-a18e-240588813cc8", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-24 10:00:05", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a63f754-0000-2e4b-9199-f4030439b494", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-23 10:00:03", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a627f1e-0000-2e4b-9199-f4030439b494", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-22 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a60ae9a-0000-20ae-85f0-c82add6dd0c8", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-21 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a5f7b41-0000-2d81-a889-f4f5e8093f7c", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-20 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a5e3462-0000-2351-a5fb-ac3eb15dc044", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-19 10:00:04", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a5c9ffa-0000-2479-a930-089e082797e4", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-18 10:00:05", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a5a4e99-0000-2f11-bcdf-7474463a4f9d", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-17 10:00:05", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a5a5f72-0000-2a22-ab77-883d24f6efb8", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-16 10:00:05", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a58c3fb-0000-2478-bcb7-14c14ef178b8", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-15 10:00:03", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a57a745-0000-249a-96b2-089e082f831c", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-14 10:00:04", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a560596-0000-2dd9-905e-883d24f676e0", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-13 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a559094-0000-27a2-b523-582429d21424", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-12 10:00:01", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a53f1ad-0000-23bf-add7-582429c728b8", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-11 10:00:04", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a52142a-0000-2f3f-9754-c82add783178", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-10 10:00:04", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a52546b-0000-245d-b0d3-f4f5e80a8b9c", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-09 10:00:07", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a4f6815-0000-27d5-b02e-14c14ef60248", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-08 10:00:05", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a4f4f30-0000-245d-b0d3-f4f5e80a8b9c", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-07 10:00:08", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a4ca0af-0000-20d0-9abc-d43a2ce138b7", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-06 10:00:04", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a4cc821-0000-26c8-8dfc-883d24f6e9b8", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-05 10:00:03", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a49f732-0000-2fcf-9b7a-089e082fb9b0", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-04 10:00:21", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a4a59ea-0000-220b-9598-240588738f4c", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-03 10:00:07", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a475eb6-0000-212d-9615-2405887d59a0", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-02 10:00:04", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a4636f4-0000-207d-9aa5-883d24f1ad78", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-07-01 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a44c833-0000-2261-ba59-7474463a78b5", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-30 10:00:05", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a43a042-0000-2b29-b7b8-240588710d80", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-29 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a428e24-0000-2e0d-a538-582429bcc3bc", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-28 10:00:07", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a4268fa-0000-2d8f-a877-c82add6c6bac", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-27 10:00:13", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a3f9836-0000-2165-84ce-b8db38fc195a", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-26 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a3baf6b-0000-23d3-863a-582429cf668c", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-25 10:00:05", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a3cfc25-0000-211b-81f0-582429c002b0", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-24 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a3f9fde-0000-2c1e-a1c9-14223bc70efa", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-23 10:00:02", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a38cb62-0000-23d3-863a-582429cf668c", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-22 10:00:02", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a3adea7-0000-23e7-b563-089e0827fa68", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-21 10:00:09", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a393aba-0000-21b0-a23e-089e082b9824", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-20 10:00:03", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a364b9f-0000-24de-90b5-c82add78a5ec", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-19 10:00:07", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a35d130-0000-2be1-8c85-089e0827faf4", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-18 10:00:16", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a345ac5-0000-2e5a-8a8d-2405887e8fb8", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-17 10:00:03", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a32771c-0000-2472-ac38-f4f5e8096de8", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-16 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a300867-0000-25ea-ab08-ac3eb144199c", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-15 10:00:04", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a2f44d6-0000-273e-b153-582429be290c", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-14 10:00:04", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a2ef2ae-0000-225a-81ec-3c286d36f282", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-13 10:00:03", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a2c96a3-0000-2ae6-8d7d-883d24f4a638", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-12 10:00:05", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a2c56f5-0000-2a6a-806c-089e082b1f58", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-11 10:00:04", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a2a6485-0000-273e-b153-582429be290c", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-10 10:00:07", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a286c78-0000-2694-a167-883d24f67620", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-09 10:00:03", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a27a899-0000-26ce-80b4-883d24f4f564", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-08 10:00:03", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a2717d3-0000-2332-9fdf-3c286d49c8f6", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-07 10:00:03", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a260a1c-0000-2a2b-b12a-3c286d482da6", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-06 10:00:06", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a23ec10-0000-27df-9958-9898fbd4bccd", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-05 10:01:50", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a23f590-0000-2952-853d-582429be7ecc", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-05 10:00:28", 
+    "dst_dataset": "marts", 
+    "dst_table": "customer_invoices_ar", 
+    "error_message": null, 
+    "job_id": "scheduled_query_6a229bb9-0000-26dd-9def-f4f5e80aad10", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-05 09:58:24", 
+    "dst_dataset": "_12584c14be40fb92791e8b32a747ff27b3c7bae7", 
+    "dst_table": "anon570a991873f2dce5b49200da8c477f004644837c4bc0d23e49104ca858fab098", 
+    "error_message": null, 
+    "job_id": "bqjob_r3b512ff599f32bd6_0000019e973835c4_1", 
+    "state": "DONE", 
+    "statement_type": "SELECT", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-05 09:07:07", 
+    "dst_dataset": "core", 
+    "dst_table": "fact_customer_invoices", 
+    "error_message": null, 
+    "job_id": "9026b571-70bc-475d-84eb-06a393692929", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }, 
+  {
+    "creation_time": "2026-06-05 08:48:29", 
+    "dst_dataset": "core", 
+    "dst_table": "fact_customer_invoices", 
+    "error_message": null, 
+    "job_id": "bqjob_r15d696c9f4d48773_0000019e96f835a9_1", 
+    "state": "DONE", 
+    "statement_type": "CREATE_TABLE", 
+    "user_email": "ilyasbazarov4@gmail.com"
+  }
+]

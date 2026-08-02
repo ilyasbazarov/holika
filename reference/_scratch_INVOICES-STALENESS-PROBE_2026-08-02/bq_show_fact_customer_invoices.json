@@ -1,0 +1,87 @@
+{
+  "creationTime": "1780649310011",
+  "etag": "xkSBriB+Sixk+PsTN6qvCg==",
+  "id": "msklad-bi-prod:core.fact_customer_invoices",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1780650428549",
+  "location": "asia-east1",
+  "numActiveLogicalBytes": "1270384",
+  "numActivePhysicalBytes": "123964",
+  "numBytes": "1270384",
+  "numCurrentPhysicalBytes": "123964",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "4058",
+  "numTimeTravelPhysicalBytes": "0",
+  "numTotalLogicalBytes": "1270384",
+  "numTotalPhysicalBytes": "123964",
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "invoice_id",
+        "type": "STRING"
+      },
+      {
+        "name": "invoice_name",
+        "type": "STRING"
+      },
+      {
+        "name": "moment",
+        "type": "DATE"
+      },
+      {
+        "name": "agent_id",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_name",
+        "type": "STRING"
+      },
+      {
+        "name": "state_id",
+        "type": "STRING"
+      },
+      {
+        "name": "state_name",
+        "type": "STRING"
+      },
+      {
+        "name": "sum_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "payed_sum_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "unpaid_sum_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "payment_planned",
+        "type": "DATE"
+      },
+      {
+        "name": "sales_channel_id",
+        "type": "STRING"
+      },
+      {
+        "name": "sales_channel_name",
+        "type": "STRING"
+      },
+      {
+        "name": "_loaded_at",
+        "type": "TIMESTAMP"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/datasets/core/tables/fact_customer_invoices",
+  "tableReference": {
+    "datasetId": "core",
+    "projectId": "msklad-bi-prod",
+    "tableId": "fact_customer_invoices"
+  },
+  "type": "TABLE"
+}

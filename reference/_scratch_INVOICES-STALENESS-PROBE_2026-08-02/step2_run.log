@@ -1,0 +1,90 @@
+=== date -u (start) ===
+Sun Aug  2 10:04:13 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== MIN/MAX(_loaded_at), MIN/MAX(moment), COUNT(*) ===
+[
+  {
+    "distinct_loaded_at_values": "1", 
+    "max_loaded_at": "2026-06-05 09:06:57", 
+    "max_moment": "2026-06-05", 
+    "min_loaded_at": "2026-06-05 09:06:57", 
+    "min_moment": "2024-10-04", 
+    "total_rows": "4058"
+  }
+]
+=== distribution of _loaded_at (top 20 distinct values by count) ===
+[
+  {
+    "_loaded_at": "2026-06-05 09:06:57", 
+    "n_rows": "4058"
+  }
+]
+=== COUNT(*) by year(moment) ===
+[
+  {
+    "n_rows": "725", 
+    "yr": "2024"
+  }, 
+  {
+    "n_rows": "2467", 
+    "yr": "2025"
+  }, 
+  {
+    "n_rows": "866", 
+    "yr": "2026"
+  }
+]
+=== COUNT(*) by month of last available year(moment) ===
+Waiting on bqjob_r46612909060121a9_0000019fc1ee8629_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r46612909060121a9_0000019fc1ee8629_1 ... (1s) Current status: RUNNING                                                                                      Waiting on bqjob_r46612909060121a9_0000019fc1ee8629_1 ... (3s) Current status: RUNNING                                                                                      Waiting on bqjob_r46612909060121a9_0000019fc1ee8629_1 ... (3s) Current status: DONE   
+[[
+  {
+    "mo": "1", 
+    "n_rows": "181", 
+    "year_used": "2026"
+  }, 
+  {
+    "mo": "2", 
+    "n_rows": "139", 
+    "year_used": "2026"
+  }, 
+  {
+    "mo": "3", 
+    "n_rows": "215", 
+    "year_used": "2026"
+  }, 
+  {
+    "mo": "4", 
+    "n_rows": "223", 
+    "year_used": "2026"
+  }, 
+  {
+    "mo": "5", 
+    "n_rows": "101", 
+    "year_used": "2026"
+  }, 
+  {
+    "mo": "6", 
+    "n_rows": "7", 
+    "year_used": "2026"
+  }
+]
+]
+=== date -u (end) ===
+Sun Aug  2 10:04:29 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== ARTIFACT DIR ===
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-STALENESS-PROBE/reference/_scratch_INVOICES-STALENESS-PROBE_2026-08-02

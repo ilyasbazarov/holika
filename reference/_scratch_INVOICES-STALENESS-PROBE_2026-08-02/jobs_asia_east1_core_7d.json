@@ -1,0 +1,402 @@
+[
+  {
+    "creation_time": "2026-08-02 10:01:05", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "bd7abb03-2183-4f02-8ccf-df6cc3ab5416", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:01:02", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "1f52e932-3008-4367-ae45-8d4c3368fcde", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:01:00", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "215522c0-79ef-48cb-a757-ebf82d2d45d3", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:00:59", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "2423c3a7-64bc-4e8e-9ab9-386c51dca682", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:00:39", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_products", 
+    "job_id": "16f07012-b705-432f-86b1-23da91b2b853", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 09:01:07", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "bbe99bfc-0373-40ed-8234-92bfd9d1ccc6", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 09:01:02", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "81877401-3414-47c2-924f-ce83f06c8c83", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 09:01:01", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "57be4de1-cf97-4009-9e78-dba578c34d95", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 09:01:00", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "0fb60a96-2261-4711-88b5-d26f76913abe", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 09:00:39", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_products", 
+    "job_id": "dcb0fce0-f3f0-4ea7-bbb4-71523c3fedbc", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 08:00:57", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "d7bf8b12-c9d5-4abd-8e91-cf1a30e1d256", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 08:00:53", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "cb556a2e-af11-44c4-a5d2-8d26e50bcf74", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 08:00:51", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "da19b3eb-3f67-4c02-9c1e-87fd073d3dc9", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 08:00:50", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "40f8339c-e633-462d-8cb0-9ee09084e1f9", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 08:00:27", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_products", 
+    "job_id": "4015bced-1ba3-4352-a466-f598a3a78e67", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 07:00:55", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "a15cbb1f-d97b-46e1-8729-ea876d19eed7", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 07:00:52", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "6c3a784d-f9af-43d0-a962-336b390a7784", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 07:00:51", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "a4ca0e3c-bb82-4756-b4f9-4b8f2e6b7663", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 07:00:50", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "bffce4e4-7ffd-4f2f-840b-61cb90163c70", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 07:00:29", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_products", 
+    "job_id": "48d5747d-a50f-4e68-8bc6-194d04ede66f", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 06:01:03", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "4fee8d40-87e8-4071-b3c8-6a5f9cfb4858", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 06:00:59", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "6805f741-8824-4a62-a9b7-aeff035a6232", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 06:00:58", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "a7cb9473-8340-427f-9366-065a0c28d208", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 06:00:57", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "96aca111-f443-4756-8a34-c23fe8d6289b", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 06:00:36", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_products", 
+    "job_id": "15ab83a6-ffa2-430e-93f7-5dbded8cb1ca", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 05:00:52", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "29d420c4-2eed-459a-a232-62aa2bdc0cfe", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 05:00:48", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "2cedcac6-e49e-4002-bdab-4f48b16e90dd", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 05:00:47", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "e0c815cb-02d7-437c-85ec-cbc36cda02cd", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 05:00:46", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "4b77cd41-0894-461b-abb1-ec9fe5a95468", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 05:00:24", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_products", 
+    "job_id": "711b86cd-6e26-4bc8-8305-665a43c06e6b", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 04:01:20", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "35891dfd-b05d-49db-93af-f6ced7f2be50", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 04:01:17", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "6fd78dee-9f3c-4399-83af-11a0feb92e1c", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 04:01:16", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "137c163d-1a82-4125-9e79-fcf1bb8c864f", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 04:01:15", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "0ed659cd-cdc4-49e5-80a2-2892cf2ce279", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 04:00:54", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_products", 
+    "job_id": "89c9ab0e-bccb-49ae-9576-14c0197b7959", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 03:01:02", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "93ec9466-2339-4c7b-86c6-86565e2d1793", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 03:00:57", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "3efa0fa4-a091-4039-b7fd-48e8811d78ff", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 03:00:56", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "4cbd8f0a-65d6-4d69-8b69-4fa4ad1bee94", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 03:00:55", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "788ddd65-0cc1-412a-95e1-216877096d19", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 03:00:34", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_products", 
+    "job_id": "8c0d612a-f803-4100-8603-4aafe142627e", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 02:01:08", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "3d7634fc-372b-4769-bf2d-858ba0617a45", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 02:01:05", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "7f66fb3a-b8a9-48fe-9e19-404e1c8126b9", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 02:01:04", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "862cfe74-5a0e-4a7e-b9ef-5dc59519fac7", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 02:01:03", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "9083aab0-ca06-4cf3-aade-0e36c91d1bf2", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 02:00:43", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_products", 
+    "job_id": "2fec89f1-aced-400e-b4d5-49497570c8f9", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 01:01:05", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "fa557a2e-7e50-42fe-9271-967290724019", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 01:00:56", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "3e89541d-d6fd-424d-b144-aa6437b62134", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 01:00:55", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "ef978c8d-98e2-4c61-8636-75f5086c4dbd", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 01:00:53", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_counterparties", 
+    "job_id": "c053287b-5470-4db6-9041-caf0f404921f", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }, 
+  {
+    "creation_time": "2026-08-02 01:00:53", 
+    "dst_dataset": "core", 
+    "dst_table": "dim_employees", 
+    "job_id": "b92a8b39-cfab-416c-8673-56fdeab7e7a1", 
+    "state": "DONE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }
+]

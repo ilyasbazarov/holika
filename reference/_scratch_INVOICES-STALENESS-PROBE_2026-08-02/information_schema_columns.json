@@ -1,0 +1,72 @@
+[
+  {
+    "column_name": "invoice_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "1"
+  }, 
+  {
+    "column_name": "invoice_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "2"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "DATE", 
+    "ordinal_position": "3"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "4"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "5"
+  }, 
+  {
+    "column_name": "state_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "6"
+  }, 
+  {
+    "column_name": "state_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "7"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "8"
+  }, 
+  {
+    "column_name": "payed_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "9"
+  }, 
+  {
+    "column_name": "unpaid_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "10"
+  }, 
+  {
+    "column_name": "payment_planned", 
+    "data_type": "DATE", 
+    "ordinal_position": "11"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "12"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "13"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "ordinal_position": "14"
+  }
+]
