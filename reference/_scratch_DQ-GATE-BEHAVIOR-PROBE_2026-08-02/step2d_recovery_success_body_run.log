@@ -1,0 +1,50 @@
+=== date -u (start) ===
+Sun Aug  2 19:40:45 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Workflow-логи (ЛЮБОЙ severity) вокруг успешного прогона 2026-07-26T18:00:02Z..18:03Z ===
+[
+  {
+    "insertId": "sbm9s9d1k8e",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-07-26T18:00:02Z",
+      "start": {
+        "argument": "{}"
+      },
+      "state": "ACTIVE"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "cdf2cea8-1a3b-4bdc-b174-a5d2b21c4e91",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-07-26T18:00:03.153476213Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-07-26T18:00:02.596051081Z"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 19:40:47 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

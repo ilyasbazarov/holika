@@ -1,0 +1,300 @@
+=== date -u (start) ===
+Sun Aug  2 19:36:20 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Схема core.fact_sales_profit (INFORMATION_SCHEMA.COLUMNS) ===
+[
+  {
+    "column_name": "transaction_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "1"
+  }, 
+  {
+    "column_name": "transaction_date", 
+    "data_type": "DATE", 
+    "ordinal_position": "2"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "3"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "ordinal_position": "4"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "5"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "6"
+  }, 
+  {
+    "column_name": "return_quantity", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "7"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "8"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "9"
+  }, 
+  {
+    "column_name": "margin_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "10"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "11"
+  }, 
+  {
+    "column_name": "cogs_usd", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "12"
+  }, 
+  {
+    "column_name": "margin_usd", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "13"
+  }, 
+  {
+    "column_name": "_week_start", 
+    "data_type": "DATE", 
+    "ordinal_position": "14"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "ordinal_position": "15"
+  }, 
+  {
+    "column_name": "sell_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "16"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "17"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "18"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "19"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "20"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "21"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "22"
+  }
+]
+=== Схема stg_msklad.fact_sales_staging (INFORMATION_SCHEMA.COLUMNS) ===
+[
+  {
+    "column_name": "run_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "1"
+  }, 
+  {
+    "column_name": "demand_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "2"
+  }, 
+  {
+    "column_name": "order_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "3"
+  }, 
+  {
+    "column_name": "position_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "4"
+  }, 
+  {
+    "column_name": "transaction_date_raw", 
+    "data_type": "STRING", 
+    "ordinal_position": "5"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "6"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "7"
+  }, 
+  {
+    "column_name": "quantity", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "8"
+  }, 
+  {
+    "column_name": "price_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "9"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "10"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "11"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "ordinal_position": "12"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "ordinal_position": "13"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "14"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "15"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "16"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "17"
+  }
+]
+=== COUNT(*) core.fact_sales_profit, transaction_date = 2026-08-01 ===
+[
+  {
+    "row_count": "14"
+  }
+]
+=== СУММА revenue_kgs core.fact_sales_profit, 2026-08-01 (бишкекские сутки, transaction_date уже Asia/Bishkek по контракту 02_ERP_CONTRACTS) ===
+[
+  {
+    "row_count": "14", 
+    "sum_revenue_kgs": "25920.9", 
+    "sum_sell_sum_kgs": "25920.9"
+  }
+]
+=== COUNT(*) stg_msklad.fact_sales_staging, DATE(transaction_date_raw) = 2026-08-01 (контракт 02_ERP_CONTRACTS.md:404 предписывает DATE(transaction_date_raw) без доп. приведения часового пояса) ===
+[
+  {
+    "row_count": "14"
+  }
+]
+=== СУММА revenue_kgs stg_msklad.fact_sales_staging, DATE(transaction_date_raw) = 2026-08-01 ===
+[
+  {
+    "row_count": "14", 
+    "sum_revenue_kgs": "25920.9"
+  }
+]
+=== СРЕДНЕДНЕВНАЯ выручка core.fact_sales_profit за окно 2026-07-25..2026-07-31 (MA7 T-8..T-2 относительно target_date=2026-08-01) ===
+[
+  {
+    "avg_daily_revenue_kgs": "4780221.572457143", 
+    "days_present": "7"
+  }
+]
+=== СРЕДНЕДНЕВНАЯ выручка stg_msklad.fact_sales_staging за то же окно 2026-07-25..2026-07-31 (DATE(transaction_date_raw), TTL 14 дней — окно может быть частично вытеснено) ===
+[
+  {
+    "avg_daily_revenue_kgs": "5549260.584533334", 
+    "days_present": "6"
+  }
+]
+=== Разбивка по дням core.fact_sales_profit, 2026-07-25..2026-07-31 (для проверки полноты окна) ===
+[
+  {
+    "daily_rev": "65385.5", 
+    "row_count": "9", 
+    "transaction_date": "2026-07-25"
+  }, 
+  {
+    "daily_rev": "219891.19499999998", 
+    "row_count": "12", 
+    "transaction_date": "2026-07-26"
+  }, 
+  {
+    "daily_rev": "5411554.344099999", 
+    "row_count": "170", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "daily_rev": "3545902.67", 
+    "row_count": "169", 
+    "transaction_date": "2026-07-28"
+  }, 
+  {
+    "daily_rev": "1.7707400123300005E7", 
+    "row_count": "171", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "daily_rev": "5592233.9969999995", 
+    "row_count": "225", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "daily_rev": "919183.1778000001", 
+    "row_count": "58", 
+    "transaction_date": "2026-07-31"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 19:36:44 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

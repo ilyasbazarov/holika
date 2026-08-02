@@ -1,0 +1,41 @@
+=== date -u (start) ===
+Sun Aug  2 19:45:53 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== describe восстанавливающего выполнения cdf2cea8-1a3b-4bdc-b174-a5d2b21c4e91 (2026-07-26T18:00:02Z, первый SUCCEEDED после блока) ===
+{
+  "argument": "{}",
+  "createTime": "2026-07-26T18:00:02.547945325Z",
+  "duration": "301.955193925s",
+  "endTime": "2026-07-26T18:05:04.503139250Z",
+  "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/cdf2cea8-1a3b-4bdc-b174-a5d2b21c4e91",
+  "result": "{\"coverage_stats\":{\"agent_coverage\":1,\"cogs_coverage\":0,\"total_revenue_kgs\":23266271.13,\"total_rows\":699,\"usd_coverage\":1},\"merge_stats\":{\"affected_rows\":691,\"cogs_source\":\"msklad-bi-prod.core.fact_sales_profit_byvariant_backup\",\"staging_rows\":691,\"window_days\":7},\"mode\":\"promote\",\"run_id\":1785088802.6035614,\"status\":\"ok\"}",
+  "startTime": "2026-07-26T18:00:02.547945325Z",
+  "state": "SUCCEEDED",
+  "status": {
+    "currentSteps": [
+      {
+        "routine": "main",
+        "step": "return_result"
+      }
+    ]
+  },
+  "workflowRevisionId": "000003-f02"
+}
+=== describe последнего FAILED перед восстановлением (2026-07-26T17:00:02Z) ===
+=== date -u (end) ===
+Sun Aug  2 19:46:02 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

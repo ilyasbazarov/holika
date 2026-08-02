@@ -1,0 +1,22 @@
+=== date -u (start) ===
+Sun Aug  2 19:41:05 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Все логи workflows.googleapis.com/Workflow с 'DQ Gate' в тексте, окно 2026-07-26T17:59:00Z..18:10:00Z ===
+[]
+=== date -u (end) ===
+Sun Aug  2 19:41:07 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

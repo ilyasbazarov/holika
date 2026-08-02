@@ -1,0 +1,200 @@
+=== date -u (start) ===
+Sun Aug  2 19:45:19 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== describe 382dac8c-d893-42a1-947d-8c0718619677 ===
+{
+  "argument": "{}",
+  "createTime": "2026-07-14T12:00:02.558446739Z",
+  "duration": "37.252810872s",
+  "endTime": "2026-07-14T12:00:39.811257611Z",
+  "error": {
+    "context": "HTTP server responded with error code 502\nin step \"raise_dim\", routine \"main\", line: 31",
+    "payload": "{\"body\":\"\\u003c!DOCTYPE html\\u003e\\n\\u003chtml lang=en\\u003e\\n  \\u003cmeta charset=utf-8\\u003e\\n  \\u003cmeta name=viewport content=\\\"initial-scale=1, minimum-scale=1, width=device-width\\\"\\u003e\\n  \\u003ctitle\\u003eError 502 (Server Error)!!1\\u003c/title\\u003e\\n  \\u003cstyle\\u003e\\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* \\u003e body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}\\n  \\u003c/style\\u003e\\n  \\u003ca href=//www.google.com/\\u003e\\u003cspan id=logo aria-label=Google\\u003e\\u003c/span\\u003e\\u003c/a\\u003e\\n  \\u003cp\\u003e\\u003cb\\u003e502.\\u003c/b\\u003e \\u003cins\\u003eThat’s an error.\\u003c/ins\\u003e\\n  \\u003cp\\u003eThe server encountered a temporary error and could not complete your request.\\u003cp\\u003ePlease try again in 30 seconds.  \\u003cins\\u003eThat’s all we know.\\u003c/ins\\u003e\\n\",\"code\":502,\"headers\":{\"Alt-Svc\":\"h3=\\\":443\\\"; ma=2592000,h3-29=\\\":443\\\"; ma=2592000\",\"Content-Length\":\"1613\",\"Content-Type\":\"text/html; charset=UTF-8\",\"Referrer-Policy\":\"no-referrer\"},\"message\":\"HTTP server responded with error code 502\",\"tags\":[\"HttpError\"]}",
+    "stackTrace": {
+      "elements": [
+        {
+          "position": {
+            "column": "17",
+            "length": "5",
+            "line": "31"
+          },
+          "routine": "main",
+          "step": "raise_dim"
+        }
+      ]
+    }
+  },
+  "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/382dac8c-d893-42a1-947d-8c0718619677",
+  "startTime": "2026-07-14T12:00:02.558446739Z",
+  "state": "FAILED",
+  "status": {
+    "currentSteps": [
+      {
+        "routine": "main",
+        "step": "raise_dim"
+      }
+    ]
+  },
+  "workflowRevisionId": "000003-f02"
+}
+=== describe 29aeccd8-c09f-4cb7-a7d7-ab96732061ff ===
+{
+  "argument": "{}",
+  "createTime": "2026-07-18T08:00:02.627628498Z",
+  "duration": "45.086765025s",
+  "endTime": "2026-07-18T08:00:47.714393523Z",
+  "error": {
+    "context": "HTTP server responded with error code 500\nin step \"raise_dim\", routine \"main\", line: 31",
+    "payload": "{\"body\":{\"error\":\"400 GET https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/queries/c3e0d775-a62a-4bea-a694-59e0adcb3496?maxResults=0\\u0026location=asia-east1\\u0026prettyPrint=false: UPDATE/MERGE must match at most one source row for each target row\\n\\nLocation: asia-east1\\nJob ID: c3e0d775-a62a-4bea-a694-59e0adcb3496\\n\",\"run_id\":1784361602.6791065,\"status\":\"error\"},\"code\":500,\"headers\":{\"Alt-Svc\":\"h3=\\\":443\\\"; ma=2592000,h3-29=\\\":443\\\"; ma=2592000\",\"Content-Length\":\"369\",\"Content-Type\":\"application/json\",\"Date\":\"Sat, 18 Jul 2026 08:00:47 GMT\",\"Server\":\"Google Frontend\",\"X-Cloud-Trace-Context\":\"9e6265228ac3b5a0c5f7c3f819a922cc;o=1\"},\"message\":\"HTTP server responded with error code 500\",\"tags\":[\"HttpError\"]}",
+    "stackTrace": {
+      "elements": [
+        {
+          "position": {
+            "column": "17",
+            "length": "5",
+            "line": "31"
+          },
+          "routine": "main",
+          "step": "raise_dim"
+        }
+      ]
+    }
+  },
+  "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/29aeccd8-c09f-4cb7-a7d7-ab96732061ff",
+  "startTime": "2026-07-18T08:00:02.627628498Z",
+  "state": "FAILED",
+  "status": {
+    "currentSteps": [
+      {
+        "routine": "main",
+        "step": "raise_dim"
+      }
+    ]
+  },
+  "workflowRevisionId": "000003-f02"
+}
+=== describe 8be4d433-c506-4af9-82cb-f48760b6bc2f ===
+{
+  "argument": "{}",
+  "createTime": "2026-07-21T17:00:02.364246864Z",
+  "duration": "263.796291084s",
+  "endTime": "2026-07-21T17:04:26.160537948Z",
+  "error": {
+    "context": "HTTP server responded with error code 500\nin step \"raise_facts\", routine \"main\", line: 74",
+    "payload": "{\"body\":{\"error\":\"HTTPSConnectionPool(host='api.moysklad.ru', port=443): Read timed out. (read timeout=90)\",\"mode\":\"hourly\",\"run_id\":1784653202.4852781,\"status\":\"error\"},\"code\":500,\"headers\":{\"Alt-Svc\":\"h3=\\\":443\\\"; ma=2592000,h3-29=\\\":443\\\"; ma=2592000\",\"Content-Length\":\"162\",\"Content-Type\":\"application/json\",\"Date\":\"Tue, 21 Jul 2026 17:04:25 GMT\",\"Server\":\"Google Frontend\",\"X-Cloud-Trace-Context\":\"10c01972b60acb2710e19964c5e32d8c;o=1\"},\"message\":\"HTTP server responded with error code 500\",\"tags\":[\"HttpError\"]}",
+    "stackTrace": {
+      "elements": [
+        {
+          "position": {
+            "column": "17",
+            "length": "5",
+            "line": "74"
+          },
+          "routine": "main",
+          "step": "raise_facts"
+        }
+      ]
+    }
+  },
+  "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/8be4d433-c506-4af9-82cb-f48760b6bc2f",
+  "startTime": "2026-07-21T17:00:02.364246864Z",
+  "state": "FAILED",
+  "status": {
+    "currentSteps": [
+      {
+        "routine": "main",
+        "step": "raise_facts"
+      }
+    ]
+  },
+  "workflowRevisionId": "000003-f02"
+}
+=== describe 38ebcabb-7e35-47ab-ac4d-2d05a2dc4816 ===
+{
+  "argument": "{}",
+  "createTime": "2026-07-23T04:00:02.589220799Z",
+  "duration": "54.744452650s",
+  "endTime": "2026-07-23T04:00:57.333673449Z",
+  "error": {
+    "context": "HTTP server responded with error code 500\nin step \"raise_dim\", routine \"main\", line: 31",
+    "payload": "{\"body\":{\"error\":\"400 GET https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/queries/ca9b6d4e-ea68-4e69-a2e6-261eddb6f3ef?maxResults=0\\u0026location=asia-east1\\u0026prettyPrint=false: UPDATE/MERGE must match at most one source row for each target row\\n\\nLocation: asia-east1\\nJob ID: ca9b6d4e-ea68-4e69-a2e6-261eddb6f3ef\\n\",\"run_id\":1784779202.6169934,\"status\":\"error\"},\"code\":500,\"headers\":{\"Alt-Svc\":\"h3=\\\":443\\\"; ma=2592000,h3-29=\\\":443\\\"; ma=2592000\",\"Content-Length\":\"369\",\"Content-Type\":\"application/json\",\"Date\":\"Thu, 23 Jul 2026 04:00:57 GMT\",\"Server\":\"Google Frontend\",\"X-Cloud-Trace-Context\":\"2ce3a193d203329c975bb4dd594a4a26;o=1\"},\"message\":\"HTTP server responded with error code 500\",\"tags\":[\"HttpError\"]}",
+    "stackTrace": {
+      "elements": [
+        {
+          "position": {
+            "column": "17",
+            "length": "5",
+            "line": "31"
+          },
+          "routine": "main",
+          "step": "raise_dim"
+        }
+      ]
+    }
+  },
+  "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/38ebcabb-7e35-47ab-ac4d-2d05a2dc4816",
+  "startTime": "2026-07-23T04:00:02.589220799Z",
+  "state": "FAILED",
+  "status": {
+    "currentSteps": [
+      {
+        "routine": "main",
+        "step": "raise_dim"
+      }
+    ]
+  },
+  "workflowRevisionId": "000003-f02"
+}
+=== describe facac7ab-2072-41a4-be64-4fbc7b9bef5c ===
+{
+  "argument": "{}",
+  "createTime": "2026-07-28T20:00:02.665504350Z",
+  "duration": "3.158816230s",
+  "endTime": "2026-07-28T20:00:05.824320580Z",
+  "error": {
+    "context": "HTTP server responded with error code 500\nin step \"raise_dim\", routine \"main\", line: 31",
+    "payload": "{\"body\":{\"error\":\"503 Server Error: Service Unavailable for url: https://api.moysklad.ru/api/remap/1.2/entity/productfolder?limit=100\\u0026offset=0\",\"run_id\":1785268802.717657,\"status\":\"error\"},\"code\":500,\"headers\":{\"Alt-Svc\":\"h3=\\\":443\\\"; ma=2592000,h3-29=\\\":443\\\"; ma=2592000\",\"Content-Length\":\"181\",\"Content-Type\":\"application/json\",\"Date\":\"Tue, 28 Jul 2026 20:00:05 GMT\",\"Server\":\"Google Frontend\",\"X-Cloud-Trace-Context\":\"424fcf950fa00dd9cca0b6731d08c275;o=1\"},\"message\":\"HTTP server responded with error code 500\",\"tags\":[\"HttpError\"]}",
+    "stackTrace": {
+      "elements": [
+        {
+          "position": {
+            "column": "17",
+            "length": "5",
+            "line": "31"
+          },
+          "routine": "main",
+          "step": "raise_dim"
+        }
+      ]
+    }
+  },
+  "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/facac7ab-2072-41a4-be64-4fbc7b9bef5c",
+  "startTime": "2026-07-28T20:00:02.665504350Z",
+  "state": "FAILED",
+  "status": {
+    "currentSteps": [
+      {
+        "routine": "main",
+        "step": "raise_dim"
+      }
+    ]
+  },
+  "workflowRevisionId": "000003-f02"
+}
+=== date -u (end) ===
+Sun Aug  2 19:45:33 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
