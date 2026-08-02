@@ -1,0 +1,44 @@
+=== date -u (start) ===
+Sun Aug  2 09:20:45 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== marts.inventory_health — SUM(stock) + число строк ===
+[
+  {
+    "date_snapshot": "2026-08-01", 
+    "n_rows": "312", 
+    "sum_stock": "115749.0"
+  }
+]
+=== marts.in_transit — SUM(in_transit_sum_kgs) + число строк ===
+[
+  {
+    "n_rows": "268", 
+    "sum_in_transit_kgs": "7.874854305E7"
+  }
+]
+=== marts.customer_invoices_ar — SUM(sum_kgs/payed_sum_kgs/unpaid_sum_kgs) + число строк ===
+[
+  {
+    "n_rows": "546", 
+    "payed_sum_kgs": "3.932627291199999E8", 
+    "sum_kgs": "5.1598446778E8", 
+    "unpaid_sum_kgs": "1.2272173865999992E8"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 09:20:54 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

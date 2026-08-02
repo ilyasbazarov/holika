@@ -1,0 +1,114 @@
+=== date -u (start) ===
+Sun Aug  2 09:24:27 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+MSKLAD_TOKEN длина строки: 40
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+=== report/stock/all ===
+  page offset=0 HTTP=200
+  report/stock/all — ключи первой строки данных: ['externalCode', 'folder', 'image', 'inTransit', 'meta', 'name', 'price', 'quantity', 'reserve', 'salePrice', 'stock', 'stockDays', 'uom']
+  meta: {'href': 'https://api.moysklad.ru/api/remap/1.2/report/stock/all?limit=1000&offset=0', 'type': 'stock', 'mediaType': 'application/json', 'size': 313, 'limit': 1000, 'offset': 0}
+  ИТОГО report/stock/all: строк=313, sum(stock)=115887.0
+=== entity/purchaseorder ===
+  page offset=0 HTTP=200
+  entity/purchaseorder — ключи первой строки данных: ['accountId', 'agent', 'agentAccount', 'applicable', 'created', 'deliveryPlannedMoment', 'description', 'externalCode', 'files', 'group', 'id', 'invoicedSum', 'meta', 'moment', 'name', 'organization', 'organizationAccount', 'owner', 'payedSum', 'positions', 'printed', 'project', 'published', 'rate', 'shared', 'shippedSum', 'state', 'store', 'sum', 'supplies', 'updated', 'vatEnabled', 'waitSum']
+  meta: {'href': 'https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder?limit=1000&offset=0', 'type': 'purchaseorder', 'mediaType': 'application/json', 'size': 211, 'limit': 1000, 'offset': 0}
+  всего заказов (без фильтра статуса): 211
+  заказов в статусах «В пути»/«Прибыл частично»: 19
+  разбивка по статусу: {'Прибыл частично': 7, 'В пути': 12}
+  entity/purchaseorder/{id}/positions (первый совпавший заказ) — ключи первой строки данных: ['accountId', 'assortment', 'discount', 'id', 'inTransit', 'meta', 'price', 'quantity', 'shipped', 'vat', 'vatEnabled']
+  ИТОГО источник in_transit_sum_kgs (позиционная формула fetch_purchases.py): 78748543.05
+  заказов с курсом != 1.0 (потенциально не-KGS): 19
+  детали не-KGS заказов: [{"order_name": "202606100070", "order_id": "014e8915-6c90-11f1-0a80-1510001826c0", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 5512500.0}, {"order_name": "2026/07/13-1", "order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 0.0}, {"order_name": "PDMKGFRU26070711", "order_id": "08bfe70e-7b8b-11f1-0a80-03b8000e83b3", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 1197000.0}, {"order_name": "202607080047", "order_id": "0ce02e00-7b8e-11f1-0a80-0f81000f1c15", "rate": 90.0, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 2640240.0}, {"order_name": "260720-1", "order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 1778795.375}, {"order_name": "0013", "order_id": "24b5aef4-7b65-11f1-0a80-14ba0005701e", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 1248086.0}, {"order_name": "SPADE20260312", "order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 11395632.5}, {"order_name": "260611-6", "order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 16064521.375}, {"order_name": "SPADE20260626", "order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 1744601.25}, {"order_name": "260714-1", "order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", "rate": 90.0, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 1473814.8}, {"order_name": "SPADE20260312-2", "order_id": "4fc9196f-21c8-11f1-0a80-188700046a47", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 3645442.5}, {"order_name": "260720-2", "order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 491131.375}, {"order_name": "202607030040", "order_id": "5d0639b1-7b57-11f1-0a80-1c7600033ca2", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 7441700.0}, {"order_name": "260423-5", "order_id": "659cb5f7-423f-11f1-0a80-0f970037e6bb", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 8296777.125000002}, {"order_name": "SPADE20260424", "order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 9395811.25}, {"order_name": "SPADE20260611", "order_id": "95cf4809-6c8e-11f1-0a80-060a0017f33e", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 2730598.5}, {"order_name": "00135", "order_id": "aab67ac6-e2d4-11f0-0a80-0fda0015d3cf", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 0.0}, {"order_name": "HOLI260708 (TOR)", "order_id": "e7d7a18b-81c6-11f1-0a80-0170000b1cc0", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 1037268.75}, {"order_name": "20260708-001KR", "order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", "rate": 87.5, "currency_href": "https://api.moysklad.ru/api/remap/1.2/entity/currency/3ea7aa1b-2c68-11ef-0a80-117500188e00", "order_in_transit_sum_kgs": 2654622.25}]
+=== entity/invoiceout ===
+  page offset=0 HTTP=200
+  entity/invoiceout — ключи первой строки данных: ['accountId', 'agent', 'applicable', 'contract', 'created', 'demands', 'externalCode', 'files', 'group', 'id', 'meta', 'moment', 'name', 'organization', 'organizationAccount', 'owner', 'payedSum', 'paymentPlannedMoment', 'positions', 'printed', 'project', 'published', 'rate', 'salesChannel', 'shared', 'shippedSum', 'state', 'store', 'sum', 'updated', 'vatEnabled']
+  meta: {'href': 'https://api.moysklad.ru/api/remap/1.2/entity/invoiceout?limit=100&offset=0&expand=rate.currency', 'type': 'invoiceout', 'mediaType': 'application/json', 'size': 4526, 'limit': 100, 'offset': 0, 'nextHref': 'https://api.moysklad.ru/api/remap/1.2/entity/invoiceout?offset=100&expand=rate.currency&limit=100'}
+  page offset=100 HTTP=200
+  page offset=200 HTTP=200
+  page offset=300 HTTP=200
+  page offset=400 HTTP=200
+  page offset=500 HTTP=200
+  page offset=600 HTTP=200
+  page offset=700 HTTP=200
+  page offset=800 HTTP=200
+  page offset=900 HTTP=200
+  page offset=1000 HTTP=200
+  page offset=1100 HTTP=200
+  page offset=1200 HTTP=200
+  page offset=1300 HTTP=200
+  page offset=1400 HTTP=200
+  page offset=1500 HTTP=200
+  page offset=1600 HTTP=200
+  page offset=1700 HTTP=200
+  page offset=1800 HTTP=200
+  page offset=1900 HTTP=200
+  page offset=2000 HTTP=200
+  page offset=2100 HTTP=200
+  page offset=2200 HTTP=200
+  page offset=2300 HTTP=200
+  page offset=2400 HTTP=200
+  page offset=2500 HTTP=200
+  page offset=2600 HTTP=200
+  page offset=2700 HTTP=200
+  page offset=2800 HTTP=200
+  page offset=2900 HTTP=200
+  page offset=3000 HTTP=200
+  page offset=3100 HTTP=200
+  page offset=3200 HTTP=200
+  page offset=3300 HTTP=200
+  page offset=3400 HTTP=200
+  page offset=3500 HTTP=200
+  page offset=3600 HTTP=200
+  page offset=3700 HTTP=200
+  page offset=3800 HTTP=200
+  page offset=3900 HTTP=200
+  page offset=4000 HTTP=200
+  page offset=4100 HTTP=200
+  page offset=4200 HTTP=200
+  page offset=4300 HTTP=200
+  page offset=4400 HTTP=200
+  page offset=4500 HTTP=200
+  ИТОГО entity/invoiceout: строк=4526, sum (raw, /100, без rate)=558493952.9699996, payedSum (raw)=449711548.89000016
+  документов не-KGS: 1965
+  сумма не-KGS документов (в их нативной валюте, НЕ приведено к сому)=186304933.8499999
+=== SUMMARY ===
+{
+  "stock": {
+    "n_rows": 313,
+    "sum_stock": 115887.0
+  },
+  "in_transit": {
+    "n_orders_total": 211,
+    "n_orders_matched_status": 19,
+    "by_status_count": {
+      "Прибыл частично": 7,
+      "В пути": 12
+    },
+    "sum_in_transit_kgs": 78748543.05,
+    "non_kgs_orders_count": 19
+  },
+  "invoiceout": {
+    "n_rows": 4526,
+    "sum_invoiced_raw": 558493952.9699996,
+    "sum_payed_raw": 449711548.89000016,
+    "non_kgs_count": 1965
+  }
+}
+=== date -u (end) ===
+Sun Aug  2 09:28:04 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

@@ -1,0 +1,22 @@
+{
+  "stock": {
+    "n_rows": 313,
+    "sum_stock": 115887.0
+  },
+  "in_transit": {
+    "n_orders_total": 211,
+    "n_orders_matched_status": 19,
+    "by_status_count": {
+      "Прибыл частично": 7,
+      "В пути": 12
+    },
+    "sum_in_transit_kgs": 78748543.05,
+    "non_kgs_orders_count": 19
+  },
+  "invoiceout": {
+    "n_rows": 4526,
+    "sum_invoiced_raw": 558493952.9699996,
+    "sum_payed_raw": 449711548.89000016,
+    "non_kgs_count": 1965
+  }
+}

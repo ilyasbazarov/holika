@@ -1,0 +1,63 @@
+=== date -u (start) ===
+Sun Aug  2 09:20:24 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== SQL: reference/sql/sq_marts_customer_invoices_ar.sql (полный файл) ===
+     1	
+     2	SELECT
+     3	  i.agent_id,
+     4	  i.agent_name,
+     5	  COALESCE(c.country, 'Не указана') AS country,
+     6	  i.state_name,
+     7	  i.state_id,
+     8	  COUNT(DISTINCT i.invoice_id)        AS invoice_count,
+     9	  ROUND(SUM(i.sum_kgs), 2)            AS total_invoiced_kgs,
+    10	  ROUND(SUM(i.payed_sum_kgs), 2)      AS total_paid_kgs,
+    11	  ROUND(SUM(i.unpaid_sum_kgs), 2)     AS total_unpaid_kgs,
+    12	  MIN(i.moment)                       AS earliest_invoice_date,
+    13	  MAX(i.moment)                       AS latest_invoice_date,
+    14	  COUNTIF(
+    15	    i.payment_planned IS NOT NULL
+    16	    AND i.payment_planned < CURRENT_DATE()
+    17	    AND i.unpaid_sum_kgs > 0
+    18	  )                                   AS overdue_count
+    19	FROM `msklad-bi-prod.core.fact_customer_invoices` i
+    20	LEFT JOIN `msklad-bi-prod.core.dim_counterparties` c
+    21	  ON i.agent_id = c.agent_id AND c.scd2_is_current = TRUE
+    22	GROUP BY
+    23	  i.agent_id, i.agent_name, c.country,
+    24	  i.state_name, i.state_id
+    25	ORDER BY total_unpaid_kgs DESC
+=== Вывод по строкам SQL ===
+Строка FROM (16-я строка нумерации cat -n выше, псевдо-адрес): FROM msklad-bi-prod.core.fact_customer_invoices i
+WHERE-условия по дате в запросе: ОТСУТСТВУЮТ (grep ниже)
+grep WHERE: 0 совпадений
+GROUP BY: агрегация по agent_id, agent_name, country, state_name, state_id — без даты
+22:GROUP BY
+23-  i.agent_id, i.agent_name, c.country,
+24-  i.state_name, i.state_id
+25-ORDER BY total_unpaid_kgs DESC
+=== Контрольная цитата 03_PIPELINE_SPEC.md ===
+5-225-| Колонка | Тип | Описание |
+6-226-|---|---|---|
+7---
+8-238-| overdue_count | INT64 | Счетов с просроченной плановой датой оплаты |
+9-239-
+10:240:Назначение: дебиторская задолженность (AR), страница «Операционка». LS источник: `msklad_customer_invoices_ar` (Custom Query, без date range — snapshot).
+240:Назначение: дебиторская задолженность (AR), страница «Операционка». LS источник: `msklad_customer_invoices_ar` (Custom Query, без date range — snapshot).
+=== date -u (end) ===
+Sun Aug  2 09:20:25 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
