@@ -1,0 +1,159 @@
+=== date -u (start) ===
+Sun Aug  2 15:04:35 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Cloud Logging: логи cf-dq вокруг ПЕРВОГО восстановившегося выполнения hourly (2026-07-26T18:00:02Z, execution cdf2cea8-1a3b-4bdc-b174-a5d2b21c4e91) ===
+[
+  {
+    "httpRequest": {
+      "latency": "3.769200398s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "107.178.198.224",
+      "requestMethod": "POST",
+      "requestSize": "1199",
+      "requestUrl": "https://cf-dq-xw5u2boozq-de.a.run.app/",
+      "responseSize": "789",
+      "serverIp": "34.143.77.2",
+      "status": 200,
+      "userAgent": "GoogleCloudWorkflows; (+https://cloud.google.com/workflows/docs)"
+    },
+    "insertId": "6a664ba5000782775dbb3c36",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-dq",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f7297f59463489c0845e9a8b7f50bcc73f07a4cdbaabbc6ae0a855805ef3cbc77a5c8f5438c34beb0914fa7c58564844bc00c21bf773fb5165612d431c63ee2846e7acf3d78f7fde412b"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-07-26T18:02:13.495836857Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-dq",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-dq-00007-hot",
+        "service_name": "cf-dq"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "32f88f979d3a28b4",
+    "timestamp": "2026-07-26T18:02:09.708590Z",
+    "trace": "projects/msklad-bi-prod/traces/c2b337d80d3a7e75e5e05ff06e4875d4",
+    "traceSampled": true
+  }
+]
+=== Cloud Logging: логи workflow msklad-pipeline-hourly вокруг того же момента ===
+[
+  {
+    "insertId": "sbm9s9d1k8e",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-07-26T18:00:02Z",
+      "start": {
+        "argument": "{}"
+      },
+      "state": "ACTIVE"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "cdf2cea8-1a3b-4bdc-b174-a5d2b21c4e91",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-07-26T18:00:03.153476213Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-07-26T18:00:02.596051081Z"
+  },
+  {
+    "insertId": "qej1xfchwi",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-07-26T18:05:04Z",
+      "state": "SUCCEEDED",
+      "success": {
+        "result": "{\"coverage_stats\":{\"agent_coverage\":1,\"cogs_coverage\":0,\"total_revenue_kgs\":23266271.13,\"total_rows\":699,\"usd_coverage\":1},\"merge_stats\":{\"affected_rows\":691,\"cogs_source\":\"msklad-bi-prod.core.fact_sales_profit_byvariant_backup\",\"staging_rows\":691,\"window_days\":7},\"mode\":\"promote\",\"run_id\":1785088802.6035614,\"status\":\"ok\"}"
+      }
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "cdf2cea8-1a3b-4bdc-b174-a5d2b21c4e91",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-07-26T18:05:04.867265756Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-07-26T18:05:04.511301189Z"
+  }
+]
+=== Тело провала drift_check в ПОСЛЕДНЕМ FAILED выполнении блока (2026-07-26T17:00:02Z, execution 018262cd-0f50-4787-abc9-1fc85c454a58) — для сравнения yesterday_rev/ma7 непосредственно ДО восстановления ===
+[
+  {
+    "httpRequest": {
+      "latency": "3.630458007s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "107.178.198.201",
+      "requestMethod": "POST",
+      "requestSize": "1198",
+      "requestUrl": "https://cf-dq-xw5u2boozq-de.a.run.app/",
+      "responseSize": "802",
+      "serverIp": "34.143.78.2",
+      "status": 200,
+      "userAgent": "GoogleCloudWorkflows; (+https://cloud.google.com/workflows/docs)"
+    },
+    "insertId": "6a663d910004b7c52c6722dd",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-dq",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f7297f59463489c0845e9a8b7f50bcc73f07a4cdbaabbc6ae0a855805ef3cbc77a5c8f5438c34beb0914fa7c58564844bc00c21bf773fb5165612d431c63ee2846e7acf3d78f7fde412b"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-07-26T17:02:09.311739372Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-dq",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-dq-00007-hot",
+        "service_name": "cf-dq"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "81648540bf3ad78e",
+    "timestamp": "2026-07-26T17:02:05.667165Z",
+    "trace": "projects/msklad-bi-prod/traces/2a3cb3e918166df1111dc29cbd10cc81",
+    "traceSampled": true
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 15:05:05 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

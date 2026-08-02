@@ -1,0 +1,212 @@
+=== date -u (start) ===
+Sun Aug  2 14:58:29 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Схема core.fact_sales_profit (INFORMATION_SCHEMA.COLUMNS) ===
+[
+  {
+    "column_name": "transaction_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "transaction_date", 
+    "data_type": "DATE"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "return_quantity", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "margin_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "cogs_usd", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "margin_usd", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "_week_start", 
+    "data_type": "DATE"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP"
+  }, 
+  {
+    "column_name": "sell_sum_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING"
+  }
+]
+=== Схема stg_msklad.fact_sales_staging (INFORMATION_SCHEMA.COLUMNS) ===
+[
+  {
+    "column_name": "run_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "demand_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "order_name", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "position_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "transaction_date_raw", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "quantity", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "price_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING"
+  }
+]
+=== core.fact_sales_profit: сумма revenue_kgs за 2026-08-01 (бишкекские сутки = дата столбца transaction_date, DATE) + независимый COUNT(*) ===
+[
+  {
+    "revenue_kgs_sum": "25920.9", 
+    "row_count": "14"
+  }
+]
+=== stg_msklad.fact_sales_staging: сумма revenue_kgs за 2026-08-01 бишкекские сутки (parse transaction_date_raw как в bq_ops.py) + независимый COUNT(*) ===
+[
+  {
+    "revenue_kgs_sum": "25920.9", 
+    "row_count": "14"
+  }
+]
+=== core.fact_sales_profit: среднедневная выручка за окно 2026-07-25..2026-07-31 (T-8..T-2 относительно target_date=2026-08-01) + независимый COUNT(*) ===
+[
+  {
+    "avg_daily_revenue_kgs": "4780221.572457143", 
+    "revenue_kgs_sum_window": "3.3461551007200003E7", 
+    "row_count": "814"
+  }
+]
+=== stg_msklad.fact_sales_staging: среднедневная выручка за окно 2026-07-25..2026-07-31 + независимый COUNT(*) ===
+[
+  {
+    "avg_daily_revenue_kgs": "4756509.072457143", 
+    "revenue_kgs_sum_window": "3.32955635072E7", 
+    "row_count": "802"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 14:58:46 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

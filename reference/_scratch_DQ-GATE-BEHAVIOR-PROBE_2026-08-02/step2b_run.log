@@ -1,0 +1,51 @@
+=== date -u (start) ===
+Sun Aug  2 15:02:48 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== core.fact_sales_profit: MIN(_loaded_at), MAX(_loaded_at), COUNT(*), SUM(revenue_kgs) для transaction_date=2026-07-25 (день, ставший target_date блока отказов) ===
+[
+  {
+    "max_loaded_at": "2026-08-01 17:02:14", 
+    "min_loaded_at": "2026-08-01 17:02:14", 
+    "revenue_kgs_sum": "65385.5", 
+    "row_count": "9"
+  }
+]
+=== core.fact_sales_profit: то же для transaction_date=2026-07-26 (день, целиком блокированный по промоуту) ===
+[
+  {
+    "max_loaded_at": "2026-08-01 17:02:14", 
+    "min_loaded_at": "2026-08-01 17:02:14", 
+    "revenue_kgs_sum": "219891.19499999998", 
+    "row_count": "12"
+  }
+]
+=== BigQuery: полная выгрузка заданий MERGE в core.fact_sales_profit ровно в окне 2026-07-26T17:30:00Z..2026-07-26T19:00:00Z, все поля запроса ===
+[
+  {
+    "creation_time": "2026-07-26 18:02:14", 
+    "end_time": "2026-07-26 18:02:15", 
+    "job_id": "b75625ce-8bf9-4c51-9ca5-a21c09a80211", 
+    "state": "DONE", 
+    "statement_type": "MERGE", 
+    "user_email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+  }
+]
+=== Тело провала drift_check В САМОМ ПОСЛЕДНЕМ FAILED прогоне блока (2026-07-26T17:00:02Z) — недельный лог не подходит, ищем execution ID часового workflow ===
+projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/018262cd-0f50-4787-abc9-1fc85c454a58	FAILED	2026-07-26T17:00:02.593496222Z
+=== date -u (end) ===
+Sun Aug  2 15:03:01 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

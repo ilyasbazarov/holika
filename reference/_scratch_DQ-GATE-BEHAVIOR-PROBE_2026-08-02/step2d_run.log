@@ -1,0 +1,45 @@
+=== date -u (start) ===
+Sun Aug  2 15:05:33 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Cloud Logging: logName=Workflows, окно 2026-07-26T17:59:00Z..18:03:00Z (ПЕРВОЕ восстановившееся выполнение) ===
+[]
+=== Cloud Logging: logName=Workflows, окно 2026-07-26T16:59:00Z..17:03:00Z (ПОСЛЕДНЕЕ FAILED выполнение блока, для сравнения) ===
+[
+  {
+    "insertId": "1bgsus5faxgeea",
+    "labels": {
+      "execution_id": "018262cd-0f50-4787-abc9-1fc85c454a58",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T17:02:09.432409204Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785085202.647563 details={\"checks\":[{\"detail\":\"staging_count=691\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-26, lag_days=0\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=33631.33\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785085202.647563,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T17:02:09.432409204Z"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 15:05:35 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
