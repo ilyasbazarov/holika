@@ -54,6 +54,7 @@
 | `06_DECISIONS_LOG` | ADR, append-only | LIVING (append) |
 | `06_INDEX` | индекс ADR (номер·заголовок·статус); обязательный контекст вместо полного `06` (ADR-064) | LIVING |
 | `07_STATE` | контрольные цифры, открытые вопросы, текущий фокус | LIVING |
+| `07_GAPS` | GAP-реестр discovery-петли, полный текст строк; точечное чтение по ID (ADR-106) | LIVING |
 | `07_ARCHIVE` | архив закрытых строк STATE; точечное чтение по ID (ADR-064) | LIVING (append) |
 | `08_TASK_BRIEF_TEMPLATE` | шаблон пакета-передачи рабочему чату | STABLE |
 | `09_GLOSSARY` | доменные термины | SEMI-STABLE |
