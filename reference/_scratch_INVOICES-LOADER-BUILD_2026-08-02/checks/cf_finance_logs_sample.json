@@ -1,0 +1,40 @@
+[
+  {
+    "httpRequest": {
+      "latency": "856.160796936s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "107.178.198.2",
+      "requestMethod": "POST",
+      "requestSize": "1234",
+      "requestUrl": "https://cf-finance-xw5u2boozq-de.a.run.app/",
+      "responseSize": "130",
+      "serverIp": "34.143.78.2",
+      "status": 200,
+      "userAgent": "Google-Cloud-Scheduler"
+    },
+    "insertId": "6a6e61ae00003334c17da6e4",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-finance",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f729331245abceaa43a313e8ad0ed938bc70c9144368455ece42ed9311b789866f2e52cceb49ed03565f2d649c0ac7216796503ae456d07d2ba350390972f88fb5766d87e6010e29da7f4a"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-01T21:14:22.016710322Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-finance",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-finance-00012-cik",
+        "service_name": "cf-finance"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "2e5ab531d329db22",
+    "timestamp": "2026-08-01T21:00:05.683905Z",
+    "trace": "projects/msklad-bi-prod/traces/8de1fc7d5c60c126223f36d25526b23c",
+    "traceSampled": true
+  }
+]

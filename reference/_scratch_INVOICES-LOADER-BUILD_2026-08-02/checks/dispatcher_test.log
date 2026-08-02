@@ -1,0 +1,16 @@
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-BUIL/reference/_scratch_INVOICES-LOADER-BUILD_2026-08-02/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-BUIL/reference/_scratch_INVOICES-LOADER-BUILD_2026-08-02/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-BUIL/reference/_scratch_INVOICES-LOADER-BUILD_2026-08-02/venv/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-BUIL/reference/_scratch_INVOICES-LOADER-BUILD_2026-08-02/venv/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-BUIL/reference/_scratch_INVOICES-LOADER-BUILD_2026-08-02/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.cloud.bigquery_datatransfer_v1 supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.cloud.bigquery_datatransfer_v1.
+  warnings.warn(message, FutureWarning)
+empty body -> ('OK', 200) calls= {'run_etl': 1, 'run_invoices_etl': 0}
+{} -> ('OK', 200) calls= {'run_etl': 2, 'run_invoices_etl': 0}
+mode=payments -> ('OK', 200) calls= {'run_etl': 3, 'run_invoices_etl': 0}
+mode=invoices -> ('OK', 200) calls= {'run_etl': 3, 'run_invoices_etl': 1}
+mode=bogus -> ("Unknown mode: 'bogus'. Expected: payments | invoices", 400) calls= {'run_etl': 3, 'run_invoices_etl': 1}
+VERDICT: run_etl_calls=3 run_invoices_etl_calls=1 unknown_mode_status=400 -- ALL EXPECTED NUMBERS MATCHED

@@ -10,6 +10,7 @@
 Делает бэкап main.py.bak перед изменением. Если паттерн не найден ровно один раз —
 ничего не трогает и печатает текст для ручной правки.
 """
+
 import shutil
 import sys
 
@@ -23,6 +24,7 @@ NEW = (
     "    except Exception as e:\n"
     "        print(f\"WARNING: trigger_marts() failed (non-fatal, marts have their own schedule): {e}\")"
 )
+
 
 def main():
     try:
@@ -57,6 +59,7 @@ def main():
     start = max(0, idx - 80)
     end = min(len(new_content), idx + len(NEW) + 80)
     print(new_content[start:end])
+
 
 if __name__ == "__main__":
     main()

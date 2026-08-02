@@ -2,4 +2,3 @@ google-cloud-bigquery
 google-cloud-bigquery-datatransfer
 protobuf
 requests
-tenacity

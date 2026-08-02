@@ -1,0 +1,10 @@
+branch1_rate_value_present: rate=1.25 currency=USD fallback=False
+branch2_kgs_no_rate: rate=1.0 currency=KGS fallback=False
+branch3_fallback_hit: rate=89.5 currency=USD fallback=True
+INFO: текущий курс USD = 89.5 (из entity/currency)
+fetch_current_rate_success: rate=89.5
+fetch_current_rate_missing_value_raised: entity/currency: не удалось прочитать курс для USD, сырое поле rate=None — проверь вручную, не догадка
+synthetic_rows_built=3 fallback_hits=1
+staging_rows_loaded=3
+bad_rows=0
+VERDICT: branch1=OK branch2=OK branch3_fallback=OK fetch_current_rate_success=OK fetch_current_rate_raise_on_missing=OK synthetic_rows=3 fallback_hits=1 bad_rows=0

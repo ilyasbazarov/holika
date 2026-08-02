@@ -1,0 +1,7 @@
+INVOICES: G1 fetched=0 meta_size_first=None
+G2 OK: G2 FAILED: fetched=0 documents from entity/invoiceout
+INVOICES: G1 fetched=47 meta_size_first=50
+G1 OK (raise ДО записи staging, staging_write_calls=0): G1 FAILED: fetched=47 < meta_size_first=50 — обход оборван
+INVOICES: G1 fetched=52 meta_size_first=50
+G1 OK (fetched=52 >= meta_size_first=50, продолжение разрешено)
+VERDICT: G2_empty_raised=1 G1_truncated_raised=1 staging_writes_on_truncated_abort=0 G1_ge_case_passed=1

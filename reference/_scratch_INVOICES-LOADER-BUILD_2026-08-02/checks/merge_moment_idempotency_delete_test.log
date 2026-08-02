@@ -1,0 +1,13 @@
+test_core_truncated=1
+INVOICES: merge_predicted {'merged_inserted': 3, 'merged_updated': 0, 'merged_deleted': 0}
+run1_predicted={'merged_inserted': 3, 'merged_updated': 0, 'merged_deleted': 0}
+n_rows_after_run1=3 sum_sum_kgs_after_run1=466600.0
+moment_rule_test: utc_date=2026-05-12 utc_time=22:15 -> core.moment=2026-05-13
+INVOICES: merge_predicted {'merged_inserted': 0, 'merged_updated': 3, 'merged_deleted': 0}
+run2_predicted={'merged_inserted': 0, 'merged_updated': 3, 'merged_deleted': 0}
+n_rows_after_run2=3 sum_sum_kgs_after_run2=466600.0
+staging_row_manually_deleted=synt-usd-withrate
+INVOICES: merge_predicted {'merged_inserted': 0, 'merged_updated': 2, 'merged_deleted': 1}
+run3_predicted={'merged_inserted': 0, 'merged_updated': 2, 'merged_deleted': 1}
+n_rows_after_run3=2 remaining_ids=['synt-kgs-1', 'synt-usd-fallback']
+VERDICT: run1_inserted=3 run2_inserted=0 run2_deleted=0 run2_rows_unchanged=True run2_sums_unchanged=True run3_deleted=1 run3_remaining_rows=2 moment_rule_ok=True
