@@ -1,0 +1,60 @@
+=== date -u (старт скрипта) ===
+Sun Aug  2 16:25:35 UTC 2026
+
+=== П1. Диспетчер режимов в снапшоте cf-finance: есть ли? ===
+--- grep -n 'mode' reference/code/cf-finance/main.py ---
+(0 совпадений)
+--- точка входа целиком ---
+138:def main(request):
+139-    run_etl()
+140-    return "OK", 200
+141-
+142-if __name__ == "__main__":
+
+=== П2. Диспетчер режимов в cf-facts (образец формы) ===
+68:    mode        = body.get("mode", "hourly")
+75:        if mode == "hourly":
+77:        elif mode == "weekly":
+79:        elif mode == "promote":
+81:        elif mode == "purchases":
+83:        elif mode == "returns":
+86:            raise ValueError(f"Unknown mode: {mode!r}. Expected: hourly | weekly | promote | purchases | returns")
+
+=== П3. Противоречие про публичный доступ cf-finance ===
+--- 01_ARCHITECTURE.md ---
+25:│  cf-finance (daily 03:00 KGT) ⚠️ allow-unauthenticated │  MERGE paymentout+cashout → fact_payments
+--- 11_INFRA_FACTS.md (IAM) ---
+28:- ⚠️ TD-SEC-01 — подтверждённый инцидент 2026-07-20, устранён IAM-lockdown (ADR-022): `allUsers`-invoker снят, вызов только через `etl-sa` (OIDC).
+149:**cf-finance (ADR-022, 2026-07-20):** `roles/run.invoker` предоставлен `etl-sa@msklad-bi-prod.iam.gserviceaccount.com`; привязка `allUsers` → `run.invoker` снята. Верификация 2026-07-20: анонимный запрос → `403`; вызов Scheduler (OIDC через тот же SA) → `200`.
+
+=== П4. limit<=100 при expand (тихая деградация) ===
+297:- При `expand=` (например `expand=expenseItem`) `limit` НЕ должен превышать 100 — иначе API молча игнорирует `expand` и возвращает `NULL` вместо вложенного объекта.
+425:**Код валюты (ADR-027):** `currency_code` целевых таблиц заполняется из `rate.currency.isoCode` — **буквенный** код ISO 4217 (STRING, напр. «KGS»). Числовой `rate.currency.code` в целевые таблицы НЕ пишется. Скоуп глобальный: все входящие ингесты из МойСклад. ⚠️ См. §поведение МойСклад API: при `expand=` с `limit > 100` API молча игнорирует `expand` и возвращает `NULL` вместо вложенного объекта — `rate.currency` деградирует ТИХО; профиль запроса (`expand`/`limit`) подлежит проверке по коду ингеста (`Q-49`), не по памяти.
+
+=== П5. expand rate.currency — прецедент в живом коде ===
+reference/code/cf-loss-commission/main.py:91:            rate_value = _fetch_current_rate(currency_code)
+reference/code/cf-loss-commission/main.py:103:    docs = _fetch_all("loss", filter_str, expand="expenseItem,agent,rate.currency")
+reference/code/cf-loss-commission/main.py:130:    docs = _fetch_all("commissionreportin", filter_str, expand="agent,rate.currency,positions")
+06_DECISIONS_LOG.md:346:## ADR-027 · `currency_code` из МойСклад API = `rate.currency.isoCode` (буквенный ISO 4217); числовой `.code` запрещён
+06_DECISIONS_LOG.md:347:- **Контекст:** сессия `E1-T1-MECH-INGEST` (2026-07-23) сняла фактом два места (`fact_loss`, `fact_commissionreportin`), где в `currency_code` писался `rate.currency.code` (числовой код ISO 4217) вместо `rate.currency.isoCode` (буквенный, «KGS»). `02 §валюты` нормирует суммовую конвертацию (`ADR-010`), но поле кода валюты в контрактах не задокументировано (схемы `fact_payments` в `02` отсутствуют — вне scope M-P4-A-02, полная схема core — `Q-4`). Пропозал сессии (P2) принят в редакции архитектора: (а) исправлен стандарт — ISO **4217**, не «417»; (б) снята ложная каузальная связка «ошибка была следствием curl/415» — это два независимых инцидента (415 — `02 §поведение API`/RB-18, контент-тип на GET; выбор `.code` — ошибка чтения контракта), в append-only журнал такая причинность не вносится; (в) дом правила — `02 §валюты` (контракт API, глобально), а не проза «во всех новых ингестах».
+
+=== П6. фильтр applicable — прецеденты в снапшотах ===
+reference/code/cf-finance/main.py:47:                if row.get("applicable") is False:
+reference/code/cf-loss-commission/main.py:121:            "applicable": d.get("applicable", True),
+reference/code/cf-loss-commission/main.py:165:    bigquery.SchemaField("applicable", "BOOLEAN"),
+reference/code/cf-loss-commission/main.py:203:      rate_value = S.rate_value, applicable = S.applicable, sum_kgs = S.sum_kgs,
+reference/code/cf-loss-commission/main.py:207:      project_id, sales_channel_id, currency_code, rate_value, applicable, sum_kgs, _loaded_at
+reference/code/cf-loss-commission/main.py:211:      S.project_id, S.sales_channel_id, S.currency_code, S.rate_value, S.applicable, S.sum_kgs, S._loaded_at
+reference/code/cf-facts/fetch_returns.py:9:  - applicable=true: только проведённые документы.
+reference/code/cf-facts/fetch_returns.py:48:        f"applicable=true"          # TD-11: defensive — исключаем черновики
+
+=== П7. Партиционирование core.fact_customer_invoices ===
+ключи партиционирования/кластеризации в bq show: НЕТ НИ ОДНОГО
+type= TABLE location= asia-east1 numRows= 4058
+
+=== П8. Потребитель payment_planned (март) ===
+15:    i.payment_planned IS NOT NULL
+16:    AND i.payment_planned < CURRENT_DATE()
+
+=== date -u (конец скрипта) ===
+Sun Aug  2 16:25:36 UTC 2026
