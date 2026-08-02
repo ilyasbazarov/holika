@@ -1,0 +1,17 @@
+Sun Aug  2 18:26:52 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+[{"column_name":"date_snapshot","ordinal_position":"1"},{"column_name":"product_id","ordinal_position":"2"},{"column_name":"product_name","ordinal_position":"3"},{"column_name":"article","ordinal_position":"4"},{"column_name":"product_folder","ordinal_position":"5"},{"column_name":"entity_type","ordinal_position":"6"},{"column_name":"parent_product_id","ordinal_position":"7"},{"column_name":"stock","ordinal_position":"8"},{"column_name":"reserve","ordinal_position":"9"},{"column_name":"quantity_available","ordinal_position":"10"},{"column_name":"stock_days","ordinal_position":"11"},{"column_name":"cost_kgs","ordinal_position":"12"},{"column_name":"frozen_capital_kgs","ordinal_position":"13"},{"column_name":"frozen_capital_usd","ordinal_position":"14"},{"column_name":"sold_quantity_30d","ordinal_position":"15"},{"column_name":"revenue_30d_kgs","ordinal_position":"16"},{"column_name":"active_days_30d","ordinal_position":"17"},{"column_name":"true_adt","ordinal_position":"18"},{"column_name":"calendar_adt","ordinal_position":"19"},{"column_name":"sold_quantity_7d","ordinal_position":"20"},{"column_name":"sold_quantity_90d","ordinal_position":"21"},{"column_name":"calendar_adt_90d","ordinal_position":"22"},{"column_name":"coverage_days_true_adt","ordinal_position":"23"},{"column_name":"coverage_days_90d_calendar","ordinal_position":"24"},{"column_name":"is_oos","ordinal_position":"25"},{"column_name":"is_toxic","ordinal_position":"26"},{"column_name":"is_stagnant","ordinal_position":"27"},{"column_name":"is_low_stock","ordinal_position":"28"},{"column_name":"is_overstock","ordinal_position":"29"},{"column_name":"is_zero_cost","ordinal_position":"30"},{"column_name":"rate_kgs_per_usd","ordinal_position":"31"},{"column_name":"_mart_refreshed_at","ordinal_position":"32"}]
+Sun Aug  2 18:26:56 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
