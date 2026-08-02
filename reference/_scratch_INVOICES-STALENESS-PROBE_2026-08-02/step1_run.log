@@ -1,0 +1,189 @@
+=== date -u (start) ===
+Sun Aug  2 10:03:35 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq show (schema+meta), table=core.fact_customer_invoices ===
+{
+  "creationTime": "1780649310011",
+  "etag": "xkSBriB+Sixk+PsTN6qvCg==",
+  "id": "msklad-bi-prod:core.fact_customer_invoices",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1780650428549",
+  "location": "asia-east1",
+  "numActiveLogicalBytes": "1270384",
+  "numActivePhysicalBytes": "123964",
+  "numBytes": "1270384",
+  "numCurrentPhysicalBytes": "123964",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "4058",
+  "numTimeTravelPhysicalBytes": "0",
+  "numTotalLogicalBytes": "1270384",
+  "numTotalPhysicalBytes": "123964",
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "invoice_id",
+        "type": "STRING"
+      },
+      {
+        "name": "invoice_name",
+        "type": "STRING"
+      },
+      {
+        "name": "moment",
+        "type": "DATE"
+      },
+      {
+        "name": "agent_id",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_name",
+        "type": "STRING"
+      },
+      {
+        "name": "state_id",
+        "type": "STRING"
+      },
+      {
+        "name": "state_name",
+        "type": "STRING"
+      },
+      {
+        "name": "sum_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "payed_sum_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "unpaid_sum_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "payment_planned",
+        "type": "DATE"
+      },
+      {
+        "name": "sales_channel_id",
+        "type": "STRING"
+      },
+      {
+        "name": "sales_channel_name",
+        "type": "STRING"
+      },
+      {
+        "name": "_loaded_at",
+        "type": "TIMESTAMP"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/datasets/core/tables/fact_customer_invoices",
+  "tableReference": {
+    "datasetId": "core",
+    "projectId": "msklad-bi-prod",
+    "tableId": "fact_customer_invoices"
+  },
+  "type": "TABLE"
+}
+=== INFORMATION_SCHEMA.COLUMNS for fact_customer_invoices ===
+[
+  {
+    "column_name": "invoice_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "1"
+  }, 
+  {
+    "column_name": "invoice_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "2"
+  }, 
+  {
+    "column_name": "moment", 
+    "data_type": "DATE", 
+    "ordinal_position": "3"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "4"
+  }, 
+  {
+    "column_name": "agent_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "5"
+  }, 
+  {
+    "column_name": "state_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "6"
+  }, 
+  {
+    "column_name": "state_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "7"
+  }, 
+  {
+    "column_name": "sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "8"
+  }, 
+  {
+    "column_name": "payed_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "9"
+  }, 
+  {
+    "column_name": "unpaid_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "10"
+  }, 
+  {
+    "column_name": "payment_planned", 
+    "data_type": "DATE", 
+    "ordinal_position": "11"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "12"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "13"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "ordinal_position": "14"
+  }
+]
+=== COUNT(*) total ===
+[
+  {
+    "total_rows": "4058"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 10:03:49 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== ARTIFACT DIR ===
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-STALENESS-PROBE/reference/_scratch_INVOICES-STALENESS-PROBE_2026-08-02

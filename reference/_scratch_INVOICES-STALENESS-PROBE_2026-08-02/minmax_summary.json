@@ -1,0 +1,10 @@
+[
+  {
+    "distinct_loaded_at_values": "1", 
+    "max_loaded_at": "2026-06-05 09:06:57", 
+    "max_moment": "2026-06-05", 
+    "min_loaded_at": "2026-06-05 09:06:57", 
+    "min_moment": "2024-10-04", 
+    "total_rows": "4058"
+  }
+]
