@@ -1,0 +1,9 @@
+Sun Aug  2 15:03:47 UTC 2026
+ilyasbazarov4@gmail.com	*
+--- GET entity/invoiceout limit=1 ---
+HTTP_CODE=200
+--- field count in body ---
+rows: 1
+top-level fields: ['accountId', 'agent', 'applicable', 'contract', 'created', 'demands', 'externalCode', 'files', 'group', 'id', 'meta', 'moment', 'name', 'organization', 'organizationAccount', 'owner', 'payedSum', 'paymentPlannedMoment', 'positions', 'printed', 'project', 'published', 'rate', 'salesChannel', 'shared', 'shippedSum', 'state', 'store', 'sum', 'updated', 'vatEnabled']
+Sun Aug  2 15:03:49 UTC 2026
+ilyasbazarov4@gmail.com	*
