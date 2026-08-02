@@ -1,0 +1,116 @@
+=== UTC ANCHOR (start) ===
+Sun Aug  2 20:49:36 UTC 2026
+=== CALLER IDENTITY (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== cf-facts: gcloud functions describe (expect possible 403) ===
+cf-facts: functions describe SUCCEEDED (direct path)
+
+=== cf-facts: gcloud run services describe (fallback / cross-check) ===
+cf-facts run services describe: OK
+
+=== cf-dq: gcloud functions describe (expect direct success) ===
+cf-dq: functions describe SUCCEEDED
+
+=== Extracting revision / storageSource for cf-facts ===
+cf-facts revision: cf-facts-00007-xir
+cf-facts source uri (from describe path used): gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip
+cf-facts generation: 1782334223015697
+
+=== Extracting revision / storageSource for cf-dq ===
+cf-dq revision: cf-dq-00007-hot
+cf-dq source uri: gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip
+cf-dq generation: 1781780276907576
+
+=== Downloading source archives ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1782334223015697 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/CODE-REPO-SEED-REST/reference/_scratch_CODE-REPO-SEED-REST_2026-08-03/source_unzipped_20260802T204936Z/cf-facts/function-source.zip
+  
+..........................
+cf-facts archive downloaded via storageSource
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1781780276907576 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/CODE-REPO-SEED-REST/reference/_scratch_CODE-REPO-SEED-REST_2026-08-03/source_unzipped_20260802T204936Z/cf-dq/function-source.zip
+  
+.....................
+cf-dq archive downloaded via storageSource
+
+=== Unzipping ===
+unzipped/.DS_Store
+unzipped/bq_ops.py
+unzipped/config.py
+unzipped/deploy_and_workflow.sh
+unzipped/fetch_byvariant.py
+unzipped/fetch_demands.py
+unzipped/fetch_demands.py.bak
+unzipped/fetch_purchases.py
+unzipped/fetch_purchases.py.bak
+unzipped/fetch_returns.py
+unzipped/fetch_returns.py.bak
+unzipped/helpers.py
+unzipped/main.py
+unzipped/patch_code.py
+unzipped/patch_timeout.py
+unzipped/requirements.txt
+unzipped/src.zip
+unzipped/config.py
+unzipped/function-source-patched.zip
+unzipped/function-source.zip
+unzipped/helpers.py
+unzipped/main.py
+unzipped/patch_dq.py
+unzipped/requirements.txt
+unzipped/src.zip
+
+=== sha256 (cf-facts) ===
+89a97b76c84a643eb82ae476e5c59a1b14d3d1caa9846eb8f71a0e2f53eafa46  ./.DS_Store
+dad48a6eec2d80b5a3373beb5463cdd3d94ac71cef481d89f389e8a2308dc4e3  ./bq_ops.py
+977fd82813d3487a1eb9c8cd297312d6e542be3b45fe65b45d73cc143ca3289b  ./config.py
+2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07  ./deploy_and_workflow.sh
+88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1  ./fetch_byvariant.py
+637f25dba1a87a412bde7feac32a0b56a052e99c9bb8a5246e13b266b7648770  ./fetch_demands.py
+f409c590dadc6537a1deb7e5557859de14e46d52e30e88a85744db2404fa6b5a  ./fetch_demands.py.bak
+5db807fee2da21c31c5fa3aeed77e16d1a4ae04193f55831534b89c5e9158486  ./fetch_purchases.py
+887df5521e7d9ec0eb558ed683831e37ed03e3ab69fa8a8bb1903d1da2f81480  ./fetch_purchases.py.bak
+7ce9373aa084258e45d2ba12c8f1bc2812b249958eec400c4181e4802793ae56  ./fetch_returns.py
+8b26ad3b33def08722776b003e5a1f9b09a26f85cf5e6620ce9fa3aa8c16e503  ./fetch_returns.py.bak
+aac5dee5add76513f52e8909a32925f261ad25d09ef55a1a6013f5262cd01c48  ./helpers.py
+2b1e4519523dbe0e78520b035f5c047b18e4f348730c98de19dbe54c8b9e4da5  ./main.py
+9a990a589c4bd30878265c35a72d8804aaa82a8f410c028a3775fb5d3fe09151  ./patch_code.py
+037059a9d9ff627701b6ecbf5e4160f071f8f1facf29aa5affcb4a1280ee193b  ./patch_timeout.py
+0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051  ./requirements.txt
+ba9ff05cdcb418615d0282759278d381e8d8250aa6ea8b52513b9d4e80524246  ./src.zip
+
+=== sha256 (cf-dq) ===
+7a818364c78fdf21cb32d8ce52d54da0972a6de511d1f6023fb8ea812fc543b6  ./config.py
+3a7237416152127b304ff5ca6043922dd7d1509283af406df1fef9ed4c89c406  ./function-source-patched.zip
+1f6c4e63be5522a96ba6a73613032fc1913f853ac15ecf64eee175b79d7028a9  ./function-source.zip
+0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146  ./helpers.py
+9693010ae04cd14859b7ed53bba25fa28cbf1962a9b127c012a75d521d86ea09  ./main.py
+bb1bc968b81573431c5f7c912539918d51d1ee18cd34b040a109ccf213eeb22a  ./patch_dq.py
+587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516  ./requirements.txt
+b6adc6275586cac6a88cd9f91c501438ca22e6bdf3bc7b09af3f32677e726c15  ./src.zip
+
+=== SUMMARY ===
+OUTDIR=/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/CODE-REPO-SEED-REST/reference/_scratch_CODE-REPO-SEED-REST_2026-08-03/source_unzipped_20260802T204936Z
+CF_FACTS_REV=cf-facts-00007-xir
+CF_FACTS_METHOD=direct (gcloud functions describe)
+CF_FACTS_SRC_URI=gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip
+CF_FACTS_GEN=1782334223015697
+CF_DQ_REV=cf-dq-00007-hot
+CF_DQ_SRC_URI=gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip
+CF_DQ_GEN=1781780276907576
+
+=== UTC ANCHOR (end) ===
+Sun Aug  2 20:50:05 UTC 2026
+=== CALLER IDENTITY (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

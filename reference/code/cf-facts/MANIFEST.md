@@ -1,113 +1,82 @@
-# MANIFEST · /reference/code/cf-facts/ — снапшот исходника (SOURCE-MAP-SALES)
+# MANIFEST · /reference/code/cf-facts/ — снапшот исходника (CODE-REPO-SEED-REST)
 
-**Тип:** provenance-снапшот, не оракул, не прод-код.
-**Источник:** задеплоенный `function-source.zip` (Cloud Storage), скачан напрямую `gcloud storage cp` — не транскрипция.
-**Дата извлечения:** 2026-07-29 (сессия начата), фактический прогон скачивания — `2026-07-30T10:15:35Z`…`10:15:51Z` (после восстановления биллинга владельцем, см. session-блок §Отклонения от плана).
+**Тип:** discovery-снапшот (`_METHOD §11`), не оракул, не прод-код.
+**Источник:** прямое снятие `gcloud functions describe cf-facts --gen2` — на этой сессии команда
+**отработала без `403`** (прежнее ограничение `07_STATE.md` про обходной путь для `cf-facts` этой
+попыткой НЕ воспроизведено; см. «Первый замер равенства» ниже). Архив скачан по `storageSource` с
+**закреплённым `generation`** (`gcloud storage cp <uri>#<generation>`), не текущим объектом бакета.
+**Дата съёма (UTC):** `2026-08-02T20:49:36Z…20:50:05Z` (`step1_run.log`).
+**Скрипт:** `reference/_scratch_CODE-REPO-SEED-REST_2026-08-03/step1_capture_source.sh`, лог
+`step1_run.log`.
 
-## Ревизия и провенанс
+---
 
-Функция `cf-facts` — GEN_2, регион `asia-east1`. `gcloud functions describe` для этой CF стабильно возвращал
-`403`/billing-related ошибку на этой сессии (три попытки подряд, независимо от статуса биллинга — см. ниже);
-поля ниже сняты эквивалентным read-only вызовом `gcloud functions list --filter="name:cf-facts" --format=json`
-(тот же ресурс `Function`, та же схема) и подтверждены `gcloud run services describe cf-facts` (Cloud Run API,
-gen2-функции строятся поверх Cloud Run).
+## Ревизия и провенанс (`gcloud functions describe cf-facts --gen2 --region=asia-east1 --project=msklad-bi-prod`)
 
-| Поле | Значение | Источник |
-|---|---|---|
-| `revision` | `cf-facts-00007-xir` | `functions list --format=json` |
-| `entryPoint` | `main` | `functions list --format=json` (`buildConfig.entryPoint`) |
-| `source.storageSource` | `gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip` (generation `1782334223015697`) | `functions list --format=json`; независимо подтверждено `run services describe` (`run.googleapis.com/build-source-location`) |
-| `updateTime` | `2026-07-29T04:05:10.487996910Z` | `functions list --format=json` |
-| `createTime` | `2026-05-06T08:26:29.388991725Z` | `functions list --format=json` |
-| `state` | `ACTIVE` | `functions list --format=json` |
-| `serviceAccountEmail` | `etl-sa@msklad-bi-prod.iam.gserviceaccount.com` | `functions list --format=json` (`serviceConfig.serviceAccountEmail`); подтверждено `run services describe` (`serviceAccountName`) |
-| `uri` | `https://cf-facts-xw5u2boozq-de.a.run.app` | `functions list --format=json`; альтернативный alias `https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts` из `run services describe` |
-| `timeoutSeconds` | `540` | `functions list --format=json` |
-| `availableMemory` | `2048M` | `functions list --format=json` |
-| `availableCpu` | `1` | `functions list --format=json` |
-| `minInstanceCount` / `maxInstanceCount` | `1` / `5` | `functions list --format=json`; `run services describe` даёт `maxScale: '3'` в `metadata.annotations` (устаревшая аннотация, актуальное значение — `spec.template.metadata.annotations.autoscaling.knative.dev/maxScale: '5'`, оно и указано здесь) |
-| `ingressSettings` | `ALLOW_ALL` | `functions list --format=json` |
-| `environmentVariables` (имена) | `LOG_EXECUTION_ID=true` | `functions list --format=json` |
-| `secretEnvironmentVariables` (имена, не значения) | `MSKLAD_TOKEN` ← секрет `msklad-token`, версия `latest` | `functions list --format=json` |
-| Триггер | `HTTP_TRIGGER` | `run services describe` (`spec.template.metadata.annotations.cloudfunctions.googleapis.com/trigger-type`) |
-| `build` | `projects/420804682491/locations/asia-east1/builds/6ac22631-8a64-4102-821f-8946a89d8eb4` | `functions list --format=json` |
-
-## Известная аномалия сессии (не факт о коде, факт о доступе)
-
-При старте Шага 1 три независимые read-команды (`functions describe`, `scheduler jobs list`,
-`storage cp` на скачивание архива) вернули `403`/`PERMISSION_DENIED`, ссылаясь на биллинг. Прямая проверка
-`gcloud billing projects describe msklad-bi-prod` подтвердила `billingEnabled: false`. Эскалировано владельцу
-в чате, владелец подтвердил восстановление; повторная проверка дала `billingEnabled: true`, дальнейшие шаги
-(скачивание архива, `bq query`, `bq show --transfer_config`) прошли штатно. Провенанс — в session-блоке и в
-логах `step1d_describe.log`/`step1e_scheduler.log`/`step2_download.log` этой же директории `_scratch`.
-
-## Автозапуск
-
-Триггер — `HTTP_TRIGGER` (прямой HTTP-вызов, не Pub/Sub/Eventarc). В коде `cf-facts` нет обращения к
-Cloud Scheduler API — расписание/оркестрация задаются снаружи (Workflow, судя по докстрингу `main.py:6-15`:
-`workflow.yaml` с шагами `step_facts`→`step_dq`→`step_promote`(→`step_purchases`), сам `workflow.yaml`
-**в этот архив не входит**, discovery его состава — `Q-13`/вне мандата этой сессии). `gcloud scheduler jobs
-list` не выполнен по этой CF (не требовался после того, как выяснилось, что триггер HTTP, а не
-Scheduler-специфичный OIDC-джоб типа `cf-loss-commission`; конкретный вызывающий Scheduler-job для `cf-facts`
-этой сессией не идентифицирован — фиксируется как остаток, не как факт).
-
-## Чистота архива (ADR-040)
-
-Архив **грязный** — сверх кода и `requirements.txt` содержит:
-- `fetch_demands.py.bak`, `fetch_purchases.py.bak`, `fetch_returns.py.bak` — резервные копии;
-- `patch_code.py`, `patch_timeout.py` — разовые patch-скрипты;
-- `deploy_and_workflow.sh` — деплой-скрипт (не рантайм-зависимость Python, но и не код функции);
-- `.DS_Store` — артефакт macOS Finder;
-- `src.zip` — **вложенный ZIP** с ещё одной копией исходников. Не читается кодом в рантайме
-  (`grep -rn "src.zip\|src_zip\|zipfile" *.py` — 0 совпадений во всех файлах верхнего уровня) — инертен
-  для исполнения. Расходится по содержимому с файлами верхнего уровня: `fetch_demands.py` внутри `src.zip`
-  **не содержит** `× rate.value` (нет конвертации валюты для demand-позиций — при этом в файле верхнего
-  уровня, который реально исполняется, эта строка есть, см. §Конвертация в KGS в основном артефакте),
-  `helpers.py` внутри `src.zip` несёт `timeout=30` вместо `timeout=90`. Похоже на более старую версию
-  исходников, случайно оставленную в архиве при упаковке. Это read-back-наблюдение, не повод чинить —
-  чистка вменяется следующему деплою (`ADR-040`), эта задача деплой не производит.
-
-Прецедент того же класса — `RQ-3`/`Q-57` на `cf-finance`.
-
-## sha256 (из задеплоенного архива, файлы верхнего уровня — живой код)
-
-| Файл | sha256 |
+| Поле | Значение |
 |---|---|
-| `main.py` | `2b1e4519523dbe0e78520b035f5c047b18e4f348730c98de19dbe54c8b9e4da5` |
-| `config.py` | `977fd82813d3487a1eb9c8cd297312d6e542be3b45fe65b45d73cc143ca3289b` |
-| `helpers.py` | `aac5dee5add76513f52e8909a32925f261ad25d09ef55a1a6013f5262cd01c48` |
-| `bq_ops.py` | `dad48a6eec2d80b5a3373beb5463cdd3d94ac71cef481d89f389e8a2308dc4e3` |
-| `fetch_demands.py` | `637f25dba1a87a412bde7feac32a0b56a052e99c9bb8a5246e13b266b7648770` |
-| `fetch_byvariant.py` | `88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1` |
-| `fetch_purchases.py` | `5db807fee2da21c31c5fa3aeed77e16d1a4ae04193f55831534b89c5e9158486` |
-| `fetch_returns.py` | `7ce9373aa084258e45d2ba12c8f1bc2812b249958eec400c4181e4802793ae56` |
-| `requirements.txt` | `0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051` |
+| `serviceConfig.revision` | `cf-facts-00007-xir` |
+| `buildConfig.entryPoint` | `main` |
+| `buildConfig.source.storageSource.bucket` | `gcf-v2-sources-420804682491-asia-east1` |
+| `buildConfig.source.storageSource.object` | `cf-facts/function-source.zip` |
+| `buildConfig.source.storageSource.generation` | `1782334223015697` |
+| Полный URI архива (закреплённый) | `gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1782334223015697` |
 
-Файлы вне рантайма (не перенесены в этот каталог, но зафиксированы sha256 в
-`reference/_scratch_SOURCE-MAP-SALES_2026-07-29/cf-facts-archive/unzipped/` как провенанс):
-`fetch_demands.py.bak`, `fetch_purchases.py.bak`, `fetch_returns.py.bak`, `patch_code.py`,
-`patch_timeout.py`, `deploy_and_workflow.sh`, `.DS_Store`, `src.zip` — полный список sha256 в
-`reference/_scratch_SOURCE-MAP-SALES_2026-07-29/cf-facts-archive/unzipped/` (лог не входит в этот
-MANIFEST, чтобы не путать «живой код» со «всем содержимым архива»).
+Сырой JSON ответа — `reference/_scratch_CODE-REPO-SEED-REST_2026-08-03/cf-facts_describe.json`.
+Кросс-проверка `gcloud run services describe cf-facts` исполнена той же сессией как параллельный
+источник (не как замена) — `reference/_scratch_CODE-REPO-SEED-REST_2026-08-03/cf-facts_run_describe.json`.
 
-## Сверка disk vs deployed
+## Первый замер равенства снапшот↔деплой (`ADR-021 §2`: успех команды ≠ факт)
 
-Файлы, перенесённые в этот каталог, скачаны **напрямую** из `gs://gcf-v2-sources-420804682491-asia-east1/
-cf-facts/function-source.zip#1782334223015697` — того же самого объекта и той же generation, что указаны
-в `source.storageSource` задеплоенной ревизии `cf-facts-00007-xir`. В отличие от прецедента `cf-finance`
-(отдельная копия на persistent-диске Cloud Shell, требовавшая независимой сверки) здесь второй копии для
-сравнения нет — архив уже и есть «то, что задеплоено» по построению команды `describe`/`list`. Отдельная
-верификация «содержимое диска = содержимое деплоя» этим снапшотом не производится, потому что нет второго
-диска — снят только сам задеплоенный артефакт.
+**Это ПЕРВЫЙ замер равенства для `cf-facts`.** Предыдущего не было: снапшот, ранее лежавший в этом
+каталоге, был снят обходным путём (`gcloud run services describe`, прямой `functions describe`
+возвращал `403` — зафиксировано `07_STATE.md`, `SALES-REFRESH-WINDOW-GEN` 2026-08-01) без закреплённого
+`generation`, то есть без гарантии побайтового совпадения с конкретной задеплоенной ревизией.
 
-## Известное открытое (не блокирует, для памяти)
+**Побочный факт, полезный для доверия к прежнему снапшоту (не входит в критерий приёмки этой задачи):**
+9 из 10 файлов прежнего снапшота (все, кроме `deploy_and_workflow.sh`, которого в прежнем снапшоте не
+было вовсе) sha256-идентичны файлам этого свежего съёма — см. таблицу ниже, колонка «Прежний снапшот
+(2026-08-01, обходной путь)». Совпадение НЕ заменяет замер (обходной путь не давал закреплённого
+`generation`, совпадение могло быть случайным или отражать отсутствие изменений между двумя разными
+съёмами), но задним числом снижает вероятность того, что прежний снапшот отражал не ту ревизию.
 
-- `gcloud functions describe cf-facts` не отработал ни разу за сессию (3 попытки, все `403` с формулировкой
-  про биллинг) — не переверено после восстановления биллинга владельцем (переверка не входила в мандат,
-  метаданные уже сняты эквивалентным путём). Если понадобится точный `describe`-YAML — можно перезапустить.
-- Конкретный вызывающий Cloud Scheduler job для `cf-facts` (аналог `loss-commission-daily-update` у
-  `cf-loss-commission`) не идентифицирован этой сессией — `workflow.yaml` вне архива, `scheduler jobs list`
-  не сужался по имени `cf-facts` до восстановления биллинга и не переисполнялся после (не входил в шаги
-  брифа буквально — брифовый Шаг 1 запрашивал `describe`, не `scheduler jobs list`; последний добавлен
-  этой сессией как побочная диагностика при первичном investigatiоn биллинг-аномалии).
-- Архив грязный (см. §Чистота архива) — чистка вменяется следующему деплою, не этой задаче.
+## Состав задеплоенного архива
+
+Распакованный `function-source.zip` несёт 17 записей. Из них **10 включены в seed** (исполняемый код,
+его прямые зависимости, deploy-скрипт), **7 исключены как мусор** (Шаг 3, гигиена — `ADR-040`).
+
+| Файл | sha256 (свежий съём) | Совпало с прежним снапшотом (2026-08-01) | В seed | Роль / причина исключения |
+|---|---|---|---|---|
+| `main.py` | `2b1e4519523dbe0e78520b035f5c047b18e4f348730c98de19dbe54c8b9e4da5` | да | да | Точка входа (`entryPoint=main`) |
+| `bq_ops.py` | `dad48a6eec2d80b5a3373beb5463cdd3d94ac71cef481d89f389e8a2308dc4e3` | да | да | BQ-операции, схемы, `MERGE`/`WRITE_TRUNCATE` загрузчиков |
+| `config.py` | `977fd82813d3487a1eb9c8cd297312d6e542be3b45fe65b45d73cc143ca3289b` | да | да | Константы: окна, имена таблиц, пороги |
+| `fetch_byvariant.py` | `88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1` | да | да | COGS-фетчер (`fetch_byvariant_cogs`) |
+| `fetch_demands.py` | `637f25dba1a87a412bde7feac32a0b56a052e99c9bb8a5246e13b266b7648770` | да | да | Фетчер продаж (`entity/demand`) |
+| `fetch_purchases.py` | `5db807fee2da21c31c5fa3aeed77e16d1a4ae04193f55831534b89c5e9158486` | да | да | Фетчер закупок |
+| `fetch_returns.py` | `7ce9373aa084258e45d2ba12c8f1bc2812b249958eec400c4181e4802793ae56` | да | да | Фетчер возвратов |
+| `helpers.py` | `aac5dee5add76513f52e8909a32925f261ad25d09ef55a1a6013f5262cd01c48` | да | да | Общие утилиты (HTTP, ретраи, курсы) |
+| `requirements.txt` | `0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051` | да | да | Зависимости |
+| `deploy_and_workflow.sh` | `2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07` | **отсутствовал в прежнем снапшоте** | да | Deploy-команда + smoke-test, задокументированный вызов `gcloud functions deploy` (не мусор — не `.bak`, не разовый патч, не кэш) |
+| `.DS_Store` | — | — | **нет** | macOS filesystem-мусор, случайно попавший в архив при упаковке |
+| `fetch_demands.py.bak` | — | — | **нет** | резервная копия, класс `ADR-040` |
+| `fetch_purchases.py.bak` | — | — | **нет** | резервная копия, класс `ADR-040` |
+| `fetch_returns.py.bak` | — | — | **нет** | резервная копия, класс `ADR-040` |
+| `patch_code.py` | — | — | **нет** | разовый patch-скрипт (правит `fetch_purchases.py`/`bq_ops.py` на месте, добавляет `order_name`) — тот же класс, что `patch_main_finance.py` у `cf-finance` (исключён там же основанием, `ADR-040`) |
+| `patch_timeout.py` | — | — | **нет** | разовый patch-скрипт (правит `timeout=30→90` в `helpers.py` на месте) — тот же класс |
+| `src.zip` | — | — | **нет** | самореференциальный вложенный архив-остаток упаковки (11 файлов, датирован смесью 2026-05-06…2026-06-03), тот же класс аномалии, что три вложенных zip у `cf-dq` (`reference/code/cf-dq/MANIFEST.md §Известная аномалия`) — не исполняется рантаймом, оставлен как найден в архиве облака, не переносится в seed |
+
+**Отличие `patch_dq.py` от `patch_code.py`/`patch_timeout.py`:** `patch_dq.py` у `cf-dq` включён в seed
+этой же сессией (см. `reference/code/cf-dq/MANIFEST.md`) как **провенанс уже применённого T-1-фикса**,
+явно опознанный отдельным discovery (`DQ-SOURCE-CAPTURE`, `reference/dq_source_capture_2026-08-02.md §6`).
+Для `patch_code.py`/`patch_timeout.py` cf-facts такого документированного статуса провенанса нет —
+это неотличимо от разового рабочего скрипта правки на месте, поэтому применено правило по умолчанию
+(`ADR-040`, «разовые patch-скрипты» = мусор), не исключение.
+
+## Итог по критерию приёмки
+
+Снята точка входа (`main.py`) и все прямые зависимости (`bq_ops.py`, `config.py`, `fetch_byvariant.py`,
+`fetch_demands.py`, `fetch_purchases.py`, `fetch_returns.py`, `helpers.py`, `requirements.txt`) плюс
+deploy-документация (`deploy_and_workflow.sh`). sha256 — прямой с диска после распаковки, не
+транскрипция. Способ снятия — **прямой** (`gcloud functions describe` без `403` в этой попытке), архив
+скачан с закреплённым `generation`. Мусор (`.DS_Store`, три `.bak`, два разовых patch-скрипта,
+самореференциальный `src.zip`) в seed не включён, перечислен полностью выше.

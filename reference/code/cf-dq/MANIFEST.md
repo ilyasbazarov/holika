@@ -58,3 +58,23 @@ sha256 всех пяти файлов посчитан напрямую с ди�
 Снята вся точка входа (`main.py`) и её прямые зависимости (`helpers.py`, `config.py`, `requirements.txt`)
 плюс патч-скрипт (`patch_dq.py`), задокументированный отдельно. sha256 — прямой с диска, не транскрипция.
 Способ снятия — **прямой** (`gcloud functions describe` без `403`), обходной путь не понадобился.
+
+## Переподтверждение (`CODE-REPO-SEED-REST`, 2026-08-02T20:50:05Z)
+
+Свежий съём тем же прямым методом (`gcloud functions describe cf-dq --gen2` →
+`gcloud storage cp <storageSource>#<generation>`), лог —
+`reference/_scratch_CODE-REPO-SEED-REST_2026-08-03/step1_run.log`. Ревизия и generation те же
+(`cf-dq-00007-hot`, `1781780276907576`). Все 5 sha256 из таблицы выше **совпали побайтово** со свежим
+съёмом — снапшот подтверждён, файлы не переписывались:
+
+| Файл | sha256 (свежий съём) | Совпало |
+|---|---|---|
+| `main.py` | `9693010ae04cd14859b7ed53bba25fa28cbf1962a9b127c012a75d521d86ea09` | да |
+| `helpers.py` | `0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146` | да |
+| `config.py` | `7a818364c78fdf21cb32d8ce52d54da0972a6de511d1f6023fb8ea812fc543b6` | да |
+| `requirements.txt` | `587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516` | да |
+| `patch_dq.py` | `bb1bc968b81573431c5f7c912539918d51d1ee18cd34b040a109ccf213eeb22a` | да |
+
+Три вложенных самореференциальных архива (`src.zip`, `function-source.zip`, `function-source-patched.zip`,
+раздел «Известная аномалия» выше) присутствуют в архиве без изменений — не входят в seed этой сессией
+по той же причине, что и раньше.
