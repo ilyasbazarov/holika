@@ -1,0 +1,332 @@
+=== date -u (start) ===
+Sun Aug  2 13:43:48 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== ВСЕ задания за 24 часа с целью fact_sales_staging (hourly step_facts) ===
+[
+  {
+    "creation_time": "2026-08-01 14:02:07", 
+    "end_time": "2026-08-01 14:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ccc83afc-01b4-4738-a99a-6ffb219ed373", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 15:02:01", 
+    "end_time": "2026-08-01 15:02:02", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ded5fe16-9cc6-480e-bb57-9619edc28925", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 16:02:11", 
+    "end_time": "2026-08-01 16:02:12", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "bd334be3-39a7-484d-a28a-90d10d8d1da4", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 17:02:08", 
+    "end_time": "2026-08-01 17:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "a7ee087b-232b-4231-a391-b6768a399247", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 18:01:56", 
+    "end_time": "2026-08-01 18:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "3e58cfe6-bd12-4ae3-ac91-2551d8b606b7", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 19:02:07", 
+    "end_time": "2026-08-01 19:02:08", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "73719e0f-2e41-4730-84ff-b32a1daa19a0", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 20:02:11", 
+    "end_time": "2026-08-01 20:02:11", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "274b4e5d-f57e-44c7-a4c5-20b2d2edaeee", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 21:02:05", 
+    "end_time": "2026-08-01 21:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b151dd27-b7c6-4270-8379-e752917c9a74", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 22:02:09", 
+    "end_time": "2026-08-01 22:02:10", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "ca30b812-b8c8-490c-94fc-3902c2bf141e", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 23:02:01", 
+    "end_time": "2026-08-01 23:02:02", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "9fe5b09c-dc79-4734-bcf4-79499cec86f4", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 00:01:56", 
+    "end_time": "2026-08-02 00:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "62070fd5-e19f-4707-9edd-f25d1480d990", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 01:02:01", 
+    "end_time": "2026-08-02 01:02:02", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "f70457df-7c62-426a-8826-aec072ccf296", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 01:08:35", 
+    "end_time": "2026-08-02 01:08:36", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "0c0444ff-df33-490a-a8da-b124121ab8d2", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 02:02:10", 
+    "end_time": "2026-08-02 02:02:11", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "e2c740f7-3f64-439e-9cee-9bbf4c53994f", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 03:02:08", 
+    "end_time": "2026-08-02 03:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "dbf93384-b7a5-427c-b117-0c18f819d486", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 04:02:25", 
+    "end_time": "2026-08-02 04:02:26", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "0b772b88-a0bf-4675-b17e-9d074cd85975", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 05:02:05", 
+    "end_time": "2026-08-02 05:02:06", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "6f230038-0dc8-4fdb-8b41-41d13cdd2150", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 06:02:23", 
+    "end_time": "2026-08-02 06:02:24", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8cec3919-bc60-46e9-b47b-5c12d2af015d", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 07:02:13", 
+    "end_time": "2026-08-02 07:02:14", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b32a0f04-d084-4281-a3d5-d3294e71886f", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 08:01:57", 
+    "end_time": "2026-08-02 08:01:57", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "b4c0d9ae-6c9c-4e29-8be4-0f80eeb8e41f", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 09:02:17", 
+    "end_time": "2026-08-02 09:02:17", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7a2cde11-f307-4cc9-bdab-a9c00dad6548", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 10:02:01", 
+    "end_time": "2026-08-02 10:02:02", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "379f4ed9-085f-4634-8058-b11bc7d27a8f", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 11:02:12", 
+    "end_time": "2026-08-02 11:02:12", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "1a7c9e74-8fc4-46fe-852b-b3b75b374653", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 12:02:22", 
+    "end_time": "2026-08-02 12:02:23", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "6094e248-7217-4821-ad9f-eee271adb1b0", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:02:08", 
+    "end_time": "2026-08-02 13:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8444c7d3-2448-41b2-adf2-89e8baf101e1", 
+    "state": "DONE"
+  }
+]
+=== ВСЕ задания за 24 часа с целью fact_sales_profit (promote) — успешные и ошибочные ===
+[
+  {
+    "creation_time": "2026-08-01 14:02:13", 
+    "end_time": "2026-08-01 14:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "7816a01f-01b1-4c23-9685-328a69a32bb9", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 15:02:08", 
+    "end_time": "2026-08-01 15:02:10", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8e2faeb5-3a6b-48c2-994c-091b7d035010", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 16:02:17", 
+    "end_time": "2026-08-01 16:02:18", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "eaeaf6df-fea0-43c8-9830-3cf266012f4a", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }, 
+  {
+    "creation_time": "2026-08-01 17:02:14", 
+    "end_time": "2026-08-01 17:02:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d849b7a2-c01c-4b55-b687-108444a3831a", 
+    "state": "DONE", 
+    "statement_type": "MERGE"
+  }
+]
+=== ВСЕ задания за 24 часа с целью fact_purchases — успешные и ошибочные ===
+[
+  {
+    "creation_time": "2026-08-01 14:05:26", 
+    "end_time": "2026-08-01 14:05:29", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "c72be7db-8980-42f5-a378-dffb75ea01c8", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-08-01 15:05:13", 
+    "end_time": "2026-08-01 15:05:15", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "78f9db26-0047-4c2f-9317-8027d3498bc6", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-08-01 16:05:33", 
+    "end_time": "2026-08-01 16:05:35", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "c1e57cdc-9980-403e-bc4f-bc370471085d", 
+    "state": "DONE", 
+    "statement_type": null
+  }, 
+  {
+    "creation_time": "2026-08-01 17:05:06", 
+    "end_time": "2026-08-01 17:05:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "d72b7f37-7426-4e82-9bd6-b7e3df9a1421", 
+    "state": "DONE", 
+    "statement_type": null
+  }
+]
+=== Любые задания за 24ч с ЛЮБОЙ ошибкой (error_result непусто), region asia-east1 ===
+[
+  {
+    "creation_time": "2026-08-01 20:50:48", 
+    "dest_table": null, 
+    "error_message": "Unrecognized name: demand_id at [2:24]", 
+    "error_reason": "invalidQuery", 
+    "job_id": "bqjob_r61d7de176330ae17_0000019fbf17fc18_1"
+  }, 
+  {
+    "creation_time": "2026-08-01 20:50:50", 
+    "dest_table": null, 
+    "error_message": "Unrecognized name: demand_id at [1:8]", 
+    "error_reason": "invalidQuery", 
+    "job_id": "bqjob_r66411fe185cc69f4_0000019fbf1803e2_1"
+  }, 
+  {
+    "creation_time": "2026-08-01 20:50:52", 
+    "dest_table": null, 
+    "error_message": "Unrecognized name: demand_id at [2:24]", 
+    "error_reason": "invalidQuery", 
+    "job_id": "bqjob_r4e00b14f4f73b15_0000019fbf180aa9_1"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:42:49", 
+    "dest_table": null, 
+    "error_message": "Syntax error: Unexpected keyword ROWS at [3:75]", 
+    "error_reason": "invalidQuery", 
+    "job_id": "bqjob_r1e325974af71668b_0000019fc2b681cc_1"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 13:44:00 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

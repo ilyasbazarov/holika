@@ -1,0 +1,78 @@
+=== date -u (start) ===
+Sun Aug  2 13:48:11 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Cloud Logging: последний (13:00Z) отказ hourly — DQ детали дословно ===
+[
+  {
+    "insertId": "1gi6zckd356p",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T13:00:02Z",
+      "start": {
+        "argument": "{}"
+      },
+      "state": "ACTIVE"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "d022a76a-a81f-40b7-b997-86502f7f7482",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T13:00:03.480996414Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-02T13:00:02.686703501Z"
+  },
+  {
+    "insertId": "1y802xxc2qx",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T13:02:14Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 109: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 109"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "d022a76a-a81f-40b7-b997-86502f7f7482",
+      "workflows.googleapis.com/revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T13:02:15.173767075Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T13:02:14.544209043Z"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 13:48:45 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

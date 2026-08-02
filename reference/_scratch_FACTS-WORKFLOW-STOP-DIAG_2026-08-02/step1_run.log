@@ -1,0 +1,225 @@
+=== date -u (start) ===
+Sun Aug  2 13:43:07 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== последнее пополнение трёх таблиц (BQ, region asia-east1) ===
+Waiting on bqjob_r509c5b8ca2b589e3_0000019fc2b6d34f_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r509c5b8ca2b589e3_0000019fc2b6d34f_1 ... (0s) Current status: DONE   
+[
+  {
+    "last_loaded": "2026-07-19 01:11:56", 
+    "row_count": "24", 
+    "tbl": "fact_returns"
+  }, 
+  {
+    "last_loaded": "2026-08-01 17:02:16", 
+    "row_count": "4398", 
+    "tbl": "fact_purchases"
+  }, 
+  {
+    "last_loaded": "2026-08-01 17:02:14", 
+    "row_count": "36986", 
+    "tbl": "fact_sales_profit"
+  }
+]
+=== задания MERGE/LOAD с целью этих трёх таблиц за последние 2 часа (region asia-east1) ===
+[
+  {
+    "creation_time": "2026-08-02 13:02:08", 
+    "dest_table": "fact_sales_staging", 
+    "end_time": "2026-08-02 13:02:09", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "8444c7d3-2448-41b2-adf2-89e8baf101e1", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 12:02:22", 
+    "dest_table": "fact_sales_staging", 
+    "end_time": "2026-08-02 12:02:23", 
+    "error_message": null, 
+    "error_reason": null, 
+    "job_id": "6094e248-7217-4821-ad9f-eee271adb1b0", 
+    "state": "DONE"
+  }
+]
+=== все задания (любая цель) за последний час, для проверки "жив ли ETL вообще прямо сейчас" ===
+[
+  {
+    "creation_time": "2026-08-02 13:43:16", 
+    "dest_table": "anonb1f109e8_5de0_45b7_8d95_f88e9bf891d2", 
+    "job_id": "bqjob_r3a1e781f5a8b2d3c_0000019fc2b6ea3a_1", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:43:10", 
+    "dest_table": "anonb6879086b276ba76cdfee49fdfdab462c2ce508647d5ad7fc4066ec5e35aac99", 
+    "job_id": "bqjob_r509c5b8ca2b589e3_0000019fc2b6d34f_1", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:42:49", 
+    "dest_table": null, 
+    "job_id": "bqjob_r1e325974af71668b_0000019fc2b681cc_1", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:34:02", 
+    "dest_table": "sales_overview", 
+    "job_id": "scheduled_query_6a7003af-0000-21c9-b690-582429adaa34", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:09:01", 
+    "dest_table": "in_transit", 
+    "job_id": "scheduled_query_6a70b941-0000-2afd-9792-582429aa3818", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:09:01", 
+    "dest_table": "supplier_price_history", 
+    "job_id": "scheduled_query_6a6ef4d6-0000-2646-a6fe-883d24f4f310", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:02:13", 
+    "dest_table": "anond68ad92225fdfb92169a592bf4eb39fafb534e5d4af61598b911bb646f5f0c53", 
+    "job_id": "a7fd01ac-ea73-4d51-a032-132af98444e3", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:02:13", 
+    "dest_table": "anon8cc39c21_033e_44a0_894f_b59b36c44c78", 
+    "job_id": "2a1f9050-b5c9-416f-b2e7-85a19653fc80", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:02:12", 
+    "dest_table": "anone9b4dfff_197c_4e93_9646_91a35845d898", 
+    "job_id": "ff3aac6d-c644-4a61-a161-4575b63a4e60", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:02:12", 
+    "dest_table": "anonadd70a32e526ec097349a1b7e225692997b9c662fb66479605000461feb0edc4", 
+    "job_id": "95dfc3f0-6803-463d-bad2-cb519c473ff2", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:02:11", 
+    "dest_table": "anon9c1355c6_2dcc_40cc_b104_8cba759a72c8", 
+    "job_id": "cd905d34-c9cb-4818-998b-f7ba675bdbc7", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:02:11", 
+    "dest_table": "anonc5bd1572_c4df_474b_aa06_d00d1f2aa6e1", 
+    "job_id": "3950f952-35f3-4fdf-b872-20d793594652", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:02:10", 
+    "dest_table": "anone8b52035cac89692032540848767e905bdd20e83083d7da7ab85a2343ba598ff", 
+    "job_id": "549a6d82-0da8-4d25-ab6a-3964c3fda863", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:02:08", 
+    "dest_table": "fact_sales_staging", 
+    "job_id": "8444c7d3-2448-41b2-adf2-89e8baf101e1", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:01:07", 
+    "dest_table": "anon52a81f907180ece42555560bc6260ff7b8c6ddd80481ba8f3105a3648167d946", 
+    "job_id": "0dc110f9-7305-49a3-9b9f-e0afb8646629", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:01:04", 
+    "dest_table": "dim_employees", 
+    "job_id": "3d452c3e-59c3-4947-ae7a-dc2e83fd01dd", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:01:01", 
+    "dest_table": "employees_staging", 
+    "job_id": "ebb27026-1b41-40a3-a8de-73613c91416c", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:00:59", 
+    "dest_table": "dim_counterparties", 
+    "job_id": "cad8d30c-bcd8-4b74-b1f8-85c53066f0b0", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:00:58", 
+    "dest_table": "dim_counterparties", 
+    "job_id": "2e39a95c-5751-4603-90a6-ad506d19e87d", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:00:56", 
+    "dest_table": "dim_counterparties", 
+    "job_id": "1ce96de7-2e24-4419-8c62-973d75c96a18", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:00:54", 
+    "dest_table": "counterparties_staging", 
+    "job_id": "7a32c538-719f-4f12-bcf7-a0af8f665eea", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:00:38", 
+    "dest_table": "anonacc2ba45_b765_4d3d_bfd2_723fdd09cc2c", 
+    "job_id": "1ecab077-8bac-45d6-84ee-04c4846fbbdd", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:00:36", 
+    "dest_table": "dim_products", 
+    "job_id": "4d5e1f3f-2057-4446-9b40-c23d0d5196c6", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:00:34", 
+    "dest_table": "products_staging", 
+    "job_id": "468ce6ce-0aa2-4b1c-992b-7ecbde651547", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:00:04", 
+    "dest_table": "anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded", 
+    "job_id": "753afcdc-9f31-4d47-8445-45f7fc8b8549", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:00:03", 
+    "dest_table": "anon99305b3d_a107_4059_a5ee_400b4e39b7dd", 
+    "job_id": "d28a8434-a778-49f1-a68f-2ecfde01869a", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-02 13:00:03", 
+    "dest_table": "anonac3bcab7692a7614295d02fe167c5c482fc8411ff140079935d3b96241a15ded", 
+    "job_id": "4e6be9b1-f6db-425b-aba7-0ee530b1398e", 
+    "state": "DONE"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 13:43:20 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

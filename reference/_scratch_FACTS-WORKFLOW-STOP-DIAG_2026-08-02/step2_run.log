@@ -1,0 +1,966 @@
+=== date -u (start) ===
+Sun Aug  2 13:44:26 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Cloud Scheduler jobs (region asia-east1) ===
+[
+  {
+    "attemptDeadline": "30s",
+    "httpTarget": {
+      "body": "eyJhcmd1bWVudCI6Int9In0=",
+      "headers": {
+        "Content-Type": "application/octet-stream",
+        "User-Agent": "Google-Cloud-Scheduler"
+      },
+      "httpMethod": "POST",
+      "oauthToken": {
+        "scope": "https://www.googleapis.com/auth/cloud-platform",
+        "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+      },
+      "uri": "https://workflowexecutions.googleapis.com/v1/projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-hourly/executions"
+    },
+    "lastAttemptTime": "2026-08-02T13:00:02.534725Z",
+    "name": "projects/msklad-bi-prod/locations/asia-east1/jobs/msklad-pipeline-hourly",
+    "retryConfig": {
+      "maxBackoffDuration": "3600s",
+      "maxDoublings": 5,
+      "maxRetryDuration": "0s",
+      "minBackoffDuration": "300s",
+      "retryCount": 1
+    },
+    "schedule": "0 * * * *",
+    "scheduleTime": "2026-08-02T14:00:01.786471Z",
+    "state": "ENABLED",
+    "status": {},
+    "timeZone": "UTC",
+    "userUpdateTime": "2026-07-30T10:04:58.444558Z"
+  },
+  {
+    "attemptDeadline": "180s",
+    "httpTarget": {
+      "body": "e30=",
+      "headers": {
+        "Content-Type": "application/octet-stream",
+        "User-Agent": "Google-Cloud-Scheduler"
+      },
+      "httpMethod": "POST",
+      "oidcToken": {
+        "audience": "https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-inventory",
+        "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+      },
+      "uri": "https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-inventory"
+    },
+    "lastAttemptTime": "2026-08-01T21:00:00.869316Z",
+    "name": "projects/msklad-bi-prod/locations/asia-east1/jobs/cf-inventory-trigger",
+    "retryConfig": {
+      "maxBackoffDuration": "3600s",
+      "maxDoublings": 5,
+      "maxRetryDuration": "0s",
+      "minBackoffDuration": "5s"
+    },
+    "schedule": "0 21 * * *",
+    "scheduleTime": "2026-08-02T21:00:00.336768Z",
+    "state": "ENABLED",
+    "status": {},
+    "timeZone": "UTC",
+    "userUpdateTime": "2026-07-30T10:04:58.533804Z"
+  },
+  {
+    "attemptDeadline": "1800s",
+    "httpTarget": {
+      "body": "e30=",
+      "headers": {
+        "Content-Type": "application/json",
+        "User-Agent": "Google-Cloud-Scheduler"
+      },
+      "httpMethod": "POST",
+      "oidcToken": {
+        "audience": "https://cf-loss-commission-xw5u2boozq-de.a.run.app/",
+        "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+      },
+      "uri": "https://cf-loss-commission-xw5u2boozq-de.a.run.app/"
+    },
+    "lastAttemptTime": "2026-08-01T21:00:03.872929Z",
+    "name": "projects/msklad-bi-prod/locations/asia-east1/jobs/loss-commission-daily-update",
+    "retryConfig": {
+      "maxBackoffDuration": "3600s",
+      "maxDoublings": 5,
+      "maxRetryDuration": "0s",
+      "minBackoffDuration": "5s"
+    },
+    "schedule": "0 3 * * *",
+    "scheduleTime": "2026-08-02T21:00:03.108831Z",
+    "state": "ENABLED",
+    "status": {},
+    "timeZone": "Asia/Bishkek",
+    "userUpdateTime": "2026-07-30T10:04:58.626142Z"
+  },
+  {
+    "attemptDeadline": "1800s",
+    "httpTarget": {
+      "headers": {
+        "User-Agent": "Google-Cloud-Scheduler"
+      },
+      "httpMethod": "POST",
+      "oidcToken": {
+        "audience": "https://cf-finance-xw5u2boozq-de.a.run.app",
+        "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+      },
+      "uri": "https://cf-finance-xw5u2boozq-de.a.run.app/"
+    },
+    "lastAttemptTime": "2026-08-01T21:00:05.671262Z",
+    "name": "projects/msklad-bi-prod/locations/asia-east1/jobs/finance-daily-update",
+    "retryConfig": {
+      "maxBackoffDuration": "3600s",
+      "maxDoublings": 5,
+      "maxRetryDuration": "0s",
+      "minBackoffDuration": "5s"
+    },
+    "schedule": "0 3 * * *",
+    "scheduleTime": "2026-08-02T21:00:04.951729Z",
+    "state": "ENABLED",
+    "status": {},
+    "timeZone": "Asia/Bishkek",
+    "userUpdateTime": "2026-07-30T10:04:58.779916Z"
+  },
+  {
+    "attemptDeadline": "30s",
+    "httpTarget": {
+      "body": "eyJhcmd1bWVudCI6Int9In0=",
+      "headers": {
+        "Content-Type": "application/octet-stream",
+        "User-Agent": "Google-Cloud-Scheduler"
+      },
+      "httpMethod": "POST",
+      "oauthToken": {
+        "scope": "https://www.googleapis.com/auth/cloud-platform",
+        "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+      },
+      "uri": "https://workflowexecutions.googleapis.com/v1/projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-weekly/executions"
+    },
+    "lastAttemptTime": "2026-08-02T01:00:00.785111Z",
+    "name": "projects/msklad-bi-prod/locations/asia-east1/jobs/msklad-pipeline-weekly",
+    "retryConfig": {
+      "maxBackoffDuration": "3600s",
+      "maxDoublings": 5,
+      "maxRetryDuration": "0s",
+      "minBackoffDuration": "5s"
+    },
+    "schedule": "0 1 * * 0",
+    "scheduleTime": "2026-08-09T01:00:00.294330Z",
+    "state": "ENABLED",
+    "status": {},
+    "timeZone": "UTC",
+    "userUpdateTime": "2026-07-30T10:04:58.590041Z"
+  }
+]
+=== Scheduler job describe: msklad-pipeline-hourly ===
+{
+  "attemptDeadline": "30s",
+  "httpTarget": {
+    "body": "eyJhcmd1bWVudCI6Int9In0=",
+    "headers": {
+      "Content-Type": "application/octet-stream",
+      "User-Agent": "Google-Cloud-Scheduler"
+    },
+    "httpMethod": "POST",
+    "oauthToken": {
+      "scope": "https://www.googleapis.com/auth/cloud-platform",
+      "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+    },
+    "uri": "https://workflowexecutions.googleapis.com/v1/projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-hourly/executions"
+  },
+  "lastAttemptTime": "2026-08-02T13:00:02.534725Z",
+  "name": "projects/msklad-bi-prod/locations/asia-east1/jobs/msklad-pipeline-hourly",
+  "retryConfig": {
+    "maxBackoffDuration": "3600s",
+    "maxDoublings": 5,
+    "maxRetryDuration": "0s",
+    "minBackoffDuration": "300s",
+    "retryCount": 1
+  },
+  "schedule": "0 * * * *",
+  "scheduleTime": "2026-08-02T14:00:01.786471Z",
+  "state": "ENABLED",
+  "status": {},
+  "timeZone": "UTC",
+  "userUpdateTime": "2026-07-30T10:04:58.444558Z"
+}
+=== Scheduler job describe: msklad-pipeline-weekly ===
+{
+  "attemptDeadline": "30s",
+  "httpTarget": {
+    "body": "eyJhcmd1bWVudCI6Int9In0=",
+    "headers": {
+      "Content-Type": "application/octet-stream",
+      "User-Agent": "Google-Cloud-Scheduler"
+    },
+    "httpMethod": "POST",
+    "oauthToken": {
+      "scope": "https://www.googleapis.com/auth/cloud-platform",
+      "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+    },
+    "uri": "https://workflowexecutions.googleapis.com/v1/projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-weekly/executions"
+  },
+  "lastAttemptTime": "2026-08-02T01:00:00.785111Z",
+  "name": "projects/msklad-bi-prod/locations/asia-east1/jobs/msklad-pipeline-weekly",
+  "retryConfig": {
+    "maxBackoffDuration": "3600s",
+    "maxDoublings": 5,
+    "maxRetryDuration": "0s",
+    "minBackoffDuration": "5s"
+  },
+  "schedule": "0 1 * * 0",
+  "scheduleTime": "2026-08-09T01:00:00.294330Z",
+  "state": "ENABLED",
+  "status": {},
+  "timeZone": "UTC",
+  "userUpdateTime": "2026-07-30T10:04:58.590041Z"
+}
+=== Cloud Workflows list (region asia-east1) ===
+[
+  {
+    "createTime": "2026-05-08T06:05:55.944175502Z",
+    "name": "projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-hourly",
+    "revisionCreateTime": "2026-05-18T13:22:43.937784246Z",
+    "revisionId": "000003-f02",
+    "serviceAccount": "projects/msklad-bi-prod/serviceAccounts/etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+    "sourceContents": "main:\n  params: [args]\n  steps:\n    - init:\n        assign:\n          - run_id: ${sys.now()}\n          - cf_dim:       \"https://cf-dim-xw5u2boozq-de.a.run.app\"\n          - cf_fx:        \"https://cf-fx-xw5u2boozq-de.a.run.app\"\n          - cf_facts:     \"https://cf-facts-xw5u2boozq-de.a.run.app\"\n          - cf_dq:        \"https://cf-dq-xw5u2boozq-de.a.run.app\"\n    - step_dim:\n        try:\n          call: http.post\n          args:\n            url: ${cf_dim}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 540\n          result: dim_result\n        except:\n          as: e\n          steps:\n            - log_dim_error:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_dim FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_dim:\n                raise: ${e}\n    - step_fx:\n        try:\n          call: http.post\n          args:\n            url: ${cf_fx}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 180\n          result: fx_result\n        except:\n          as: e\n          steps:\n            - log_fx_error:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_fx FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_fx:\n                raise: ${e}\n    - step_facts:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"hourly\"\n            timeout: 600\n          result: facts_result\n        except:\n          as: e\n          steps:\n            - log_facts_error:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_facts FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_facts:\n                raise: ${e}\n    - step_dq:\n        try:\n          call: http.post\n          args:\n            url: ${cf_dq}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 120\n          result: dq_result\n        except:\n          as: e\n          steps:\n            - log_dq_error:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_dq CRASHED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: CRITICAL\n            - raise_dq:\n                raise: ${e}\n    - parse_dq_result:\n        assign:\n          - dq_parsed: ${json.decode(dq_result.body)}\n    - check_dq:\n        switch:\n          - condition: ${not(dq_parsed.passed)}\n            steps:\n              - log_dq_failed:\n                  call: sys.log\n                  args:\n                    text: ${\"[HOURLY] DQ Gate FAILED run_id=\" + run_id + \" details=\" + json.encode_to_string(dq_parsed)}\n                    severity: CRITICAL\n              - raise_dq_failed:\n                  raise: \"DQ Gate failed — promote blocked\"\n    - step_promote:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"promote\"\n              window_days: 7\n            timeout: 300\n          result: promote_result\n        except:\n          as: e\n          steps:\n            - log_promote_error:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_promote FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_promote:\n                raise: ${e}\n    - step_purchases:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"purchases\"\n              window_days: 90\n            timeout: 300\n          result: purchases_result\n        except:\n          as: e\n          steps:\n            - log_purchases_warning:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_purchases FAILED (non-blocking) run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: WARNING\n    - done:\n        steps:\n          - log_success:\n              call: sys.log\n              args:\n                text: ${\"[HOURLY] Pipeline COMPLETED run_id=\" + run_id}\n                severity: INFO\n          - return_result:\n              return: ${promote_result.body}\n",
+    "state": "ACTIVE",
+    "updateTime": "2026-07-30T10:04:58.248189607Z"
+  },
+  {
+    "createTime": "2026-05-08T06:06:20.438282639Z",
+    "name": "projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-weekly",
+    "revisionCreateTime": "2026-05-11T07:41:00.886980408Z",
+    "revisionId": "000003-fa9",
+    "serviceAccount": "projects/msklad-bi-prod/serviceAccounts/etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+    "sourceContents": "main:\n  params: [args]\n  steps:\n\n    # ── INIT ───────────────────────────────────────────────────────────────────\n    - init:\n        assign:\n          - run_id: ${sys.now()}\n          - cf_dim:       \"https://cf-dim-xw5u2boozq-de.a.run.app\"\n          - cf_fx:        \"https://cf-fx-xw5u2boozq-de.a.run.app\"\n          - cf_facts:     \"https://cf-facts-xw5u2boozq-de.a.run.app\"\n          - cf_dq:        \"https://cf-dq-xw5u2boozq-de.a.run.app\"\n\n    # ── STEP 1: обновление справочников ───────────────────────────────────────\n    - step_dim:\n        try:\n          call: http.post\n          args:\n            url: ${cf_dim}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 540\n          result: dim_result\n        except:\n          as: e\n          steps:\n            - log_dim_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_dim FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_dim:\n                raise: ${e}\n\n    # ── STEP 2: курсы НБКР ────────────────────────────────────────────────────\n    - step_fx:\n        try:\n          call: http.post\n          args:\n            url: ${cf_fx}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 180\n          result: fx_result\n        except:\n          as: e\n          steps:\n            - log_fx_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_fx FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_fx:\n                raise: ${e}\n\n    # ── STEP 3: загрузка отгрузок + byvariant (90d rolling) ───────────────────\n    - step_facts:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"weekly\"\n            timeout: 600\n          result: facts_result\n        except:\n          as: e\n          steps:\n            - log_facts_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_facts FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_facts:\n                raise: ${e}\n\n    # ── STEP 4: DQ Gate ───────────────────────────────────────────────────────\n    - step_dq:\n        try:\n          call: http.post\n          args:\n            url: ${cf_dq}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 120\n          result: dq_result\n        except:\n          as: e\n          steps:\n            - log_dq_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_dq CRASHED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: CRITICAL\n            - raise_dq:\n                raise: ${e}\n\n    # ── STEP 5: decode DQ response (Л-02: Workflows не авто-парсит JSON body) ─\n    - parse_dq_result:\n        assign:\n          - dq_parsed: ${json.decode(dq_result.body)}\n\n    # ── STEP 6: проверка результата DQ ────────────────────────────────────────\n    - check_dq:\n        switch:\n          - condition: ${not(dq_parsed.passed)}\n            steps:\n              - log_dq_failed:\n                  call: sys.log\n                  args:\n                    text: ${\"[WEEKLY] DQ Gate FAILED run_id=\" + run_id + \" details=\" + json.encode_to_string(dq_parsed)}\n                    severity: CRITICAL\n              - raise_dq_failed:\n                  raise: \"DQ Gate failed — promote blocked\"\n\n    # ── STEP 7: promote staging → core (90d window) ───────────────────────────\n    - step_promote:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"promote\"\n              window_days: 90\n            timeout: 540\n          result: promote_result\n        except:\n          as: e\n          steps:\n            - log_promote_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_promote FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_promote:\n                raise: ${e}\n\n    # ── STEP 8: закупки — полный refresh ──────────────────────────────────────\n    # WRITE_TRUNCATE: ~173 заказа × ~30 позиций. Статусы (В пути / Прибыл)\n    # захватываются на каждом прогоне. Не блокирует promote при ошибке.\n    - step_purchases:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"purchases\"\n            timeout: 300\n          result: purchases_result\n        except:\n          as: e\n          steps:\n            - log_purchases_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_purchases FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_purchases:\n                raise: ${e}\n\n    # ── STEP 9: возвраты покупателей (90d rolling) ────────────────────────────\n    # После promote — независимая таблица, вне DQ-цепочки продаж.\n    # 0 записей за окно — не ошибка (early return guard в CF-Facts).\n    - step_returns:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"returns\"\n              window_days: 90\n            timeout: 300\n          result: returns_result\n        except:\n          as: e\n          steps:\n            - log_returns_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_returns FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_returns:\n                raise: ${e}\n\n    # ── DONE ──────────────────────────────────────────────────────────────────\n    - done:\n        steps:\n          - log_success:\n              call: sys.log\n              args:\n                text: ${\"[WEEKLY] Pipeline COMPLETED run_id=\" + run_id}\n                severity: INFO\n          - return_result:\n              return: ${promote_result.body}",
+    "state": "ACTIVE",
+    "updateTime": "2026-07-30T10:04:58.556441498Z"
+  }
+]
+=== Workflow describe: msklad-pipeline-hourly ===
+{
+  "createTime": "2026-05-08T06:05:55.944175502Z",
+  "name": "projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-hourly",
+  "revisionCreateTime": "2026-05-18T13:22:43.937784246Z",
+  "revisionId": "000003-f02",
+  "serviceAccount": "projects/msklad-bi-prod/serviceAccounts/etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+  "sourceContents": "main:\n  params: [args]\n  steps:\n    - init:\n        assign:\n          - run_id: ${sys.now()}\n          - cf_dim:       \"https://cf-dim-xw5u2boozq-de.a.run.app\"\n          - cf_fx:        \"https://cf-fx-xw5u2boozq-de.a.run.app\"\n          - cf_facts:     \"https://cf-facts-xw5u2boozq-de.a.run.app\"\n          - cf_dq:        \"https://cf-dq-xw5u2boozq-de.a.run.app\"\n    - step_dim:\n        try:\n          call: http.post\n          args:\n            url: ${cf_dim}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 540\n          result: dim_result\n        except:\n          as: e\n          steps:\n            - log_dim_error:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_dim FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_dim:\n                raise: ${e}\n    - step_fx:\n        try:\n          call: http.post\n          args:\n            url: ${cf_fx}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 180\n          result: fx_result\n        except:\n          as: e\n          steps:\n            - log_fx_error:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_fx FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_fx:\n                raise: ${e}\n    - step_facts:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"hourly\"\n            timeout: 600\n          result: facts_result\n        except:\n          as: e\n          steps:\n            - log_facts_error:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_facts FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_facts:\n                raise: ${e}\n    - step_dq:\n        try:\n          call: http.post\n          args:\n            url: ${cf_dq}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 120\n          result: dq_result\n        except:\n          as: e\n          steps:\n            - log_dq_error:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_dq CRASHED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: CRITICAL\n            - raise_dq:\n                raise: ${e}\n    - parse_dq_result:\n        assign:\n          - dq_parsed: ${json.decode(dq_result.body)}\n    - check_dq:\n        switch:\n          - condition: ${not(dq_parsed.passed)}\n            steps:\n              - log_dq_failed:\n                  call: sys.log\n                  args:\n                    text: ${\"[HOURLY] DQ Gate FAILED run_id=\" + run_id + \" details=\" + json.encode_to_string(dq_parsed)}\n                    severity: CRITICAL\n              - raise_dq_failed:\n                  raise: \"DQ Gate failed — promote blocked\"\n    - step_promote:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"promote\"\n              window_days: 7\n            timeout: 300\n          result: promote_result\n        except:\n          as: e\n          steps:\n            - log_promote_error:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_promote FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_promote:\n                raise: ${e}\n    - step_purchases:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"purchases\"\n              window_days: 90\n            timeout: 300\n          result: purchases_result\n        except:\n          as: e\n          steps:\n            - log_purchases_warning:\n                call: sys.log\n                args:\n                  text: ${\"[HOURLY] step_purchases FAILED (non-blocking) run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: WARNING\n    - done:\n        steps:\n          - log_success:\n              call: sys.log\n              args:\n                text: ${\"[HOURLY] Pipeline COMPLETED run_id=\" + run_id}\n                severity: INFO\n          - return_result:\n              return: ${promote_result.body}\n",
+  "state": "ACTIVE",
+  "updateTime": "2026-07-30T10:04:58.248189607Z"
+}
+=== Workflow describe: msklad-pipeline-weekly ===
+{
+  "createTime": "2026-05-08T06:06:20.438282639Z",
+  "name": "projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-weekly",
+  "revisionCreateTime": "2026-05-11T07:41:00.886980408Z",
+  "revisionId": "000003-fa9",
+  "serviceAccount": "projects/msklad-bi-prod/serviceAccounts/etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+  "sourceContents": "main:\n  params: [args]\n  steps:\n\n    # ── INIT ───────────────────────────────────────────────────────────────────\n    - init:\n        assign:\n          - run_id: ${sys.now()}\n          - cf_dim:       \"https://cf-dim-xw5u2boozq-de.a.run.app\"\n          - cf_fx:        \"https://cf-fx-xw5u2boozq-de.a.run.app\"\n          - cf_facts:     \"https://cf-facts-xw5u2boozq-de.a.run.app\"\n          - cf_dq:        \"https://cf-dq-xw5u2boozq-de.a.run.app\"\n\n    # ── STEP 1: обновление справочников ───────────────────────────────────────\n    - step_dim:\n        try:\n          call: http.post\n          args:\n            url: ${cf_dim}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 540\n          result: dim_result\n        except:\n          as: e\n          steps:\n            - log_dim_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_dim FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_dim:\n                raise: ${e}\n\n    # ── STEP 2: курсы НБКР ────────────────────────────────────────────────────\n    - step_fx:\n        try:\n          call: http.post\n          args:\n            url: ${cf_fx}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 180\n          result: fx_result\n        except:\n          as: e\n          steps:\n            - log_fx_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_fx FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_fx:\n                raise: ${e}\n\n    # ── STEP 3: загрузка отгрузок + byvariant (90d rolling) ───────────────────\n    - step_facts:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"weekly\"\n            timeout: 600\n          result: facts_result\n        except:\n          as: e\n          steps:\n            - log_facts_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_facts FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_facts:\n                raise: ${e}\n\n    # ── STEP 4: DQ Gate ───────────────────────────────────────────────────────\n    - step_dq:\n        try:\n          call: http.post\n          args:\n            url: ${cf_dq}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n            timeout: 120\n          result: dq_result\n        except:\n          as: e\n          steps:\n            - log_dq_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_dq CRASHED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: CRITICAL\n            - raise_dq:\n                raise: ${e}\n\n    # ── STEP 5: decode DQ response (Л-02: Workflows не авто-парсит JSON body) ─\n    - parse_dq_result:\n        assign:\n          - dq_parsed: ${json.decode(dq_result.body)}\n\n    # ── STEP 6: проверка результата DQ ────────────────────────────────────────\n    - check_dq:\n        switch:\n          - condition: ${not(dq_parsed.passed)}\n            steps:\n              - log_dq_failed:\n                  call: sys.log\n                  args:\n                    text: ${\"[WEEKLY] DQ Gate FAILED run_id=\" + run_id + \" details=\" + json.encode_to_string(dq_parsed)}\n                    severity: CRITICAL\n              - raise_dq_failed:\n                  raise: \"DQ Gate failed — promote blocked\"\n\n    # ── STEP 7: promote staging → core (90d window) ───────────────────────────\n    - step_promote:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"promote\"\n              window_days: 90\n            timeout: 540\n          result: promote_result\n        except:\n          as: e\n          steps:\n            - log_promote_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_promote FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_promote:\n                raise: ${e}\n\n    # ── STEP 8: закупки — полный refresh ──────────────────────────────────────\n    # WRITE_TRUNCATE: ~173 заказа × ~30 позиций. Статусы (В пути / Прибыл)\n    # захватываются на каждом прогоне. Не блокирует promote при ошибке.\n    - step_purchases:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"purchases\"\n            timeout: 300\n          result: purchases_result\n        except:\n          as: e\n          steps:\n            - log_purchases_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_purchases FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_purchases:\n                raise: ${e}\n\n    # ── STEP 9: возвраты покупателей (90d rolling) ────────────────────────────\n    # После promote — независимая таблица, вне DQ-цепочки продаж.\n    # 0 записей за окно — не ошибка (early return guard в CF-Facts).\n    - step_returns:\n        try:\n          call: http.post\n          args:\n            url: ${cf_facts}\n            auth:\n              type: OIDC\n            body:\n              run_id: ${run_id}\n              mode: \"returns\"\n              window_days: 90\n            timeout: 300\n          result: returns_result\n        except:\n          as: e\n          steps:\n            - log_returns_error:\n                call: sys.log\n                args:\n                  text: ${\"[WEEKLY] step_returns FAILED run_id=\" + run_id + \" error=\" + json.encode_to_string(e)}\n                  severity: ERROR\n            - raise_returns:\n                raise: ${e}\n\n    # ── DONE ──────────────────────────────────────────────────────────────────\n    - done:\n        steps:\n          - log_success:\n              call: sys.log\n              args:\n                text: ${\"[WEEKLY] Pipeline COMPLETED run_id=\" + run_id}\n                severity: INFO\n          - return_result:\n              return: ${promote_result.body}",
+  "state": "ACTIVE",
+  "updateTime": "2026-07-30T10:04:58.556441498Z"
+}
+=== Executions: msklad-pipeline-hourly, последние 30 ===
+[
+  {
+    "createTime": "2026-08-02T13:00:02.599715483Z",
+    "duration": "131.933890301s",
+    "endTime": "2026-08-02T13:02:14.533605784Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/d022a76a-a81f-40b7-b997-86502f7f7482",
+    "startTime": "2026-08-02T13:00:02.599715483Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T12:00:02.589471128Z",
+    "duration": "146.439322266s",
+    "endTime": "2026-08-02T12:02:29.028793394Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/e70b753a-b95f-4b9c-97e8-a4ce77c617c5",
+    "startTime": "2026-08-02T12:00:02.589471128Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T11:00:02.305185602Z",
+    "duration": "134.598966006s",
+    "endTime": "2026-08-02T11:02:16.904151608Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/8a71fb9d-ff6e-4f2f-9176-023ddd1dff5c",
+    "startTime": "2026-08-02T11:00:02.305185602Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T10:00:02.691422540Z",
+    "duration": "124.433820728s",
+    "endTime": "2026-08-02T10:02:07.125243268Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/ec87c389-a12e-4c60-907a-1f2b0a37daf4",
+    "startTime": "2026-08-02T10:00:02.691422540Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T09:00:02.642535158Z",
+    "duration": "139.578847149s",
+    "endTime": "2026-08-02T09:02:22.221382307Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/3d33546d-3e0c-47fb-af49-caca2ad2545e",
+    "startTime": "2026-08-02T09:00:02.642535158Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T08:00:02.439667253Z",
+    "duration": "119.772448580s",
+    "endTime": "2026-08-02T08:02:02.212115833Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/7bf2e510-a859-493b-aabb-f3b011ff707a",
+    "startTime": "2026-08-02T08:00:02.439667253Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T07:00:02.701269052Z",
+    "duration": "137.262019624s",
+    "endTime": "2026-08-02T07:02:19.963288676Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/0d872bdc-c3eb-4eaf-b2bb-a2bd5e7e29c2",
+    "startTime": "2026-08-02T07:00:02.701269052Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T06:00:02.662049616Z",
+    "duration": "146.070554110s",
+    "endTime": "2026-08-02T06:02:28.732603726Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/025da3c0-178e-4da0-b54a-98d05ae9c904",
+    "startTime": "2026-08-02T06:00:02.662049616Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T05:00:02.313442668Z",
+    "duration": "128.260309851s",
+    "endTime": "2026-08-02T05:02:10.573752519Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/18bc61a9-73eb-4e4f-b5ea-25d10aa6446b",
+    "startTime": "2026-08-02T05:00:02.313442668Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T04:00:02.603656379Z",
+    "duration": "148.112696211s",
+    "endTime": "2026-08-02T04:02:30.716352590Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/9c260db7-51d2-4deb-a36e-58341eaa0688",
+    "startTime": "2026-08-02T04:00:02.603656379Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T03:00:03.444023849Z",
+    "duration": "129.225287974s",
+    "endTime": "2026-08-02T03:02:12.669311823Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/54801bd2-3ac8-4247-9fa2-1de3dcc65921",
+    "startTime": "2026-08-02T03:00:03.444023849Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T02:00:02.296880740Z",
+    "duration": "133.339256386s",
+    "endTime": "2026-08-02T02:02:15.636137126Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/9ce76a65-c282-4d50-a612-a99ed4efff47",
+    "startTime": "2026-08-02T02:00:02.296880740Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T01:00:02.346377782Z",
+    "duration": "123.409238978s",
+    "endTime": "2026-08-02T01:02:05.755616760Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/9a5916bf-b0fe-4c89-b0f5-789f95fa5dd6",
+    "startTime": "2026-08-02T01:00:02.346377782Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-02T00:00:02.692269380Z",
+    "duration": "118.295184963s",
+    "endTime": "2026-08-02T00:02:00.987454343Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/a03739cf-9a9c-44db-96a5-acfee7f7c0b9",
+    "startTime": "2026-08-02T00:00:02.692269380Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T23:00:02.586992256Z",
+    "duration": "122.638786602s",
+    "endTime": "2026-08-01T23:02:05.225778858Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/a99e26da-b11e-4c57-b52f-8f30de690963",
+    "startTime": "2026-08-01T23:00:02.586992256Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T22:00:02.587877607Z",
+    "duration": "133.071640639s",
+    "endTime": "2026-08-01T22:02:15.659518246Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/58e002bb-9c52-441d-90ea-360125b92a3c",
+    "startTime": "2026-08-01T22:00:02.587877607Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T21:00:02.675713617Z",
+    "duration": "128.118871306s",
+    "endTime": "2026-08-01T21:02:10.794584923Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/9020f71f-7fd1-4ca5-b145-8a1f0cb5b98c",
+    "startTime": "2026-08-01T21:00:02.675713617Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T20:00:02.738813415Z",
+    "duration": "134.679354440s",
+    "endTime": "2026-08-01T20:02:17.418167855Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/ea8aae49-b11e-4f6f-ab7d-ee326514e4f9",
+    "startTime": "2026-08-01T20:00:02.738813415Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T19:00:02.539148622Z",
+    "duration": "131.076083155s",
+    "endTime": "2026-08-01T19:02:13.615231777Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/72199b80-f2ac-404b-a9b3-3397b032ab1d",
+    "startTime": "2026-08-01T19:00:02.539148622Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T18:00:02.638438077Z",
+    "duration": "118.717459097s",
+    "endTime": "2026-08-01T18:02:01.355897174Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/cfee49f6-18cb-40c8-83f1-a07d77737c66",
+    "startTime": "2026-08-01T18:00:02.638438077Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T17:00:02.276963478Z",
+    "duration": "308.173410898s",
+    "endTime": "2026-08-01T17:05:10.450374376Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/bc08b99a-6456-460a-9591-4e0bfab0d0c6",
+    "startTime": "2026-08-01T17:00:02.276963478Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T16:00:02.735922707Z",
+    "duration": "334.221890261s",
+    "endTime": "2026-08-01T16:05:36.957812968Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/19345db0-df23-4afb-bf64-d1725dbfe1d7",
+    "startTime": "2026-08-01T16:00:02.735922707Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T15:00:02.650955962Z",
+    "duration": "315.321532042s",
+    "endTime": "2026-08-01T15:05:17.972488004Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/aeb9ec24-c194-4896-9f9e-5b6c7e0b202c",
+    "startTime": "2026-08-01T15:00:02.650955962Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T14:00:03.187875045Z",
+    "duration": "328.048308631s",
+    "endTime": "2026-08-01T14:05:31.236183676Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/7dde4716-6211-4867-97b1-0447d8bf6553",
+    "startTime": "2026-08-01T14:00:03.187875045Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T13:00:02.340170833Z",
+    "duration": "406.489626283s",
+    "endTime": "2026-08-01T13:06:48.829797116Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/65ae1908-a4e2-4f12-90fd-ee20a448f300",
+    "startTime": "2026-08-01T13:00:02.340170833Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T12:00:02.446432171Z",
+    "duration": "318.571520922s",
+    "endTime": "2026-08-01T12:05:21.017953093Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/838c71cd-757b-46fd-bb02-ee10c9f6c92e",
+    "startTime": "2026-08-01T12:00:02.446432171Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T11:00:03.406625737Z",
+    "duration": "324.209137793s",
+    "endTime": "2026-08-01T11:05:27.615763530Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/9771c9fe-3262-478f-9aca-74d158d53915",
+    "startTime": "2026-08-01T11:00:03.406625737Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T10:00:02.725658133Z",
+    "duration": "335.420414664s",
+    "endTime": "2026-08-01T10:05:38.146072797Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/5bc300fe-17ac-4359-b211-ce8b27aa9fc8",
+    "startTime": "2026-08-01T10:00:02.725658133Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T09:00:03.402257990Z",
+    "duration": "335.024796610s",
+    "endTime": "2026-08-01T09:05:38.427054600Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/9efe8ce1-b8a1-48bf-b19b-c402507f2218",
+    "startTime": "2026-08-01T09:00:03.402257990Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  },
+  {
+    "createTime": "2026-08-01T08:00:02.374234331Z",
+    "duration": "329.110596140s",
+    "endTime": "2026-08-01T08:05:31.484830471Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/8827bbe1-b714-410a-b831-0a2dc22929e6",
+    "startTime": "2026-08-01T08:00:02.374234331Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-f02"
+  }
+]
+=== Executions: msklad-pipeline-weekly, последние 10 ===
+[
+  {
+    "createTime": "2026-08-02T01:00:00.869139791Z",
+    "duration": "560.860201443s",
+    "endTime": "2026-08-02T01:09:21.729341234Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/5aa84f42-d333-470d-b0b9-a107ce85878c",
+    "startTime": "2026-08-02T01:00:00.869139791Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-fa9"
+  },
+  {
+    "createTime": "2026-07-26T01:00:00.988598538Z",
+    "duration": "517.171072937s",
+    "endTime": "2026-07-26T01:08:38.159671475Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/01f7d0b1-1922-4343-ae8b-d75c2f4c77ed",
+    "startTime": "2026-07-26T01:00:00.988598538Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-fa9"
+  },
+  {
+    "createTime": "2026-07-19T01:00:00.916272632Z",
+    "duration": "717.923644389s",
+    "endTime": "2026-07-19T01:11:58.839917021Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/3672708e-2389-4537-bf5d-c9273786f01c",
+    "startTime": "2026-07-19T01:00:00.916272632Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-fa9"
+  },
+  {
+    "createTime": "2026-07-12T01:00:01.135046555Z",
+    "duration": "764.952191344s",
+    "endTime": "2026-07-12T01:12:46.087237899Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/60416045-915e-4d18-9ecf-93b9d50babbb",
+    "startTime": "2026-07-12T01:00:01.135046555Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-fa9"
+  },
+  {
+    "createTime": "2026-07-05T01:00:01.106786689Z",
+    "duration": "724.990172464s",
+    "endTime": "2026-07-05T01:12:06.096959153Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/d1266dbb-4ae7-4db7-9509-fb51f2375950",
+    "startTime": "2026-07-05T01:00:01.106786689Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-fa9"
+  },
+  {
+    "createTime": "2026-06-28T01:00:01.103398017Z",
+    "duration": "509.190252705s",
+    "endTime": "2026-06-28T01:08:30.293650722Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/f972f272-307f-41aa-8206-4f34dce0c315",
+    "startTime": "2026-06-28T01:00:01.103398017Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-fa9"
+  },
+  {
+    "createTime": "2026-06-21T01:00:01.036841048Z",
+    "duration": "753.463579416s",
+    "endTime": "2026-06-21T01:12:34.500420464Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/165e2a63-8752-4ec9-9447-6513de0b40e7",
+    "startTime": "2026-06-21T01:00:01.036841048Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-fa9"
+  },
+  {
+    "createTime": "2026-06-14T01:00:01.116028917Z",
+    "duration": "523.114748435s",
+    "endTime": "2026-06-14T01:08:44.230777352Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/c93ca195-87db-46a2-9ab3-7f561777799d",
+    "startTime": "2026-06-14T01:00:01.116028917Z",
+    "state": "FAILED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-fa9"
+  },
+  {
+    "createTime": "2026-06-07T01:00:00.844028384Z",
+    "duration": "716.154511926s",
+    "endTime": "2026-06-07T01:11:56.998540310Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/cf4040a7-285a-4bb7-8f01-b4cb62f0d0fa",
+    "startTime": "2026-06-07T01:00:00.844028384Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-fa9"
+  },
+  {
+    "createTime": "2026-05-31T01:00:00.972563473Z",
+    "duration": "737.538280808s",
+    "endTime": "2026-05-31T01:12:18.510844281Z",
+    "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/43e06de9-ecb0-4730-a539-b08cec0e9d79",
+    "startTime": "2026-05-31T01:00:00.972563473Z",
+    "state": "SUCCEEDED",
+    "status": {
+      "currentSteps": [
+        {
+          "routine": "main",
+          "step": "return_result"
+        }
+      ]
+    },
+    "workflowRevisionId": "000003-fa9"
+  }
+]
+=== date -u (end) ===
+Sun Aug  2 13:44:45 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

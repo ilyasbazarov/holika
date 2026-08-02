@@ -1,0 +1,178 @@
+=== date -u (start) ===
+Sun Aug  2 13:46:08 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Cloud Logging: workflow msklad-pipeline-weekly вокруг 2026-07-26T01:00-01:10Z (первый отказ) ===
+[
+  {
+    "insertId": "1nf0gofcyxk",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-07-26T01:00:01Z",
+      "start": {
+        "argument": "{}"
+      },
+      "state": "ACTIVE"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "01f7d0b1-1922-4343-ae8b-d75c2f4c77ed",
+      "workflows.googleapis.com/revision_id": "000003-fa9"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-07-26T01:00:01.675836824Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-weekly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-07-26T01:00:01.040220513Z"
+  },
+  {
+    "insertId": "akgv3of7xiire",
+    "labels": {
+      "execution_id": "01f7d0b1-1922-4343-ae8b-d75c2f4c77ed",
+      "revision_id": "000003-fa9"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-07-26T01:08:38.029760945Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-weekly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[WEEKLY] DQ Gate FAILED run_id=1785027601.0694113 details={\"checks\":[{\"detail\":\"staging_count=6450\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=65386, ma7=3533380, ratio=0.02, threshold=0.03 (weekend), target_date=2026-07-25\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-07-25, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=40830.19\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785027601.0694113,\"status\":\"FAILED\"}",
+    "timestamp": "2026-07-26T01:08:38.029760945Z"
+  },
+  {
+    "insertId": "11s836ac1wv",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-07-26T01:08:38Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 123: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 123"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "01f7d0b1-1922-4343-ae8b-d75c2f4c77ed",
+      "workflows.googleapis.com/revision_id": "000003-fa9"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-07-26T01:08:38.896024576Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-weekly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-07-26T01:08:38.170932383Z"
+  }
+]
+=== Cloud Logging: workflow msklad-pipeline-weekly вокруг 2026-08-02T01:00-01:10Z (сегодняшний отказ) ===
+[
+  {
+    "insertId": "1gi6zckd30nh",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T01:00:00Z",
+      "start": {
+        "argument": "{}"
+      },
+      "state": "ACTIVE"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "5aa84f42-d333-470d-b0b9-a107ce85878c",
+      "workflows.googleapis.com/revision_id": "000003-fa9"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T01:00:01.586182853Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-weekly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-02T01:00:00.940914025Z"
+  },
+  {
+    "insertId": "1ion3zzf4zn8ss",
+    "labels": {
+      "execution_id": "5aa84f42-d333-470d-b0b9-a107ce85878c",
+      "revision_id": "000003-fa9"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-08-02T01:09:21.628357826Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-weekly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[WEEKLY] DQ Gate FAILED run_id=1785632400.9535375 details={\"checks\":[{\"detail\":\"staging_count=6960\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=25921, ma7=4780222, ratio=0.01, threshold=0.03 (weekend), target_date=2026-08-01\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-08-01, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=39894.82\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785632400.9535375,\"status\":\"FAILED\"}",
+    "timestamp": "2026-08-02T01:09:21.628357826Z"
+  },
+  {
+    "insertId": "12bmj9qc71u",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-02T01:09:21Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 123: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 123"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "5aa84f42-d333-470d-b0b9-a107ce85878c",
+      "workflows.googleapis.com/revision_id": "000003-fa9"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-02T01:09:22.246594686Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-weekly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-02T01:09:21.738523033Z"
+  }
+]
+=== Проверка: сработал ли weekly СЕГОДНЯ (2026-08-02) вообще — задания BQ с целью fact_returns за последние 24ч ===
+[]
+=== date -u (end) ===
+Sun Aug  2 13:46:17 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
