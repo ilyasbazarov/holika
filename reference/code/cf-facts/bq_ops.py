@@ -36,6 +36,7 @@ from config import (
     GCP_PROJECT,
     STG_BYVARIANT,
     STG_FACT_SALES,
+    STG_FACT_SALES_PERIMETER,
 )
 
 log = logging.getLogger(__name__)
@@ -75,12 +76,38 @@ BYVARIANT_SCHEMA = [
     bigquery.SchemaField("_loaded_at",       "TIMESTAMP"),
 ]
 
+# SALES-PERIMETER-EXTEND (ADR-103 §8 вариант (a)): отдельная staging-схема, отдельная
+# таблица — не переиспользует STAGING_SCHEMA/STG_FACT_SALES (`ADR-024` прецедент разреза).
+# `doc_id`/`source_doc_type` — только для аудита и построения transaction_id; в
+# `core.fact_sales_profit` они не попадают, целевая схема (`02_ERP_CONTRACTS.md:36-49`)
+# этим патчем не меняется.
+PERIMETER_STAGING_SCHEMA = [
+    bigquery.SchemaField("run_id",               "STRING"),
+    bigquery.SchemaField("doc_id",               "STRING"),
+    bigquery.SchemaField("source_doc_type",      "STRING"),   # retaildemand | commissionreportin_sale
+    bigquery.SchemaField("position_id",          "STRING"),
+    bigquery.SchemaField("transaction_date_raw", "STRING"),
+    bigquery.SchemaField("product_id",           "STRING"),
+    bigquery.SchemaField("agent_id",             "STRING"),
+    bigquery.SchemaField("quantity",             "FLOAT64"),
+    bigquery.SchemaField("price_kgs",            "FLOAT64"),
+    bigquery.SchemaField("discount",             "FLOAT64"),
+    bigquery.SchemaField("revenue_kgs",          "FLOAT64"),
+    bigquery.SchemaField("entity_type",          "STRING"),
+    bigquery.SchemaField("_loaded_at",           "TIMESTAMP"),
+]
+
 # ─── Ensure staging tables exist ──────────────────────────────────────────────
 
 def ensure_staging_tables(bq: bigquery.Client) -> None:
     """Create staging tables if they don't exist. Idempotent."""
     _ensure_table(bq, STG_FACT_SALES, STAGING_SCHEMA,  time_partitioning=None)
     _ensure_table(bq, STG_BYVARIANT,  BYVARIANT_SCHEMA, time_partitioning=None)
+
+
+def ensure_perimeter_staging_table(bq: bigquery.Client) -> None:
+    """Create stg_msklad.fact_sales_perimeter_staging if it doesn't exist. Idempotent."""
+    _ensure_table(bq, STG_FACT_SALES_PERIMETER, PERIMETER_STAGING_SCHEMA, time_partitioning=None)
 
 
 def _ensure_table(
@@ -122,6 +149,33 @@ def load_staging(
 
     rows = bq.get_table(STG_FACT_SALES).num_rows
     log.info("Loaded %d rows → %s", rows, STG_FACT_SALES)
+    return rows
+
+
+def load_perimeter_staging(
+    bq: bigquery.Client,
+    records: list[dict],
+) -> int:
+    """
+    WRITE_TRUNCATE load into stg_msklad.fact_sales_perimeter_staging
+    (SALES-PERIMETER-EXTEND, retaildemand + commissionreportin_sale).
+    """
+    if not records:
+        raise ValueError("load_perimeter_staging called with 0 records — abort")
+
+    job_config = bigquery.LoadJobConfig(
+        schema=PERIMETER_STAGING_SCHEMA,
+        source_format=bigquery.SourceFormat.NEWLINE_DELIMITED_JSON,
+        write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
+        ignore_unknown_values=False,
+        max_bad_records=0,
+    )
+
+    job = bq.load_table_from_json(records, STG_FACT_SALES_PERIMETER, job_config=job_config)
+    job.result()
+
+    rows = bq.get_table(STG_FACT_SALES_PERIMETER).num_rows
+    log.info("Loaded %d rows → %s", rows, STG_FACT_SALES_PERIMETER)
     return rows
 
 
@@ -361,6 +415,174 @@ def promote_to_core(
         "affected_rows":  job.num_dml_affected_rows,
     }
     log.info("MERGE complete: %s", stats)
+    return stats
+
+
+# ─── SALES-PERIMETER-EXTEND: MERGE периметра → core.fact_sales_profit ─────────
+
+# Тот же паттерн даты, что у основного MERGE (`_PARSE_DATE` выше) — ADR-088 §3, дата как
+# функция UTC-момента документа, не переопределяется здесь ради единообразия при чтении.
+_PERIMETER_PARSE_DATE = "DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek')"
+
+
+def _build_perimeter_merge_sql(window_days: int) -> str:
+    """
+    MERGE периметра (retaildemand + commissionreportin_sale) → core.fact_sales_profit.
+
+    ОТДЕЛЬНЫЙ от `_build_merge_sql` (прецедент ADR-024): своя staging-таблица
+    (`STG_FACT_SALES_PERIMETER`), свой ON. Не трогает и не расширяет запрос
+    `_build_merge_sql` — тот патчится отдельной задачей `SALES-REFRESH-WINDOW`
+    (окно/сироты/замороженная дата, `ADR-100 §7`); смешивать периметр с тем патчем
+    запрещено брифом `SALES-INGEST-PATCH`.
+
+    C1 (ADR-030): явный `INSERT (колонки)`, `INSERT ROW` не используется.
+
+    C2 (ADR-101 §7): ветки удаления НЕТ. Причина названа, не скрыта — периметр
+    новый (без исторического мусора на момент постройки), объём мал (~513 док/мес,
+    `reference/parity_sales_discriminate_step2_2026-08-02.md`). Тот же класс дефекта
+    (строки-сироты MERGE без ветки удаления) для ОСНОВНОГО ингеста уже адресуется
+    отдельной задачей (`SALES-REFRESH-WINDOW`); симметричный фикс для периметра —
+    будущая отдельная задача, не изобретается здесь молча под видом полноты.
+    """
+    return f"""
+MERGE `{CORE_FACT_SALES}` T
+USING (
+  SELECT
+    TO_HEX(MD5(CONCAT(s.doc_id, '|', s.position_id)))               AS transaction_id,
+    {_PERIMETER_PARSE_DATE}                                         AS transaction_date,
+    s.product_id,
+    s.entity_type,
+    s.discount,
+    s.agent_id,
+    s.quantity                                                      AS sell_quantity,
+    CAST(0.0 AS FLOAT64)                                            AS return_quantity,
+    s.revenue_kgs                                                   AS sell_sum_kgs,
+    CAST(0.0 AS FLOAT64)                                            AS return_sum_kgs,
+    s.revenue_kgs                                                   AS revenue_kgs,
+    CASE
+      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0
+        THEN {_COGS_EXPR}
+      ELSE NULL
+    END                                                             AS cogs_kgs,
+    CASE
+      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0
+        THEN {_MARGIN_EXPR}
+      ELSE NULL
+    END                                                             AS margin_kgs,
+    ROUND(SAFE_DIVIDE(s.revenue_kgs, fx.rate_kgs_per_usd), 4)       AS revenue_usd,
+    CASE
+      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0 AND fx.rate_kgs_per_usd IS NOT NULL
+        THEN {_COGS_USD_EXPR}
+      ELSE NULL
+    END                                                             AS cogs_usd,
+    CASE
+      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0 AND fx.rate_kgs_per_usd IS NOT NULL
+        THEN {_MARGIN_USD_EXPR}
+      ELSE NULL
+    END                                                             AS margin_usd,
+    CAST(NULL AS STRING)                                            AS sales_channel_id,
+    CAST(NULL AS STRING)                                            AS sales_channel_name,
+    CAST(NULL AS STRING)                                            AS project_id,
+    CAST(NULL AS STRING)                                            AS project_name,
+    CURRENT_TIMESTAMP()                                             AS _loaded_at
+  FROM `{STG_FACT_SALES_PERIMETER}` s
+  LEFT JOIN `{CORE_BYVARIANT_BCK}` b
+    ON  s.product_id = b.product_id
+    AND DATE_TRUNC({_PERIMETER_PARSE_DATE}, WEEK(SATURDAY)) = b._week_start
+  LEFT JOIN `{CORE_DIM_FX}` fx
+    ON  {_PERIMETER_PARSE_DATE} = fx.date
+) S
+ON  T.transaction_id   = S.transaction_id
+AND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY)
+
+WHEN MATCHED THEN UPDATE SET
+  T.sell_quantity   = S.sell_quantity,
+  T.return_quantity = S.return_quantity,
+  T.sell_sum_kgs    = S.sell_sum_kgs,
+  T.return_sum_kgs  = S.return_sum_kgs,
+  T.revenue_kgs     = S.revenue_kgs,
+  T.cogs_kgs        = S.cogs_kgs,
+  T.margin_kgs      = S.margin_kgs,
+  T.revenue_usd     = S.revenue_usd,
+  T.cogs_usd        = S.cogs_usd,
+  T.margin_usd      = S.margin_usd,
+  T.discount        = S.discount,
+  T._loaded_at      = S._loaded_at
+
+WHEN NOT MATCHED THEN INSERT (
+  transaction_id,
+  transaction_date,
+  product_id,
+  entity_type,
+  agent_id,
+  sell_quantity,
+  return_quantity,
+  sell_sum_kgs,
+  return_sum_kgs,
+  revenue_kgs,
+  cogs_kgs,
+  margin_kgs,
+  revenue_usd,
+  cogs_usd,
+  margin_usd,
+  sales_channel_id,
+  sales_channel_name,
+  project_id,
+  project_name,
+  discount,
+  _loaded_at
+) VALUES (
+  S.transaction_id,
+  S.transaction_date,
+  S.product_id,
+  S.entity_type,
+  S.agent_id,
+  S.sell_quantity,
+  S.return_quantity,
+  S.sell_sum_kgs,
+  S.return_sum_kgs,
+  S.revenue_kgs,
+  S.cogs_kgs,
+  S.margin_kgs,
+  S.revenue_usd,
+  S.cogs_usd,
+  S.margin_usd,
+  S.sales_channel_id,
+  S.sales_channel_name,
+  S.project_id,
+  S.project_name,
+  S.discount,
+  S._loaded_at
+)
+"""
+
+
+def promote_perimeter_to_core(
+    bq: bigquery.Client,
+    window_days: int,
+) -> dict:
+    """MERGE stg_msklad.fact_sales_perimeter_staging → core.fact_sales_profit."""
+    count_row = next(
+        bq.query(f"SELECT COUNT(*) AS cnt FROM `{STG_FACT_SALES_PERIMETER}`").result()
+    )
+    staging_count = count_row.cnt
+    if staging_count == 0:
+        raise ValueError("promote_perimeter_to_core: staging table is empty — refuse to MERGE")
+
+    log.info("Perimeter staging rows: %d | window_days: %d", staging_count, window_days)
+
+    merge_sql = _build_perimeter_merge_sql(window_days)
+    log.debug("Executing perimeter MERGE SQL:\n%s", merge_sql)
+
+    job = bq.query(merge_sql)
+    job.result()
+
+    stats = {
+        "staging_rows":   staging_count,
+        "window_days":    window_days,
+        "affected_rows":  job.num_dml_affected_rows,
+    }
+    log.info("Perimeter MERGE complete: %s", stats)
     return stats
 
 

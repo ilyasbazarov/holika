@@ -15,7 +15,7 @@ from typing import Optional
 
 import requests
 
-from config import MSKLAD_RPS
+from config import COMMISSION_CHANNEL_AGENT_IDS, MSKLAD_RPS
 from helpers import now_utc_str, paginate_entity, parse_href
 
 log = logging.getLogger(__name__)
@@ -161,6 +161,23 @@ def fetch_demand_positions(
 
     if skipped_demands:
         log.warning("Skipped %d demands (missing id)", skipped_demands)
+
+    # ── SALES-CONSIGNMENT-REVENUE (ADR-103 §7, ADR-104 §5): отгрузка комиссионеру на
+    # реализацию — не продажа, МойСклад её продажей не считает. Различитель (`SALES-INGEST-PATCH`
+    # Шаг 1) — agent_id, единственный уже загружаемый признак; список исчерпывающе измерен
+    # (config.py, комментарий у COMMISSION_CHANNEL_AGENT_IDS). Строки не отбрасываются молча —
+    # исключение логируется с суммой, чтобы регресс списка был виден по логу прогона.
+    excluded = [r for r in all_records if r["agent_id"] in COMMISSION_CHANNEL_AGENT_IDS]
+    if excluded:
+        excluded_sum = sum(r["revenue_kgs"] for r in excluded)
+        log.warning(
+            "Excluding %d position(s) from %d consignment-channel agent(s) "
+            "(entity/demand shipment to commissioner, not a sale) — revenue_kgs=%.2f",
+            len(excluded),
+            len({r["agent_id"] for r in excluded}),
+            excluded_sum,
+        )
+    all_records = [r for r in all_records if r["agent_id"] not in COMMISSION_CHANNEL_AGENT_IDS]
 
     log.info(
         "Fetched %d position records from %d demands",

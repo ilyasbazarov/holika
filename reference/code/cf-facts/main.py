@@ -8,6 +8,11 @@ Modes (passed as JSON body field "mode"):
              for 90 days → GCS NDJSON → BQ staging (both demand + byvariant)
   promote  → MERGE stg_msklad.fact_sales_staging → core.fact_sales_profit
   purchases → fetch ALL purchaseorders (full refresh) → core.fact_purchases
+  perimeter → SALES-PERIMETER-EXTEND (ADR-103 §8 вариант (a)): fetch entity/retaildemand
+              + продажи entity/commissionreportin (сумма документа, ADR-104 §4) →
+              BQ staging (stg_msklad.fact_sales_perimeter_staging). ОТДЕЛЬНЫЙ ингест
+              (прецедент ADR-024) — не расширяет hourly/weekly/promote выше.
+  perimeter_promote → MERGE stg_msklad.fact_sales_perimeter_staging → core.fact_sales_profit
 
 Workflow sequence (from workflow.yaml):
   step_facts (mode=hourly)  →  step_dq  →  step_promote (mode=promote, window_days=7)
@@ -43,6 +48,9 @@ from bq_ops import (
     ensure_fact_purchases,
     load_purchases,
     load_returns,          # ← новое
+    ensure_perimeter_staging_table,   # ← SALES-PERIMETER-EXTEND
+    load_perimeter_staging,          # ← SALES-PERIMETER-EXTEND
+    promote_perimeter_to_core,       # ← SALES-PERIMETER-EXTEND
 )
 from config import (
     GCS_PREFIX_DEMAND,
@@ -50,11 +58,16 @@ from config import (
     GCP_PROJECT,
     HOURLY_WINDOW_DAYS,
     WEEKLY_WINDOW_DAYS,
+    PERIMETER_WINDOW_DAYS,   # ← SALES-PERIMETER-EXTEND
 )
 from fetch_byvariant import fetch_byvariant_cogs
 from fetch_demands import fetch_demand_positions
 from fetch_purchases import fetch_purchase_positions
 from fetch_returns import fetch_return_positions  # ← новое
+from fetch_perimeter import (           # ← SALES-PERIMETER-EXTEND
+    fetch_retaildemand_positions,
+    fetch_commission_sales_positions,
+)
 from helpers import get_token, run_ts, upload_ndjson_gz
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
@@ -67,7 +80,12 @@ def main(request: flask.Request) -> flask.Response:
     body = request.get_json(force=True, silent=True) or {}
     mode        = body.get("mode", "hourly")
     run_id      = body.get("run_id") or run_ts()
-    window_days = int(body.get("window_days", HOURLY_WINDOW_DAYS if mode != "weekly" else WEEKLY_WINDOW_DAYS))
+    _default_window_days = (
+        WEEKLY_WINDOW_DAYS if mode == "weekly"
+        else PERIMETER_WINDOW_DAYS if mode in ("perimeter", "perimeter_promote")
+        else HOURLY_WINDOW_DAYS
+    )
+    window_days = int(body.get("window_days", _default_window_days))
 
     log.info("CF-Facts start | mode=%s run_id=%s window_days=%d", mode, run_id, window_days)
 
@@ -82,8 +100,15 @@ def main(request: flask.Request) -> flask.Response:
             result = _run_purchases()
         elif mode == "returns":
             result = _run_returns(window_days)
+        elif mode == "perimeter":
+            result = _run_perimeter_load(run_id, window_days)
+        elif mode == "perimeter_promote":
+            result = _run_perimeter_promote(window_days)
         else:
-            raise ValueError(f"Unknown mode: {mode!r}. Expected: hourly | weekly | promote | purchases | returns")
+            raise ValueError(
+                f"Unknown mode: {mode!r}. Expected: hourly | weekly | promote | purchases | "
+                "returns | perimeter | perimeter_promote"
+            )
 
         log.info("CF-Facts complete | mode=%s | %s", mode, result)
         return flask.make_response(flask.jsonify({"status": "ok", "mode": mode, "run_id": run_id, **result}), 200)
@@ -301,3 +326,54 @@ def _run_returns(window_days: int) -> dict:
         "date_from":                str(date_from),
         "date_to":                  str(date_to),
     }
+
+
+# ─── Perimeter modes (SALES-PERIMETER-EXTEND, ADR-103 §8 вариант (a)) ─────────
+
+def _run_perimeter_load(run_id: str, window_days: int) -> dict:
+    """
+    Fetch entity/retaildemand + продажи entity/commissionreportin за `window_days` дней.
+    WRITE_TRUNCATE в stg_msklad.fact_sales_perimeter_staging — ОТДЕЛЬНАЯ таблица,
+    не `fact_sales_staging` (прецедент разреза `ADR-024`).
+    """
+    token   = get_token()
+    bq      = bigquery.Client(project=GCP_PROJECT)
+    session = requests.Session()
+
+    ensure_perimeter_staging_table(bq)
+
+    date_to   = date.today()
+    date_from = date_to - timedelta(days=window_days)
+
+    log.info("Perimeter load: fetching retaildemand + commissionreportin sales %s → %s", date_from, date_to)
+
+    retail_records     = fetch_retaildemand_positions(token, date_from, date_to, run_id, session=session)
+    commission_records = fetch_commission_sales_positions(token, date_from, date_to, run_id, session=session)
+
+    records = retail_records + commission_records
+    if not records:
+        raise ValueError(
+            f"Perimeter load returned 0 records for {date_from}→{date_to} "
+            "(retaildemand + commissionreportin sales combined)."
+        )
+
+    loaded_rows = load_perimeter_staging(bq, records)
+
+    return {
+        "retaildemand_positions_fetched":       len(retail_records),
+        "commissionreportin_positions_fetched": len(commission_records),
+        "staging_rows_loaded":                  loaded_rows,
+        "date_from": str(date_from),
+        "date_to":   str(date_to),
+    }
+
+
+def _run_perimeter_promote(window_days: int) -> dict:
+    """
+    MERGE stg_msklad.fact_sales_perimeter_staging → core.fact_sales_profit.
+    ОТДЕЛЬНЫЙ MERGE от `promote_to_core` (`_build_perimeter_merge_sql`, не
+    `_build_merge_sql`) — не пересекается с патчем `SALES-REFRESH-WINDOW`.
+    """
+    bq = bigquery.Client(project=GCP_PROJECT)
+    merge_stats = promote_perimeter_to_core(bq, window_days)
+    return {"merge_stats": merge_stats}
