@@ -1,0 +1,24 @@
+Mon Aug  3 18:22:43 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== MERGE jobs targeting core.fact_sales_profit since 2026-08-03T17:00:00Z (asia-east1) ===
+[]
+=== independent COUNT(*) of same set ===
+[
+  {
+    "n": "0"
+  }
+]
+Mon Aug  3 18:22:50 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

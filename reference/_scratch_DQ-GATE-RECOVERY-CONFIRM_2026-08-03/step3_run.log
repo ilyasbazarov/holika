@@ -1,0 +1,26 @@
+Mon Aug  3 18:23:12 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== core.fact_sales_profit: MIN/MAX(transaction_date), rows by day 08-01..08-04 ===
+[
+  {
+    "max_d": "2026-08-01", 
+    "min_d": "2025-05-01", 
+    "total_rows": "36986"
+  }
+]
+[
+  {
+    "n_rows": "14", 
+    "transaction_date": "2026-08-01"
+  }
+]
+=== core.fact_purchases: MIN/MAX(transaction_date), rows by day 08-01..08-04 ===
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r36bf424a3881d148_0000019fc8ddad73_1': Unrecognized name:
+transaction_date at [2:12]

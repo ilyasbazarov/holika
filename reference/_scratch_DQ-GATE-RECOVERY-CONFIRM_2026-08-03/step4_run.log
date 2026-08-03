@@ -1,0 +1,20 @@
+Mon Aug  3 18:24:21 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== weekly executions list (last 6) ===
+NAME                                  STATE      START_TIME
+5aa84f42-d333-470d-b0b9-a107ce85878c  FAILED     2026-08-02T01:00:00.869139791Z
+01f7d0b1-1922-4343-ae8b-d75c2f4c77ed  FAILED     2026-07-26T01:00:00.988598538Z
+3672708e-2389-4537-bf5d-c9273786f01c  SUCCEEDED  2026-07-19T01:00:00.916272632Z
+60416045-915e-4d18-9ecf-93b9d50babbb  SUCCEEDED  2026-07-12T01:00:01.135046555Z
+d1266dbb-4ae7-4db7-9509-fb51f2375950  SUCCEEDED  2026-07-05T01:00:01.106786689Z
+f972f272-307f-41aa-8206-4f34dce0c315  FAILED     2026-06-28T01:00:01.103398017Z
+=== core.fact_returns: MAX(_loaded_at), MAX(transaction_date), total_rows ===
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r6d1624327f74ebd6_0000019fc8deb171_1': Unrecognized name:
+transaction_date at [2:46]

@@ -1,0 +1,26 @@
+Mon Aug  3 18:26:15 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== executions list (last 5, hourly) ===
+NAME                                  STATE   START_TIME
+8226152d-0340-49db-ab2a-a2c41afb18b3  FAILED  2026-08-03T19:00:02.302869073Z
+717473bf-3b22-4ab6-ab99-43042a19f38d  FAILED  2026-08-03T18:00:03.001754389Z
+b0b2d4d3-a0ca-4d5e-ae97-1fe968d3ef04  FAILED  2026-08-03T17:00:02.404110313Z
+e15c9e85-ed9b-48a6-b9a3-fe427cd3533d  FAILED  2026-08-03T16:00:02.717672194Z
+f8e90f38-e3ad-4db4-80a6-447b54aac9b4  FAILED  2026-08-03T15:00:02.656791282Z
+=== drift_check / DQ Gate FAILED body, 2026-08-03T18:55Z..19:30Z ===
+2026-08-03T19:02:14.373889556Z	[HOURLY] DQ Gate FAILED run_id=1785783602.3570569 details={"checks":[{"detail":"staging_count=822","name":"not_empty","passed":true},{"detail":"yesterday_rev=191800, ma7=5533699, ratio=0.03, threshold=0.1 (weekday), target_date=2026-08-03","name":"drift_check","passed":false},{"detail":"orphan_product_ids=0","name":"fk_integrity","passed":true},{"detail":"max_date=2026-08-03, lag_days=1","name":"freshness","passed":true},{"detail":"bad_margin_rows=0 (core, last 7d)","name":"margin_sanity","passed":true},{"detail":"avg_revenue_kgs=40502.91","name":"currency_normalization","passed":true}],"failed_checks":["drift_check"],"passed":false,"run_id":1785783602.3570569,"status":"FAILED"}	
+2026-08-03T19:02:14.473873501Z		@type=type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog;activityTime=2026-08-03T19:02:14Z;failure={'exception': 'RuntimeError: "DQ Gate failed — promote blocked"\nin step "raise_dq_failed", routine "main", line: 109: "DQ Gate failed — promote blocked"', 'source': 'main.raise_dq_failed, line: 109'};state=FAILED
+Mon Aug  3 19:05:08 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
