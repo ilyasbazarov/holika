@@ -23,6 +23,9 @@ SECRET_TOKEN = "msklad-token"
 # ─── Staging table names ──────────────────────────────────────────────────────
 STG_FACT_SALES     = f"{BQ_STG}.fact_sales_staging"
 STG_BYVARIANT      = f"{BQ_STG}.byvariant_staging"
+# SALES-PERIMETER-EXTEND (ADR-103 §8 вариант (a)) — отдельная staging-таблица, отдельный
+# ингест по прецеденту ADR-024, не расширение `fact_sales_staging`/`_build_merge_sql`.
+STG_FACT_SALES_PERIMETER = f"{BQ_STG}.fact_sales_perimeter_staging"
 
 # ─── Core table names ─────────────────────────────────────────────────────────
 CORE_FACT_SALES    = f"{BQ_CORE}.fact_sales_profit"
@@ -36,6 +39,25 @@ GCS_PREFIX_DEMAND  = "demand/incremental"
 # ─── Rolling windows ──────────────────────────────────────────────────────────
 HOURLY_WINDOW_DAYS  = 7
 WEEKLY_WINDOW_DAYS  = 90
+# SALES-PERIMETER-EXTEND: тот же скользящий охват, что у весового (weekly) демand-ингеста —
+# отдельный ингест, но не отдельная каденция без основания.
+PERIMETER_WINDOW_DAYS = WEEKLY_WINDOW_DAYS
+
+# ─── SALES-CONSIGNMENT-REVENUE (ADR-103 §7) ───────────────────────────────────
+# Комиссионный канал за зону паритета (2026-05-01…2026-08-01) исчерпывающе измерен
+# `ADR-104 §2/§5` (`reference/sales_perimeter_confirm_2026-08-02.md`): ровно эти три
+# контрагента, и на весь этот период приходится ровно один документ `entity/demand`
+# на них (отгрузка комиссионеру, не продажа). Различитель `SALES-INGEST-PATCH` Шаг 1:
+# среди уже загружаемых полей `fetch_demands.py` (agent_id, sales_channel_id, project_id,
+# entity_type) единственный пригодный признак — сам `agent_id`; ни тип договора, ни склад
+# ингестом не читаются. Форма фикса — исключение по списку контрагентов канала.
+# Риск, названный явно (не скрыт): список измерен на зоне до 2026-08-01; появление нового
+# контрагента в комиссионном канале потребует повторного замера, автоматически не подхватится.
+COMMISSION_CHANNEL_AGENT_IDS = {
+    "0276f431-2ff5-11ef-0a80-11d40019917f",  # UMAI WB (Договор КР)
+    "3c080755-03ff-11f0-0a80-0c2c00104bbb",  # Bloom WB (Договор)
+    "31d135bc-4df8-11f1-0a80-1c8a0053c5b4",  # ООО «РВБ»
+}
 
 # ─── Purchase order statuses ──────────────────────────────────────────────────
 PURCHASE_ORDER_STATES = {
