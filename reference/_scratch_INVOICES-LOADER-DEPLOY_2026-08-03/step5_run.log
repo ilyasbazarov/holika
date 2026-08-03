@@ -1,0 +1,88 @@
+Mon Aug  3 13:53:13 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Traceback (most recent call last):
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.moysklad.ru', port=443): Read timed out. (read timeout=90)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/step5_staging_run.py", line 23, in <module>
+    result = invoices.run_invoices_etl(token, bq, session, core_table=TEST_CORE_TABLE)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/../code/cf-finance/invoices.py", line 433, in run_invoices_etl
+    collected, meta_size_first = fetch_all_invoices(token, session)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/../code/cf-finance/invoices.py", line 96, in fetch_all_invoices
+    page = _api_get(session, url, headers, params)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/../code/cf-finance/invoices.py", line 63, in _api_get
+    resp = session.get(url, headers=headers, params=params, timeout=TIMEOUT)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/requests/adapters.py", line 690, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.moysklad.ru', port=443): Read timed out. (read timeout=90)

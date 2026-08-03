@@ -1,0 +1,46 @@
+Mon Aug  3 13:57:46 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/venv/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+INVOICES: G1 fetched=4526 meta_size_first=4526
+INVOICES: merge_predicted {'merged_inserted': 4526, 'merged_updated': 0, 'merged_deleted': 2}
+INVOICES: fetched=4526 meta_size=4526 applicable_false=0
+INVOICES: staged=4526 merged_inserted=4526 merged_updated=0 merged_deleted=2
+INVOICES: load_lag_hours=0 business_lag_days=2 distinct_load_stamps=1
+INVOICES: currency_fallback_hits=0
+=== ИТОГ (числа, не метка) ===
+fetched = 4526
+meta_size = 4526
+applicable_false = 0
+staged = 4526
+merged_inserted = 4526
+merged_updated = 0
+merged_deleted = 2
+load_lag_hours = 0
+business_lag_days = 2
+distinct_load_stamps = 1
+currency_fallback_hits = 0
+=== ПРОВЕРКА: секрет не попал в файлы сессии ===
+grep: --exclude-dir=venv: No such file or directory
+grep: --exclude-dir=venv: No such file or directory
+OK: токен в файлах сессии не найден
+Mon Aug  3 14:09:45 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

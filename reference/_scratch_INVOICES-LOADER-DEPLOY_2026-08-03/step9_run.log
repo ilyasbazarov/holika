@@ -1,0 +1,72 @@
+Mon Aug  3 15:09:12 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+attemptDeadline: 1800s
+httpTarget:
+  body: eyJtb2RlIjoiaW52b2ljZXMifQ==
+  headers:
+    Content-Type: application/json
+    User-Agent: Google-Cloud-Scheduler
+  httpMethod: POST
+  oidcToken:
+    audience: https://cf-finance-xw5u2boozq-de.a.run.app/
+    serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  uri: https://cf-finance-xw5u2boozq-de.a.run.app/
+name: projects/msklad-bi-prod/locations/asia-east1/jobs/invoices-daily-update
+retryConfig:
+  maxBackoffDuration: 3600s
+  maxDoublings: 5
+  maxRetryDuration: 0s
+  minBackoffDuration: 5s
+schedule: 0 4 * * *
+scheduleTime: '2026-08-03T22:00:00Z'
+state: ENABLED
+status:
+  code: -1
+timeZone: Asia/Bishkek
+userUpdateTime: '2026-08-03T15:09:16.199809Z'
+=== read-back ===
+{
+  "attemptDeadline": "1800s",
+  "httpTarget": {
+    "body": "eyJtb2RlIjoiaW52b2ljZXMifQ==",
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Google-Cloud-Scheduler"
+    },
+    "httpMethod": "POST",
+    "oidcToken": {
+      "audience": "https://cf-finance-xw5u2boozq-de.a.run.app/",
+      "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com"
+    },
+    "uri": "https://cf-finance-xw5u2boozq-de.a.run.app/"
+  },
+  "name": "projects/msklad-bi-prod/locations/asia-east1/jobs/invoices-daily-update",
+  "retryConfig": {
+    "maxBackoffDuration": "3600s",
+    "maxDoublings": 5,
+    "maxRetryDuration": "0s",
+    "minBackoffDuration": "5s"
+  },
+  "schedule": "0 4 * * *",
+  "scheduleTime": "2026-08-03T22:00:00Z",
+  "state": "ENABLED",
+  "status": {
+    "code": -1
+  },
+  "timeZone": "Asia/Bishkek",
+  "userUpdateTime": "2026-08-03T15:09:16.199809Z"
+}
+Mon Aug  3 15:09:20 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

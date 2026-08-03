@@ -50,3 +50,38 @@ sha256 архива: `04c337f4c31cfa3bb63a7c6ffc913f9f52ef387d4001d89ee2ff494fa2
 **Не является финальным деплойным артефактом.** `T4` обязан снять СВОЙ свежий снапшот перед
 переносом (ревизия могла измениться между этой сессией и деплоем) и перенести патч по diff,
 не скопировать файлы этой директории вслепую.
+
+---
+
+## Деплой (`INVOICES-LOADER-DEPLOY`, T4, 2026-08-03) — ревизия ↔ коммит
+
+**Процедура:** `05_CONVENTIONS.md` Часть II «Процедура деплоя Cloud Function — только из код-репо,
+вариант Б», первое применение (приёмка процедуры `DEPLOY-PROCEDURE`).
+
+| Поле | Значение |
+|---|---|
+| Ревизия ДО деплоя | `cf-finance-00012-cik` (generation `1784560843778541`) — сверена побайтово с `master` @ `81812f4d06fccb5ea0500b565269b07755831fb0` (расхождение только в мусоре, исключённом `.gitignore`: `.bak`, `__pycache__/`, `patch_main_finance.py`) |
+| Ветка переноса | `deploy/cf-finance-2026-08-03-invoices`, коммит `e6b9627` |
+| Новая ревизия | **`cf-finance-00013-jaq`** |
+| Generation архива | `1785767015791249` |
+| Время деплоя (UTC) | `2026-08-03T14:24:36Z` (`updateTime` из `describe`) |
+| Read-back | побайтовая сверка развёрнутого архива с веткой — **полное совпадение** (`main.py`, `invoices.py`, `requirements.txt`); мусора в архиве НЕТ (закрывает `RQ-3`) |
+| Merge в master | коммит `db02a89`, `git push origin master` подтверждён (2026-08-03) |
+| SHA коммита код-репо | `db02a89` (merge), `e6b9627` (патч) |
+
+**sha256 файлов деплоя:**
+- `main.py`: `1afbaa3707182b54fc0c14600682d0220fe94a257f92093a862e55da27a2c6df`
+- `invoices.py`: `dc1768d973c2898addf5ee92116e831272437e3a9140683c92eb09cd74701886`
+- `requirements.txt`: `f986310a048c5c90c93e511ec3ef0eeacf71feb2ecf591d45b001097e6707164`
+
+**Функциональная проверка на проде:**
+- Режим `payments` (без параметров) — `HTTP 200`, `MERGE` в `core.fact_payments` отработал
+  (`_loaded_at` обновился, `n_rows=5026`), поведение не изменилось.
+- Режим `invoices` — `HTTP 200`, `fetched=4526 meta_size=4526`, `merged_inserted=484
+  merged_updated=4042 merged_deleted=16`, `currency_fallback_hits=0`. Итог в `core`:
+  `4526` строк, `load_lag_hours=0` — заморозка 58 суток снята.
+
+**Расписание:** `invoices-daily-update`, `asia-east1`, `0 4 * * *` Asia/Bishkek, OIDC `etl-sa`,
+`attemptDeadline=1800s`, `maxRetryDuration=0s`. `finance-daily-update` не изменён.
+
+Полный ход, лог и провенанс — `reference/invoices_loader_deploy_2026-08-03.md`.

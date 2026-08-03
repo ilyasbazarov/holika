@@ -1,0 +1,71 @@
+Mon Aug  3 14:22:57 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Preparing function...
+..done.
+Updating function (may take a while)...
+[Build].................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+[Service]..................................................................................................................................warning
+Completed with warnings:
+  [INFO] A new revision will be deployed serving with 100% traffic.
+You can view your function in the Cloud Console here: https://console.cloud.google.com/functions/details/asia-east1/cf-finance?project=msklad-bi-prod
+
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/420804682491/locations/asia-east1/builds/187b8bbd-bb55-450b-a443-2cc4df766f9f
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts
+  entryPoint: main
+  runtime: python312
+  serviceAccount: projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1785767015791249'
+      object: cf-finance/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1785767015791249'
+      object: cf-finance/function-source.zip
+createTime: '2026-06-18T19:35:48.076900935Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/msklad-bi-prod/locations/asia-east1/functions/cf-finance
+satisfiesPzi: true
+serviceConfig:
+  allTrafficOnLatestRevision: true
+  availableCpu: '0.3333'
+  availableMemory: 512M
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceCount: 16
+  maxInstanceRequestConcurrency: 1
+  revision: cf-finance-00013-jaq
+  secretEnvironmentVariables:
+  - key: MSKLAD_TOKEN
+    projectId: '420804682491'
+    secret: msklad-token
+    version: latest
+  service: projects/msklad-bi-prod/locations/asia-east1/services/cf-finance
+  serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  timeoutSeconds: 1800
+  uri: https://cf-finance-xw5u2boozq-de.a.run.app
+state: ACTIVE
+updateTime: '2026-08-03T14:24:36.418899289Z'
+url: https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-finance
+Mon Aug  3 14:24:39 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

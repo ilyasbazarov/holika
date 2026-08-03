@@ -1,0 +1,35 @@
+--- cf-finance/main.py	2026-07-20 15:16:00
++++ cf-finance/main.py	2026-08-03 19:39:19
+@@ -6,6 +6,8 @@
+ from google.cloud import bigquery_datatransfer
+ from google.protobuf.timestamp_pb2 import Timestamp
+ 
++import invoices
++
+ PROJECT = "msklad-bi-prod"
+ STG_TABLE = f"{PROJECT}.core.fact_payments_stg"
+ 
+@@ -137,8 +139,22 @@
+         except Exception as e:
+             print(f"WARNING: trigger_marts() failed (non-fatal, marts have their own schedule): {e}")
+ 
++# design §2.2 (reference/invoices_loader_design_2026-08-02.md): диспетчер режимов.
++# Умолчание mode="payments" — существующее поведение run_etl(), НЕ трогается: тело,
++# которое шлёт finance-daily-update, в репо не задокументировано (11_INFRA_FACTS.md:26
++# фиксирует тело только у loss-commission-daily-update), умолчание безопасно при ЛЮБОМ теле.
+ def main(request):
+-    run_etl()
++    body = request.get_json(force=True, silent=True) or {}
++    mode = body.get("mode", "payments")
++    if mode == "payments":
++        run_etl()                      # существующее поведение, не трогается
++    elif mode == "invoices":
++        token = os.environ.get("MSKLAD_TOKEN") or os.environ.get("TOKEN")
++        bq = bigquery.Client(project=invoices.PROJECT)
++        session = requests.Session()
++        invoices.run_invoices_etl(token, bq, session)
++    else:
++        return (f"Unknown mode: {mode!r}. Expected: payments | invoices", 400)
+     return "OK", 200
+ 
+ if __name__ == "__main__":

@@ -1,0 +1,36 @@
+Mon Aug  3 14:25:17 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+revision=cf-finance-00013-jaq
+generation=1785767015791249
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-finance/function-source.zip#1785767015791249...
+/ [0 files][    0.0 B/ 10.1 KiB]                                                / [0 files][ 10.1 KiB/ 10.1 KiB]                                                -- [1 files][ 10.1 KiB/ 10.1 KiB]                                                
+Operation completed over 1 objects/10.1 KiB.                                     
+=== sha256 развёрнутого архива ===
+dc1768d973c2898addf5ee92116e831272437e3a9140683c92eb09cd74701886  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/deployed_source/invoices.py
+1afbaa3707182b54fc0c14600682d0220fe94a257f92093a862e55da27a2c6df  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/deployed_source/main.py
+f986310a048c5c90c93e511ec3ef0eeacf71feb2ecf591d45b001097e6707164  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/deployed_source/requirements.txt
+=== sha256 ветки deploy/cf-finance-2026-08-03-invoices ===
+dc1768d973c2898addf5ee92116e831272437e3a9140683c92eb09cd74701886  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/holika-prod-master/cf-finance/invoices.py
+1afbaa3707182b54fc0c14600682d0220fe94a257f92093a862e55da27a2c6df  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/holika-prod-master/cf-finance/main.py
+f986310a048c5c90c93e511ec3ef0eeacf71feb2ecf591d45b001097e6707164  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-LOADER-DEPLOY/reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/holika-prod-master/cf-finance/requirements.txt
+=== сверка ===
+СОВПАЛО  invoices.py  deployed=dc1768d973c2898addf5ee92116e831272437e3a9140683c92eb09cd74701886  branch=dc1768d973c2898addf5ee92116e831272437e3a9140683c92eb09cd74701886
+СОВПАЛО  main.py  deployed=1afbaa3707182b54fc0c14600682d0220fe94a257f92093a862e55da27a2c6df  branch=1afbaa3707182b54fc0c14600682d0220fe94a257f92093a862e55da27a2c6df
+СОВПАЛО  requirements.txt  deployed=f986310a048c5c90c93e511ec3ef0eeacf71feb2ecf591d45b001097e6707164  branch=f986310a048c5c90c93e511ec3ef0eeacf71feb2ecf591d45b001097e6707164
+
+МУСОР В АРХИВЕ: НЕТ
+ВЕРДИКТ (только реальный код): ВСЁ СОВПАЛО
+Mon Aug  3 14:25:28 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

@@ -1,0 +1,20 @@
+Mon Aug  3 14:49:36 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+WARNING: This command is using service account impersonation. All API calls will be executed as [etl-sa@msklad-bi-prod.iam.gserviceaccount.com].
+=== вызов mode=invoices (прод) ===
+OK
+HTTP_STATUS=200
+Mon Aug  3 15:01:08 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

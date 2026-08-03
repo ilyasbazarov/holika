@@ -1,0 +1,46 @@
+Mon Aug  3 13:45:35 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== describe cf-finance (живая ревизия) ===
+revision=cf-finance-00012-cik
+bucket=gcf-v2-sources-420804682491-asia-east1 object=cf-finance/function-source.zip generation=1784560843778541
+=== скачивание архива живой ревизии ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-finance/function-source.zip#1784560843778541...
+/ [0 files][    0.0 B/ 12.2 KiB]                                                / [0 files][ 12.2 KiB/ 12.2 KiB]                                                -- [1 files][ 12.2 KiB/ 12.2 KiB]                                                
+Operation completed over 1 objects/12.2 KiB.                                     
+=== sha256 живого архива по файлам ===
+97db704a98f2bc6d920513a57742654eabf9577fd4483005bce1789f96fc9648  reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/live_source/__pycache__/main.cpython-312.pyc
+0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59  reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/live_source/main.py
+86d743e5e85d8162f8d4314b5ef1c8f33b2fce67ba084e275cfb6e8147ac0eed  reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/live_source/main.py.bak
+7a5d8dcd7866a887eb940accab709487eb27cba42a3446478b83678c67fa181d  reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/live_source/main.py.pre-e1t3-mech-fx.bak
+fc07feeeab11a015569eca3a9782adacb2cd3b964e801164a16b0c429fe6ba47  reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/live_source/patch_main_finance.py
+5b9dfa54877cc7b48885be34cd1bf4c125435bb9f19f1e0dd856def14e4b6d92  reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/live_source/requirements.txt
+=== клонирование master код-репо ===
+Cloning into 'reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/holika-prod-master'...
+=== HEAD master ===
+81812f4d06fccb5ea0500b565269b07755831fb0
+=== sha256 cf-finance/ в master ===
+0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59  reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/holika-prod-master/cf-finance/main.py
+5b9dfa54877cc7b48885be34cd1bf4c125435bb9f19f1e0dd856def14e4b6d92  reference/_scratch_INVOICES-LOADER-DEPLOY_2026-08-03/holika-prod-master/cf-finance/requirements.txt
+=== ПОБАЙТОВАЯ СВЕРКА (по имени файла, живой архив против master) ===
+НЕ СОВПАЛО/ОТСУТСТВУЕТ  __pycache__/main.cpython-312.pyc  live=97db704a98f2bc6d920513a57742654eabf9577fd4483005bce1789f96fc9648  master=None
+СОВПАЛО  main.py  live=0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59  master=0cb4f6698a61cee96c90f9a14973ada38f5123418b54ff901f24ea2026ddab59
+НЕ СОВПАЛО/ОТСУТСТВУЕТ  main.py.bak  live=86d743e5e85d8162f8d4314b5ef1c8f33b2fce67ba084e275cfb6e8147ac0eed  master=None
+НЕ СОВПАЛО/ОТСУТСТВУЕТ  main.py.pre-e1t3-mech-fx.bak  live=7a5d8dcd7866a887eb940accab709487eb27cba42a3446478b83678c67fa181d  master=None
+НЕ СОВПАЛО/ОТСУТСТВУЕТ  patch_main_finance.py  live=fc07feeeab11a015569eca3a9782adacb2cd3b964e801164a16b0c429fe6ba47  master=None
+СОВПАЛО  requirements.txt  live=5b9dfa54877cc7b48885be34cd1bf4c125435bb9f19f1e0dd856def14e4b6d92  master=5b9dfa54877cc7b48885be34cd1bf4c125435bb9f19f1e0dd856def14e4b6d92
+
+ВЕРДИКТ: РАСХОЖДЕНИЕ ЕСТЬ — СТОП
+Mon Aug  3 13:45:52 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

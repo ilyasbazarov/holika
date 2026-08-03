@@ -1,0 +1,7 @@
+--- cf-finance/requirements.txt	2026-06-18 20:14:44
++++ cf-finance/requirements.txt	2026-08-03 19:39:19
+@@ -2,3 +2,4 @@
+ google-cloud-bigquery-datatransfer
+ protobuf
+ requests
++tenacity
