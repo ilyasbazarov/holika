@@ -1,0 +1,276 @@
+=== UTC anchor (start) ===
+Tue Aug  4 07:26:39 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== step1a: агрегат нашей стороны по ЦЕЛЕВЫМ СТАТУСАМ (без фильтра по списку id) ===
+[
+  {
+    "n_orders": "17", 
+    "n_positions": "268", 
+    "sum_in_transit_kgs": "7.874854305E7"
+  }
+]
+
+=== step1b: тот же срез, но БЕЗ условия in_transit_sum_kgs > 0 (периметр фильтра марта) ===
+[
+  {
+    "n_orders": "19", 
+    "n_positions": "368"
+  }
+]
+
+=== step1c: поимённый список заказов нашей стороны в целевых статусах ===
+[
+  {
+    "n_positions": "1", 
+    "order_name": "202606100070", 
+    "purchase_order_id": "014e8915-6c90-11f1-0a80-1510001826c0", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "5512500.0"
+  }, 
+  {
+    "n_positions": "5", 
+    "order_name": "PDMKGFRU26070711", 
+    "purchase_order_id": "08bfe70e-7b8b-11f1-0a80-03b8000e83b3", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1197000.0"
+  }, 
+  {
+    "n_positions": "4", 
+    "order_name": "202607080047", 
+    "purchase_order_id": "0ce02e00-7b8e-11f1-0a80-0f81000f1c15", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "2640240.0"
+  }, 
+  {
+    "n_positions": "8", 
+    "order_name": "260720-1", 
+    "purchase_order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1778795.38"
+  }, 
+  {
+    "n_positions": "3", 
+    "order_name": "0013", 
+    "purchase_order_id": "24b5aef4-7b65-11f1-0a80-14ba0005701e", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1248086.0"
+  }, 
+  {
+    "n_positions": "77", 
+    "order_name": "SPADE20260312", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "1.13956325E7"
+  }, 
+  {
+    "n_positions": "25", 
+    "order_name": "260611-6", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "1.606452138E7"
+  }, 
+  {
+    "n_positions": "22", 
+    "order_name": "SPADE20260626", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1744601.25"
+  }, 
+  {
+    "n_positions": "8", 
+    "order_name": "260714-1", 
+    "purchase_order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1473814.8"
+  }, 
+  {
+    "n_positions": "5", 
+    "order_name": "SPADE20260312-2", 
+    "purchase_order_id": "4fc9196f-21c8-11f1-0a80-188700046a47", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "3645442.5"
+  }, 
+  {
+    "n_positions": "10", 
+    "order_name": "260720-2", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "491131.38"
+  }, 
+  {
+    "n_positions": "2", 
+    "order_name": "202607030040", 
+    "purchase_order_id": "5d0639b1-7b57-11f1-0a80-1c7600033ca2", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "7441700.0"
+  }, 
+  {
+    "n_positions": "2", 
+    "order_name": "260423-5", 
+    "purchase_order_id": "659cb5f7-423f-11f1-0a80-0f970037e6bb", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "8296777.13"
+  }, 
+  {
+    "n_positions": "52", 
+    "order_name": "SPADE20260424", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "9395811.25"
+  }, 
+  {
+    "n_positions": "1", 
+    "order_name": "SPADE20260611", 
+    "purchase_order_id": "95cf4809-6c8e-11f1-0a80-060a0017f33e", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "2730598.5"
+  }, 
+  {
+    "n_positions": "22", 
+    "order_name": "HOLI260708 (TOR)", 
+    "purchase_order_id": "e7d7a18b-81c6-11f1-0a80-0170000b1cc0", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1037268.75"
+  }, 
+  {
+    "n_positions": "21", 
+    "order_name": "20260708-001KR", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "2654622.25"
+  }
+]
+
+=== step1d: то же по витрине marts.in_transit (без фильтра по списку id) ===
+[
+  {
+    "n_positions": "1", 
+    "purchase_order_id": "014e8915-6c90-11f1-0a80-1510001826c0", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "5512500.0"
+  }, 
+  {
+    "n_positions": "5", 
+    "purchase_order_id": "08bfe70e-7b8b-11f1-0a80-03b8000e83b3", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1197000.0"
+  }, 
+  {
+    "n_positions": "4", 
+    "purchase_order_id": "0ce02e00-7b8e-11f1-0a80-0f81000f1c15", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "2640240.0"
+  }, 
+  {
+    "n_positions": "8", 
+    "purchase_order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1778795.38"
+  }, 
+  {
+    "n_positions": "3", 
+    "purchase_order_id": "24b5aef4-7b65-11f1-0a80-14ba0005701e", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1248086.0"
+  }, 
+  {
+    "n_positions": "77", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "1.13956325E7"
+  }, 
+  {
+    "n_positions": "25", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "1.606452138E7"
+  }, 
+  {
+    "n_positions": "22", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1744601.25"
+  }, 
+  {
+    "n_positions": "8", 
+    "purchase_order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1473814.8"
+  }, 
+  {
+    "n_positions": "5", 
+    "purchase_order_id": "4fc9196f-21c8-11f1-0a80-188700046a47", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "3645442.5"
+  }, 
+  {
+    "n_positions": "10", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "491131.38"
+  }, 
+  {
+    "n_positions": "2", 
+    "purchase_order_id": "5d0639b1-7b57-11f1-0a80-1c7600033ca2", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "7441700.0"
+  }, 
+  {
+    "n_positions": "2", 
+    "purchase_order_id": "659cb5f7-423f-11f1-0a80-0f970037e6bb", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "8296777.13"
+  }, 
+  {
+    "n_positions": "52", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "status_name": "Прибыл частично", 
+    "sum_in_transit_kgs": "9395811.25"
+  }, 
+  {
+    "n_positions": "1", 
+    "purchase_order_id": "95cf4809-6c8e-11f1-0a80-060a0017f33e", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "2730598.5"
+  }, 
+  {
+    "n_positions": "22", 
+    "purchase_order_id": "e7d7a18b-81c6-11f1-0a80-0170000b1cc0", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "1037268.75"
+  }, 
+  {
+    "n_positions": "21", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "status_name": "В пути", 
+    "sum_in_transit_kgs": "2654622.25"
+  }
+]
+
+=== step1e: свежесть нашей стороны — когда таблица последний раз пополнялась ===
+[
+  {
+    "max_loaded_at": "2026-08-01 17:02:16", 
+    "n_rows_total": "4398"
+  }
+]
+
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Tue Aug  4 07:26:54 UTC 2026
+SCRATCH_PATH=reference/_scratch_PARITY-STOCK-INTRANSIT-CLOSE_2026-08-04
