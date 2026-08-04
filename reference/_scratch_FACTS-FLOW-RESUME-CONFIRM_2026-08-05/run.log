@@ -1,0 +1,128 @@
+=== UTC anchor (start) ===
+Tue Aug  4 09:03:56 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== step0: схема core.fact_sales_profit — подтвердить наличие колонки _loaded_at ===
+        "name": "transaction_id",
+        "type": "STRING"
+      },
+--
+        "name": "transaction_date",
+        "type": "DATE"
+      },
+--
+        "name": "product_id",
+        "type": "STRING"
+      },
+--
+        "name": "entity_type",
+        "type": "STRING"
+      },
+--
+        "name": "agent_id",
+        "type": "STRING"
+      },
+--
+        "name": "sell_quantity",
+        "type": "FLOAT"
+      },
+--
+        "name": "return_quantity",
+        "type": "FLOAT"
+      },
+--
+        "name": "revenue_kgs",
+        "type": "FLOAT"
+      },
+--
+        "name": "cogs_kgs",
+        "type": "FLOAT"
+      },
+--
+        "name": "margin_kgs",
+        "type": "FLOAT"
+      },
+--
+        "name": "revenue_usd",
+        "type": "FLOAT"
+      },
+--
+        "name": "cogs_usd",
+        "type": "FLOAT"
+      },
+--
+        "name": "margin_usd",
+        "type": "FLOAT"
+      },
+--
+        "name": "_week_start",
+        "type": "DATE"
+      },
+--
+        "name": "_loaded_at",
+        "type": "TIMESTAMP"
+      },
+--
+        "name": "sell_sum_kgs",
+        "type": "FLOAT"
+      },
+--
+        "name": "return_sum_kgs",
+        "type": "FLOAT"
+      },
+--
+        "name": "discount",
+        "type": "FLOAT"
+      },
+--
+        "name": "sales_channel_id",
+        "type": "STRING"
+      },
+--
+        "name": "sales_channel_name",
+        "type": "STRING"
+      },
+--
+        "name": "project_id",
+        "type": "STRING"
+      },
+--
+        "name": "project_name",
+        "type": "STRING"
+      }
+
+=== query1: присутствие строк 2026-08-01..2026-08-04 в core.fact_sales_profit ===
+[
+  {
+    "n_rows": "14", 
+    "revenue_kgs": "25920.9", 
+    "transaction_date": "2026-08-01"
+  }
+]
+
+=== query2: сдвиг MAX(_loaded_at) относительно замера FACTS-FLOW-RESTORE-ADJ (2026-08-04T07:41:07Z) ===
+[
+  {
+    "max_loaded_at": "2026-08-01 17:02:14", 
+    "n_distinct_loaded_at": "37"
+  }
+]
+
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Tue Aug  4 09:04:25 UTC 2026
+SCRATCH_PATH=reference/_scratch_FACTS-FLOW-RESUME-CONFIRM_2026-08-05
