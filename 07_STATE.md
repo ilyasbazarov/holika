@@ -3,7 +3,7 @@
 # 07 · STATE — Текущее состояние проекта
 
 **Статус:** LIVING (обновляется каждую сессию через `STATE_PATCH`).
-**updated_at:** 2026-08-04 · **обновил:** сборка (буфер 2026-08-04, PARITY-SALES-CLOSE/PARITY-STOCK-INTRANSIT-CLOSE/FACTS-FLOW-RESTORE-ADJ)
+**updated_at:** 2026-08-04 · **обновил:** сборка (буфер 2026-08-04, PARITY-STOCK-INTRANSIT-RECHECK-GEN)
 
 > **Правило компактности (ADR-064):** здесь живёт ТОЛЬКО открытое (open / DEFER / IN PROGRESS / READY /
 > ожидает решения). Полностью закрытые Q/задачи/блокеры переезжают в `07_ARCHIVE.md` однострочной выжимкой
