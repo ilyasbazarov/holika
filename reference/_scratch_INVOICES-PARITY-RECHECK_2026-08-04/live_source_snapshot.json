@@ -1,0 +1,50 @@
+{
+  "fetched": 4527,
+  "meta_size_first": 4527,
+  "applicable_false_excluded": 0,
+  "counted_documents": 4527,
+  "non_kgs_documents": 1966,
+  "fallback_rate_used_count": 0,
+  "sum_kgs_total": 1279154042.38,
+  "payed_kgs_total": 1136839988.65,
+  "unpaid_kgs_total": 142314053.73,
+  "state_breakdown": {
+    "(без статуса)": {
+      "count": 7,
+      "sum_kgs": 1618833.36
+    },
+    "Истечение срока оплаты": {
+      "count": 58,
+      "sum_kgs": 29209934.57
+    },
+    "Маркетплейс": {
+      "count": 51,
+      "sum_kgs": 71441949.43
+    },
+    "Новый": {
+      "count": 30,
+      "sum_kgs": 11090303.49
+    },
+    "Ожидает оплату": {
+      "count": 59,
+      "sum_kgs": 39680838.83
+    },
+    "Оплачено": {
+      "count": 4149,
+      "sum_kgs": 1044770778.39
+    },
+    "Платеж просрочен": {
+      "count": 36,
+      "sum_kgs": 29080926.5
+    },
+    "Под реализацию": {
+      "count": 1,
+      "sum_kgs": 255661.46
+    },
+    "Частично оплачен": {
+      "count": 136,
+      "sum_kgs": 52004816.35
+    }
+  },
+  "currency_rate_cache": {}
+}

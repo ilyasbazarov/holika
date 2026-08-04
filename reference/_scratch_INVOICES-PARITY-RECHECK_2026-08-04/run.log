@@ -1,0 +1,83 @@
+=== UTC-якорь + личность вызывающего (начало) ===
+Tue Aug  4 06:33:23 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Секрет: чтение в переменную окружения (значение не печатается) ===
+=== Живой снимок entity/invoiceout (read-only) ===
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+G1 fetched=4527 meta_size_first=4527
+{
+  "fetched": 4527,
+  "meta_size_first": 4527,
+  "applicable_false_excluded": 0,
+  "counted_documents": 4527,
+  "non_kgs_documents": 1966,
+  "fallback_rate_used_count": 0,
+  "sum_kgs_total": 1279154042.38,
+  "payed_kgs_total": 1136839988.65,
+  "unpaid_kgs_total": 142314053.73,
+  "state_breakdown": {
+    "(без статуса)": {
+      "count": 7,
+      "sum_kgs": 1618833.36
+    },
+    "Истечение срока оплаты": {
+      "count": 58,
+      "sum_kgs": 29209934.57
+    },
+    "Маркетплейс": {
+      "count": 51,
+      "sum_kgs": 71441949.43
+    },
+    "Новый": {
+      "count": 30,
+      "sum_kgs": 11090303.49
+    },
+    "Ожидает оплату": {
+      "count": 59,
+      "sum_kgs": 39680838.83
+    },
+    "Оплачено": {
+      "count": 4149,
+      "sum_kgs": 1044770778.39
+    },
+    "Платеж просрочен": {
+      "count": 36,
+      "sum_kgs": 29080926.5
+    },
+    "Под реализацию": {
+      "count": 1,
+      "sum_kgs": 255661.46
+    },
+    "Частично оплачен": {
+      "count": 136,
+      "sum_kgs": 52004816.35
+    }
+  },
+  "currency_rate_cache": {}
+}
+=== Наша сторона: marts.customer_invoices_ar (read-only BQ) ===
+[
+  {
+    "total_invoice_count": "4526", 
+    "total_invoiced_kgs": "1.27911108357E9", 
+    "total_paid_kgs": "1.13683998865E9", 
+    "total_unpaid_kgs": "1.4227109492E8"
+  }
+]
+=== UTC-якорь + личность вызывающего (конец) ===
+Tue Aug  4 06:44:20 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Готово. Артефакты в: /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/INVOICES-PARITY-RECHECK/reference/_scratch_INVOICES-PARITY-RECHECK_2026-08-04 ===
