@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "n_src_total": 341,
+    "n_core_total": 341,
+    "n_common": 341,
+    "n_matches": 341,
+    "n_mismatches": 0,
+    "n_only_src_orphans": 0,
+    "only_src_sum_in_transit_kgs": 0,
+    "n_only_core_orphans": 0,
+    "only_core_sum_in_transit_kgs": 0,
+    "mismatch_sum_diff_total": 0
+  },
+  "only_src_orphans": [],
+  "only_core_orphans": [],
+  "mismatches": []
+}

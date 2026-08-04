@@ -1,0 +1,49 @@
+=== UTC anchor (start) ===
+Tue Aug  4 05:29:51 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== step1: our side date_snapshot (MAX) ===
+[
+  {
+    "max_snapshot": "2026-08-04"
+  }
+]
+MAX_SNAPSHOT=2026-08-04
+=== step2: live GET report/stock/all (immediately after step1) ===
+GET_START_UTC=2026-08-04T05:29:54Z
+token length: 40
+page=0 status=200 rows_in_page=302 meta.size=302
+SUMMARY {'n_rows': 302, 'sum_stock': 121874.0}
+GET_END_UTC=2026-08-04T05:29:57Z
+=== step3: our side, same partition (bq query) ===
+[
+  {
+    "n_rows": "303", 
+    "sum_stock": "121878.0"
+  }
+]
+=== step3b: marts.inventory_health same snapshot, for cross-check ===
+[
+  {
+    "date_snapshot": null, 
+    "n_rows": "0", 
+    "sum_stock": null
+  }
+]
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Tue Aug  4 05:30:03 UTC 2026
+SCRATCH_PATH=reference/_scratch_PARITY-STOCK-INTRANSIT_2026-08-04

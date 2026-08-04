@@ -1,0 +1,1 @@
+grep_rc(real)=1 (0=found match=BAD, 1=no match=GOOD)

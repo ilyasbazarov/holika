@@ -1,0 +1,49 @@
+=== UTC anchor (start) ===
+Tue Aug  4 05:31:02 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+token length: 40
+GET_START_UTC=2026-08-04T05:31:03Z
+orders fetched: 211 (meta.size=211)
+target orders (В пути / Прибыл частично): 17
+by_status: {'Прибыл частично': 8, 'В пути': 9}
+[1/17] order 014e8915-6c90-11f1-0a80-1510001826c0: 1 positions
+[2/17] order 04a41f62-826b-11f1-0a80-14070015f6ec: 12 positions
+[3/17] order 0ce02e00-7b8e-11f1-0a80-0f81000f1c15: 5 positions
+[4/17] order 2462bcab-8804-11f1-0a80-02cb00183eef: 8 positions
+[5/17] order 24b5aef4-7b65-11f1-0a80-14ba0005701e: 6 positions
+[6/17] order 3d101ec6-21c7-11f1-0a80-1ba10004161f: 77 positions
+[7/17] order 4459a22d-6c7d-11f1-0a80-14fc00168022: 28 positions
+[8/17] order 48a29aa3-7792-11f1-0a80-1dbb0017b803: 22 positions
+[9/17] order 49bf1fbd-8100-11f1-0a80-0ee9000bc2bc: 8 positions
+[10/17] order 4fc9196f-21c8-11f1-0a80-188700046a47: 5 positions
+[11/17] order 54a37cd5-8811-11f1-0a80-15c2001a1793: 10 positions
+[12/17] order 5d0639b1-7b57-11f1-0a80-1c7600033ca2: 5 positions
+[13/17] order 659cb5f7-423f-11f1-0a80-0f970037e6bb: 2 positions
+[14/17] order 8628612c-4390-11f1-0a80-1b7c00035d2a: 52 positions
+[15/17] order 95cf4809-6c8e-11f1-0a80-060a0017f33e: 1 positions
+[16/17] order aab67ac6-e2d4-11f0-0a80-0fda0015d3cf: 77 positions
+[17/17] order ea131f89-87eb-11f1-0a80-01800017d83e: 22 positions
+total positions: 341, missing rate.value: 0, SUM(in_transit_sum_kgs)=76514274.3
+GET_END_UTC=2026-08-04T05:31:47Z
+=== step8: our side, same 19 (or N) order ids, from core.fact_purchases ===
+n_rows_core = 100
+=== step8b: cross-check via marts.in_transit for same ids ===
+n_rows_mart = 100
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Tue Aug  4 05:31:53 UTC 2026
+SCRATCH_PATH=reference/_scratch_PARITY-STOCK-INTRANSIT_2026-08-04
