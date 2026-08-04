@@ -1,0 +1,36 @@
+=== UTC-якорь НАЧАЛО ===
+Tue Aug  4 15:17:02 UTC 2026
+=== Личность НАЧАЛО ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== Шаг 1a: выбор кандидата ретроспективного момента (bq, read-only) ===
+[
+  {
+    "date_snapshot": "2026-07-28", 
+    "max_loaded_at": "2026-07-27 21:00:03", 
+    "min_loaded_at": "2026-07-27 21:00:03", 
+    "n_rows": "330"
+  }
+]
+Партиция 7 суток назад, min(_loaded_at) (UTC) = 2026-07-27 21:00:03
+Кандидат moment (сырое значение из BQ, без преобразования зоны) = 2026-07-27 21:00:03
+
+=== Шаг 1b: секрет msklad-token — чтение в переменную окружения (не печатается) ===
+Токен прочитан, длина=40 символов (значение не печатается)
+
+=== Шаг 1c: три вызова в одну минуту ===
+Tue Aug  4 15:17:11 UTC 2026
+--- 1: КОНТРОЛЬ (без временного параметра) ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/stock/all?stockMode=all&quantityMode=all&limit=1000
+HTTP: 200
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte

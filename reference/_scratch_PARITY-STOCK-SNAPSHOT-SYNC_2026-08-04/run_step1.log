@@ -1,0 +1,79 @@
+=== UTC-якорь НАЧАЛО ===
+Tue Aug  4 15:17:40 UTC 2026
+=== Личность НАЧАЛО ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== Шаг 1a: выбор кандидата ретроспективного момента (bq, read-only) ===
+[
+  {
+    "date_snapshot": "2026-07-28", 
+    "max_loaded_at": "2026-07-27 21:00:03", 
+    "min_loaded_at": "2026-07-27 21:00:03", 
+    "n_rows": "330"
+  }
+]
+Партиция 7 суток назад, min(_loaded_at) (UTC) = 2026-07-27 21:00:03
+Кандидат moment (сырое значение из BQ, без преобразования зоны) = 2026-07-27 21:00:03
+
+=== Шаг 1b: секрет msklad-token — чтение в переменную окружения (не печатается) ===
+Токен прочитан, длина=40 символов (значение не печатается)
+
+=== Шаг 1c: три вызова в одну минуту ===
+Tue Aug  4 15:17:44 UTC 2026
+--- 1: КОНТРОЛЬ (без временного параметра) ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/stock/all?stockMode=all&quantityMode=all&limit=1000
+HTTP: 200
+HTTP: 200
+meta.size=326
+rows_count=326
+SUM(stock)=152626.0
+row0_fields=['externalCode', 'folder', 'image', 'inTransit', 'meta', 'name', 'price', 'quantity', 'reserve', 'salePrice', 'stock', 'stockDays', 'uom']
+
+--- 2: ПРОБА (кандидат-параметр moment=2026-07-27 21:00:03) ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/stock/all?stockMode=all&quantityMode=all&limit=1000&moment=2026-07-27%2021%3A00%3A03
+HTTP: 200
+HTTP: 200
+meta.size=326
+rows_count=326
+SUM(stock)=152626.0
+row0_fields=['externalCode', 'folder', 'image', 'inTransit', 'meta', 'name', 'price', 'quantity', 'reserve', 'salePrice', 'stock', 'stockDays', 'uom']
+
+--- 3: ПОВТОР КОНТРОЛЯ (без временного параметра) ---
+URL: https://api.moysklad.ru/api/remap/1.2/report/stock/all?stockMode=all&quantityMode=all&limit=1000
+HTTP: 200
+HTTP: 200
+meta.size=326
+rows_count=326
+SUM(stock)=152626.0
+row0_fields=['externalCode', 'folder', 'image', 'inTransit', 'meta', 'name', 'price', 'quantity', 'reserve', 'salePrice', 'stock', 'stockDays', 'uom']
+
+Tue Aug  4 15:17:51 UTC 2026
+
+=== Шаг 1d: сравнение тел ответов ===
+-- control1 vs control2 (ожидание: идентичны или почти идентичны, малый естественный оборот) --
+IDENTICAL
+-- probe vs control1 --
+DIFFERENT
+
+=== Проверка утечки токена (токен + grep ОДНОЙ командой, ADR-077 §6/§5.3) ===
+rc=0 (ожидание: 0 совпадений, файл ниже пуст при отсутствии утечки)
+       0 step1_token_leak_check.log
+
+=== UTC-якорь КОНЕЦ ===
+Tue Aug  4 15:17:51 UTC 2026
+=== Личность КОНЕЦ ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+Артефакты в: /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/PARITY-STOCK-SNAPSHOT-SYNC/reference/_scratch_PARITY-STOCK-SNAPSHOT-SYNC_2026-08-04

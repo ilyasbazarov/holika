@@ -1,0 +1,5 @@
+HTTP: 200
+meta.size=326
+rows_count=326
+SUM(stock)=152626.0
+row0_fields=['externalCode', 'folder', 'image', 'inTransit', 'meta', 'name', 'price', 'quantity', 'reserve', 'salePrice', 'stock', 'stockDays', 'uom']
