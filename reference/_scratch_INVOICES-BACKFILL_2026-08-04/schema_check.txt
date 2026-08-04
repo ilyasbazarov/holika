@@ -1,0 +1,15 @@
+invoice_id STRING REQUIRED
+invoice_name STRING 
+moment DATE 
+agent_id STRING 
+agent_name STRING 
+state_id STRING 
+state_name STRING 
+sum_kgs FLOAT 
+payed_sum_kgs FLOAT 
+unpaid_sum_kgs FLOAT 
+payment_planned DATE 
+sales_channel_id STRING 
+sales_channel_name STRING 
+_loaded_at TIMESTAMP 
+False False False
