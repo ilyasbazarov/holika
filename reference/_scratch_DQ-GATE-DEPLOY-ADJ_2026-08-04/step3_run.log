@@ -1,0 +1,37 @@
+=== date -u (start) ===
+Tue Aug  4 11:42:00 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== 1. Все записи drift_check от cf-dq за максимально доступное окно ===
+строк получено:        0
+--- первые 5 / последние 5 ---
+  …
+
+=== 2. Только ПРОВАЛЫ (❌) — совпавшие строки целиком ===
+(нет совпадений — см. предупреждение о retention выше)
+
+=== 3. Границы фактически доступного окна логов (самая ранняя запись cf-dq любого рода) ===
+2026-05-07T12:53:09.855023Z
+
+=== stderr (непустой = смотреть) ===
+--- reference/_scratch_DQ-GATE-DEPLOY-ADJ_2026-08-04/step3_q1.err
+--- reference/_scratch_DQ-GATE-DEPLOY-ADJ_2026-08-04/step3_q3.err
+
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Tue Aug  4 11:44:06 UTC 2026
+=== SCRATCH: reference/_scratch_DQ-GATE-DEPLOY-ADJ_2026-08-04 ===

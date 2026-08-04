@@ -1,0 +1,41 @@
+=== date -u (start) ===
+Tue Aug  4 11:44:51 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== 1. Форма записи: три сырых entry за узкое окно вокруг известного провала 2026-08-01 ===
+записей: 1
+  ключи: []
+  textPayload: None
+  jsonPayload: None
+
+=== 2. Все провалы DQ Gate по маркеру ❌ за доступное окно (оба payload-поля) ===
+строк получено:        0
+--- совпавшие строки, только drift_check, по одной на дату target_date ---
+(нет drift_check среди провалов)
+--- первые 15 совпавших строк целиком ---
+
+=== 3. Суточная сводка ВСЕХ провалов по имени чека ===
+(нет совпадений)
+
+=== stderr (непустой = смотреть) ===
+--- reference/_scratch_DQ-GATE-DEPLOY-ADJ_2026-08-04/step3b_q1.err
+--- reference/_scratch_DQ-GATE-DEPLOY-ADJ_2026-08-04/step3b_q2.err
+
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Tue Aug  4 11:45:52 UTC 2026
+=== SCRATCH: reference/_scratch_DQ-GATE-DEPLOY-ADJ_2026-08-04 ===

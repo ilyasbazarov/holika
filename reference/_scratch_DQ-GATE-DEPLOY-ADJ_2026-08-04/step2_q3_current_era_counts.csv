@@ -1,0 +1,3 @@
+kind,days,days_zero_docs,fail_current,fail_zero_docs,fail_low_but_nonzero,fail_at_0010,fail_at_any_positive
+weekday,32,3,3,3,0,3,3
+weekend,13,1,4,1,3,2,1
