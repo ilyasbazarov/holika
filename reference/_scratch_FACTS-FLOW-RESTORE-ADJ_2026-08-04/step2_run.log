@@ -1,0 +1,44 @@
+=== UTC anchor (start) ===
+Tue Aug  4 07:49:37 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== step2a: свежесть staging (техническая) ===
+[
+  {
+    "max_loaded_at": "2026-08-04 07:01:08", 
+    "min_loaded_at": "2026-08-04 07:01:08", 
+    "n_distinct_loaded_at": "1", 
+    "n_rows": "674"
+  }
+]
+
+=== step2b: порог прохождения чека на прогоне 2026-08-04T18:00Z ===
+    (target_date = 2026-08-04, будни → threshold = 0.10; ma7 = окно 2026-07-28…2026-08-03)
+[
+  {
+    "ma7": "5558128.17", 
+    "needed_for_pass": "555812.82", 
+    "ratio_now": "0.2044", 
+    "target_rev_now": "1136030.01", 
+    "would_pass_now": "true"
+  }
+]
+
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Tue Aug  4 07:49:44 UTC 2026
+SCRATCH_PATH=reference/_scratch_FACTS-FLOW-RESTORE-ADJ_2026-08-04

@@ -1,0 +1,237 @@
+=== UTC anchor (start) ===
+Tue Aug  4 07:47:32 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== step1a: staging по суткам (то, что видит drift_check как target_rev) ===
+[
+  {
+    "d_bishkek": "2026-07-28", 
+    "n_rows": "169", 
+    "revenue_kgs": "3545902.67"
+  }, 
+  {
+    "d_bishkek": "2026-07-29", 
+    "n_rows": "171", 
+    "revenue_kgs": "1.770740012E7"
+  }, 
+  {
+    "d_bishkek": "2026-07-30", 
+    "n_rows": "222", 
+    "revenue_kgs": "5491632.0"
+  }, 
+  {
+    "d_bishkek": "2026-07-31", 
+    "n_rows": "58", 
+    "revenue_kgs": "919183.18"
+  }, 
+  {
+    "d_bishkek": "2026-08-01", 
+    "n_rows": "14", 
+    "revenue_kgs": "25920.9"
+  }, 
+  {
+    "d_bishkek": "2026-08-03", 
+    "n_rows": "18", 
+    "revenue_kgs": "191799.8"
+  }, 
+  {
+    "d_bishkek": "2026-08-04", 
+    "n_rows": "22", 
+    "revenue_kgs": "1136030.01"
+  }
+]
+
+=== step1b: ядро по суткам за последние 20 дней (то, из чего считается ma7) ===
+[
+  {
+    "n_rows": "64", 
+    "revenue_kgs": "1082641.91", 
+    "transaction_date": "2026-07-15"
+  }, 
+  {
+    "n_rows": "76", 
+    "revenue_kgs": "778896.31", 
+    "transaction_date": "2026-07-16"
+  }, 
+  {
+    "n_rows": "35", 
+    "revenue_kgs": "528973.2", 
+    "transaction_date": "2026-07-17"
+  }, 
+  {
+    "n_rows": "5", 
+    "revenue_kgs": "1752665.0", 
+    "transaction_date": "2026-07-18"
+  }, 
+  {
+    "n_rows": "67", 
+    "revenue_kgs": "1333806.0", 
+    "transaction_date": "2026-07-19"
+  }, 
+  {
+    "n_rows": "161", 
+    "revenue_kgs": "5640699.43", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "n_rows": "136", 
+    "revenue_kgs": "2444597.47", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "n_rows": "209", 
+    "revenue_kgs": "6589879.36", 
+    "transaction_date": "2026-07-22"
+  }, 
+  {
+    "n_rows": "32", 
+    "revenue_kgs": "1699377.9", 
+    "transaction_date": "2026-07-23"
+  }, 
+  {
+    "n_rows": "73", 
+    "revenue_kgs": "5272634.27", 
+    "transaction_date": "2026-07-24"
+  }, 
+  {
+    "n_rows": "9", 
+    "revenue_kgs": "65385.5", 
+    "transaction_date": "2026-07-25"
+  }, 
+  {
+    "n_rows": "12", 
+    "revenue_kgs": "219891.19", 
+    "transaction_date": "2026-07-26"
+  }, 
+  {
+    "n_rows": "170", 
+    "revenue_kgs": "5411554.34", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "n_rows": "169", 
+    "revenue_kgs": "3545902.67", 
+    "transaction_date": "2026-07-28"
+  }, 
+  {
+    "n_rows": "171", 
+    "revenue_kgs": "1.770740012E7", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "n_rows": "225", 
+    "revenue_kgs": "5592234.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "n_rows": "58", 
+    "revenue_kgs": "919183.18", 
+    "transaction_date": "2026-07-31"
+  }, 
+  {
+    "n_rows": "14", 
+    "revenue_kgs": "25920.9", 
+    "transaction_date": "2026-08-01"
+  }
+]
+
+=== step1c: воспроизведение ma7 гейта на СЕГОДНЯ (окно T-8..T-2, дословно main.py:45-52) ===
+[
+  {
+    "ma7": "5533699.2", 
+    "n_days_in_window": "6"
+  }
+]
+
+=== step1d: прогноз ma7 по датам будущих прогонов (та же формула со сдвигом опорной даты) ===
+[
+  {
+    "ma7_projected": "5533699.2", 
+    "n_days_with_data": "6", 
+    "run_date": "2026-08-04", 
+    "window_from": "2026-07-27", 
+    "window_to_incl": "2026-08-02"
+  }, 
+  {
+    "ma7_projected": "5558128.17", 
+    "n_days_with_data": "5", 
+    "run_date": "2026-08-05", 
+    "window_from": "2026-07-28", 
+    "window_to_incl": "2026-08-03"
+  }, 
+  {
+    "ma7_projected": "6061184.55", 
+    "n_days_with_data": "4", 
+    "run_date": "2026-08-06", 
+    "window_from": "2026-07-29", 
+    "window_to_incl": "2026-08-04"
+  }, 
+  {
+    "ma7_projected": "2179112.69", 
+    "n_days_with_data": "3", 
+    "run_date": "2026-08-07", 
+    "window_from": "2026-07-30", 
+    "window_to_incl": "2026-08-05"
+  }, 
+  {
+    "ma7_projected": "472552.04", 
+    "n_days_with_data": "2", 
+    "run_date": "2026-08-08", 
+    "window_from": "2026-07-31", 
+    "window_to_incl": "2026-08-06"
+  }, 
+  {
+    "ma7_projected": "25920.9", 
+    "n_days_with_data": "1", 
+    "run_date": "2026-08-09", 
+    "window_from": "2026-08-01", 
+    "window_to_incl": "2026-08-07"
+  }, 
+  {
+    "ma7_projected": "0.0", 
+    "n_days_with_data": "0", 
+    "run_date": "2026-08-10", 
+    "window_from": "2026-08-02", 
+    "window_to_incl": "2026-08-08"
+  }, 
+  {
+    "ma7_projected": "0.0", 
+    "n_days_with_data": "0", 
+    "run_date": "2026-08-11", 
+    "window_from": "2026-08-03", 
+    "window_to_incl": "2026-08-09"
+  }, 
+  {
+    "ma7_projected": "0.0", 
+    "n_days_with_data": "0", 
+    "run_date": "2026-08-12", 
+    "window_from": "2026-08-04", 
+    "window_to_incl": "2026-08-10"
+  }, 
+  {
+    "ma7_projected": "0.0", 
+    "n_days_with_data": "0", 
+    "run_date": "2026-08-13", 
+    "window_from": "2026-08-05", 
+    "window_to_incl": "2026-08-11"
+  }
+]
+
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Tue Aug  4 07:47:45 UTC 2026
+SCRATCH_PATH=reference/_scratch_FACTS-FLOW-RESTORE-ADJ_2026-08-04
