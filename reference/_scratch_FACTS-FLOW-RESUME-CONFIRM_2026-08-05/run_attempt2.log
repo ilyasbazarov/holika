@@ -1,0 +1,66 @@
+=== UTC anchor (start) ===
+Tue Aug  4 18:24:57 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== step0: предусловие — текущее время ПОСЛЕ ожидаемого прогона 2026-08-04T18:00:02Z ===
+Это ровно то, на чём сорвалась попытка 1 (запущена 09:03Z, до прогона).
+now_epoch=1785867898  run_epoch=1785866402  delta_sec=1496
+предусловие выполнено: прогон уже состоялся по времени
+
+=== step1: присутствие строк 2026-08-01..2026-08-04 в core.fact_sales_profit ===
+[
+  {
+    "n_rows": "14", 
+    "revenue_kgs": "25920.9", 
+    "transaction_date": "2026-08-01"
+  }, 
+  {
+    "n_rows": "18", 
+    "revenue_kgs": "191799.8", 
+    "transaction_date": "2026-08-03"
+  }, 
+  {
+    "n_rows": "67", 
+    "revenue_kgs": "4625728.33", 
+    "transaction_date": "2026-08-04"
+  }
+]
+
+=== step2: сдвиг MAX(_loaded_at) (замер FACTS-FLOW-RESTORE-ADJ давал 2026-08-01 17:02:14) ===
+[
+  {
+    "max_loaded_at": "2026-08-04 18:02:15", 
+    "n_distinct_loaded_at": "38", 
+    "n_rows_total": "37071"
+  }
+]
+
+=== step3: состояние прогонов hourly-конвейера (расширение сверх буквы строки задачи) ===
+Мотив: при отрицательном исходе step1 нужно различить «гейт снова заблокировал»
+и «прогон ещё идёт» — иначе отрицательный вердикт снова окажется неинтерпретируемым.
+NAME                                  STATE      START_TIME                      END_TIME
+cb2c9bae-7de6-4ace-adb1-0005885401b1  SUCCEEDED  2026-08-04T18:00:02.699243874Z  2026-08-04T18:05:20.120576378Z
+3f644d0c-42bb-4ac1-ad74-e9987418b68c  FAILED     2026-08-04T17:00:02.334316183Z  2026-08-04T17:02:29.873217481Z
+6f1bcb75-fd8a-4853-9387-1805bc973479  FAILED     2026-08-04T16:00:02.506069492Z  2026-08-04T16:02:54.739099797Z
+eae6b0bf-d9f9-4967-97d6-6bd1fadd9693  FAILED     2026-08-04T15:00:03.311328958Z  2026-08-04T15:02:24.963062366Z
+c5c09c71-8442-429b-9ce7-044271e89fd4  FAILED     2026-08-04T14:00:02.729602910Z  2026-08-04T14:02:34.637123026Z
+9c2a6121-4256-44e0-a8db-d9bcdc69c9dd  FAILED     2026-08-04T13:00:02.377812722Z  2026-08-04T13:02:39.800789580Z
+
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Tue Aug  4 18:25:08 UTC 2026
+SCRATCH_PATH=reference/_scratch_FACTS-FLOW-RESUME-CONFIRM_2026-08-05
