@@ -1,0 +1,40 @@
+=== date -u (start) ===
+Wed Aug  5 05:02:49 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== describe msklad-pipeline-hourly ===
+revisionId= 000003-f02
+updateTime= 2026-07-30T10:04:58.248189607Z
+state= ACTIVE
+serviceAccount= projects/msklad-bi-prod/serviceAccounts/etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+=== describe msklad-pipeline-weekly ===
+revisionId= 000003-fa9
+updateTime= 2026-07-30T10:04:58.556441498Z
+state= ACTIVE
+serviceAccount= projects/msklad-bi-prod/serviceAccounts/etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+=== sha256 живых снимков ===
+89f29d3ba73b54173d5eef3ed80ccfca0cb4f6aed0224549348304de88a36e6c  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-GATE-SCOPE-SPLIT-DEPLOY/reference/_scratch_DQ-GATE-SCOPE-SPLIT-DEPLOY_2026-08-05/hourly_live_sourceContents.yaml
+cf08969259e8925a92a58aa23bc2b01358a87eb8bd44d11884b651b91bcabb1c  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-GATE-SCOPE-SPLIT-DEPLOY/reference/_scratch_DQ-GATE-SCOPE-SPLIT-DEPLOY_2026-08-05/weekly_live_sourceContents.yaml
+=== diff <(sort живой) <(sort патч) — hourly ===
+HOURLY: diff sort — ПУСТО (множество строк тождественно)
+=== diff <(sort живой) <(sort патч) — weekly ===
+WEEKLY: diff sort — ПУСТО (множество строк тождественно)
+=== сверка живого с копией снимка 2026-08-02 (если найдена) ===
+../_scratch_DQ-SOURCE-CAPTURE_2026-08-02/step2_weekly_workflow.yaml
+../_scratch_DQ-SOURCE-CAPTURE_2026-08-02/step2_hourly_workflow.yaml
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Wed Aug  5 05:02:56 UTC 2026

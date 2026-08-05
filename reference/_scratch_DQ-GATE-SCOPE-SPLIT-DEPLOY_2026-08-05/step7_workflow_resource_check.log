@@ -1,0 +1,9 @@
+=== date -u (start) ===
+Wed Aug  5 06:10:46 UTC 2026
+=== workflows.googleapis.com execution steps log, окно 06:00:00Z..06:06:30Z ===
+всего записей: 3
+2026-08-05T06:00:02.437529029Z flows.googleapis.com%2Fexecutions_system {"@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog", "activityTime": "2026-08-05T06:00:02Z", "start": {"argument": "{}"}, "state": "ACTIVE"}
+2026-08-05T06:05:57.460689728Z projects/msklad-bi-prod/logs/Workflows "[HOURLY] Pipeline COMPLETED run_id=1785909602.4547296"
+2026-08-05T06:05:57.603110435Z flows.googleapis.com%2Fexecutions_system {"@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog", "activityTime": "2026-08-05T06:05:57Z", "state": "SUCCEEDED", "success": {"result": "{\"coverage_stats\":{\"agent_cover
+=== date -u (end) ===
+Wed Aug  5 06:10:48 UTC 2026

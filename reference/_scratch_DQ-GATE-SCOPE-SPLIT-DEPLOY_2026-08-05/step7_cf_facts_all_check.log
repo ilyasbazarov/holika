@@ -1,0 +1,11 @@
+=== date -u (start) ===
+Wed Aug  5 06:10:13 UTC 2026
+=== cf-facts: ВСЕ логи (без фильтра по полю), окно 06:00:00Z..06:06:30Z ===
+всего записей: 5
+2026-08-05T06:01:07.172760Z | text= None | json.message= None | http= True
+2026-08-05T06:01:29.961590Z | text= Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic. | json.message= None | http= False
+2026-08-05T06:01:33.489074Z | text= Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080. | json.message= None | http= False
+2026-08-05T06:02:02.555091Z | text= None | json.message= None | http= True
+2026-08-05T06:05:46.185906Z | text= None | json.message= None | http= True
+=== date -u (end) ===
+Wed Aug  5 06:10:16 UTC 2026

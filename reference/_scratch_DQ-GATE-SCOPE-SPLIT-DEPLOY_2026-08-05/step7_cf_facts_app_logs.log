@@ -1,0 +1,8 @@
+=== date -u (start) ===
+Wed Aug  5 06:09:47 UTC 2026
+=== cf-facts application logs (не только HTTP), окно 06:00:00Z..06:06:30Z ===
+TIMESTAMP                    TEXT_PAYLOAD                                                                                                                                                                                   MESSAGE
+2026-08-05T06:01:29.961590Z  Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+2026-08-05T06:01:33.489074Z  Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+=== date -u (end) ===
+Wed Aug  5 06:09:49 UTC 2026

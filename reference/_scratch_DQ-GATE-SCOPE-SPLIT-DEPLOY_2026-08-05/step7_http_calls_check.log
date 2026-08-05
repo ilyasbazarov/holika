@@ -1,0 +1,12 @@
+=== date -u (start) ===
+Wed Aug  5 06:09:32 UTC 2026
+=== HTTP request logs cf-facts / cf-dq / cf-dim / cf-fx, окно 06:00:00Z..06:06:30Z ===
+TIMESTAMP                    SERVICE_NAME  STATUS  LATENCY
+2026-08-05T06:00:02.580251Z  cf-dim        200     61.187528938s
+2026-08-05T06:01:03.933609Z  cf-fx         200     2.928893960s
+2026-08-05T06:01:07.172760Z  cf-facts      200     55.185937983s
+2026-08-05T06:02:02.555091Z  cf-facts      200     219.232216796s
+2026-08-05T06:05:41.962287Z  cf-dq         200     4.078449666s
+2026-08-05T06:05:46.185906Z  cf-facts      200     11.073967153s
+=== date -u (end) ===
+Wed Aug  5 06:09:35 UTC 2026

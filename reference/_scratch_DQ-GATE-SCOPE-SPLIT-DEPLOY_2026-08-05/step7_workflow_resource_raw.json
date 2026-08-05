@@ -1,0 +1,76 @@
+[
+  {
+    "insertId": "sbm9s9d4i4m",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-05T06:00:02Z",
+      "start": {
+        "argument": "{}"
+      },
+      "state": "ACTIVE"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "a28be854-7211-42e4-a723-a1aa70c8752e",
+      "workflows.googleapis.com/revision_id": "000004-5fc"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-05T06:00:03.101659019Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-05T06:00:02.437529029Z"
+  },
+  {
+    "insertId": "dlw31vfbggc3k",
+    "labels": {
+      "execution_id": "a28be854-7211-42e4-a723-a1aa70c8752e",
+      "revision_id": "000004-5fc"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-08-05T06:05:57.460689728Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "INFO",
+    "textPayload": "[HOURLY] Pipeline COMPLETED run_id=1785909602.4547296",
+    "timestamp": "2026-08-05T06:05:57.460689728Z"
+  },
+  {
+    "insertId": "1o8grpccoc2",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-05T06:05:57Z",
+      "state": "SUCCEEDED",
+      "success": {
+        "result": "{\"coverage_stats\":{\"agent_coverage\":1,\"cogs_coverage\":0,\"total_revenue_kgs\":29062266.33,\"total_rows\":553,\"usd_coverage\":1},\"merge_stats\":{\"affected_rows\":550,\"cogs_source\":\"msklad-bi-prod.core.fact_sales_profit_byvariant_backup\",\"staging_rows\":550,\"window_days\":7},\"mode\":\"promote\",\"run_id\":1785909602.4547296,\"status\":\"ok\"}"
+      }
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "a28be854-7211-42e4-a723-a1aa70c8752e",
+      "workflows.googleapis.com/revision_id": "000004-5fc"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-05T06:05:58.268922759Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-05T06:05:57.603110435Z"
+  }
+]
