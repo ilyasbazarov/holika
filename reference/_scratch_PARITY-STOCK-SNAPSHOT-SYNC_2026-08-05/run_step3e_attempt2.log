@@ -1,0 +1,44 @@
+=== UTC-якорь НАЧАЛО ===
+Wed Aug  5 04:32:16 UTC 2026
+=== Личность НАЧАЛО ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== Шаг 3e-1: три контрольных UUID из совпавшего множества (не сироты) ===
+  элементов в diffs (совпавший ключ, разный stock): 25
+  форма элемента: ["9a19c5f8-71cd-11ef-0a80-011d00136cfc", "Celimax Dual Barrier Creamy Toner 150 ml ( Барьерный кремовый тонер )", 2806.0, 4438.0, 1632.0]
+  взято контрольных: 3
+
+=== Шаг 3e-2: GET по контрольным товарам ===
+UUID                                   HTTP   updated / archived
+9a19c5f8-71cd-11ef-0a80-011d00136cfc   200    updated=2026-08-03 15:15:17.683 archived=False
+       name='Celimax Dual Barrier Creamy Toner 150 ml ( Барьерный кремовый тонер )'
+9a11276e-71cd-11ef-0a80-011d00136cf0   200    updated=2026-08-03 15:15:17.683 archived=False
+       name='Celimax Dual Barrier Skin Wearable Cream 50 ml ( Барьерный крем с комплексом церамидов )'
+1ab8b059-74ca-11ef-0a80-13c10035f6ea   200    updated=2026-08-03 15:15:17.683 archived=False
+       name='Celimax The Real Noni Starter Kit 3ea ( Набор средств с экстрактом нони )'
+
+=== Шаг 3e-3: вердикт различителя ===
+Если контрольные несут ТУ ЖЕ отметку 2026-08-03 15:15:17.683 — совпадение у сирот
+фактом о сиротах НЕ является (массовая правка всего справочника).
+Если контрольные несут ДРУГИЕ отметки — совпадение у семи есть находка.
+
+=== Шаг 3e-4: проверка утечки токена (токен и grep ОДНОЙ командой) ===
+grep rc=1 (1 = утечки нет), строк: 0
+
+=== Личность КОНЕЦ ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC-якорь КОНЕЦ ===
+Wed Aug  5 04:32:21 UTC 2026
+SCRATCH_PATH=reference/_scratch_PARITY-STOCK-SNAPSHOT-SYNC_2026-08-05
