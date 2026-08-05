@@ -1,0 +1,54 @@
+=== UTC-якорь НАЧАЛО ===
+Wed Aug  5 04:30:50 UTC 2026
+=== Личность НАЧАЛО ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== Шаг 3a: извлечение семи UUID программно из сохранённого результата замера ===
+Источник: reference/_scratch_PARITY-STOCK-ROWWISE_2026-08-04/step6_join_result.json (переписывание глазами запрещено брифом)
+  orphans_src (есть у источника, нет у нас): 1
+  orphans_our (есть у нас, нет у источника): 6
+  всего к опросу: 7
+
+=== Шаг 3b: семь GET entity/product/<uuid> (read-only) ===
+СТОР UUID                                   HTTP   ПОЛЯ
+src    52fb3721-9799-11ef-0a80-1333001565d6   200    archived=False updated=2026-08-03 15:15:17.683
+       name='Celimax The Real Noni Acne Bubble Cleanser 155 ml ( Кислородная пенка с экстрактом нони )' folder='CELIMAX' code=None
+our    2c01019e-efa2-11ef-0a80-163b00126af7   200    archived=False updated=2026-08-03 15:15:17.683
+       name='Torriden Balanceful Cica Pore Cleansing Foam 150 ml' folder='TORRIDEN' code=None
+our    8c47d2a6-9786-11ef-0a80-0d9f0011029a   200    archived=False updated=2026-08-03 15:15:17.683
+       name='Anua Rice 70 Glow Milky Toner 250ml (Молочный тонер для сияния кожи с рисом)' folder='ANUA' code=None
+our    d4454d7f-3a2e-11f1-0a80-039b0005b55a   200    archived=False updated=2026-08-03 15:15:17.683
+       name='Arencia Fresh Blue Hyssop Rice Mochi Cleanser 120g (Очищающее средство с глиной и экстрактом иссопа)' folder='Arencia' code=None
+our    d4484b6b-6008-11f1-0a80-05aa000e3ea1   200    archived=False updated=2026-08-03 15:15:17.683
+       name='Beauty Of Joseon Dynasty Cream 30ml' folder='BEAUTY OF JOSEON' code=None
+our    db379039-2e59-11ef-0a80-0b8700a96a92   200    archived=False updated=2026-08-03 15:15:17.683
+       name='Skin1004 Madagascar Centella Hyalu-Cica Brightening Toner 210ml(Увлажняющий тоник для выравнивания тона)' folder='SKIN1004' code=None
+our    f30892e8-74c7-11ef-0a80-0381001e4fc7   200    archived=False updated=2026-08-03 15:15:17.683
+       name='Celimax Pore Dark Spot Brightening Serum 30ml ( Сыворотка для выравнивания тона и рельефа кожи )' folder='CELIMAX' code=None
+
+=== Шаг 3c: ключи ответа (форма логирования ADR-079 §6, по первому файлу) ===
+  step3_product_2c01019e-efa2-11ef-0a80-163b00126af7.json
+  ключи: accountId, archived, attributes, barcodes, buyPrice, country, discountProhibited, externalCode, files, group, id, images, isSerialTrackable, meta, minPrice, name, owner, pathName, paymentItemType, productFolder, salePrices, shared, trackingType, uom, updated, useParentVat, variantsCount, volume, weight
+
+=== Шаг 3d: проверка утечки токена в файлы сессии (токен и grep ОДНОЙ командой) ===
+Ловушка PARITY-STOCK-ROWWISE: переменная окружения не переживает переход между
+отдельными вызовами инструмента, поэтому проверка обязана идти внутри этого же процесса.
+grep rc=1 (1 = совпадений нет, то есть утечки нет), строк в логе: 0
+
+=== Личность КОНЕЦ ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC-якорь КОНЕЦ ===
+Wed Aug  5 04:30:59 UTC 2026
+SCRATCH_PATH=reference/_scratch_PARITY-STOCK-SNAPSHOT-SYNC_2026-08-05
