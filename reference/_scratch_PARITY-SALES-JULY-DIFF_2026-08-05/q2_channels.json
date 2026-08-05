@@ -1,0 +1,12 @@
+[
+  {
+    "channel": "Оптовая торговля", 
+    "n_rows": "2895", 
+    "sum_revenue_kgs": "1.083463353E8"
+  }, 
+  {
+    "channel": "(NULL)", 
+    "n_rows": "40", 
+    "sum_revenue_kgs": "821523.0"
+  }
+]

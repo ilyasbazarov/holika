@@ -1,0 +1,20 @@
+[
+  {
+    "agent_id": "b3667c34-3ca3-11f0-0a80-15ce0025d38d", 
+    "counterparty": "Асель Токтосунова @optovye_ceny01 0706552277", 
+    "n_rows": "50", 
+    "sum_revenue_kgs": "1812391.9"
+  }, 
+  {
+    "agent_id": "1a011125-87c0-11ef-0a80-1568002f4385", 
+    "counterparty": "Барно Душанбе +992 98 881 1811", 
+    "n_rows": "15", 
+    "sum_revenue_kgs": "112545.0"
+  }, 
+  {
+    "agent_id": "1c56547b-87c0-11ef-0a80-1568002f4554", 
+    "counterparty": "Якубова Фарзона +992 928247700", 
+    "n_rows": "1", 
+    "sum_revenue_kgs": "39312.0"
+  }
+]

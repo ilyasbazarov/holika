@@ -1,0 +1,37 @@
+[
+  {
+    "manager": "Турдалиева А. М.", 
+    "n_rows": "683", 
+    "sum_revenue_kgs": "7.356789239E7"
+  }, 
+  {
+    "manager": "Турсунбекова М.", 
+    "n_rows": "648", 
+    "sum_revenue_kgs": "2.130359838E7"
+  }, 
+  {
+    "manager": "Омурбекова Э. О.", 
+    "n_rows": "1385", 
+    "sum_revenue_kgs": "1.159156013E7"
+  }, 
+  {
+    "manager": "(менеджер не назначен)", 
+    "n_rows": "66", 
+    "sum_revenue_kgs": "1964248.9"
+  }, 
+  {
+    "manager": "Казакбаев Н. К.", 
+    "n_rows": "136", 
+    "sum_revenue_kgs": "386562.68"
+  }, 
+  {
+    "manager": "Бейшеналиева К.", 
+    "n_rows": "14", 
+    "sum_revenue_kgs": "268909.5"
+  }, 
+  {
+    "manager": "Бактияр кызы Ч.", 
+    "n_rows": "3", 
+    "sum_revenue_kgs": "85086.32"
+  }
+]

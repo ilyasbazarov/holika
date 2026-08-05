@@ -1,0 +1,111 @@
+=== UTC ЯКОРЬ (начало) ===
+Wed Aug  5 09:18:18 UTC 2026
+=== ЛИЧНОСТЬ (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+
+=== Q1a ядро core.fact_sales_profit, июль-2026 ===
+[
+  {
+    "d_max": "2026-07-31", 
+    "d_min": "2026-07-01", 
+    "max_loaded_at": "2026-08-05 09:06:02.823376+00", 
+    "n_days": "30", 
+    "n_rows": "2935", 
+    "sum_revenue_kgs": "1.091678583E8"
+  }
+]
+
+=== Q1b витрина marts.sales_overview, июль-2026 ===
+[
+  {
+    "mart_refreshed_at": "2026-08-05 07:34:02.943612+00", 
+    "n_rows": "2935", 
+    "sum_revenue_kgs": "1.0916785832E8"
+  }
+]
+
+=== Q2 разрез по каналам продаж, ядро, июль-2026 ===
+[
+  {
+    "channel": "Оптовая торговля", 
+    "n_rows": "2895", 
+    "sum_revenue_kgs": "1.083463353E8"
+  }, 
+  {
+    "channel": "(NULL)", 
+    "n_rows": "40", 
+    "sum_revenue_kgs": "821523.0"
+  }
+]
+
+=== Q3 разрез по менеджеру ТЕМ ЖЕ джойном, что и витрина, июль-2026 ===
+[
+  {
+    "manager": "Турдалиева А. М.", 
+    "n_rows": "683", 
+    "sum_revenue_kgs": "7.356789239E7"
+  }, 
+  {
+    "manager": "Турсунбекова М.", 
+    "n_rows": "648", 
+    "sum_revenue_kgs": "2.130359838E7"
+  }, 
+  {
+    "manager": "Омурбекова Э. О.", 
+    "n_rows": "1385", 
+    "sum_revenue_kgs": "1.159156013E7"
+  }, 
+  {
+    "manager": "(менеджер не назначен)", 
+    "n_rows": "66", 
+    "sum_revenue_kgs": "1964248.9"
+  }, 
+  {
+    "manager": "Казакбаев Н. К.", 
+    "n_rows": "136", 
+    "sum_revenue_kgs": "386562.68"
+  }, 
+  {
+    "manager": "Бейшеналиева К.", 
+    "n_rows": "14", 
+    "sum_revenue_kgs": "268909.5"
+  }, 
+  {
+    "manager": "Бактияр кызы Ч.", 
+    "n_rows": "3", 
+    "sum_revenue_kgs": "85086.32"
+  }
+]
+
+=== Q4 замыкание разреза: сумма по менеджерам против итога ядра + непроатрибутированное ===
+[
+  {
+    "agent_not_in_dim": "0.0", 
+    "n_rows_after_join": "2935", 
+    "no_agent_id": "0.0", 
+    "no_owner": "1964248.9", 
+    "owner_not_in_dim": "0.0", 
+    "total_core": "1.091678583E8"
+  }
+]
+
+=== Q5 контроль размножения строк джойном (дубли scd2_is_current) ===
+[
+  {
+    "agents_with_multiple_current_rows": "0"
+  }
+]
+
+=== UTC ЯКОРЬ (конец) ===
+Wed Aug  5 09:18:36 UTC 2026
+=== ЛИЧНОСТЬ (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+АРТЕФАКТЫ: reference/_scratch_PARITY-SALES-JULY-DIFF_2026-08-05
