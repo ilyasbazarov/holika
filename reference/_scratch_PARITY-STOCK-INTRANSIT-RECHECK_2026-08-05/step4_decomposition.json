@@ -1,0 +1,16 @@
+{
+  "n_intersection": 251,
+  "sum_intersection_our": 78184949.43,
+  "sum_intersection_src": 78184949.43,
+  "n_only_our": 0,
+  "sum_only_our": 0,
+  "only_our_keys": [],
+  "n_only_src": 0,
+  "sum_only_src": 0,
+  "only_src_keys": [],
+  "n_mismatches": 0,
+  "mismatches": [],
+  "total_our": 78184949.43,
+  "total_src": 78184949.43,
+  "delta": 0.0
+}

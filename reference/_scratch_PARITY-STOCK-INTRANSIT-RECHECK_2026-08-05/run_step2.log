@@ -1,0 +1,45 @@
+=== UTC anchor (start) ===
+Wed Aug  5 07:19:21 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== step2a: our side, mart filter verbatim from sq_marts_in_transit.sql:47-48 ===
+[
+  {
+    "n_orders": "16", 
+    "n_positions": "251", 
+    "sum_in_transit_kgs": "7.818494942E7"
+  }
+]
+=== step2b: our side rows (mart filter), full detail ===
+n_rows_detail = 251
+=== step2c: same status filter WITHOUT sum condition (status only) ===
+[
+  {
+    "n_orders": "17", 
+    "n_positions": "341"
+  }
+]
+=== step2d: core vs marts.in_transit order-set symmetric diff (mart filter) ===
+[
+  {
+    "in_core_not_mart": "1", 
+    "in_mart_not_core": "2"
+  }
+]
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Wed Aug  5 07:19:35 UTC 2026
+SCRATCH_PATH=reference/_scratch_PARITY-STOCK-INTRANSIT-RECHECK_2026-08-05

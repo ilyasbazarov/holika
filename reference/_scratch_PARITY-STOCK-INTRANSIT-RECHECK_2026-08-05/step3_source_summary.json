@@ -1,0 +1,12 @@
+{
+  "n_target_orders": 17,
+  "n_positions_total": 341,
+  "n_positions_nonzero": 251,
+  "n_missing_rate_value": 0,
+  "sum_in_transit_sum_kgs_all": 78184949.43,
+  "sum_in_transit_sum_kgs_nonzero": 78184949.43,
+  "by_status": {
+    "\u041f\u0440\u0438\u0431\u044b\u043b \u0447\u0430\u0441\u0442\u0438\u0447\u043d\u043e": 8,
+    "\u0412 \u043f\u0443\u0442\u0438": 9
+  }
+}

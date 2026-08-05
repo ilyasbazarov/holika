@@ -1,0 +1,2512 @@
+[
+  {
+    "in_transit_sum_kgs": "5512500.0", 
+    "order_name": "202606100070", 
+    "position_id": "014e8ef6-6c90-11f1-0a80-1510001826c1", 
+    "price_kgs": "551.25", 
+    "product_id": "9f9f648b-3e20-11f1-0a80-07ae0007330b", 
+    "purchase_order_id": "014e8915-6c90-11f1-0a80-1510001826c0", 
+    "quantity_in_transit": "10000.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "90663.125", 
+    "order_name": "2026/07/13-1", 
+    "position_id": "04a42b17-826b-11f1-0a80-14070015f6ed", 
+    "price_kgs": "302.2104166666667", 
+    "product_id": "2825c902-87e4-11ef-0a80-11f10092bbea", 
+    "purchase_order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "235046.875", 
+    "order_name": "2026/07/13-1", 
+    "position_id": "04a42e61-826b-11f1-0a80-14070015f6ee", 
+    "price_kgs": "391.74479166666663", 
+    "product_id": "2828b5bc-87e4-11ef-0a80-11f10092bbee", 
+    "purchase_order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "257412.75", 
+    "order_name": "2026/07/13-1", 
+    "position_id": "04a42faa-826b-11f1-0a80-14070015f6ef", 
+    "price_kgs": "514.8254999999999", 
+    "product_id": "28317fd2-87e4-11ef-0a80-11f10092bc08", 
+    "purchase_order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", 
+    "quantity_in_transit": "500.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "123110.75", 
+    "order_name": "2026/07/13-1", 
+    "position_id": "04a430d8-826b-11f1-0a80-14070015f6f0", 
+    "price_kgs": "246.22150000000002", 
+    "product_id": "d77ae5e8-b2fe-11f0-0a80-1c7a00722b58", 
+    "purchase_order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", 
+    "quantity_in_transit": "500.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "255174.5", 
+    "order_name": "2026/07/13-1", 
+    "position_id": "04a43218-826b-11f1-0a80-14070015f6f1", 
+    "price_kgs": "425.2908333333333", 
+    "product_id": "2a37b20b-edcd-11ef-0a80-13a400068c41", 
+    "purchase_order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "156697.625", 
+    "order_name": "2026/07/13-1", 
+    "position_id": "04a43347-826b-11f1-0a80-14070015f6f2", 
+    "price_kgs": "391.7440625", 
+    "product_id": "282eb327-87e4-11ef-0a80-11f10092bbff", 
+    "purchase_order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", 
+    "quantity_in_transit": "400.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "138790.75", 
+    "order_name": "2026/07/13-1", 
+    "position_id": "04a43477-826b-11f1-0a80-14070015f6f3", 
+    "price_kgs": "346.976875", 
+    "product_id": "a9af2d0a-ef44-11ef-0a80-0c580002af0d", 
+    "purchase_order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", 
+    "quantity_in_transit": "400.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "109360.125", 
+    "order_name": "2026/07/13-1", 
+    "position_id": "04a4369a-826b-11f1-0a80-14070015f6f4", 
+    "price_kgs": "364.53375", 
+    "product_id": "f87b0014-ef44-11ef-0a80-13b000027ce2", 
+    "purchase_order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "196976.5", 
+    "order_name": "2026/07/13-1", 
+    "position_id": "04a437c2-826b-11f1-0a80-14070015f6f5", 
+    "price_kgs": "492.44124999999997", 
+    "product_id": "c4a43751-8269-11f1-0a80-051f0014f77b", 
+    "purchase_order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", 
+    "quantity_in_transit": "400.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "107442.125", 
+    "order_name": "2026/07/13-1", 
+    "position_id": "04a438d6-826b-11f1-0a80-14070015f6f6", 
+    "price_kgs": "537.210625", 
+    "product_id": "1e0ac8fd-ef45-11ef-0a80-163b00027153", 
+    "purchase_order_id": "04a41f62-826b-11f1-0a80-14070015f6ec", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "1325700.0", 
+    "order_name": "202607080047", 
+    "position_id": "0ce03648-7b8e-11f1-0a80-0f81000f1c16", 
+    "price_kgs": "441.90000000000003", 
+    "product_id": "db8a8ce3-2e59-11ef-0a80-0b8700a96b2a", 
+    "purchase_order_id": "0ce02e00-7b8e-11f1-0a80-0f81000f1c15", 
+    "quantity_in_transit": "3000.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "912960.0", 
+    "order_name": "202607080047", 
+    "position_id": "0ce03a52-7b8e-11f1-0a80-0f81000f1c17", 
+    "price_kgs": "570.6", 
+    "product_id": "0546c409-5e45-11f0-0a80-1b1c000b4210", 
+    "purchase_order_id": "0ce02e00-7b8e-11f1-0a80-0f81000f1c15", 
+    "quantity_in_transit": "1600.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "87300.0", 
+    "order_name": "202607080047", 
+    "position_id": "0ce03b6e-7b8e-11f1-0a80-0f81000f1c18", 
+    "price_kgs": "436.49999999999994", 
+    "product_id": "dc3b9bf3-2e59-11ef-0a80-0b8700a96c6a", 
+    "purchase_order_id": "0ce02e00-7b8e-11f1-0a80-0f81000f1c15", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "314280.0", 
+    "order_name": "202607080047", 
+    "position_id": "0ce03d0c-7b8e-11f1-0a80-0f81000f1c19", 
+    "price_kgs": "698.4", 
+    "product_id": "5a5da388-639b-11f0-0a80-10d800033e7d", 
+    "purchase_order_id": "0ce02e00-7b8e-11f1-0a80-0f81000f1c15", 
+    "quantity_in_transit": "450.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "98558.25", 
+    "order_name": "260720-1", 
+    "position_id": "2462c1a5-8804-11f1-0a80-02cb00183ef0", 
+    "price_kgs": "492.79125000000005", 
+    "product_id": "e9147b11-2e59-11ef-0a80-0b8700a98374", 
+    "purchase_order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "259214.375", 
+    "order_name": "260720-1", 
+    "position_id": "2462c35e-8804-11f1-0a80-02cb00183ef1", 
+    "price_kgs": "360.0199652777778", 
+    "product_id": "e90d3f28-2e59-11ef-0a80-0b8700a9836f", 
+    "purchase_order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", 
+    "quantity_in_transit": "720.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "84904.75", 
+    "order_name": "260720-1", 
+    "position_id": "2462c41a-8804-11f1-0a80-02cb00183ef2", 
+    "price_kgs": "442.2122395833333", 
+    "product_id": "6ff157af-a651-11ef-0a80-0d5d00090533", 
+    "purchase_order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", 
+    "quantity_in_transit": "192.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "85914.5", 
+    "order_name": "260720-1", 
+    "position_id": "2462c4d1-8804-11f1-0a80-02cb00183ef3", 
+    "price_kgs": "429.5725", 
+    "product_id": "71297673-87fa-11f1-0a80-04e60017d711", 
+    "purchase_order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "85913.625", 
+    "order_name": "260720-1", 
+    "position_id": "2462c574-8804-11f1-0a80-02cb00183ef4", 
+    "price_kgs": "429.568125", 
+    "product_id": "860c4acd-8801-11f1-0a80-001c0018864e", 
+    "purchase_order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "682392.375", 
+    "order_name": "260720-1", 
+    "position_id": "2462c631-8804-11f1-0a80-02cb00183ef5", 
+    "price_kgs": "568.6603125", 
+    "product_id": "dc150aed-8801-11f1-0a80-1858001a23a1", 
+    "purchase_order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", 
+    "quantity_in_transit": "1200.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "233505.125", 
+    "order_name": "260720-1", 
+    "position_id": "2462c6d8-8804-11f1-0a80-02cb00183ef6", 
+    "price_kgs": "486.4690104166666", 
+    "product_id": "6108470f-8802-11f1-0a80-178e0019c16b", 
+    "purchase_order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", 
+    "quantity_in_transit": "480.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "248392.375", 
+    "order_name": "260720-1", 
+    "position_id": "2462c776-8804-11f1-0a80-02cb00183ef7", 
+    "price_kgs": "574.9823495370371", 
+    "product_id": "f7322f3f-8802-11f1-0a80-0180001a3f9f", 
+    "purchase_order_id": "2462bcab-8804-11f1-0a80-02cb00183eef", 
+    "quantity_in_transit": "432.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "446563.25", 
+    "order_name": "0013", 
+    "position_id": "24b5b480-7b65-11f1-0a80-14ba0005701f", 
+    "price_kgs": "572.5169871794872", 
+    "product_id": "c6397e9e-2e59-11ef-0a80-0b8700a94150", 
+    "purchase_order_id": "24b5aef4-7b65-11f1-0a80-14ba0005701e", 
+    "quantity_in_transit": "780.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "299470.5", 
+    "order_name": "0013", 
+    "position_id": "24b5b5ff-7b65-11f1-0a80-14ba00057020", 
+    "price_kgs": "374.338125", 
+    "product_id": "c6560783-2e59-11ef-0a80-0b8700a94188", 
+    "purchase_order_id": "24b5aef4-7b65-11f1-0a80-14ba0005701e", 
+    "quantity_in_transit": "800.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "502052.25", 
+    "order_name": "0013", 
+    "position_id": "24b5b6b7-7b65-11f1-0a80-14ba00057021", 
+    "price_kgs": "836.75375", 
+    "product_id": "c62ade5a-2e59-11ef-0a80-0b8700a94133", 
+    "purchase_order_id": "24b5aef4-7b65-11f1-0a80-14ba0005701e", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "53760.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d102941-21c7-11f1-0a80-1ba100041620", 
+    "price_kgs": "280.0", 
+    "product_id": "f0386194-2e59-11ef-0a80-0b8700a990bd", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "192.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "224017.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d102c16-21c7-11f1-0a80-1ba100041621", 
+    "price_kgs": "439.24999999999994", 
+    "product_id": "f00e394a-2e59-11ef-0a80-0b8700a99067", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "510.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "406560.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d102db4-21c7-11f1-0a80-1ba100041622", 
+    "price_kgs": "847.0", 
+    "product_id": "fa90669d-2e59-11ef-0a80-0b8700a9a494", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "480.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "985162.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d102f2e-21c7-11f1-0a80-1ba100041623", 
+    "price_kgs": "364.875", 
+    "product_id": "facbfa54-2e59-11ef-0a80-0b8700a9a513", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "2700.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "58511.25", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1030b7-21c7-11f1-0a80-1ba100041624", 
+    "price_kgs": "650.125", 
+    "product_id": "faa43180-2e59-11ef-0a80-0b8700a9a4bf", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "90.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "25935.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d10324a-21c7-11f1-0a80-1ba100041625", 
+    "price_kgs": "432.25000000000006", 
+    "product_id": "fa9dfe77-2e59-11ef-0a80-0b8700a9a4b1", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "12915.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1033de-21c7-11f1-0a80-1ba100041626", 
+    "price_kgs": "645.75", 
+    "product_id": "6a334d5b-fc09-11ef-0a80-01b100170ae0", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "20.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "50610.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d103547-21c7-11f1-0a80-1ba100041627", 
+    "price_kgs": "843.5", 
+    "product_id": "fa42d483-2e59-11ef-0a80-0b8700a9a3ef", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "58240.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1036cd-21c7-11f1-0a80-1ba100041628", 
+    "price_kgs": "728.0", 
+    "product_id": "a9db916a-8417-11f0-0a80-01f600123bdf", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "20370.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1038ff-21c7-11f1-0a80-1ba100041629", 
+    "price_kgs": "679.0", 
+    "product_id": "96265442-fc08-11ef-0a80-075b00173baa", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "30.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "40862.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d103a6c-21c7-11f1-0a80-1ba10004162a", 
+    "price_kgs": "408.625", 
+    "product_id": "fcc2b9a1-2e59-11ef-0a80-0b8700a9add7", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "39375.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d103bbc-21c7-11f1-0a80-1ba10004162b", 
+    "price_kgs": "437.5", 
+    "product_id": "1582de12-fc09-11ef-0a80-10550016c6cb", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "90.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "40005.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d103d59-21c7-11f1-0a80-1ba10004162c", 
+    "price_kgs": "444.5", 
+    "product_id": "31c158b1-8b02-11ef-0a80-08af0019670c", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "90.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "136762.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d103ee6-21c7-11f1-0a80-1ba10004162d", 
+    "price_kgs": "455.875", 
+    "product_id": "d76c020b-8b02-11ef-0a80-01750019b7fc", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "267540.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d104038-21c7-11f1-0a80-1ba10004162e", 
+    "price_kgs": "557.375", 
+    "product_id": "fa7b38be-2e59-11ef-0a80-0b8700a9a469", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "480.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "225960.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d104186-21c7-11f1-0a80-1ba10004162f", 
+    "price_kgs": "706.125", 
+    "product_id": "712f8d6d-5e1c-11ef-0a80-190e0133e295", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "320.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "109987.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1042db-21c7-11f1-0a80-1ba100041630", 
+    "price_kgs": "366.62500000000006", 
+    "product_id": "fa892020-2e59-11ef-0a80-0b8700a9a486", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "252840.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d104440-21c7-11f1-0a80-1ba100041631", 
+    "price_kgs": "602.0", 
+    "product_id": "fc636a8c-2e59-11ef-0a80-0b8700a9ad44", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "420.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "49560.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d10458c-21c7-11f1-0a80-1ba100041632", 
+    "price_kgs": "619.5", 
+    "product_id": "e4581833-2e59-11ef-0a80-0b8700a97c3a", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "3192000.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1046e5-21c7-11f1-0a80-1ba100041633", 
+    "price_kgs": "532.0", 
+    "product_id": "fc5cc590-2e59-11ef-0a80-0b8700a9ad3f", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "6000.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "24325.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d104833-21c7-11f1-0a80-1ba100041634", 
+    "price_kgs": "608.125", 
+    "product_id": "e762aad8-2e59-11ef-0a80-0b8700a97fe5", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "40.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "12285.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d104987-21c7-11f1-0a80-1ba100041635", 
+    "price_kgs": "307.125", 
+    "product_id": "7bff5506-8b04-11ef-0a80-165e001a0686", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "40.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "31920.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d104ade-21c7-11f1-0a80-1ba100041636", 
+    "price_kgs": "532.0", 
+    "product_id": "fc95d8fb-2e59-11ef-0a80-0b8700a9ad77", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "57960.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d104c31-21c7-11f1-0a80-1ba100041637", 
+    "price_kgs": "482.99999999999994", 
+    "product_id": "021e5047-2e5a-11ef-0a80-0b8700a9b923", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "51712.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d104d96-21c7-11f1-0a80-1ba100041638", 
+    "price_kgs": "517.125", 
+    "product_id": "fc82237b-2e59-11ef-0a80-0b8700a9ad5d", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "36225.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d104ee9-21c7-11f1-0a80-1ba100041639", 
+    "price_kgs": "603.75", 
+    "product_id": "3df19c61-8b03-11ef-0a80-1961001ac6b2", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "45010.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d10502c-21c7-11f1-0a80-1ba10004163a", 
+    "price_kgs": "562.625", 
+    "product_id": "5d2a97a1-8b03-11ef-0a80-165e0019d0d3", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "33180.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d105182-21c7-11f1-0a80-1ba10004163b", 
+    "price_kgs": "138.25", 
+    "product_id": "71c0f784-8b03-11ef-0a80-0da4001a6072", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "240.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "136237.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1052e2-21c7-11f1-0a80-1ba10004163c", 
+    "price_kgs": "454.12500000000006", 
+    "product_id": "4ec3f085-8b05-11ef-0a80-165e001a2a5c", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "16800.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d105436-21c7-11f1-0a80-1ba10004163d", 
+    "price_kgs": "560.0", 
+    "product_id": "fcaa91c4-8418-11f0-0a80-01f600127065", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "30.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "111300.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d10558a-21c7-11f1-0a80-1ba10004163e", 
+    "price_kgs": "556.5", 
+    "product_id": "d1265908-abc7-11f0-0a80-0d540014ee05", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "96600.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1056e1-21c7-11f1-0a80-1ba10004163f", 
+    "price_kgs": "482.99999999999994", 
+    "product_id": "3a14782f-8419-11f0-0a80-03c300129720", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "22295.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d105832-21c7-11f1-0a80-1ba100041640", 
+    "price_kgs": "557.375", 
+    "product_id": "faaadfcc-2e59-11ef-0a80-0b8700a9a4cd", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "40.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "44205.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d10598b-21c7-11f1-0a80-1ba100041641", 
+    "price_kgs": "368.375", 
+    "product_id": "fa49d37d-2e59-11ef-0a80-0b8700a9a3fe", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "12285.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d105ac8-21c7-11f1-0a80-1ba100041642", 
+    "price_kgs": "307.125", 
+    "product_id": "9122b5b6-8b05-11ef-0a80-165e001a356d", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "40.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "41711.25", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d105c13-21c7-11f1-0a80-1ba100041643", 
+    "price_kgs": "595.875", 
+    "product_id": "fa5bf3dc-2e59-11ef-0a80-0b8700a9a426", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "70.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "24430.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d105d60-21c7-11f1-0a80-1ba100041644", 
+    "price_kgs": "610.75", 
+    "product_id": "629a2e0e-8b06-11ef-0a80-00a1001a73ca", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "40.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "44800.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d105ead-21c7-11f1-0a80-1ba100041645", 
+    "price_kgs": "560.0", 
+    "product_id": "e7957787-2e59-11ef-0a80-0b8700a98041", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "56490.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106032-21c7-11f1-0a80-1ba100041646", 
+    "price_kgs": "706.125", 
+    "product_id": "e7a4dd38-2e59-11ef-0a80-0b8700a9805c", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "18375.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106187-21c7-11f1-0a80-1ba100041647", 
+    "price_kgs": "367.5", 
+    "product_id": "fcd0170a-2e59-11ef-0a80-0b8700a9adf1", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "50.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "54993.75", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1062e2-21c7-11f1-0a80-1ba100041648", 
+    "price_kgs": "366.62500000000006", 
+    "product_id": "019c6110-2e5a-11ef-0a80-0b8700a9b6c9", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "150.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "57855.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106432-21c7-11f1-0a80-1ba100041649", 
+    "price_kgs": "482.125", 
+    "product_id": "cca67519-8b05-11ef-0a80-165e001a3d1b", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "26162.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106571-21c7-11f1-0a80-1ba10004164a", 
+    "price_kgs": "523.25", 
+    "product_id": "0c63b269-841a-11f0-0a80-1a990012c7b6", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "50.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "91350.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1066c1-21c7-11f1-0a80-1ba10004164b", 
+    "price_kgs": "456.75", 
+    "product_id": "144921b0-8b06-11ef-0a80-0175001a54e6", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "72765.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106813-21c7-11f1-0a80-1ba10004164c", 
+    "price_kgs": "606.375", 
+    "product_id": "533a1689-841a-11f0-0a80-079b0011b51a", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "82215.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106964-21c7-11f1-0a80-1ba10004164d", 
+    "price_kgs": "685.125", 
+    "product_id": "aa19180c-21c3-11f1-0a80-00100003ccd6", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "217875.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106aa8-21c7-11f1-0a80-1ba10004164e", 
+    "price_kgs": "363.12500000000006", 
+    "product_id": "09800ee6-21c4-11f1-0a80-00100003d66b", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "48273.75", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106c03-21c7-11f1-0a80-1ba10004164f", 
+    "price_kgs": "536.375", 
+    "product_id": "d7878ff1-fc07-11ef-0a80-117a0017ff78", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "90.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "116235.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106d52-21c7-11f1-0a80-1ba100041650", 
+    "price_kgs": "645.75", 
+    "product_id": "0231625a-2e5a-11ef-0a80-0b8700a9b946", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "180.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "212362.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106eb2-21c7-11f1-0a80-1ba100041651", 
+    "price_kgs": "707.875", 
+    "product_id": "022b41f9-2e5a-11ef-0a80-0b8700a9b941", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "24325.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d106ff3-21c7-11f1-0a80-1ba100041652", 
+    "price_kgs": "608.125", 
+    "product_id": "0129ac91-2e5a-11ef-0a80-0b8700a9b5ec", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "40.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "45990.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d107147-21c7-11f1-0a80-1ba100041653", 
+    "price_kgs": "383.25", 
+    "product_id": "30bee859-4121-11f0-0a80-113d0009372c", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "27300.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d107293-21c7-11f1-0a80-1ba100041654", 
+    "price_kgs": "682.5", 
+    "product_id": "5563580c-4121-11f0-0a80-0d9e000930c3", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "40.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "88620.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1073eb-21c7-11f1-0a80-1ba100041655", 
+    "price_kgs": "738.5", 
+    "product_id": "9116ff35-21c4-11f1-0a80-19f60003a095", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "91980.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d10752a-21c7-11f1-0a80-1ba100041656", 
+    "price_kgs": "511.0", 
+    "product_id": "cd5041e5-8b06-11ef-0a80-0da4001ae451", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "180.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "26390.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d107687-21c7-11f1-0a80-1ba100041657", 
+    "price_kgs": "659.75", 
+    "product_id": "de05e5b8-8b06-11ef-0a80-0da4001ae65c", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "40.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "15330.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1077d5-21c7-11f1-0a80-1ba100041658", 
+    "price_kgs": "511.0", 
+    "product_id": "15a518c8-8b03-11ef-0a80-08af001990c0", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "30.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "38587.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d10790e-21c7-11f1-0a80-1ba100041659", 
+    "price_kgs": "643.125", 
+    "product_id": "ff32c9d9-8b02-11ef-0a80-1961001abaa8", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "44100.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d107a5c-21c7-11f1-0a80-1ba10004165a", 
+    "price_kgs": "441.0", 
+    "product_id": "c2b6ec54-841a-11f0-0a80-090700124644", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "48440.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d107bb8-21c7-11f1-0a80-1ba10004165b", 
+    "price_kgs": "605.5", 
+    "product_id": "ea282132-841a-11f0-0a80-0f550012f1be", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "32025.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d107d1a-21c7-11f1-0a80-1ba10004165c", 
+    "price_kgs": "320.25", 
+    "product_id": "7b6e15fb-36f4-11f0-0a80-0843000b5f9d", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "135607.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d107e57-21c7-11f1-0a80-1ba10004165d", 
+    "price_kgs": "502.25", 
+    "product_id": "1bc3d836-fc08-11ef-0a80-10550016b5cb", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "270.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "144690.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d107fb3-21c7-11f1-0a80-1ba10004165e", 
+    "price_kgs": "602.875", 
+    "product_id": "3086dd9f-fc08-11ef-0a80-18ca0017a044", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "240.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "266000.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d108106-21c7-11f1-0a80-1ba10004165f", 
+    "price_kgs": "665.0", 
+    "product_id": "420efabb-fc08-11ef-0a80-075b001736a4", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "400.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "950600.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d108250-21c7-11f1-0a80-1ba100041660", 
+    "price_kgs": "594.125", 
+    "product_id": "af89bd9d-4120-11f0-0a80-0d9e00090491", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "1600.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "161087.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d108397-21c7-11f1-0a80-1ba100041661", 
+    "price_kgs": "460.25", 
+    "product_id": "4c01b249-841b-11f0-0a80-0bc50012cfd0", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "350.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "204435.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1084ef-21c7-11f1-0a80-1ba100041662", 
+    "price_kgs": "567.875", 
+    "product_id": "5b1cbc2f-21c5-11f1-0a80-0d650003e1c1", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "360.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "242550.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d108648-21c7-11f1-0a80-1ba100041663", 
+    "price_kgs": "808.5", 
+    "product_id": "9fe422a2-21c5-11f1-0a80-19f60003c2a7", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "398693.75", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d108807-21c7-11f1-0a80-1ba100041664", 
+    "price_kgs": "613.375", 
+    "product_id": "e164e7bc-21c5-11f1-0a80-1d8d0003c561", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "650.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "24281.25", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d10896c-21c7-11f1-0a80-1ba100041665", 
+    "price_kgs": "485.625", 
+    "product_id": "2af931b4-fc07-11ef-0a80-0b9c0016f642", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "50.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "24587.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d108ac2-21c7-11f1-0a80-1ba100041666", 
+    "price_kgs": "491.75", 
+    "product_id": "4019d5a8-fc07-11ef-0a80-0b9c0016f789", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "50.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "48037.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d108c1f-21c7-11f1-0a80-1ba100041667", 
+    "price_kgs": "480.375", 
+    "product_id": "57e943ef-fc07-11ef-0a80-18ca00177733", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "33705.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d108db8-21c7-11f1-0a80-1ba100041668", 
+    "price_kgs": "561.75", 
+    "product_id": "90779674-21c6-11f1-0a80-1ba10004004f", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "18200.0", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d108f1a-21c7-11f1-0a80-1ba100041669", 
+    "price_kgs": "91.0", 
+    "product_id": "baedb2a0-21c6-11f1-0a80-09b80003e1a3", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "49437.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d109075-21c7-11f1-0a80-1ba10004166a", 
+    "price_kgs": "494.37500000000006", 
+    "product_id": "e92ec74d-21c6-11f1-0a80-00100004392e", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "27457.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d1091c7-21c7-11f1-0a80-1ba10004166b", 
+    "price_kgs": "457.62500000000006", 
+    "product_id": "da417aac-8b01-11ef-0a80-0b5e0019c4ee", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "33967.5", 
+    "order_name": "SPADE20260312", 
+    "position_id": "3d10930d-21c7-11f1-0a80-1ba10004166c", 
+    "price_kgs": "566.125", 
+    "product_id": "2b98244a-fc06-11ef-0a80-05f40017e80e", 
+    "purchase_order_id": "3d101ec6-21c7-11f1-0a80-1ba10004161f", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "232948.625", 
+    "order_name": "260611-6", 
+    "position_id": "4459aa0d-6c7d-11f1-0a80-14fc00168023", 
+    "price_kgs": "582.3715625", 
+    "product_id": "1c9ab7a0-857a-11f0-0a80-1b8f002a8260", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "400.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "174711.25", 
+    "order_name": "260611-6", 
+    "position_id": "4459abff-6c7d-11f1-0a80-14fc00168024", 
+    "price_kgs": "582.3708333333334", 
+    "product_id": "051abb49-857b-11f0-0a80-0bc5002c4971", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "220481.625", 
+    "order_name": "260611-6", 
+    "position_id": "4459ace8-6c7d-11f1-0a80-14fc00168025", 
+    "price_kgs": "551.2040625", 
+    "product_id": "d26a7baa-fc05-11f0-0a80-19e300175833", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "400.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "488291.125", 
+    "order_name": "260611-6", 
+    "position_id": "4459adbb-6c7d-11f1-0a80-14fc00168026", 
+    "price_kgs": "813.8185416666666", 
+    "product_id": "d5052c34-6c64-11f1-0a80-0e6e0014aefb", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "555613.625", 
+    "order_name": "260611-6", 
+    "position_id": "4459ae91-6c7d-11f1-0a80-14fc00168027", 
+    "price_kgs": "551.2039930555555", 
+    "product_id": "c6b078a0-71cf-11ef-0a80-021e0014e253", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "1008.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "220481.625", 
+    "order_name": "260611-6", 
+    "position_id": "4459af6d-6c7d-11f1-0a80-14fc00168028", 
+    "price_kgs": "551.2040625", 
+    "product_id": "c698b821-71cf-11ef-0a80-021e0014e1f6", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "400.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "499927.75", 
+    "order_name": "260611-6", 
+    "position_id": "4459b043-6c7d-11f1-0a80-14fc00168029", 
+    "price_kgs": "462.8960648148148", 
+    "product_id": "52fb3721-9799-11ef-0a80-1333001565d6", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "1080.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "218172.5", 
+    "order_name": "260611-6", 
+    "position_id": "4459b110-6c7d-11f1-0a80-14fc0016802a", 
+    "price_kgs": "432.8819444444444", 
+    "product_id": "ecd6b19e-c771-11f0-0a80-01e80015fc3c", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "504.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "213267.25", 
+    "order_name": "260611-6", 
+    "position_id": "4459b365-6c7d-11f1-0a80-14fc0016802b", 
+    "price_kgs": "426.53450000000004", 
+    "product_id": "f07d527a-71d1-11ef-0a80-17760032f515", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "500.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "338271.5", 
+    "order_name": "260611-6", 
+    "position_id": "4459b44e-6c7d-11f1-0a80-14fc0016802c", 
+    "price_kgs": "469.82152777777776", 
+    "product_id": "e70d7092-9799-11ef-0a80-014a001562fd", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "720.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "146695.5", 
+    "order_name": "260611-6", 
+    "position_id": "4459b51b-6c7d-11f1-0a80-14fc0016802d", 
+    "price_kgs": "407.4875", 
+    "product_id": "067c8679-979a-11ef-0a80-133300157fff", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "360.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "172506.25", 
+    "order_name": "260611-6", 
+    "position_id": "4459b5e5-6c7d-11f1-0a80-14fc0016802e", 
+    "price_kgs": "539.08203125", 
+    "product_id": "1eaf2bbd-979a-11ef-0a80-0d9f0015396f", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "320.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "544809.125", 
+    "order_name": "260611-6", 
+    "position_id": "4459b6ab-6c7d-11f1-0a80-14fc0016802f", 
+    "price_kgs": "504.45289351851847", 
+    "product_id": "99f64cce-71cd-11ef-0a80-011d00136cd7", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "1080.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "4960834.375", 
+    "order_name": "260611-6", 
+    "position_id": "4459b776-6c7d-11f1-0a80-14fc00168030", 
+    "price_kgs": "551.2038194444444", 
+    "product_id": "9a19c5f8-71cd-11ef-0a80-011d00136cfc", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "9000.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "1321503.75", 
+    "order_name": "260611-6", 
+    "position_id": "4459b844-6c7d-11f1-0a80-14fc00168031", 
+    "price_kgs": "611.8072916666666", 
+    "product_id": "9a11276e-71cd-11ef-0a80-011d00136cf0", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "2160.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "920481.625", 
+    "order_name": "260611-6", 
+    "position_id": "4459b90c-6c7d-11f1-0a80-14fc00168032", 
+    "price_kgs": "511.37868055555555", 
+    "product_id": "c7a0b6c5-979d-11ef-0a80-0e390015ac1c", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "1800.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "955250.625", 
+    "order_name": "260611-6", 
+    "position_id": "4459b9d3-6c7d-11f1-0a80-14fc00168033", 
+    "price_kgs": "497.52636718749994", 
+    "product_id": "3f05bbf2-979e-11ef-0a80-0e390015bad3", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "1920.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "309482.25", 
+    "order_name": "260611-6", 
+    "position_id": "4459baa4-6c7d-11f1-0a80-14fc00168034", 
+    "price_kgs": "442.1175", 
+    "product_id": "1b405a29-74ca-11ef-0a80-13c10035f719", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "700.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "273119.875", 
+    "order_name": "260611-6", 
+    "position_id": "4459bb74-6c7d-11f1-0a80-14fc00168035", 
+    "price_kgs": "262.61526442307695", 
+    "product_id": "618bdb23-979b-11ef-0a80-0b8d0015ffb4", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "1040.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "190096.375", 
+    "order_name": "260611-6", 
+    "position_id": "4459bc41-6c7d-11f1-0a80-14fc00168036", 
+    "price_kgs": "324.95106837606835", 
+    "product_id": "72ba3cfb-fc2b-11ef-0a80-0d800019cfa7", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "585.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "1093772.75", 
+    "order_name": "260611-6", 
+    "position_id": "4459bd0a-6c7d-11f1-0a80-14fc00168037", 
+    "price_kgs": "434.0368055555556", 
+    "product_id": "f9245b8d-21dd-11f1-0a80-07f90008efb8", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "2520.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "536414.375", 
+    "order_name": "260611-6", 
+    "position_id": "4459bdd8-6c7d-11f1-0a80-14fc00168038", 
+    "price_kgs": "532.1571180555555", 
+    "product_id": "f30892e8-74c7-11ef-0a80-0381001e4fc7", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "1008.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "442717.625", 
+    "order_name": "260611-6", 
+    "position_id": "4459bea3-6c7d-11f1-0a80-14fc00168039", 
+    "price_kgs": "434.03688725490196", 
+    "product_id": "10c5a5d4-857f-11f0-0a80-0bc5002ca4f9", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "1020.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "448812.875", 
+    "order_name": "260611-6", 
+    "position_id": "4459bf71-6c7d-11f1-0a80-14fc0016803a", 
+    "price_kgs": "415.56747685185184", 
+    "product_id": "90eae5d1-857f-11f0-0a80-0907002c46de", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "1080.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "585857.125", 
+    "order_name": "260611-6", 
+    "position_id": "4459c03b-6c7d-11f1-0a80-14fc0016803b", 
+    "price_kgs": "457.70087890625", 
+    "product_id": "1ab8b059-74ca-11ef-0a80-13c10035f6ea", 
+    "purchase_order_id": "4459a22d-6c7d-11f1-0a80-14fc00168022", 
+    "quantity_in_transit": "1280.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "44321.375", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2a2f9-7792-11f1-0a80-1dbb0017b804", 
+    "price_kgs": "369.3447916666667", 
+    "product_id": "fa74bc12-2e59-11ef-0a80-0b8700a9a45c", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "317879.625", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2a602-7792-11f1-0a80-1dbb0017b805", 
+    "price_kgs": "635.75925", 
+    "product_id": "fc889b42-2e59-11ef-0a80-0b8700a9ad62", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "500.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "43449.875", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2a7a1-7792-11f1-0a80-1dbb0017b806", 
+    "price_kgs": "362.08229166666666", 
+    "product_id": "31c158b1-8b02-11ef-0a80-08af0019670c", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "39235.0", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2a924-7792-11f1-0a80-1dbb0017b807", 
+    "price_kgs": "326.95833333333337", 
+    "product_id": "fa892020-2e59-11ef-0a80-0b8700a9a486", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "38993.5", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2aaaf-7792-11f1-0a80-1dbb0017b808", 
+    "price_kgs": "557.05", 
+    "product_id": "fc636a8c-2e59-11ef-0a80-0b8700a9ad44", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "70.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "179829.125", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2ac18-7792-11f1-0a80-1dbb0017b809", 
+    "price_kgs": "499.52534722222214", 
+    "product_id": "fc7c6d8a-2e59-11ef-0a80-0b8700a9ad58", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "360.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "59942.75", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2ad88-7792-11f1-0a80-1dbb0017b80a", 
+    "price_kgs": "499.5229166666667", 
+    "product_id": "fc95d8fb-2e59-11ef-0a80-0b8700a9ad77", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "136234.0", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2af46-7792-11f1-0a80-1dbb0017b80b", 
+    "price_kgs": "454.11333333333334", 
+    "product_id": "021e5047-2e5a-11ef-0a80-0b8700a9b923", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "76542.375", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2b041-7792-11f1-0a80-1dbb0017b80c", 
+    "price_kgs": "478.38984375", 
+    "product_id": "66bd482c-e2d3-11f0-0a80-15ae001516df", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "160.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "80200.75", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2b149-7792-11f1-0a80-1dbb0017b80d", 
+    "price_kgs": "668.3395833333334", 
+    "product_id": "aa1eaa73-e2d3-11f0-0a80-08de0015376b", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "23295.125", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2b22e-7792-11f1-0a80-1dbb0017b80e", 
+    "price_kgs": "582.3781250000001", 
+    "product_id": "42c863c6-e2d4-11f0-0a80-13a900156a53", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "40.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "27973.75", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2b30d-7792-11f1-0a80-1dbb0017b80f", 
+    "price_kgs": "466.22916666666674", 
+    "product_id": "fd171822-2e59-11ef-0a80-0b8700a9ae7a", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "98491.75", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2b3f4-7792-11f1-0a80-1dbb0017b810", 
+    "price_kgs": "492.45875", 
+    "product_id": "0c63b269-841a-11f0-0a80-1a990012c7b6", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "64013.25", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2b4d3-7792-11f1-0a80-1dbb0017b811", 
+    "price_kgs": "426.755", 
+    "product_id": "2357d268-e2d6-11f0-0a80-1a2200147c6c", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "150.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "123115.125", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2b5af-7792-11f1-0a80-1dbb0017b812", 
+    "price_kgs": "492.4605", 
+    "product_id": "c0a10103-e2d6-11f0-0a80-0d8e0015922e", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "250.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "92863.75", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2b7bf-7792-11f1-0a80-1dbb0017b813", 
+    "price_kgs": "464.31874999999997", 
+    "product_id": "e586e972-e2d6-11f0-0a80-13a90015799e", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "73165.75", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2b89c-7792-11f1-0a80-1dbb0017b814", 
+    "price_kgs": "457.2859375", 
+    "product_id": "1e7493ae-e2d7-11f0-0a80-0d8e001594c8", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "160.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "54873.875", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2b983-7792-11f1-0a80-1dbb0017b815", 
+    "price_kgs": "457.28229166666665", 
+    "product_id": "4f17967c-e2d7-11f0-0a80-0e10001531fd", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "24200.75", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2ba6a-7792-11f1-0a80-1dbb0017b816", 
+    "price_kgs": "302.50937500000003", 
+    "product_id": "8310a573-e2d7-11f0-0a80-08de001548a7", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "29547.875", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2bb42-7792-11f1-0a80-1dbb0017b817", 
+    "price_kgs": "246.23229166666667", 
+    "product_id": "bab7fd52-e2d7-11f0-0a80-08de00154a70", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "95677.75", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2bc1c-7792-11f1-0a80-1dbb0017b818", 
+    "price_kgs": "597.9859375", 
+    "product_id": "a1612167-e2d8-11f0-0a80-0c370015b869", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "160.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "20754.125", 
+    "order_name": "SPADE20260626", 
+    "position_id": "48a2bcf8-7792-11f1-0a80-1dbb0017b819", 
+    "price_kgs": "415.08250000000004", 
+    "product_id": "c2b6ec54-841a-11f0-0a80-090700124644", 
+    "purchase_order_id": "48a29aa3-7792-11f1-0a80-1dbb0017b803", 
+    "quantity_in_transit": "50.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "95712.3", 
+    "order_name": "260714-1", 
+    "position_id": "49bf28c8-8100-11f1-0a80-0ee9000bc2bd", 
+    "price_kgs": "531.735", 
+    "product_id": "a1b4a074-80d6-11f1-0a80-14cd00032319", 
+    "purchase_order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", 
+    "quantity_in_transit": "180.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "56365.2", 
+    "order_name": "260714-1", 
+    "position_id": "49bf2a90-8100-11f1-0a80-0ee9000bc2be", 
+    "price_kgs": "640.5136363636364", 
+    "product_id": "85577e91-3a2f-11f1-0a80-00cf00062971", 
+    "purchase_order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", 
+    "quantity_in_transit": "88.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "56365.2", 
+    "order_name": "260714-1", 
+    "position_id": "49bf2b53-8100-11f1-0a80-0ee9000bc2bf", 
+    "price_kgs": "782.85", 
+    "product_id": "e192fc84-3a2f-11f1-0a80-07a6000611e4", 
+    "purchase_order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", 
+    "quantity_in_transit": "72.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "527238.0", 
+    "order_name": "260714-1", 
+    "position_id": "49bf2cb1-8100-11f1-0a80-0ee9000bc2c0", 
+    "price_kgs": "585.82", 
+    "product_id": "f144bff8-3a2f-11f1-0a80-107800061e4b", 
+    "purchase_order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", 
+    "quantity_in_transit": "900.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "263619.0", 
+    "order_name": "260714-1", 
+    "position_id": "49bf2d6a-8100-11f1-0a80-0ee9000bc2c1", 
+    "price_kgs": "585.82", 
+    "product_id": "a8ecd252-3a2f-11f1-0a80-107800060e6b", 
+    "purchase_order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", 
+    "quantity_in_transit": "450.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "263619.0", 
+    "order_name": "260714-1", 
+    "position_id": "49bf2e19-8100-11f1-0a80-0ee9000bc2c2", 
+    "price_kgs": "585.82", 
+    "product_id": "f67cebe5-80f8-11f1-0a80-0692000a3dc0", 
+    "purchase_order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", 
+    "quantity_in_transit": "450.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "105448.5", 
+    "order_name": "260714-1", 
+    "position_id": "49bf2eda-8100-11f1-0a80-0ee9000bc2c3", 
+    "price_kgs": "585.8249999999999", 
+    "product_id": "3f2cb04d-80f9-11f1-0a80-1a9c00099e0a", 
+    "purchase_order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", 
+    "quantity_in_transit": "180.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "105447.6", 
+    "order_name": "260714-1", 
+    "position_id": "49bf2f7e-8100-11f1-0a80-0ee9000bc2c4", 
+    "price_kgs": "585.82", 
+    "product_id": "0a869bb8-8100-11f1-0a80-1deb000c47f5", 
+    "purchase_order_id": "49bf1fbd-8100-11f1-0a80-0ee9000bc2bc", 
+    "quantity_in_transit": "180.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "3192000.0", 
+    "order_name": "SPADE20260312-2", 
+    "position_id": "4fc921b7-21c8-11f1-0a80-188700046a48", 
+    "price_kgs": "532.0", 
+    "product_id": "fc5cc590-2e59-11ef-0a80-0b8700a9ad3f", 
+    "purchase_order_id": "4fc9196f-21c8-11f1-0a80-188700046a47", 
+    "quantity_in_transit": "6000.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "289800.0", 
+    "order_name": "SPADE20260312-2", 
+    "position_id": "4fc92468-21c8-11f1-0a80-188700046a49", 
+    "price_kgs": "482.99999999999994", 
+    "product_id": "021e5047-2e5a-11ef-0a80-0b8700a9b923", 
+    "purchase_order_id": "4fc9196f-21c8-11f1-0a80-188700046a47", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "51712.5", 
+    "order_name": "SPADE20260312-2", 
+    "position_id": "4fc9254e-21c8-11f1-0a80-188700046a4a", 
+    "price_kgs": "517.125", 
+    "product_id": "fc82237b-2e59-11ef-0a80-0b8700a9ad5d", 
+    "purchase_order_id": "4fc9196f-21c8-11f1-0a80-188700046a47", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "67830.0", 
+    "order_name": "SPADE20260312-2", 
+    "position_id": "4fc92604-21c8-11f1-0a80-188700046a4b", 
+    "price_kgs": "565.25", 
+    "product_id": "093244bc-21c8-11f1-0a80-1d8d00041827", 
+    "purchase_order_id": "4fc9196f-21c8-11f1-0a80-188700046a47", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "44100.0", 
+    "order_name": "SPADE20260312-2", 
+    "position_id": "4fc926cd-21c8-11f1-0a80-188700046a4c", 
+    "price_kgs": "441.0", 
+    "product_id": "c2b6ec54-841a-11f0-0a80-090700124644", 
+    "purchase_order_id": "4fc9196f-21c8-11f1-0a80-188700046a47", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "64920.625", 
+    "order_name": "260720-2", 
+    "position_id": "54a38420-8811-11f1-0a80-15c2001a1794", 
+    "price_kgs": "683.375", 
+    "product_id": "d7ec71cc-880a-11f1-0a80-1858001aefda", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "quantity_in_transit": "95.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "25095.0", 
+    "order_name": "260720-2", 
+    "position_id": "54a38615-8811-11f1-0a80-15c2001a1795", 
+    "price_kgs": "209.125", 
+    "product_id": "410d3c82-880b-11f1-0a80-1e1c0018aee6", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "20912.5", 
+    "order_name": "260720-2", 
+    "position_id": "54a38744-8811-11f1-0a80-15c2001a1796", 
+    "price_kgs": "209.125", 
+    "product_id": "c75ba082-880b-11f1-0a80-1858001b06fe", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "62737.5", 
+    "order_name": "260720-2", 
+    "position_id": "54a3886d-8811-11f1-0a80-15c2001a1797", 
+    "price_kgs": "627.375", 
+    "product_id": "4921eb7e-880c-11f1-0a80-1418001b62d3", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "68304.25", 
+    "order_name": "260720-2", 
+    "position_id": "54a38988-8811-11f1-0a80-15c2001a1798", 
+    "price_kgs": "683.0425", 
+    "product_id": "d12d4ccf-880c-11f1-0a80-178e001acdfb", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "64487.5", 
+    "order_name": "260720-2", 
+    "position_id": "54a38b4c-8811-11f1-0a80-15c2001a1799", 
+    "price_kgs": "1289.75", 
+    "product_id": "91897801-880e-11f1-0a80-06a400193929", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "quantity_in_transit": "50.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "64260.0", 
+    "order_name": "260720-2", 
+    "position_id": "54a38bf7-8811-11f1-0a80-15c2001a179a", 
+    "price_kgs": "669.375", 
+    "product_id": "db015143-880e-11f1-0a80-06a400194280", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "quantity_in_transit": "96.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "25095.0", 
+    "order_name": "260720-2", 
+    "position_id": "54a38ca3-8811-11f1-0a80-15c2001a179b", 
+    "price_kgs": "209.125", 
+    "product_id": "4008a8fc-880f-11f1-0a80-1d05001a281f", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "25095.0", 
+    "order_name": "260720-2", 
+    "position_id": "54a38d75-8811-11f1-0a80-15c2001a179c", 
+    "price_kgs": "209.125", 
+    "product_id": "015cea09-8810-11f1-0a80-1062001a8491", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "70224.0", 
+    "order_name": "260720-2", 
+    "position_id": "54a38e78-8811-11f1-0a80-15c2001a179d", 
+    "price_kgs": "731.5", 
+    "product_id": "8170a242-01b0-11f0-0a80-147f0019d191", 
+    "purchase_order_id": "54a37cd5-8811-11f1-0a80-15c2001a1793", 
+    "quantity_in_transit": "96.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "2279200.0", 
+    "order_name": "202607030040", 
+    "position_id": "5d064064-7b57-11f1-0a80-1c7600033ca3", 
+    "price_kgs": "518.0", 
+    "product_id": "db8466bb-2e59-11ef-0a80-0b8700a96b1d", 
+    "purchase_order_id": "5d0639b1-7b57-11f1-0a80-1c7600033ca2", 
+    "quantity_in_transit": "4400.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "5162500.0", 
+    "order_name": "202607030040", 
+    "position_id": "5d064281-7b57-11f1-0a80-1c7600033ca4", 
+    "price_kgs": "516.25", 
+    "product_id": "dbffb770-2e59-11ef-0a80-0b8700a96bf9", 
+    "purchase_order_id": "5d0639b1-7b57-11f1-0a80-1c7600033ca2", 
+    "quantity_in_transit": "10000.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "5532066.75", 
+    "order_name": "260423-5", 
+    "position_id": "659cbd02-423f-11f1-0a80-0f970037e6bc", 
+    "price_kgs": "548.8161458333334", 
+    "product_id": "fc7028da-2e59-11ef-0a80-0b8700a9ad4e", 
+    "purchase_order_id": "659cb5f7-423f-11f1-0a80-0f970037e6bb", 
+    "quantity_in_transit": "10080.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "2764710.375", 
+    "order_name": "260423-5", 
+    "position_id": "659cbec3-423f-11f1-0a80-0f970037e6bd", 
+    "price_kgs": "548.5536458333335", 
+    "product_id": "770e266c-1c89-11f0-0a80-05ee0000e0aa", 
+    "purchase_order_id": "659cb5f7-423f-11f1-0a80-0f970037e6bb", 
+    "quantity_in_transit": "5040.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "219450.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86286886-4390-11f1-0a80-1b7c00035d2b", 
+    "price_kgs": "365.75", 
+    "product_id": "fa892020-2e59-11ef-0a80-0b8700a9a486", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "72765.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86286aa4-4390-11f1-0a80-1b7c00035d2c", 
+    "price_kgs": "606.375", 
+    "product_id": "e762aad8-2e59-11ef-0a80-0b8700a97fe5", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "318150.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86286bca-4390-11f1-0a80-1b7c00035d2d", 
+    "price_kgs": "530.25", 
+    "product_id": "fc7c6d8a-2e59-11ef-0a80-0b8700a9ad58", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "318150.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86286ced-4390-11f1-0a80-1b7c00035d2e", 
+    "price_kgs": "530.25", 
+    "product_id": "fc95d8fb-2e59-11ef-0a80-0b8700a9ad77", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "1155000.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86286dfd-4390-11f1-0a80-1b7c00035d2f", 
+    "price_kgs": "481.25", 
+    "product_id": "021e5047-2e5a-11ef-0a80-0b8700a9b923", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "2400.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "515375.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86286f20-4390-11f1-0a80-1b7c00035d30", 
+    "price_kgs": "515.375", 
+    "product_id": "fc82237b-2e59-11ef-0a80-0b8700a9ad5d", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "1000.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "33180.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287030-4390-11f1-0a80-1b7c00035d31", 
+    "price_kgs": "138.25", 
+    "product_id": "71c0f784-8b03-11ef-0a80-0da4001a6072", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "240.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "135712.5", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287139-4390-11f1-0a80-1b7c00035d32", 
+    "price_kgs": "452.375", 
+    "product_id": "4ec3f085-8b05-11ef-0a80-165e001a2a5c", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "83737.5", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287246-4390-11f1-0a80-1b7c00035d33", 
+    "price_kgs": "558.25", 
+    "product_id": "fcaa91c4-8418-11f0-0a80-01f600127065", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "150.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "110950.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "8628734b-4390-11f1-0a80-1b7c00035d34", 
+    "price_kgs": "554.75", 
+    "product_id": "d1265908-abc7-11f0-0a80-0d540014ee05", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "129622.5", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287458-4390-11f1-0a80-1b7c00035d35", 
+    "price_kgs": "720.125", 
+    "product_id": "aa1eaa73-e2d3-11f0-0a80-08de0015376b", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "180.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "135625.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287564-4390-11f1-0a80-1b7c00035d36", 
+    "price_kgs": "678.125", 
+    "product_id": "42c863c6-e2d4-11f0-0a80-13a900156a53", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "66675.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287669-4390-11f1-0a80-1b7c00035d37", 
+    "price_kgs": "555.625", 
+    "product_id": "faaadfcc-2e59-11ef-0a80-0b8700a9a4cd", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "112560.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287770-4390-11f1-0a80-1b7c00035d38", 
+    "price_kgs": "703.4999999999999", 
+    "product_id": "fab171ad-2e59-11ef-0a80-0b8700a9a4dc", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "160.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "55125.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "8628786e-4390-11f1-0a80-1b7c00035d39", 
+    "price_kgs": "367.5", 
+    "product_id": "fa49d37d-2e59-11ef-0a80-0b8700a9a3fe", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "150.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "41588.75", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287979-4390-11f1-0a80-1b7c00035d3a", 
+    "price_kgs": "594.125", 
+    "product_id": "fa4fc88a-2e59-11ef-0a80-0b8700a9a40b", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "70.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "73080.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287a82-4390-11f1-0a80-1b7c00035d3b", 
+    "price_kgs": "609.0", 
+    "product_id": "e75c669b-2e59-11ef-0a80-0b8700a97fda", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "44660.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287b91-4390-11f1-0a80-1b7c00035d3c", 
+    "price_kgs": "558.25", 
+    "product_id": "e7957787-2e59-11ef-0a80-0b8700a98041", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "56280.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287c9d-4390-11f1-0a80-1b7c00035d3d", 
+    "price_kgs": "703.4999999999999", 
+    "product_id": "e7a4dd38-2e59-11ef-0a80-0b8700a9805c", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "54993.75", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287dbb-4390-11f1-0a80-1b7c00035d3e", 
+    "price_kgs": "366.62500000000006", 
+    "product_id": "fcd0170a-2e59-11ef-0a80-0b8700a9adf1", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "150.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "174825.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86287fa4-4390-11f1-0a80-1b7c00035d3f", 
+    "price_kgs": "582.75", 
+    "product_id": "fd070b0a-2e59-11ef-0a80-0b8700a9ae5c", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "300.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "48720.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "862881c3-4390-11f1-0a80-1b7c00035d40", 
+    "price_kgs": "609.0", 
+    "product_id": "003f3ac0-8b06-11ef-0a80-0175001a5226", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "110433.75", 
+    "order_name": "SPADE20260424", 
+    "position_id": "862883e1-4390-11f1-0a80-1b7c00035d41", 
+    "price_kgs": "525.875", 
+    "product_id": "fd171822-2e59-11ef-0a80-0b8700a9ae7a", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "210.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "219450.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "862884eb-4390-11f1-0a80-1b7c00035d42", 
+    "price_kgs": "365.75", 
+    "product_id": "019c6110-2e5a-11ef-0a80-0b8700a9b6c9", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "96075.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "862885ee-4390-11f1-0a80-1b7c00035d43", 
+    "price_kgs": "480.375", 
+    "product_id": "cca67519-8b05-11ef-0a80-165e001a3d1b", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "521500.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "8628870f-4390-11f1-0a80-1b7c00035d44", 
+    "price_kgs": "521.5", 
+    "product_id": "0c63b269-841a-11f0-0a80-1a990012c7b6", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "1000.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "72555.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86288821-4390-11f1-0a80-1b7c00035d45", 
+    "price_kgs": "604.625", 
+    "product_id": "533a1689-841a-11f0-0a80-079b0011b51a", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "45762.5", 
+    "order_name": "SPADE20260424", 
+    "position_id": "8628891a-4390-11f1-0a80-1b7c00035d46", 
+    "price_kgs": "457.62500000000006", 
+    "product_id": "2357d268-e2d6-11f0-0a80-1a2200147c6c", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "259000.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86288bb3-4390-11f1-0a80-1b7c00035d47", 
+    "price_kgs": "518.0", 
+    "product_id": "c0a10103-e2d6-11f0-0a80-0d8e0015922e", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "500.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "485625.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86288cae-4390-11f1-0a80-1b7c00035d48", 
+    "price_kgs": "485.625", 
+    "product_id": "e586e972-e2d6-11f0-0a80-13a90015799e", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "1000.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "38990.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86288da3-4390-11f1-0a80-1b7c00035d49", 
+    "price_kgs": "487.375", 
+    "product_id": "1e7493ae-e2d7-11f0-0a80-0d8e001594c8", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "32182.5", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86288e93-4390-11f1-0a80-1b7c00035d4a", 
+    "price_kgs": "536.375", 
+    "product_id": "4f17967c-e2d7-11f0-0a80-0e10001531fd", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "41580.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86288f7c-4390-11f1-0a80-1b7c00035d4b", 
+    "price_kgs": "259.875", 
+    "product_id": "bab7fd52-e2d7-11f0-0a80-08de00154a70", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "160.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "180687.5", 
+    "order_name": "SPADE20260424", 
+    "position_id": "862890e8-4390-11f1-0a80-1b7c00035d4c", 
+    "price_kgs": "361.375", 
+    "product_id": "09800ee6-21c4-11f1-0a80-00100003d66b", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "500.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "64155.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86289201-4390-11f1-0a80-1b7c00035d4d", 
+    "price_kgs": "534.625", 
+    "product_id": "d7878ff1-fc07-11ef-0a80-117a0017ff78", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "38587.5", 
+    "order_name": "SPADE20260424", 
+    "position_id": "862892f3-4390-11f1-0a80-1b7c00035d4e", 
+    "price_kgs": "643.125", 
+    "product_id": "0231625a-2e5a-11ef-0a80-0b8700a9b946", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "60.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "84630.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "862893de-4390-11f1-0a80-1b7c00035d4f", 
+    "price_kgs": "705.25", 
+    "product_id": "022b41f9-2e5a-11ef-0a80-0b8700a9b941", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "48510.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "862894cb-4390-11f1-0a80-1b7c00035d50", 
+    "price_kgs": "606.375", 
+    "product_id": "0129ac91-2e5a-11ef-0a80-0b8700a9b5ec", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "45885.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "862895b8-4390-11f1-0a80-1b7c00035d51", 
+    "price_kgs": "382.375", 
+    "product_id": "30bee859-4121-11f0-0a80-113d0009372c", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "88305.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "862896a1-4390-11f1-0a80-1b7c00035d52", 
+    "price_kgs": "735.875", 
+    "product_id": "9116ff35-21c4-11f1-0a80-19f60003a095", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "52570.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "8628979d-4390-11f1-0a80-1b7c00035d53", 
+    "price_kgs": "657.125", 
+    "product_id": "de05e5b8-8b06-11ef-0a80-0da4001ae65c", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "101080.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86289890-4390-11f1-0a80-1b7c00035d54", 
+    "price_kgs": "631.75", 
+    "product_id": "a1612167-e2d8-11f0-0a80-0c370015b869", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "160.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "450100.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86289984-4390-11f1-0a80-1b7c00035d55", 
+    "price_kgs": "562.625", 
+    "product_id": "093244bc-21c8-11f1-0a80-1d8d00041827", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "800.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "329437.5", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86289a74-4390-11f1-0a80-1b7c00035d56", 
+    "price_kgs": "439.24999999999994", 
+    "product_id": "c2b6ec54-841a-11f0-0a80-090700124644", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "750.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "563500.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86289b63-4390-11f1-0a80-1b7c00035d57", 
+    "price_kgs": "804.9999999999999", 
+    "product_id": "9fe422a2-21c5-11f1-0a80-19f60003c2a7", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "700.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "110425.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86289c4c-4390-11f1-0a80-1b7c00035d58", 
+    "price_kgs": "552.125", 
+    "product_id": "0217d985-2e5a-11ef-0a80-0b8700a9b8ff", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "36400.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86289d46-4390-11f1-0a80-1b7c00035d59", 
+    "price_kgs": "91.0", 
+    "product_id": "baedb2a0-21c6-11f1-0a80-09b80003e1a3", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "400.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "197050.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86289e3a-4390-11f1-0a80-1b7c00035d5a", 
+    "price_kgs": "492.625", 
+    "product_id": "e92ec74d-21c6-11f1-0a80-00100004392e", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "400.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "273525.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "86289f2b-4390-11f1-0a80-1b7c00035d5b", 
+    "price_kgs": "455.875", 
+    "product_id": "da417aac-8b01-11ef-0a80-0b5e0019c4ee", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "600.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "615300.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "8628a01f-4390-11f1-0a80-1b7c00035d5c", 
+    "price_kgs": "512.75", 
+    "product_id": "74c10471-8b01-11ef-0a80-15690019f23d", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "1200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "102060.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "8628a10a-4390-11f1-0a80-1b7c00035d5d", 
+    "price_kgs": "567.0", 
+    "product_id": "2b98244a-fc06-11ef-0a80-05f40017e80e", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "180.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "134225.0", 
+    "order_name": "SPADE20260424", 
+    "position_id": "8628a1ef-4390-11f1-0a80-1b7c00035d5e", 
+    "price_kgs": "671.125", 
+    "product_id": "5985aaa8-e2da-11f0-0a80-0b1a00161827", 
+    "purchase_order_id": "8628612c-4390-11f1-0a80-1b7c00035d2a", 
+    "quantity_in_transit": "200.0", 
+    "status_name": "Прибыл частично"
+  }, 
+  {
+    "in_transit_sum_kgs": "2730598.5", 
+    "order_name": "SPADE20260611", 
+    "position_id": "95cf5058-6c8e-11f1-0a80-060a0017f33f", 
+    "price_kgs": "546.1197", 
+    "product_id": "da7c9a06-6c8d-11f1-0a80-1be70017b13b", 
+    "purchase_order_id": "95cf4809-6c8e-11f1-0a80-060a0017f33e", 
+    "quantity_in_transit": "5000.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "187740.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea1327eb-87eb-11f1-0a80-01800017d83f", 
+    "price_kgs": "391.125", 
+    "product_id": "696fc5bc-827d-11f1-0a80-10030016ada4", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "480.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "814800.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea132aad-87eb-11f1-0a80-01800017d841", 
+    "price_kgs": "424.37499999999994", 
+    "product_id": "20a59256-827e-11f1-0a80-04d50016ecaa", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "1920.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "249480.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea132b7a-87eb-11f1-0a80-01800017d842", 
+    "price_kgs": "519.75", 
+    "product_id": "b42d10a2-827e-11f1-0a80-0eee0016e4b0", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "480.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "372120.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea132c48-87eb-11f1-0a80-01800017d843", 
+    "price_kgs": "775.25", 
+    "product_id": "3e2b1aaa-827f-11f1-0a80-069600167ef7", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "480.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "39138.75", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea132d18-87eb-11f1-0a80-01800017d844", 
+    "price_kgs": "434.875", 
+    "product_id": "aa296979-827f-11f1-0a80-140700177fdf", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "90.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "139545.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea132ddf-87eb-11f1-0a80-01800017d845", 
+    "price_kgs": "387.625", 
+    "product_id": "a27468b3-8281-11f1-0a80-1e6700172a68", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "360.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "18235.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea132ea7-87eb-11f1-0a80-01800017d846", 
+    "price_kgs": "455.875", 
+    "product_id": "055e50ba-8282-11f1-0a80-06960016d083", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "40.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "42000.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea132f70-87eb-11f1-0a80-01800017d847", 
+    "price_kgs": "350.0", 
+    "product_id": "c8a5f206-8282-11f1-0a80-0170001789bd", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "42000.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea133032-87eb-11f1-0a80-01800017d848", 
+    "price_kgs": "350.0", 
+    "product_id": "49005880-8283-11f1-0a80-0f9a00164d81", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "52150.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea1330f6-87eb-11f1-0a80-01800017d849", 
+    "price_kgs": "521.5", 
+    "product_id": "ff0553aa-8283-11f1-0a80-17360016b77b", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "38976.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea1331bf-87eb-11f1-0a80-01800017d84a", 
+    "price_kgs": "406.0", 
+    "product_id": "5ff99b70-8284-11f1-0a80-13c500189bee", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "96.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "59220.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea133283-87eb-11f1-0a80-01800017d84b", 
+    "price_kgs": "493.5", 
+    "product_id": "3d5dd229-87e5-11f1-0a80-09fd0017198b", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "50925.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea13334d-87eb-11f1-0a80-01800017d84c", 
+    "price_kgs": "424.37499999999994", 
+    "product_id": "bd06a783-87e5-11f1-0a80-04e600164583", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "40775.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea13340f-87eb-11f1-0a80-01800017d84d", 
+    "price_kgs": "407.75", 
+    "product_id": "4d1aca7d-87e6-11f1-0a80-15c200168644", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "100.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "219030.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea1334d7-87eb-11f1-0a80-01800017d84e", 
+    "price_kgs": "391.125", 
+    "product_id": "1229a633-87e8-11f1-0a80-15c20016a76a", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "560.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "33950.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea13359a-87eb-11f1-0a80-01800017d84f", 
+    "price_kgs": "424.37499999999994", 
+    "product_id": "fd170ebc-87e8-11f1-0a80-01800017b26d", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "39060.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea13365c-87eb-11f1-0a80-01800017d850", 
+    "price_kgs": "325.5", 
+    "product_id": "5964fefe-87e9-11f1-0a80-18580018354c", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "120.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "43680.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea133729-87eb-11f1-0a80-01800017d851", 
+    "price_kgs": "546.0", 
+    "product_id": "9f7ad3ee-87e9-11f1-0a80-1e1c0015dba7", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "77700.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea1337ed-87eb-11f1-0a80-01800017d852", 
+    "price_kgs": "485.625", 
+    "product_id": "f2533a58-87e9-11f1-0a80-14180018598c", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "160.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "38850.0", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea1338af-87eb-11f1-0a80-01800017d853", 
+    "price_kgs": "485.625", 
+    "product_id": "37c3c3e4-87ea-11f1-0a80-04e600168113", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "80.0", 
+    "status_name": "В пути"
+  }, 
+  {
+    "in_transit_sum_kgs": "55247.5", 
+    "order_name": "20260708-001KR", 
+    "position_id": "ea133970-87eb-11f1-0a80-01800017d854", 
+    "price_kgs": "358.74999999999994", 
+    "product_id": "cbf98a36-87ea-11f1-0a80-1062001769f3", 
+    "purchase_order_id": "ea131f89-87eb-11f1-0a80-01800017d83e", 
+    "quantity_in_transit": "154.0", 
+    "status_name": "В пути"
+  }
+]

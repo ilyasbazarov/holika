@@ -1,0 +1,202 @@
+[
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/49bf1fbd-8100-11f1-0a80-0ee9000bc2bc/positions/49bf28c8-8100-11f1-0a80-0ee9000bc2bd",
+      "type": "purchaseorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "49bf28c8-8100-11f1-0a80-0ee9000bc2bd",
+    "accountId": "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "quantity": 180.0,
+    "price": 590.8166666666667,
+    "discount": 0.0,
+    "vat": 0,
+    "vatEnabled": false,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/a1b4a074-80d6-11f1-0a80-14cd00032319",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=a1b490cc-80d6-11f1-0a80-14cd00032315"
+      }
+    },
+    "shipped": 0.0,
+    "inTransit": 180.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/49bf1fbd-8100-11f1-0a80-0ee9000bc2bc/positions/49bf2a90-8100-11f1-0a80-0ee9000bc2be",
+      "type": "purchaseorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "49bf2a90-8100-11f1-0a80-0ee9000bc2be",
+    "accountId": "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "quantity": 88.0,
+    "price": 711.6818181818181,
+    "discount": 0.0,
+    "vat": 0,
+    "vatEnabled": false,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/85577e91-3a2f-11f1-0a80-00cf00062971",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=85577168-3a2f-11f1-0a80-00cf0006296d"
+      }
+    },
+    "shipped": 0.0,
+    "inTransit": 88.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/49bf1fbd-8100-11f1-0a80-0ee9000bc2bc/positions/49bf2b53-8100-11f1-0a80-0ee9000bc2bf",
+      "type": "purchaseorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "49bf2b53-8100-11f1-0a80-0ee9000bc2bf",
+    "accountId": "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "quantity": 72.0,
+    "price": 869.8333333333334,
+    "discount": 0.0,
+    "vat": 0,
+    "vatEnabled": false,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/e192fc84-3a2f-11f1-0a80-07a6000611e4",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=e192eeea-3a2f-11f1-0a80-07a6000611e0"
+      }
+    },
+    "shipped": 0.0,
+    "inTransit": 72.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/49bf1fbd-8100-11f1-0a80-0ee9000bc2bc/positions/49bf2cb1-8100-11f1-0a80-0ee9000bc2c0",
+      "type": "purchaseorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "49bf2cb1-8100-11f1-0a80-0ee9000bc2c0",
+    "accountId": "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "quantity": 900.0,
+    "price": 650.9111111111112,
+    "discount": 0.0,
+    "vat": 0,
+    "vatEnabled": false,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/f144bff8-3a2f-11f1-0a80-107800061e4b",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=f144ae7a-3a2f-11f1-0a80-107800061e47"
+      }
+    },
+    "shipped": 0.0,
+    "inTransit": 900.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/49bf1fbd-8100-11f1-0a80-0ee9000bc2bc/positions/49bf2d6a-8100-11f1-0a80-0ee9000bc2c1",
+      "type": "purchaseorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "49bf2d6a-8100-11f1-0a80-0ee9000bc2c1",
+    "accountId": "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "quantity": 450.0,
+    "price": 650.9111111111112,
+    "discount": 0.0,
+    "vat": 0,
+    "vatEnabled": false,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/a8ecd252-3a2f-11f1-0a80-107800060e6b",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=a8ecc0c4-3a2f-11f1-0a80-107800060e67"
+      }
+    },
+    "shipped": 0.0,
+    "inTransit": 450.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/49bf1fbd-8100-11f1-0a80-0ee9000bc2bc/positions/49bf2e19-8100-11f1-0a80-0ee9000bc2c2",
+      "type": "purchaseorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "49bf2e19-8100-11f1-0a80-0ee9000bc2c2",
+    "accountId": "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "quantity": 450.0,
+    "price": 650.9111111111112,
+    "discount": 0.0,
+    "vat": 0,
+    "vatEnabled": false,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/f67cebe5-80f8-11f1-0a80-0692000a3dc0",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=f67cd1ef-80f8-11f1-0a80-0692000a3dbc"
+      }
+    },
+    "shipped": 0.0,
+    "inTransit": 450.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/49bf1fbd-8100-11f1-0a80-0ee9000bc2bc/positions/49bf2eda-8100-11f1-0a80-0ee9000bc2c3",
+      "type": "purchaseorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "49bf2eda-8100-11f1-0a80-0ee9000bc2c3",
+    "accountId": "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "quantity": 180.0,
+    "price": 650.9166666666666,
+    "discount": 0.0,
+    "vat": 0,
+    "vatEnabled": false,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/3f2cb04d-80f9-11f1-0a80-1a9c00099e0a",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=3f2c9e2a-80f9-11f1-0a80-1a9c00099e06"
+      }
+    },
+    "shipped": 0.0,
+    "inTransit": 180.0
+  },
+  {
+    "meta": {
+      "href": "https://api.moysklad.ru/api/remap/1.2/entity/purchaseorder/49bf1fbd-8100-11f1-0a80-0ee9000bc2bc/positions/49bf2f7e-8100-11f1-0a80-0ee9000bc2c4",
+      "type": "purchaseorderposition",
+      "mediaType": "application/json"
+    },
+    "id": "49bf2f7e-8100-11f1-0a80-0ee9000bc2c4",
+    "accountId": "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "quantity": 180.0,
+    "price": 650.9111111111112,
+    "discount": 0.0,
+    "vat": 0,
+    "vatEnabled": false,
+    "assortment": {
+      "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/0a869bb8-8100-11f1-0a80-1deb000c47f5",
+        "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type": "product",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=0a8689bd-8100-11f1-0a80-1deb000c47f1"
+      }
+    },
+    "shipped": 0.0,
+    "inTransit": 180.0
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "04a41f62-826b-11f1-0a80-14070015f6ec": {
+    "label": "zero-remainder-symmetric-1",
+    "found_in_source": true,
+    "status_name": "В пути",
+    "name": "2026/07/13-1"
+  },
+  "aab67ac6-e2d4-11f0-0a80-0fda0015d3cf": {
+    "label": "zero-remainder-symmetric-2",
+    "found_in_source": true,
+    "status_name": "Прибыл частично",
+    "name": "00135"
+  },
+  "08bfe70e-7b8b-11f1-0a80-03b8000e83b3": {
+    "label": "one-sided-tail-1",
+    "found_in_source": true,
+    "status_name": "Прибыл",
+    "name": "PDMKGFRU26070711"
+  },
+  "e7d7a18b-81c6-11f1-0a80-0170000b1cc0": {
+    "label": "one-sided-tail-2",
+    "found_in_source": true,
+    "status_name": "Прибыл",
+    "name": "HOLI260708 (TOR)"
+  }
+}

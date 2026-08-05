@@ -1,0 +1,30 @@
+=== UTC anchor (start) ===
+Wed Aug  5 07:18:57 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== step1: freshness of core.fact_purchases ===
+[
+  {
+    "max_loaded_at": "2026-08-05 07:02:15", 
+    "minutes_since_load": "16", 
+    "n_orders": "211", 
+    "n_rows": "4398"
+  }
+]
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Wed Aug  5 07:19:02 UTC 2026
+SCRATCH_PATH=reference/_scratch_PARITY-STOCK-INTRANSIT-RECHECK_2026-08-05
