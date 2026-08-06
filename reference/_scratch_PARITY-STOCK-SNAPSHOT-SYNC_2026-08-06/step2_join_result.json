@@ -1,0 +1,13 @@
+{
+  "bq_count": 299,
+  "live_count": 299,
+  "sum_bq": 107392.0,
+  "sum_live": 107392.0,
+  "delta_direct": 0.0,
+  "diffs": [],
+  "sum_movement": 0.0,
+  "only_bq": [],
+  "sum_orphans_bq": 0,
+  "only_live": [],
+  "sum_orphans_live": 0
+}
