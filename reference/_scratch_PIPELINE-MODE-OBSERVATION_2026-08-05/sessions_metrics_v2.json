@@ -1,0 +1,767 @@
+[
+ {
+  "file": "0379d271",
+  "task": "LS-SURFACE-FIELDS-SWEEP",
+  "assembly": true,
+  "turns": 77,
+  "out": 38777,
+  "fresh_in": 154,
+  "cache": 13108817
+ },
+ {
+  "file": "06620f73",
+  "task": "PARITY-GAPS-ADJ",
+  "assembly": true,
+  "turns": 158,
+  "out": 232510,
+  "fresh_in": 296,
+  "cache": 28229954
+ },
+ {
+  "file": "07ab26a2",
+  "task": "BQLV",
+  "assembly": true,
+  "turns": 64,
+  "out": 49779,
+  "fresh_in": 128,
+  "cache": 8501710
+ },
+ {
+  "file": "07d279d3",
+  "task": "DQ-GATE-BEHAVIOR-PROBE-2",
+  "assembly": false,
+  "turns": 86,
+  "out": 159356,
+  "fresh_in": 9271,
+  "cache": 15400383
+ },
+ {
+  "file": "1119ab51",
+  "task": "FX-POLICY-EXPENSES",
+  "assembly": false,
+  "turns": 232,
+  "out": 192802,
+  "fresh_in": 23906,
+  "cache": 58045779
+ },
+ {
+  "file": "15df53fe",
+  "task": "CODE-REPO-STANDUP-D1",
+  "assembly": false,
+  "turns": 34,
+  "out": 25310,
+  "fresh_in": 12924,
+  "cache": 3634603
+ },
+ {
+  "file": "160880a4",
+  "task": "LS-RETURNS-SURFACE-ADJ",
+  "assembly": true,
+  "turns": 161,
+  "out": 262172,
+  "fresh_in": 300,
+  "cache": 39691572
+ },
+ {
+  "file": "1aad5d9a",
+  "task": "SOURCE-MAP-INVOICES",
+  "assembly": true,
+  "turns": 73,
+  "out": 41913,
+  "fresh_in": 12002,
+  "cache": 6661249
+ },
+ {
+  "file": "1aafe061",
+  "task": "UNGATED-QUEUE-ADJ",
+  "assembly": true,
+  "turns": 248,
+  "out": 424504,
+  "fresh_in": 468,
+  "cache": 75828055
+ },
+ {
+  "file": "1ac4e309",
+  "task": "PARITY-STOCK-INTRANSIT",
+  "assembly": true,
+  "turns": 97,
+  "out": 77438,
+  "fresh_in": 194,
+  "cache": 20259287
+ },
+ {
+  "file": "1baaec84",
+  "task": "CODE-REPO-SEED-REST",
+  "assembly": true,
+  "turns": 26,
+  "out": 23389,
+  "fresh_in": 52,
+  "cache": 2887687
+ },
+ {
+  "file": "1cab9db0",
+  "task": "SOURCE-MAP-REST-GEN",
+  "assembly": true,
+  "turns": 40,
+  "out": 24438,
+  "fresh_in": 80,
+  "cache": 4693959
+ },
+ {
+  "file": "1ebabcc6",
+  "task": "LS-INVENTORY-EXPLICIT-COLUMNS-GEN",
+  "assembly": true,
+  "turns": 111,
+  "out": 100755,
+  "fresh_in": 222,
+  "cache": 25484054
+ },
+ {
+  "file": "1f2c42fd",
+  "task": "CODE-REPO-STANDUP-2NDSTEP",
+  "assembly": true,
+  "turns": 102,
+  "out": 89298,
+  "fresh_in": 204,
+  "cache": 19292371
+ },
+ {
+  "file": "20549f7b",
+  "task": "STATE-COMPACT",
+  "assembly": true,
+  "turns": 94,
+  "out": 58020,
+  "fresh_in": 188,
+  "cache": 14421199
+ },
+ {
+  "file": "230e4b1d",
+  "task": "PIPE-BASE-SYNC",
+  "assembly": true,
+  "turns": 88,
+  "out": 120314,
+  "fresh_in": 176,
+  "cache": 15463625
+ },
+ {
+  "file": "25d066a2",
+  "task": "PARITY-SALES-H1H4-ADJ",
+  "assembly": true,
+  "turns": 159,
+  "out": 280346,
+  "fresh_in": 297,
+  "cache": 32677831
+ },
+ {
+  "file": "29b4e3e5",
+  "task": "SALES-INGEST-PATCH",
+  "assembly": true,
+  "turns": 71,
+  "out": 43962,
+  "fresh_in": 142,
+  "cache": 13184301
+ },
+ {
+  "file": "2b63ca48",
+  "task": "PARITY-SALES-DISCRIMINATE-2NDSTEP",
+  "assembly": true,
+  "turns": 123,
+  "out": 75206,
+  "fresh_in": 246,
+  "cache": 18993511
+ },
+ {
+  "file": "2c28c308",
+  "task": "PARITY-SALES-H1H4-ADJ",
+  "assembly": true,
+  "turns": 180,
+  "out": 143607,
+  "fresh_in": 360,
+  "cache": 45888722
+ },
+ {
+  "file": "2e71cff6",
+  "task": "PARITY-SALES-DISCRIMINATE",
+  "assembly": true,
+  "turns": 48,
+  "out": 31605,
+  "fresh_in": 96,
+  "cache": 4967841
+ },
+ {
+  "file": "34bbc3c0",
+  "task": "INVOICES-PROGRAMME",
+  "assembly": true,
+  "turns": 234,
+  "out": 331249,
+  "fresh_in": 447,
+  "cache": 51275158
+ },
+ {
+  "file": "34c8b401",
+  "task": "LS-INVENTORY-EXPLICIT-COLUMNS",
+  "assembly": true,
+  "turns": 86,
+  "out": 89065,
+  "fresh_in": 172,
+  "cache": 17983289
+ },
+ {
+  "file": "39d176f4",
+  "task": "FINISH-QUEUE-ADJ",
+  "assembly": true,
+  "turns": 60,
+  "out": 89318,
+  "fresh_in": 115,
+  "cache": 10421507
+ },
+ {
+  "file": "3c511694",
+  "task": "FX-POLICY-EXPENSES",
+  "assembly": false,
+  "turns": 153,
+  "out": 149519,
+  "fresh_in": 12129,
+  "cache": 25860155
+ },
+ {
+  "file": "3c702e91",
+  "task": "SALES-REFRESH-WINDOW",
+  "assembly": true,
+  "turns": 118,
+  "out": 101476,
+  "fresh_in": 236,
+  "cache": 18675607
+ },
+ {
+  "file": "3e3325aa",
+  "task": "FACTS-FLOW-RESUME-CONFIRM-GEN",
+  "assembly": true,
+  "turns": 46,
+  "out": 15730,
+  "fresh_in": 92,
+  "cache": 3926668
+ },
+ {
+  "file": "3fc5a40a",
+  "task": "DQ-GATE-DEPLOY-ADJ",
+  "assembly": true,
+  "turns": 129,
+  "out": 218973,
+  "fresh_in": 238,
+  "cache": 31767666
+ },
+ {
+  "file": "47765448",
+  "task": "PARITY-CHECK-SALES-RETURNS-GEN",
+  "assembly": true,
+  "turns": 62,
+  "out": 30303,
+  "fresh_in": 124,
+  "cache": 7710717
+ },
+ {
+  "file": "4d6b8d99",
+  "task": "PARITY-STOCK-SNAPSHOT-SYNC",
+  "assembly": true,
+  "turns": 75,
+  "out": 46228,
+  "fresh_in": 150,
+  "cache": 12106914
+ },
+ {
+  "file": "4e5cdb3e",
+  "task": "STATE-DETAILS-ADJ",
+  "assembly": true,
+  "turns": 119,
+  "out": 63255,
+  "fresh_in": 238,
+  "cache": 20614020
+ },
+ {
+  "file": "515d9bdc",
+  "task": "CODE-REPO-STANDUP-D1",
+  "assembly": false,
+  "turns": 43,
+  "out": 34715,
+  "fresh_in": 1086,
+  "cache": 4980879
+ },
+ {
+  "file": "51cc030c",
+  "task": "PIPE-BASE-SYNC",
+  "assembly": true,
+  "turns": 50,
+  "out": 59746,
+  "fresh_in": 100,
+  "cache": 5186670
+ },
+ {
+  "file": "550223cd",
+  "task": "PARITY-CHECK-SALES-RETURNS",
+  "assembly": true,
+  "turns": 64,
+  "out": 48834,
+  "fresh_in": 128,
+  "cache": 9960081
+ },
+ {
+  "file": "5ad47338",
+  "task": "FACTS-FLOW-RESUME-CONFIRM",
+  "assembly": true,
+  "turns": 82,
+  "out": 39083,
+  "fresh_in": 164,
+  "cache": 8378541
+ },
+ {
+  "file": "5ccb4696",
+  "task": "SOURCE-MAP-INVOICES",
+  "assembly": true,
+  "turns": 72,
+  "out": 88681,
+  "fresh_in": 144,
+  "cache": 10647140
+ },
+ {
+  "file": "5e4e79a4",
+  "task": "FX-MAY-WINDOW",
+  "assembly": false,
+  "turns": 67,
+  "out": 65306,
+  "fresh_in": 134,
+  "cache": 10225663
+ },
+ {
+  "file": "61876599",
+  "task": "L3E",
+  "assembly": true,
+  "turns": 51,
+  "out": 45577,
+  "fresh_in": 102,
+  "cache": 6445542
+ },
+ {
+  "file": "717cf43d",
+  "task": "PROCESS-DEBT",
+  "assembly": true,
+  "turns": 111,
+  "out": 293209,
+  "fresh_in": 208,
+  "cache": 21501773
+ },
+ {
+  "file": "72c0f761",
+  "task": "PROCESS-DEBT",
+  "assembly": true,
+  "turns": 74,
+  "out": 64179,
+  "fresh_in": 148,
+  "cache": 11617067
+ },
+ {
+  "file": "74d634cd",
+  "task": "PIPE-BASE-SYNC",
+  "assembly": true,
+  "turns": 103,
+  "out": 68231,
+  "fresh_in": 206,
+  "cache": 13423716
+ },
+ {
+  "file": "7523210d",
+  "task": "LS-QUERY-SNAPSHOT",
+  "assembly": true,
+  "turns": 124,
+  "out": 110104,
+  "fresh_in": 248,
+  "cache": 20974221
+ },
+ {
+  "file": "827acd6e",
+  "task": "PARITY-GAPS-ADJ",
+  "assembly": true,
+  "turns": 32,
+  "out": 16734,
+  "fresh_in": 64,
+  "cache": 2415831
+ },
+ {
+  "file": "84b26e80",
+  "task": "FX-POLICY-EXPENSES",
+  "assembly": false,
+  "turns": 50,
+  "out": 66003,
+  "fresh_in": 166,
+  "cache": 4667820
+ },
+ {
+  "file": "89a99ab3",
+  "task": "INVOICES-LOADER-DESIGN",
+  "assembly": true,
+  "turns": 130,
+  "out": 206875,
+  "fresh_in": 246,
+  "cache": 28604791
+ },
+ {
+  "file": "8ac808de",
+  "task": "PIPE-BASE-SYNC",
+  "assembly": false,
+  "turns": 48,
+  "out": 129962,
+  "fresh_in": 93,
+  "cache": 5793273
+ },
+ {
+  "file": "8ed503f0",
+  "task": "SALES-MERGE-DRYRUN",
+  "assembly": true,
+  "turns": 96,
+  "out": 74032,
+  "fresh_in": 192,
+  "cache": 19114862
+ },
+ {
+  "file": "93c5b02c",
+  "task": "REGISTRY-COMPACT-ADJ",
+  "assembly": true,
+  "turns": 43,
+  "out": 94444,
+  "fresh_in": 86,
+  "cache": 5355586
+ },
+ {
+  "file": "95c1218a",
+  "task": "DQ-GATE-BEHAVIOR-PROBE",
+  "assembly": true,
+  "turns": 103,
+  "out": 57994,
+  "fresh_in": 206,
+  "cache": 10955809
+ },
+ {
+  "file": "9c2e2c72",
+  "task": "DQ-GATE-RECOVERY-CONFIRM",
+  "assembly": true,
+  "turns": 63,
+  "out": 31011,
+  "fresh_in": 126,
+  "cache": 9383105
+ },
+ {
+  "file": "9c93b110",
+  "task": "PARITY-STOCK-SNAPSHOT-SYNC",
+  "assembly": true,
+  "turns": 67,
+  "out": 26607,
+  "fresh_in": 134,
+  "cache": 9640200
+ },
+ {
+  "file": "9ce3de14",
+  "task": "PIPE-BASE-SYNC",
+  "assembly": true,
+  "turns": 76,
+  "out": 43515,
+  "fresh_in": 152,
+  "cache": 8647507
+ },
+ {
+  "file": "a28c4e3c",
+  "task": "FACTS-WORKFLOW-STOP-DIAG",
+  "assembly": false,
+  "turns": 47,
+  "out": 32310,
+  "fresh_in": 89,
+  "cache": 4211980
+ },
+ {
+  "file": "a8429d8d",
+  "task": "PARITY-STOCK-INTRANSIT-CLOSE",
+  "assembly": true,
+  "turns": 222,
+  "out": 499021,
+  "fresh_in": 420,
+  "cache": 79593445
+ },
+ {
+  "file": "af56b44d",
+  "task": "PARITY-STOCK-INTRANSIT-RECHECK",
+  "assembly": true,
+  "turns": 78,
+  "out": 56255,
+  "fresh_in": 156,
+  "cache": 12282534
+ },
+ {
+  "file": "b00b6e7b",
+  "task": "PARITY-REGISTRY",
+  "assembly": false,
+  "turns": 110,
+  "out": 75867,
+  "fresh_in": 20138,
+  "cache": 19083110
+ },
+ {
+  "file": "b2017ca0",
+  "task": "PARITY-SALES-CLOSE",
+  "assembly": true,
+  "turns": 105,
+  "out": 136243,
+  "fresh_in": 208,
+  "cache": 27197287
+ },
+ {
+  "file": "b2b96b88",
+  "task": "PARITY-STOCK-SNAPSHOT-SYNC",
+  "assembly": true,
+  "turns": 106,
+  "out": 93282,
+  "fresh_in": 212,
+  "cache": 21857861
+ },
+ {
+  "file": "b7ad56e4",
+  "task": "INVOICES-BACKFILL",
+  "assembly": true,
+  "turns": 74,
+  "out": 66538,
+  "fresh_in": 148,
+  "cache": 12836932
+ },
+ {
+  "file": "b8c6cb63",
+  "task": "DQ-GATE-DEPLOY-ADJ",
+  "assembly": true,
+  "turns": 81,
+  "out": 102189,
+  "fresh_in": 162,
+  "cache": 20416532
+ },
+ {
+  "file": "bdc4812d",
+  "task": "FACTS-STOP-DIAG-ADJ",
+  "assembly": true,
+  "turns": 59,
+  "out": 158424,
+  "fresh_in": 110,
+  "cache": 8797041
+ },
+ {
+  "file": "bf98bd99",
+  "task": "SOURCE-MAP-REST",
+  "assembly": true,
+  "turns": 75,
+  "out": 67909,
+  "fresh_in": 150,
+  "cache": 13772339
+ },
+ {
+  "file": "c1be24c1",
+  "task": "REPORT-FIELDS",
+  "assembly": true,
+  "turns": 46,
+  "out": 19237,
+  "fresh_in": 92,
+  "cache": 5607778
+ },
+ {
+  "file": "c4d015a0",
+  "task": "INVOICES-PARITY-RECHECK",
+  "assembly": true,
+  "turns": 102,
+  "out": 58293,
+  "fresh_in": 204,
+  "cache": 11487514
+ },
+ {
+  "file": "c5cedffc",
+  "task": "CODE-REPO-STANDUP-D1",
+  "assembly": false,
+  "turns": 107,
+  "out": 61004,
+  "fresh_in": 214,
+  "cache": 15220228
+ },
+ {
+  "file": "c8453cd9",
+  "task": "LS-SURFACE-FIELDS-SWEEP",
+  "assembly": true,
+  "turns": 124,
+  "out": 110945,
+  "fresh_in": 248,
+  "cache": 21690173
+ },
+ {
+  "file": "c8c3af24",
+  "task": "DQ-SOURCE-CAPTURE-GEN",
+  "assembly": true,
+  "turns": 22,
+  "out": 14558,
+  "fresh_in": 44,
+  "cache": 1545617
+ },
+ {
+  "file": "cc019140",
+  "task": "SALES-MERGE-DRYRUN",
+  "assembly": true,
+  "turns": 94,
+  "out": 111641,
+  "fresh_in": 188,
+  "cache": 21282556
+ },
+ {
+  "file": "ccf0767f",
+  "task": "REGISTRY-COMPACT-ADJ",
+  "assembly": true,
+  "turns": 273,
+  "out": 440816,
+  "fresh_in": 510,
+  "cache": 70252938
+ },
+ {
+  "file": "cf329fad",
+  "task": "DEPLOY-REVISION-PROBE",
+  "assembly": true,
+  "turns": 283,
+  "out": 539665,
+  "fresh_in": 15905,
+  "cache": 72932874
+ },
+ {
+  "file": "cf3eee8a",
+  "task": "ROLE-MODELS",
+  "assembly": true,
+  "turns": 50,
+  "out": 24750,
+  "fresh_in": 5890,
+  "cache": 6866941
+ },
+ {
+  "file": "cf3f6ac9",
+  "task": "INVOICES-LOADER-DEPLOY",
+  "assembly": true,
+  "turns": 102,
+  "out": 148184,
+  "fresh_in": 204,
+  "cache": 26880683
+ },
+ {
+  "file": "cf7d2d70",
+  "task": "REGISTRY-COMPACT-ADJ",
+  "assembly": true,
+  "turns": 94,
+  "out": 84285,
+  "fresh_in": 188,
+  "cache": 18863618
+ },
+ {
+  "file": "d152a945",
+  "task": "REPORT-FIELDS",
+  "assembly": true,
+  "turns": 57,
+  "out": 34979,
+  "fresh_in": 114,
+  "cache": 8238744
+ },
+ {
+  "file": "d1fa73c3",
+  "task": "PARITY-STOCK-SNAPSHOT-SYNC",
+  "assembly": true,
+  "turns": 250,
+  "out": 458833,
+  "fresh_in": 464,
+  "cache": 82257855
+ },
+ {
+  "file": "d4067fd9",
+  "task": "PARITY-STOCK-INTRANSIT-CLOSE",
+  "assembly": true,
+  "turns": 147,
+  "out": 339308,
+  "fresh_in": 274,
+  "cache": 38649882
+ },
+ {
+  "file": "e51e9308",
+  "task": "PARITY-STOCK-ROWWISE-BRIDGE",
+  "assembly": true,
+  "turns": 106,
+  "out": 75918,
+  "fresh_in": 212,
+  "cache": 23794540
+ },
+ {
+  "file": "e6099d31",
+  "task": "PARITY-COARSE-TOTALS",
+  "assembly": true,
+  "turns": 109,
+  "out": 160157,
+  "fresh_in": 218,
+  "cache": 23829479
+ },
+ {
+  "file": "ec2200a4",
+  "task": "INFRA-FACTS-SWEEP",
+  "assembly": true,
+  "turns": 82,
+  "out": 54774,
+  "fresh_in": 164,
+  "cache": 12763349
+ },
+ {
+  "file": "f03d8158",
+  "task": "SOURCE-MAP-SALES",
+  "assembly": true,
+  "turns": 160,
+  "out": 225427,
+  "fresh_in": 377,
+  "cache": 32644569
+ },
+ {
+  "file": "f2c7efd1",
+  "task": "SOURCE-MAP-SALES",
+  "assembly": true,
+  "turns": 47,
+  "out": 16663,
+  "fresh_in": 94,
+  "cache": 5800250
+ },
+ {
+  "file": "f469d8f6",
+  "task": "DEPLOY-ORDER-ADJ",
+  "assembly": true,
+  "turns": 185,
+  "out": 355041,
+  "fresh_in": 343,
+  "cache": 48565256
+ },
+ {
+  "file": "f70ff56f",
+  "task": "REGISTRY-COMPACT-ADJ",
+  "assembly": false,
+  "turns": 43,
+  "out": 50015,
+  "fresh_in": 83,
+  "cache": 4124457
+ },
+ {
+  "file": "f97f2432",
+  "task": "CORE-FRESHNESS-SWEEP",
+  "assembly": true,
+  "turns": 106,
+  "out": 110169,
+  "fresh_in": 208,
+  "cache": 20034283
+ },
+ {
+  "file": "faf8d32b",
+  "task": "DQ-GATE-SCOPE-SPLIT",
+  "assembly": true,
+  "turns": 85,
+  "out": 80410,
+  "fresh_in": 170,
+  "cache": 16614812
+ }
+]
