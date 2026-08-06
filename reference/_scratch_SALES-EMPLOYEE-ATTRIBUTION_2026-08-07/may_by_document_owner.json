@@ -1,0 +1,24 @@
+n_docs=127
+{
+  "total_docs": 127,
+  "total_sum_kgs": 52647606.84,
+  "no_owner_docs": 0,
+  "by_owner_employee_id": {
+    "90ff70de-8162-11ef-0a80-0262000b020c": {
+      "sum_kgs": 47796801.99,
+      "docs": 83
+    },
+    "013381e5-492d-11f1-0a80-144c001f5a3c": {
+      "sum_kgs": 500266.3,
+      "docs": 9
+    },
+    "de4c5757-4533-11f0-0a80-1aae0032c6f1": {
+      "sum_kgs": 2700538.55,
+      "docs": 34
+    },
+    "1f9b9d60-fa31-11ee-0a80-08920071063a": {
+      "sum_kgs": 1650000.0,
+      "docs": 1
+    }
+  }
+}
