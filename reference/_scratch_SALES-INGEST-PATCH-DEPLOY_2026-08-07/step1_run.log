@@ -1,0 +1,223 @@
+=== UTC anchor (start) ===
+Thu Aug  6 19:18:42 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== step 1a: list one entity/retaildemand document ===
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand?limit=1",
+    "type" : "retaildemand",
+    "mediaType" : "application/json",
+    "size" : 1651,
+    "limit" : 1,
+    "offset" : 0,
+    "nextHref" : "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand?limit=1&offset=1"
+  },
+  "rows" : [ {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/011ac0ec-ad98-11f0-0a80-18fc003e89ce",
+      "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+      "type" : "retaildemand",
+      "mediaType" : "application/json",
+      "uuidHref" : "https://online.moysklad.ru/app/#retaildemand/edit?id=011ac0ec-ad98-11f0-0a80-18fc003e89ce"
+    },
+    "id" : "011ac0ec-ad98-11f0-0a80-18fc003e89ce",
+    "accountId" : "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "owner" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/db833495-87d2-11ef-0a80-08a90047301a",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#employee/edit?id=db833495-87d2-11ef-0a80-08a90047301a"
+      }
+    },
+    "shared" : false,
+    "group" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/group/422814c0-2ff1-11ef-0a80-160700194f59",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type" : "group",
+        "mediaType" : "application/json"
+      }
+    },
+    "updated" : "2025-10-20 17:13:40.046",
+    "name" : "00770",
+    "externalCode" : "tvqFyAmEgZ8V0DkRlFT602",
+    "syncId" : "1808d1bc-55e5-4fc1-9fb6-ad9281c6a8f2",
+    "moment" : "2025-10-20 12:34:00.000",
+    "applicable" : true,
+    "rate" : {
+      "currency" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/1fb4954e-fa31-11ee-0a80-08920071069f",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type" : "currency",
+          "mediaType" : "application/json",
+          "uuidHref" : "https://online.moysklad.ru/app/#currency/edit?id=1fb4954e-fa31-11ee-0a80-08920071069f"
+        }
+      }
+    },
+    "sum" : 108000.0,
+    "store" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/store/e80bfcc3-2cbb-11ef-0a80-0f42002c1022",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type" : "store",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#warehouse/edit?id=e80bfcc3-2cbb-11ef-0a80-0f42002c1022"
+      }
+    },
+    "agent" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/202e678f-fa31-11ee-0a80-0892007106d1",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=202e678f-fa31-11ee-0a80-0892007106d1"
+      }
+    },
+    "organization" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/organization/60dc131b-44fb-11ef-0a80-0379002922b1",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type" : "organization",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#mycompany/edit?id=60dc131b-44fb-11ef-0a80-0379002922b1"
+      }
+    },
+    "state" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata/states/50d40089-8be4-11ef-0a80-031200003067",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/metadata",
+        "type" : "state",
+        "mediaType" : "application/json"
+      }
+    },
+    "created" : "2025-10-20 12:34:41.353",
+    "printed" : true,
+    "published" : false,
+    "files" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/011ac0ec-ad98-11f0-0a80-18fc003e89ce/files",
+        "type" : "files",
+        "mediaType" : "application/json",
+        "size" : 0,
+        "limit" : 1000,
+        "offset" : 0
+      }
+    },
+    "positions" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/011ac0ec-ad98-11f0-0a80-18fc003e89ce/positions",
+        "type" : "demandposition",
+        "mediaType" : "application/json",
+        "size" : 1,
+        "limit" : 1000,
+        "offset" : 0
+      }
+    },
+    "vatEnabled" : true,
+    "vatIncluded" : true,
+    "vatSum" : 0.0,
+    "payedSum" : 0.0,
+    "fiscal" : false,
+    "retailStore" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/7b18cbde-87d7-11ef-0a80-02960047ce14",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+        "type" : "retailstore",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#retailstore/edit?id=7b18cbde-87d7-11ef-0a80-02960047ce14"
+      }
+    },
+    "retailShift" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/79c96999-ad60-11f0-0a80-008500396e26",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/metadata",
+        "type" : "retailshift",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#retailshift/edit?id=79c96999-ad60-11f0-0a80-008500396e26"
+      }
+    },
+    "cashSum" : 108000.0,
+    "noCashSum" : 0.0,
+    "qrSum" : 0.0,
+    "prepaymentCashSum" : 0.0,
+    "prepaymentNoCashSum" : 0.0,
+    "prepaymentQrSum" : 0.0,
+    "advancePaymentSum" : 0.0,
+    "taxSystem" : "PATENT_BASED"
+  } ]
+}
+=== resolved document id: 011ac0ec-ad98-11f0-0a80-18fc003e89ce ===
+=== step 1b: GET entity/retaildemand/011ac0ec-ad98-11f0-0a80-18fc003e89ce/positions ===
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/011ac0ec-ad98-11f0-0a80-18fc003e89ce/positions",
+    "type" : "demandposition",
+    "mediaType" : "application/json",
+    "size" : 1,
+    "limit" : 1000,
+    "offset" : 0
+  },
+  "rows" : [ {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/retaildemand/011ac0ec-ad98-11f0-0a80-18fc003e89ce/positions/011ac8a6-ad98-11f0-0a80-18fc003e89cf",
+      "type" : "demandposition",
+      "mediaType" : "application/json"
+    },
+    "id" : "011ac8a6-ad98-11f0-0a80-18fc003e89cf",
+    "accountId" : "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "quantity" : 1.0,
+    "price" : 108000.0,
+    "discount" : 0.0,
+    "vat" : 0,
+    "vatEnabled" : false,
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/21137710-4854-11f0-0a80-190600293b36",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=21136a7b-4854-11f0-0a80-190600293b32"
+      }
+    }
+  } ]
+}
+=== UTC anchor (end) ===
+Thu Aug  6 19:18:45 UTC 2026
+=== caller identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
