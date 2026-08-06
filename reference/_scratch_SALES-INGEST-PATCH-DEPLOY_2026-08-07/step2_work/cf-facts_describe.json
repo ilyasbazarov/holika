@@ -1,0 +1,60 @@
+{
+  "buildConfig": {
+    "automaticUpdatePolicy": {},
+    "build": "projects/420804682491/locations/asia-east1/builds/6ac22631-8a64-4102-821f-8946a89d8eb4",
+    "dockerRegistry": "ARTIFACT_REGISTRY",
+    "dockerRepository": "projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts",
+    "entryPoint": "main",
+    "runtime": "python312",
+    "serviceAccount": "projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com",
+    "source": {
+      "storageSource": {
+        "bucket": "gcf-v2-sources-420804682491-asia-east1",
+        "generation": "1782334223015697",
+        "object": "cf-facts/function-source.zip"
+      }
+    },
+    "sourceProvenance": {
+      "resolvedStorageSource": {
+        "bucket": "gcf-v2-sources-420804682491-asia-east1",
+        "generation": "1782334223015697",
+        "object": "cf-facts/function-source.zip"
+      }
+    }
+  },
+  "createTime": "2026-05-06T08:26:29.388991725Z",
+  "environment": "GEN_2",
+  "labels": {
+    "deployment-tool": "cli-gcloud"
+  },
+  "name": "projects/msklad-bi-prod/locations/asia-east1/functions/cf-facts",
+  "satisfiesPzi": true,
+  "serviceConfig": {
+    "allTrafficOnLatestRevision": true,
+    "availableCpu": "1",
+    "availableMemory": "2048M",
+    "environmentVariables": {
+      "LOG_EXECUTION_ID": "true"
+    },
+    "ingressSettings": "ALLOW_ALL",
+    "maxInstanceCount": 5,
+    "maxInstanceRequestConcurrency": 1,
+    "minInstanceCount": 1,
+    "revision": "cf-facts-00007-xir",
+    "secretEnvironmentVariables": [
+      {
+        "key": "MSKLAD_TOKEN",
+        "projectId": "420804682491",
+        "secret": "msklad-token",
+        "version": "latest"
+      }
+    ],
+    "service": "projects/msklad-bi-prod/locations/asia-east1/services/cf-facts",
+    "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+    "timeoutSeconds": 540,
+    "uri": "https://cf-facts-xw5u2boozq-de.a.run.app"
+  },
+  "state": "ACTIVE",
+  "updateTime": "2026-07-30T10:04:58.768334396Z",
+  "url": "https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts"
+}

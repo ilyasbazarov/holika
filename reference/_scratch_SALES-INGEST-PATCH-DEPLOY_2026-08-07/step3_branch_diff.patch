@@ -1,0 +1,701 @@
+diff --git a/cf-facts/.gcloudignore b/cf-facts/.gcloudignore
+new file mode 100644
+index 0000000..c13ba04
+--- /dev/null
++++ b/cf-facts/.gcloudignore
+@@ -0,0 +1,9 @@
++.gcloudignore
++.git
++.gitignore
++*.bak
++__pycache__/
++*.pyc
++.DS_Store
++src.zip
++patch_*.py
+diff --git a/cf-facts/bq_ops.py b/cf-facts/bq_ops.py
+index 66fe496..358f057 100644
+--- a/cf-facts/bq_ops.py
++++ b/cf-facts/bq_ops.py
+@@ -36,6 +36,7 @@ from config import (
+     GCP_PROJECT,
+     STG_BYVARIANT,
+     STG_FACT_SALES,
++    STG_FACT_SALES_PERIMETER,
+ )
+ 
+ log = logging.getLogger(__name__)
+@@ -75,6 +76,27 @@ BYVARIANT_SCHEMA = [
+     bigquery.SchemaField("_loaded_at",       "TIMESTAMP"),
+ ]
+ 
++# SALES-PERIMETER-EXTEND (ADR-103 §8 вариант (a)): отдельная staging-схема, отдельная
++# таблица — не переиспользует STAGING_SCHEMA/STG_FACT_SALES (`ADR-024` прецедент разреза).
++# `doc_id`/`source_doc_type` — только для аудита и построения transaction_id; в
++# `core.fact_sales_profit` они не попадают, целевая схема (`02_ERP_CONTRACTS.md:36-49`)
++# этим патчем не меняется.
++PERIMETER_STAGING_SCHEMA = [
++    bigquery.SchemaField("run_id",               "STRING"),
++    bigquery.SchemaField("doc_id",               "STRING"),
++    bigquery.SchemaField("source_doc_type",      "STRING"),   # retaildemand | commissionreportin_sale
++    bigquery.SchemaField("position_id",          "STRING"),
++    bigquery.SchemaField("transaction_date_raw", "STRING"),
++    bigquery.SchemaField("product_id",           "STRING"),
++    bigquery.SchemaField("agent_id",             "STRING"),
++    bigquery.SchemaField("quantity",             "FLOAT64"),
++    bigquery.SchemaField("price_kgs",            "FLOAT64"),
++    bigquery.SchemaField("discount",             "FLOAT64"),
++    bigquery.SchemaField("revenue_kgs",          "FLOAT64"),
++    bigquery.SchemaField("entity_type",          "STRING"),
++    bigquery.SchemaField("_loaded_at",           "TIMESTAMP"),
++]
++
+ # ─── Ensure staging tables exist ──────────────────────────────────────────────
+ 
+ def ensure_staging_tables(bq: bigquery.Client) -> None:
+@@ -83,6 +105,11 @@ def ensure_staging_tables(bq: bigquery.Client) -> None:
+     _ensure_table(bq, STG_BYVARIANT,  BYVARIANT_SCHEMA, time_partitioning=None)
+ 
+ 
++def ensure_perimeter_staging_table(bq: bigquery.Client) -> None:
++    """Create stg_msklad.fact_sales_perimeter_staging if it doesn't exist. Idempotent."""
++    _ensure_table(bq, STG_FACT_SALES_PERIMETER, PERIMETER_STAGING_SCHEMA, time_partitioning=None)
++
++
+ def _ensure_table(
+     bq: bigquery.Client,
+     full_table_id: str,
+@@ -125,6 +152,33 @@ def load_staging(
+     return rows
+ 
+ 
++def load_perimeter_staging(
++    bq: bigquery.Client,
++    records: list[dict],
++) -> int:
++    """
++    WRITE_TRUNCATE load into stg_msklad.fact_sales_perimeter_staging
++    (SALES-PERIMETER-EXTEND, retaildemand + commissionreportin_sale).
++    """
++    if not records:
++        raise ValueError("load_perimeter_staging called with 0 records — abort")
++
++    job_config = bigquery.LoadJobConfig(
++        schema=PERIMETER_STAGING_SCHEMA,
++        source_format=bigquery.SourceFormat.NEWLINE_DELIMITED_JSON,
++        write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
++        ignore_unknown_values=False,
++        max_bad_records=0,
++    )
++
++    job = bq.load_table_from_json(records, STG_FACT_SALES_PERIMETER, job_config=job_config)
++    job.result()
++
++    rows = bq.get_table(STG_FACT_SALES_PERIMETER).num_rows
++    log.info("Loaded %d rows → %s", rows, STG_FACT_SALES_PERIMETER)
++    return rows
++
++
+ def load_byvariant_staging(
+     bq: bigquery.Client,
+     records: list[dict],
+@@ -364,6 +418,174 @@ def promote_to_core(
+     return stats
+ 
+ 
++# ─── SALES-PERIMETER-EXTEND: MERGE периметра → core.fact_sales_profit ─────────
++
++# Тот же паттерн даты, что у основного MERGE (`_PARSE_DATE` выше) — ADR-088 §3, дата как
++# функция UTC-момента документа, не переопределяется здесь ради единообразия при чтении.
++_PERIMETER_PARSE_DATE = "DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek')"
++
++
++def _build_perimeter_merge_sql(window_days: int) -> str:
++    """
++    MERGE периметра (retaildemand + commissionreportin_sale) → core.fact_sales_profit.
++
++    ОТДЕЛЬНЫЙ от `_build_merge_sql` (прецедент ADR-024): своя staging-таблица
++    (`STG_FACT_SALES_PERIMETER`), свой ON. Не трогает и не расширяет запрос
++    `_build_merge_sql` — тот патчится отдельной задачей `SALES-REFRESH-WINDOW`
++    (окно/сироты/замороженная дата, `ADR-100 §7`); смешивать периметр с тем патчем
++    запрещено брифом `SALES-INGEST-PATCH`.
++
++    C1 (ADR-030): явный `INSERT (колонки)`, `INSERT ROW` не используется.
++
++    C2 (ADR-101 §7): ветки удаления НЕТ. Причина названа, не скрыта — периметр
++    новый (без исторического мусора на момент постройки), объём мал (~513 док/мес,
++    `reference/parity_sales_discriminate_step2_2026-08-02.md`). Тот же класс дефекта
++    (строки-сироты MERGE без ветки удаления) для ОСНОВНОГО ингеста уже адресуется
++    отдельной задачей (`SALES-REFRESH-WINDOW`); симметричный фикс для периметра —
++    будущая отдельная задача, не изобретается здесь молча под видом полноты.
++    """
++    return f"""
++MERGE `{CORE_FACT_SALES}` T
++USING (
++  SELECT
++    TO_HEX(MD5(CONCAT(s.doc_id, '|', s.position_id)))               AS transaction_id,
++    {_PERIMETER_PARSE_DATE}                                         AS transaction_date,
++    s.product_id,
++    s.entity_type,
++    s.discount,
++    s.agent_id,
++    s.quantity                                                      AS sell_quantity,
++    CAST(0.0 AS FLOAT64)                                            AS return_quantity,
++    s.revenue_kgs                                                   AS sell_sum_kgs,
++    CAST(0.0 AS FLOAT64)                                            AS return_sum_kgs,
++    s.revenue_kgs                                                   AS revenue_kgs,
++    CASE
++      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0
++        THEN {_COGS_EXPR}
++      ELSE NULL
++    END                                                             AS cogs_kgs,
++    CASE
++      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0
++        THEN {_MARGIN_EXPR}
++      ELSE NULL
++    END                                                             AS margin_kgs,
++    ROUND(SAFE_DIVIDE(s.revenue_kgs, fx.rate_kgs_per_usd), 4)       AS revenue_usd,
++    CASE
++      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0 AND fx.rate_kgs_per_usd IS NOT NULL
++        THEN {_COGS_USD_EXPR}
++      ELSE NULL
++    END                                                             AS cogs_usd,
++    CASE
++      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0 AND fx.rate_kgs_per_usd IS NOT NULL
++        THEN {_MARGIN_USD_EXPR}
++      ELSE NULL
++    END                                                             AS margin_usd,
++    CAST(NULL AS STRING)                                            AS sales_channel_id,
++    CAST(NULL AS STRING)                                            AS sales_channel_name,
++    CAST(NULL AS STRING)                                            AS project_id,
++    CAST(NULL AS STRING)                                            AS project_name,
++    CURRENT_TIMESTAMP()                                             AS _loaded_at
++  FROM `{STG_FACT_SALES_PERIMETER}` s
++  LEFT JOIN `{CORE_BYVARIANT_BCK}` b
++    ON  s.product_id = b.product_id
++    AND DATE_TRUNC({_PERIMETER_PARSE_DATE}, WEEK(SATURDAY)) = b._week_start
++  LEFT JOIN `{CORE_DIM_FX}` fx
++    ON  {_PERIMETER_PARSE_DATE} = fx.date
++) S
++ON  T.transaction_id   = S.transaction_id
++AND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY)
++
++WHEN MATCHED THEN UPDATE SET
++  T.sell_quantity   = S.sell_quantity,
++  T.return_quantity = S.return_quantity,
++  T.sell_sum_kgs    = S.sell_sum_kgs,
++  T.return_sum_kgs  = S.return_sum_kgs,
++  T.revenue_kgs     = S.revenue_kgs,
++  T.cogs_kgs        = S.cogs_kgs,
++  T.margin_kgs      = S.margin_kgs,
++  T.revenue_usd     = S.revenue_usd,
++  T.cogs_usd        = S.cogs_usd,
++  T.margin_usd      = S.margin_usd,
++  T.discount        = S.discount,
++  T._loaded_at      = S._loaded_at
++
++WHEN NOT MATCHED THEN INSERT (
++  transaction_id,
++  transaction_date,
++  product_id,
++  entity_type,
++  agent_id,
++  sell_quantity,
++  return_quantity,
++  sell_sum_kgs,
++  return_sum_kgs,
++  revenue_kgs,
++  cogs_kgs,
++  margin_kgs,
++  revenue_usd,
++  cogs_usd,
++  margin_usd,
++  sales_channel_id,
++  sales_channel_name,
++  project_id,
++  project_name,
++  discount,
++  _loaded_at
++) VALUES (
++  S.transaction_id,
++  S.transaction_date,
++  S.product_id,
++  S.entity_type,
++  S.agent_id,
++  S.sell_quantity,
++  S.return_quantity,
++  S.sell_sum_kgs,
++  S.return_sum_kgs,
++  S.revenue_kgs,
++  S.cogs_kgs,
++  S.margin_kgs,
++  S.revenue_usd,
++  S.cogs_usd,
++  S.margin_usd,
++  S.sales_channel_id,
++  S.sales_channel_name,
++  S.project_id,
++  S.project_name,
++  S.discount,
++  S._loaded_at
++)
++"""
++
++
++def promote_perimeter_to_core(
++    bq: bigquery.Client,
++    window_days: int,
++) -> dict:
++    """MERGE stg_msklad.fact_sales_perimeter_staging → core.fact_sales_profit."""
++    count_row = next(
++        bq.query(f"SELECT COUNT(*) AS cnt FROM `{STG_FACT_SALES_PERIMETER}`").result()
++    )
++    staging_count = count_row.cnt
++    if staging_count == 0:
++        raise ValueError("promote_perimeter_to_core: staging table is empty — refuse to MERGE")
++
++    log.info("Perimeter staging rows: %d | window_days: %d", staging_count, window_days)
++
++    merge_sql = _build_perimeter_merge_sql(window_days)
++    log.debug("Executing perimeter MERGE SQL:\n%s", merge_sql)
++
++    job = bq.query(merge_sql)
++    job.result()
++
++    stats = {
++        "staging_rows":   staging_count,
++        "window_days":    window_days,
++        "affected_rows":  job.num_dml_affected_rows,
++    }
++    log.info("Perimeter MERGE complete: %s", stats)
++    return stats
++
++
+ # ─── Post-MERGE DQ snapshot ───────────────────────────────────────────────────
+ 
+ def get_coverage_stats(bq: bigquery.Client, window_days: int) -> dict:
+diff --git a/cf-facts/config.py b/cf-facts/config.py
+index 431dc26..a22db74 100644
+--- a/cf-facts/config.py
++++ b/cf-facts/config.py
+@@ -23,6 +23,9 @@ SECRET_TOKEN = "msklad-token"
+ # ─── Staging table names ──────────────────────────────────────────────────────
+ STG_FACT_SALES     = f"{BQ_STG}.fact_sales_staging"
+ STG_BYVARIANT      = f"{BQ_STG}.byvariant_staging"
++# SALES-PERIMETER-EXTEND (ADR-103 §8 вариант (a)) — отдельная staging-таблица, отдельный
++# ингест по прецеденту ADR-024, не расширение `fact_sales_staging`/`_build_merge_sql`.
++STG_FACT_SALES_PERIMETER = f"{BQ_STG}.fact_sales_perimeter_staging"
+ 
+ # ─── Core table names ─────────────────────────────────────────────────────────
+ CORE_FACT_SALES    = f"{BQ_CORE}.fact_sales_profit"
+@@ -36,6 +39,25 @@ GCS_PREFIX_DEMAND  = "demand/incremental"
+ # ─── Rolling windows ──────────────────────────────────────────────────────────
+ HOURLY_WINDOW_DAYS  = 7
+ WEEKLY_WINDOW_DAYS  = 90
++# SALES-PERIMETER-EXTEND: тот же скользящий охват, что у весового (weekly) демand-ингеста —
++# отдельный ингест, но не отдельная каденция без основания.
++PERIMETER_WINDOW_DAYS = WEEKLY_WINDOW_DAYS
++
++# ─── SALES-CONSIGNMENT-REVENUE (ADR-103 §7) ───────────────────────────────────
++# Комиссионный канал за зону паритета (2026-05-01…2026-08-01) исчерпывающе измерен
++# `ADR-104 §2/§5` (`reference/sales_perimeter_confirm_2026-08-02.md`): ровно эти три
++# контрагента, и на весь этот период приходится ровно один документ `entity/demand`
++# на них (отгрузка комиссионеру, не продажа). Различитель `SALES-INGEST-PATCH` Шаг 1:
++# среди уже загружаемых полей `fetch_demands.py` (agent_id, sales_channel_id, project_id,
++# entity_type) единственный пригодный признак — сам `agent_id`; ни тип договора, ни склад
++# ингестом не читаются. Форма фикса — исключение по списку контрагентов канала.
++# Риск, названный явно (не скрыт): список измерен на зоне до 2026-08-01; появление нового
++# контрагента в комиссионном канале потребует повторного замера, автоматически не подхватится.
++COMMISSION_CHANNEL_AGENT_IDS = {
++    "0276f431-2ff5-11ef-0a80-11d40019917f",  # UMAI WB (Договор КР)
++    "3c080755-03ff-11f0-0a80-0c2c00104bbb",  # Bloom WB (Договор)
++    "31d135bc-4df8-11f1-0a80-1c8a0053c5b4",  # ООО «РВБ»
++}
+ 
+ # ─── Purchase order statuses ──────────────────────────────────────────────────
+ PURCHASE_ORDER_STATES = {
+diff --git a/cf-facts/fetch_demands.py b/cf-facts/fetch_demands.py
+index f595351..b8a2ad2 100644
+--- a/cf-facts/fetch_demands.py
++++ b/cf-facts/fetch_demands.py
+@@ -15,7 +15,7 @@ from typing import Optional
+ 
+ import requests
+ 
+-from config import MSKLAD_RPS
++from config import COMMISSION_CHANNEL_AGENT_IDS, MSKLAD_RPS
+ from helpers import now_utc_str, paginate_entity, parse_href
+ 
+ log = logging.getLogger(__name__)
+@@ -162,6 +162,23 @@ def fetch_demand_positions(
+     if skipped_demands:
+         log.warning("Skipped %d demands (missing id)", skipped_demands)
+ 
++    # ── SALES-CONSIGNMENT-REVENUE (ADR-103 §7, ADR-104 §5): отгрузка комиссионеру на
++    # реализацию — не продажа, МойСклад её продажей не считает. Различитель (`SALES-INGEST-PATCH`
++    # Шаг 1) — agent_id, единственный уже загружаемый признак; список исчерпывающе измерен
++    # (config.py, комментарий у COMMISSION_CHANNEL_AGENT_IDS). Строки не отбрасываются молча —
++    # исключение логируется с суммой, чтобы регресс списка был виден по логу прогона.
++    excluded = [r for r in all_records if r["agent_id"] in COMMISSION_CHANNEL_AGENT_IDS]
++    if excluded:
++        excluded_sum = sum(r["revenue_kgs"] for r in excluded)
++        log.warning(
++            "Excluding %d position(s) from %d consignment-channel agent(s) "
++            "(entity/demand shipment to commissioner, not a sale) — revenue_kgs=%.2f",
++            len(excluded),
++            len({r["agent_id"] for r in excluded}),
++            excluded_sum,
++        )
++    all_records = [r for r in all_records if r["agent_id"] not in COMMISSION_CHANNEL_AGENT_IDS]
++
+     log.info(
+         "Fetched %d position records from %d demands",
+         len(all_records), len(demands) - skipped_demands,
+diff --git a/cf-facts/fetch_perimeter.py b/cf-facts/fetch_perimeter.py
+new file mode 100644
+index 0000000..ac4791c
+--- /dev/null
++++ b/cf-facts/fetch_perimeter.py
+@@ -0,0 +1,209 @@
++"""
++fetch_perimeter.py — SALES-PERIMETER-EXTEND (ADR-103 §8, вариант (a) объекта паритета продаж).
++
++Расширяет периметр ингеста продаж на два типа документов, которые `report/profit/*`
++считает продажами, а `entity/demand`-ингест (fetch_demands.py) не читает вовсе
++(подтверждено `grep -rn "retaildemand\\|commissionreportin"` по снапшоту — 0 совпадений
++до этого патча, `reference/sales_h1h4_adj_2026-08-02.md §3` признак 4):
++
++  - entity/retaildemand — розница.
++  - entity/commissionreportin — продажи по отчёту комиссионера. Правило (ADR-104 §4):
++    отчёт `report/profit/*` считает эти продажи ПОЛНОЙ суммой документа (`sum`,
++    тождественно Σ price × quantity позиций), а НЕ суммой комитента (`commitentSum`).
++    Ингест, взявший `commitentSum`, занизит выручку ровно на вознаграждение комиссионера.
++    Это НЕ то же самое, что уже грузит cf-loss-commission (тот берёт reward/commissionOverhead
++    в core.fact_commissionreportin, `ADR-026`) — здесь считается сама продажа.
++
++Прецедент разреза (ADR-024): ОТДЕЛЬНЫЙ ингест, не расширение `_build_merge_sql`
++(bq_ops.py) — та функция патчится отдельной задачей `SALES-REFRESH-WINDOW`
++(окно/сироты/замороженная дата, `ADR-100 §7`); смешивать периметр с тем патчем
++запрещено брифом `SALES-INGEST-PATCH`.
++
++Правило суток (ADR-088 §3): дата — функция UTC-момента документа
++(`DATE(PARSE_TIMESTAMP(...), 'Asia/Bishkek')`, см. `bq_ops.py::_PERIMETER_PARSE_DATE`),
++не `moment_str[:10]`.
++
++Ограничение метода, названное явно (не скрыто): форма позиций `entity/retaildemand`
++подтверждена полями ответа (`reference/parity_sales_discriminate_step2_2026-08-02.md §Шаг 2`:
++document incl. `agent`, `rate`, `positions`, `sum`, `store`) — по аналогии с `entity/demand`
++предполагается тот же состав полей позиции (`price`, `quantity`, `discount`, `assortment`);
++позиционный уровень (`positions.rows[]`) этой сессией живым `GET` не проверялся (класс B,
++не выдан). Форма позиций `entity/commissionreportin` подтверждена измерением
++(`reference/sales_perimeter_confirm_2026-08-02.md §6`: `price`, `quantity`, `assortment`,
++`reward` — БЕЗ `discount`). Перед деплоем (класс B, отдельный мандат) оба предположения
++о позиционной форме `retaildemand` обязаны быть проверены одним живым `GET` — названо в
++`reference/sales_ingest_patch_<date>.md §Что не делает эта сессия`, не подразумевается молча.
++"""
++
++import logging
++from datetime import date
++from typing import Optional
++
++import requests
++
++from helpers import now_utc_str, paginate_entity, parse_href
++
++log = logging.getLogger(__name__)
++
++
++def _format_moment(d: date) -> str:
++    """МойСклад datetime filter format: 'YYYY-MM-DD HH:MM:SS'."""
++    return f"{d.isoformat()} 00:00:00"
++
++
++def _fetch_positions_for(
++    token: str,
++    entity_path: str,
++    docs: list[dict],
++    doc_type: str,
++    session: requests.Session,
++    run_id: str,
++    loaded_at: str,
++    has_discount: bool,
++) -> list[dict]:
++    """
++    Общая часть извлечения позиций для retaildemand/commissionreportin —
++    тот же паттерн, что `fetch_demands.py::fetch_demand_positions` (expand=positions
++    в list-режиме не работает, позиции — отдельным запросом на документ).
++    """
++    all_records: list[dict] = []
++    skipped = 0
++
++    for doc in docs:
++        doc_id = doc.get("id")
++        if not doc_id:
++            skipped += 1
++            continue
++
++        agent_href = doc.get("agent", {}).get("meta", {}).get("href", "")
++        agent_id = parse_href(agent_href)
++        moment_str = doc.get("moment", "")
++
++        positions = paginate_entity(
++            token,
++            f"{entity_path}/{doc_id}/positions",
++            session=session,
++        )
++
++        if not positions:
++            log.debug("%s %s has 0 positions — skipping", doc_type, doc_id)
++            continue
++
++        for pos in positions:
++            pos_id = pos.get("id")
++            if not pos_id:
++                continue
++
++            assortment = pos.get("assortment", {})
++            assortment_meta = assortment.get("meta", {})
++            product_href = assortment_meta.get("href", "")
++            product_id   = parse_href(product_href)
++            entity_type  = assortment_meta.get("type", "product")
++
++            if not product_id:
++                log.warning("Position %s in %s %s has no product_id — skipping", pos_id, doc_type, doc_id)
++                continue
++
++            currency_rate = doc.get("rate", {}).get("value") or 1.0
++            price_kgs = pos.get("price", 0) / 100.0 * currency_rate
++            quantity  = pos.get("quantity", 0.0)
++            discount  = pos.get("discount", 0.0) if has_discount else 0.0
++            revenue_kgs = round(price_kgs * quantity * (1.0 - discount / 100.0), 4)
++
++            all_records.append({
++                "run_id":               run_id,
++                "doc_id":               doc_id,
++                "source_doc_type":      doc_type,
++                "position_id":          pos_id,
++                "transaction_date_raw": moment_str,
++                "product_id":           product_id,
++                "agent_id":             agent_id,
++                "quantity":             quantity,
++                "price_kgs":            price_kgs,
++                "discount":             discount,
++                "revenue_kgs":          revenue_kgs,
++                "entity_type":          entity_type,
++                "_loaded_at":           loaded_at,
++            })
++
++    if skipped:
++        log.warning("Skipped %d %s docs (missing id)", skipped, doc_type)
++
++    return all_records
++
++
++def fetch_retaildemand_positions(
++    token: str,
++    date_from: date,
++    date_to: date,
++    run_id: str,
++    session: Optional[requests.Session] = None,
++) -> list[dict]:
++    """Fetch entity/retaildemand positions in [date_from, date_to]."""
++    if session is None:
++        session = requests.Session()
++
++    loaded_at = now_utc_str()
++    moment_from = _format_moment(date_from)
++    moment_to   = f"{date_to.isoformat()} 23:59:59"
++
++    log.info("Fetching retaildemand: %s → %s", moment_from, moment_to)
++
++    docs = paginate_entity(
++        token,
++        "entity/retaildemand",
++        params={
++            "filter": f"moment>={moment_from};moment<={moment_to};applicable=true",
++            "order": "moment,asc",
++        },
++        session=session,
++    )
++    log.info("Found %d retaildemand documents", len(docs))
++
++    records = _fetch_positions_for(
++        token, "entity/retaildemand", docs, "retaildemand", session, run_id, loaded_at,
++        has_discount=True,
++    )
++    log.info("Fetched %d retaildemand position records from %d docs", len(records), len(docs))
++    return records
++
++
++def fetch_commission_sales_positions(
++    token: str,
++    date_from: date,
++    date_to: date,
++    run_id: str,
++    session: Optional[requests.Session] = None,
++) -> list[dict]:
++    """
++    Fetch продажи по entity/commissionreportin (сумма документа, ADR-104 §4) — НЕ то,
++    что уже грузит cf-loss-commission (reward/commissionOverhead).
++    """
++    if session is None:
++        session = requests.Session()
++
++    loaded_at = now_utc_str()
++    moment_from = _format_moment(date_from)
++    moment_to   = f"{date_to.isoformat()} 23:59:59"
++
++    log.info("Fetching commissionreportin sales: %s → %s", moment_from, moment_to)
++
++    docs = paginate_entity(
++        token,
++        "entity/commissionreportin",
++        params={
++            "filter": f"moment>={moment_from};moment<={moment_to};applicable=true",
++            "order": "moment,asc",
++        },
++        session=session,
++    )
++    log.info("Found %d commissionreportin documents", len(docs))
++
++    records = _fetch_positions_for(
++        token, "entity/commissionreportin", docs, "commissionreportin_sale", session, run_id, loaded_at,
++        # positions.rows[] entity/commissionreportin НЕ несёт `discount` — подтверждено
++        # ключами ответа (sales_perimeter_confirm_2026-08-02.md §6), не домысел.
++        has_discount=False,
++    )
++    log.info("Fetched %d commissionreportin_sale position records from %d docs", len(records), len(docs))
++    return records
+diff --git a/cf-facts/main.py b/cf-facts/main.py
+index 2c4fe33..ae77423 100644
+--- a/cf-facts/main.py
++++ b/cf-facts/main.py
+@@ -8,6 +8,11 @@ Modes (passed as JSON body field "mode"):
+              for 90 days → GCS NDJSON → BQ staging (both demand + byvariant)
+   promote  → MERGE stg_msklad.fact_sales_staging → core.fact_sales_profit
+   purchases → fetch ALL purchaseorders (full refresh) → core.fact_purchases
++  perimeter → SALES-PERIMETER-EXTEND (ADR-103 §8 вариант (a)): fetch entity/retaildemand
++              + продажи entity/commissionreportin (сумма документа, ADR-104 §4) →
++              BQ staging (stg_msklad.fact_sales_perimeter_staging). ОТДЕЛЬНЫЙ ингест
++              (прецедент ADR-024) — не расширяет hourly/weekly/promote выше.
++  perimeter_promote → MERGE stg_msklad.fact_sales_perimeter_staging → core.fact_sales_profit
+ 
+ Workflow sequence (from workflow.yaml):
+   step_facts (mode=hourly)  →  step_dq  →  step_promote (mode=promote, window_days=7)
+@@ -43,6 +48,9 @@ from bq_ops import (
+     ensure_fact_purchases,
+     load_purchases,
+     load_returns,          # ← новое
++    ensure_perimeter_staging_table,   # ← SALES-PERIMETER-EXTEND
++    load_perimeter_staging,          # ← SALES-PERIMETER-EXTEND
++    promote_perimeter_to_core,       # ← SALES-PERIMETER-EXTEND
+ )
+ from config import (
+     GCS_PREFIX_DEMAND,
+@@ -50,11 +58,16 @@ from config import (
+     GCP_PROJECT,
+     HOURLY_WINDOW_DAYS,
+     WEEKLY_WINDOW_DAYS,
++    PERIMETER_WINDOW_DAYS,   # ← SALES-PERIMETER-EXTEND
+ )
+ from fetch_byvariant import fetch_byvariant_cogs
+ from fetch_demands import fetch_demand_positions
+ from fetch_purchases import fetch_purchase_positions
+ from fetch_returns import fetch_return_positions  # ← новое
++from fetch_perimeter import (           # ← SALES-PERIMETER-EXTEND
++    fetch_retaildemand_positions,
++    fetch_commission_sales_positions,
++)
+ from helpers import get_token, run_ts, upload_ndjson_gz
+ 
+ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
+@@ -67,7 +80,12 @@ def main(request: flask.Request) -> flask.Response:
+     body = request.get_json(force=True, silent=True) or {}
+     mode        = body.get("mode", "hourly")
+     run_id      = body.get("run_id") or run_ts()
+-    window_days = int(body.get("window_days", HOURLY_WINDOW_DAYS if mode != "weekly" else WEEKLY_WINDOW_DAYS))
++    _default_window_days = (
++        WEEKLY_WINDOW_DAYS if mode == "weekly"
++        else PERIMETER_WINDOW_DAYS if mode in ("perimeter", "perimeter_promote")
++        else HOURLY_WINDOW_DAYS
++    )
++    window_days = int(body.get("window_days", _default_window_days))
+ 
+     log.info("CF-Facts start | mode=%s run_id=%s window_days=%d", mode, run_id, window_days)
+ 
+@@ -82,8 +100,15 @@ def main(request: flask.Request) -> flask.Response:
+             result = _run_purchases()
+         elif mode == "returns":
+             result = _run_returns(window_days)
++        elif mode == "perimeter":
++            result = _run_perimeter_load(run_id, window_days)
++        elif mode == "perimeter_promote":
++            result = _run_perimeter_promote(window_days)
+         else:
+-            raise ValueError(f"Unknown mode: {mode!r}. Expected: hourly | weekly | promote | purchases | returns")
++            raise ValueError(
++                f"Unknown mode: {mode!r}. Expected: hourly | weekly | promote | purchases | "
++                "returns | perimeter | perimeter_promote"
++            )
+ 
+         log.info("CF-Facts complete | mode=%s | %s", mode, result)
+         return flask.make_response(flask.jsonify({"status": "ok", "mode": mode, "run_id": run_id, **result}), 200)
+@@ -300,4 +325,55 @@ def _run_returns(window_days: int) -> dict:
+         "by_type":                  by_type,
+         "date_from":                str(date_from),
+         "date_to":                  str(date_to),
+-    }
+\ No newline at end of file
++    }
++
++
++# ─── Perimeter modes (SALES-PERIMETER-EXTEND, ADR-103 §8 вариант (a)) ─────────
++
++def _run_perimeter_load(run_id: str, window_days: int) -> dict:
++    """
++    Fetch entity/retaildemand + продажи entity/commissionreportin за `window_days` дней.
++    WRITE_TRUNCATE в stg_msklad.fact_sales_perimeter_staging — ОТДЕЛЬНАЯ таблица,
++    не `fact_sales_staging` (прецедент разреза `ADR-024`).
++    """
++    token   = get_token()
++    bq      = bigquery.Client(project=GCP_PROJECT)
++    session = requests.Session()
++
++    ensure_perimeter_staging_table(bq)
++
++    date_to   = date.today()
++    date_from = date_to - timedelta(days=window_days)
++
++    log.info("Perimeter load: fetching retaildemand + commissionreportin sales %s → %s", date_from, date_to)
++
++    retail_records     = fetch_retaildemand_positions(token, date_from, date_to, run_id, session=session)
++    commission_records = fetch_commission_sales_positions(token, date_from, date_to, run_id, session=session)
++
++    records = retail_records + commission_records
++    if not records:
++        raise ValueError(
++            f"Perimeter load returned 0 records for {date_from}→{date_to} "
++            "(retaildemand + commissionreportin sales combined)."
++        )
++
++    loaded_rows = load_perimeter_staging(bq, records)
++
++    return {
++        "retaildemand_positions_fetched":       len(retail_records),
++        "commissionreportin_positions_fetched": len(commission_records),
++        "staging_rows_loaded":                  loaded_rows,
++        "date_from": str(date_from),
++        "date_to":   str(date_to),
++    }
++
++
++def _run_perimeter_promote(window_days: int) -> dict:
++    """
++    MERGE stg_msklad.fact_sales_perimeter_staging → core.fact_sales_profit.
++    ОТДЕЛЬНЫЙ MERGE от `promote_to_core` (`_build_perimeter_merge_sql`, не
++    `_build_merge_sql`) — не пересекается с патчем `SALES-REFRESH-WINDOW`.
++    """
++    bq = bigquery.Client(project=GCP_PROJECT)
++    merge_stats = promote_perimeter_to_core(bq, window_days)
++    return {"merge_stats": merge_stats}
+\ No newline at end of file

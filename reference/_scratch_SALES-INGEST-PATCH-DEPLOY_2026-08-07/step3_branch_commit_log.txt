@@ -1,0 +1,3 @@
+bfa74d4 cf-facts: расширение периметра продаж (retaildemand + commissionreportin) и исключение выручки по отгрузке комиссионеру (задача SALES-INGEST-PATCH-DEPLOY)
+6a581bf Merge deploy/workflows-2026-08-05-dq-scope-split: move step_purchases/step_returns before step_dq (task DQ-GATE-SCOPE-SPLIT-DEPLOY), deployed as msklad-pipeline-hourly-000004-5fc / msklad-pipeline-weekly-000004-6bf
+e79bef6 workflows: move step_purchases/step_returns before step_dq (task DQ-GATE-SCOPE-SPLIT-DEPLOY)
