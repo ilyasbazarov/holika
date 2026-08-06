@@ -1,0 +1,140 @@
+[
+  {
+    "agent_id": "e45a26ed-2811-11f1-0a80-044100186df6", 
+    "counterparty_name": "ООО \"ХОЛЛИШОП\" Москва ( ДОГОВОР РФ)", 
+    "revenue_kgs": "2.674630307E7", 
+    "row_count": "118"
+  }, 
+  {
+    "agent_id": "18a13a53-87c0-11ef-0a80-1568002f42aa", 
+    "counterparty_name": "Руслан Алматы +77471880101", 
+    "revenue_kgs": "1.301874959E7", 
+    "row_count": "122"
+  }, 
+  {
+    "agent_id": "1d8b7921-87c0-11ef-0a80-1568002f4611", 
+    "counterparty_name": "Диана NANA skinstore Шымкент +7 701 882 9090", 
+    "revenue_kgs": "9658947.6", 
+    "row_count": "51"
+  }, 
+  {
+    "agent_id": "0f93b55b-4b51-11f0-0a80-1b8200069c87", 
+    "counterparty_name": "ИП Лигай Леон Di Store +996705445044 (ДОГОВОР КР)", 
+    "revenue_kgs": "6460301.7", 
+    "row_count": "11"
+  }, 
+  {
+    "agent_id": "1c050410-87c0-11ef-0a80-1568002f452a", 
+    "counterparty_name": "Лаура Карабалаева (Айнура) +77780074698", 
+    "revenue_kgs": "4769109.0", 
+    "row_count": "8"
+  }, 
+  {
+    "agent_id": "45a88789-944c-11f0-0a80-143000174b9b", 
+    "counterparty_name": "ИП Лигай Даяна +996 705 445 044 (ДОГОВОР КР) Di Store", 
+    "revenue_kgs": "2486679.6", 
+    "row_count": "63"
+  }, 
+  {
+    "agent_id": "1985411d-87c0-11ef-0a80-1568002f4343", 
+    "counterparty_name": "Хакимова Дильноза Узбекистан +998998826564 КОД 40044", 
+    "revenue_kgs": "1718390.16", 
+    "row_count": "71"
+  }, 
+  {
+    "agent_id": "1d94c00d-87c0-11ef-0a80-1568002f4613", 
+    "counterparty_name": "Инна Андрей Алматы +77017888000", 
+    "revenue_kgs": "1430113.54", 
+    "row_count": "31"
+  }, 
+  {
+    "agent_id": "ea65caae-5ef9-11f1-0a80-1cc000019d52", 
+    "counterparty_name": "Алиева Салима Шахбановна  Дагестан , Каспийск +77057770802", 
+    "revenue_kgs": "1418679.0", 
+    "row_count": "12"
+  }, 
+  {
+    "agent_id": "e842aacd-49c3-11f1-0a80-190d00022781", 
+    "counterparty_name": "Разуев Роберт Махачкала +79887856222", 
+    "revenue_kgs": "1108316.7", 
+    "row_count": "20"
+  }, 
+  {
+    "agent_id": "1c180bb8-87c0-11ef-0a80-1568002f4534", 
+    "counterparty_name": "Муслима г.Хасавюрт  +79282247800", 
+    "revenue_kgs": "821143.8", 
+    "row_count": "28"
+  }, 
+  {
+    "agent_id": "d84e705f-9148-11ef-0a80-0de10017d34e", 
+    "counterparty_name": "Илияз WB (Договор) ИП Женишбекова Альбина Женишбековна", 
+    "revenue_kgs": "707766.0", 
+    "row_count": "10"
+  }, 
+  {
+    "agent_id": "1981bdf2-87c0-11ef-0a80-1568002f4341", 
+    "counterparty_name": "Аблов Константин Алматы +7 705 333 8405", 
+    "revenue_kgs": "682875.0", 
+    "row_count": "7"
+  }, 
+  {
+    "agent_id": "4d66683b-421c-11f1-0a80-1a2c002f094e", 
+    "counterparty_name": "TOO \"GLAMA\" Аблов +7 705 333 8405 (ДОГОВОР КЗ)", 
+    "revenue_kgs": "621043.2", 
+    "row_count": "2"
+  }, 
+  {
+    "agent_id": "1a1d27c2-87c0-11ef-0a80-1568002f4393", 
+    "counterparty_name": "Оксана Ташкент Kshopkorea +998909385015 Код 40501", 
+    "revenue_kgs": "488011.5", 
+    "row_count": "17"
+  }, 
+  {
+    "agent_id": "198983f0-87c0-11ef-0a80-1568002f4345", 
+    "counterparty_name": "Таня Казарян Астана +7 778 900 9325", 
+    "revenue_kgs": "358941.73", 
+    "row_count": "29"
+  }, 
+  {
+    "agent_id": "04c60400-96ad-11ef-0a80-0f9500232453", 
+    "counterparty_name": "Елена Ким Ташкент (Александра) Код 40612", 
+    "revenue_kgs": "256662.0", 
+    "row_count": "31"
+  }, 
+  {
+    "agent_id": "1a0d02fa-87c0-11ef-0a80-1568002f438b", 
+    "counterparty_name": "Умида Ташкент vitamino.uz +998939727318 КОД 40129", 
+    "revenue_kgs": "255222.0", 
+    "row_count": "8"
+  }, 
+  {
+    "agent_id": "03f555e9-7e6a-11f1-0a80-022b0024e498", 
+    "counterparty_name": "ИП Мигали Иван Иванович +79660454959  (ДОГОВОР РФ)", 
+    "revenue_kgs": "168714.0", 
+    "row_count": "7"
+  }, 
+  {
+    "agent_id": "7c8e0b64-3644-11f1-0a80-0f75001fe637", 
+    "counterparty_name": "Санам Шымкент SANAM_BEAUTYLAB +7 775 333 0504", 
+    "revenue_kgs": "134804.88", 
+    "row_count": "9"
+  }, 
+  {
+    "agent_id": "1d9924e3-87c0-11ef-0a80-1568002f4615", 
+    "counterparty_name": "Динар тате Алматы +77029472121", 
+    "revenue_kgs": "97290.0", 
+    "row_count": "3"
+  }, 
+  {
+    "agent_id": "6594d85e-8a71-11f1-0a80-0540000db532", 
+    "counterparty_name": "Екатерина Богомолова г. Кемерово, Россия  +79505744340", 
+    "revenue_kgs": "89694.02", 
+    "row_count": "4"
+  }, 
+  {
+    "agent_id": "7d8083cb-4063-11f1-0a80-1a2c0014ddce", 
+    "counterparty_name": "Яна Севастополь +79787251890", 
+    "revenue_kgs": "70134.3", 
+    "row_count": "21"
+  }
+]

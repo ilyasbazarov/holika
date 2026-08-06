@@ -1,0 +1,19 @@
+Thu Aug  6 18:46:29 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== q3: employee names for the 4 owner IDs found in May raw demand bodies ===
+=== q4: our May revenue by manager (dim_counterparties.owner_employee_id), for comparison ===
+=== q5: our May total revenue + doc count proxy (distinct agent_id count is not doc count, just for scale) ===
+Thu Aug  6 18:46:39 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
