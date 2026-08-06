@@ -1,0 +1,22 @@
+=== date -u (start) ===
+Thu Aug  6 19:17:08 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== core.fact_purchases status='Прибыл': zeroed vs non-zeroed counts/sums ===
+[{"n_not_zeroed":"3835","n_total":"4057","n_zeroed":"222","sum_kgs_not_zeroed":"9.576278831393001E8","sum_kgs_zeroed":"0.0"}]
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Thu Aug  6 19:17:12 UTC 2026
