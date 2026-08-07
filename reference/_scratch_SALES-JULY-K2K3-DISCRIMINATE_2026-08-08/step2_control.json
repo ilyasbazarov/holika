@@ -1,0 +1,27 @@
+[
+  {
+    "n_rows": "161", 
+    "sum_revenue_kgs": "5640699.4301", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "n_rows": "136", 
+    "sum_revenue_kgs": "2444597.47", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "n_rows": "170", 
+    "sum_revenue_kgs": "5411554.344099999", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "n_rows": "171", 
+    "sum_revenue_kgs": "1.7707400123300005E7", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "n_rows": "225", 
+    "sum_revenue_kgs": "5592233.9969999995", 
+    "transaction_date": "2026-07-30"
+  }
+]
