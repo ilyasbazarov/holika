@@ -1,0 +1,390 @@
+Fri Aug  7 19:42:13 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+[
+  {
+    "agent_id": "1d8b7921-87c0-11ef-0a80-1568002f4611", 
+    "n_rows": "15", 
+    "sum_revenue_kgs": "3051640.8", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "4d66683b-421c-11f1-0a80-1a2c002f094e", 
+    "n_rows": "2", 
+    "sum_revenue_kgs": "621043.2", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "d84e705f-9148-11ef-0a80-0de10017d34e", 
+    "n_rows": "3", 
+    "sum_revenue_kgs": "480896.0", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "dd0cd653-b162-11ef-0a80-0432002f1c49", 
+    "n_rows": "4", 
+    "sum_revenue_kgs": "326254.5", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "1352596a-87c0-11ef-0a80-1568002f3f89", 
+    "n_rows": "62", 
+    "sum_revenue_kgs": "300011.19999999995", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "1981bdf2-87c0-11ef-0a80-1568002f4341", 
+    "n_rows": "3", 
+    "sum_revenue_kgs": "293400.0", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "1d94c00d-87c0-11ef-0a80-1568002f4613", 
+    "n_rows": "2", 
+    "sum_revenue_kgs": "225811.8", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "135e605e-87c0-11ef-0a80-1568002f3f91", 
+    "n_rows": "22", 
+    "sum_revenue_kgs": "164428.0", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "1c180bb8-87c0-11ef-0a80-1568002f4534", 
+    "n_rows": "8", 
+    "sum_revenue_kgs": "61353.0", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "7013e95a-dae2-11ef-0a80-07850031b9aa", 
+    "n_rows": "6", 
+    "sum_revenue_kgs": "60610.5", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "a08652a8-5e52-11f1-0a80-0cb7000604b7", 
+    "n_rows": "34", 
+    "sum_revenue_kgs": "55250.4301", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "agent_id": "1b4ace0c-87c0-11ef-0a80-1568002f44af", 
+    "n_rows": "4", 
+    "sum_revenue_kgs": "953772.3", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "n_rows": "38", 
+    "sum_revenue_kgs": "383097.0", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "300d71e5-f068-11f0-0a80-1611000b4d3e", 
+    "n_rows": "16", 
+    "sum_revenue_kgs": "285221.52", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "eaa08c42-95b9-11ef-0a80-003b001e945e", 
+    "n_rows": "4", 
+    "sum_revenue_kgs": "253840.0", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "79dc242a-1baf-11f1-0a80-138a002eeb35", 
+    "n_rows": "28", 
+    "sum_revenue_kgs": "97062.3", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "1363743d-87c0-11ef-0a80-1568002f3f93", 
+    "n_rows": "5", 
+    "sum_revenue_kgs": "96140.0", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "178ba7b4-87c0-11ef-0a80-1568002f4222", 
+    "n_rows": "4", 
+    "sum_revenue_kgs": "90611.1", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "e00e5aa9-7921-11f1-0a80-0d9e002e9b31", 
+    "n_rows": "11", 
+    "sum_revenue_kgs": "76953.6", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "cb80c115-7921-11f1-0a80-172a002ec0e7", 
+    "n_rows": "10", 
+    "sum_revenue_kgs": "65124.45000000001", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "ab3e2e18-9e53-11ef-0a80-150a00427d15", 
+    "n_rows": "3", 
+    "sum_revenue_kgs": "40600.0", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "424b88a1-5014-11f0-0a80-0df8002eb35e", 
+    "n_rows": "1", 
+    "sum_revenue_kgs": "38340.0", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "356fb156-83ed-11f1-0a80-173600242e0d", 
+    "n_rows": "8", 
+    "sum_revenue_kgs": "27019.2", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "8fbf1455-8b72-11ef-0a80-024f0003a87f", 
+    "n_rows": "1", 
+    "sum_revenue_kgs": "9204.0", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "a8ffa574-9dbb-11ef-0a80-1508000bda71", 
+    "n_rows": "1", 
+    "sum_revenue_kgs": "9204.0", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "635cc9be-9dbb-11ef-0a80-0c9d000b8ff9", 
+    "n_rows": "1", 
+    "sum_revenue_kgs": "9204.0", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "e2918f64-9dba-11ef-0a80-06b2000b84c9", 
+    "n_rows": "1", 
+    "sum_revenue_kgs": "9204.0", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "agent_id": "0f93b55b-4b51-11f0-0a80-1b8200069c87", 
+    "n_rows": "3", 
+    "sum_revenue_kgs": "2457000.0", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "dd0cd653-b162-11ef-0a80-0432002f1c49", 
+    "n_rows": "8", 
+    "sum_revenue_kgs": "653038.848", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "1352596a-87c0-11ef-0a80-1568002f3f89", 
+    "n_rows": "41", 
+    "sum_revenue_kgs": "523106.83160000003", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "75d7c694-78f9-11f0-0a80-077d000b5e09", 
+    "n_rows": "12", 
+    "sum_revenue_kgs": "435009.042", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "18a13a53-87c0-11ef-0a80-1568002f42aa", 
+    "n_rows": "10", 
+    "sum_revenue_kgs": "273906.0", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "1a0d02fa-87c0-11ef-0a80-1568002f438b", 
+    "n_rows": "8", 
+    "sum_revenue_kgs": "255222.0", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "cb127979-fcd8-11ef-0a80-0b9c001e42fc", 
+    "n_rows": "5", 
+    "sum_revenue_kgs": "239535.0", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "eaa08c42-95b9-11ef-0a80-003b001e945e", 
+    "n_rows": "2", 
+    "sum_revenue_kgs": "149450.0", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "f4201bf6-6390-11f0-0a80-0fa2000d75eb", 
+    "n_rows": "12", 
+    "sum_revenue_kgs": "111133.8", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "ea699cef-059c-11f1-0a80-0fe100304bbb", 
+    "n_rows": "29", 
+    "sum_revenue_kgs": "100787.2", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "1981bdf2-87c0-11ef-0a80-1568002f4341", 
+    "n_rows": "1", 
+    "sum_revenue_kgs": "89640.0", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "c83ba598-f8b7-11ef-0a80-075400159b8a", 
+    "n_rows": "2", 
+    "sum_revenue_kgs": "75600.02249999999", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "13dea99d-87c0-11ef-0a80-1568002f3fcf", 
+    "n_rows": "28", 
+    "sum_revenue_kgs": "41490.9", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "74abeecf-7780-11f1-0a80-152e00160022", 
+    "n_rows": "9", 
+    "sum_revenue_kgs": "6634.7", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "agent_id": "e45a26ed-2811-11f1-0a80-044100186df6", 
+    "n_rows": "50", 
+    "sum_revenue_kgs": "1.4152942965E7", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "agent_id": "ea470d22-7c14-11f1-0a80-09d30002881d", 
+    "n_rows": "4", 
+    "sum_revenue_kgs": "897696.0", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "agent_id": "1b4ace0c-87c0-11ef-0a80-1568002f44af", 
+    "n_rows": "8", 
+    "sum_revenue_kgs": "893061.0", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "agent_id": "15ecaed8-87c0-11ef-0a80-1568002f4110", 
+    "n_rows": "33", 
+    "sum_revenue_kgs": "783343.3", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "agent_id": "1cdfcc31-8ca4-11f0-0a80-0ee00030259b", 
+    "n_rows": "16", 
+    "sum_revenue_kgs": "633387.2940000001", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "agent_id": "3a0857cc-8aff-11f1-0a80-190e0000c085", 
+    "n_rows": "20", 
+    "sum_revenue_kgs": "179592.09430000003", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "agent_id": "79dc242a-1baf-11f1-0a80-138a002eeb35", 
+    "n_rows": "19", 
+    "sum_revenue_kgs": "84212.07", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "agent_id": "ea699cef-059c-11f1-0a80-0fe100304bbb", 
+    "n_rows": "21", 
+    "sum_revenue_kgs": "83165.40000000001", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "agent_id": "18a13a53-87c0-11ef-0a80-1568002f42aa", 
+    "n_rows": "9", 
+    "sum_revenue_kgs": "1986390.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "b3667c34-3ca3-11f0-0a80-15ce0025d38d", 
+    "n_rows": "48", 
+    "sum_revenue_kgs": "1770781.3", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "2af3d8db-0ad3-11f0-0a80-003500181b18", 
+    "n_rows": "6", 
+    "sum_revenue_kgs": "618300.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "1d8b7921-87c0-11ef-0a80-1568002f4611", 
+    "n_rows": "2", 
+    "sum_revenue_kgs": "344736.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "17c94d22-87c0-11ef-0a80-1568002f4242", 
+    "n_rows": "104", 
+    "sum_revenue_kgs": "341278.6769999999", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "0bca33dd-0ac4-11f0-0a80-06ea00339d55", 
+    "n_rows": "25", 
+    "sum_revenue_kgs": "241948.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "1363743d-87c0-11ef-0a80-1568002f3f93", 
+    "n_rows": "10", 
+    "sum_revenue_kgs": "96540.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "6594d85e-8a71-11f1-0a80-0540000db532", 
+    "n_rows": "4", 
+    "sum_revenue_kgs": "89694.02", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "1c09468a-87c0-11ef-0a80-1568002f452c", 
+    "n_rows": "7", 
+    "sum_revenue_kgs": "76086.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "a8ffa574-9dbb-11ef-0a80-1508000bda71", 
+    "n_rows": "2", 
+    "sum_revenue_kgs": "6620.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "635cc9be-9dbb-11ef-0a80-0c9d000b8ff9", 
+    "n_rows": "2", 
+    "sum_revenue_kgs": "6620.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "8fbf1455-8b72-11ef-0a80-024f0003a87f", 
+    "n_rows": "2", 
+    "sum_revenue_kgs": "6620.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "agent_id": "e2918f64-9dba-11ef-0a80-06b2000b84c9", 
+    "n_rows": "4", 
+    "sum_revenue_kgs": "6620.0", 
+    "transaction_date": "2026-07-30"
+  }
+]
+Fri Aug  7 19:42:17 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

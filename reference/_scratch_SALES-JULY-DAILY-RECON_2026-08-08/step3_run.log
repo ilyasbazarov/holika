@@ -1,0 +1,168 @@
+Fri Aug  7 19:40:22 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+[
+  {
+    "n_rows": "219", 
+    "sum_revenue_kgs": "6984597.8100000005", 
+    "transaction_date": "2026-07-01"
+  }, 
+  {
+    "n_rows": "145", 
+    "sum_revenue_kgs": "4774233.549300001", 
+    "transaction_date": "2026-07-02"
+  }, 
+  {
+    "n_rows": "51", 
+    "sum_revenue_kgs": "8849684.1051", 
+    "transaction_date": "2026-07-03"
+  }, 
+  {
+    "n_rows": "51", 
+    "sum_revenue_kgs": "1804885.0", 
+    "transaction_date": "2026-07-04"
+  }, 
+  {
+    "n_rows": "22", 
+    "sum_revenue_kgs": "139264.4", 
+    "transaction_date": "2026-07-05"
+  }, 
+  {
+    "n_rows": "135", 
+    "sum_revenue_kgs": "3397483.644000001", 
+    "transaction_date": "2026-07-07"
+  }, 
+  {
+    "n_rows": "160", 
+    "sum_revenue_kgs": "3625325.3009999995", 
+    "transaction_date": "2026-07-08"
+  }, 
+  {
+    "n_rows": "73", 
+    "sum_revenue_kgs": "7093644.3207", 
+    "transaction_date": "2026-07-09"
+  }, 
+  {
+    "n_rows": "85", 
+    "sum_revenue_kgs": "3171815.7306", 
+    "transaction_date": "2026-07-10"
+  }, 
+  {
+    "n_rows": "94", 
+    "sum_revenue_kgs": "666569.6500000003", 
+    "transaction_date": "2026-07-11"
+  }, 
+  {
+    "n_rows": "80", 
+    "sum_revenue_kgs": "871582.6400000001", 
+    "transaction_date": "2026-07-12"
+  }, 
+  {
+    "n_rows": "63", 
+    "sum_revenue_kgs": "5540046.2", 
+    "transaction_date": "2026-07-13"
+  }, 
+  {
+    "n_rows": "85", 
+    "sum_revenue_kgs": "1663004.1", 
+    "transaction_date": "2026-07-14"
+  }, 
+  {
+    "n_rows": "64", 
+    "sum_revenue_kgs": "1082641.905", 
+    "transaction_date": "2026-07-15"
+  }, 
+  {
+    "n_rows": "76", 
+    "sum_revenue_kgs": "778896.3056000001", 
+    "transaction_date": "2026-07-16"
+  }, 
+  {
+    "n_rows": "35", 
+    "sum_revenue_kgs": "528973.2", 
+    "transaction_date": "2026-07-17"
+  }, 
+  {
+    "n_rows": "5", 
+    "sum_revenue_kgs": "1752665.0", 
+    "transaction_date": "2026-07-18"
+  }, 
+  {
+    "n_rows": "67", 
+    "sum_revenue_kgs": "1333805.9999999998", 
+    "transaction_date": "2026-07-19"
+  }, 
+  {
+    "n_rows": "161", 
+    "sum_revenue_kgs": "5640699.4301", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "n_rows": "136", 
+    "sum_revenue_kgs": "2444597.47", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "n_rows": "209", 
+    "sum_revenue_kgs": "6589879.359999999", 
+    "transaction_date": "2026-07-22"
+  }, 
+  {
+    "n_rows": "32", 
+    "sum_revenue_kgs": "1699377.9", 
+    "transaction_date": "2026-07-23"
+  }, 
+  {
+    "n_rows": "73", 
+    "sum_revenue_kgs": "5272634.271499999", 
+    "transaction_date": "2026-07-24"
+  }, 
+  {
+    "n_rows": "9", 
+    "sum_revenue_kgs": "65385.5", 
+    "transaction_date": "2026-07-25"
+  }, 
+  {
+    "n_rows": "12", 
+    "sum_revenue_kgs": "219891.19499999998", 
+    "transaction_date": "2026-07-26"
+  }, 
+  {
+    "n_rows": "170", 
+    "sum_revenue_kgs": "5411554.344099999", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "n_rows": "169", 
+    "sum_revenue_kgs": "3545902.67", 
+    "transaction_date": "2026-07-28"
+  }, 
+  {
+    "n_rows": "171", 
+    "sum_revenue_kgs": "1.7707400123300005E7", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "n_rows": "225", 
+    "sum_revenue_kgs": "5592233.9969999995", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "n_rows": "58", 
+    "sum_revenue_kgs": "919183.1778000001", 
+    "transaction_date": "2026-07-31"
+  }
+]
+Fri Aug  7 19:40:25 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
