@@ -316,7 +316,8 @@ WHEN MATCHED THEN UPDATE SET
   T.project_id         = S.project_id,
   T.project_name       = S.project_name,
   T.discount        = S.discount,
-  T._loaded_at      = S._loaded_at
+  T._loaded_at      = S._loaded_at,
+  T.document_owner_employee_id = S.document_owner_employee_id
 
 WHEN NOT MATCHED THEN INSERT (
   transaction_id,

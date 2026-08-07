@@ -1,0 +1,3 @@
+UPDATE SET (17): ['sell_quantity', 'return_quantity', 'sell_sum_kgs', 'return_sum_kgs', 'revenue_kgs', 'cogs_kgs', 'margin_kgs', 'revenue_usd', 'cogs_usd', 'margin_usd', 'sales_channel_id', 'sales_channel_name', 'project_id', 'project_name', 'discount', '_loaded_at', 'document_owner_employee_id']
+INSERT (22): ['transaction_id', 'transaction_date', 'product_id', 'entity_type', 'agent_id', 'document_owner_employee_id', 'sell_quantity', 'return_quantity', 'sell_sum_kgs', 'return_sum_kgs', 'revenue_kgs', 'cogs_kgs', 'margin_kgs', 'revenue_usd', 'cogs_usd', 'margin_usd', 'sales_channel_id', 'sales_channel_name', 'project_id', 'project_name', 'discount', '_loaded_at']
+INSERT-only columns (5): ['transaction_id', 'transaction_date', 'product_id', 'entity_type', 'agent_id']
