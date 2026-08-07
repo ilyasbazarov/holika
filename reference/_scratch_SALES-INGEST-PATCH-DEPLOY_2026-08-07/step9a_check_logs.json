@@ -1,0 +1,52 @@
+[
+  {
+    "insertId": "6a75a34800091805deef2094",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f729b7efd08692edb8dabe4c5133f54f79013b92bf438f59f82c1ae6e424132002bbc409e7540ed93c45a919ab258a03b583bb2b87836c1d19e86c78a1ebbe3aae4ad9854ac59aa1fef4",
+      "scaling_reason": "AUTOSCALING"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-08-07T09:20:08.599200906Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00008-zen",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.",
+    "timestamp": "2026-08-07T09:20:08.595973Z"
+  },
+  {
+    "insertId": "6a75a349000e97016035b11e",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f729b7efd08692edb8dabe4c5133f54f79013b92bf438f59f82c1ae6e424132002bbc409e7540ed93c45a919ab258a03b583bb2b87836c1d19e86c78a1ebbe3aae4ad9854ac59aa1fef4",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260728_3_12_13_RC00"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-08-07T09:20:10.265577109Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00008-zen",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Default STARTUP TCP probe succeeded after 1 attempt for container \"worker\" on port 8080.",
+    "timestamp": "2026-08-07T09:20:09.956161Z"
+  }
+]

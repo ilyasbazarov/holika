@@ -1,0 +1,23 @@
+=== UTC anchor (start) ===
+Fri Aug  7 09:50:31 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== call cf-facts mode=perimeter_promote ===
+|
+  {"merge_stats":{"affected_rows":5467,"staging_rows":5467,"window_days":90},"mode":"perimeter_promote","run_id":"20260807T095050","status":"ok"}
+=== UTC anchor (end) ===
+Fri Aug  7 09:50:53 UTC 2026
+=== caller identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

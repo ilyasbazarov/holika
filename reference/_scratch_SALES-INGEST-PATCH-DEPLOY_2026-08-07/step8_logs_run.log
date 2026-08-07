@@ -1,0 +1,33 @@
+=== UTC anchor (start) ===
+Fri Aug  7 09:14:41 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== cloud logging: cf-facts textPayload mentioning run_id ===
+2026-08-07T09:01:28.131605Z | Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+2026-08-07T09:01:31.339400Z | Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+2026-08-07T09:02:30.424737Z | Starting new instance. Reason: MANUAL_OR_CUSTOMER_MIN_INSTANCE - Instance started because of customer-configured min-instances or manual scaling.
+2026-08-07T09:02:33.544803Z | Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+2026-08-07T09:02:35.348785Z | Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+2026-08-07T09:02:37.334367Z | The request was not authenticated. Either allow unauthenticated invocations or set the proper Authorization header. Empty Authorization header value. Read more at https://cloud.google.com/run/docs/securing/authenticating Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#unauthorized-client
+2026-08-07T09:02:37.414227Z | The request was not authenticated. Either allow unauthenticated invocations or set the proper Authorization header. Empty Authorization header value. Read more at https://cloud.google.com/run/docs/securing/authenticating Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#unauthorized-client
+2026-08-07T09:02:37.902136Z | The request was not authenticated. Either allow unauthenticated invocations or set the proper Authorization header. Empty Authorization header value. Read more at https://cloud.google.com/run/docs/securing/authenticating Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#unauthorized-client
+2026-08-07T09:02:37.963736Z | Shutting down user disabled instance
+2026-08-07T09:02:37.997444Z | Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+2026-08-07T09:02:38.015408Z | The request was not authenticated. Either allow unauthenticated invocations or set the proper Authorization header. Empty Authorization header value. Read more at https://cloud.google.com/run/docs/securing/authenticating Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#unauthorized-client
+2026-08-07T09:02:38.949861Z | Shutting down user disabled instance
+=== UTC anchor (end) ===
+Fri Aug  7 09:14:45 UTC 2026
+=== caller identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

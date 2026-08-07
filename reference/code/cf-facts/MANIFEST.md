@@ -125,3 +125,77 @@ step_promote) → done`. Третий вызов `cf-facts` (`step_purchases`) �
 **Откат (не понадобился):** повторный `gcloud workflows deploy` исходным текстом ревизий
 `000003-f02`/`000003-fa9` — текст сохранён в seed-коммите `f293555` и в снимке `2026-08-02`
 (`reference/_scratch_DQ-SOURCE-CAPTURE_2026-08-02/step2_{hourly,weekly}_workflow.yaml`).
+
+---
+
+## Деплой `cf-facts` — периметр продаж (2026-08-07, класс B, мандат владельца в чате)
+
+**Что зафиксировано:** соответствие «ревизия ↔ коммит» для патча периметра продаж (`entity/retaildemand`
++ `entity/commissionreportin`, режимы `perimeter`/`perimeter_promote`; исключение выручки по отгрузке
+комиссионеру в `fetch_demand_positions`), задача `SALES-INGEST-PATCH-DEPLOY`. Процедура —
+`05_CONVENTIONS §Процедура деплоя … вариант Б` (`reference/deploy_procedure_2026-08-03.md`).
+
+| Поле | До | После |
+|---|---|---|
+| Ревизия `cf-facts` | `cf-facts-00007-xir` | **`cf-facts-00008-zen`** |
+| `generation` архива | `1782334223015697` | **`1786093276804812`** |
+| `updateTime` (UTC) | `2026-07-30T10:04:58.768334396Z` | **`2026-08-07T09:02:36.835840920Z`** |
+
+**Read-back (шаг 7):** архив новой ревизии скачан по закреплённому `generation`, распакован, sha256
+всех 11 файлов сверен побайтово с веткой `deploy/cf-facts-2026-08-07-perimeter` — совпадение полное
+(единственное отличие — `.gcloudignore`, который в развёрнутый архив закономерно не попадает). Мусора
+(`.bak`/`__pycache__`/`.DS_Store`/`src.zip`/разовые patch-скрипты) в новом архиве нет. Полный лог —
+`reference/_scratch_SALES-INGEST-PATCH-DEPLOY_2026-08-07/step7_run.log`.
+
+sha256 изменённых файлов (новая ревизия):
+
+| Файл | sha256 |
+|---|---|
+| `bq_ops.py` | `8ba26524bab9fc01cb9e6ee77f7d6e65f1bc21062f1160812749461d02c7f5aa` |
+| `config.py` | `56e77eff536ce8fe2a1c3a015c2633ed1317e8a9cbbd9729165d5a7af38de63a` |
+| `fetch_demands.py` | `a7f2c9042828fcf2143027fe9292b3f7995f3e7a5364e711fb39e79166bddf72` |
+| `fetch_perimeter.py` (новый) | `2afc6a62ed7e52d1c7756135fc950d7519b286bb2c8fb996b353e920a008815c` |
+| `main.py` | `97b9ce3aa54085aab0739fd315890db22be8c837e829a9170ebce385ba6642d8` |
+
+**Функциональная проверка (шаг 8, существующие режимы):** живой прогон `hourly`
+(`run_id=verify_deploy_2026-08-07_hourly`) — `status=ok`, `demand_positions_fetched=375`,
+`staging_rows_loaded=375`, ни одной ошибки. Лог исключения комиссионных отгрузок в этом окне
+(2026-07-31…2026-08-07) не появился, потому что в сыром ответе МойСклада за это окно нет ни одной
+позиции трёх комиссионных контрагентов (проверено прямым поиском по скачанному
+`run_verify_deploy_2026-08-07_hourly.ndjson.gz`) — гэп наблюдения, не признак поломки: событие редкое
+(единицы документов на всю историю). Остальные режимы (`promote`/`weekly`/`returns`/`purchases`)
+кодово не тронуты патчем (sha256 `fetch_purchases.py`/`fetch_returns.py`/`helpers.py` не изменился) —
+не прогонялись отдельно.
+
+**Функциональная проверка (шаг 9, новые режимы, порядок staging → core соблюдён):**
+
+- **9а, `perimeter` (staging).** `run_id=verify_deploy_2026-08-07_perimeter`, окно 90 суток
+  (`2026-05-09…2026-08-07`). Клиент `gcloud` оборвался по таймауту (300с), сервер отработал успешно
+  (`200`, `368,9s`, подтверждено `gcloud logging read` по `httpRequest`) — слепой повтор не делался,
+  дождались подтверждения. Загружено в `stg_msklad.fact_sales_perimeter_staging`: `retaildemand` —
+  506 документов / 1441 строка / `1 188 422,00` KGS (**точное совпадение** с ранее измеренным
+  `reference/parity_sales_discriminate_step2_2026-08-02.md`); `commissionreportin_sale` — 24 документа
+  / 4026 строк / `11 514 572,13` KGS (маштаб пропорционален измеренному маю: 7 док/`2 133 028,08` KGS
+  за месяц против 24 док за три месяца — самостоятельного полнозонного эталона для этой величины в
+  реестре нет, отдельного расхождения не найдено).
+- **9б, `perimeter_promote` (core), ТОЛЬКО после 9а.** До MERGE: `core.fact_sales_profit` за 90 суток —
+  `7 062` строки / `293 325 096,84` KGS. Команда отчиталась `affected_rows=5467`. Read-back прямым
+  запросом (не по отчёту команды): после MERGE — `12 529` строк / `306 028 090,97` KGS; арифметика
+  `7 062 + 5 467 = 12 529` и `293 325 096,84 + 12 702 994,13 = 306 028 090,97` сходится. Отдельно
+  подтверждено джойном по `transaction_id`: ровно `5 467` новых строк в `core` соответствуют
+  `stg_msklad.fact_sales_perimeter_staging`, их сумма `12 702 994,13` KGS совпадает с суммой staging
+  копейка в копейку. Полные логи и запросы —
+  `reference/_scratch_SALES-INGEST-PATCH-DEPLOY_2026-08-07/step9a_*`, `step9b_*`.
+
+**Код-репозиторий `holika-prod`:**
+- Ветка `deploy/cf-facts-2026-08-07-perimeter` — коммит `bfa74d4`, запушена, содержит патч,
+  перенесённый по diff против `master`.
+- Слияние в `master` — коммит `fbf351f` (`merge --no-ff`), выполнено и запушено ПОСЛЕ успешного
+  read-back (шаг 7) и функциональных проверок (шаги 8-9), как требует процедура.
+
+**Откат (не понадобился):** повторный деплой именем ревизии `cf-facts-00007-xir`
+(`gcloud functions deploy cf-facts --gen2 --region=asia-east1 --project=msklad-bi-prod
+--source=gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1782334223015697 ...`)
+плюс, если понадобится откатить данные, удаление строк `core.fact_sales_profit` по
+`transaction_id IN (SELECT TO_HEX(MD5(CONCAT(doc_id,'|',position_id))) FROM
+stg_msklad.fact_sales_perimeter_staging)`.
