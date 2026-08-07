@@ -3,7 +3,7 @@
 # 07 · STATE — Текущее состояние проекта
 
 **Статус:** LIVING (обновляется каждую сессию через `STATE_PATCH`).
-**updated_at:** 2026-08-07 · **обновил:** сборка (буфер 2026-08-07, восьмой проход)
+**updated_at:** 2026-08-07 · **обновил:** сборка (буфер 2026-08-07, девятый проход)
 
 > **Правило компактности (ADR-064):** здесь живёт ТОЛЬКО открытое (open / DEFER / IN PROGRESS / READY /
 > ожидает решения). Полностью закрытые Q/задачи/блокеры переезжают в `07_ARCHIVE.md` однострочной выжимкой
@@ -1177,6 +1177,18 @@ SET`** — консистентно с уже принятым поведени�
 
 **Родительская строка `SALES-PERIMETER-CHANNEL-DECIDE` закрыта целиком по предписанию `ADR-135 §5` (сборка, 2026-08-07, восьмой проход).** По завершении шагов 5-10 задачи `SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY` строка GAP-реестра `SALES-PERIMETER-CHANNEL-DECIDE` (индекс `07_STATE.md` + полный текст `07_GAPS.md`) уезжает в `07_ARCHIVE.md` дословно (`ADR-064`) вместе с обеими строками мандата — «SALES-PERIMETER-CHANNEL-DECIDE, подготовка» и «SALES-PERIMETER-CHANNEL-DECIDE, деплой» — которые снимаются из `§Мандат Claude Code: класс задач` тем же коммитом (`ADR-090 §1`, `ADR-135 §5`).
 
+**Доработка патча сотрудника документа получила исполнимую строку (`SALES-DOCUMENT-OWNER-SPLIT-ADJ`,
+2026-08-07, архитектор).** Что обязана знать следующая сессия: (i) работа — ОДНА строка в
+`reference/code/cf-facts/bq_ops.py`, ветка `WHEN MATCHED THEN UPDATE SET` функции `_build_merge_sql`
+получает `T.document_owner_employee_id = S.document_owner_employee_id`; всё остальное в патче
+`SALES-DOCUMENT-OWNER-INGEST` уже готово и не трогается; (ii) **это не «ещё раз подготовка», а
+устранение названного дефекта** — без правки июль-2026 не заполнится ни при одном числе прогонов
+(`ADR-135 §4`), то есть деплой не двинул бы клиентскую цифру; (iii) снапшот `reference/code/cf-facts/`
+после деплоя метки канала снова содержит РОВНО ОДИН недеплоенный патч (сотрудник документа) —
+смешения больше нет, но равенства снапшота проду по-прежнему нет; (iv) первый прогон после деплоя
+обязан идти режимом `weekly` (`window_days = 90`), иначе июль не попадёт в окно `MERGE`; окно
+закрывается `2026-09-29` (`ADR-125 §5`).
+
 ---
 
 ## Мандат Claude Code: класс задач (ADR-076)
@@ -1231,7 +1243,8 @@ SET`** — консистентно с уже принятым поведени�
 | DQ-GATE-METRIC-REDESIGN | A | нет | постоянный, гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` | проектирование новой метрики `drift_check`, форма не назначена, ничего не деплоит. Пишет: `reference/dq_gate_metric_redesign_<date>.md` |
 | DQ-GATE-SCOPE-CONFIRM | A | да | постоянный, гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` | подтверждение на первом реальном провале `drift_check` после разделения периметра, что закупки/возвраты исполнились, а промоут — нет; форма запроса — из скриптов `DQ-SOURCE-CAPTURE`. Пишет: `reference/dq_gate_scope_confirm_<date>.md` |
 | PARALLEL-CHECK-BLOCK-END | A | нет | постоянный | правка `tools/parallel_check.sh` и нового самотеста, облачных вызовов нет. Пишет: `tools/parallel_check.sh`, `tools/parallel_check_selftest.sh`, `reference/parallel_check_block_end_<date>.md` |
-| SALES-DOCUMENT-OWNER-DEPLOY | B | нет | НЕ выдан | деплой `cf-facts` плюс `ALTER TABLE` живой `core.fact_sales_profit`; выдаётся отдельным поимённым ADR по факту готовности патча (`ADR-109 §1` — артефакт в `reference/` с именем задачи) |
+| SALES-DOCUMENT-OWNER-DEPLOY, доработка патча | A | да | постоянный | правка снапшота `reference/code/cf-facts/bq_ops.py`, ничего не деплоит, живых вызовов нет. Пишет: `reference/code/cf-facts/`, `reference/sales_document_owner_deploy_prep_<date>.md`, `reference/_scratch_SALES-DOCUMENT-OWNER-DEPLOY_<date>/` |
+| SALES-DOCUMENT-OWNER-DEPLOY, деплой | B | нет | НЕ выдан | деплой `cf-facts` плюс `ALTER TABLE` живой `core.fact_sales_profit`; выдаётся отдельным поимённым ADR по факту готовности доработки (`ADR-109 §1`) |
 | SALES-PERIMETER-PARITY-RECHECK | B | нет | выдан поимённо третьим ADR блока `SALES-PERIMETER-QUEUE-ADJ` | живые `GET` к `report/profit/*` с секретом `msklad-token`; объём вызовов ограничен текстом того ADR, оговорки `ADR-076 §5` обязательны |
 
 ---
@@ -1342,7 +1355,7 @@ SET`** — консистентно с уже принятым поведени�
 | `DQ-GATE-METRIC-REDESIGN` | OPEN | `drift_check` отождествляет «почти не продавали» с «данные испорчены» — `8,9 %` суток без документов на всех днях недели; метрика переделывается, не калибруется | гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY`; форма не назначена |
 | `DQ-GATE-SCOPE-CONFIRM` | OPEN | Подтверждение на первом реальном провале `drift_check` после разделения периметра, что закупки/возвраты исполнились, а промоут — нет | гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` |
 | `Q-105` | OPEN | Версионируется ли `owner` документа `entity/demand` отдельно от документа или вместе с `updated` | требует живого запроса (класс B) либо документации API, мандат не выдан |
-| `SALES-DOCUMENT-OWNER-DEPLOY` | OPEN | Деплой патча сотрудника-владельца документа в `core.fact_sales_profit` | готовность патча `SALES-DOCUMENT-OWNER-INGEST`; мандат класса B выдаётся отдельным поимённым ADR; плюс правка `WHEN MATCHED THEN UPDATE SET` до деплоя (§4 `ADR-135`) |
+| `SALES-DOCUMENT-OWNER-DEPLOY` | OPEN | Деплой патча сотрудника-владельца документа в `core.fact_sales_profit` | сначала доработка патча — класс A, мандат постоянный (`ADR-136 §1-§2`); затем деплой — класс B, мандат выдаётся отдельным поимённым ADR по факту готовности доработки; первый прогон после деплоя — режим `weekly`, `window_days=90` (иначе июль-2026 не попадает в окно `MERGE`), окно закрывается `2026-09-29` (`ADR-125 §5`) |
 | `SALES-PERIMETER-PARITY-RECHECK` | READY | Пересверка пары «Продажи» против отчёта прибыльности после деплоя периметра | нет; мандат класса B выдан, бриф готов |
 
 ---
