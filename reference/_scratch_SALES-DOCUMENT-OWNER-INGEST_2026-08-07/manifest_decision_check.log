@@ -1,0 +1,19 @@
+UTC-якорь: 2026-08-07T12:32:26Z
+
+Команда: git log --all --oneline -- reference/code/cf-facts/MANIFEST.md
+
+Вывод:
+fb1d812 docs: SALES-INGEST-PATCH-DEPLOY деплой завершён (задача SALES-INGEST-PATCH-DEPLOY)
+a2e61a9 docs: DQ-GATE-SCOPE-SPLIT-DEPLOY патч периметра DQ Gate задеплоен на два живых Cloud Workflows
+4324cee docs: CODE-REPO-SEED-REST — seed cf-facts/cf-dq в holika-prod (подготовка, класс A)
+025d599 docs: SOURCE-MAP-SALES карта происхождения продаж + различитель Q-83
+
+Вывод: MANIFEST.md правился только по факту реального деплоя (SALES-INGEST-PATCH-DEPLOY,
+DQ-GATE-SCOPE-SPLIT-DEPLOY) или первого снятия снапшота из облака (CODE-REPO-SEED-REST — seed).
+Задача-прецедент подготовки патча БЕЗ деплоя (SALES-INGEST-PATCH, сессия 2026-08-03,
+reference/sales_ingest_patch_2026-08-03.md, класс A, тот же паттерн работы что и эта сессия)
+НЕ оставила коммита, трогающего MANIFEST.md — файл MANIFEST.md обновляется по факту read-back
+после реального деплоя, не на этапе подготовки текста патча.
+
+Решение этой сессии: MANIFEST.md НЕ трогается (правка снапшота cf-facts подготовлена, не
+задеплоена; деплой этой сессией не производится и не мандатирован).
