@@ -1,0 +1,22 @@
+[
+  {
+    "doc_count": "24", 
+    "loaded_at": "2026-08-07 09:24:46", 
+    "max_date": "2026-08-03 16:01:00.000", 
+    "min_date": "2026-05-11 16:00:00.000", 
+    "revenue_sum_kgs": "1.1514572129999984E7", 
+    "row_count": "4026", 
+    "run_id": "verify_deploy_2026-08-07_perimeter", 
+    "source_doc_type": "commissionreportin_sale"
+  }, 
+  {
+    "doc_count": "506", 
+    "loaded_at": "2026-08-07 09:19:08", 
+    "max_date": "2026-05-31 17:18:00.000", 
+    "min_date": "2026-05-28 11:03:00.000", 
+    "revenue_sum_kgs": "1188421.9999999995", 
+    "row_count": "1441", 
+    "run_id": "verify_deploy_2026-08-07_perimeter", 
+    "source_doc_type": "retaildemand"
+  }
+]
