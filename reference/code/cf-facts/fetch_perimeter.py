@@ -33,6 +33,21 @@ document incl. `agent`, `rate`, `positions`, `sum`, `store`) — по анало
 `reward` — БЕЗ `discount`). Перед деплоем (класс B, отдельный мандат) оба предположения
 о позиционной форме `retaildemand` обязаны быть проверены одним живым `GET` — названо в
 `reference/sales_ingest_patch_<date>.md §Что не делает эта сессия`, не подразумевается молча.
+
+SALES-PERIMETER-CHANNEL-DECIDE (`07_GAPS.md:87`, офлайн-разбор без живого `GET`): у всех
+строк периметра `sales_channel_name` был жёстко `NULL` (`bq_ops.py` до этого патча) — на
+витрине они схлопывались в «Не указан» вместе с 40 строками опта без канала (`ADR-126 §7`),
+корзина переставала быть однородной. Различитель поля `salesChannel` по дампам в репо:
+`entity/retaildemand` (`reference/_scratch_PARITY-SALES-DISCRIMINATE-2NDSTEP_2026-08-02/
+retaildemand_page_0.json`, 100 строк) — поле ОТСУТСТВУЕТ в ключах документа целиком, не
+просто `null`; `entity/commissionreportin` (`reference/_scratch_SALES-PERIMETER-CONFIRM_2026-08-02/
+commissionreportin_may_page_0.json`, 7 строк) — поле ПРИСУТСТВУЕТ (ссылка на
+`entity/saleschannel`) на всех строках выборки. Решение владельца (чат 2026-08-07): не читать
+реальный `salesChannel` там, где он есть, а метить ОБА типа документа константой по типу
+документа — единообразие важнее точности там, где она доступна лишь частично; реальное значение
+`entity/commissionreportin.salesChannel` этим патчем не читается. Константы взяты из уже принятой
+классификации типов документа в докстринге этого модуля (retaildemand = розница,
+commissionreportin = продажи по отчёту комиссионера), не изобретены заново.
 """
 
 import logging
@@ -60,11 +75,16 @@ def _fetch_positions_for(
     run_id: str,
     loaded_at: str,
     has_discount: bool,
+    sales_channel_name: str,
 ) -> list[dict]:
     """
     Общая часть извлечения позиций для retaildemand/commissionreportin —
     тот же паттерн, что `fetch_demands.py::fetch_demand_positions` (expand=positions
     в list-режиме не работает, позиции — отдельным запросом на документ).
+
+    `sales_channel_name` — константная метка типа документа (SALES-PERIMETER-CHANNEL-DECIDE,
+    решение владельца 2026-08-07): единообразно для retaildemand и commissionreportin,
+    реальный `salesChannel` источника не читается ни для одного из двух типов.
     """
     all_records: list[dict] = []
     skipped = 0
@@ -124,6 +144,8 @@ def _fetch_positions_for(
                 "revenue_kgs":          revenue_kgs,
                 "entity_type":          entity_type,
                 "_loaded_at":           loaded_at,
+                "sales_channel_id":     None,
+                "sales_channel_name":   sales_channel_name,
             })
 
     if skipped:
@@ -163,6 +185,7 @@ def fetch_retaildemand_positions(
     records = _fetch_positions_for(
         token, "entity/retaildemand", docs, "retaildemand", session, run_id, loaded_at,
         has_discount=True,
+        sales_channel_name="Розница",
     )
     log.info("Fetched %d retaildemand position records from %d docs", len(records), len(docs))
     return records
@@ -204,6 +227,7 @@ def fetch_commission_sales_positions(
         # positions.rows[] entity/commissionreportin НЕ несёт `discount` — подтверждено
         # ключами ответа (sales_perimeter_confirm_2026-08-02.md §6), не домысел.
         has_discount=False,
+        sales_channel_name="Комиссия",
     )
     log.info("Fetched %d commissionreportin_sale position records from %d docs", len(records), len(docs))
     return records

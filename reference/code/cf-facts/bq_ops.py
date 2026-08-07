@@ -97,6 +97,11 @@ PERIMETER_STAGING_SCHEMA = [
     bigquery.SchemaField("discount",             "FLOAT64"),
     bigquery.SchemaField("revenue_kgs",          "FLOAT64"),
     bigquery.SchemaField("entity_type",          "STRING"),
+    # SALES-PERIMETER-CHANNEL-DECIDE: константная метка типа документа
+    # (`sales_channel_id` NULL — синтетической строки-справочника нет; `sales_channel_name`
+    # несёт метку), см. докстринг `fetch_perimeter.py`.
+    bigquery.SchemaField("sales_channel_id",     "STRING"),
+    bigquery.SchemaField("sales_channel_name",   "STRING"),
     bigquery.SchemaField("_loaded_at",           "TIMESTAMP"),
 ]
 
@@ -449,6 +454,11 @@ def _build_perimeter_merge_sql(window_days: int) -> str:
     (строки-сироты MERGE без ветки удаления) для ОСНОВНОГО ингеста уже адресуется
     отдельной задачей (`SALES-REFRESH-WINDOW`); симметричный фикс для периметра —
     будущая отдельная задача, не изобретается здесь молча под видом полноты.
+
+    SALES-PERIMETER-CHANNEL-DECIDE: `sales_channel_id`/`sales_channel_name` читаются
+    из staging (константа типа документа, проставленная `fetch_perimeter.py`), не
+    `CAST(NULL AS STRING)`; `WHEN MATCHED` тоже их обновляет — уже промоутнутые строки
+    получают метку на следующем прогоне, не только новые.
     """
     return f"""
 MERGE `{CORE_FACT_SALES}` T
@@ -486,8 +496,8 @@ USING (
         THEN {_MARGIN_USD_EXPR}
       ELSE NULL
     END                                                             AS margin_usd,
-    CAST(NULL AS STRING)                                            AS sales_channel_id,
-    CAST(NULL AS STRING)                                            AS sales_channel_name,
+    s.sales_channel_id,
+    s.sales_channel_name,
     CAST(NULL AS STRING)                                            AS project_id,
     CAST(NULL AS STRING)                                            AS project_name,
     CURRENT_TIMESTAMP()                                             AS _loaded_at
@@ -513,6 +523,8 @@ WHEN MATCHED THEN UPDATE SET
   T.cogs_usd        = S.cogs_usd,
   T.margin_usd      = S.margin_usd,
   T.discount        = S.discount,
+  T.sales_channel_id   = S.sales_channel_id,
+  T.sales_channel_name = S.sales_channel_name,
   T._loaded_at      = S._loaded_at
 
 WHEN NOT MATCHED THEN INSERT (
