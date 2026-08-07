@@ -3,7 +3,7 @@
 # 07 · STATE — Текущее состояние проекта
 
 **Статус:** LIVING (обновляется каждую сессию через `STATE_PATCH`).
-**updated_at:** 2026-08-07 · **обновил:** сборка (буфер 2026-08-07, седьмой проход, слияние ветки SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY)
+**updated_at:** 2026-08-07 · **обновил:** сборка (буфер 2026-08-07, восьмой проход)
 
 > **Правило компактности (ADR-064):** здесь живёт ТОЛЬКО открытое (open / DEFER / IN PROGRESS / READY /
 > ожидает решения). Полностью закрытые Q/задачи/блокеры переезжают в `07_ARCHIVE.md` однострочной выжимкой
@@ -18,11 +18,11 @@
 
 > Блок ЗАМЕНЯЕТСЯ целиком каждой сборкой, не дописывается (`ADR-084 §1`). Ровно пять строк.
 
-**Прошлый шаг:** подготовка деплоя метки канала периметра доведена до шага 5 (ветка `deploy/cf-facts-2026-08-07-channel`, коммит `84d6f71`, запушена); исполнитель штатно остановился перед деплоем, мандат класса B выдан `ADR-135`.
-**Где мы:** реестр паритета `7/7`; из клиентского пути закрыты приземление периметра и его каденция, открыты метка канала (деплой готов, ждёт исполнения) и сотрудник документа (патч готов, но требует правки до деплоя — см. «Развилки»).
-**Следующий шаг:** сессия-продолжение `SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY` берёт шаги 5-10 брифа ПОВЕРХ уже подготовленной ветки, не переделывая шаги 1-4; параллельно — доработка патча `SALES-DOCUMENT-OWNER-INGEST` по §4 `ADR-135`.
-**Развилки на владельце:** семантика поля сотрудника-владельца документа — снимок на момент первой загрузки против текущего значения (от неё зависит, заполнится ли июль вообще); выдача мандата на деплой сотрудника документа по факту доработки патча.
-**Счётчик:** пары реестра 7/7 сходятся · измерено 7/7 · Epic M 6/7 фаз.
+**Прошлый шаг:** деплой метки канала периметра продаж в `cf-facts` завершён (ревизия `cf-facts-00009-tul`), `NULL` у 5 467 строк периметра `core.fact_sales_profit` заменён на «Розница»/«Комиссия» — `reference/sales_perimeter_channel_decide_deploy_2026-08-07.md`.
+**Где мы:** счётчик реестра паритета `7/7`; из очереди `SALES-PERIMETER-QUEUE-ADJ` (`ADR-131`) закрыты `SALES-PERIMETER-LANDING-CHECK`, `SALES-PERIMETER-CADENCE`, `SALES-PERIMETER-CHANNEL-DECIDE` (подготовка+деплой); остаются `SALES-DOCUMENT-OWNER-DEPLOY` (готовность блокирует правка `WHEN MATCHED UPDATE SET`, `ADR-135 §4`) и `SALES-PERIMETER-PARITY-RECHECK` (мандат выдан, бриф готов, не взята).
+**Следующий шаг:** `SALES-PERIMETER-PARITY-RECHECK` (пересверка пары «Продажи» после деплоя периметра) параллельно с доработкой `SALES-DOCUMENT-OWNER-INGEST` по `ADR-135 §4`.
+**Развилки на владельце:** нет.
+**Счётчик:** пары реестра паритета 7/7 · Epic-1 очередь финиша — 2/4 задач очереди `SALES-PERIMETER-QUEUE-ADJ` остаются открытыми.
 
 ### Подробности для модели
 
@@ -1173,6 +1173,10 @@ SET`** — консистентно с уже принятым поведени�
 поймало смешение до коммита. После деплоя метки канала снапшот продолжит нести чужой недеплоенный
 патч: следующая деплойная сессия обязана исходить из этого, а не из «снапшот равен проду».
 
+**`SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY` закрыта DONE (2026-08-07, исполнитель, шаги 5-10 брифа поверх подготовленной ветки).** `SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY` закрыта DONE, session-блок и артефакт `reference/sales_perimeter_channel_decide_deploy_2026-08-07.md` несут полную провенанс-цепочку (шаги 0, 5–10, все числа с арифметикой). Join периметра с `core` для будущих сверок — по `transaction_id = TO_HEX(MD5(CONCAT(doc_id,'|',position_id)))` против снимка `stg_msklad.fact_sales_perimeter_staging` (в `core.fact_sales_profit` нет колонки `source_doc_type`, только `entity_type` = product/service — не путать с типом документа МойСклад).
+
+**Родительская строка `SALES-PERIMETER-CHANNEL-DECIDE` закрыта целиком по предписанию `ADR-135 §5` (сборка, 2026-08-07, восьмой проход).** По завершении шагов 5-10 задачи `SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY` строка GAP-реестра `SALES-PERIMETER-CHANNEL-DECIDE` (индекс `07_STATE.md` + полный текст `07_GAPS.md`) уезжает в `07_ARCHIVE.md` дословно (`ADR-064`) вместе с обеими строками мандата — «SALES-PERIMETER-CHANNEL-DECIDE, подготовка» и «SALES-PERIMETER-CHANNEL-DECIDE, деплой» — которые снимаются из `§Мандат Claude Code: класс задач` тем же коммитом (`ADR-090 §1`, `ADR-135 §5`).
+
 ---
 
 ## Мандат Claude Code: класс задач (ADR-076)
@@ -1227,8 +1231,6 @@ SET`** — консистентно с уже принятым поведени�
 | DQ-GATE-METRIC-REDESIGN | A | нет | постоянный, гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` | проектирование новой метрики `drift_check`, форма не назначена, ничего не деплоит. Пишет: `reference/dq_gate_metric_redesign_<date>.md` |
 | DQ-GATE-SCOPE-CONFIRM | A | да | постоянный, гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` | подтверждение на первом реальном провале `drift_check` после разделения периметра, что закупки/возвраты исполнились, а промоут — нет; форма запроса — из скриптов `DQ-SOURCE-CAPTURE`. Пишет: `reference/dq_gate_scope_confirm_<date>.md` |
 | PARALLEL-CHECK-BLOCK-END | A | нет | постоянный | правка `tools/parallel_check.sh` и нового самотеста, облачных вызовов нет. Пишет: `tools/parallel_check.sh`, `tools/parallel_check_selftest.sh`, `reference/parallel_check_block_end_<date>.md` |
-| SALES-PERIMETER-CHANNEL-DECIDE, подготовка | A | да | постоянный | офлайн-разбор дампов ответа и текст правки `fetch_perimeter.py`, ничего не деплоит, живых `GET` не требует. Пишет: `reference/code/cf-facts/`, `reference/sales_perimeter_channel_decide_<date>.md`, `reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE_<date>/` |
-| SALES-PERIMETER-CHANNEL-DECIDE, деплой | B | нет | выдан поимённо `ADR-135` | деплой `cf-facts`; ветка `deploy/cf-facts-2026-08-07-channel` (коммит `84d6f71`) подготовлена и запушена |
 | SALES-DOCUMENT-OWNER-DEPLOY | B | нет | НЕ выдан | деплой `cf-facts` плюс `ALTER TABLE` живой `core.fact_sales_profit`; выдаётся отдельным поимённым ADR по факту готовности патча (`ADR-109 §1` — артефакт в `reference/` с именем задачи) |
 | SALES-PERIMETER-PARITY-RECHECK | B | нет | выдан поимённо третьим ADR блока `SALES-PERIMETER-QUEUE-ADJ` | живые `GET` к `report/profit/*` с секретом `msklad-token`; объём вызовов ограничен текстом того ADR, оговорки `ADR-076 §5` обязательны |
 
@@ -1340,7 +1342,6 @@ SET`** — консистентно с уже принятым поведени�
 | `DQ-GATE-METRIC-REDESIGN` | OPEN | `drift_check` отождествляет «почти не продавали» с «данные испорчены» — `8,9 %` суток без документов на всех днях недели; метрика переделывается, не калибруется | гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY`; форма не назначена |
 | `DQ-GATE-SCOPE-CONFIRM` | OPEN | Подтверждение на первом реальном провале `drift_check` после разделения периметра, что закупки/возвраты исполнились, а промоут — нет | гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` |
 | `Q-105` | OPEN | Версионируется ли `owner` документа `entity/demand` отдельно от документа или вместе с `updated` | требует живого запроса (класс B) либо документации API, мандат не выдан |
-| `SALES-PERIMETER-CHANNEL-DECIDE` | READY | У строк периметра пустой канал продаж — подготовка DONE (`ADR-134`, константа по типу документа) | деплой правки — мандат класса B не выдан, отдельным поимённым ADR по факту готовности |
 | `SALES-DOCUMENT-OWNER-DEPLOY` | OPEN | Деплой патча сотрудника-владельца документа в `core.fact_sales_profit` | готовность патча `SALES-DOCUMENT-OWNER-INGEST`; мандат класса B выдаётся отдельным поимённым ADR; плюс правка `WHEN MATCHED THEN UPDATE SET` до деплоя (§4 `ADR-135`) |
 | `SALES-PERIMETER-PARITY-RECHECK` | READY | Пересверка пары «Продажи» против отчёта прибыльности после деплоя периметра | нет; мандат класса B выдан, бриф готов |
 
