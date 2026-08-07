@@ -3,7 +3,7 @@
 # 07 · STATE — Текущее состояние проекта
 
 **Статус:** LIVING (обновляется каждую сессию через `STATE_PATCH`).
-**updated_at:** 2026-08-07 · **обновил:** сборка (буфер 2026-08-07, третий проход, разбор двух блоков)
+**updated_at:** 2026-08-07 · **обновил:** сборка (буфер 2026-08-07, четвёртый проход, слияние трёх веток SALES-PERIMETER-*)
 
 > **Правило компактности (ADR-064):** здесь живёт ТОЛЬКО открытое (open / DEFER / IN PROGRESS / READY /
 > ожидает решения). Полностью закрытые Q/задачи/блокеры переезжают в `07_ARCHIVE.md` однострочной выжимкой
@@ -18,21 +18,21 @@
 
 > Блок ЗАМЕНЯЕТСЯ целиком каждой сборкой, не дописывается (`ADR-084 §1`). Ровно пять строк.
 
-**Прошлый шаг:** очередь после деплоя периметра продаж адъюдицирована — заведены
-`SALES-PERIMETER-LANDING-CHECK`, `SALES-PERIMETER-CADENCE`, `SALES-PERIMETER-CHANNEL-DECIDE`,
-`SALES-DOCUMENT-OWNER-DEPLOY`, восстановлена парность `SALES-PERIMETER-PARITY-RECHECK`;
-выданы два мандата класса B.
-**Где мы:** реестр паритета сошёлся полностью (`7/7`, строка 21 закрыта `ADR-129`); открыт не
-счётчик, а клиентская картина — периметр задеплоен и разово промоутнут, но ни одним расписанием
-не вызывается, канал у его строк пуст, сотрудник документа в ядро не попадает.
-**Следующий шаг:** `SALES-PERIMETER-LANDING-CHECK` (класс A, без брифа) и
-`SALES-DOCUMENT-OWNER-INGEST` (класс A, бриф готов) параллельно, затем
-`SALES-PERIMETER-CADENCE` и `SALES-PERIMETER-CHANNEL-DECIDE` (класс A), затем
-`SALES-PERIMETER-PARITY-RECHECK` (класс B, мандат выдан) и `SALES-DOCUMENT-OWNER-DEPLOY`
-(класс B, мандат по факту готовности патча).
-**Развилки на владельце:** форма каденции периметра, если замер стоимости покажет часовую
-неприемлемой; метка канала для розницы и комиссии, если поле `salesChannel` в источнике
-отсутствует; выдача мандата на деплой патча сотрудника документа по факту его готовности.
+**Прошлый шаг:** три задачи очереди после деплоя периметра продвинуты параллельно —
+`SALES-PERIMETER-LANDING-CHECK` закрыта DONE (периметр доехал до июля на уровне ядра и витрины),
+`SALES-PERIMETER-CADENCE` шаги 1-2 DONE (живой снимок подтвердил отсутствие каденции, патч
+`workflow_weekly.yaml` готов), `SALES-PERIMETER-CHANNEL-DECIDE` подготовка DONE (`ADR-134`,
+константа-метка канала по типу документа выбрана владельцем).
+**Где мы:** периметр продаж верен на витрине и в ядре за июль; разрез по сотруднику на
+клиентской странице ещё не переехал (ждёт `SALES-DOCUMENT-OWNER-DEPLOY`); каденция и метка
+канала подготовлены, оба деплоя ждут своего мандата/шага.
+**Следующий шаг:** `SALES-PERIMETER-CADENCE` шаг 3 (деплой Workflows, класс B, мандат `ADR-132`
+выдан) и `SALES-DOCUMENT-OWNER-INGEST` (класс A, бриф готов) параллельно; затем деплой
+`SALES-PERIMETER-CHANNEL-DECIDE` (класс B, мандат по факту готовности — зафиксирована `ADR-134`,
+выдаётся отдельным поимённым ADR); `SALES-PERIMETER-PARITY-RECHECK` (класс B, мандат `ADR-133`
+выдан) и `SALES-DOCUMENT-OWNER-DEPLOY` (класс B, мандат по факту готовности патча).
+**Развилки на владельце:** выдача мандата на деплой правки канала `SALES-PERIMETER-CHANNEL-DECIDE`;
+выдача мандата на деплой патча сотрудника документа по факту его готовности.
 **Счётчик:** пары реестра 7/7 сходятся · измерено 7/7 · Epic M 6/7 фаз.
 
 ### Подробности для модели
@@ -1135,6 +1135,41 @@ SET`** — консистентно с уже принятым поведени�
 четвёртый зафиксированный инстанс класса (`07_STATE.md:221`), новой строки реестра под него не
 заводится (`ADR-051 §2`, `ADR-107 §4`).
 
+**`SALES-PERIMETER-LANDING-CHECK` закрыта DONE (2026-08-07).** `core.fact_sales_profit` и
+`marts.sales_overview` сходятся по июлю на уровне округления (`4707`=`4707` строк, `112 502
+581,88`≈`112 502 581,90` KGS); питающая стадийная таблица (`stg_msklad.fact_sales_perimeter_staging`,
+`commissionreportin_sale`) показывает непрерывный поток строк май→июнь→июль→август — гипотеза
+«периметр застрял на разовом промоуте» не подтверждается. Наблюдение владельца «прежняя картина
+расхождения» относится к разрезу по сотруднику (атрибуция через `dim_counterparties.owner_employee_id`,
+не через владельца документа) — ожидаемое следствие незавершённого `SALES-DOCUMENT-OWNER-DEPLOY`, а
+не признак того, что периметр не доехал. Полный ход и сырой вывод —
+`reference/sales_perimeter_landing_check_2026-08-07.md`. Задача-строка и парная строка мандата
+уехали в `07_ARCHIVE.md` (`ADR-090 §1`).
+
+**`SALES-PERIMETER-CADENCE` шаги 1-2 DONE (2026-08-07), шаг 3 остаётся.** Живой снимок
+(`gcloud scheduler jobs list` + `gcloud workflows describe` обоих pipeline, UTC-якорь и
+подтверждение личности вызывающего в начале и в конце) подтвердил 0 совпадений подстроки
+`perimeter` — каденция не подключена. Патч `reference/code/cf-facts/workflow_weekly.yaml` готов:
+`step_perimeter` после `step_facts`/до `step_dq` (staging, `timeout=600`), `step_perimeter_promote`
+после `step_promote` (core, `timeout=540`); позиция задана архитектурно (`07_GAPS.md`), YAML и
+порядок шагов проверены программно. Деплой (шаг 3) — мандат класса B `ADR-132` уже выдан. Побочное
+наблюдение вне scope этой задачи: живых шедулер-джобов стало шесть против пяти в
+`11_INFRA_FACTS.md:27` — новый `invoices-daily-update` (`asia-east1`, `0 4 * * *`, `Asia/Bishkek`,
+`ENABLED`) не документирован в снимке `2026-07-25`; правка `11_INFRA_FACTS.md` не входила в набор
+файлов этой сессии, наблюдение зафиксировано здесь как памятка следующей сессии, не как GAP-строка.
+Полный ход — `reference/sales_perimeter_cadence_2026-08-07.md`.
+
+**`SALES-PERIMETER-CHANNEL-DECIDE` подготовка DONE (2026-08-07, `ADR-134`), деплой остаётся READY.**
+Офлайн-развилка по полю `salesChannel` снята владельцем в чате — константа-метка типа документа
+для ОБОИХ типов («Розница»/«Комиссия»), реальный `salesChannel` из `commissionreportin` патчем не
+читается. Правка `reference/code/cf-facts/fetch_perimeter.py`/`bq_ops.py` подготовлена и
+синтаксически проверена (`python3 -m py_compile`), не задеплоена. `sales_channel_id` у меток-констант
+остаётся `NULL` — синтетической строки `entity/saleschannel` для них не существует, клиентская
+страница читает только `sales_channel_name` (`COALESCE`, `sq_marts_sales_overview.sql:58`). Деплой —
+мандат класса B не выдан, заводится отдельным поимённым ADR по факту готовности (зафиксированной
+этим коммитом, прецедент `ADR-109 §1`). Полный ход —
+`reference/sales_perimeter_channel_decide_2026-08-07.md`.
+
 ---
 
 ## Мандат Claude Code: класс задач (ADR-076)
@@ -1189,7 +1224,6 @@ SET`** — консистентно с уже принятым поведени�
 | DQ-GATE-METRIC-REDESIGN | A | нет | постоянный, гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` | проектирование новой метрики `drift_check`, форма не назначена, ничего не деплоит. Пишет: `reference/dq_gate_metric_redesign_<date>.md` |
 | DQ-GATE-SCOPE-CONFIRM | A | да | постоянный, гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` | подтверждение на первом реальном провале `drift_check` после разделения периметра, что закупки/возвраты исполнились, а промоут — нет; форма запроса — из скриптов `DQ-SOURCE-CAPTURE`. Пишет: `reference/dq_gate_scope_confirm_<date>.md` |
 | PARALLEL-CHECK-BLOCK-END | A | нет | постоянный | правка `tools/parallel_check.sh` и нового самотеста, облачных вызовов нет. Пишет: `tools/parallel_check.sh`, `tools/parallel_check_selftest.sh`, `reference/parallel_check_block_end_<date>.md` |
-| SALES-PERIMETER-LANDING-CHECK | A | да | постоянный | read-only запросы к `core`/`marts`/`stg_msklad`, живых вызовов к МойСкладу нет, в прод-таблицы не пишет. Исполняется БЕЗ брифа по `ADR-086 §1`: приёмка записана дословно строкой `07_GAPS.md`, текст запуска обязан процитировать её без пересказа. Пишет: `reference/sales_perimeter_landing_check_<date>.md`, `reference/_scratch_SALES-PERIMETER-LANDING-CHECK_<date>/` |
 | SALES-PERIMETER-CADENCE, шаг 1 (съём живых объектов) + шаг 2 (патч снапшота) | A | да | постоянный | read-only `gcloud scheduler jobs list` / `gcloud workflows describe` и правка снапшота, ничего не деплоит. Пишет: `reference/code/cf-facts/workflow_weekly.yaml`, `reference/sales_perimeter_cadence_<date>.md`, `reference/_scratch_SALES-PERIMETER-CADENCE_<date>/` |
 | SALES-PERIMETER-CADENCE, шаг 3 (деплой Workflows) | B | нет | выдан поимённо вторым ADR блока `SALES-PERIMETER-QUEUE-ADJ` | деплой `msklad-pipeline-weekly`; процедура `05_CONVENTIONS` Часть II вариант Б, форма read-back для Workflows — `--format=json` плюс программное извлечение `sourceContents` |
 | SALES-PERIMETER-CHANNEL-DECIDE, подготовка | A | да | постоянный | офлайн-разбор дампов ответа и текст правки `fetch_perimeter.py`, ничего не деплоит, живых `GET` не требует. Пишет: `reference/code/cf-facts/`, `reference/sales_perimeter_channel_decide_<date>.md`, `reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE_<date>/` |
@@ -1305,9 +1339,8 @@ SET`** — консистентно с уже принятым поведени�
 | `DQ-GATE-METRIC-REDESIGN` | OPEN | `drift_check` отождествляет «почти не продавали» с «данные испорчены» — `8,9 %` суток без документов на всех днях недели; метрика переделывается, не калибруется | гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY`; форма не назначена |
 | `DQ-GATE-SCOPE-CONFIRM` | OPEN | Подтверждение на первом реальном провале `drift_check` после разделения периметра, что закупки/возвраты исполнились, а промоут — нет | гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` |
 | `Q-105` | OPEN | Версионируется ли `owner` документа `entity/demand` отдельно от документа или вместе с `updated` | требует живого запроса (класс B) либо документации API, мандат не выдан |
-| `SALES-PERIMETER-LANDING-CHECK` | READY | Доехал ли периметр продаж до июля-2026, до витрины и до клиентской страницы после разового промоута | нет; класс A, брифа не требует — приёмка записана дословно в `07_GAPS.md` |
-| `SALES-PERIMETER-CADENCE` | OPEN | Режимы периметра не вызываются ни одним расписанием — деплой без каденции даёт разовый эффект | шаг 1 read-only переснимает живые объекты; деплой Workflows — мандат класса B выдан |
-| `SALES-PERIMETER-CHANNEL-DECIDE` | READY | У строк периметра пустой канал продаж, корзина «Не указан» перестаёт быть однородной | подготовка класс A; деплой правки — мандат класса B не выдан |
+| `SALES-PERIMETER-CADENCE` | OPEN | Режимы периметра не вызываются ни одним расписанием — шаги 1-2 DONE (снимок подтвердил отсутствие каденции, патч `workflow_weekly.yaml` готов) | шаг 3 (деплой Workflows) — мандат класса B `ADR-132` выдан |
+| `SALES-PERIMETER-CHANNEL-DECIDE` | READY | У строк периметра пустой канал продаж — подготовка DONE (`ADR-134`, константа по типу документа) | деплой правки — мандат класса B не выдан, отдельным поимённым ADR по факту готовности |
 | `SALES-DOCUMENT-OWNER-DEPLOY` | OPEN | Деплой патча сотрудника-владельца документа в `core.fact_sales_profit` | готовность патча `SALES-DOCUMENT-OWNER-INGEST`; мандат класса B выдаётся отдельным поимённым ADR |
 | `SALES-PERIMETER-PARITY-RECHECK` | READY | Пересверка пары «Продажи» против отчёта прибыльности после деплоя периметра | нет; мандат класса B выдан, бриф готов |
 

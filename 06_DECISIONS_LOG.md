@@ -4809,4 +4809,34 @@ ADR-кандидат номера не получил, в `06_INDEX.md` отсу
 
   Введено сессией `SALES-PERIMETER-QUEUE-ADJ` (2026-08-07, архитектор).
 
+- ADR-134: Метка канала периметра продаж — константа по типу документа для обоих типов
+
+  **Статус: accepted** (владелец, чат 2026-08-07).
+
+  **Контекст.** У строк периметра продаж (`entity/retaildemand`/`entity/commissionreportin`,
+  `SALES-PERIMETER-EXTEND`) поле `sales_channel_name` было жёстко `NULL`. Офлайн-разбор дампов
+  показал смешанный источник — `entity/retaildemand` не несёт `salesChannel` вовсе,
+  `entity/commissionreportin` несёт его на всех строках выборки. Развилка (читать реальное
+  значение там, где оно есть, или метить константой оба типа единообразно) была явно
+  зарезервирована за владельцем (`07_STATE.md` «Развилки на владельце», `07_GAPS.md:87`
+  «Рекомендация архитектора, если решает владелец»).
+
+  **Решение.** Владелец выбрал константу-метку типа документа для ОБОИХ типов («Розница» для
+  `entity/retaildemand`, «Комиссия» для `entity/commissionreportin`); реальный `salesChannel`
+  из `entity/commissionreportin` НЕ читается патчем.
+
+  **Последствия:**
+  - [сейчас] `reference/code/cf-facts/fetch_perimeter.py` — `_fetch_positions_for` получает
+    параметр `sales_channel_name`, обе вызывающие функции передают константу.
+  - [сейчас] `reference/code/cf-facts/bq_ops.py` — `PERIMETER_STAGING_SCHEMA` несёт
+    `sales_channel_id`/`sales_channel_name`; `_build_perimeter_merge_sql` читает их из staging
+    (не `CAST(NULL AS STRING)`), `WHEN MATCHED` тоже обновляет оба поля.
+  - [задачей SALES-PERIMETER-CHANNEL-DECIDE (деплой)] Деплой `cf-facts` с этой правкой — мандат
+    класса B не выдан этим ADR, заводится отдельным поимённым ADR по факту готовности (уже
+    зафиксированной этим коммитом), прецедент `ADR-109 §1`.
+  - [без правок] `reference/sql/sq_marts_sales_overview.sql` — `COALESCE(f.sales_channel_name,
+    'Не указан')` корректен при любом исходе развилки, вне scope (`00_CHARTER §главный принцип`).
+
+  Введено сессией `SALES-PERIMETER-CHANNEL-DECIDE` (2026-08-07, executor).
+
 --- END 06_DECISIONS_LOG.md ---
