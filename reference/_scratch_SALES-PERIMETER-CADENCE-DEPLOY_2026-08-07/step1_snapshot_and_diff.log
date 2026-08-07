@@ -1,0 +1,95 @@
+=== UTC anchor (start) ===
+Fri Aug  7 14:04:10 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud workflows describe (live) ===
+revisionId= 000004-6bf
+updateTime= 2026-08-05T05:17:59.298028382Z
+=== sha256 of live sourceContents ===
+9b7fcee08a2f2b46704c3b7aa8d83a26317260c6e79bb675e712ae76884d1647  reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/step1_weekly_live_source.yaml
+=== clone code-repo master (read-only, shallow) ===
+Cloning into 'reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/holika-prod'...
+=== locate weekly workflow file in code-repo ===
+reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/holika-prod/workflows/msklad-pipeline-weekly.yaml
+=== byte-for-byte diff: live sourceContents vs master code-repo ===
+master file: reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/holika-prod/workflows/msklad-pipeline-weekly.yaml
+DIFF_RESULT=IDENTICAL
+9b7fcee08a2f2b46704c3b7aa8d83a26317260c6e79bb675e712ae76884d1647  reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/holika-prod/workflows/msklad-pipeline-weekly.yaml
+=== search for 'perimeter' in live sourceContents (expect 0 matches — cadence not yet wired) ===
+0 matches
+=== compare live source vs patched snapshot reference/code/cf-facts/workflow_weekly.yaml ===
+136a137,164
+>     # ── STEP 9в: периметр продаж (retaildemand + commissionreportin, staging, 90d rolling) ──
+>     # SALES-PERIMETER-EXTEND (ADR-103 §8). Пишет ТОЛЬКО в
+>     # stg_msklad.fact_sales_perimeter_staging — под гейт продаж не подпадает по тому же
+>     # основанию, по которому туда вынесены закупки/возвраты (DQ-GATE-SCOPE-SPLIT, ADR-122).
+>     - step_perimeter:
+>         try:
+>           call: http.post
+>           args:
+>             url: ${cf_facts}
+>             auth:
+>               type: OIDC
+>             body:
+>               run_id: ${run_id}
+>               mode: "perimeter"
+>               window_days: 90
+>             timeout: 600
+>           result: perimeter_result
+>         except:
+>           as: e
+>           steps:
+>             - log_perimeter_error:
+>                 call: sys.log
+>                 args:
+>                   text: ${"[WEEKLY] step_perimeter FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+>                   severity: ERROR
+>             - raise_perimeter:
+>                 raise: ${e}
+> 
+202a231,257
+>     # ── STEP 9г: периметр продаж — promote staging → core (MERGE в core.fact_sales_profit) ──
+>     # ТОЛЬКО после step_perimeter и ТОЛЬКО после гейта: пишет в ту же таблицу, что гейт
+>     # защищает, поэтому стоит ПОСЛЕ step_promote, а не рядом со step_perimeter.
+>     - step_perimeter_promote:
+>         try:
+>           call: http.post
+>           args:
+>             url: ${cf_facts}
+>             auth:
+>               type: OIDC
+>             body:
+>               run_id: ${run_id}
+>               mode: "perimeter_promote"
+>               window_days: 90
+>             timeout: 540
+>           result: perimeter_promote_result
+>         except:
+>           as: e
+>           steps:
+>             - log_perimeter_promote_error:
+>                 call: sys.log
+>                 args:
+>                   text: ${"[WEEKLY] step_perimeter_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+>                   severity: ERROR
+>             - raise_perimeter_promote:
+>                 raise: ${e}
+> 
+SNAPSHOT_DIFF=DIFFERS_AS_EXPECTED_PATCH
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Fri Aug  7 14:04:16 UTC 2026
+SCRATCH_PATH=reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07

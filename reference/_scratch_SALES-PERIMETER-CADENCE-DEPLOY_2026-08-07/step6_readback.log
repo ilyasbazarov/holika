@@ -1,0 +1,44 @@
+=== UTC anchor (start) ===
+Fri Aug  7 14:07:51 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud workflows describe (post-deploy) ===
+revisionId= 000005-124
+updateTime= 2026-08-07T14:07:30.884386952Z
+=== sha256 read-back sourceContents ===
+a1a58a2f385ac1d32c488cae45134c08ed9f3e1097bb808eb2d0253527115ff8  reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/step6_weekly_readback_source.yaml
+=== sha256 branch file ===
+a1a58a2f385ac1d32c488cae45134c08ed9f3e1097bb808eb2d0253527115ff8  reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/holika-prod/workflows/msklad-pipeline-weekly.yaml
+=== byte-for-byte diff: read-back vs branch file ===
+READBACK_DIFF=IDENTICAL
+=== confirm perimeter steps present + order ===
+=== confirm perimeter steps present + order ===
+15:    - step_dim:
+38:    - step_fx:
+61:    - step_facts:
+87:    - step_purchases:
+113:    - step_returns:
+141:    - step_perimeter:
+166:    - step_dq:
+207:    - step_promote:
+234:    - step_perimeter_promote:
+=== syntax check (pyyaml) ===
+YAML_OK
+=== confirm hourly workflow untouched ===
+000004-5fc	2026-08-05T05:16:54.045332507Z
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Fri Aug  7 14:08:13 UTC 2026

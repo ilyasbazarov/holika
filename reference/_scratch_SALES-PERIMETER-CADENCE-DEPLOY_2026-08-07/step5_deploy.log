@@ -1,0 +1,298 @@
+=== UTC anchor (start) ===
+Fri Aug  7 14:07:24 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== deploy ===
+Waiting for operation [operation-1786111650337-65875867292dc-85e43d89-bed50d96] to complete...
+.............done.
+createTime: '2026-05-08T06:06:20.438282639Z'
+name: projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-weekly
+revisionCreateTime: '2026-08-07T14:07:30.789419710Z'
+revisionId: 000005-124
+serviceAccount: projects/msklad-bi-prod/serviceAccounts/etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+sourceContents: |
+  main:
+    params: [args]
+    steps:
+
+      # ── INIT ───────────────────────────────────────────────────────────────────
+      - init:
+          assign:
+            - run_id: ${sys.now()}
+            - cf_dim:       "https://cf-dim-xw5u2boozq-de.a.run.app"
+            - cf_fx:        "https://cf-fx-xw5u2boozq-de.a.run.app"
+            - cf_facts:     "https://cf-facts-xw5u2boozq-de.a.run.app"
+            - cf_dq:        "https://cf-dq-xw5u2boozq-de.a.run.app"
+
+      # ── STEP 1: обновление справочников ───────────────────────────────────────
+      - step_dim:
+          try:
+            call: http.post
+            args:
+              url: ${cf_dim}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+              timeout: 540
+            result: dim_result
+          except:
+            as: e
+            steps:
+              - log_dim_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_dim FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_dim:
+                  raise: ${e}
+
+      # ── STEP 2: курсы НБКР ────────────────────────────────────────────────────
+      - step_fx:
+          try:
+            call: http.post
+            args:
+              url: ${cf_fx}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+              timeout: 180
+            result: fx_result
+          except:
+            as: e
+            steps:
+              - log_fx_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_fx FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_fx:
+                  raise: ${e}
+
+      # ── STEP 3: загрузка отгрузок + byvariant (90d rolling) ───────────────────
+      - step_facts:
+          try:
+            call: http.post
+            args:
+              url: ${cf_facts}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+                mode: "weekly"
+              timeout: 600
+            result: facts_result
+          except:
+            as: e
+            steps:
+              - log_facts_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_facts FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_facts:
+                  raise: ${e}
+
+      # ── STEP 8: закупки — полный refresh ──────────────────────────────────────
+      # WRITE_TRUNCATE: ~173 заказа × ~30 позиций. Статусы (В пути / Прибыл)
+      # захватываются на каждом прогоне. Не блокирует promote при ошибке.
+      - step_purchases:
+          try:
+            call: http.post
+            args:
+              url: ${cf_facts}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+                mode: "purchases"
+              timeout: 300
+            result: purchases_result
+          except:
+            as: e
+            steps:
+              - log_purchases_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_purchases FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_purchases:
+                  raise: ${e}
+
+      # ── STEP 9: возвраты покупателей (90d rolling) ────────────────────────────
+      # После promote — независимая таблица, вне DQ-цепочки продаж.
+      # 0 записей за окно — не ошибка (early return guard в CF-Facts).
+      - step_returns:
+          try:
+            call: http.post
+            args:
+              url: ${cf_facts}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+                mode: "returns"
+                window_days: 90
+              timeout: 300
+            result: returns_result
+          except:
+            as: e
+            steps:
+              - log_returns_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_returns FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_returns:
+                  raise: ${e}
+
+      # ── STEP 9в: периметр продаж (retaildemand + commissionreportin, staging, 90d rolling) ──
+      # SALES-PERIMETER-EXTEND (ADR-103 §8). Пишет ТОЛЬКО в
+      # stg_msklad.fact_sales_perimeter_staging — под гейт продаж не подпадает по тому же
+      # основанию, по которому туда вынесены закупки/возвраты (DQ-GATE-SCOPE-SPLIT, ADR-122).
+      - step_perimeter:
+          try:
+            call: http.post
+            args:
+              url: ${cf_facts}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+                mode: "perimeter"
+                window_days: 90
+              timeout: 600
+            result: perimeter_result
+          except:
+            as: e
+            steps:
+              - log_perimeter_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_perimeter FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_perimeter:
+                  raise: ${e}
+
+      # ── STEP 4: DQ Gate ───────────────────────────────────────────────────────
+      - step_dq:
+          try:
+            call: http.post
+            args:
+              url: ${cf_dq}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+              timeout: 120
+            result: dq_result
+          except:
+            as: e
+            steps:
+              - log_dq_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_dq CRASHED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: CRITICAL
+              - raise_dq:
+                  raise: ${e}
+
+      # ── STEP 5: decode DQ response (Л-02: Workflows не авто-парсит JSON body) ─
+      - parse_dq_result:
+          assign:
+            - dq_parsed: ${json.decode(dq_result.body)}
+
+      # ── STEP 6: проверка результата DQ ────────────────────────────────────────
+      - check_dq:
+          switch:
+            - condition: ${not(dq_parsed.passed)}
+              steps:
+                - log_dq_failed:
+                    call: sys.log
+                    args:
+                      text: ${"[WEEKLY] DQ Gate FAILED run_id=" + run_id + " details=" + json.encode_to_string(dq_parsed)}
+                      severity: CRITICAL
+                - raise_dq_failed:
+                    raise: "DQ Gate failed — promote blocked"
+
+      # ── STEP 7: promote staging → core (90d window) ───────────────────────────
+      - step_promote:
+          try:
+            call: http.post
+            args:
+              url: ${cf_facts}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+                mode: "promote"
+                window_days: 90
+              timeout: 540
+            result: promote_result
+          except:
+            as: e
+            steps:
+              - log_promote_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_promote:
+                  raise: ${e}
+
+      # ── STEP 9г: периметр продаж — promote staging → core (MERGE в core.fact_sales_profit) ──
+      # ТОЛЬКО после step_perimeter и ТОЛЬКО после гейта: пишет в ту же таблицу, что гейт
+      # защищает, поэтому стоит ПОСЛЕ step_promote, а не рядом со step_perimeter.
+      - step_perimeter_promote:
+          try:
+            call: http.post
+            args:
+              url: ${cf_facts}
+              auth:
+                type: OIDC
+              body:
+                run_id: ${run_id}
+                mode: "perimeter_promote"
+                window_days: 90
+              timeout: 540
+            result: perimeter_promote_result
+          except:
+            as: e
+            steps:
+              - log_perimeter_promote_error:
+                  call: sys.log
+                  args:
+                    text: ${"[WEEKLY] step_perimeter_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                    severity: ERROR
+              - raise_perimeter_promote:
+                  raise: ${e}
+
+      # ── DONE ──────────────────────────────────────────────────────────────────
+      - done:
+          steps:
+            - log_success:
+                call: sys.log
+                args:
+                  text: ${"[WEEKLY] Pipeline COMPLETED run_id=" + run_id}
+                  severity: INFO
+            - return_result:
+                return: ${promote_result.body}
+state: ACTIVE
+updateTime: '2026-08-07T14:07:30.884386952Z'
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Fri Aug  7 14:07:35 UTC 2026

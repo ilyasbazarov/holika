@@ -199,3 +199,51 @@ sha256 изменённых файлов (новая ревизия):
 плюс, если понадобится откатить данные, удаление строк `core.fact_sales_profit` по
 `transaction_id IN (SELECT TO_HEX(MD5(CONCAT(doc_id,'|',position_id))) FROM
 stg_msklad.fact_sales_perimeter_staging)`.
+
+---
+
+## Cloud Workflows — `SALES-PERIMETER-CADENCE-DEPLOY` (2026-08-07, класс B, мандат `ADR-132`)
+
+**Что зафиксировано:** соответствие «ревизия ↔ коммит» для подключения каденции периметра продаж
+(`step_perimeter` между `step_facts` и `step_dq`; `step_perimeter_promote` после `step_promote`) к
+живому `msklad-pipeline-weekly`. `msklad-pipeline-hourly` этой сессией не трогался. Процедура —
+`05_CONVENTIONS §Процедура деплоя … вариант Б`, форма read-back для Workflows —
+`describe --format=json` → программное извлечение `sourceContents` (прецедент
+`DQ-GATE-SCOPE-SPLIT-DEPLOY`).
+
+| Объект | Ревизия до | Ревизия после | `updateTime` (UTC) | sha256 `sourceContents` (после) |
+|---|---|---|---|---|
+| `msklad-pipeline-weekly` | `000004-6bf` | **`000005-124`** | `2026-08-07T14:07:30.884386952Z` | `a1a58a2f385ac1d32c488cae45134c08ed9f3e1097bb808eb2d0253527115ff8` |
+| `msklad-pipeline-hourly` | `000004-5fc` | `000004-5fc` (не тронут) | `2026-08-05T05:16:54.045332507Z` | не менялся |
+
+**Шаг 1 (снимок ДО правки, побайтовая сверка с `master`):** живая `sourceContents` ревизии
+`000004-6bf` (sha256 `9b7fcee08a2f2b46704c3b7aa8d83a26317260c6e79bb675e712ae76884d1647`) побайтово
+совпала с `workflows/msklad-pipeline-weekly.yaml` в `master` код-репо на момент `2026-08-07T14:04Z` —
+дрейфа не найдено. Полный лог — `reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/step1_snapshot_and_diff.log`.
+
+**Шаг 6 (read-back после деплоя):** sha256 read-back'а sourceContents ревизии `000005-124`
+(`a1a58a2f...`) побайтово совпал с текстом ветки `deploy/workflows-2026-08-07-perimeter-cadence`.
+Порядок шагов подтверждён программно: `step_dim → step_fx → step_facts → step_purchases →
+step_returns → step_perimeter → step_dq → parse_dq_result → check_dq → step_promote →
+step_perimeter_promote → done`. YAML валиден (`pyyaml`). `msklad-pipeline-hourly` подтверждён
+неизменённым (`describe` вернул ту же ревизию/`updateTime`, что и до деплоя). Полный лог —
+`reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/step6_readback.log`.
+
+**Функциональная проверка (шаг 7).** Мандат `ADR-132 §5` не покрывает принудительный ручной прогон
+`perimeter`/`perimeter_promote` — не выполнялся. Проверка ограничена тем, что не требует ручного
+вызова: подтверждён синтаксис/структура/порядок развёрнутого текста программно (см. шаг 6 выше).
+Живой прогон новых шагов дождётся штатного расписания (`msklad-pipeline-weekly`, `0 1 * * 0`, UTC) —
+следующий прогон и его лог остаются задачей следующей сессии, не этой.
+
+**Код-репозиторий `holika-prod`:**
+- Ветка `deploy/workflows-2026-08-07-perimeter-cadence` — коммит `1ef452c`, запушена, патч перенесён
+  копированием полного файла-снапшота (снапшот на шаге 1 подтверждён идентичным живому тексту плюс
+  ровно два новых шага — дрейфа между копированием и diff нет).
+- Слияние в `master` — коммит `0c5f68e` (`merge --no-ff`), выполнено и запушено ПОСЛЕ успешного
+  read-back (шаг 6).
+- Каталог `workflows/` — верхнего уровня код-репо, как у прецедента `DQ-GATE-SCOPE-SPLIT-DEPLOY`.
+
+**Откат (не понадобился):** повторный `gcloud workflows deploy msklad-pipeline-weekly` текстом
+ревизии `000004-6bf`, сохранённым до деплоя в
+`reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/step1_weekly_live_source.yaml`
+(sha256 `9b7fcee0...`).
