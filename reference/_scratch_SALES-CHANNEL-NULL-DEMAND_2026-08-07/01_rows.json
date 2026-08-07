@@ -1,0 +1,402 @@
+[
+  {
+    "_loaded_at": "2026-07-19 01:08:45", 
+    "agent_id": "178ba7b4-87c0-11ef-0a80-1568002f4222", 
+    "product_id": "fc5cc590-2e59-11ef-0a80-0b8700a9ad3f", 
+    "revenue_kgs": "61938.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-02", 
+    "transaction_id": "d0b83f495f4580647aa83c403a7cce6e"
+  }, 
+  {
+    "_loaded_at": "2026-07-24 23:02:06", 
+    "agent_id": "1c050410-87c0-11ef-0a80-1568002f452a", 
+    "product_id": "3ded0ec6-519f-11ef-0a80-0ee9006fd655", 
+    "revenue_kgs": "376488.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-17", 
+    "transaction_id": "d01c3246d19939f527be3bcca2314920"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "5af1a6bf-3a26-11f1-0a80-1a1b00048281", 
+    "revenue_kgs": "0.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "0d5eba7fedddc6f1df9777e304112b2d"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "770e266c-1c89-11f0-0a80-05ee0000e0aa", 
+    "revenue_kgs": "17100.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "15688bfe97d4d3833966580e1491a7dc"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "dbffb770-2e59-11ef-0a80-0b8700a96bf9", 
+    "revenue_kgs": "35000.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "1978b080ff848432247f13ce5a0fc984"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "8a17196d-6c8a-11f1-0a80-10060018005e", 
+    "revenue_kgs": "5427.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "1a95420575da93a6a2415f75f0b14df5"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "db15bfef-2e59-11ef-0a80-0b8700a96a79", 
+    "revenue_kgs": "1998.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "1d7d8f1b7967085b0a2bc6f47f7d3937"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "279158ed-529e-11f1-0a80-07580030ad6b", 
+    "revenue_kgs": "4050.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "2b94eec3f25bbd82544f7755395eb7a0"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "fba28657-21df-11f1-0a80-0010000a02dd", 
+    "revenue_kgs": "5868.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "2f037fa627a4774f0cfe5663f3c15658"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "4f4efbc3-1c90-11f0-0a80-067600010905", 
+    "revenue_kgs": "954.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "3c2ff1cd7340767a31ff7daabb3b79cc"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "67fda6df-efa1-11ef-0a80-05d80012a497", 
+    "revenue_kgs": "9270.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "47902e50272772ee322bea39bf0a6ec0"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "9f9f648b-3e20-11f1-0a80-07ae0007330b", 
+    "revenue_kgs": "29600.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "5046e7ee4cdf2fadd517f9c7a5b31f8f"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "cdfa661f-95f4-11f0-0a80-14350016d8d6", 
+    "revenue_kgs": "4050.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "563bad61ec3ecfa0a89e0a7f21001612"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "dbe9948e-2e59-11ef-0a80-0b8700a96be0", 
+    "revenue_kgs": "4514.4", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "56c0358530ad372818b0c56608c5575c"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "9f9f648b-3e20-11f1-0a80-07ae0007330b", 
+    "revenue_kgs": "37000.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "587d135d699365264eed7f42ce028fe5"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "dbffb770-2e59-11ef-0a80-0b8700a96bf9", 
+    "revenue_kgs": "35000.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "74f468872eef237b4d5a2bdc952a8a53"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "46454b03-21df-11f1-0a80-00100009d75f", 
+    "revenue_kgs": "11826.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "7834dabb8848ea3061eae918108f8e1d"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "daf89f9d-95f6-11f0-0a80-0efd0016f600", 
+    "revenue_kgs": "7200.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "7aa942165ef94ca807761a2b131b50d7"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "db238fd6-2e59-11ef-0a80-0b8700a96a83", 
+    "revenue_kgs": "8013.6", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "7b0f792039b2ea30e1567786c11e9e9c"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "fc7028da-2e59-11ef-0a80-0b8700a9ad4e", 
+    "revenue_kgs": "23940.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "892243f9bbaa5f310282c45cb1996d6e"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "2b17740e-6c8a-11f1-0a80-0e6e00179d65", 
+    "revenue_kgs": "4995.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "8fe6a016e27181eb683a0bbbaf94e394"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "eedbac11-aced-11f0-0a80-03e20021ab79", 
+    "revenue_kgs": "5085.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "914b79f1934c4ac1b49c791bf280615d"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "5c0cca7b-95f6-11f0-0a80-1bbe001658ef", 
+    "revenue_kgs": "4482.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "9336c199b884fde15dc8b130efa929c2"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "fc7028da-2e59-11ef-0a80-0b8700a9ad4e", 
+    "revenue_kgs": "13824.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "a5e6f7c6c857b5386d9c7ca61055cd1b"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "7b0137f8-5e47-11f0-0a80-14ab000b61f8", 
+    "revenue_kgs": "954.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "b4f8b656d262eb77213a24b7bfe5ea18"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "dc41f70b-2e59-11ef-0a80-0b8700a96c77", 
+    "revenue_kgs": "6408.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "c01ec099f35634fc3429199f5f3b0570"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "dbf07112-2e59-11ef-0a80-0b8700a96bec", 
+    "revenue_kgs": "8847.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "c022013cbb3989723b91389be2784dff"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "967f5efd-280e-11f1-0a80-1ac60019a447", 
+    "revenue_kgs": "3690.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "c54758ee17faf0a875ab5503129c8088"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "a775b1da-95f5-11f0-0a80-1bbe001646a6", 
+    "revenue_kgs": "4590.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "cd19946b8b5e82d8f7502fe4807cfe2b"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "770e266c-1c89-11f0-0a80-05ee0000e0aa", 
+    "revenue_kgs": "6840.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "cfef73fe6ffddbc324f83ed6b45756fd"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "4f4efbc3-1c90-11f0-0a80-067600010905", 
+    "revenue_kgs": "954.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "d1b198b2073f119e797e896b433763e5"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "e99ec605-81a9-11f1-0a80-0f9a00047f6a", 
+    "revenue_kgs": "0.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "d91c264118e663c466840ee23976a3d0"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "d91cdf9c-6c8a-11f1-0a80-1a5c0017b7bb", 
+    "revenue_kgs": "8271.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "da32913e5d6589e96896779afafba7f2"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "a1397761-3a26-11f1-0a80-00cf00046c8e", 
+    "revenue_kgs": "0.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "ddb81d4322102ea83c7fd31575575dfe"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "dbffb770-2e59-11ef-0a80-0b8700a96bf9", 
+    "revenue_kgs": "35000.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "e3fd4ce1271481fb2b6759a8595c542c"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "247271e8-5e47-11f0-0a80-05ba000bdc98", 
+    "revenue_kgs": "2016.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "e513b2814107b9b0d8b26fed04d374c4"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "e738ebf5-2e59-11ef-0a80-0b8700a97f9a", 
+    "revenue_kgs": "3690.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "eb304afc4603e1beb797e8f434aa1f3b"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "db238fd6-2e59-11ef-0a80-0b8700a96a83", 
+    "revenue_kgs": "6678.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "f69b60aff8b2cafbdb9b26b0ccd32ff9"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "dbe9948e-2e59-11ef-0a80-0b8700a96be0", 
+    "revenue_kgs": "3762.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "f9fd8721b558d3e131825ee5f8d3d6b1"
+  }, 
+  {
+    "_loaded_at": "2026-07-28 23:02:14", 
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "product_id": "9f9f648b-3e20-11f1-0a80-07ae0007330b", 
+    "revenue_kgs": "22200.0", 
+    "sales_channel_id": null, 
+    "sales_channel_name": null, 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "ffea91f3dd7babff1c5c9be4358d4222"
+  }
+]

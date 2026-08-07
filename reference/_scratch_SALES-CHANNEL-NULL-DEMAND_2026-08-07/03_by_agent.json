@@ -1,0 +1,17 @@
+[
+  {
+    "agent_id": "13564a08-87c0-11ef-0a80-1568002f3f8d", 
+    "n_rows": "38", 
+    "sum_revenue_kgs": "383097.0"
+  }, 
+  {
+    "agent_id": "1c050410-87c0-11ef-0a80-1568002f452a", 
+    "n_rows": "1", 
+    "sum_revenue_kgs": "376488.0"
+  }, 
+  {
+    "agent_id": "178ba7b4-87c0-11ef-0a80-1568002f4222", 
+    "n_rows": "1", 
+    "sum_revenue_kgs": "61938.0"
+  }
+]
