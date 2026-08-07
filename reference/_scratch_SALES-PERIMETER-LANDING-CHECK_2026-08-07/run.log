@@ -1,0 +1,130 @@
+=== якорь начала ===
+Fri Aug  7 13:02:10 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== (1) окно наблюдения: MAX(_mart_refreshed_at) marts.sales_overview, MAX(_loaded_at) core.fact_sales_profit ===
+[
+  {
+    "core_loaded_at": "2026-08-07 12:05:50", 
+    "mart_refreshed_at": "2026-08-07 11:34:01"
+  }
+]
+
+=== (2) core.fact_sales_profit июль-2026: COUNT(*), SUM(revenue_kgs) ===
+[
+  {
+    "cnt": "4707", 
+    "sum_revenue_kgs": "1.125025818801E8"
+  }
+]
+
+=== (3) marts.sales_overview июль-2026: COUNT(*), SUM(revenue_kgs) ===
+[
+  {
+    "cnt": "4707", 
+    "sum_revenue_kgs": "1.125025819000001E8"
+  }
+]
+
+=== (4) stg_msklad.fact_sales_perimeter_staging: помесячный разрез по source_doc_type ===
+[
+  {
+    "cnt": "496", 
+    "month": "2026-05", 
+    "source_doc_type": "commissionreportin_sale", 
+    "sum_revenue_kgs": "1760573.8800000008"
+  }, 
+  {
+    "cnt": "1441", 
+    "month": "2026-05", 
+    "source_doc_type": "retaildemand", 
+    "sum_revenue_kgs": "1188421.9999999995"
+  }, 
+  {
+    "cnt": "1736", 
+    "month": "2026-06", 
+    "source_doc_type": "commissionreportin_sale", 
+    "sum_revenue_kgs": "6394683.369999989"
+  }, 
+  {
+    "cnt": "1772", 
+    "month": "2026-07", 
+    "source_doc_type": "commissionreportin_sale", 
+    "sum_revenue_kgs": "3334723.580000003"
+  }, 
+  {
+    "cnt": "22", 
+    "month": "2026-08", 
+    "source_doc_type": "commissionreportin_sale", 
+    "sum_revenue_kgs": "24591.300000000003"
+  }
+]
+
+=== (5) marts.sales_overview июль-2026: разрез по sales_channel_name ===
+[
+  {
+    "cnt": "2895", 
+    "sales_channel_name": "Оптовая торговля", 
+    "sum_revenue_kgs": "1.0834633531999996E8"
+  }, 
+  {
+    "cnt": "1812", 
+    "sales_channel_name": "Не указан", 
+    "sum_revenue_kgs": "4156246.580000007"
+  }
+]
+
+=== (6) marts.sales_overview июль-2026: разрез по manager_name ===
+[
+  {
+    "cnt": "2254", 
+    "manager_name": "Турдалиева А. М.", 
+    "sum_revenue_kgs": "7.666554118999994E7"
+  }, 
+  {
+    "cnt": "648", 
+    "manager_name": "Турсунбекова М.", 
+    "sum_revenue_kgs": "2.1303598380000003E7"
+  }, 
+  {
+    "cnt": "1385", 
+    "manager_name": "Омурбекова Э. О.", 
+    "sum_revenue_kgs": "1.1591560160000013E7"
+  }, 
+  {
+    "cnt": "66", 
+    "manager_name": null, 
+    "sum_revenue_kgs": "1964248.9000000001"
+  }, 
+  {
+    "cnt": "337", 
+    "manager_name": "Казакбаев Н. К.", 
+    "sum_revenue_kgs": "623637.4599999998"
+  }, 
+  {
+    "cnt": "14", 
+    "manager_name": "Бейшеналиева К.", 
+    "sum_revenue_kgs": "268909.5"
+  }, 
+  {
+    "cnt": "3", 
+    "manager_name": "Бактияр кызы Ч.", 
+    "sum_revenue_kgs": "85086.31"
+  }
+]
+
+=== якорь конца ===
+Fri Aug  7 13:02:26 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
