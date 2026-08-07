@@ -1,0 +1,52 @@
+=== UTC-якорь (начало) ===
+Fri Aug  7 13:03:55 UTC 2026
+=== личность вызывающего (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== gcloud scheduler jobs list (asia-east1) ===
+ID                            SCHEDULE    TIME_ZONE     STATE
+msklad-pipeline-hourly        0 * * * *   UTC           ENABLED
+cf-inventory-trigger          0 21 * * *  UTC           ENABLED
+invoices-daily-update         0 4 * * *   Asia/Bishkek  ENABLED
+loss-commission-daily-update  0 3 * * *   Asia/Bishkek  ENABLED
+finance-daily-update          0 3 * * *   Asia/Bishkek  ENABLED
+msklad-pipeline-weekly        0 1 * * 0   UTC           ENABLED
+
+=== gcloud workflows describe msklad-pipeline-weekly ===
+projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-weekly	2026-08-05T05:17:59.298028382Z	000004-6bf
+
+=== source сontents (weekly) — поиск подстроки perimeter ===
+0 совпадений perimeter в живом weekly
+
+=== gcloud workflows describe msklad-pipeline-hourly ===
+projects/msklad-bi-prod/locations/asia-east1/workflows/msklad-pipeline-hourly	2026-08-05T05:16:54.045332507Z	000004-5fc
+
+=== source contents (hourly) — поиск подстроки perimeter ===
+0 совпадений perimeter в живом hourly
+
+=== diff живой weekly source vs репо-снапшот ===
+--- reference/code/cf-facts/workflow_weekly.yaml	2026-08-07 19:01:37
++++ /tmp/msklad_weekly_source_live.yaml	2026-08-07 19:04:04
+@@ -210,3 +210,4 @@
+                 severity: INFO
+           - return_result:
+               return: ${promote_result.body}
++
+DIFF найден (см. выше)
+
+=== личность вызывающего (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC-якорь (конец) ===
+Fri Aug  7 13:04:09 UTC 2026

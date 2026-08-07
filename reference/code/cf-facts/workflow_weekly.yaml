@@ -134,6 +134,34 @@ main:
             - raise_returns:
                 raise: ${e}
 
+    # ── STEP 9в: периметр продаж (retaildemand + commissionreportin, staging, 90d rolling) ──
+    # SALES-PERIMETER-EXTEND (ADR-103 §8). Пишет ТОЛЬКО в
+    # stg_msklad.fact_sales_perimeter_staging — под гейт продаж не подпадает по тому же
+    # основанию, по которому туда вынесены закупки/возвраты (DQ-GATE-SCOPE-SPLIT, ADR-122).
+    - step_perimeter:
+        try:
+          call: http.post
+          args:
+            url: ${cf_facts}
+            auth:
+              type: OIDC
+            body:
+              run_id: ${run_id}
+              mode: "perimeter"
+              window_days: 90
+            timeout: 600
+          result: perimeter_result
+        except:
+          as: e
+          steps:
+            - log_perimeter_error:
+                call: sys.log
+                args:
+                  text: ${"[WEEKLY] step_perimeter FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                  severity: ERROR
+            - raise_perimeter:
+                raise: ${e}
+
     # ── STEP 4: DQ Gate ───────────────────────────────────────────────────────
     - step_dq:
         try:
@@ -198,6 +226,33 @@ main:
                   text: ${"[WEEKLY] step_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
                   severity: ERROR
             - raise_promote:
+                raise: ${e}
+
+    # ── STEP 9г: периметр продаж — promote staging → core (MERGE в core.fact_sales_profit) ──
+    # ТОЛЬКО после step_perimeter и ТОЛЬКО после гейта: пишет в ту же таблицу, что гейт
+    # защищает, поэтому стоит ПОСЛЕ step_promote, а не рядом со step_perimeter.
+    - step_perimeter_promote:
+        try:
+          call: http.post
+          args:
+            url: ${cf_facts}
+            auth:
+              type: OIDC
+            body:
+              run_id: ${run_id}
+              mode: "perimeter_promote"
+              window_days: 90
+            timeout: 540
+          result: perimeter_promote_result
+        except:
+          as: e
+          steps:
+            - log_perimeter_promote_error:
+                call: sys.log
+                args:
+                  text: ${"[WEEKLY] step_perimeter_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+                  severity: ERROR
+            - raise_perimeter_promote:
                 raise: ${e}
 
     # ── DONE ──────────────────────────────────────────────────────────────────
