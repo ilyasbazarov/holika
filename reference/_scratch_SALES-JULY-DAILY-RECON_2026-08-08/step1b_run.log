@@ -1,0 +1,30 @@
+Fri Aug  7 19:26:21 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+--- totals, filtered population ---
+[
+  {
+    "n_rows": "2935", 
+    "sum_revenue_kgs": "1.0916785830010001E8"
+  }
+]
+--- orphan candidates, filtered population, _loaded_at < last mass run 2026-07-19 ---
+[
+  {
+    "n_rows": "8", 
+    "sum_revenue_kgs": "22668.0108"
+  }
+]
+Fri Aug  7 19:26:27 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
