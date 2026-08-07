@@ -52,6 +52,9 @@ STAGING_SCHEMA = [
     bigquery.SchemaField("transaction_date_raw", "STRING"),   # "YYYY-MM-DD HH:MM:SS.mmm"
     bigquery.SchemaField("product_id",           "STRING"),
     bigquery.SchemaField("agent_id",             "STRING"),
+    # SALES-DOCUMENT-OWNER-INGEST (ADR-128): сотрудник-владелец ДОКУМЕНТА entity/demand.owner,
+    # тот же приём, что agent_id. НЕ обновляется в WHEN MATCHED UPDATE SET — консистентно с agent_id.
+    bigquery.SchemaField("document_owner_employee_id", "STRING"),
     bigquery.SchemaField("quantity",             "FLOAT64"),
     bigquery.SchemaField("price_kgs",            "FLOAT64"),  # price / 100
     bigquery.SchemaField("discount",             "FLOAT64"),  # percent 0–100
@@ -247,6 +250,7 @@ USING (
     s.entity_type,
     s.discount,
     s.agent_id,
+    s.document_owner_employee_id,
     s.quantity                                                      AS sell_quantity,
     CAST(0.0 AS FLOAT64)                                            AS return_quantity,
     s.revenue_kgs                                                   AS sell_sum_kgs,
@@ -315,6 +319,7 @@ WHEN NOT MATCHED THEN INSERT (
   product_id,
   entity_type,
   agent_id,
+  document_owner_employee_id,
   sell_quantity,
   return_quantity,
   sell_sum_kgs,
@@ -337,6 +342,7 @@ WHEN NOT MATCHED THEN INSERT (
   S.product_id,
   S.entity_type,
   S.agent_id,
+  S.document_owner_employee_id,
   S.sell_quantity,
   S.return_quantity,
   S.sell_sum_kgs,

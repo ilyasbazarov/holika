@@ -92,6 +92,12 @@ def fetch_demand_positions(
             demand.get("agent", {}).get("meta", {}).get("href", "")
         )
         agent_id = parse_href(agent_href)
+        # SALES-DOCUMENT-OWNER-INGEST (ADR-128): сотрудник-владелец ДОКУМЕНТА
+        # `entity/demand.owner`, тот же приём, что и agent_id из agent.meta.href.
+        owner_href = (
+            demand.get("owner", {}).get("meta", {}).get("href", "")
+        )
+        document_owner_employee_id = parse_href(owner_href)
         moment_str = demand.get("moment", "")  # "2025-05-06 14:05:00.000"
 
         # ── Sales channel
@@ -106,6 +112,11 @@ def fetch_demand_positions(
 
         if not agent_id:
             log.warning("Demand %s has no agent — agent_id will be NULL", demand_id)
+
+        if not document_owner_employee_id:
+            log.warning(
+                "Demand %s has no owner — document_owner_employee_id will be NULL", demand_id
+            )
 
         # Fetch positions for this demand (separate request — expand doesn't work)
         positions = paginate_entity(
@@ -147,6 +158,7 @@ def fetch_demand_positions(
                 "transaction_date_raw": moment_str,
                 "product_id":           product_id,
                 "agent_id":             agent_id,
+                "document_owner_employee_id": document_owner_employee_id,
                 "quantity":             quantity,
                 "price_kgs":            price_kgs,
                 "discount":             discount,
