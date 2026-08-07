@@ -1,0 +1,104 @@
+=== UTC anchor (start) ===
+Fri Aug  7 15:13:28 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== describe new cf-facts revision ===
+{
+  "buildConfig": {
+    "automaticUpdatePolicy": {},
+    "build": "projects/420804682491/locations/asia-east1/builds/1165aa3a-fb58-444d-80dc-37b6277b7d57",
+    "dockerRegistry": "ARTIFACT_REGISTRY",
+    "dockerRepository": "projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts",
+    "entryPoint": "main",
+    "runtime": "python312",
+    "serviceAccount": "projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com",
+    "source": {
+      "storageSource": {
+        "bucket": "gcf-v2-sources-420804682491-asia-east1",
+        "generation": "1786115536540209",
+        "object": "cf-facts/function-source.zip"
+      }
+    },
+    "sourceProvenance": {
+      "resolvedStorageSource": {
+        "bucket": "gcf-v2-sources-420804682491-asia-east1",
+        "generation": "1786115536540209",
+        "object": "cf-facts/function-source.zip"
+      }
+    }
+  },
+  "createTime": "2026-05-06T08:26:29.388991725Z",
+  "environment": "GEN_2",
+  "labels": {
+    "deployment-tool": "cli-gcloud"
+  },
+  "name": "projects/msklad-bi-prod/locations/asia-east1/functions/cf-facts",
+  "satisfiesPzi": true,
+  "serviceConfig": {
+    "allTrafficOnLatestRevision": true,
+    "availableCpu": "1",
+    "availableMemory": "2048M",
+    "environmentVariables": {
+      "LOG_EXECUTION_ID": "true"
+    },
+    "ingressSettings": "ALLOW_ALL",
+    "maxInstanceCount": 5,
+    "maxInstanceRequestConcurrency": 1,
+    "minInstanceCount": 1,
+    "revision": "cf-facts-00009-tul",
+    "secretEnvironmentVariables": [
+      {
+        "key": "MSKLAD_TOKEN",
+        "projectId": "420804682491",
+        "secret": "msklad-token",
+        "version": "latest"
+      }
+    ],
+    "service": "projects/msklad-bi-prod/locations/asia-east1/services/cf-facts",
+    "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+    "timeoutSeconds": 540,
+    "uri": "https://cf-facts-xw5u2boozq-de.a.run.app"
+  },
+  "state": "ACTIVE",
+  "updateTime": "2026-08-07T15:13:10.253085704Z",
+  "url": "https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts"
+}
+=== resolved: revision=cf-facts-00009-tul generation=1786115536540209 ===
+=== download archive by pinned generation ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786115536540209 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY/reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step7_work/new/function-source.zip
+  
+..........................
+=== sha256 of new archive contents ===
+637074e5b2d75cea647e3e65acd952b84593e8eb2cf2807c9b4cd4123d9f7e6b  ./bq_ops.py
+56e77eff536ce8fe2a1c3a015c2633ed1317e8a9cbbd9729165d5a7af38de63a  ./config.py
+2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07  ./deploy_and_workflow.sh
+88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1  ./fetch_byvariant.py
+a7f2c9042828fcf2143027fe9292b3f7995f3e7a5364e711fb39e79166bddf72  ./fetch_demands.py
+f609d5656fe6cf79941ffb3c904a122afabe2f5b7633a846a7f5ae713314275e  ./fetch_perimeter.py
+5db807fee2da21c31c5fa3aeed77e16d1a4ae04193f55831534b89c5e9158486  ./fetch_purchases.py
+7ce9373aa084258e45d2ba12c8f1bc2812b249958eec400c4181e4802793ae56  ./fetch_returns.py
+aac5dee5add76513f52e8909a32925f261ad25d09ef55a1a6013f5262cd01c48  ./helpers.py
+97b9ce3aa54085aab0739fd315890db22be8c837e829a9170ebce385ba6642d8  ./main.py
+0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051  ./requirements.txt
+=== byte-compare: new archive vs pushed branch cf-facts/ ===
+Only in /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY/reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/branch_check/repo/cf-facts: .gcloudignore
+=== check for known junk classes ===
+(конец списка мусора, пусто = нет мусора)
+=== UTC anchor (end) ===
+Fri Aug  7 15:13:40 UTC 2026
+=== caller identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== workdir path (not cleaned up, ADR-043) ===
+/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY/reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step7_work

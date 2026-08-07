@@ -247,3 +247,83 @@ step_perimeter_promote → done`. YAML валиден (`pyyaml`). `msklad-pipeli
 ревизии `000004-6bf`, сохранённым до деплоя в
 `reference/_scratch_SALES-PERIMETER-CADENCE-DEPLOY_2026-08-07/step1_weekly_live_source.yaml`
 (sha256 `9b7fcee0...`).
+
+---
+
+## Деплой `cf-facts` — метка канала периметра продаж (2026-08-07, класс B, мандат `ADR-135`)
+
+**Что зафиксировано:** соответствие «ревизия ↔ коммит» для патча метки канала периметра продаж
+(`entity/retaildemand` → «Розница», `entity/commissionreportin` → «Комиссия», константа по типу
+документа, `ADR-134`), задача `SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY`. Деплой ПОВЕРХ базы
+`cf-facts-00008-zen` (периметр продаж уже был расширен предыдущим деплоем
+`SALES-INGEST-PATCH-DEPLOY`). Процедура — `05_CONVENTIONS §Процедура деплоя … вариант Б`
+(`reference/deploy_procedure_2026-08-03.md`).
+
+| Поле | До | После |
+|---|---|---|
+| Ревизия `cf-facts` | `cf-facts-00008-zen` | **`cf-facts-00009-tul`** |
+| `generation` архива | `1786093276804812` | **`1786115536540209`** |
+| `updateTime` (UTC) | `2026-08-07T09:02:36.835840920Z` | **`2026-08-07T15:13:10.253085704Z`** |
+
+**Шаг 1 (свежая сверка перед деплоем):** живая ревизия перед деплоем подтверждена той же
+(`cf-facts-00008-zen`, `generation 1786093276804812`, `updateTime` не изменился) — дрейфа между
+сессиями нет. Лог — `reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step0_run.log`.
+
+**Read-back (шаг 7):** архив новой ревизии скачан по закреплённому `generation`, распакован, sha256
+всех 11 файлов сверен побайтово с веткой `deploy/cf-facts-2026-08-07-channel` — совпадение полное
+(единственное отличие — `.gcloudignore`, который в развёрнутый архив закономерно не попадает). Мусора
+(`.bak`/`__pycache__`/`.DS_Store`/`src.zip`/разовые patch-скрипты) в новом архиве нет. Полный лог —
+`reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step7_run.log`.
+
+sha256 изменённых файлов (новая ревизия):
+
+| Файл | sha256 |
+|---|---|
+| `bq_ops.py` | `637074e5b2d75cea647e3e65acd952b84593e8eb2cf2807c9b4cd4123d9f7e6b` |
+| `fetch_perimeter.py` | `f609d5656fe6cf79941ffb3c904a122afabe2f5b7633a846a7f5ae713314275e` |
+
+Незатронутые файлы (`config.py`/`main.py`/`fetch_demands.py`/`fetch_purchases.py`/`fetch_returns.py`/
+`helpers.py`/`requirements.txt`/`deploy_and_workflow.sh`) — sha256 идентичен предыдущей ревизии
+`cf-facts-00008-zen`, кодово не тронуты.
+
+**Функциональная проверка (шаг 8, существующие режимы):** живой прогон `hourly`
+(`run_id=verify_deploy_2026-08-07_channel_hourly`) — `status=ok`, `demand_positions_fetched=403`,
+`staging_rows_loaded=403`, ни одной ошибки. Лог —
+`reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step8_run.log`.
+
+**Функциональная проверка (шаг 9, новые режимы, порядок staging → core соблюдён):**
+
+- **9а, `perimeter` (staging).** `run_id=verify_deploy_2026-08-07_channel_perimeter`. Клиент `gcloud`
+  оборвался по таймауту (client-side), сервер отработал успешно — подтверждено прямым опросом
+  `stg_msklad.fact_sales_perimeter_staging`, слепой повтор не делался. Загружено: `retaildemand` —
+  506 документов / 1441 строка / `1 188 422,00` KGS; `commissionreportin_sale` — 24 документа / 4026
+  строк / `11 514 572,13` KGS. **Точное совпадение** с `MANIFEST.md` §«Деплой `cf-facts` — периметр
+  продаж (2026-08-07)» §9а — периметр отбора документов не изменился, эта задача его не расширяет.
+  `sales_channel_name` заполнено «Розница»/«Комиссия» по типу документа, `sales_channel_id` = `NULL`
+  у обоих типов — подтверждено прямым запросом. Полные логи и запросы —
+  `reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step9a_*`.
+- **9б, `perimeter_promote` (core), ТОЛЬКО после 9а.** До MERGE: `core.fact_sales_profit` итого —
+  `42 784` строки / `691 376 392,83` KGS; строк периметра (join по
+  `transaction_id = TO_HEX(MD5(CONCAT(doc_id,'|',position_id)))` против свежего снимка staging) —
+  `5 467`, у всех `sales_channel_name = NULL` (наследие прошлого прогона `SALES-INGEST-PATCH-DEPLOY`,
+  когда метки не было). Команда отчиталась `affected_rows=5467`. Read-back прямым запросом (не по
+  отчёту команды): после MERGE — итого `core.fact_sales_profit` не изменился (`42 784` строки /
+  `691 376 392,83` KGS — MERGE только обновил существующие строки, новых не добавил).
+  **ГЛАВНОЕ ЧИСЛО:** разрез `sales_channel_name` по периметру ПОСЛЕ — `4 026` строк «Комиссия» +
+  `1 441` строка «Розница» = `5 467`; `NULL` упал **с 5 467 до 0**. Сумма периметра
+  `12 702 994,13` KGS не изменилась до/после. Полные логи и запросы —
+  `reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step9b_*`.
+
+**Код-репозиторий `holika-prod`:**
+- Ветка `deploy/cf-facts-2026-08-07-channel` — коммит `84d6f71` (подготовлена и запушена предыдущей
+  сессией), содержит патч, перенесённый по diff против `master`.
+- Слияние в `master` — коммит `7e039bd` (`merge --no-ff`), выполнено и запушено ПОСЛЕ успешного
+  read-back (шаг 7) и функциональных проверок (шаги 8-9), как требует процедура.
+
+**Откат (не понадобился):** повторный деплой именем ревизии `cf-facts-00008-zen`
+(`gcloud functions deploy cf-facts --gen2 --region=asia-east1 --project=msklad-bi-prod
+--source=gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786093276804812 ...`)
+плюс, если понадобится откатить данные, `UPDATE core.fact_sales_profit SET sales_channel_id=NULL,
+sales_channel_name=NULL WHERE transaction_id IN (SELECT TO_HEX(MD5(CONCAT(doc_id,'|',position_id)))
+FROM stg_msklad.fact_sales_perimeter_staging WHERE run_id='verify_deploy_2026-08-07_channel_perimeter')`
+(строки не создавались этим патчем, только помечались — откат данных не требует DELETE).

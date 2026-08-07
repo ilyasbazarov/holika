@@ -1,0 +1,11 @@
+=== UTC anchor (start) ===
+Fri Aug  7 15:15:15 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== call cf-facts mode=perimeter ===

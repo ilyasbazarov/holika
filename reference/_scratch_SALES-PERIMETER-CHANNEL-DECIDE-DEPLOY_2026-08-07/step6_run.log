@@ -1,0 +1,77 @@
+=== UTC anchor (start) ===
+Fri Aug  7 15:11:55 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== deploy cf-facts from branch checkout (/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY/reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/branch_check/repo/cf-facts) ===
+Preparing function...
+...........done.
+Updating function (may take a while)...
+[Build].............................................................................................................................................................................................................................................................................................................................................................................................done
+[Service]...........................................................................................................................warning
+Completed with warnings:
+  [INFO] A new revision will be deployed serving with 100% traffic.
+You can view your function in the Cloud Console here: https://console.cloud.google.com/functions/details/asia-east1/cf-facts?project=msklad-bi-prod
+
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/420804682491/locations/asia-east1/builds/1165aa3a-fb58-444d-80dc-37b6277b7d57
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts
+  entryPoint: main
+  runtime: python312
+  serviceAccount: projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786115536540209'
+      object: cf-facts/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786115536540209'
+      object: cf-facts/function-source.zip
+createTime: '2026-05-06T08:26:29.388991725Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/msklad-bi-prod/locations/asia-east1/functions/cf-facts
+satisfiesPzi: true
+serviceConfig:
+  allTrafficOnLatestRevision: true
+  availableCpu: '1'
+  availableMemory: 2048M
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceCount: 5
+  maxInstanceRequestConcurrency: 1
+  minInstanceCount: 1
+  revision: cf-facts-00009-tul
+  secretEnvironmentVariables:
+  - key: MSKLAD_TOKEN
+    projectId: '420804682491'
+    secret: msklad-token
+    version: latest
+  service: projects/msklad-bi-prod/locations/asia-east1/services/cf-facts
+  serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  timeoutSeconds: 540
+  uri: https://cf-facts-xw5u2boozq-de.a.run.app
+state: ACTIVE
+updateTime: '2026-08-07T15:13:10.253085704Z'
+url: https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts
+=== UTC anchor (end) ===
+Fri Aug  7 15:13:15 UTC 2026
+=== caller identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
