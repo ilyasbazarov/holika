@@ -366,6 +366,16 @@ WHEN NOT MATCHED THEN INSERT (
   S.discount,
   S._loaded_at
 )
+
+-- SALES-REFRESH-WINDOW (ADR-144 §8, узкая форма): строки, исчезнувшие из источника внутри
+-- окна выборки, удаляются. Условие DELETE обязано ПОВТОРЯТЬ границу окна ON явно (C2,
+-- ADR-101 §7 ловушка ii) — без этого повтора `WHEN NOT MATCHED BY SOURCE` по умолчанию
+-- матчит и удаляет ВСЮ историю за пределами окна (там ON тоже не находит пару), а не только
+-- сироты внутри окна. window_days тот же параметр, что несёт ON — единственный параметр в
+-- узкой форме, режим `topoff` с раздельными окнами выборки/MERGE этим патчем не строится.
+WHEN NOT MATCHED BY SOURCE
+  AND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY)
+THEN DELETE
 """
 
 
@@ -442,19 +452,16 @@ def _build_perimeter_merge_sql(window_days: int) -> str:
     MERGE периметра (retaildemand + commissionreportin_sale) → core.fact_sales_profit.
 
     ОТДЕЛЬНЫЙ от `_build_merge_sql` (прецедент ADR-024): своя staging-таблица
-    (`STG_FACT_SALES_PERIMETER`), свой ON. Не трогает и не расширяет запрос
-    `_build_merge_sql` — тот патчится отдельной задачей `SALES-REFRESH-WINDOW`
-    (окно/сироты/замороженная дата, `ADR-100 §7`); смешивать периметр с тем патчем
-    запрещено брифом `SALES-INGEST-PATCH`.
+    (`STG_FACT_SALES_PERIMETER`), свой ON.
 
     C1 (ADR-030): явный `INSERT (колонки)`, `INSERT ROW` не используется.
 
-    C2 (ADR-101 §7): ветки удаления НЕТ. Причина названа, не скрыта — периметр
-    новый (без исторического мусора на момент постройки), объём мал (~513 док/мес,
-    `reference/parity_sales_discriminate_step2_2026-08-02.md`). Тот же класс дефекта
-    (строки-сироты MERGE без ветки удаления) для ОСНОВНОГО ингеста уже адресуется
-    отдельной задачей (`SALES-REFRESH-WINDOW`); симметричный фикс для периметра —
-    будущая отдельная задача, не изобретается здесь молча под видом полноты.
+    C2 (ADR-101 §7, SALES-REFRESH-WINDOW/ADR-144 §7/§8): ветка удаления ЕСТЬ —
+    узкая форма фикса `SALES-REFRESH-WINDOW` называет ОБА `MERGE` cf-facts поимённо
+    (`ADR-144 §7`), симметричный фикс для периметра больше не отложен на будущую
+    отдельную задачу. Условие `WHEN NOT MATCHED BY SOURCE` несёт собственное явное
+    ограничение по дате, повторяющее границу `ON` (`ADR-101 §7` ловушка ii) — без
+    повтора удалило бы всю историю за пределами окна, не только сирот внутри него.
 
     SALES-PERIMETER-CHANNEL-DECIDE: `sales_channel_id`/`sales_channel_name` читаются
     из staging (константа типа документа, проставленная `fetch_perimeter.py`), не
@@ -573,6 +580,14 @@ WHEN NOT MATCHED THEN INSERT (
   S.discount,
   S._loaded_at
 )
+
+-- SALES-REFRESH-WINDOW (ADR-144 §8, узкая форма): второй MERGE того же класса (ADR-144 §7).
+-- Тот же явный повтор границы ON в условии DELETE, то же обоснование (C2, ADR-101 §7
+-- ловушка ii). Прежний докстринг функции («ветки удаления НЕТ, будущая отдельная задача»)
+-- обновлён ниже — задача больше не будущая, это она и есть.
+WHEN NOT MATCHED BY SOURCE
+  AND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY)
+THEN DELETE
 """
 
 
