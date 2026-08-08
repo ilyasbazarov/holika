@@ -19,7 +19,7 @@ from datetime import date
 
 import requests as req_lib
 
-from helpers import get_token, paginate_entity, parse_href
+from helpers import get_token, paginate_entity, parse_href, parse_moment_to_bishkek_date
 
 log = logging.getLogger(__name__)
 
@@ -114,9 +114,7 @@ def fetch_return_positions(
 
 def _parse_moment_kgt(moment_str: str) -> str:
     """
-    Парсит moment МойСклада ('2026-01-15 14:30:00.000') в DATE строку по KGT (UTC+6).
-    Возвращает 'YYYY-MM-DD'.
-    МойСклад отдаёт время в UTC+6 (Asia/Bishkek) без явного offset → прямой парсинг.
+    Парсит moment МойСклада ('2026-01-15 14:30:00.000') в DATE строку по Asia/Bishkek.
+    Возвращает 'YYYY-MM-DD'. МойСклад отдаёт время в UTC (ADR-088 §1) — конвертация +6ч.
     """
-    # moment формат: '2026-01-15 14:30:00.000'
-    return moment_str[:10]  # берём только дату — время уже в KGT
+    return parse_moment_to_bishkek_date(moment_str)

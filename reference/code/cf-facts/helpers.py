@@ -7,7 +7,7 @@ import gzip
 import json
 import logging
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any, Generator, Optional
 
 import requests
@@ -158,3 +158,14 @@ def now_utc_str() -> str:
 def run_ts() -> str:
     """Compact timestamp string for run_id / file names: YYYYMMDDTHHMMSS."""
     return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+
+
+def parse_moment_to_bishkek_date(moment_str: str) -> str:
+    """
+    Парсит moment МойСклада (UTC, '2026-01-15 14:30:00.000') в DATE-строку
+    по Asia/Bishkek (UTC+6). Возвращает 'YYYY-MM-DD'.
+    До фикса (Q-77 / ADR-088 §4): брались первые 10 символов строки — UTC-дата
+    трактовалась как уже местная.
+    """
+    dt_utc = datetime.strptime(moment_str[:19], "%Y-%m-%d %H:%M:%S")
+    return (dt_utc + timedelta(hours=6)).strftime("%Y-%m-%d")
