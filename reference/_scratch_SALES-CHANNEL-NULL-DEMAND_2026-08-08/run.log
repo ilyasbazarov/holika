@@ -1,0 +1,38 @@
+=== UTC-якорь (начало) ===
+Sat Aug  8 17:08:53 UTC 2026
+=== личность вызывающего (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== чтение токена (значение не печатается) ===
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+=== list GET 2026-07-02: rows=12 ===
+matched agent 178ba7b4-87c0-11ef-0a80-1568002f4222: 1 doc(s)
+  doc=cd1f2cac-75d5-11f1-0a80-114600c229cb has_salesChannel_key_in_LIST=True
+=== list GET 2026-07-21: rows=17 ===
+matched agent 13564a08-87c0-11ef-0a80-1568002f3f8d: 3 doc(s)
+  doc=135560a2-84c0-11f1-0a80-1c8f00262f2c has_salesChannel_key_in_LIST=True
+  doc=76a5aecf-84bf-11f1-0a80-1c8f0025ff8b has_salesChannel_key_in_LIST=True
+  doc=e4693f61-84bf-11f1-0a80-1c8f0026199d has_salesChannel_key_in_LIST=True
+found_ids for single-GET follow-up: ['cd1f2cac-75d5-11f1-0a80-114600c229cb', '135560a2-84c0-11f1-0a80-1c8f00262f2c', '76a5aecf-84bf-11f1-0a80-1c8f0025ff8b']
+=== single GET cd1f2cac-75d5-11f1-0a80-114600c229cb (2026-07-02): list_has_salesChannel=True single_has_salesChannel=True salesChannel_value_present=True ===
+=== single GET 135560a2-84c0-11f1-0a80-1c8f00262f2c (2026-07-21): list_has_salesChannel=True single_has_salesChannel=True salesChannel_value_present=True ===
+=== single GET 76a5aecf-84bf-11f1-0a80-1c8f0025ff8b (2026-07-21): list_has_salesChannel=True single_has_salesChannel=True salesChannel_value_present=True ===
+TOTAL_GET_CALLS=5
+=== проверка: значение токена не просочилось в файлы сессии ===
+OK: токен не найден в файлах сессии
+=== личность вызывающего (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC-якорь (конец) ===
+Sat Aug  8 17:09:00 UTC 2026
