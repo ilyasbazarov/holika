@@ -1,0 +1,87 @@
+diff --git a/reference/code/cf-facts/fetch_purchases.py b/reference/code/cf-facts/fetch_purchases.py
+index 2364749..bd78925 100644
+--- a/reference/code/cf-facts/fetch_purchases.py
++++ b/reference/code/cf-facts/fetch_purchases.py
+@@ -33,21 +33,20 @@ from typing import Optional
+ import requests
+ 
+ from config import IN_TRANSIT_STATUS_ID, PURCHASE_ORDER_STATES
+-from helpers import now_utc_str, paginate_entity, parse_href
++from helpers import now_utc_str, paginate_entity, parse_href, parse_moment_to_bishkek_date
+ 
+ log = logging.getLogger(__name__)
+ 
+ 
+ def _parse_date_kgt(moment_str: str) -> Optional[str]:
+     """
+-    Parse МойСклад moment string to DATE (KGT timezone).
+-    Input:  "2025-10-31 08:16:00.000"
+-    Output: "2025-10-31"
+-    МойСклад stores moments in KGT (UTC+6), so no timezone conversion needed.
++    Parse МойСклад moment string to DATE by Asia/Bishkek.
++    Input:  "2025-10-31 08:16:00.000" (UTC, ADR-088 §1)
++    Output: "2025-10-31" (UTC+6 conversion)
+     """
+     if not moment_str:
+         return None
+-    return moment_str[:10]
++    return parse_moment_to_bishkek_date(moment_str)
+ 
+ 
+ def fetch_purchase_positions(
+diff --git a/reference/code/cf-facts/fetch_returns.py b/reference/code/cf-facts/fetch_returns.py
+index 2ed5570..37abe88 100644
+--- a/reference/code/cf-facts/fetch_returns.py
++++ b/reference/code/cf-facts/fetch_returns.py
+@@ -19,7 +19,7 @@ from datetime import date
+ 
+ import requests as req_lib
+ 
+-from helpers import get_token, paginate_entity, parse_href
++from helpers import get_token, paginate_entity, parse_href, parse_moment_to_bishkek_date
+ 
+ log = logging.getLogger(__name__)
+ 
+@@ -114,9 +114,7 @@ def fetch_return_positions(
+ 
+ def _parse_moment_kgt(moment_str: str) -> str:
+     """
+-    Парсит moment МойСклада ('2026-01-15 14:30:00.000') в DATE строку по KGT (UTC+6).
+-    Возвращает 'YYYY-MM-DD'.
+-    МойСклад отдаёт время в UTC+6 (Asia/Bishkek) без явного offset → прямой парсинг.
++    Парсит moment МойСклада ('2026-01-15 14:30:00.000') в DATE строку по Asia/Bishkek.
++    Возвращает 'YYYY-MM-DD'. МойСклад отдаёт время в UTC (ADR-088 §1) — конвертация +6ч.
+     """
+-    # moment формат: '2026-01-15 14:30:00.000'
+-    return moment_str[:10]  # берём только дату — время уже в KGT
+\ No newline at end of file
++    return parse_moment_to_bishkek_date(moment_str)
+\ No newline at end of file
+diff --git a/reference/code/cf-facts/helpers.py b/reference/code/cf-facts/helpers.py
+index e75c59d..37b34f4 100644
+--- a/reference/code/cf-facts/helpers.py
++++ b/reference/code/cf-facts/helpers.py
+@@ -7,7 +7,7 @@ import gzip
+ import json
+ import logging
+ import time
+-from datetime import datetime, timezone
++from datetime import datetime, timedelta, timezone
+ from typing import Any, Generator, Optional
+ 
+ import requests
+@@ -158,3 +158,14 @@ def now_utc_str() -> str:
+ def run_ts() -> str:
+     """Compact timestamp string for run_id / file names: YYYYMMDDTHHMMSS."""
+     return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
++
++
++def parse_moment_to_bishkek_date(moment_str: str) -> str:
++    """
++    Парсит moment МойСклада (UTC, '2026-01-15 14:30:00.000') в DATE-строку
++    по Asia/Bishkek (UTC+6). Возвращает 'YYYY-MM-DD'.
++    До фикса (Q-77 / ADR-088 §4): брались первые 10 символов строки — UTC-дата
++    трактовалась как уже местная.
++    """
++    dt_utc = datetime.strptime(moment_str[:19], "%Y-%m-%d %H:%M:%S")
++    return (dt_utc + timedelta(hours=6)).strftime("%Y-%m-%d")

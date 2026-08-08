@@ -33,21 +33,20 @@ from typing import Optional
 import requests
 
 from config import IN_TRANSIT_STATUS_ID, PURCHASE_ORDER_STATES
-from helpers import now_utc_str, paginate_entity, parse_href
+from helpers import now_utc_str, paginate_entity, parse_href, parse_moment_to_bishkek_date
 
 log = logging.getLogger(__name__)
 
 
 def _parse_date_kgt(moment_str: str) -> Optional[str]:
     """
-    Parse МойСклад moment string to DATE (KGT timezone).
-    Input:  "2025-10-31 08:16:00.000"
-    Output: "2025-10-31"
-    МойСклад stores moments in KGT (UTC+6), so no timezone conversion needed.
+    Parse МойСклад moment string to DATE by Asia/Bishkek.
+    Input:  "2025-10-31 08:16:00.000" (UTC, ADR-088 §1)
+    Output: "2025-10-31" (UTC+6 conversion)
     """
     if not moment_str:
         return None
-    return moment_str[:10]
+    return parse_moment_to_bishkek_date(moment_str)
 
 
 def fetch_purchase_positions(

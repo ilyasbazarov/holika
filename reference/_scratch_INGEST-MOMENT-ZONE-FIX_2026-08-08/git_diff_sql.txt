@@ -1,0 +1,22 @@
+diff --git a/reference/sql/sq_marts_expenses.sql b/reference/sql/sq_marts_expenses.sql
+index 1135f73..f8756f3 100644
+--- a/reference/sql/sq_marts_expenses.sql
++++ b/reference/sql/sq_marts_expenses.sql
+@@ -17,7 +17,7 @@ WITH src AS (
+   UNION ALL
+ 
+   SELECT
+-    CAST(l.moment AS DATE)                      AS moment,
++    DATE(l.moment, 'Asia/Bishkek')               AS moment,
+     'loss'                                      AS payment_type,
+     l.expense_item_id,
+     COALESCE(l.expense_item_name, 'Не указана') AS expense_item_name,
+@@ -41,7 +41,7 @@ WITH src AS (
+   UNION ALL
+ 
+   SELECT
+-    CAST(c.moment AS DATE)       AS moment,
++    DATE(c.moment, 'Asia/Bishkek') AS moment,
+     'commission'                 AS payment_type,
+     CAST(NULL AS STRING)         AS expense_item_id,
+     'Расходы маркетплейсов'      AS expense_item_name,
