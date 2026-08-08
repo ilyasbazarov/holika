@@ -53,7 +53,9 @@ STAGING_SCHEMA = [
     bigquery.SchemaField("product_id",           "STRING"),
     bigquery.SchemaField("agent_id",             "STRING"),
     # SALES-DOCUMENT-OWNER-INGEST (ADR-128): сотрудник-владелец ДОКУМЕНТА entity/demand.owner,
-    # тот же приём, что agent_id. НЕ обновляется в WHEN MATCHED UPDATE SET — консистентно с agent_id.
+    # тот же приём разбора href, что у agent_id. В отличие от agent_id колонка ОБНОВЛЯЕТСЯ в
+    # WHEN MATCHED THEN UPDATE SET (ADR-136 §2): расхождение с agent_id намеренное — без обновления
+    # уже промоутнутые строки остались бы с NULL и разрез по сотруднику не изменился бы вовсе.
     bigquery.SchemaField("document_owner_employee_id", "STRING"),
     bigquery.SchemaField("quantity",             "FLOAT64"),
     bigquery.SchemaField("price_kgs",            "FLOAT64"),  # price / 100
@@ -530,9 +532,9 @@ WHEN MATCHED THEN UPDATE SET
   T.revenue_usd     = S.revenue_usd,
   T.cogs_usd        = S.cogs_usd,
   T.margin_usd      = S.margin_usd,
-  T.discount        = S.discount,
   T.sales_channel_id   = S.sales_channel_id,
   T.sales_channel_name = S.sales_channel_name,
+  T.discount        = S.discount,
   T._loaded_at      = S._loaded_at
 
 WHEN NOT MATCHED THEN INSERT (
