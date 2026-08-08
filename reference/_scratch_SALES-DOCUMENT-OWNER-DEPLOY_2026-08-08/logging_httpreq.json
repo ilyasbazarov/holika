@@ -1,0 +1,78 @@
+[
+  {
+    "httpRequest": {
+      "latency": "465.967854104s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "95.87.68.36",
+      "requestMethod": "POST",
+      "requestSize": "1249",
+      "requestUrl": "https://cf-facts-xw5u2boozq-de.a.run.app/",
+      "responseSize": "381",
+      "serverIp": "34.143.76.2",
+      "status": 200,
+      "userAgent": "google-cloud-sdk gcloud/577.0.0 agent-name/claude-code_2-1-219_agent command/gcloud.functions.call invocation-id/ab7c8a39cab8405fb8b3d7b22ed5f96d environment/None environment-version/None client-os/MACOSX client-os-ver/24.3.0 client-pltf-arch/arm interactive/False from-script/False python/3.14.6 term/  (Macintosh; Intel Mac OS X 24.3.0)"
+    },
+    "insertId": "6a772dfe000c79428334c753",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f729b3a258eaf304fad35c4cd856857acd51d557e4e40525591c81ce6c83f5cbe66a9b2e595d984738b1cbf30139d1992472ca1ee886b336b223859f7509309883353643c250ffd6506f"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-08T13:24:14.826704406Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00010-mog",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "d94db3e8cdcb3f46",
+    "timestamp": "2026-08-08T13:16:28.789182Z",
+    "trace": "projects/msklad-bi-prod/traces/df479e820bc603a9197a433b9e3c3f7b",
+    "traceSampled": true
+  },
+  {
+    "httpRequest": {
+      "latency": "44.134007005s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "95.87.68.36",
+      "requestMethod": "POST",
+      "requestSize": "1249",
+      "requestUrl": "https://cf-facts-xw5u2boozq-de.a.run.app/",
+      "responseSize": "441",
+      "serverIp": "34.143.76.2",
+      "status": 200,
+      "userAgent": "google-cloud-sdk gcloud/577.0.0 agent-name/claude-code_2-1-219_agent command/gcloud.functions.call invocation-id/9b4ca7ee6c9b43c0aeccaa4cc7645c9d environment/None environment-version/None client-os/MACOSX client-os-ver/24.3.0 client-pltf-arch/arm interactive/False from-script/False python/3.14.6 term/  (Macintosh; Intel Mac OS X 24.3.0)"
+    },
+    "insertId": "6a772bd40006cbf800bfffaf",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f729b3a258eaf304fad35c4cd856857acd51d557e4e40525591c81ce6c83f5cbe66a9b2e595d984738b1cbf30139d1992472ca1ee886b336b223859f7509309883353643c250ffd6506f"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-08T13:15:00.452979967Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00010-mog",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "508e36ac31b57ec2",
+    "timestamp": "2026-08-08T13:14:16.291639Z",
+    "trace": "projects/msklad-bi-prod/traces/008a6b17e6524730112c22b8dcbf9c48",
+    "traceSampled": true
+  }
+]

@@ -1,0 +1,14 @@
+=== date -u ===
+Sat Aug  8 13:15:35 UTC 2026
+=== May 2026, core.fact_sales_profit, BEFORE weekly run ===
++-----------+-----------------+
+| row_count | revenue_kgs_sum |
++-----------+-----------------+
+|      3300 |   9.647199141E7 |
++-----------+-----------------+
+=== July 2026, core.fact_sales_profit, document_owner_employee_id filled — BEFORE weekly run ===
++------------+-----------------+
+| total_july | with_owner_july |
++------------+-----------------+
+|       4707 |               0 |
++------------+-----------------+

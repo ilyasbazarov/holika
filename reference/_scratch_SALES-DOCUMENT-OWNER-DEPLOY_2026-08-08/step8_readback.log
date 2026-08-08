@@ -1,0 +1,52 @@
+=== date -u (start) ===
+Sat Aug  8 13:13:29 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== describe new revision ===
+revision: cf-facts-00010-mog
+generation: 1786194676108292
+updateTime: 2026-08-08T13:12:55.988390080Z
+=== download archive by generation ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786194676108292...
+/ [0 files][    0.0 B/ 29.9 KiB]                                                / [0 files][ 29.9 KiB/ 29.9 KiB]                                                -- [1 files][ 29.9 KiB/ 29.9 KiB]                                                
+Operation completed over 1 objects/29.9 KiB.                                     
+=== files in new archive ===
+live_archive_new/bq_ops.py
+live_archive_new/config.py
+live_archive_new/deploy_and_workflow.sh
+live_archive_new/fetch_byvariant.py
+live_archive_new/fetch_demands.py
+live_archive_new/fetch_perimeter.py
+live_archive_new/fetch_purchases.py
+live_archive_new/fetch_returns.py
+live_archive_new/helpers.py
+live_archive_new/main.py
+live_archive_new/requirements.txt
+=== sha256 new archive ===
+e8bb06596bc64a22889890cff583a2d8ed8325ef4c5941d48a8769c2e18c90d8  live_archive_new/bq_ops.py
+56e77eff536ce8fe2a1c3a015c2633ed1317e8a9cbbd9729165d5a7af38de63a  live_archive_new/config.py
+2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07  live_archive_new/deploy_and_workflow.sh
+88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1  live_archive_new/fetch_byvariant.py
+b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358  live_archive_new/fetch_demands.py
+f609d5656fe6cf79941ffb3c904a122afabe2f5b7633a846a7f5ae713314275e  live_archive_new/fetch_perimeter.py
+5db807fee2da21c31c5fa3aeed77e16d1a4ae04193f55831534b89c5e9158486  live_archive_new/fetch_purchases.py
+7ce9373aa084258e45d2ba12c8f1bc2812b249958eec400c4181e4802793ae56  live_archive_new/fetch_returns.py
+aac5dee5add76513f52e8909a32925f261ad25d09ef55a1a6013f5262cd01c48  live_archive_new/helpers.py
+97b9ce3aa54085aab0739fd315890db22be8c837e829a9170ebce385ba6642d8  live_archive_new/main.py
+0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051  live_archive_new/requirements.txt
+=== date -u (end) ===
+Sat Aug  8 13:13:40 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

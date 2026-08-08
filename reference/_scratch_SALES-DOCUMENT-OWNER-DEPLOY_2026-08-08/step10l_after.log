@@ -1,0 +1,20 @@
+=== date -u ===
+Sat Aug  8 14:24:36 UTC 2026
+=== July 2026, core.fact_sales_profit, document_owner_employee_id — AFTER promote ===
++------------+-----------------+
+| total_july | with_owner_july |
++------------+-----------------+
+|       4707 |            2912 |
++------------+-----------------+
+=== May 2026, core.fact_sales_profit — AFTER promote (condition 3, ADR-146 §5(3)) ===
++-----------+-----------------+
+| row_count | revenue_kgs_sum |
++-----------+-----------------+
+|      3300 |   9.647199141E7 |
++-----------+-----------------+
+=== total core.fact_sales_profit, sanity (rows/sum unaffected outside touched window logic) ===
++------------+-------------------+
+| total_rows | total_revenue_kgs |
++------------+-------------------+
+|      42789 |    6.9153408633E8 |
++------------+-------------------+

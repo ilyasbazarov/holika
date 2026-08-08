@@ -327,3 +327,87 @@ sha256 изменённых файлов (новая ревизия):
 sales_channel_name=NULL WHERE transaction_id IN (SELECT TO_HEX(MD5(CONCAT(doc_id,'|',position_id)))
 FROM stg_msklad.fact_sales_perimeter_staging WHERE run_id='verify_deploy_2026-08-07_channel_perimeter')`
 (строки не создавались этим патчем, только помечались — откат данных не требует DELETE).
+
+---
+
+## Деплой `cf-facts` — сотрудник-владелец документа (2026-08-08, класс B, мандат `ADR-146`)
+
+**Что зафиксировано:** соответствие «ревизия ↔ коммит» для патча `document_owner_employee_id`
+(`ADR-128` база + `ADR-136 §2` доработка `UPDATE SET`), задача `SALES-DOCUMENT-OWNER-DEPLOY`. Деплой
+ПОВЕРХ базы `cf-facts-00009-tul`. Предусловие — `ALTER TABLE core.fact_sales_profit ADD COLUMN
+document_owner_employee_id STRING` (`ADR-136 §4(1)`). Процедура — `05_CONVENTIONS §Процедура деплоя …
+вариант Б` (`reference/deploy_procedure_2026-08-03.md`).
+
+| Поле | До | После |
+|---|---|---|
+| Ревизия `cf-facts` | `cf-facts-00009-tul` | **`cf-facts-00010-mog`** |
+| `generation` архива | `1786115536540209` | **`1786194676108292`** |
+| `updateTime` (UTC) | `2026-08-07T15:13:10.253085704Z` | **`2026-08-08T13:12:55.988390080Z`** |
+
+**Разделение двух патчей одного файла (`ADR-145`):** снапшот `cf-facts/bq_ops.py` нёс вперемешку эту
+задачу и незадеплоенный `SALES-REFRESH-WINDOW` (`ADR-144 §8`). Разделение — механическое по хункам, не
+редакторское (`ADR-145 §1`): в ветку деплоя вошли ровно 5 хунков `bq_ops.py` + весь `fetch_demands.py`
+(3 места правки), хунки `SALES-REFRESH-WINDOW` (ветки `WHEN NOT MATCHED BY SOURCE … THEN DELETE` в
+обоих `MERGE`) в ветку не попали — подтверждено sha256-сверкой и прямым `grep` архива после деплоя
+(`WHEN NOT MATCHED BY SOURCE` в развёрнутом `bq_ops.py` отсутствует).
+
+**Шаг 1 (свежая сверка перед деплоем):** живая ревизия перед деплоем подтверждена той же
+(`cf-facts-00009-tul`, `generation 1786115536540209`) — дрейфа между сессиями нет.
+
+**`ALTER TABLE` (шаг 6a-6b):** отсутствие колонки в `core.fact_sales_profit` подтверждено ДО (22
+колонки, `document_owner_employee_id` отсутствует), `ALTER TABLE … ADD COLUMN document_owner_employee_id
+STRING` исполнен, колонка присутствует ПОСЛЕ (23 колонки, тип `STRING`). Логи —
+`reference/_scratch_SALES-DOCUMENT-OWNER-DEPLOY_2026-08-08/step6a.log`, `step6b.log`.
+
+**Read-back (шаг 8):** архив новой ревизии скачан по закреплённому `generation`, распакован, sha256
+всех 11 файлов сверен побайтово с веткой `master` (после слияния) — совпадение полное (два изменённых
+файла — `bq_ops.py`, `fetch_demands.py` — идентичны ветке деплоя `deploy/cf-facts-2026-08-08-document-
+owner`; девять незатронутых файлов идентичны предыдущей ревизии). Мусора в архиве нет. Логи —
+`reference/_scratch_SALES-DOCUMENT-OWNER-DEPLOY_2026-08-08/step7_deploy.log`, `step8_readback.log`.
+
+sha256 изменённых файлов (новая ревизия):
+
+| Файл | sha256 |
+|---|---|
+| `bq_ops.py` | `e8bb06596bc64a22889890cff583a2d8ed8325ef4c5941d48a8769c2e18c90d8` |
+| `fetch_demands.py` | `b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358` |
+
+Незатронутые файлы (`config.py`/`main.py`/`fetch_byvariant.py`/`fetch_perimeter.py`/
+`fetch_purchases.py`/`fetch_returns.py`/`helpers.py`/`requirements.txt`/`deploy_and_workflow.sh`) —
+sha256 идентичен предыдущей ревизии `cf-facts-00009-tul`, кодово не тронуты.
+
+**Функциональная проверка (шаг 9, существующие режимы):** живой прогон `hourly`
+(`run_id=verify_deploy_2026-08-08_document_owner_hourly`) — `status=ok`, `demand_positions_fetched=350`,
+`staging_rows_loaded=350`, все 350 строк staging несут `document_owner_employee_id`. Незатронутые
+режимы (`returns`/`purchases`/`perimeter`/`perimeter_promote`) отдельно не прогонялись — их файлы
+кодово не менялись (sha256 идентичен). Лог — `step9_hourly.log`, `step9b_staging_check.log`.
+
+**Функциональная проверка (шаг 10, обязательный `weekly`/`window_days=90`):** первая попытка
+(`run_id=…_weekly`) — клиент `gcloud` оборвался по таймауту (`ReadTimeout`, 300с), сервер по логам
+`httpRequest` отработал `status=200`/`latency=465.97s`, но staging был перезаписан штатным часовым
+пайплайном (`WRITE_TRUNCATE`, общая таблица) раньше, чем эта сессия успела промоутнуть — гонка, не
+порча данных (у этого патча нет ветки удаления). Вторая попытка (`run_id=…_weekly_retry2`) —
+тот же клиентский таймаут, сервер подтверждён `status=200`/`latency=460.15s` (`receiveTimestamp
+2026-08-08T14:22:47Z`), staging проверен read-only ДО промоута — `7 033` строки, окно
+`2026-05-10…2026-08-08`, все с `document_owner_employee_id`. `promote` (`window_days=90`,
+`run_id=verify_deploy_2026-08-08_document_owner_promote`) исполнен сразу после подтверждения —
+`status=ok`, `affected_rows=7033`, `staging_rows=7033`. Логи —
+`step10b_weekly_load.log`…`step10l_after.log` (полная цепочка диагностики и повтора).
+
+**Прямые запросы приёмки (до/после `promote`):**
+- **Июль-2026, `document_owner_employee_id`:** `4 707` строк итого, заполнено `0` → **`2 912`**.
+- **Май-2026 (условие 3 мандата, `ADR-146 §5(3)`):** `3 300` строк / `96 471 991,41` KGS — **до и после
+  идентично**, разность `0,00`. Датированный снимок мая не затронут.
+- **Свод `core.fact_sales_profit` после:** `42 789` строк / `691 534 086,33` KGS.
+
+**Код-репозиторий `holika-prod`:**
+- Ветка `deploy/cf-facts-2026-08-08-document-owner` — коммит `3248e62` (два патч-коммита `f88c355` +
+  правка комментария `df26233`→`3248e62` по каноническому тексту снапшота, `ADR-146 §5(1)`), содержит
+  ровно 5 хунков `bq_ops.py` + весь `fetch_demands.py`, перенесённые механически по хункам (`ADR-145`).
+- Слияние в `master` — коммит `e9a4cbb` (`merge --no-ff`), выполнено ПОСЛЕ успешного read-back (шаг 8)
+  и функциональных проверок (шаги 9-10), как требует процедура.
+
+**Откат (не понадобился):** код — повторный деплой именем ревизии `cf-facts-00009-tul`. Схема —
+`ALTER TABLE core.fact_sales_profit DROP COLUMN document_owner_employee_id` (колонка новая,
+потребителей нет, откат безопасен и независим от отката кода) — только по отдельному решению
+владельца (`ADR-146 §3`), этим деплоем не исполнялся.

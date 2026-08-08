@@ -1,0 +1,46 @@
+=== date -u (start) ===
+Sat Aug  8 13:07:05 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq show --schema core.fact_sales_profit ===
+columns: 22
+ - transaction_id
+ - transaction_date
+ - product_id
+ - entity_type
+ - agent_id
+ - sell_quantity
+ - return_quantity
+ - revenue_kgs
+ - cogs_kgs
+ - margin_kgs
+ - revenue_usd
+ - cogs_usd
+ - margin_usd
+ - _week_start
+ - _loaded_at
+ - sell_sum_kgs
+ - return_sum_kgs
+ - discount
+ - sales_channel_id
+ - sales_channel_name
+ - project_id
+ - project_name
+
+document_owner_employee_id present: False
+=== date -u (end) ===
+Sat Aug  8 13:07:10 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
