@@ -1,0 +1,1595 @@
+{
+  "targets": {
+    "0b47b431aaef54236c0c24882a47e9e9": {
+      "transaction_date": "2026-07-21",
+      "revenue_kgs": "3250.0",
+      "loaded_date": "2026-07-22"
+    },
+    "20d93da5fba41b9110bfecce95608aaf": {
+      "transaction_date": "2026-07-21",
+      "revenue_kgs": "3480.0",
+      "loaded_date": "2026-07-22"
+    },
+    "65d08e698b0541471dc772f3d6e91e33": {
+      "transaction_date": "2026-07-21",
+      "revenue_kgs": "2610.0",
+      "loaded_date": "2026-07-22"
+    },
+    "a4e3b8435c8bada17b55c9cce8484ad6": {
+      "transaction_date": "2026-07-21",
+      "revenue_kgs": "3400.0",
+      "loaded_date": "2026-07-22"
+    },
+    "ab1ae815d0cf68034d9053606b5c3087": {
+      "transaction_date": "2026-07-21",
+      "revenue_kgs": "3345.0",
+      "loaded_date": "2026-07-22"
+    },
+    "b0878364dc7ef46e2e1d971aa18be751": {
+      "transaction_date": "2026-07-21",
+      "revenue_kgs": "3229.2",
+      "loaded_date": "2026-07-22"
+    },
+    "b68dfe99b406e5709972520aa83b5899": {
+      "transaction_date": "2026-07-21",
+      "revenue_kgs": "4250.0",
+      "loaded_date": "2026-07-22"
+    },
+    "c393fa3a9646c4cc699ac38c9fed8680": {
+      "transaction_date": "2026-07-21",
+      "revenue_kgs": "3455.0",
+      "loaded_date": "2026-07-22"
+    },
+    "4200c0b0d7184d80e1c98aba9d16660b": {
+      "transaction_date": "2026-07-30",
+      "revenue_kgs": "31050.0",
+      "loaded_date": "2026-08-01"
+    },
+    "48a33a41ddc9d429a533c0f1f0f21fb1": {
+      "transaction_date": "2026-07-30",
+      "revenue_kgs": "19872.0",
+      "loaded_date": "2026-08-01"
+    },
+    "961a459badd6e45493e4db351ca30d90": {
+      "transaction_date": "2026-07-30",
+      "revenue_kgs": "49680.0",
+      "loaded_date": "2026-08-01"
+    }
+  },
+  "hits": {
+    "0b47b431aaef54236c0c24882a47e9e9": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784678402.4233057.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8bb90-84d2-11f1-0a80-1c8f002fd9a2",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784678402.4233057,
+        "_loaded_at": "2026-07-22T00:01:39.185336+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784682002.6788948.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8bb90-84d2-11f1-0a80-1c8f002fd9a2",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784682002.6788948,
+        "_loaded_at": "2026-07-22T01:01:10.823660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784685602.6556678.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8bb90-84d2-11f1-0a80-1c8f002fd9a2",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784685602.6556678,
+        "_loaded_at": "2026-07-22T02:01:08.005853+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784689202.4953086.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8bb90-84d2-11f1-0a80-1c8f002fd9a2",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784689202.4953086,
+        "_loaded_at": "2026-07-22T03:01:09.189460+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784692802.7760227.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8bb90-84d2-11f1-0a80-1c8f002fd9a2",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784692802.7760227,
+        "_loaded_at": "2026-07-22T04:01:09.239045+00:00"
+      }
+    ],
+    "20d93da5fba41b9110bfecce95608aaf": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784678402.4233057.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b9c5-84d2-11f1-0a80-1c8f002fd9a0",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784678402.4233057,
+        "_loaded_at": "2026-07-22T00:01:39.185336+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784682002.6788948.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b9c5-84d2-11f1-0a80-1c8f002fd9a0",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784682002.6788948,
+        "_loaded_at": "2026-07-22T01:01:10.823660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784685602.6556678.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b9c5-84d2-11f1-0a80-1c8f002fd9a0",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784685602.6556678,
+        "_loaded_at": "2026-07-22T02:01:08.005853+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784689202.4953086.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b9c5-84d2-11f1-0a80-1c8f002fd9a0",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784689202.4953086,
+        "_loaded_at": "2026-07-22T03:01:09.189460+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784692802.7760227.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b9c5-84d2-11f1-0a80-1c8f002fd9a0",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784692802.7760227,
+        "_loaded_at": "2026-07-22T04:01:09.239045+00:00"
+      }
+    ],
+    "65d08e698b0541471dc772f3d6e91e33": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784678402.4233057.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8bc55-84d2-11f1-0a80-1c8f002fd9a3",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784678402.4233057,
+        "_loaded_at": "2026-07-22T00:01:39.185336+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784682002.6788948.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8bc55-84d2-11f1-0a80-1c8f002fd9a3",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784682002.6788948,
+        "_loaded_at": "2026-07-22T01:01:10.823660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784685602.6556678.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8bc55-84d2-11f1-0a80-1c8f002fd9a3",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784685602.6556678,
+        "_loaded_at": "2026-07-22T02:01:08.005853+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784689202.4953086.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8bc55-84d2-11f1-0a80-1c8f002fd9a3",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784689202.4953086,
+        "_loaded_at": "2026-07-22T03:01:09.189460+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784692802.7760227.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8bc55-84d2-11f1-0a80-1c8f002fd9a3",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784692802.7760227,
+        "_loaded_at": "2026-07-22T04:01:09.239045+00:00"
+      }
+    ],
+    "a4e3b8435c8bada17b55c9cce8484ad6": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784678402.4233057.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b761-84d2-11f1-0a80-1c8f002fd99e",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784678402.4233057,
+        "_loaded_at": "2026-07-22T00:01:39.185336+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784682002.6788948.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b761-84d2-11f1-0a80-1c8f002fd99e",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784682002.6788948,
+        "_loaded_at": "2026-07-22T01:01:10.823660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784685602.6556678.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b761-84d2-11f1-0a80-1c8f002fd99e",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784685602.6556678,
+        "_loaded_at": "2026-07-22T02:01:08.005853+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784689202.4953086.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b761-84d2-11f1-0a80-1c8f002fd99e",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784689202.4953086,
+        "_loaded_at": "2026-07-22T03:01:09.189460+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784692802.7760227.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b761-84d2-11f1-0a80-1c8f002fd99e",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784692802.7760227,
+        "_loaded_at": "2026-07-22T04:01:09.239045+00:00"
+      }
+    ],
+    "ab1ae815d0cf68034d9053606b5c3087": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784678402.4233057.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8baca-84d2-11f1-0a80-1c8f002fd9a1",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784678402.4233057,
+        "_loaded_at": "2026-07-22T00:01:39.185336+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784682002.6788948.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8baca-84d2-11f1-0a80-1c8f002fd9a1",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784682002.6788948,
+        "_loaded_at": "2026-07-22T01:01:10.823660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784685602.6556678.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8baca-84d2-11f1-0a80-1c8f002fd9a1",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784685602.6556678,
+        "_loaded_at": "2026-07-22T02:01:08.005853+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784689202.4953086.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8baca-84d2-11f1-0a80-1c8f002fd9a1",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784689202.4953086,
+        "_loaded_at": "2026-07-22T03:01:09.189460+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784692802.7760227.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8baca-84d2-11f1-0a80-1c8f002fd9a1",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784692802.7760227,
+        "_loaded_at": "2026-07-22T04:01:09.239045+00:00"
+      }
+    ],
+    "b0878364dc7ef46e2e1d971aa18be751": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784678402.4233057.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b89a-84d2-11f1-0a80-1c8f002fd99f",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784678402.4233057,
+        "_loaded_at": "2026-07-22T00:01:39.185336+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784682002.6788948.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b89a-84d2-11f1-0a80-1c8f002fd99f",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784682002.6788948,
+        "_loaded_at": "2026-07-22T01:01:10.823660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784685602.6556678.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b89a-84d2-11f1-0a80-1c8f002fd99f",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784685602.6556678,
+        "_loaded_at": "2026-07-22T02:01:08.005853+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784689202.4953086.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b89a-84d2-11f1-0a80-1c8f002fd99f",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784689202.4953086,
+        "_loaded_at": "2026-07-22T03:01:09.189460+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784692802.7760227.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b89a-84d2-11f1-0a80-1c8f002fd99f",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784692802.7760227,
+        "_loaded_at": "2026-07-22T04:01:09.239045+00:00"
+      }
+    ],
+    "b68dfe99b406e5709972520aa83b5899": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784678402.4233057.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b5ea-84d2-11f1-0a80-1c8f002fd99d",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784678402.4233057,
+        "_loaded_at": "2026-07-22T00:01:39.185336+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784682002.6788948.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b5ea-84d2-11f1-0a80-1c8f002fd99d",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784682002.6788948,
+        "_loaded_at": "2026-07-22T01:01:10.823660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784685602.6556678.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b5ea-84d2-11f1-0a80-1c8f002fd99d",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784685602.6556678,
+        "_loaded_at": "2026-07-22T02:01:08.005853+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784689202.4953086.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b5ea-84d2-11f1-0a80-1c8f002fd99d",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784689202.4953086,
+        "_loaded_at": "2026-07-22T03:01:09.189460+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784692802.7760227.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b5ea-84d2-11f1-0a80-1c8f002fd99d",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784692802.7760227,
+        "_loaded_at": "2026-07-22T04:01:09.239045+00:00"
+      }
+    ],
+    "c393fa3a9646c4cc699ac38c9fed8680": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784678402.4233057.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b473-84d2-11f1-0a80-1c8f002fd99c",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784678402.4233057,
+        "_loaded_at": "2026-07-22T00:01:39.185336+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784682002.6788948.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b473-84d2-11f1-0a80-1c8f002fd99c",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784682002.6788948,
+        "_loaded_at": "2026-07-22T01:01:10.823660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784685602.6556678.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b473-84d2-11f1-0a80-1c8f002fd99c",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784685602.6556678,
+        "_loaded_at": "2026-07-22T02:01:08.005853+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784689202.4953086.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b473-84d2-11f1-0a80-1c8f002fd99c",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784689202.4953086,
+        "_loaded_at": "2026-07-22T03:01:09.189460+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1784692802.7760227.ndjson.gz",
+        "demand_id": "55d8aa83-84d2-11f1-0a80-1c8f002fd999",
+        "position_id": "55d8b473-84d2-11f1-0a80-1c8f002fd99c",
+        "transaction_date_raw": "2026-07-21 10:03:00.000",
+        "run_id": 1784692802.7760227,
+        "_loaded_at": "2026-07-22T04:01:09.239045+00:00"
+      }
+    ],
+    "4200c0b0d7184d80e1c98aba9d16660b": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785409200.7335894.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785409200.7335894,
+        "_loaded_at": "2026-07-30T11:01:10.098797+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785412802.3836248.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785412802.3836248,
+        "_loaded_at": "2026-07-30T12:01:16.850556+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785416402.716512.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785416402.716512,
+        "_loaded_at": "2026-07-30T13:01:14.279291+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785420002.426745.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785420002.426745,
+        "_loaded_at": "2026-07-30T14:01:25.653307+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785423602.429217.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785423602.429217,
+        "_loaded_at": "2026-07-30T15:01:08.820670+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785427202.7511954.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785427202.7511954,
+        "_loaded_at": "2026-07-30T16:01:11.773507+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785430802.7432852.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785430802.7432852,
+        "_loaded_at": "2026-07-30T17:01:10.320703+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785434402.7480865.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785434402.7480865,
+        "_loaded_at": "2026-07-30T18:01:10.429735+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785438002.6583986.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785438002.6583986,
+        "_loaded_at": "2026-07-30T19:00:57.617649+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785441602.3744574.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785441602.3744574,
+        "_loaded_at": "2026-07-30T20:01:08.588391+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785445202.6452823.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785445202.6452823,
+        "_loaded_at": "2026-07-30T21:01:00.890923+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785448802.6633074.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785448802.6633074,
+        "_loaded_at": "2026-07-30T22:01:06.608700+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785452402.7155247.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785452402.7155247,
+        "_loaded_at": "2026-07-30T23:01:14.461386+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785456002.3784206.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785456002.3784206,
+        "_loaded_at": "2026-07-31T00:01:11.085100+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785459602.3746657.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785459602.3746657,
+        "_loaded_at": "2026-07-31T01:01:05.436584+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785463202.6414807.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785463202.6414807,
+        "_loaded_at": "2026-07-31T02:01:26.723041+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785466802.6377778.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785466802.6377778,
+        "_loaded_at": "2026-07-31T03:01:10.542874+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785470402.8625119.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785470402.8625119,
+        "_loaded_at": "2026-07-31T04:01:07.059605+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785474002.6453621.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785474002.6453621,
+        "_loaded_at": "2026-07-31T05:01:09.114443+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785477602.7448037.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785477602.7448037,
+        "_loaded_at": "2026-07-31T06:01:06.031469+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785481202.384431.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785481202.384431,
+        "_loaded_at": "2026-07-31T07:01:11.305433+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785484802.7275898.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785484802.7275898,
+        "_loaded_at": "2026-07-31T08:01:18.621142+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785488402.545512.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785488402.545512,
+        "_loaded_at": "2026-07-31T09:01:28.235606+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785492002.8186915.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785492002.8186915,
+        "_loaded_at": "2026-07-31T10:01:22.786594+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785495602.7688107.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785495602.7688107,
+        "_loaded_at": "2026-07-31T11:01:14.849492+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785499202.799563.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785499202.799563,
+        "_loaded_at": "2026-07-31T12:01:26.098516+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785502802.7845662.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785502802.7845662,
+        "_loaded_at": "2026-07-31T13:01:20.218660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785506402.7495732.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785506402.7495732,
+        "_loaded_at": "2026-07-31T14:01:20.935175+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785510002.4042401.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785510002.4042401,
+        "_loaded_at": "2026-07-31T15:01:18.994083+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785513602.3435938.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785513602.3435938,
+        "_loaded_at": "2026-07-31T16:01:19.281524+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785517202.743991.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785517202.743991,
+        "_loaded_at": "2026-07-31T17:01:10.096089+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785520802.6950645.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785520802.6950645,
+        "_loaded_at": "2026-07-31T18:01:11.857265+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785524402.5882726.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785524402.5882726,
+        "_loaded_at": "2026-07-31T19:01:10.337768+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785528002.6461554.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785528002.6461554,
+        "_loaded_at": "2026-07-31T20:01:08.613065+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785531602.1082246.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785531602.1082246,
+        "_loaded_at": "2026-07-31T21:01:18.436942+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785535202.6596227.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785535202.6596227,
+        "_loaded_at": "2026-07-31T22:01:01.868660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785538802.6248791.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785538802.6248791,
+        "_loaded_at": "2026-07-31T23:01:05.904771+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785542402.8799338.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785542402.8799338,
+        "_loaded_at": "2026-08-01T00:01:09.370126+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785546002.3755257.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785546002.3755257,
+        "_loaded_at": "2026-08-01T01:01:16.227463+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785549602.4608076.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785549602.4608076,
+        "_loaded_at": "2026-08-01T02:01:11.530847+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785553202.7414558.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785553202.7414558,
+        "_loaded_at": "2026-08-01T03:01:11.187138+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785556802.767019.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785556802.767019,
+        "_loaded_at": "2026-08-01T04:01:05.843956+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785560403.0292175.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785560403.0292175,
+        "_loaded_at": "2026-08-01T05:01:07.615690+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785564002.452597.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785564002.452597,
+        "_loaded_at": "2026-08-01T06:01:08.491289+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785567602.7884176.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785567602.7884176,
+        "_loaded_at": "2026-08-01T07:00:58.929774+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785571202.449191.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785571202.449191,
+        "_loaded_at": "2026-08-01T08:01:19.225096+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785574803.5138285.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785574803.5138285,
+        "_loaded_at": "2026-08-01T09:01:23.592874+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785578402.7792783.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785578402.7792783,
+        "_loaded_at": "2026-08-01T10:01:14.130784+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785582003.511804.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785582003.511804,
+        "_loaded_at": "2026-08-01T11:01:18.146829+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785585602.4972513.ndjson.gz",
+        "demand_id": "ac67b4ba-8be3-11f1-0a80-143300264646",
+        "position_id": "ac67ccef-8be3-11f1-0a80-143300264657",
+        "transaction_date_raw": "2026-07-30 09:55:00.000",
+        "run_id": 1785585602.4972513,
+        "_loaded_at": "2026-08-01T12:01:07.799940+00:00"
+      }
+    ],
+    "48a33a41ddc9d429a533c0f1f0f21fb1": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785412802.3836248.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785412802.3836248,
+        "_loaded_at": "2026-07-30T12:01:16.850556+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785416402.716512.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785416402.716512,
+        "_loaded_at": "2026-07-30T13:01:14.279291+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785420002.426745.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785420002.426745,
+        "_loaded_at": "2026-07-30T14:01:25.653307+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785423602.429217.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785423602.429217,
+        "_loaded_at": "2026-07-30T15:01:08.820670+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785427202.7511954.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785427202.7511954,
+        "_loaded_at": "2026-07-30T16:01:11.773507+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785430802.7432852.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785430802.7432852,
+        "_loaded_at": "2026-07-30T17:01:10.320703+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785434402.7480865.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785434402.7480865,
+        "_loaded_at": "2026-07-30T18:01:10.429735+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785438002.6583986.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785438002.6583986,
+        "_loaded_at": "2026-07-30T19:00:57.617649+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785441602.3744574.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785441602.3744574,
+        "_loaded_at": "2026-07-30T20:01:08.588391+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785445202.6452823.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785445202.6452823,
+        "_loaded_at": "2026-07-30T21:01:00.890923+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785448802.6633074.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785448802.6633074,
+        "_loaded_at": "2026-07-30T22:01:06.608700+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785452402.7155247.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785452402.7155247,
+        "_loaded_at": "2026-07-30T23:01:14.461386+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785456002.3784206.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785456002.3784206,
+        "_loaded_at": "2026-07-31T00:01:11.085100+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785459602.3746657.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785459602.3746657,
+        "_loaded_at": "2026-07-31T01:01:05.436584+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785463202.6414807.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785463202.6414807,
+        "_loaded_at": "2026-07-31T02:01:26.723041+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785466802.6377778.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785466802.6377778,
+        "_loaded_at": "2026-07-31T03:01:10.542874+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785470402.8625119.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785470402.8625119,
+        "_loaded_at": "2026-07-31T04:01:07.059605+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785474002.6453621.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785474002.6453621,
+        "_loaded_at": "2026-07-31T05:01:09.114443+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785477602.7448037.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785477602.7448037,
+        "_loaded_at": "2026-07-31T06:01:06.031469+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785481202.384431.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785481202.384431,
+        "_loaded_at": "2026-07-31T07:01:11.305433+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785484802.7275898.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785484802.7275898,
+        "_loaded_at": "2026-07-31T08:01:18.621142+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785488402.545512.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785488402.545512,
+        "_loaded_at": "2026-07-31T09:01:28.235606+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785492002.8186915.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785492002.8186915,
+        "_loaded_at": "2026-07-31T10:01:22.786594+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785495602.7688107.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785495602.7688107,
+        "_loaded_at": "2026-07-31T11:01:14.849492+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785499202.799563.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785499202.799563,
+        "_loaded_at": "2026-07-31T12:01:26.098516+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785502802.7845662.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785502802.7845662,
+        "_loaded_at": "2026-07-31T13:01:20.218660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785506402.7495732.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785506402.7495732,
+        "_loaded_at": "2026-07-31T14:01:20.935175+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785510002.4042401.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785510002.4042401,
+        "_loaded_at": "2026-07-31T15:01:18.994083+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785513602.3435938.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785513602.3435938,
+        "_loaded_at": "2026-07-31T16:01:19.281524+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785517202.743991.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785517202.743991,
+        "_loaded_at": "2026-07-31T17:01:10.096089+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785520802.6950645.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785520802.6950645,
+        "_loaded_at": "2026-07-31T18:01:11.857265+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785524402.5882726.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785524402.5882726,
+        "_loaded_at": "2026-07-31T19:01:10.337768+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785528002.6461554.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785528002.6461554,
+        "_loaded_at": "2026-07-31T20:01:08.613065+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785531602.1082246.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785531602.1082246,
+        "_loaded_at": "2026-07-31T21:01:18.436942+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785535202.6596227.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785535202.6596227,
+        "_loaded_at": "2026-07-31T22:01:01.868660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785538802.6248791.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785538802.6248791,
+        "_loaded_at": "2026-07-31T23:01:05.904771+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785542402.8799338.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785542402.8799338,
+        "_loaded_at": "2026-08-01T00:01:09.370126+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785546002.3755257.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785546002.3755257,
+        "_loaded_at": "2026-08-01T01:01:16.227463+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785549602.4608076.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785549602.4608076,
+        "_loaded_at": "2026-08-01T02:01:11.530847+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785553202.7414558.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785553202.7414558,
+        "_loaded_at": "2026-08-01T03:01:11.187138+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785556802.767019.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785556802.767019,
+        "_loaded_at": "2026-08-01T04:01:05.843956+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785560403.0292175.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785560403.0292175,
+        "_loaded_at": "2026-08-01T05:01:07.615690+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785564002.452597.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785564002.452597,
+        "_loaded_at": "2026-08-01T06:01:08.491289+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785567602.7884176.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785567602.7884176,
+        "_loaded_at": "2026-08-01T07:00:58.929774+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785571202.449191.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785571202.449191,
+        "_loaded_at": "2026-08-01T08:01:19.225096+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785574803.5138285.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785574803.5138285,
+        "_loaded_at": "2026-08-01T09:01:23.592874+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785578402.7792783.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785578402.7792783,
+        "_loaded_at": "2026-08-01T10:01:14.130784+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785582003.511804.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785582003.511804,
+        "_loaded_at": "2026-08-01T11:01:18.146829+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785585602.4972513.ndjson.gz",
+        "demand_id": "51854fec-8c06-11f1-0a80-1433003a8c11",
+        "position_id": "518556fe-8c06-11f1-0a80-1433003a8c13",
+        "transaction_date_raw": "2026-07-30 14:03:00.000",
+        "run_id": 1785585602.4972513,
+        "_loaded_at": "2026-08-01T12:01:07.799940+00:00"
+      }
+    ],
+    "961a459badd6e45493e4db351ca30d90": [
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785409200.7335894.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785409200.7335894,
+        "_loaded_at": "2026-07-30T11:01:10.098797+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785412802.3836248.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785412802.3836248,
+        "_loaded_at": "2026-07-30T12:01:16.850556+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785416402.716512.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785416402.716512,
+        "_loaded_at": "2026-07-30T13:01:14.279291+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785420002.426745.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785420002.426745,
+        "_loaded_at": "2026-07-30T14:01:25.653307+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785423602.429217.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785423602.429217,
+        "_loaded_at": "2026-07-30T15:01:08.820670+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785427202.7511954.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785427202.7511954,
+        "_loaded_at": "2026-07-30T16:01:11.773507+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785430802.7432852.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785430802.7432852,
+        "_loaded_at": "2026-07-30T17:01:10.320703+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785434402.7480865.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785434402.7480865,
+        "_loaded_at": "2026-07-30T18:01:10.429735+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785438002.6583986.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785438002.6583986,
+        "_loaded_at": "2026-07-30T19:00:57.617649+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785441602.3744574.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785441602.3744574,
+        "_loaded_at": "2026-07-30T20:01:08.588391+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785445202.6452823.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785445202.6452823,
+        "_loaded_at": "2026-07-30T21:01:00.890923+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785448802.6633074.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785448802.6633074,
+        "_loaded_at": "2026-07-30T22:01:06.608700+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785452402.7155247.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785452402.7155247,
+        "_loaded_at": "2026-07-30T23:01:14.461386+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785456002.3784206.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785456002.3784206,
+        "_loaded_at": "2026-07-31T00:01:11.085100+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785459602.3746657.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785459602.3746657,
+        "_loaded_at": "2026-07-31T01:01:05.436584+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785463202.6414807.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785463202.6414807,
+        "_loaded_at": "2026-07-31T02:01:26.723041+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785466802.6377778.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785466802.6377778,
+        "_loaded_at": "2026-07-31T03:01:10.542874+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785470402.8625119.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785470402.8625119,
+        "_loaded_at": "2026-07-31T04:01:07.059605+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785474002.6453621.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785474002.6453621,
+        "_loaded_at": "2026-07-31T05:01:09.114443+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785477602.7448037.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785477602.7448037,
+        "_loaded_at": "2026-07-31T06:01:06.031469+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785481202.384431.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785481202.384431,
+        "_loaded_at": "2026-07-31T07:01:11.305433+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785484802.7275898.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785484802.7275898,
+        "_loaded_at": "2026-07-31T08:01:18.621142+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785488402.545512.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785488402.545512,
+        "_loaded_at": "2026-07-31T09:01:28.235606+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785492002.8186915.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785492002.8186915,
+        "_loaded_at": "2026-07-31T10:01:22.786594+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785495602.7688107.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785495602.7688107,
+        "_loaded_at": "2026-07-31T11:01:14.849492+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785499202.799563.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785499202.799563,
+        "_loaded_at": "2026-07-31T12:01:26.098516+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785502802.7845662.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785502802.7845662,
+        "_loaded_at": "2026-07-31T13:01:20.218660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785506402.7495732.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785506402.7495732,
+        "_loaded_at": "2026-07-31T14:01:20.935175+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785510002.4042401.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785510002.4042401,
+        "_loaded_at": "2026-07-31T15:01:18.994083+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785513602.3435938.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785513602.3435938,
+        "_loaded_at": "2026-07-31T16:01:19.281524+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785517202.743991.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785517202.743991,
+        "_loaded_at": "2026-07-31T17:01:10.096089+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785520802.6950645.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785520802.6950645,
+        "_loaded_at": "2026-07-31T18:01:11.857265+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785524402.5882726.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785524402.5882726,
+        "_loaded_at": "2026-07-31T19:01:10.337768+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785528002.6461554.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785528002.6461554,
+        "_loaded_at": "2026-07-31T20:01:08.613065+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785531602.1082246.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785531602.1082246,
+        "_loaded_at": "2026-07-31T21:01:18.436942+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785535202.6596227.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785535202.6596227,
+        "_loaded_at": "2026-07-31T22:01:01.868660+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785538802.6248791.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785538802.6248791,
+        "_loaded_at": "2026-07-31T23:01:05.904771+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785542402.8799338.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785542402.8799338,
+        "_loaded_at": "2026-08-01T00:01:09.370126+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785546002.3755257.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785546002.3755257,
+        "_loaded_at": "2026-08-01T01:01:16.227463+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785549602.4608076.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785549602.4608076,
+        "_loaded_at": "2026-08-01T02:01:11.530847+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785553202.7414558.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785553202.7414558,
+        "_loaded_at": "2026-08-01T03:01:11.187138+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785556802.767019.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785556802.767019,
+        "_loaded_at": "2026-08-01T04:01:05.843956+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785560403.0292175.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785560403.0292175,
+        "_loaded_at": "2026-08-01T05:01:07.615690+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785564002.452597.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785564002.452597,
+        "_loaded_at": "2026-08-01T06:01:08.491289+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785567602.7884176.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785567602.7884176,
+        "_loaded_at": "2026-08-01T07:00:58.929774+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785571202.449191.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785571202.449191,
+        "_loaded_at": "2026-08-01T08:01:19.225096+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785574803.5138285.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785574803.5138285,
+        "_loaded_at": "2026-08-01T09:01:23.592874+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785578402.7792783.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785578402.7792783,
+        "_loaded_at": "2026-08-01T10:01:14.130784+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785582003.511804.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785582003.511804,
+        "_loaded_at": "2026-08-01T11:01:18.146829+00:00"
+      },
+      {
+        "source_object": "gs://msklad-raw-msklad-bi-prod/demand/incremental/run_1785585602.4972513.ndjson.gz",
+        "demand_id": "c9eba0a7-8c01-11f1-0a80-14330037d8da",
+        "position_id": "c9ebae7b-8c01-11f1-0a80-14330037d8e2",
+        "transaction_date_raw": "2026-07-30 13:31:00.000",
+        "run_id": 1785585602.4972513,
+        "_loaded_at": "2026-08-01T12:01:07.799940+00:00"
+      }
+    ]
+  }
+}

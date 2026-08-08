@@ -1,0 +1,65 @@
+=== UTC-якорь (начало) ===
+Sat Aug  8 07:24:51 UTC 2026
+=== личность вызывающего (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq query — текст дословно из reference/sales_july_k2k3_adj_2026-08-08.md §2.7 ===
+[
+  {
+    "loaded_date": "2026-07-27", 
+    "n_rows": "161", 
+    "sum_revenue_kgs": "5640699.4301", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "loaded_date": "2026-07-22", 
+    "n_rows": "8", 
+    "sum_revenue_kgs": "27019.2", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "loaded_date": "2026-07-28", 
+    "n_rows": "128", 
+    "sum_revenue_kgs": "2417578.27", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "loaded_date": "2026-08-01", 
+    "n_rows": "170", 
+    "sum_revenue_kgs": "5411554.344099999", 
+    "transaction_date": "2026-07-27"
+  }, 
+  {
+    "loaded_date": "2026-08-05", 
+    "n_rows": "171", 
+    "sum_revenue_kgs": "1.7707400123300005E7", 
+    "transaction_date": "2026-07-29"
+  }, 
+  {
+    "loaded_date": "2026-08-01", 
+    "n_rows": "3", 
+    "sum_revenue_kgs": "100602.0", 
+    "transaction_date": "2026-07-30"
+  }, 
+  {
+    "loaded_date": "2026-08-06", 
+    "n_rows": "222", 
+    "sum_revenue_kgs": "5491631.9969999995", 
+    "transaction_date": "2026-07-30"
+  }
+]
+=== личность вызывающего (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC-якорь (конец) ===
+Sat Aug  8 07:25:03 UTC 2026

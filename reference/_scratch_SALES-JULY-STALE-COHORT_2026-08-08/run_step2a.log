@@ -1,0 +1,93 @@
+=== UTC-якорь (начало) ===
+Sat Aug  8 07:26:16 UTC 2026
+=== личность вызывающего (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== read-only запрос transaction_id одиннадцати строк подслучая A ===
+--- подслучай A, сутки 07-21 (стухшая когорта loaded_date=2026-07-22, 8 строк) ---
+[
+  {
+    "loaded_date": "2026-07-22", 
+    "revenue_kgs": "3250.0", 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "0b47b431aaef54236c0c24882a47e9e9"
+  }, 
+  {
+    "loaded_date": "2026-07-22", 
+    "revenue_kgs": "3480.0", 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "20d93da5fba41b9110bfecce95608aaf"
+  }, 
+  {
+    "loaded_date": "2026-07-22", 
+    "revenue_kgs": "2610.0", 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "65d08e698b0541471dc772f3d6e91e33"
+  }, 
+  {
+    "loaded_date": "2026-07-22", 
+    "revenue_kgs": "3400.0", 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "a4e3b8435c8bada17b55c9cce8484ad6"
+  }, 
+  {
+    "loaded_date": "2026-07-22", 
+    "revenue_kgs": "3345.0", 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "ab1ae815d0cf68034d9053606b5c3087"
+  }, 
+  {
+    "loaded_date": "2026-07-22", 
+    "revenue_kgs": "3229.2", 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "b0878364dc7ef46e2e1d971aa18be751"
+  }, 
+  {
+    "loaded_date": "2026-07-22", 
+    "revenue_kgs": "4250.0", 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "b68dfe99b406e5709972520aa83b5899"
+  }, 
+  {
+    "loaded_date": "2026-07-22", 
+    "revenue_kgs": "3455.0", 
+    "transaction_date": "2026-07-21", 
+    "transaction_id": "c393fa3a9646c4cc699ac38c9fed8680"
+  }
+]
+--- подслучай A, сутки 07-30 (стухшая когорта loaded_date=2026-08-01, 3 строки) ---
+[
+  {
+    "loaded_date": "2026-08-01", 
+    "revenue_kgs": "31050.0", 
+    "transaction_date": "2026-07-30", 
+    "transaction_id": "4200c0b0d7184d80e1c98aba9d16660b"
+  }, 
+  {
+    "loaded_date": "2026-08-01", 
+    "revenue_kgs": "19872.0", 
+    "transaction_date": "2026-07-30", 
+    "transaction_id": "48a33a41ddc9d429a533c0f1f0f21fb1"
+  }, 
+  {
+    "loaded_date": "2026-08-01", 
+    "revenue_kgs": "49680.0", 
+    "transaction_date": "2026-07-30", 
+    "transaction_id": "961a459badd6e45493e4db351ca30d90"
+  }
+]
+=== личность вызывающего (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC-якорь (конец) ===
+Sat Aug  8 07:26:26 UTC 2026

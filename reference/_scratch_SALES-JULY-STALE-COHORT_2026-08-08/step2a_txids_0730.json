@@ -1,0 +1,20 @@
+[
+  {
+    "loaded_date": "2026-08-01", 
+    "revenue_kgs": "31050.0", 
+    "transaction_date": "2026-07-30", 
+    "transaction_id": "4200c0b0d7184d80e1c98aba9d16660b"
+  }, 
+  {
+    "loaded_date": "2026-08-01", 
+    "revenue_kgs": "19872.0", 
+    "transaction_date": "2026-07-30", 
+    "transaction_id": "48a33a41ddc9d429a533c0f1f0f21fb1"
+  }, 
+  {
+    "loaded_date": "2026-08-01", 
+    "revenue_kgs": "49680.0", 
+    "transaction_date": "2026-07-30", 
+    "transaction_id": "961a459badd6e45493e4db351ca30d90"
+  }
+]
