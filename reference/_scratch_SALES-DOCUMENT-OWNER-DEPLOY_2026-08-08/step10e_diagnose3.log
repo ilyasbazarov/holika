@@ -1,0 +1,14 @@
+=== date -u ===
+Sat Aug  8 14:10:18 UTC 2026
+=== full logs 13:14-13:30 UTC, cf-facts-00010-mog ===
+entries: 5
+--- 2026-08-08T13:14:16.291639Z INFO
+None
+--- 2026-08-08T13:14:39.069931Z INFO
+Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+--- 2026-08-08T13:14:42.626697Z INFO
+Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+--- 2026-08-08T13:16:28.789182Z INFO
+None
+--- 2026-08-08T13:23:14.377138Z None
+Excluding 2 position(s) from 1 consignment-channel agent(s) (entity/demand shipment to commissioner, not a sale) — revenue_kgs=1980000.00

@@ -1,0 +1,51 @@
+--- reference/_scratch_SALES-DOCUMENT-OWNER-DEPLOY_2026-08-08/holika-prod-check/cf-facts/bq_ops.py	2026-08-08 15:23:34
++++ reference/code/cf-facts/bq_ops.py	2026-08-08 15:21:01
+@@ -52,6 +52,9 @@
+     bigquery.SchemaField("transaction_date_raw", "STRING"),   # "YYYY-MM-DD HH:MM:SS.mmm"
+     bigquery.SchemaField("product_id",           "STRING"),
+     bigquery.SchemaField("agent_id",             "STRING"),
++    # SALES-DOCUMENT-OWNER-INGEST (ADR-128): сотрудник-владелец ДОКУМЕНТА entity/demand.owner,
++    # тот же приём, что agent_id. НЕ обновляется в WHEN MATCHED UPDATE SET — консистентно с agent_id.
++    bigquery.SchemaField("document_owner_employee_id", "STRING"),
+     bigquery.SchemaField("quantity",             "FLOAT64"),
+     bigquery.SchemaField("price_kgs",            "FLOAT64"),  # price / 100
+     bigquery.SchemaField("discount",             "FLOAT64"),  # percent 0–100
+\ No newline at end of file
+@@ -252,6 +255,7 @@
+     s.entity_type,
+     s.discount,
+     s.agent_id,
++    s.document_owner_employee_id,
+     s.quantity                                                      AS sell_quantity,
+     CAST(0.0 AS FLOAT64)                                            AS return_quantity,
+     s.revenue_kgs                                                   AS sell_sum_kgs,
+\ No newline at end of file
+@@ -312,7 +316,8 @@
+   T.project_id         = S.project_id,
+   T.project_name       = S.project_name,
+   T.discount        = S.discount,
+-  T._loaded_at      = S._loaded_at
++  T._loaded_at      = S._loaded_at,
++  T.document_owner_employee_id = S.document_owner_employee_id
+ 
+ WHEN NOT MATCHED THEN INSERT (
+   transaction_id,
+\ No newline at end of file
+@@ -320,6 +325,7 @@
+   product_id,
+   entity_type,
+   agent_id,
++  document_owner_employee_id,
+   sell_quantity,
+   return_quantity,
+   sell_sum_kgs,
+\ No newline at end of file
+@@ -342,6 +348,7 @@
+   S.product_id,
+   S.entity_type,
+   S.agent_id,
++  S.document_owner_employee_id,
+   S.sell_quantity,
+   S.return_quantity,
+   S.sell_sum_kgs,
+\ No newline at end of file

@@ -1,0 +1,51 @@
+=== date -u (start) ===
+Sat Aug  8 13:07:27 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== ALTER TABLE ===
+Waiting on bqjob_r4ff24652a9312b1d_0000019fe17c5229_1 ... (0s) Current status: DONE   
+Altered msklad-bi-prod.core.fact_sales_profit
+
+=== bq show --schema core.fact_sales_profit (after) ===
+columns: 23
+ - transaction_id : STRING
+ - transaction_date : DATE
+ - product_id : STRING
+ - entity_type : STRING
+ - agent_id : STRING
+ - sell_quantity : FLOAT
+ - return_quantity : FLOAT
+ - revenue_kgs : FLOAT
+ - cogs_kgs : FLOAT
+ - margin_kgs : FLOAT
+ - revenue_usd : FLOAT
+ - cogs_usd : FLOAT
+ - margin_usd : FLOAT
+ - _week_start : DATE
+ - _loaded_at : TIMESTAMP
+ - sell_sum_kgs : FLOAT
+ - return_sum_kgs : FLOAT
+ - discount : FLOAT
+ - sales_channel_id : STRING
+ - sales_channel_name : STRING
+ - project_id : STRING
+ - project_name : STRING
+ - document_owner_employee_id : STRING
+
+document_owner_employee_id: STRING
+=== date -u (end) ===
+Sat Aug  8 13:07:33 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

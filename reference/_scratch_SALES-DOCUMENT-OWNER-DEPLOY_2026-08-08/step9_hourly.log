@@ -1,0 +1,23 @@
+=== date -u (start) ===
+Sat Aug  8 13:14:11 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud functions call cf-facts (hourly) ===
+|
+  {"date_from":"2026-08-01","date_to":"2026-08-08","demand_positions_fetched":350,"gcs_path":"gs://msklad-raw-msklad-bi-prod/demand/incremental/run_verify_deploy_2026-08-08_document_owner_hourly.ndjson.gz","mode":"hourly","run_id":"verify_deploy_2026-08-08_document_owner_hourly","staging_rows_loaded":350,"status":"ok"}
+=== date -u (end) ===
+Sat Aug  8 13:15:00 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

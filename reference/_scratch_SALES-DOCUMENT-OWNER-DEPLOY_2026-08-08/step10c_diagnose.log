@@ -1,0 +1,19 @@
+=== date -u ===
+Sat Aug  8 14:09:24 UTC 2026
+=== staging table state for this run_id ===
++-----------+----------+----------+---------------+
+| row_count | min_date | max_date | max_loaded_at |
++-----------+----------+----------+---------------+
+|         0 | NULL     | NULL     |          NULL |
++-----------+----------+----------+---------------+
+=== staging table state, ANY run_id, most recent _loaded_at ===
++-------------------+-----------+---------------------+
+|      run_id       | row_count |    max_loaded_at    |
++-------------------+-----------+---------------------+
+| 1786197602.469266 |       350 | 2026-08-08 14:01:20 |
++-------------------+-----------+---------------------+
+=== GCS incremental path for this run_id ===
+CommandException: One or more URLs matched no objects.
+NOT FOUND
+=== cf-facts logs for this run_id (last hour) ===
+log entries found: 0
