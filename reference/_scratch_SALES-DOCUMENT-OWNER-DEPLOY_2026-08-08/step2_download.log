@@ -1,0 +1,28 @@
+=== gsutil cp archive by generation ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786115536540209...
+/ [0 files][    0.0 B/ 29.4 KiB]                                                / [0 files][ 29.4 KiB/ 29.4 KiB]                                                -- [1 files][ 29.4 KiB/ 29.4 KiB]                                                
+Operation completed over 1 objects/29.4 KiB.                                     
+=== unzip ===
+live_archive/bq_ops.py
+live_archive/config.py
+live_archive/deploy_and_workflow.sh
+live_archive/fetch_byvariant.py
+live_archive/fetch_demands.py
+live_archive/fetch_perimeter.py
+live_archive/fetch_purchases.py
+live_archive/fetch_returns.py
+live_archive/helpers.py
+live_archive/main.py
+live_archive/requirements.txt
+=== shasum live archive ===
+637074e5b2d75cea647e3e65acd952b84593e8eb2cf2807c9b4cd4123d9f7e6b  live_archive/bq_ops.py
+56e77eff536ce8fe2a1c3a015c2633ed1317e8a9cbbd9729165d5a7af38de63a  live_archive/config.py
+2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07  live_archive/deploy_and_workflow.sh
+88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1  live_archive/fetch_byvariant.py
+a7f2c9042828fcf2143027fe9292b3f7995f3e7a5364e711fb39e79166bddf72  live_archive/fetch_demands.py
+f609d5656fe6cf79941ffb3c904a122afabe2f5b7633a846a7f5ae713314275e  live_archive/fetch_perimeter.py
+5db807fee2da21c31c5fa3aeed77e16d1a4ae04193f55831534b89c5e9158486  live_archive/fetch_purchases.py
+7ce9373aa084258e45d2ba12c8f1bc2812b249958eec400c4181e4802793ae56  live_archive/fetch_returns.py
+aac5dee5add76513f52e8909a32925f261ad25d09ef55a1a6013f5262cd01c48  live_archive/helpers.py
+97b9ce3aa54085aab0739fd315890db22be8c837e829a9170ebce385ba6642d8  live_archive/main.py
+0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051  live_archive/requirements.txt
