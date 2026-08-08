@@ -1,0 +1,28 @@
+=== UTC anchor (start) ===
+Sat Aug  8 09:11:11 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== dry_run: merge_sql_hourly_isolated_no_docowner.sql ===
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 11696265 bytes of data.
+--- exit code: 0 ---
+
+=== dry_run: merge_sql_weekly_isolated_no_docowner.sql ===
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 11087735 bytes of data.
+--- exit code: 0 ---
+=== UTC anchor (end) ===
+Sat Aug  8 09:11:16 UTC 2026
+=== caller identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

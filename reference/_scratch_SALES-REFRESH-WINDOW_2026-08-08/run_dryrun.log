@@ -1,0 +1,14 @@
+=== UTC anchor (start) ===
+Sat Aug  8 09:09:20 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== dry_run: merge_sql_hourly.sql ===
+Error in query string: Name document_owner_employee_id not found inside s at
+[11:7]
