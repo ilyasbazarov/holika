@@ -1,0 +1,117 @@
+Sun Aug  9 14:48:56 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+--- dim_metadata_mappings full content ---
+[
+  {
+    "current_uuid": "2c3cc250-e3b8-11ef-0a80-050f0046f0c5", 
+    "field_name": "allowed_debt_sum", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "cc2ac157-8c86-11ef-0a80-09b300237ed4", 
+    "field_name": "avito", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "6d6cca1e-ed85-11f0-0a80-0b1a00a4547c", 
+    "field_name": "country", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "e78c57f9-ec81-11ef-0a80-116b006a0776", 
+    "field_name": "created_by_fintablo", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "548e436b-816e-11ef-0a80-05d00022fb51", 
+    "field_name": "instagram", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "549a6a79-8930-11ef-0a80-1640005a6034", 
+    "field_name": "is_exclusive", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "a2a2064c-ffe3-11ef-0a80-079100077088", 
+    "field_name": "is_sunscreen", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "838d5069-da78-11f0-0a80-06aa00258a13", 
+    "field_name": "max_id", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "838d526d-da78-11f0-0a80-06aa00258a14", 
+    "field_name": "max_username", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "7bc99928-88c7-11ef-0a80-0e8c0058ef38", 
+    "field_name": "qty_per_box", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "142bd180-e3b8-11ef-0a80-00ae0046e499", 
+    "field_name": "responsible_employee", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "c8ae21e9-64a1-11ef-0a80-0bba00013abb", 
+    "field_name": "shelf_life", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "491d62b6-8b37-11ef-0a80-0762000253a7", 
+    "field_name": "status_arrived", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "87b7a5e5-349f-11f1-0a80-1a0f000384c3", 
+    "field_name": "status_cancelled", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "491d6da5-8b37-11ef-0a80-0762000253a8", 
+    "field_name": "status_in_transit", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "87b7a192-349f-11f1-0a80-1a0f000384c2", 
+    "field_name": "status_partial_arrived", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "548e47f9-816e-11ef-0a80-05d00022fb55", 
+    "field_name": "telegram_id", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "548e4760-816e-11ef-0a80-05d00022fb54", 
+    "field_name": "telegram_username", 
+    "last_verified": "2026-04-29 19:13:59"
+  }, 
+  {
+    "current_uuid": "cc2abd30-8c86-11ef-0a80-09b300237ed3", 
+    "field_name": "vk", 
+    "last_verified": "2026-04-29 19:13:59"
+  }
+]
+--- row count ---
+n
+19
+Sun Aug  9 14:49:03 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
