@@ -1,0 +1,142 @@
+=== date -u (start) ===
+Sun Aug  9 13:54:28 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud logging metrics list ===
+---
+createTime: '2026-05-13T13:31:24.749457729Z'
+description: DQ Gate провалил проверку качества данных
+filter: |-
+  resource.type="cloud_run_revision"
+  resource.labels.service_name="cf-dq"
+  jsonPayload.message=~"DQ.*FAILED|dq_gate.*fail|check failed"
+  severity>=ERROR
+metricDescriptor:
+  description: DQ Gate провалил проверку качества данных
+  metricKind: DELTA
+  name: projects/msklad-bi-prod/metricDescriptors/logging.googleapis.com/user/msklad_dq_gate_failed
+  type: logging.googleapis.com/user/msklad_dq_gate_failed
+  unit: '1'
+  valueType: INT64
+name: msklad_dq_gate_failed
+resourceName: projects/msklad-bi-prod/metrics/msklad_dq_gate_failed
+updateTime: '2026-05-13T13:31:24.749457729Z'
+---
+createTime: '2026-05-13T13:31:30.279564302Z'
+description: Любое завершение workflow msklad-pipeline-hourly
+filter: |-
+  resource.type="workflows.googleapis.com/Workflow"
+  resource.labels.workflow_id="msklad-pipeline-hourly"
+  jsonPayload.state=~"SUCCEEDED|FAILED|CANCELLED"
+metricDescriptor:
+  description: Любое завершение workflow msklad-pipeline-hourly
+  metricKind: DELTA
+  name: projects/msklad-bi-prod/metricDescriptors/logging.googleapis.com/user/msklad_workflow_execution_any
+  type: logging.googleapis.com/user/msklad_workflow_execution_any
+  unit: '1'
+  valueType: INT64
+name: msklad_workflow_execution_any
+resourceName: projects/msklad-bi-prod/metrics/msklad_workflow_execution_any
+updateTime: '2026-05-13T13:31:30.279564302Z'
+---
+createTime: '2026-05-13T13:31:27.426578941Z'
+description: Cloud Workflow завершился со статусом FAILED или CANCELLED
+filter: |-
+  resource.type="workflows.googleapis.com/Workflow"
+  resource.labels.workflow_id=~"^msklad-pipeline"
+  jsonPayload.state=~"FAILED|CANCELLED"
+metricDescriptor:
+  description: Cloud Workflow завершился со статусом FAILED или CANCELLED
+  metricKind: DELTA
+  name: projects/msklad-bi-prod/metricDescriptors/logging.googleapis.com/user/msklad_workflow_execution_failed
+  type: logging.googleapis.com/user/msklad_workflow_execution_failed
+  unit: '1'
+  valueType: INT64
+name: msklad_workflow_execution_failed
+resourceName: projects/msklad-bi-prod/metrics/msklad_workflow_execution_failed
+updateTime: '2026-05-13T13:31:27.426578941Z'
+=== gcloud alpha monitoring policies list (display_name+filters) ===
+---
+conditions:
+- conditionThreshold:
+    aggregations:
+    - alignmentPeriod: 60s
+      crossSeriesReducer: REDUCE_SUM
+      perSeriesAligner: ALIGN_COUNT
+    comparison: COMPARISON_GT
+    duration: 0s
+    filter: resource.type="cloud_run_revision" AND metric.type="logging.googleapis.com/user/msklad_dq_gate_failed"
+  displayName: DQ Gate failed > 0
+  name: projects/msklad-bi-prod/alertPolicies/11146409152309763101/conditions/11146409152309761974
+displayName: msklad-dq-gate-failed
+enabled: true
+notificationChannels:
+- projects/msklad-bi-prod/notificationChannels/876055528317282377
+- projects/msklad-bi-prod/notificationChannels/13959469767726741244
+---
+conditions:
+- conditionThreshold:
+    aggregations:
+    - alignmentPeriod: 60s
+      crossSeriesReducer: REDUCE_SUM
+      perSeriesAligner: ALIGN_SUM
+    comparison: COMPARISON_GT
+    duration: 0s
+    filter: resource.type="cloud_run_revision" AND metric.type="run.googleapis.com/request_count"
+      AND metric.labels.response_code_class="5xx"
+  displayName: CF 5xx > 0
+  name: projects/msklad-bi-prod/alertPolicies/15642682455001599993/conditions/15642682455001595918
+displayName: msklad-cf-error
+enabled: true
+notificationChannels:
+- projects/msklad-bi-prod/notificationChannels/876055528317282377
+- projects/msklad-bi-prod/notificationChannels/13959469767726741244
+---
+conditions:
+- conditionAbsent:
+    aggregations:
+    - alignmentPeriod: 3600s
+      crossSeriesReducer: REDUCE_SUM
+      perSeriesAligner: ALIGN_COUNT
+    duration: 7200s
+    filter: resource.type="workflows.googleapis.com/Workflow" AND metric.type="logging.googleapis.com/user/msklad_workflow_execution_any"
+  displayName: No hourly executions in 2h
+  name: projects/msklad-bi-prod/alertPolicies/17238713730472887954/conditions/17238713730472886499
+displayName: msklad-workflow-silent-skip
+enabled: true
+notificationChannels:
+- projects/msklad-bi-prod/notificationChannels/876055528317282377
+- projects/msklad-bi-prod/notificationChannels/13959469767726741244
+---
+conditions:
+- conditionThreshold:
+    aggregations:
+    - alignmentPeriod: 60s
+      crossSeriesReducer: REDUCE_SUM
+      perSeriesAligner: ALIGN_COUNT
+    comparison: COMPARISON_GT
+    duration: 0s
+    filter: resource.type="workflows.googleapis.com/Workflow" AND metric.type="logging.googleapis.com/user/msklad_workflow_execution_failed"
+  displayName: Workflow failed > 0
+  name: projects/msklad-bi-prod/alertPolicies/6957487447036511751/conditions/6957487447036512432
+displayName: msklad-workflow-execution-failed
+enabled: true
+notificationChannels:
+- projects/msklad-bi-prod/notificationChannels/876055528317282377
+- projects/msklad-bi-prod/notificationChannels/13959469767726741244
+=== date -u (end) ===
+Sun Aug  9 13:54:30 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
