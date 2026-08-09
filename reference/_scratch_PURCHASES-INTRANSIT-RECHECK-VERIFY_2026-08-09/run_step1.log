@@ -1,0 +1,39 @@
+=== UTC anchor (start) ===
+Sun Aug  9 14:54:40 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== step1a: freshness core.fact_purchases ===
+[
+  {
+    "max_loaded_at": "2026-08-09 14:01:55", 
+    "n_orders": "214", 
+    "n_rows": "4424"
+  }
+]
+=== step1b: our side, mart filter verbatim from sq_marts_in_transit.sql (same filter as PARITY-STOCK-INTRANSIT-RECHECK step2a) ===
+[
+  {
+    "n_orders": "19", 
+    "n_positions": "269", 
+    "sum_in_transit_kgs": "8.798544467E7"
+  }
+]
+=== step1c: our side rows (mart filter), full detail — same query as PARITY-STOCK-INTRANSIT-RECHECK step2b ===
+n_rows_detail = 269
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Sun Aug  9 14:54:50 UTC 2026
+SCRATCH_PATH=reference/_scratch_PURCHASES-INTRANSIT-RECHECK-VERIFY_2026-08-09
