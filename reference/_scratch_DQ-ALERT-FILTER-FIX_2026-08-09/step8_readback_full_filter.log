@@ -1,0 +1,38 @@
+=== date -u (start) ===
+Sun Aug  9 14:18:54 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== full describe of updated metric ===
+createTime: '2026-05-13T13:31:24.749457729Z'
+description: DQ Gate провалил проверку качества данных
+filter: |-
+  resource.type="workflows.googleapis.com/Workflow"
+  resource.labels.workflow_id=~"^msklad-pipeline"
+  severity>=CRITICAL
+  textPayload=~"DQ Gate FAILED"
+metricDescriptor:
+  description: DQ Gate провалил проверку качества данных
+  metricKind: DELTA
+  name: projects/msklad-bi-prod/metricDescriptors/logging.googleapis.com/user/msklad_dq_gate_failed
+  type: logging.googleapis.com/user/msklad_dq_gate_failed
+  unit: '1'
+  valueType: INT64
+name: msklad_dq_gate_failed
+resourceName: projects/msklad-bi-prod/metrics/msklad_dq_gate_failed
+updateTime: '2026-08-09T14:18:09.574440802Z'
+=== date -u (end) ===
+Sun Aug  9 14:18:57 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

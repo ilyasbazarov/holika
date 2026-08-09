@@ -175,12 +175,42 @@ match_count=118
 
 ## 6. Статус применения
 
-**Правка живой log-based метрики/alert policy `msklad-dq-gate-failed`
-(`gcloud logging metrics update` / `gcloud alpha monitoring policies update` или эквивалент) НЕ
-ИСПОЛНЕНА.** Класс задачи — B; мандат владельца на применение не выдан ни одним ADR на момент
-закрытия этой сессии (`07_GAPS.md`: `DQ-ALERT-FILTER-FIX` — READY, класс B, НЕ выдан). Весь текст
-выше — read-only диагноз и предложение, ждущее отдельного мандата (прецедент формы — `ADR-092`,
-`ADR-100 §9`).
+**Правка ИСПОЛНЕНА в этой сессии.** Владелец выдал мандат класса B поимённо в чате
+(`2026-08-09T14:14Z` примерно, форма — прецедент `ADR-092`/`ADR-100 §9`, полный текст мандата в
+`NEW_DECISIONS` session-блока `reference/_inbox/session_DQ-ALERT-FILTER-FIX_2026-08-09.md`, номер
+ADR присваивается сборкой) и отдельно подтвердил именно действие обновления фильтра (`ADR-077 §6`,
+объект/откат названы отдельным сообщением до `ask`).
+
+**Команда:** `gcloud logging metrics update msklad_dq_gate_failed` (`step6_apply_filter_update.sh`,
+`2026-08-09T14:18:05Z…14:18:10Z`), только лог-метрика; alert policy `msklad-dq-gate-failed` не
+менялась (ссылается на метрику по `metric.type`, не по тексту фильтра).
+
+**Read-back после применения** (`step8_readback_full_filter.sh`/`.log`,
+`gcloud logging metrics describe msklad_dq_gate_failed`) — успех команды НЕ принят за факт
+(`★ Успех инструмента ≠ факт`), подтверждено отдельным чтением:
+
+```
+filter: |-
+  resource.type="workflows.googleapis.com/Workflow"
+  resource.labels.workflow_id=~"^msklad-pipeline"
+  severity>=CRITICAL
+  textPayload=~"DQ Gate FAILED"
+updateTime: '2026-08-09T14:18:09.574440802Z'
+```
+
+Живой фильтр дословно совпадает с предложенным в §3; `updateTime` сдвинулся относительно
+`createTime` (`2026-05-13T13:31:24Z`), подтверждая момент применения.
+
+**Откат** (если понадобится): `gcloud logging metrics update msklad_dq_gate_failed
+--project=msklad-bi-prod --log-filter='resource.type="cloud_run_revision"
+resource.labels.service_name="cf-dq"
+jsonPayload.message=~"DQ.*FAILED|dq_gate.*fail|check failed"
+severity>=ERROR' --description="DQ Gate провалил проверку качества данных"` — исходный текст
+дословно сохранён в `step2_list.log`.
+
+**Не проверено этим заходом** (предел, см. §5): доставка нового срабатывания в Telegram/почту —
+метрика начинает считать НОВЫЕ записи с момента `updateTime`, живого нового провала после правки в
+рамках этой сессии не было и не создавался искусственно (синтетика запрещена, `ADR-074`).
 
 ---
 

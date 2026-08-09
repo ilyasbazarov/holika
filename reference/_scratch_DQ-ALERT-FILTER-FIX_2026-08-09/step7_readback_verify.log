@@ -1,0 +1,48 @@
+=== date -u (start) ===
+Sun Aug  9 14:18:22 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== read-back: logging metrics list (filter for msklad_dq_gate_failed) ===
+name: msklad_dq_gate_failed
+resourceName: projects/msklad-bi-prod/metrics/msklad_dq_gate_failed
+updateTime: '2026-08-09T14:18:09.574440802Z'
+---
+=== control read on real event with LIVE metric filter (via logging read, same text) ===
+[
+  {
+    "insertId": "205cvff3tr3w2",
+    "labels": {
+      "execution_id": "cfee49f6-18cb-40c8-83f1-a07d77737c66",
+      "revision_id": "000003-f02"
+    },
+    "logName": "projects/msklad-bi-prod/logs/Workflows",
+    "receiveTimestamp": "2026-08-01T18:02:01.273774363Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "CRITICAL",
+    "textPayload": "[HOURLY] DQ Gate FAILED run_id=1785607202.673309 details={\"checks\":[{\"detail\":\"staging_count=825\",\"name\":\"not_empty\",\"passed\":true},{\"detail\":\"yesterday_rev=25921, ma7=4780222, ratio=0.01, threshold=0.03 (weekend), target_date=2026-08-01\",\"name\":\"drift_check\",\"passed\":false},{\"detail\":\"orphan_product_ids=0\",\"name\":\"fk_integrity\",\"passed\":true},{\"detail\":\"max_date=2026-08-01, lag_days=1\",\"name\":\"freshness\",\"passed\":true},{\"detail\":\"bad_margin_rows=0 (core, last 7d)\",\"name\":\"margin_sanity\",\"passed\":true},{\"detail\":\"avg_revenue_kgs=40468.93\",\"name\":\"currency_normalization\",\"passed\":true}],\"failed_checks\":[\"drift_check\"],\"passed\":false,\"run_id\":1785607202.673309,\"status\":\"FAILED\"}",
+    "timestamp": "2026-08-01T18:02:01.273774363Z"
+  }
+]
+=== date -u (end) ===
+Sun Aug  9 14:18:26 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
