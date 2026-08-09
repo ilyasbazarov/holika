@@ -1,0 +1,60 @@
+=== date -u (start) ===
+Sun Aug  9 10:39:49 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Условие 1: fact_loss / fact_commissionreportin — строки в полосе TIME(moment)>=18:00 UTC и разность месячных сумм ===
+[
+  {
+    "rows_in_late_band": "14", 
+    "rows_total": "193", 
+    "source_name": "commission", 
+    "sum_jul_bishkek": "1019346.28", 
+    "sum_jul_cast": "1019346.28", 
+    "sum_may_bishkek": "438729.42", 
+    "sum_may_cast": "438729.42"
+  }, 
+  {
+    "rows_in_late_band": "7", 
+    "rows_total": "131", 
+    "source_name": "loss", 
+    "sum_jul_bishkek": "210244.14", 
+    "sum_jul_cast": "210244.14", 
+    "sum_may_bishkek": "1193254.77", 
+    "sum_may_cast": "1193254.77"
+  }
+]
+=== Условие 2 (ДО): marts.expenses — май-2026, эталон 10 232 903.20 ===
+[
+  {
+    "row_count": "149", 
+    "total_kgs_may2026": "1.02329032E7"
+  }
+]
+=== Условие 2 (ДО): core.fact_returns — май-2026, эталон 570 ===
+[
+  {
+    "row_count": "8"
+  }
+]
+=== Условие 2 (ДО): core.fact_purchases — май-2026, эталон Δ=0 (печатаем COUNT/SUM для последующего сравнения) ===
+[
+  {
+    "row_count": "131"
+  }
+]
+=== date -u (end) ===
+Sun Aug  9 10:40:00 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

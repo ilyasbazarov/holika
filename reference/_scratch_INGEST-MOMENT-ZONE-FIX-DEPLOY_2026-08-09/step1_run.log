@@ -1,0 +1,45 @@
+=== date -u (start) ===
+Sun Aug  9 10:04:09 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud functions describe cf-facts ===
+revision: cf-facts-00010-mog
+updateTime: 2026-08-08T13:12:55.988390080Z
+bucket: gcf-v2-sources-420804682491-asia-east1
+object: cf-facts/function-source.zip
+generation: 1786194676108292
+archive uri: gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786194676108292
+=== download archive by pinned generation ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786194676108292 to file://live_archive/function-source.zip
+  
+...........................
+=== sha256 live archive (cf-facts relevant files) ===
+aac5dee5add76513f52e8909a32925f261ad25d09ef55a1a6013f5262cd01c48  live_archive/helpers.py
+7ce9373aa084258e45d2ba12c8f1bc2812b249958eec400c4181e4802793ae56  live_archive/fetch_returns.py
+5db807fee2da21c31c5fa3aeed77e16d1a4ae04193f55831534b89c5e9158486  live_archive/fetch_purchases.py
+97b9ce3aa54085aab0739fd315890db22be8c837e829a9170ebce385ba6642d8  live_archive/main.py
+e8bb06596bc64a22889890cff583a2d8ed8325ef4c5941d48a8769c2e18c90d8  live_archive/bq_ops.py
+56e77eff536ce8fe2a1c3a015c2633ed1317e8a9cbbd9729165d5a7af38de63a  live_archive/config.py
+=== sha256 code_repo master (same files) ===
+aac5dee5add76513f52e8909a32925f261ad25d09ef55a1a6013f5262cd01c48  code_repo/cf-facts/helpers.py
+7ce9373aa084258e45d2ba12c8f1bc2812b249958eec400c4181e4802793ae56  code_repo/cf-facts/fetch_returns.py
+5db807fee2da21c31c5fa3aeed77e16d1a4ae04193f55831534b89c5e9158486  code_repo/cf-facts/fetch_purchases.py
+97b9ce3aa54085aab0739fd315890db22be8c837e829a9170ebce385ba6642d8  code_repo/cf-facts/main.py
+e8bb06596bc64a22889890cff583a2d8ed8325ef4c5941d48a8769c2e18c90d8  code_repo/cf-facts/bq_ops.py
+56e77eff536ce8fe2a1c3a015c2633ed1317e8a9cbbd9729165d5a7af38de63a  code_repo/cf-facts/config.py
+=== date -u (end) ===
+Sun Aug  9 10:04:22 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

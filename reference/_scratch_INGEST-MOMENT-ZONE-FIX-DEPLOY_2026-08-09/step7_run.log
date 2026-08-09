@@ -1,0 +1,21 @@
+=== date -u (start) ===
+Sun Aug  9 11:14:37 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== вызов cf-facts mode=returns, window_days=100 (покрывает май-2026 — 2026-05-01, зона паритета) ===
+|
+  {"by_type":{"retailsalesreturn":8,"salesreturn":96},"date_from":"2026-05-01","date_to":"2026-08-09","mode":"returns","return_positions_fetched":104,"rows_loaded":104,"run_id":"deploy_ingest_moment_zone_fix_returns","status":"ok"}
+=== вызов cf-facts mode=purchases (полный рефреш, без параметров окна) ===
+ERROR: gcloud crashed (ReadTimeout): HTTPSConnectionPool(host='cf-facts-xw5u2boozq-de.a.run.app', port=443): Read timed out. (read timeout=300)
+
+If you would like to report this issue, please run the following command:
+  gcloud feedback
+
+To check gcloud for common problems, please run the following command:
+  gcloud info --run-diagnostics
