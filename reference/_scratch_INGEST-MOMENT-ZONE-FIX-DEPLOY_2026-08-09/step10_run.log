@@ -1,0 +1,28 @@
+=== date -u (start) ===
+Sun Aug  9 13:32:05 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== marts.expenses после — май-2026, эталон 10 232 903.20 ===
+[
+  {
+    "row_count": "149", 
+    "total_kgs_may2026": "1.02329032E7"
+  }
+]
+=== marts.expenses после — полная сумма и число строк (для протокола) ===
+[
+  {
+    "row_count": "3273", 
+    "total_kgs": "1.9776054313E8"
+  }
+]
+=== разность payment_type=loss/commission по июлю (месяц, где реально есть строки в полосе 18:00-24:00 UTC) ===
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r47ac193bf3469e97_0000019fe6b950dc_1': Syntax error: Unexpected
+keyword ROWS at [2:96]
