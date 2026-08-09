@@ -1,0 +1,57 @@
+=== UTC anchor (start) ===
+Sun Aug  9 15:07:50 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+--- dry_run: fact_purchases (A) technical ---
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 35392 bytes of data.
+
+--- dry_run: fact_purchases (B) business ---
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 35392 bytes of data.
+
+--- dry_run: fact_returns (A) technical ---
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 832 bytes of data.
+
+--- dry_run: fact_returns (B) business ---
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 832 bytes of data.
+
+--- dry_run: fact_inventory (A) technical ---
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 203424 bytes of data.
+
+--- dry_run: fact_inventory (B) business ---
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 203424 bytes of data.
+
+--- dry_run: fact_payments (A) technical [NOT READY - invariant unconfirmed] ---
+Query successfully validated. Assuming the tables are not modified, running this query will process 41080 bytes of data.
+
+--- dry_run: fact_payments (B) business ---
+Query successfully validated. Assuming the tables are not modified, running this query will process 41080 bytes of data.
+
+--- dry_run: fact_commissionreportin (A) technical [NOT READY - invariant unconfirmed] ---
+Query successfully validated. Assuming the tables are not modified, running this query will process 1544 bytes of data.
+
+--- dry_run: fact_commissionreportin (B) business ---
+Query successfully validated. Assuming the tables are not modified, running this query will process 1544 bytes of data.
+
+--- dry_run: fact_customer_invoices (A) technical [перенесено без изменений] ---
+Query successfully validated. Assuming the tables are not modified, running this query will process 36224 bytes of data.
+
+--- dry_run: fact_customer_invoices (B) business [перенесено без изменений] ---
+Query successfully validated. Assuming the tables are not modified, running this query will process 36224 bytes of data.
+
+=== UTC anchor (end) ===
+Sun Aug  9 15:08:14 UTC 2026
+=== caller identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
