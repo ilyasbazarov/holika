@@ -65,8 +65,19 @@ def check_drift(bq):
     """) or 0.0
     
     if ma7 == 0:
-        return True, f"yesterday_rev={target_rev:.0f}, ma7=0 (нет истории → пропуск)"
-        
+        # ma7=0 неотличимо от двух случаев одним числом: (i) core.fact_sales_profit
+        # НИКОГДА не имела строк вообще (легитимный первый запуск проекта — базы
+        # сравнения не существует по построению) и (ii) core.fact_sales_profit
+        # ИМЕЕТ историю, но окно T-8…T-2 опустело (промоут остановлен/заморожен —
+        # именно тогда проверка нужнее всего). Различитель — COUNT(*) без окна.
+        ever_had_data = run_scalar(bq, f"SELECT COUNT(*) FROM `{CORE_FACT}`") or 0
+        if ever_had_data == 0:
+            return True, (f"yesterday_rev={target_rev:.0f}, ma7=0, core_ever_rows=0 "
+                           f"(первый запуск проекта — базы сравнения не существует, пропуск обоснован)")
+        return False, (f"yesterday_rev={target_rev:.0f}, ma7=0, core_ever_rows={ever_had_data} "
+                        f"(окно T-8..T-2 пусто при непустой истории core — вероятная остановка "
+                        f"промоута, блокирую вместо тихого пропуска)")
+
     ratio = target_rev / float(ma7)
     return (ratio >= threshold,
             f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, ratio={ratio:.2f}, "
