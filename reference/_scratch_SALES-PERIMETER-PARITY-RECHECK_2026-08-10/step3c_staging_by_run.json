@@ -1,0 +1,22 @@
+[
+  {
+    "doc_count": "506", 
+    "loaded_at": "2026-08-10 11:46:49", 
+    "max_date": "2026-05-31 17:18:00.000", 
+    "min_date": "2026-05-28 11:03:00.000", 
+    "revenue_sum_kgs": "1188422.0", 
+    "row_count": "1441", 
+    "run_id": "SALES-PERIMETER-PARITY-RECHECK_2026-08-10_perimeter", 
+    "source_doc_type": "retaildemand"
+  }, 
+  {
+    "doc_count": "26", 
+    "loaded_at": "2026-08-10 11:52:31", 
+    "max_date": "2026-08-03 16:01:00.000", 
+    "min_date": "2026-05-04 16:00:00.000", 
+    "revenue_sum_kgs": "1.188702633E7", 
+    "row_count": "4137", 
+    "run_id": "SALES-PERIMETER-PARITY-RECHECK_2026-08-10_perimeter", 
+    "source_doc_type": "commissionreportin_sale"
+  }
+]

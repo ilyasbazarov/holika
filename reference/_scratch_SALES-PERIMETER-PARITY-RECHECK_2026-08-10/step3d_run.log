@@ -1,0 +1,24 @@
+=== date -u (начало) ===
+Mon Aug 10 11:53:36 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== call cf-facts mode=perimeter_promote window_days=99 ===
+|
+  {"merge_stats":{"affected_rows":5578,"staging_rows":5578,"window_days":99},"mode":"perimeter_promote","run_id":"20260810T115341","status":"ok"}
+gcloud functions call rc=0
+=== date -u (конец) ===
+Mon Aug 10 11:53:43 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
