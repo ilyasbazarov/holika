@@ -1,6 +1,6 @@
 # 11 · INFRA_FACTS — волатильные инфра-факты
 
-**Версия:** 0.2 (+ §CF/§секреты cf-finance/cf-fx, M-P4-A-03) · **Статус:** LIVING
+**Версия:** 0.3 (+ §CF/§секреты cf-alert, `INFRA-FACTS-LANDING`) · **Статус:** LIVING
 **Назначение:** канонический реестр волатильных инфра-фактов — URL/ревизии CF, Config ID SQ, расписания, IAM, секреты (имена). Обновляется часто, при каждом деплою/ротации секретов (ADR-004).
 **Состав по `00_CHARTER §карта документов` стр.53.**
 
@@ -24,7 +24,7 @@ gcloud functions deploy cf-finance \
 - Legacy URL: `https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-finance`
 - Cloud Scheduler: `finance-daily-update`, регион **`asia-east1`**, `0 3 * * *`, `Asia/Bishkek` (⇒ срабатывание 21:00 UTC предыдущих суток), HTTP POST на URI выше. **`attemptDeadline=1800s`** — поднят с `180s` 2026-07-26 по `ADR-023 §5/§6` (Scheduler-side `jobs update`, не редеплой; read-back подтверждён, провенанс `/reference/sched_attempt_deadline_readback_2026-07-26.md`). Серверный `--timeout` самой CF = `1800s` ⇒ значения совпадают, ложный клиентский 504 исключён by construction (`ADR-023 §5`); `Q-43` CLOSED. Полный `retryConfig`: `maxRetryDuration=0s` (ретраев НЕТ — DROP-DUP c RB-42; падение Scheduler тихо проглатывается, алерт только от мониторинга 5xx на Cloud Run), `minBackoffDuration=5s`, `maxBackoffDuration=3600s`, `maxDoublings=5`. Вызов аутентифицирован через `--oidc-service-account-email=etl-sa@msklad-bi-prod.iam.gserviceaccount.com` (`ADR-022`, с 2026-07-20; сохранён при partial-update 2026-07-26). `state: ENABLED`.
 - Cloud Scheduler: `loss-commission-daily-update`, регион **`asia-east1`**, `0 3 * * *`, `Asia/Bishkek`, HTTP POST, тело вызова `{}` ⇒ загрузчик берёт окно `2020-01-01 → завтра`, то есть всю историю (`/reference/code/cf-loss-commission/main.py` стр.241–243). `attemptDeadline=1800s` — заведён так изначально (`ADR-031 §6`), **подтверждён read-back'ом 2026-07-26**; до этого был заявкой в тексте ADR, не фактом (`ADR-021 §2`). `retryConfig`: `maxRetryDuration=0s`, `minBackoffDuration=5s`, `maxBackoffDuration=3600s`, `maxDoublings=5`. OIDC `etl-sa@msklad-bi-prod.iam.gserviceaccount.com`. `state: ENABLED`. **Пересборку марта НЕ триггерит** — в коде нет ни `transferConfig`, ни `StartManualTransferRuns` (в отличие от `cf-finance.trigger_marts()`, `ADR-038`) ⇒ ручной прогон безопасен для живой витрины. Запись идемпотентна: стейджинг `WRITE_TRUNCATE` → `MERGE` с явными колонками (`ADR-030`/C1).
-- **Инвентарь Cloud Scheduler (факт, E1-T1-MECH-PREP-ADJ, `2026-07-25T19:44:52Z` по `date -u`):** регион всех джобов — `asia-east1`; всего пять, все `state: ENABLED`. `msklad-pipeline-hourly` (`0 * * * *`) · `cf-inventory-trigger` (`0 21 * * *`) · `finance-daily-update` (`0 3 * * *`, `Asia/Bishkek`) · `loss-commission-daily-update` (`0 3 * * *`, `Asia/Bishkek`) · `msklad-pipeline-weekly` (`0 1 * * 0`). До этой сессии в `11 §CF` был документирован только `finance-daily-update`. Смежное: `msklad-pipeline-weekly` — предмет `Q-13` (расписание известно, состав шагов не задокументирован; последняя попытка 2026-07-19T01:00Z); `cf-inventory-trigger` в репо ранее не упоминался вовсе.
+- **Инвентарь Cloud Scheduler (факт, E1-T1-MECH-PREP-ADJ, `2026-07-25T19:44:52Z` по `date -u`):** регион всех джобов — `asia-east1`; всего пять, все `state: ENABLED`. `msklad-pipeline-hourly` (`0 * * * *`) · `cf-inventory-trigger` (`0 21 * * *`) · `finance-daily-update` (`0 3 * * *`, `Asia/Bishkek`) · `loss-commission-daily-update` (`0 3 * * *`, `Asia/Bishkek`) · `msklad-pipeline-weekly` (`0 1 * * 0`). До этой сессии в `11 §CF` был документирован только `finance-daily-update`. Смежное: состав шагов `msklad-pipeline-weekly` — см. `01_ARCHITECTURE.md §DAG` (факт 2026-08-07); `cf-inventory-trigger` в репо ранее не упоминался вовсе.
 - ⚠️ TD-SEC-01 — подтверждённый инцидент 2026-07-20, устранён IAM-lockdown (ADR-022): `allUsers`-invoker снят, вызов только через `etl-sa` (OIDC).
 - Ops-следствие (ADR-022 §4, флаг, не гейт): после lockdown любой ручной/ad-hoc вызов `cf-finance` требует identity-token, анонимный `curl` больше не работает. `10_OPS_PLAYBOOK` не существует (Q-35, DEFER) — нота живёт здесь.
 
@@ -100,6 +100,15 @@ gcloud functions deploy cf-facts \
 
 Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-13); PR-35 правило 41 (DROP-DUP); RB-42 (`maxRetryDuration=0s`); `cf-inventory` — `SOURCE-MAP-REST` (`ADR-079 §7b`).
 
+**cf-alert** (факт **2026-08-01**, `gcloud functions describe cf-alert --project=msklad-bi-prod --region=asia-east1 --gen2`, `reference/infra_facts_sweep_2026-08-01.md §Q-12`, сырой лог `reference/_scratch_INFRA-FACTS-SWEEP_2026-08-01/step1_gcloud_describe.log:97-147`):
+- Регион: `asia-east1`. Revision: **`cf-alert-00001-bej`** — единственная с момента создания, ни разу не редеплоена. `createTime`: `2026-05-13T12:23:18.665754631Z`. `updateTime`: `2026-07-30T10:04:58.439199216Z` (та же дата стоит у `cf-dq`/`cf-inventory`/`msklad-pipeline-weekly` — метаданная-правка массовой сессии того дня, не передеплой кода, см. строки 77–78 выше). `state: ACTIVE`.
+- URI (Cloud Run native): `https://cf-alert-xw5u2boozq-de.a.run.app`. Legacy URL: `https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-alert`.
+- `serviceAccountEmail`: `etl-sa@msklad-bi-prod.iam.gserviceaccount.com`. `timeoutSeconds`: `30`.
+- `secretEnvironmentVariables`: `TELEGRAM_BOT_TOKEN` ← секрет `telegram-bot-token`, версия `latest`; `TELEGRAM_CHAT_ID` ← секрет `telegram-chat-id`, версия `latest` (имена — не значения; полный состав секретов проекта — §секреты (имена) ниже).
+- Триггер — HTTP. Роль в схеме уведомления (факт **2026-08-02**, `reference/dq_source_capture_2026-08-02.md §5`): webhook-канал Cloud Monitoring для Telegram; ни `cf-dq`, ни тексты обоих Cloud Workflow (`msklad-pipeline-hourly`/`-weekly`) его не вызывают (сплошной `grep`, 0 совпадений в обоих) — политики оповещения Cloud Monitoring используют два канала, email плюс webhook на `cf-alert`.
+- Исходный код `cf-alert` в `reference/code/` НЕ снят — остаток `Q-3`, отдельная задача.
+- Текущее состояние фильтра лог-метрики DQ-алерта (`msklad_dq_gate_failed`) — закрыто отдельной задачей `DQ-ALERT-FILTER-FIX` (`ADR-149`, `reference/dq_alert_filter_fix_2026-08-09.md`), здесь не пересказывается.
+
 ## §SQ (Config ID + расписания)
 
 Источник: `reference/sql/README.md` (выгрузка 2026-07-07, проект `msklad-bi-prod`, location `asia-east1`) · ADR-008 §Решение (1) · PR-21.
@@ -160,8 +169,10 @@ ilyasbazarov4@gmail.com`. Прогон отработал (токен резол
 
 - `bakai-fx-token` — Secret Manager, JWT-токен (Bearer auth) для Bakai OpenBanking API, используется `cf-fx` (PR-18). **TTL токена неизвестен → GAP Q-7** (см. `07_STATE`); рабочая DEFER-политика — ротация по факту 401, процедура: `RUNBOOK_v8 §17` (заморожен). `10_OPS_PLAYBOOK` не существует — `Q-35`, DEFER; указатель исправлен сессией `FX-OUTBOUND-COVERAGE-ADJ`.
 - `msklad-token` — Secret Manager, используется `cf-finance` (`MSKLAD_TOKEN`, PR-13).
+- `telegram-bot-token` — Secret Manager, Telegram Bot API token, используется `cf-alert` (`TELEGRAM_BOT_TOKEN`, факт 2026-08-01, `reference/infra_facts_sweep_2026-08-01.md §Q-12`).
+- `telegram-chat-id` — Secret Manager, ID Telegram-чата для доставки, используется `cf-alert` (`TELEGRAM_CHAT_ID`, факт 2026-08-01, `reference/infra_facts_sweep_2026-08-01.md §Q-12`).
 
-Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-18 «cf-fx URL/секрет», PR-13).
+Источник-адрес: `00_CHARTER §карта документов` стр.53; ADR-004 §Последствия (PR-18 «cf-fx URL/секрет», PR-13, `cf-alert` — `INFRA-FACTS-LANDING`).
 
 ---
 
