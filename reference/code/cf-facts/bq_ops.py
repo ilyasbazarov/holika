@@ -381,6 +381,58 @@ THEN DELETE
 """
 
 
+# ─── Предохранитель ADR-145 §4/§5 (SALES-REFRESH-WINDOW) ──────────────────────
+
+def _assert_staging_covers_merge_window(
+    bq: bigquery.Client,
+    staging_table: str,
+    window_days: int,
+    label: str,
+) -> None:
+    """
+    Предусловие мандата на деплой ветки удаления (`ADR-145 §4/§5`): до исполнения
+    `MERGE` подтвердить, что фактическое покрытие staging по датам не УЖЕ окна,
+    которое получит ветка `WHEN NOT MATCHED BY SOURCE ... THEN DELETE`. Свойства
+    защиты по `ADR-145 §4` (форма выбрана этой сессией, свойства — архитектором):
+    сравнить покрытие staging с окном `MERGE`, ОТКАЗАТЬ при недостаточном покрытии
+    (не предупредить логом), сработать ДО исполнения `MERGE`.
+
+    Метод: MIN(transaction_date) в staging (тот же `_PARSE_DATE`, что несёт сам
+    `MERGE`) сравнивается с началом окна `MERGE` (`CURRENT_DATE() - window_days`).
+    Если минимальная дата в staging моложе начала окна — staging не дотягивается
+    до всей глубины, которую получит `DELETE`, и строки внутри окна, отсутствующие
+    в staging не потому что удалены в источнике, а потому что не были выбраны этим
+    прогоном, будут стёрты как «исчезнувшие». Ровно сценарий `ADR-145 §4`: часовой
+    staging (окно выборки 7 суток) при вызове `mode=promote, window_days=90` —
+    `MIN(date)` в staging окажется около «сегодня-7д», старше начала 90-суточного
+    окна `MERGE» не будет, отказ сработает раньше `MERGE`, а не после него.
+
+    Направление ошибки — в сторону отказа (fail-closed), не тихого пропуска:
+    сравнение по MIN-дате может дать ложный отказ, если ровно на границе окна
+    случился день без единой продажи (вероятность такого дня в данных проекта не
+    измерена и здесь не утверждается нулевой — открытое свойство метода, названное
+    явно, а не домысленное отсутствие риска).
+    """
+    row = next(
+        bq.query(
+            f"SELECT MIN({_PARSE_DATE}) AS min_date FROM `{staging_table}` s"
+        ).result()
+    )
+    window_start = date.today() - timedelta(days=window_days)
+    if row.min_date is None or row.min_date > window_start:
+        raise ValueError(
+            f"{label}: предохранитель ADR-145 §4 — staging покрывает с "
+            f"{row.min_date}, а окно MERGE начинается {window_start} "
+            f"(window_days={window_days}). Покрытие staging уже окна MERGE — "
+            f"ветка DELETE удалила бы строки внутри окна, отсутствующие в staging "
+            f"не потому что исчезли в источнике. Отказ, MERGE не исполняется."
+        )
+    log.info(
+        "%s: предохранитель ADR-145 §4 пройден — staging покрывает с %s, "
+        "окно MERGE с %s", label, row.min_date, window_start,
+    )
+
+
 # ─── Promote staging → core ───────────────────────────────────────────────────
 
 def promote_to_core(
@@ -402,6 +454,10 @@ def promote_to_core(
     staging_count = count_row.cnt
     if staging_count == 0:
         raise ValueError("promote_to_core: staging table is empty — refuse to MERGE")
+
+    # ── Pre-promote: предохранитель ADR-145 §4/§5 — покрытие staging обязано
+    # достигать начала окна MERGE, иначе ветка DELETE сотрёт непокрытую историю
+    _assert_staging_covers_merge_window(bq, STG_FACT_SALES, window_days, "promote_to_core")
 
     log.info("Staging rows: %d | window_days: %d", staging_count, window_days)
 
@@ -604,6 +660,13 @@ def promote_perimeter_to_core(
     staging_count = count_row.cnt
     if staging_count == 0:
         raise ValueError("promote_perimeter_to_core: staging table is empty — refuse to MERGE")
+
+    # ── Pre-promote: предохранитель ADR-145 §4/§5 — тот же приём, второй MERGE
+    # того же класса (ADR-144 §7); staging несёт ту же колонку transaction_date_raw
+    # (PERIMETER_STAGING_SCHEMA), _PARSE_DATE применим без изменений
+    _assert_staging_covers_merge_window(
+        bq, STG_FACT_SALES_PERIMETER, window_days, "promote_perimeter_to_core"
+    )
 
     log.info("Perimeter staging rows: %d | window_days: %d", staging_count, window_days)
 
