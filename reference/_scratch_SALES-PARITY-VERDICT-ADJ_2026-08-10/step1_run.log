@@ -1,0 +1,73 @@
+=== ЯКОРЬ НАЧАЛА ===
+Mon Aug 10 17:56:27 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+
+=== Q1: покрытие document_owner_employee_id, июль-2026 ===
+[
+  {
+    "n_owners": "3", 
+    "n_rows": "4707", 
+    "n_rows_no_owner": "1795", 
+    "revenue_kgs": "1.1250258188E8", 
+    "revenue_no_owner": "3512848.0"
+  }
+]
+
+=== Q2: июльская выручка в разрезе ВЛАДЕЛЬЦА ДОКУМЕНТА ===
+[
+  {
+    "employee": "Турдалиева А. М.", 
+    "n_rows": "830", 
+    "revenue_kgs": "7.474582028E7"
+  }, 
+  {
+    "employee": "Турсунбекова М.", 
+    "n_rows": "801", 
+    "revenue_kgs": "2.315231577E7"
+  }, 
+  {
+    "employee": "Омурбекова Э. О.", 
+    "n_rows": "1281", 
+    "revenue_kgs": "1.109159783E7"
+  }, 
+  {
+    "employee": "(владелец документа не заполнен)", 
+    "n_rows": "1795", 
+    "revenue_kgs": "3512848.0"
+  }
+]
+
+=== Q3: то же по владельцу документа, но с разбивкой по каналу продаж ===
+(периметр — розница и комиссия — владельца документа не несёт по построению)
+[
+  {
+    "channel": "Оптовая торговля", 
+    "n_rows": "2912", 
+    "owner_state": "есть владелец", 
+    "revenue_kgs": "1.0898973388E8"
+  }, 
+  {
+    "channel": "Комиссия", 
+    "n_rows": "1772", 
+    "owner_state": "нет владельца", 
+    "revenue_kgs": "3334723.58"
+  }, 
+  {
+    "channel": "Оптовая торговля", 
+    "n_rows": "23", 
+    "owner_state": "нет владельца", 
+    "revenue_kgs": "178124.42"
+  }
+]
+
+=== ЯКОРЬ КОНЦА ===
+Mon Aug 10 17:56:36 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
