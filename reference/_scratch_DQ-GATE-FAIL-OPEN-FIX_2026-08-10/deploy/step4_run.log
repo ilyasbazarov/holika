@@ -1,0 +1,72 @@
+=== UTC-якорь (начало) ===
+Mon Aug 10 15:07:14 UTC 2026
+
+=== личность вызывающего (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== ожидание планового часового прогона (0 * * * *) + запас 5 минут ===
+Условие ожидания выполнено: Mon Aug 10 15:07:15 UTC 2026
+
+=== audit.dq_runs — прогоны ПОСЛЕ деплоя (2026-08-10 14:42:35 UTC) ===
+[
+  {
+    "check_name": "currency_normalization", 
+    "checked_at": "2026-08-10 15:05:55", 
+    "detail": "avg_revenue_kgs=88144.74", 
+    "passed": "true", 
+    "run_id": "1786374002.7999175"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-10 15:05:55", 
+    "detail": "yesterday_rev=756397, ma7=5459004, ratio=0.14, threshold=0.03 (weekend), target_date=2026-08-09", 
+    "passed": "true", 
+    "run_id": "1786374002.7999175"
+  }, 
+  {
+    "check_name": "fk_integrity", 
+    "checked_at": "2026-08-10 15:05:55", 
+    "detail": "orphan_product_ids=0", 
+    "passed": "true", 
+    "run_id": "1786374002.7999175"
+  }, 
+  {
+    "check_name": "freshness", 
+    "checked_at": "2026-08-10 15:05:55", 
+    "detail": "max_date=2026-08-10, lag_days=0", 
+    "passed": "true", 
+    "run_id": "1786374002.7999175"
+  }, 
+  {
+    "check_name": "margin_sanity", 
+    "checked_at": "2026-08-10 15:05:55", 
+    "detail": "bad_margin_rows=0 (core, last 7d)", 
+    "passed": "true", 
+    "run_id": "1786374002.7999175"
+  }, 
+  {
+    "check_name": "not_empty", 
+    "checked_at": "2026-08-10 15:05:55", 
+    "detail": "staging_count=407", 
+    "passed": "true", 
+    "run_id": "1786374002.7999175"
+  }
+]
+
+=== UTC-якорь (конец) ===
+Mon Aug 10 15:07:18 UTC 2026
+
+=== личность вызывающего (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
