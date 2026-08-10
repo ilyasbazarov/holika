@@ -1,0 +1,3866 @@
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/report/profit/byproduct?momentFrom=2026-05-01+00%3a00%3a00&momentTo=2026-06-01+00%3a00%3a00&limit=100&offset=200",
+    "type" : "salesbyproduct",
+    "mediaType" : "application/json",
+    "size" : 279,
+    "limit" : 100,
+    "offset" : 200,
+    "previousHref" : "https://api.moysklad.ru/api/remap/1.2/report/profit/byproduct?offset=100&momentFrom=2026-05-01%2000%3A00%3A00&momentTo=2026-06-01%2000%3A00%3A00&limit=100"
+  },
+  "rows" : [ {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/0961c7d5-5e44-11f0-0a80-10c1000b2c45",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=0961bf32-5e44-11f0-0a80-10c1000b2c41"
+      },
+      "name" : "SKIN1004 Madagascar Centella Hyalu-Cica Water-Fit Sun Serum 15ml (Солнцезащитная сыворотка)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/603a9f0f-b74a-4aa5-98d9-233c7885eeff",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "image (84)",
+        "filename" : "image (84).png",
+        "size" : 24136,
+        "updated" : "2025-10-26 09:42:54.755",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/603a9f0f-b74a-4aa5-98d9-233c7885eeff?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/0a3c643f-680b-42cc-8fe1-5736e3b6f0ed"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/c3249aaf-8ffd-45ad-aced-15073b159e78/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 846.0,
+    "sellPrice" : 31115.957446808512,
+    "sellCost" : 29797.163120567377,
+    "sellSum" : 26324100,
+    "sellCostSum" : 25208400,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1115700.0,
+    "margin" : 0.044259056504974525,
+    "salesMargin" : 0.04238321538058276
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dbffb770-2e59-11ef-0a80-0b8700a96bf9",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dbffaf28-2e59-11ef-0a80-0b8700a96bf7"
+      },
+      "name" : "Skin1004 Madagascar Centella Hyalu-Cica Water-Fit Sun Serum 50ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/daeb8bea-7580-4d7a-bc77-3d686650a36f",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "Skin1004-Madagascar-Centella-Hyalu_Cica-Water_Fit-Sun-Serum-SPF50_-PA_",
+        "filename" : "Skin1004-Madagascar-Centella-Hyalu_Cica-Water_Fit-Sun-Serum-SPF50_-PA_.jpg",
+        "size" : 21173,
+        "updated" : "2024-10-18 21:32:46.530",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/daeb8bea-7580-4d7a-bc77-3d686650a36f?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/d5882112-3732-441f-bc02-5d38a402bfac"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/d5709e45-7492-4e96-bb21-0d45966afd5f/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 299.0,
+    "sellPrice" : 81748.69662314381,
+    "sellCost" : 68469.1872909699,
+    "sellSum" : 24442860.29032,
+    "sellCostSum" : 20472287,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 3970573.2903200015,
+    "margin" : 0.1939486922159699,
+    "salesMargin" : 0.16244307103013023
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/db8466bb-2e59-11ef-0a80-0b8700a96b1d",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=db845e02-2e59-11ef-0a80-0b8700a96b1b"
+      },
+      "name" : "Skin1004 Madagascar Centella Light Cleansing Oil 200ml(Успокаивающее гидрофильное масло с центеллой)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/045f8ad4-64db-4a1c-8eee-80fca88c8ff3",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-08-24 at 18.04.01",
+        "filename" : "WhatsApp Image 2025-08-24 at 18.04.01.jpeg",
+        "size" : 84881,
+        "updated" : "2025-08-24 15:35:42.498",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/045f8ad4-64db-4a1c-8eee-80fca88c8ff3?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/cad5bf27-326f-47da-afec-1fde41b257a4"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/64e0ae15-01dd-48f8-8940-e7209c63cf91/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1670.0,
+    "sellPrice" : 88025.30658682635,
+    "sellCost" : 61977.39341317365,
+    "sellSum" : 147002262,
+    "sellCostSum" : 103502247,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 43500015,
+    "margin" : 0.42028087564127947,
+    "salesMargin" : 0.29591391593688543
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/31ef836d-639b-11f0-0a80-029800036772",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=31ef7165-639b-11f0-0a80-02980003676e"
+      },
+      "name" : "SKIN1004 Madagascar Centella Niacinamide 10 Boosting Shot Ampoule 30ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/e9c1d38f-3fef-4c10-a84e-de61d2d54f7c",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-07-23 at 11.09.14",
+        "filename" : "WhatsApp Image 2025-07-23 at 11.09.14.jpeg",
+        "size" : 33669,
+        "updated" : "2025-07-23 08:10:00.228",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/e9c1d38f-3fef-4c10-a84e-de61d2d54f7c?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/b0be95e5-ebb4-4600-bec9-49c27ab65bc8"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/82c6faf4-c49e-4e2d-8725-4c2a6f629ab0/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 820.0,
+    "sellPrice" : 61310.96273170732,
+    "sellCost" : 48300.0,
+    "sellSum" : 50274989.44,
+    "sellCostSum" : 39606000,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 10668989.439999998,
+    "margin" : 0.26937811038731496,
+    "salesMargin" : 0.2122126639674934
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dbe24966-2e59-11ef-0a80-0b8700a96bd3",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dbe23efe-2e59-11ef-0a80-0b8700a96bd1"
+      },
+      "name" : "Skin1004 Madagascar Centella Poremizing Clear Toner 210 ml (Тоник для сужения пор с центеллой)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/48093c8f-ea54-4695-a817-8a4104ccbe3e",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "image (85)",
+        "filename" : "image (85).png",
+        "size" : 38459,
+        "updated" : "2025-10-26 09:43:33.200",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/48093c8f-ea54-4695-a817-8a4104ccbe3e?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/2224ffe7-7eca-49e5-9f93-685d2cc40907"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/a1163620-84f4-4e9f-ae5c-1dd89fb2c902/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 286.0,
+    "sellPrice" : 72044.05594405594,
+    "sellCost" : 54862.5,
+    "sellSum" : 20604600,
+    "sellCostSum" : 15690675,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 4913925.0,
+    "margin" : 0.31317486341409784,
+    "salesMargin" : 0.23848679421100138
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dc1ff039-2e59-11ef-0a80-0b8700a96c37",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dc1fe854-2e59-11ef-0a80-0b8700a96c35"
+      },
+      "name" : "SKIN1004 Madagascar Centella Poremizing Deep Cleansing Foam 125ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/da5f5d74-24db-4d63-8a12-cc5bba7c9d0f",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "70B41F27-9E63-4FCB-A261-F78DDF7D6EEE",
+        "filename" : "70B41F27-9E63-4FCB-A261-F78DDF7D6EEE.jpg",
+        "size" : 2066787,
+        "updated" : "2026-03-06 11:53:27.639",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/da5f5d74-24db-4d63-8a12-cc5bba7c9d0f?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/f8fa5f6f-a02e-489c-8442-fcdcfe3e4365"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/a93b9829-3f04-47ec-a61f-c717846af634/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 400.0,
+    "sellPrice" : 55655.4375,
+    "sellCost" : 43400.0,
+    "sellSum" : 22262175,
+    "sellCostSum" : 17360000,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 4902175.0,
+    "margin" : 0.28238335253456226,
+    "salesMargin" : 0.22020197936634678
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dbe9948e-2e59-11ef-0a80-0b8700a96be0",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dbe98bd6-2e59-11ef-0a80-0b8700a96bde"
+      },
+      "name" : "Skin1004 Madagascar Centella Poremizing Fresh Ampoule 100 ml (Себорегулирующая ампула для сужения пор)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/f69f7836-1b2e-4684-92f1-32bdd48aa9a3",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-05-10 at 14.57.46 (1)",
+        "filename" : "WhatsApp Image 2025-05-10 at 14.57.46 (1).jpeg",
+        "size" : 51074,
+        "updated" : "2025-05-10 15:15:00.938",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/f69f7836-1b2e-4684-92f1-32bdd48aa9a3?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/faa2d0df-db79-49c5-8c85-4d161fcf7edc"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/eb961ef4-5de3-4347-aff3-11db11360adc/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1518.0,
+    "sellPrice" : 69091.1081027668,
+    "sellCost" : 26608.646245059288,
+    "sellSum" : 104880302.1,
+    "sellCostSum" : 40391925,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 64488377.099999994,
+    "margin" : 1.5965660735406888,
+    "salesMargin" : 0.6148759663040673
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/a42dbeff-ef82-11ef-0a80-0855000e0127",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=a42db50d-ef82-11ef-0a80-0855000e0124"
+      },
+      "name" : "SKIN1004 Madagascar Centella Poremizing Fresh Ampoule 50ml(Себорегулирующая ампула для сужения пор)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/9dbd9255-1377-4865-956e-d314d912f2ba",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-05-10 at 18.19.35",
+        "filename" : "WhatsApp Image 2025-05-10 at 18.19.35.jpeg",
+        "size" : 22250,
+        "updated" : "2025-05-10 15:19:54.933",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/9dbd9255-1377-4865-956e-d314d912f2ba?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/1d137806-99f1-4eea-9e5c-cfdc04d3547c"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/6a519d32-271b-4c07-a14b-6742bc1254e0/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 471.0,
+    "sellPrice" : 58525.65605095541,
+    "sellCost" : 47749.893842887475,
+    "sellSum" : 27565584,
+    "sellCostSum" : 22490200,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 5075384.0,
+    "margin" : 0.22567091444273513,
+    "salesMargin" : 0.18412031466483714
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dc18ebb2-2e59-11ef-0a80-0b8700a96c2a",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dc18e2ca-2e59-11ef-0a80-0b8700a96c28"
+      },
+      "name" : "Skin1004 Madagascar Centella Poremizing Light Gel Cream 75 ml(Лёгкий гель-крем для сужения пор )",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/a3192665-6aad-4183-9314-755e3d55b132",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-05-10 at 14.58.47",
+        "filename" : "WhatsApp Image 2025-05-10 at 14.58.47.jpeg",
+        "size" : 108919,
+        "updated" : "2025-05-10 11:58:59.823",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/a3192665-6aad-4183-9314-755e3d55b132?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/a5288f1f-32c1-4229-adb4-22f82e9cb748"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/75810424-38cb-4fc2-aa2e-026876b650c1/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 498.0,
+    "sellPrice" : 70694.06626590362,
+    "sellCost" : 53025.0,
+    "sellSum" : 35205645.000420004,
+    "sellCostSum" : 26406450,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 8799195.000420004,
+    "margin" : 0.33322142887135553,
+    "salesMargin" : 0.2499370484567185
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/0546c409-5e45-11f0-0a80-1b1c000b4210",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=0546b9f7-5e45-11f0-0a80-1b1c000b420c"
+      },
+      "name" : "SKIN1004 Madagascar Centella Poremizing Quick Clay Stick Mask",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/236a7208-558d-48a9-9cdd-fd3f7683156d",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-08-24 at 18.04.04 (3)",
+        "filename" : "WhatsApp Image 2025-08-24 at 18.04.04 (3).jpeg",
+        "size" : 81253,
+        "updated" : "2025-08-24 15:47:21.483",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/236a7208-558d-48a9-9cdd-fd3f7683156d?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/72a4f24a-0591-4c52-afa7-739d57680660"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/94b7fb0e-c456-4d06-b0a2-f50a93a8f65b/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 657.0,
+    "sellPrice" : 71421.7798934551,
+    "sellCost" : 56700.0,
+    "sellSum" : 46924109.39,
+    "sellCostSum" : 37251900,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 9672209.39,
+    "margin" : 0.2596433843642876,
+    "salesMargin" : 0.20612451713492186
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/9f9f648b-3e20-11f1-0a80-07ae0007330b",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=9f9f574e-3e20-11f1-0a80-07ae00073307"
+      },
+      "name" : "Skin1004 Madagascar Centella Poremizing Velvet Finish Sunscreen 50ml ( Солнцезащитный крем с эффектом «вельветового финиша» )",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/064f7193-c8df-48ea-adb8-97ee676508b2",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "изображение_2026-07-19_094427879",
+        "filename" : "изображение_2026-07-19_094427879.png",
+        "size" : 317766,
+        "updated" : "2026-07-19 06:44:29.106",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/064f7193-c8df-48ea-adb8-97ee676508b2?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/02bec1ba-acb5-4057-a7e3-c73ca967f787"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/db2f38a5-385a-4dc2-872d-eed0318e37f2/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1389.0,
+    "sellPrice" : 71746.1891288697,
+    "sellCost" : 56175.0,
+    "sellSum" : 99655456.7,
+    "sellCostSum" : 78027075,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 21628381.700000003,
+    "margin" : 0.2771907277057355,
+    "salesMargin" : 0.217031584784258
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/3ec1a724-ef83-11ef-0a80-0d55000dee27",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=3ec19a3f-ef83-11ef-0a80-0d55000dee24"
+      },
+      "name" : "SKIN1004 Madagascar Centella Probio-Cica Bakuchiol Eye Cream 20ml(Укрепляющий крем для век с бакучиолом)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/239ae874-4289-4095-ad68-6b88eaa1e493",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-08-24 at 18.04.04 (5)",
+        "filename" : "WhatsApp Image 2025-08-24 at 18.04.04 (5).jpeg",
+        "size" : 154560,
+        "updated" : "2025-08-24 15:48:13.635",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/239ae874-4289-4095-ad68-6b88eaa1e493?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/61e8a801-792f-404b-a6d7-739f2f067ebe"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/02031f04-7fc9-44d6-b363-092b86bd2164/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 171.0,
+    "sellPrice" : 72513.26315789473,
+    "sellCost" : 50198.74853801169,
+    "sellSum" : 12399768,
+    "sellCostSum" : 8583986.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 3815782.0,
+    "margin" : 0.4445233251778369,
+    "salesMargin" : 0.3077301123698444
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dc5089ce-2e59-11ef-0a80-0b8700a96c91",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dc50817e-2e59-11ef-0a80-0b8700a96c8f"
+      },
+      "name" : "SKIN1004 Madagascar Centella Probio-Cica Enrich Cream 50мл(Ламеллярный крем с пробиотиками)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/68a67a62-dc09-4990-b209-da80d9e854c5",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-08-24 at 18.04.04 (2)",
+        "filename" : "WhatsApp Image 2025-08-24 at 18.04.04 (2).jpeg",
+        "size" : 83720,
+        "updated" : "2025-08-24 15:46:53.223",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/68a67a62-dc09-4990-b209-da80d9e854c5?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/d0db061a-60a9-4528-bb2c-3d296f197b5c"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/26d404d4-3bae-49ac-9bd4-4024328b1066/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 874.0,
+    "sellPrice" : 91627.28681350114,
+    "sellCost" : 67736.87986270023,
+    "sellSum" : 80082248.675,
+    "sellCostSum" : 59202033,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 20880215.674999997,
+    "margin" : 0.3526942339125414,
+    "salesMargin" : 0.2607346324619174
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dc41f70b-2e59-11ef-0a80-0b8700a96c77",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dc41efe9-2e59-11ef-0a80-0b8700a96c75"
+      },
+      "name" : "SKIN1004 Madagascar Centella Probio-Cica Essence Toner 210ml(Тонер-эссенция с пробиотиками)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/305da290-0a5a-4c15-a954-85bbef5f27fc",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-08-24 at 18.04.04 (1)",
+        "filename" : "WhatsApp Image 2025-08-24 at 18.04.04 (1).jpeg",
+        "size" : 87439,
+        "updated" : "2025-08-24 15:46:30.479",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/305da290-0a5a-4c15-a954-85bbef5f27fc?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/3ea9682e-6830-425e-8b76-6f123e00e95a"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/ab4d4720-8660-4cdc-acd1-67d8a9e38789/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 926.0,
+    "sellPrice" : 76123.27492440604,
+    "sellCost" : 57750.0,
+    "sellSum" : 70490152.58,
+    "sellCostSum" : 53476500,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 17013652.58,
+    "margin" : 0.3181519467429619,
+    "salesMargin" : 0.24136211878235092
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dc48cba4-2e59-11ef-0a80-0b8700a96c84",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dc48c4bc-2e59-11ef-0a80-0b8700a96c82"
+      },
+      "name" : "Skin1004 Madagascar Centella Probio-Cica Intensive Ampoule 50ml(Интенсивная ампула с пробиотиками)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/230b78e4-1acc-4cce-9164-372c614dd82d",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "2CABE3DF-5317-44FF-8204-41B1BCB697D8",
+        "filename" : "2CABE3DF-5317-44FF-8204-41B1BCB697D8.jpg",
+        "size" : 1821218,
+        "updated" : "2026-03-07 11:03:21.188",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/230b78e4-1acc-4cce-9164-372c614dd82d?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/5eedbbf5-fa7c-4fb8-a5fd-972bc639965a"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/25aa0f72-2727-4a19-95b4-f484bbdd2769/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1427.0,
+    "sellPrice" : 77573.60806587245,
+    "sellCost" : 60162.496145760335,
+    "sellSum" : 110697538.71,
+    "sellCostSum" : 85851882,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 24845656.709999993,
+    "margin" : 0.28940142174169226,
+    "salesMargin" : 0.22444633367223665
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/247271e8-5e47-11f0-0a80-05ba000bdc98",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=247265e3-5e47-11f0-0a80-05ba000bdc94"
+      },
+      "name" : "SKIN1004 Madagascar Centella Probio-Cica Nourishing Mask 22ml x 5ea (Питательная тканевая маска с пробиотиками)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/52719372-4d91-482b-aba5-745be6135708",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "image (6)",
+        "filename" : "image (6).png",
+        "size" : 107889,
+        "updated" : "2025-07-12 16:12:30.438",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/52719372-4d91-482b-aba5-745be6135708?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/23fda122-fe93-4d8d-8c55-292ad95d4672"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/fc6f5c04-4388-4134-a412-392e066b1ce5/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 175.0,
+    "sellPrice" : 48426.68288571428,
+    "sellCost" : 36225.0,
+    "sellSum" : 8474669.504999999,
+    "sellCostSum" : 6339375.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 2135294.504999999,
+    "margin" : 0.3368304454303459,
+    "salesMargin" : 0.2519619796076047
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/3ded0ec6-519f-11ef-0a80-0ee9006fd655",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=3decfe1c-519f-11ef-0a80-0ee9006fd653"
+      },
+      "name" : "Skin1004 Madagascar Centella Soothing Cream 75ml",
+      "article" : "SKIN1004 Madagascar Centella Soothing Cream 75ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/24d2cd96-8346-4c94-823e-79dbb6b42192",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "image (8)",
+        "filename" : "image (8).png",
+        "size" : 107136,
+        "updated" : "2025-07-12 16:18:13.314",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/24d2cd96-8346-4c94-823e-79dbb6b42192?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/77e72a05-c7ac-444e-873c-85e01db8c0e2"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/d85329bf-c8fc-4714-a85c-8b93c2729d3e/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 235.0,
+    "sellPrice" : 81377.43319148937,
+    "sellCost" : 58975.0,
+    "sellSum" : 19123696.8,
+    "sellCostSum" : 13859125,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 5264571.800000001,
+    "margin" : 0.37986321647290144,
+    "salesMargin" : 0.27529048672221157
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/2dd6348c-87e4-11ef-0a80-11f10092c623",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=2dd62c84-87e4-11ef-0a80-11f10092c621"
+      },
+      "name" : "Skin1004 Madagascar Centella Tea-Trica B5 Cream 75ml (Успокаивающий крем для проблемной кожи)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/7a848875-8bd4-473a-a29a-2bb7366f52c4",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "SKIN1004-Madagascar-Centella-Tea_Trica-B5-Cream_ (1)",
+        "filename" : "SKIN1004-Madagascar-Centella-Tea_Trica-B5-Cream_ (1).jpg",
+        "size" : 51764,
+        "updated" : "2025-07-16 08:02:12.044",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/7a848875-8bd4-473a-a29a-2bb7366f52c4?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/ab7c0611-84cb-405c-bc92-ab27898a0a4f"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/2899a24e-53c3-4a01-8483-47e43a8da441/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 400.0,
+    "sellPrice" : 68493.15,
+    "sellCost" : 54162.5,
+    "sellSum" : 27397260,
+    "sellCostSum" : 21665000,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 5732260.0,
+    "margin" : 0.26458619893838,
+    "salesMargin" : 0.20922749209227487
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dc26c320-2e59-11ef-0a80-0b8700a96c44",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dc26ba19-2e59-11ef-0a80-0b8700a96c42"
+      },
+      "name" : "Skin1004 Madagascar Centella Tea-Trica Purifying Toner 210 ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/4ae4c005-cedd-4b6c-bacf-46e2fdd85ddf",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-08-24 at 18.04.03 (2)",
+        "filename" : "WhatsApp Image 2025-08-24 at 18.04.03 (2).jpeg",
+        "size" : 125147,
+        "updated" : "2025-08-24 15:45:48.154",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/4ae4c005-cedd-4b6c-bacf-46e2fdd85ddf?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/f15b9ea0-41e1-4bf5-91ac-fb98256af06a"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/b69adf2a-2aa2-4a9a-aa11-73849fb368ac/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 294.0,
+    "sellPrice" : 83388.18656462585,
+    "sellCost" : 63350.0,
+    "sellSum" : 24516126.85,
+    "sellCostSum" : 18624900,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 5891226.8500000015,
+    "margin" : 0.31630918018351784,
+    "salesMargin" : 0.24030006395565706
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/30fcf2c7-5cbd-11f1-0a80-1306001eb6bb",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=30fce4cf-5cbd-11f1-0a80-1306001eb6b7"
+      },
+      "name" : "SKIN1004 Madagascar Centella Tea-Trica Relaxing Mask 1ea",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 114.0,
+    "sellPrice" : 12928.078947368422,
+    "sellCost" : 7200.0,
+    "sellSum" : 1473801.0,
+    "sellCostSum" : 820800.0,
+    "returnQuantity" : 1.0,
+    "returnPrice" : 15000.0,
+    "returnCost" : 7200.0,
+    "returnSum" : 15000.0,
+    "returnCostSum" : 7200.0,
+    "profit" : 645201.0,
+    "margin" : 0.7930199115044247,
+    "salesMargin" : 0.44228170943123835
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/c28522b1-5e47-11f0-0a80-1b1c000bcc7a",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=c285192e-5e47-11f0-0a80-1b1c000bcc76"
+      },
+      "name" : "SKIN1004 Madagascar Centella Tea-Trica Relaxing Mask 24ml x 5ea(Тканевая маска для проблемной кожи)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/7c997ef7-8bcd-4312-9702-a5af450a93bd",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "2_7004158e-b8db-479e-97e6-50e9ff4c0b2d",
+        "filename" : "2_7004158e-b8db-479e-97e6-50e9ff4c0b2d.jpg",
+        "size" : 123915,
+        "updated" : "2025-07-16 08:02:58.183",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/7c997ef7-8bcd-4312-9702-a5af450a93bd?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/b8fe5237-a58d-42b7-9b16-4cc95e36d1a9"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/28e3a160-040e-43fb-a84e-247a53c01884/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 52.0,
+    "sellPrice" : 46538.653846153844,
+    "sellCost" : 34737.5,
+    "sellSum" : 2420010.0,
+    "sellCostSum" : 1806350.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 613660.0,
+    "margin" : 0.33972375231821084,
+    "salesMargin" : 0.25357746455593155
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dc2dfe3a-2e59-11ef-0a80-0b8700a96c51",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dc2df5a7-2e59-11ef-0a80-0b8700a96c4f"
+      },
+      "name" : "Skin1004 Madagascar Centella Tea-Trica Relief Ampoule 100 ml (278 g)(Успокаивающая ампула для проблемной кожи)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/281ab683-172c-4f8d-a376-96d61876f7ce",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "image (21)",
+        "filename" : "image (21).png",
+        "size" : 151096,
+        "updated" : "2025-11-24 10:12:17.192",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/281ab683-172c-4f8d-a376-96d61876f7ce?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/d0cc082f-d698-466b-ba00-e6392e96e5fc"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/cbb49c2a-6464-4867-b45b-213a78e639be/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 477.0,
+    "sellPrice" : 107221.65828092243,
+    "sellCost" : 76413.7463312369,
+    "sellSum" : 51144731,
+    "sellCostSum" : 36449357,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 14695374,
+    "margin" : 0.40317237969383113,
+    "salesMargin" : 0.28732918743868263
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/c3e1bedf-12cc-11f1-0a80-1a3b0002f596",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=c3e1a786-12cc-11f1-0a80-1a3b0002f592"
+      },
+      "name" : "Skin1004 Madagascar Centella Tea-Trica Soothing Sun Milk 50ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/b4e20291-9a30-4c19-9ae7-7ef15a2b99ee",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "image",
+        "filename" : "image.png",
+        "size" : 80209,
+        "updated" : "2026-05-22 10:46:39.476",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/b4e20291-9a30-4c19-9ae7-7ef15a2b99ee?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/623962bf-4b7e-42ca-99d6-98ff9fe5337c"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/6063687a-a569-4797-ae6f-fc61214c74ae/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 232.0,
+    "sellPrice" : 75893.59051724138,
+    "sellCost" : 0.0,
+    "sellSum" : 17607313,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 17607313,
+    "margin" : 0.0,
+    "salesMargin" : 1.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/c3c83532-c779-11f0-0a80-14c500176b2b",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=c3c82cfe-c779-11f0-0a80-14c500176b27"
+      },
+      "name" : "Skin1004 Madagascar Centella Tea-Trica Travel Kit",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/d6e794db-548a-4c98-82ea-f08d6263a85f",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "image (43)",
+        "filename" : "image (43).png",
+        "size" : 143408,
+        "updated" : "2025-12-14 11:25:04.318",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/d6e794db-548a-4c98-82ea-f08d6263a85f?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/034b9df3-1572-469c-a0c8-8a4463ae07a2"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/cb229e16-1c96-493a-9b32-61cd2ad6ffae/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 104.0,
+    "sellPrice" : 104673.51923076923,
+    "sellCost" : 77437.50961538461,
+    "sellSum" : 10886046,
+    "sellCostSum" : 8053501.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 2832545.0,
+    "margin" : 0.35171598041646734,
+    "salesMargin" : 0.26019961701429517
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/61421baf-280e-11f1-0a80-04410017cd0f",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=61420ad7-280e-11f1-0a80-04410017cd0b"
+      },
+      "name" : "Skin1004 Madagascar Centella Teca Cream 75ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/8380086c-7dec-41a9-9a77-3e7177f2f46e",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "AEB2D0FF-8E3E-4F68-86E5-A6E7BF5845B5",
+        "filename" : "AEB2D0FF-8E3E-4F68-86E5-A6E7BF5845B5.jpg",
+        "size" : 1317867,
+        "updated" : "2026-04-21 10:13:58.901",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/8380086c-7dec-41a9-9a77-3e7177f2f46e?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/4b72737f-c665-4aed-975e-0f3f30c1a173"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/3df23e94-aa26-4b8e-963d-61455062b204/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 178.0,
+    "sellPrice" : 65700.0,
+    "sellCost" : 52237.5,
+    "sellSum" : 11694600,
+    "sellCostSum" : 9298275.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 2396325.0,
+    "margin" : 0.2577171572146446,
+    "salesMargin" : 0.20490867579908678
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/db9d5f57-2e59-11ef-0a80-0b8700a96b4f",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=db9d500f-2e59-11ef-0a80-0b8700a96b4d"
+      },
+      "name" : "Skin1004 Madagascar Centella Tone Brightening Boosting Toner 210ml(Мягкий осветляющий тоник с центеллой)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/a3508248-1f55-4058-a16b-10e99fc16d4e",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-05-10 at 15.03.45",
+        "filename" : "WhatsApp Image 2025-05-10 at 15.03.45.jpeg",
+        "size" : 121015,
+        "updated" : "2025-05-10 12:03:56.698",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/a3508248-1f55-4058-a16b-10e99fc16d4e?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/8043df69-8b1f-422e-9463-0597d91e48fa"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/2fb3f68b-d9f0-42b8-97a7-1265456b5242/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 197.0,
+    "sellPrice" : 77382.68472081219,
+    "sellCost" : 57575.0,
+    "sellSum" : 15244388.89,
+    "sellCostSum" : 11342275,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 3902113.8900000006,
+    "margin" : 0.34403273505535714,
+    "salesMargin" : 0.2559705028621846
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dba3a497-2e59-11ef-0a80-0b8700a96b5d",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dba39428-2e59-11ef-0a80-0b8700a96b5b"
+      },
+      "name" : "Skin1004 Madagascar Centella Tone Brightening Capsule Ampoule 100ml (Осветляющая капсульная ампула)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/c29f6ae4-d7ed-445a-b159-31f86b16da94",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-05-10 at 15.04.57",
+        "filename" : "WhatsApp Image 2025-05-10 at 15.04.57.jpeg",
+        "size" : 64327,
+        "updated" : "2025-05-10 12:05:11.693",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/c29f6ae4-d7ed-445a-b159-31f86b16da94?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/1aa9ad0e-809f-44c9-8215-5ec4d1316226"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/54f8adc1-8613-4515-9cb6-57ec9333cc10/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 799.0,
+    "sellPrice" : 82857.22524405507,
+    "sellCost" : 63255.42052565707,
+    "sellSum" : 66202922.97,
+    "sellCostSum" : 50541081,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 15661841.969999999,
+    "margin" : 0.3098833990115881,
+    "salesMargin" : 0.23657326999137485
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dbaa46db-2e59-11ef-0a80-0b8700a96b6b",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dbaa3f73-2e59-11ef-0a80-0b8700a96b68"
+      },
+      "name" : "Skin1004 Madagascar Centella Tone Brightening Cleansing Gel Foam 125ml (171,0гр)(Осветляющий гель для умывания)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/b6b6f662-9bfd-4e53-bfa3-f36edd875cdb",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "image (92)",
+        "filename" : "image (92).png",
+        "size" : 120385,
+        "updated" : "2025-10-26 09:49:48.756",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/b6b6f662-9bfd-4e53-bfa3-f36edd875cdb?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/a1b686eb-e6cd-446e-99f6-ad5a561a44e8"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/d7d46089-02cc-4048-a0b1-a4147f5f0015/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 97.0,
+    "sellPrice" : 55929.8969072165,
+    "sellCost" : 41737.49484536082,
+    "sellSum" : 5425200.0,
+    "sellCostSum" : 4048537.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1376663.0,
+    "margin" : 0.3400396241901704,
+    "salesMargin" : 0.25375341001253415
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/0fb4bf97-acee-11f0-0a80-0b980021717f",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=0fb4b5c6-acee-11f0-0a80-0b980021717b"
+      },
+      "name" : "SKIN1004 Madagascar Centella Tone Brightening Dark Spot Ampoule Pad 60pads(Осветляющие пэды с центеллой)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/d3b5adb7-c738-468e-8e3b-acc071364bc9",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "5C14543C-15AF-42C2-9C11-8C4C04AE0D40",
+        "filename" : "5C14543C-15AF-42C2-9C11-8C4C04AE0D40.jpg",
+        "size" : 1900031,
+        "updated" : "2026-03-06 11:56:51.542",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/d3b5adb7-c738-468e-8e3b-acc071364bc9?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/4684e771-0f62-4458-953f-4bf54eb6c475"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/649749b3-b310-48f5-9f8b-af0fa13935f5/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 191.0,
+    "sellPrice" : 104557.34031413612,
+    "sellCost" : 76212.49738219896,
+    "sellSum" : 19970452,
+    "sellCostSum" : 14556587,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 5413865.0,
+    "margin" : 0.37191856854907,
+    "salesMargin" : 0.2710937639268255
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/db972176-2e59-11ef-0a80-0b8700a96b42",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=db971ae1-2e59-11ef-0a80-0b8700a96b40"
+      },
+      "name" : "Skin1004 Madagascar Centella Toning Toner 210ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/0438db40-b20d-445f-981d-29009fa9a5cf",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "F0509ADB-E2C7-486B-88F7-53A40A29EDC5",
+        "filename" : "F0509ADB-E2C7-486B-88F7-53A40A29EDC5.jpg",
+        "size" : 1991532,
+        "updated" : "2026-03-06 12:07:22.762",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/0438db40-b20d-445f-981d-29009fa9a5cf?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/cdde0fd5-586e-44b3-9648-dff349865b6f"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/ec7718bf-6b4d-46fe-9d32-7c0d39a5d0a1/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 400.0,
+    "sellPrice" : 72018.0,
+    "sellCost" : 56700.0,
+    "sellSum" : 28807200,
+    "sellCostSum" : 22680000,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 6127200.0,
+    "margin" : 0.27015873015873026,
+    "salesMargin" : 0.21269682579355165
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dbc65d23-2e59-11ef-0a80-0b8700a96ba0",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dbc65513-2e59-11ef-0a80-0b8700a96b9e"
+      },
+      "name" : "Skin1004 Madagascar Centella Travel Kit(Дорожный набор миниатюр с центеллой)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/284e3eee-3268-4987-88ad-774f50d51582",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "image (44)",
+        "filename" : "image (44).png",
+        "size" : 391578,
+        "updated" : "2025-12-14 11:26:36.074",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/284e3eee-3268-4987-88ad-774f50d51582?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/fd01da38-3362-483f-a076-5087fce5fd54"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/bed57e8d-5384-4124-958e-9918a532e8b3/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 420.0,
+    "sellPrice" : 122496.44839285716,
+    "sellCost" : 94531.99523809523,
+    "sellSum" : 51448508.325,
+    "sellCostSum" : 39703438,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 11745070.325000003,
+    "margin" : 0.29581998226450823,
+    "salesMargin" : 0.2282878689272475
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/db0fa010-2e59-11ef-0a80-0b8700a96a74",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=db0f9739-2e59-11ef-0a80-0b8700a96a72"
+      },
+      "name" : "Skin1004 Madagascar Centella Watergel Sheet Ampoule Mask №1 (33,5 г)",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 138.0,
+    "sellPrice" : 12812.557971014492,
+    "sellCost" : 7200.0,
+    "sellSum" : 1768133.0,
+    "sellCostSum" : 993600.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 774533.0,
+    "margin" : 0.7795219404186795,
+    "salesMargin" : 0.4380513230622357
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/db15bfef-2e59-11ef-0a80-0b8700a96a79",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=db15b900-2e59-11ef-0a80-0b8700a96a77"
+      },
+      "name" : "Skin1004 Madagascar Centella Watergel Sheet Ampoule Mask №5 (222,5 г)(Ампульная маска с 51% центеллы)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/f29bf291-874e-4c2d-9bab-3a444d124e74",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "image (12)",
+        "filename" : "image (12).png",
+        "size" : 26586,
+        "updated" : "2025-07-12 16:24:56.797",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/f29bf291-874e-4c2d-9bab-3a444d124e74?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/5e3755f6-3a0e-4c4c-857e-d12360e4a739"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/80d57f60-0fbe-4d28-842a-3fe52c3989d2/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 60.0,
+    "sellPrice" : 46557.0,
+    "sellCost" : 34825.0,
+    "sellSum" : 2793420.0,
+    "sellCostSum" : 2089500.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 703920.0,
+    "margin" : 0.3368844221105527,
+    "salesMargin" : 0.251992181626823
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/b417f235-8099-11f0-0a80-0f23001c5ce8",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=b417e36f-8099-11f0-0a80-0f23001c5ce4"
+      },
+      "name" : "Skin&Lab Retinol Lifting Roller Cream (50ml)(Массажный лифтинг-крем с ретинолом и пептидами)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/e4039db7-8eee-44dd-b627-5af8024a9b5f",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-09-01 at 14.17.09",
+        "filename" : "WhatsApp Image 2025-09-01 at 14.17.09.jpeg",
+        "size" : 37321,
+        "updated" : "2025-09-01 11:17:24.213",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/e4039db7-8eee-44dd-b627-5af8024a9b5f?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/7e291625-536a-48d3-bc17-b52f9dbf6693"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/d704e184-3ddc-4560-8241-7a0f574c0f9f/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 5.0,
+    "sellPrice" : 133920.0,
+    "sellCost" : 108500.0,
+    "sellSum" : 669600.0,
+    "sellCostSum" : 542500.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 127100.0,
+    "margin" : 0.2342857142857142,
+    "salesMargin" : 0.18981481481481477
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/d1feb260-2e59-11ef-0a80-0b8700a958e7",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=d1feaae7-2e59-11ef-0a80-0b8700a958e5"
+      },
+      "name" : "Skin&Lab Vitamin C Brightening Serum (30 ml)(Осветляющая сыворотка )",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/bf5ba6bf-f7a9-4b65-a014-ff04bbb68f92",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-09-01 at 14.12.15",
+        "filename" : "WhatsApp Image 2025-09-01 at 14.12.15.jpeg",
+        "size" : 50801,
+        "updated" : "2025-09-01 11:12:28.968",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/bf5ba6bf-f7a9-4b65-a014-ff04bbb68f92?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/8b2f2f9d-0df0-4801-8581-94795e1b8e2f"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/916a22ea-6145-4b3a-b33a-cedd95ec5eb0/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 834.0,
+    "sellPrice" : 67713.30935251799,
+    "sellCost" : 50381.98561151079,
+    "sellSum" : 56472900,
+    "sellCostSum" : 42018576,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 14454324,
+    "margin" : 0.343998425839086,
+    "salesMargin" : 0.2559515094850805
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/e7cabc9f-9789-11ef-0a80-19dd0011fd61",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=e7cab1c6-9789-11ef-0a80-19dd0011fd5e"
+      },
+      "name" : "Tirtir Mask Fit Aura Cushion 25N Mocha",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/24ac1357-59de-47c4-9d38-db7bb1202aeb",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "CCA4F8A4-3D75-44CE-AFC5-F2250E3A9048",
+        "filename" : "CCA4F8A4-3D75-44CE-AFC5-F2250E3A9048.jpg",
+        "size" : 2759248,
+        "updated" : "2026-03-07 11:22:55.341",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/24ac1357-59de-47c4-9d38-db7bb1202aeb?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/03c9772f-3f75-4e79-ad75-e215a661be50"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/ae0378de-d28d-4ca2-9507-7b1c4ee82b8a/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1.0,
+    "sellPrice" : 91570.5,
+    "sellCost" : 99146.0,
+    "sellSum" : 91570.5,
+    "sellCostSum" : 99146.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : -7575.5,
+    "margin" : -0.07640752022270192,
+    "salesMargin" : -0.08272860801240567
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/6bb598fb-978a-11ef-0a80-116600134791",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=6bb5904e-978a-11ef-0a80-11660013478e"
+      },
+      "name" : "Tirtir Mask Fit Red Cushion 24N Latte",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/e88afceb-4598-4e9b-b601-c64e6754b02c",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "3518FFB8-523B-41E6-95C4-0F2B58D16577",
+        "filename" : "3518FFB8-523B-41E6-95C4-0F2B58D16577.jpg",
+        "size" : 101854,
+        "updated" : "2024-11-01 21:19:48.661",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/e88afceb-4598-4e9b-b601-c64e6754b02c?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/72d2abf6-9ae4-4c3f-9893-f1b2e582f63f"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/3a85dcd9-4ee1-430e-9a9b-7cb5ba914fc7/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 40.0,
+    "sellPrice" : 86240.0,
+    "sellCost" : 99234.05,
+    "sellSum" : 3449600.0,
+    "sellCostSum" : 3969362.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : -519762.0,
+    "margin" : -0.13094346144292202,
+    "salesMargin" : -0.15067312152133572
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/00c19c11-2e5a-11ef-0a80-0b8700a9b519",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=00c191b6-2e5a-11ef-0a80-0b8700a9b517"
+      },
+      "name" : "Tocobo Bio Watery Sun Cream SPF50+ PA++++",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/f1003821-52cf-469a-adeb-75eacc02661a",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "photo_2022_07_25_12_18_30",
+        "filename" : "photo_2022_07_25_12_18_30.jpg",
+        "size" : 33573,
+        "updated" : "2024-10-17 18:40:44.641",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/f1003821-52cf-469a-adeb-75eacc02661a?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/06e8a5b0-5df0-498d-a53c-0e47279f231b"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/b575aaf7-4e42-4ca6-b351-2a26531f8c9e/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 2712.0,
+    "sellPrice" : 64841.150442477876,
+    "sellCost" : 52380.0,
+    "sellSum" : 175849200,
+    "sellCostSum" : 142054560,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 33794640,
+    "margin" : 0.2378990157021359,
+    "salesMargin" : 0.19217966302945932
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/1cae8fb2-3a30-11f1-0a80-13150005db61",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=1cae806c-3a30-11f1-0a80-13150005db5d"
+      },
+      "name" : "Tocobo Cica Cooling Sun Stick Mini",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/e37fcce3-cc71-4f18-9a89-23aaf892fceb",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "5c953f22-9744-4167-8e50-f3e6ff146bd4",
+        "filename" : "5c953f22-9744-4167-8e50-f3e6ff146bd4.jfif",
+        "size" : 17850,
+        "updated" : "2026-04-17 12:18:41.465",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/e37fcce3-cc71-4f18-9a89-23aaf892fceb?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/389165d0-87c8-4215-8e97-61ff579ad0f0"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/0d683eee-1299-4dee-b75b-a9039302f0b5/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 260.0,
+    "sellPrice" : 46869.230769230766,
+    "sellCost" : 37980.0,
+    "sellSum" : 12186000,
+    "sellCostSum" : 9874800.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 2311200.0,
+    "margin" : 0.23405030987969377,
+    "salesMargin" : 0.1896602658788774
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/2ded91cb-3a30-11f1-0a80-13150005e037",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=2ded8294-3a30-11f1-0a80-13150005e033"
+      },
+      "name" : "Tocobo Mini Cotton Soft Sun Stick",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/1c6555ce-7bdb-4a28-b85c-349ae96feb4a",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "477126cb-02a3-4973-9a3b-86a8220d65fa",
+        "filename" : "477126cb-02a3-4973-9a3b-86a8220d65fa.jfif",
+        "size" : 22088,
+        "updated" : "2026-04-17 12:19:50.316",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/1c6555ce-7bdb-4a28-b85c-349ae96feb4a?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/475e316c-3979-4fc2-ae49-c5f5c4eb5954"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/a292238f-e3f7-4f92-8e94-cc30d211253b/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 370.0,
+    "sellPrice" : 46940.54054054054,
+    "sellCost" : 38070.0,
+    "sellSum" : 17368000,
+    "sellCostSum" : 14085900,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 3282100.0,
+    "margin" : 0.23300605570109112,
+    "salesMargin" : 0.1889739751266697
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/3b585d42-3a30-11f1-0a80-17d100064215",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=3b584f17-3a30-11f1-0a80-17d100064211"
+      },
+      "name" : "Tocobo Mini Sun Cushion Keyring(Миниатюры)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/3106bf4c-c56c-49f4-8f79-bf7b0ed97bbd",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2026-04-17 at 15.53.09 (1)",
+        "filename" : "WhatsApp Image 2026-04-17 at 15.53.09 (1).jpeg",
+        "size" : 97305,
+        "updated" : "2026-04-17 12:54:16.625",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/3106bf4c-c56c-49f4-8f79-bf7b0ed97bbd?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/5d64dd24-e2e1-4d8d-bf1d-a9d3962b43bf"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/09265a18-491f-487d-ade9-79776178dc09/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 10.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/0e1d712a-4451-11f1-0a80-04090002c90f",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=0e1d57f7-4451-11f1-0a80-04090002c90b"
+      },
+      "name" : "Tocobo Mini Sun Stick Keyring (Sky Blue)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/8685f7d5-17c0-4b37-8a4f-777c2ffaf190",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : ",h",
+        "filename" : ",h.jpg",
+        "size" : 106551,
+        "updated" : "2026-05-25 08:09:49.209",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/8685f7d5-17c0-4b37-8a4f-777c2ffaf190?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/42dbec0c-cee7-458d-8097-070440dfa538"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/aab77823-74cc-48f4-a21a-e2222abf907d/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 35.0,
+    "sellPrice" : 17485.714285714286,
+    "sellCost" : 0.0,
+    "sellSum" : 612000.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 612000.0,
+    "margin" : 0.0,
+    "salesMargin" : 1.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/02f71007-4851-11f0-0a80-0620002b048a",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=02f706ba-4851-11f0-0a80-0620002b0486"
+      },
+      "name" : "Tocobo Vita Airy Sun Primer SPF50+ PA++++ (35ml)(Солнцезащитный праймер для сужения пор)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/da02cde3-157d-471b-87bf-0a5482abf9fd",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "1460257E-D7C8-47E5-A9E6-46809D7E62E8",
+        "filename" : "1460257E-D7C8-47E5-A9E6-46809D7E62E8.jpg",
+        "size" : 2323126,
+        "updated" : "2026-03-06 13:15:59.187",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/da02cde3-157d-471b-87bf-0a5482abf9fd?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/af60cc6c-4662-424a-9fbd-aadfbda2916a"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/d581540b-8dac-4d8e-8ad4-4dcc5ad267d4/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 16.0,
+    "sellPrice" : 22841.25,
+    "sellCost" : 51625.0,
+    "sellSum" : 365460.0,
+    "sellCostSum" : 826000.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : -460540.0,
+    "margin" : -0.5575544794188863,
+    "salesMargin" : -1.260165271165107
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/49cfb2c6-3a30-11f1-0a80-19390006de0d",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=49cf9c8b-3a30-11f1-0a80-19390006de09"
+      },
+      "name" : "Tocobo Vita Waterproof Sun Stick Mini",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/f1f047f9-28fc-4fa1-b37c-097f037d5c30",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "8ad84a04-285f-4d30-97fd-8d4af6148dbf",
+        "filename" : "8ad84a04-285f-4d30-97fd-8d4af6148dbf.jfif",
+        "size" : 32277,
+        "updated" : "2026-04-17 12:37:13.102",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/f1f047f9-28fc-4fa1-b37c-097f037d5c30?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/21d7c634-ee83-48f0-be11-70207afebcb0"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/40f87679-e08a-41c1-b3bb-af47ec208863/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 250.0,
+    "sellPrice" : 46935.0,
+    "sellCost" : 38340.0,
+    "sellSum" : 11733750,
+    "sellCostSum" : 9585000.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 2148750.0,
+    "margin" : 0.2241784037558685,
+    "salesMargin" : 0.18312559923298177
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/5eeec0a1-efa2-11ef-0a80-0d5500128b68",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=5eeeb613-efa2-11ef-0a80-0d5500128b65"
+      },
+      "name" : "Torriden Balanceful Peeling Toner 250ml(Пилинг-тоник с 5 видами кислот)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/c3426528-f66f-4b89-bd72-275049c158b0",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "b7328509-a2c8-4d3c-8be2-bb27283dc190",
+        "filename" : "b7328509-a2c8-4d3c-8be2-bb27283dc190.png",
+        "size" : 355581,
+        "updated" : "2025-03-05 12:06:01.329",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/c3426528-f66f-4b89-bd72-275049c158b0?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/065532c2-7f8f-4e70-8589-786aa4e5b870"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/19e18d17-252a-44c4-9923-dc757e345f54/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 10.0,
+    "sellPrice" : 81607.5,
+    "sellCost" : 64925.0,
+    "sellSum" : 816075.0,
+    "sellCostSum" : 649250.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 166825.0,
+    "margin" : 0.25695032730073164,
+    "salesMargin" : 0.20442361302576362
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/7b153b06-efa2-11ef-0a80-163b001273c8",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=7b152fa5-efa2-11ef-0a80-163b001273c5"
+      },
+      "name" : "Torriden Cellmazing Firming Cream 60ml (Увлажняющий лифтинг-крем с 5 видами коллагена)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/d757db2b-e638-4774-9a55-1d29ed86855f",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "5350653322757007217",
+        "filename" : "5350653322757007217.jpg",
+        "size" : 85701,
+        "updated" : "2025-03-05 12:08:28.881",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/d757db2b-e638-4774-9a55-1d29ed86855f?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/9b24b344-9cdb-4ea0-ad71-0cca641ec492"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/9af467bb-84ae-4dcc-8394-db31f4b7f308/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 5.0,
+    "sellPrice" : 99000.0,
+    "sellCost" : 76650.0,
+    "sellSum" : 495000.0,
+    "sellCostSum" : 383250.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 111750.0,
+    "margin" : 0.2915851272015655,
+    "salesMargin" : 0.2257575757575757
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/98db8c4b-efa2-11ef-0a80-04c7001396a1",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=98db8227-efa2-11ef-0a80-04c70013969e"
+      },
+      "name" : "Torriden Cellmazing Firming Eye Cream 30ml(Подтягивающий липосомальный крем для век с коллагеном)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/fd04805e-6542-45c1-acb8-5e9ac4dd7720",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "5350653322757007221",
+        "filename" : "5350653322757007221.jpg",
+        "size" : 126971,
+        "updated" : "2025-03-05 12:09:03.205",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/fd04805e-6542-45c1-acb8-5e9ac4dd7720?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/d7ca29e6-b0eb-42c0-8b00-6bd78278172e"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/8d948b0f-ba41-45c5-8470-c57795a1c355/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 120.0,
+    "sellPrice" : 77740.5,
+    "sellCost" : 63437.5,
+    "sellSum" : 9328860.0,
+    "sellCostSum" : 7612500.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1716360.0,
+    "margin" : 0.22546600985221676,
+    "salesMargin" : 0.1839838951383127
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/854b8966-6b99-11ef-0a80-19fd00193389",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=854b82a9-6b99-11ef-0a80-19fd00193387"
+      },
+      "name" : "VT Cosmetic Reedle Shot 100 (Бустер-сыворотка с микроиглами)",
+      "article" : "VT Coscmetics Reedle Shot 100 50ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/97f73beb-5b51-4149-b0b3-43a8ba1e4671",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "A359094C-9EC4-4350-A890-A2C10670D357",
+        "filename" : "A359094C-9EC4-4350-A890-A2C10670D357.jpg",
+        "size" : 22991,
+        "updated" : "2024-11-09 15:29:45.482",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/97f73beb-5b51-4149-b0b3-43a8ba1e4671?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/f6f581bc-4f48-418a-9585-77c74590e552"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/e7fcd76e-8976-470f-b4dd-051387824db0/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 22.0,
+    "sellPrice" : 142390.0,
+    "sellCost" : 129714.59090909091,
+    "sellSum" : 3132580.0,
+    "sellCostSum" : 2853721.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 278859.0,
+    "margin" : 0.09771768158134586,
+    "salesMargin" : 0.08901895562124507
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/b47be6d4-968b-11ef-0a80-04e5000588fa",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=b47bdb0f-968b-11ef-0a80-04e5000588f7"
+      },
+      "name" : "VT Cosmetic Reedle Shot 300 (Интенсивная бустер-сыворотка с микроиглами)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/7204d3ec-1886-47e7-a5f0-8c082f4d423a",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "AB635FDD-FC04-4F58-A8C6-6FB578C38C57",
+        "filename" : "AB635FDD-FC04-4F58-A8C6-6FB578C38C57.jpg",
+        "size" : 53787,
+        "updated" : "2024-11-05 11:37:29.608",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/7204d3ec-1886-47e7-a5f0-8c082f4d423a?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/639aef7a-a2c2-47cf-8d6c-c3a0d89d835c"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/fe5ceb4d-6881-4785-bbc5-0a6815fc98a5/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 16.0,
+    "sellPrice" : 187596.9375,
+    "sellCost" : 172474.5625,
+    "sellSum" : 3001551.0,
+    "sellCostSum" : 2759593.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 241958.0,
+    "margin" : 0.08767887148575904,
+    "salesMargin" : 0.08061099078443112
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/ac1c821c-21da-11f1-0a80-09b800085a7b",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=ac1c760e-21da-11f1-0a80-09b800085a77"
+      },
+      "name" : "VT PDRN Essence 100 (Укрепляющая бустер-эссенция с ПДРН VT Cosmetics )",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/0614d2bb-2720-4f10-9e2b-56503af0b1a6",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "2b1989cb-7035-46e5-910e-34302b244921",
+        "filename" : "2b1989cb-7035-46e5-910e-34302b244921.jfif",
+        "size" : 129792,
+        "updated" : "2026-03-29 07:24:33.487",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/0614d2bb-2720-4f10-9e2b-56503af0b1a6?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/531caede-0cc4-43c2-9376-39118af172be"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/f3e069fc-1470-427d-a190-846ece528ff1/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 515.0,
+    "sellPrice" : 147905.43407766992,
+    "sellCost" : 113487.49902912621,
+    "sellSum" : 76171298.55000001,
+    "sellCostSum" : 58446062,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 17725236.550000012,
+    "margin" : 0.3032751214273428,
+    "salesMargin" : 0.2327023024081032
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/dd4e1602-21da-11f1-0a80-0f2d00091836",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=dd4e0cde-21da-11f1-0a80-0f2d00091832"
+      },
+      "name" : "VT PDRN Essence Stick Balm (Стик-бальзам с пептидами и ПДРН )",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/cd2b999b-2a71-4d80-99d5-bf5ed23321ec",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "1013dba6-7f42-4720-b417-34d4683d39b6",
+        "filename" : "1013dba6-7f42-4720-b417-34d4683d39b6.jfif",
+        "size" : 79995,
+        "updated" : "2026-03-29 07:26:08.239",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/cd2b999b-2a71-4d80-99d5-bf5ed23321ec?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/a65d7b73-d3dc-40ed-b996-91745e9a5726"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/e1254e41-2862-450f-b917-85e102791e1f/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1467.0,
+    "sellPrice" : 94770.375,
+    "sellCost" : 70787.50034083163,
+    "sellSum" : 139028140.125,
+    "sellCostSum" : 103845263,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 35182877.125,
+    "margin" : 0.33880098242902035,
+    "salesMargin" : 0.2530629920918681
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/8cb849e8-21db-11f1-0a80-130f0008b176",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=8cb8364f-21db-11f1-0a80-130f0008b172"
+      },
+      "name" : "VT PDRN Grinding Cleansing Balm(Очищающие бальзамы)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/59a57131-a5ba-4807-85ee-f85ee058feac",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "32bd7e2a-0880-4266-b8ab-2a7c4596b4ae",
+        "filename" : "32bd7e2a-0880-4266-b8ab-2a7c4596b4ae.jfif",
+        "size" : 64512,
+        "updated" : "2026-03-29 07:28:59.402",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/59a57131-a5ba-4807-85ee-f85ee058feac?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/421b8945-d235-4514-84a6-05f961d1ff12"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/5578b277-5d7e-4cc4-8a48-ba5ba386bfab/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 18.0,
+    "sellPrice" : 99515.0,
+    "sellCost" : 72362.5,
+    "sellSum" : 1791270.0,
+    "sellCostSum" : 1302525.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 488745.0,
+    "margin" : 0.3752288823631025,
+    "salesMargin" : 0.27284831432447365
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/4b0bcc32-21da-11f1-0a80-0d6500087974",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=4b0bc2e5-21da-11f1-0a80-0d6500087970"
+      },
+      "name" : "VT PDRN Reedle Glow Ampoule (Ампульный мист для сияния кожи с ПДРН)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/fcd690bd-9d45-435e-b3db-a842e68e418f",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "40cb5871-d493-43e4-aa11-3e7631fd4861",
+        "filename" : "40cb5871-d493-43e4-aa11-3e7631fd4861.jfif",
+        "size" : 125455,
+        "updated" : "2026-03-29 07:23:01.364",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/fcd690bd-9d45-435e-b3db-a842e68e418f?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/daa6511c-46d4-4a7f-95d6-87323fccb84d"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/95e76497-0fb1-4a8c-ad14-13fdd484df8e/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 694.0,
+    "sellPrice" : 95939.97,
+    "sellCost" : 71662.5,
+    "sellSum" : 66582339.18,
+    "sellCostSum" : 49733775,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 16848564.18,
+    "margin" : 0.33877509157509156,
+    "salesMargin" : 0.25304854691949563
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/f146ed76-21db-11f1-0a80-068a00089581",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=f146dc9b-21db-11f1-0a80-068a0008957d"
+      },
+      "name" : "VT PDRN Reedle Shot 300 50ml (Интенсивная бустер-сыворотка с ПДРН и микроиглами )",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/95355d68-38c4-4697-ae95-db715d2daf88",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "671259e6-2544-43bc-8bcd-2731192c9ac0",
+        "filename" : "671259e6-2544-43bc-8bcd-2731192c9ac0.jfif",
+        "size" : 20405,
+        "updated" : "2026-03-29 07:33:39.228",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/95355d68-38c4-4697-ae95-db715d2daf88?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/623929c0-4538-46e8-a329-a2f157eee887"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/5f4991ed-dad3-4c99-90b3-82b13652550a/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 16.0,
+    "sellPrice" : 207000.0,
+    "sellCost" : 183575.0,
+    "sellSum" : 3312000.0,
+    "sellCostSum" : 2937200.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 374800.0,
+    "margin" : 0.12760452131281497,
+    "salesMargin" : 0.11316425120772944
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/a764db43-21dc-11f1-0a80-1c880009074b",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=a764cb71-21dc-11f1-0a80-1c8800090747"
+      },
+      "name" : "VT PDRN Tension Toner Pad (Тонер-пэды с ПДРН )",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/483d4246-a31b-4b6a-8e35-aa6b45d0a4b4",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "9f3e7059-8745-4b6d-99ca-26926d69b9b7",
+        "filename" : "9f3e7059-8745-4b6d-99ca-26926d69b9b7.jfif",
+        "size" : 50447,
+        "updated" : "2026-03-29 07:40:15.348",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/483d4246-a31b-4b6a-8e35-aa6b45d0a4b4?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/672368c9-9023-4fe5-88c5-aab6259cf012"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/4cd21e8c-a893-4d9f-bdea-3abd2bd0bc21/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 337.0,
+    "sellPrice" : 88921.09807121662,
+    "sellCost" : 65975.0,
+    "sellSum" : 29966410.05,
+    "sellCostSum" : 22233575,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 7732835.050000001,
+    "margin" : 0.3477998949786527,
+    "salesMargin" : 0.2580500979963064
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/cf5245ef-d24c-11f0-0a80-0bf0001616ed",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=cf52397f-d24c-11f0-0a80-0bf0001616e9"
+      },
+      "name" : "W.Dressroom Perfume Hand cream No.07 Green Bergamot (Парфюмированный крем для рук)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/90000cc7-f336-412a-b5ef-3dce442a4b8d",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "CAF8806A-2394-4CEE-B0B7-9E9CB6508EF0",
+        "filename" : "CAF8806A-2394-4CEE-B0B7-9E9CB6508EF0.jpg",
+        "size" : 2276965,
+        "updated" : "2026-03-06 12:49:48.841",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/90000cc7-f336-412a-b5ef-3dce442a4b8d?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/459f96b8-830d-4492-8267-f5a1fdc35700"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/3d3de10e-ca75-4bb9-814a-863ef5e24523/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 121.0,
+    "sellPrice" : 23458.74099173554,
+    "sellCost" : 18025.0,
+    "sellSum" : 2838507.66,
+    "sellCostSum" : 2181025.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 657482.6600000001,
+    "margin" : 0.30145581091459306,
+    "salesMargin" : 0.2316296937525263
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/fe0cccef-abc2-11f0-0a80-14640014bba0",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=fe0cbb84-abc2-11f0-0a80-14640014bb9c"
+      },
+      "name" : "W.Dressroom Perfume Hand Cream No.30 White Musk (Парфюмированный крем для рук)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/b9265e62-3582-4144-bd2f-25190401fa78",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "4537741D-FF83-4ABC-95D9-FF3ACA0626E8",
+        "filename" : "4537741D-FF83-4ABC-95D9-FF3ACA0626E8.jpg",
+        "size" : 2128745,
+        "updated" : "2026-03-06 12:48:01.674",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/b9265e62-3582-4144-bd2f-25190401fa78?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/897de881-31ed-4ec5-942d-c85203e6746c"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/53fc581d-6464-4527-86e0-cdb0edc73694/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 199.0,
+    "sellPrice" : 23308.417085427136,
+    "sellCost" : 17587.502512562813,
+    "sellSum" : 4638375.0,
+    "sellCostSum" : 3499913.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1138462.0,
+    "margin" : 0.32528294274743397,
+    "salesMargin" : 0.2454441480044196
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/8f383e79-abc3-11f0-0a80-0b9800147367",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=8f38348a-abc3-11f0-0a80-0b9800147363"
+      },
+      "name" : "W.Dressroom Perfume Hand Cream No.49 Peach Blossom(Парфюмированный крем для рук)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/1b54fc56-72fa-4723-a308-a76ee452a9c2",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "24AA3AC0-9827-49E5-9C49-15157D777A7E",
+        "filename" : "24AA3AC0-9827-49E5-9C49-15157D777A7E.jpg",
+        "size" : 2331372,
+        "updated" : "2026-03-06 12:53:38.972",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/1b54fc56-72fa-4723-a308-a76ee452a9c2?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/729561ae-8b2e-46a5-a688-9fb54c7bf022"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/5097cf88-019a-4d48-9e80-7cf49b8df8f1/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 400.0,
+    "sellPrice" : 23465.01915,
+    "sellCost" : 18025.0,
+    "sellSum" : 9386007.66,
+    "sellCostSum" : 7210000.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 2176007.66,
+    "margin" : 0.3018041137309293,
+    "salesMargin" : 0.23183527425333472
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/a53ec44b-abc4-11f0-0a80-0b98001474d4",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=a53eb49c-abc4-11f0-0a80-0b98001474d0"
+      },
+      "name" : "W.Dressroom Perfume Hand Cream No.514 May Rose (Парфюмированный крем для рук)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/92e0c46f-cf93-4fc0-9361-feba62113c3a",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "6ABFC2EB-A8FE-4A0E-9FBA-8BACDDD867EF",
+        "filename" : "6ABFC2EB-A8FE-4A0E-9FBA-8BACDDD867EF.jpg",
+        "size" : 2261618,
+        "updated" : "2026-03-06 12:52:22.037",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/92e0c46f-cf93-4fc0-9361-feba62113c3a?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/dab49a1c-2a49-4d0b-ace6-62f4f1be2197"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/902b68a9-4103-4805-819c-7b12103277fb/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 231.0,
+    "sellPrice" : 23411.2987012987,
+    "sellCost" : 18112.497835497834,
+    "sellSum" : 5408010.0,
+    "sellCostSum" : 4183987.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 1224023.0,
+    "margin" : 0.29254942713732146,
+    "salesMargin" : 0.22633519538610325
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/c56e5866-abc3-11f0-0a80-0b98001473a8",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=c56e4852-abc3-11f0-0a80-0b98001473a4"
+      },
+      "name" : "W.Dressroom Perfume Hand Cream No.97 April Cotton (Парфюмированный крем для рук)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/9f17be98-8fd1-40ce-80cf-1ae0625c8ea3",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "18727583-1C71-4E1A-8AF7-6E5D355C8F2B",
+        "filename" : "18727583-1C71-4E1A-8AF7-6E5D355C8F2B.jpg",
+        "size" : 2206402,
+        "updated" : "2026-03-06 12:46:49.765",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/9f17be98-8fd1-40ce-80cf-1ae0625c8ea3?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/833e2005-5b30-41da-ab77-c82d569ac9b5"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/4b5cd11a-f9e8-4c91-8929-ab365cb9cb81/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 506.0,
+    "sellPrice" : 22785.558616600792,
+    "sellCost" : 17675.0,
+    "sellSum" : 11529492.66,
+    "sellCostSum" : 8943550.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 2585942.66,
+    "margin" : 0.28914051579070943,
+    "salesMargin" : 0.224289371289647
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/038a4496-d24d-11f0-0a80-0df700164f45",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=038a3919-d24d-11f0-0a80-0df700164f41"
+      },
+      "name" : "W.Dressroom REVIVE HAND CREAM ( Парфюмированный крем для рук)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/a1049735-d304-441e-9811-443cc7657eb4",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "1_d7f2de98-9805-4eea-90f8-947957fb72d8",
+        "filename" : "1_d7f2de98-9805-4eea-90f8-947957fb72d8.jpeg",
+        "size" : 37906,
+        "updated" : "2025-12-27 14:04:00.471",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/a1049735-d304-441e-9811-443cc7657eb4?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/86e91e0d-f217-4181-9771-3aec5bc82abe"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/fa5a0eec-c3c7-45c0-a4a3-abd31651e0c1/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 3.0,
+    "sellPrice" : 27935.999999999996,
+    "sellCost" : 22500.0,
+    "sellSum" : 83807.99999999999,
+    "sellCostSum" : 67500.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 16307.999999999985,
+    "margin" : 0.24159999999999981,
+    "salesMargin" : 0.19458762886597925
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/4a908702-95c8-11f0-0a80-187f001563ac",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=4a90754f-95c8-11f0-0a80-187f001563a8"
+      },
+      "name" : "Пробник CELIMAX PORE+DARK SPOT BRIGHTENING CREAM 7ML",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/dfdcf746-c123-4104-ba62-3248852fbf20",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "5EE05A27-D366-404C-9F94-954EFD40013D",
+        "filename" : "5EE05A27-D366-404C-9F94-954EFD40013D.jpg",
+        "size" : 1131399,
+        "updated" : "2026-03-07 13:19:02.306",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/dfdcf746-c123-4104-ba62-3248852fbf20?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/0255552e-87bf-4bd8-9dba-c3a6653588b9"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/0db89c24-7b9e-4270-80ca-bd1706289e71/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 100.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 9712.5,
+    "sellSum" : 0.0,
+    "sellCostSum" : 971250.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : -971250.0,
+    "margin" : -1.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/75281329-95c8-11f0-0a80-17d500147a31",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=7527ffcd-95c8-11f0-0a80-17d500147a2d"
+      },
+      "name" : "Пробник Celimax Pore+Dark Spot Brightening Pad 2 pads",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/3703fd8e-6527-4da0-972b-5ee30da9d20d",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-10-30 at 14.22.32",
+        "filename" : "WhatsApp Image 2025-10-30 at 14.22.32.jpeg",
+        "size" : 115849,
+        "updated" : "2025-11-01 13:50:02.779",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/3703fd8e-6527-4da0-972b-5ee30da9d20d?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/9785fa76-9318-46b4-938d-403435dc360b"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/7dd3ba45-5ca2-4d9b-9727-ec9c1a3f78a9/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 2560.0,
+    "sellPrice" : 3690.09,
+    "sellCost" : 2520.3078125,
+    "sellSum" : 9446630.4,
+    "sellCostSum" : 6451988.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 2994642.4000000004,
+    "margin" : 0.4641425867500064,
+    "salesMargin" : 0.3170064110902444
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/5c6451d5-beb8-11ef-0a80-038d0009a401",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=5c6441b4-beb8-11ef-0a80-038d0009a3fe"
+      },
+      "name" : "Пробник celimax The Real Noni Energy Ampoule_Sachet (1.5ml)",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/99304d21-5585-408c-bb8c-e82ce38426c4",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-01-15 at 18.25.09",
+        "filename" : "WhatsApp Image 2025-01-15 at 18.25.09.jpeg",
+        "size" : 114802,
+        "updated" : "2025-01-15 15:26:57.482",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/99304d21-5585-408c-bb8c-e82ce38426c4?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/1d542beb-3dbc-4106-ac07-5986b0ca4509"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/775c3fa5-3a49-44f4-b1e2-e6f2c6fc6501/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 7000.0,
+    "sellPrice" : 848.1214285714286,
+    "sellCost" : 1225.0,
+    "sellSum" : 5936850.0,
+    "sellCostSum" : 8575000.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : -2638150.0,
+    "margin" : -0.3076559766763849,
+    "salesMargin" : -0.4443686466728989
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/0fc80865-3a26-11f1-0a80-160b0004309f",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=0fc7fa1b-3a26-11f1-0a80-160b0004309b"
+      },
+      "name" : "Пробник Roundlab Camellia deep collagen firming cream 2ml",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1950.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/a1397761-3a26-11f1-0a80-00cf00046c8e",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=a139697d-3a26-11f1-0a80-00cf00046c8a"
+      },
+      "name" : "Пробник Roundlab Mugwort calming cleanser 2 ml",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1300.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/01a96b87-2e5a-11ef-0a80-0b8700a9b6e2",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=01a96324-2e5a-11ef-0a80-0b8700a9b6e0"
+      },
+      "name" : "Пробник Roundlab MUGWORT CALMING SERUM_2ml",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 2700.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/d6d5e29c-2e59-11ef-0a80-0b8700a9636c",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=d6d5d9f0-2e59-11ef-0a80-0b8700a9636a"
+      },
+      "name" : "Пробник ROUNDLAB SOYBEAN PANTHENOL AMPOULE POUCH 2ml",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1300.0,
+    "sellPrice" : 236.8306153846154,
+    "sellCost" : 0.0,
+    "sellSum" : 307879.80000000005,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 307879.80000000005,
+    "margin" : 0.0,
+    "salesMargin" : 1.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/9ed247ae-3224-11f1-0a80-1961000206db",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=9ed22cc9-3224-11f1-0a80-1961000206d7"
+      },
+      "name" : "Пробник Skin1004 Madagascar Centella Air-Fit Suncream Light 1.5ml Sachet",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 3950.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/30b7c47d-2810-11f1-0a80-18ce00192bd8",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=30b7b89a-2810-11f1-0a80-18ce00192bd4"
+      },
+      "name" : "Пробник Skin1004 Madagascar Centella Poremizing Velvet Finish Sunscreen 1.5ml_Sachet",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 2200.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/a7138940-fe88-11ef-0a80-0e41001362b4",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=a7138001-fe88-11ef-0a80-0e41001362b1"
+      },
+      "name" : "Пробник [SKIN1004] Madagascar Centella Tea-Trica Soothing Sun Milk Sachet 1.5ml",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1330.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/a0073d83-ef83-11ef-0a80-0308000d4e18",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=a0072ff8-ef83-11ef-0a80-0308000d4e15"
+      },
+      "name" : "Пробник Skin1004 Madagascar Centella Tone Brightening Capsule Ampoule Sachet 1.5ml",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 2050.0,
+    "sellPrice" : 79.02439024390245,
+    "sellCost" : 0.0,
+    "sellSum" : 162000.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 162000.0,
+    "margin" : 0.0,
+    "salesMargin" : 1.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/ad26f729-2a8f-11f0-0a80-195500138d7c",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=ad26ed7e-2a8f-11f0-0a80-195500138d78"
+      },
+      "name" : "пробник Tocobo BIO WATERY SUN CREAM SPF50+ PA++++ 1.5ml",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 300.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/923332d6-d58a-11f0-0a80-1b370003d2cc",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=92332584-d58a-11f0-0a80-1b370003d2c8"
+      },
+      "name" : "Пробники Celimax Ji Woo Gae Heartleaf Bha Peeling Pad 2PADS",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/4b776d6a-9922-4933-8254-ed6b6d7a0fc0",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "80DAA77E-7E94-48D6-8D36-82CCFC24D402",
+        "filename" : "80DAA77E-7E94-48D6-8D36-82CCFC24D402.jpg",
+        "size" : 1796372,
+        "updated" : "2026-03-07 13:20:57.306",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/4b776d6a-9922-4933-8254-ed6b6d7a0fc0?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/b6b24f02-ae02-406a-9262-a0570081b6fa"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/dfa1fdb3-d450-4850-954d-127989ce0605/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 3200.0,
+    "sellPrice" : 3690.09,
+    "sellCost" : 2515.3790625,
+    "sellSum" : 11808288,
+    "sellCostSum" : 8049213.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 3759075.0,
+    "margin" : 0.4670114954095512,
+    "salesMargin" : 0.31834208311992396
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/8ef3beeb-8582-11f0-0a80-0028002c1111",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=8ef3b097-8582-11f0-0a80-0028002c110d"
+      },
+      "name" : "Пробники Round lab soybean panthenol cream 2 ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/9056d878-4be6-4592-868f-9eb6489fa681",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "FF888EEB-B987-41C8-9C36-EF555C3D5AB5",
+        "filename" : "FF888EEB-B987-41C8-9C36-EF555C3D5AB5.jpg",
+        "size" : 930699,
+        "updated" : "2026-03-07 12:26:22.398",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/9056d878-4be6-4592-868f-9eb6489fa681?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/b5c6ce83-fd9a-4bb0-b443-b6eec3f82bad"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/20d43d1f-085f-4137-b28b-ebb591d5decc/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 50.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/fcb8670f-8582-11f0-0a80-01f6002d939a",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=fcb85c78-8582-11f0-0a80-01f6002d9396"
+      },
+      "name" : "пробники roundlab vita niacinamide dark spot cream",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 100.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/d1cf2ce1-8582-11f0-0a80-1a99002da3f7",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=d1cf1db5-8582-11f0-0a80-1a99002da3f3"
+      },
+      "name" : "пробники roundlab vita niacinamide dark spot serum",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 650.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/4c8af40f-8ad6-11ef-0a80-0b600013317e",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=4c8ae193-8ad6-11ef-0a80-0b600013317c"
+      },
+      "name" : "Пробники TOCOBO CICA CALMING GEL CREAM 1ML",
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 300.0,
+    "sellPrice" : 0.0,
+    "sellCost" : 0.0,
+    "sellSum" : 0.0,
+    "sellCostSum" : 0.0,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 0.0,
+    "margin" : 0.0,
+    "salesMargin" : 0.0
+  }, {
+    "assortment" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/product/6e2ea25c-8709-11f0-0a80-0f55004337ed",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "type" : "product",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#good/edit?id=6e2e98e9-8709-11f0-0a80-0f55004337e9"
+      },
+      "name" : "Пробник миниатюра Celimax Dual Barrier Creamy Toner 20 ml",
+      "image" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/bc7f6209-980e-4ee3-842c-be46054b2b41",
+          "mediaType" : "application/octet-stream"
+        },
+        "title" : "WhatsApp Image 2025-09-01 at 15.16.48",
+        "filename" : "WhatsApp Image 2025-09-01 at 15.16.48.jpeg",
+        "size" : 13962,
+        "updated" : "2025-09-01 12:17:07.839",
+        "miniature" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/download/bc7f6209-980e-4ee3-842c-be46054b2b41?miniature=true",
+          "mediaType" : "application/octet-stream",
+          "downloadHref" : "https://miniature-prod.moysklad.ru/miniature/1f6439aa-fa31-11ee-0a80-11ef00013531/documentminiature/e54618b9-649c-444b-8408-ee563a81c5a0"
+        },
+        "tiny" : {
+          "href" : "https://tinyimage-prod.moysklad.ru/static/tinyimage/1f6439aa-fa31-11ee-0a80-11ef00013531/tinyimage/f2294011-a28c-4371-ab43-8b16f657e951/t.png",
+          "mediaType" : "application/octet-stream"
+        }
+      },
+      "uom" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "type" : "uom",
+          "mediaType" : "application/json"
+        },
+        "name" : "шт"
+      }
+    },
+    "sellQuantity" : 1200.0,
+    "sellPrice" : 24659.850000000002,
+    "sellCost" : 17220.510833333334,
+    "sellSum" : 29591820.000000004,
+    "sellCostSum" : 20664613,
+    "returnQuantity" : 0.0,
+    "returnPrice" : 0.0,
+    "returnCost" : 0.0,
+    "returnSum" : 0.0,
+    "returnCostSum" : 0.0,
+    "profit" : 8927207.000000004,
+    "margin" : 0.4320045577432301,
+    "salesMargin" : 0.30167820025939607
+  } ]
+}

@@ -1,0 +1,98 @@
+=== date -u (начало) ===
+Mon Aug 10 11:52:50 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== httpRequest-лог cf-facts с 2026-08-10T11:46:00Z ===
+[]
+=== текстовые логи функции (успех/ошибка) с того же момента ===
+[
+  {
+    "insertId": "6a79ba3a000c891ba0995903",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f7297de2ee9eafa2206651af27e93f5002e5909fc06b366b0d854d03e8ea1b3803a7d7f2d0ad7b31d7585314af4fe0ff63b99549d71d0cb62326656e8456b7aeb479ca3a6a96b78b9a",
+      "scaling_reason": "AUTOSCALING"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-08-10T11:47:06.826709012Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00011-mab",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.",
+    "timestamp": "2026-08-10T11:47:06.821531Z"
+  },
+  {
+    "insertId": "6a79ba3e00045b54c75224af",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f7297de2ee9eafa2206651af27e93f5002e5909fc06b366b0d854d03e8ea1b3803a7d7f2d0ad7b31d7585314af4fe0ff63b99549d71d0cb62326656e8456b7aeb479ca3a6a96b78b9a",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260728_3_12_13_RC00"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-08-10T11:47:10.492061867Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00011-mab",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Default STARTUP TCP probe succeeded after 1 attempt for container \"worker\" on port 8080.",
+    "timestamp": "2026-08-10T11:47:10.285524Z"
+  }
+]
+=== staging: stg_msklad.fact_sales_perimeter_staging, run_id этого прогона ===
+[
+  {
+    "doc_count": "506", 
+    "loaded_at": "2026-08-10 11:46:49", 
+    "max_date": "2026-05-31 17:18:00.000", 
+    "min_date": "2026-05-28 11:03:00.000", 
+    "revenue_sum_kgs": "1188422.0", 
+    "row_count": "1441", 
+    "run_id": "SALES-PERIMETER-PARITY-RECHECK_2026-08-10_perimeter", 
+    "source_doc_type": "retaildemand"
+  }, 
+  {
+    "doc_count": "26", 
+    "loaded_at": "2026-08-10 11:52:31", 
+    "max_date": "2026-08-03 16:01:00.000", 
+    "min_date": "2026-05-04 16:00:00.000", 
+    "revenue_sum_kgs": "1.188702633E7", 
+    "row_count": "4137", 
+    "run_id": "SALES-PERIMETER-PARITY-RECHECK_2026-08-10_perimeter", 
+    "source_doc_type": "commissionreportin_sale"
+  }
+]
+=== date -u (конец) ===
+Mon Aug 10 11:52:56 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

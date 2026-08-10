@@ -1,0 +1,29 @@
+=== date -u (начало) ===
+Mon Aug 10 11:46:38 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== call cf-facts mode=perimeter window_days=99 ===
+ERROR: gcloud crashed (ReadTimeout): HTTPSConnectionPool(host='cf-facts-xw5u2boozq-de.a.run.app', port=443): Read timed out. (read timeout=300)
+
+If you would like to report this issue, please run the following command:
+  gcloud feedback
+
+To check gcloud for common problems, please run the following command:
+  gcloud info --run-diagnostics
+gcloud functions call rc=1 (timeout клиента при успехе сервера — известная ловушка, не факт провала)
+=== date -u (конец) ===
+Mon Aug 10 11:51:48 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

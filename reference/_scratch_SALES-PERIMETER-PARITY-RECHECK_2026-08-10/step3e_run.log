@@ -1,0 +1,28 @@
+=== date -u (начало) ===
+Mon Aug 10 11:54:19 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+[
+  {
+    "n_rows": "3411", 
+    "revenue_kgs": "9.684444561E7"
+  }
+]
+=== досеянные строки разрыва (2026-05-04, entity_type=commissionreportin_sale, два agent_id из шага 2) ===
+[]
+=== date -u (конец) ===
+Mon Aug 10 11:54:25 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

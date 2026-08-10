@@ -1,0 +1,30 @@
+=== date -u (начало) ===
+Mon Aug 10 11:44:15 UTC 2026
+=== gcloud auth list (начало) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== токен прочитан, длина: 40 символов ===
+=== entity/retaildemand, окно разрыва 2026-05-01..2026-05-09 ===
+retaildemand: meta.size=0, rows в первой странице=0
+=== entity/commissionreportin, окно разрыва 2026-05-01..2026-05-09 ===
+commissionreportin: meta.size=2, rows в первой странице=2
+commissionreportin: сумма sum (минорные единицы, документы окна разрыва) = 37245420
+2eb652fb-47b9-11f1-0a80-1b3800d317b6	2026-05-04 16:00:00.000	https://api.moysklad.ru/api/remap/1.2/entity/counterparty/3c080755-03ff-11f0-0a80-0c2c00104bbb
+30637918-47b9-11f1-0a80-1b3800d317e4	2026-05-04 16:00:00.000	https://api.moysklad.ru/api/remap/1.2/entity/counterparty/0276f431-2ff5-11ef-0a80-11d40019917f
+=== проверка token не в артефактах ===
+0 совпадений — чисто
+=== date -u (конец) ===
+Mon Aug 10 11:44:18 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
