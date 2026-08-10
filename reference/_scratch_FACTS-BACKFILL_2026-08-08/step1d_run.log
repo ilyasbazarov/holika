@@ -1,0 +1,182 @@
+Mon Aug 10 11:26:51 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+[
+  {
+    "httpRequest": {
+      "latency": "56.206552646s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "107.178.198.129",
+      "requestMethod": "POST",
+      "requestSize": "1224",
+      "requestUrl": "https://cf-facts-xw5u2boozq-de.a.run.app/",
+      "responseSize": "383",
+      "serverIp": "34.143.72.2",
+      "status": 200,
+      "userAgent": "GoogleCloudWorkflows; (+https://cloud.google.com/workflows/docs)"
+    },
+    "insertId": "6a722922000c3fbba55c8d67",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f7297469aa8e7666492bc7888491e2ca5e66b076e46756b81a583e87ca121d83853d9db228c50c6b07732f4cb17c9a5a7ba44f8ffa6f5314cec544526e81621544f02b159a48560a3c"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-04T18:02:10.805220174Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00007-xir",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "357473ae179c0374",
+    "timestamp": "2026-08-04T18:01:14.582952Z",
+    "trace": "projects/msklad-bi-prod/traces/fd485b670027a548a1172ed850163760",
+    "traceSampled": true
+  },
+  {
+    "insertId": "6a7228f6000afa7b6eea1905",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f729dbd3775a78f4fb2cd64559d41d8b056d8e7125460248a67bb549ff3cb0e4fd2dda354fb388fb1b1037e86c107f57967291ca6f83ed8c4aa9151bcfef9ea4808e688accc9a92938de934f",
+      "scaling_reason": "AUTOSCALING"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-08-04T18:01:26.722181044Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00007-xir",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.",
+    "timestamp": "2026-08-04T18:01:26.719483Z"
+  },
+  {
+    "insertId": "6a7228f80006b78595f72c4f",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f729dbd3775a78f4fb2cd64559d41d8b056d8e7125460248a67bb549ff3cb0e4fd2dda354fb388fb1b1037e86c107f57967291ca6f83ed8c4aa9151bcfef9ea4808e688accc9a92938de934f",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260712_3_12_13_RC00"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-08-04T18:01:28.719712404Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00007-xir",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "textPayload": "Default STARTUP TCP probe succeeded after 1 attempt for container \"worker\" on port 8080.",
+    "timestamp": "2026-08-04T18:01:28.440197Z"
+  },
+  {
+    "httpRequest": {
+      "latency": "2.350059682s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "107.178.198.72",
+      "requestMethod": "POST",
+      "requestSize": "1242",
+      "requestUrl": "https://cf-facts-xw5u2boozq-de.a.run.app/",
+      "responseSize": "452",
+      "serverIp": "34.143.76.2",
+      "status": 200,
+      "userAgent": "GoogleCloudWorkflows; (+https://cloud.google.com/workflows/docs)"
+    },
+    "insertId": "6a7229280008143d6132f267",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f729dbd3775a78f4fb2cd64559d41d8b056d8e7125460248a67bb549ff3cb0e4fd2dda354fb388fb1b1037e86c107f57967291ca6f83ed8c4aa9151bcfef9ea4808e688accc9a92938de934f"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-04T18:02:16.531951579Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00007-xir",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "8babcec2e3676521",
+    "timestamp": "2026-08-04T18:02:14.165512Z",
+    "trace": "projects/msklad-bi-prod/traces/c70a4da28a7ef710513bae64f7f3da70",
+    "traceSampled": true
+  },
+  {
+    "httpRequest": {
+      "latency": "183.306668563s",
+      "protocol": "HTTP/1.1",
+      "remoteIp": "107.178.198.196",
+      "requestMethod": "POST",
+      "requestSize": "1244",
+      "requestUrl": "https://cf-facts-xw5u2boozq-de.a.run.app/",
+      "responseSize": "334",
+      "serverIp": "34.143.72.2",
+      "status": 200,
+      "userAgent": "GoogleCloudWorkflows; (+https://cloud.google.com/workflows/docs)"
+    },
+    "insertId": "6a7229df000e295654d8504f",
+    "labels": {
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "001548f7297469aa8e7666492bc7888491e2ca5e66b076e46756b81a583e87ca121d83853d9db228c50c6b07732f4cb17c9a5a7ba44f8ffa6f5314cec544526e81621544f02b159a48560a3c"
+    },
+    "logName": "projects/msklad-bi-prod/logs/run.googleapis.com%2Frequests",
+    "receiveTimestamp": "2026-08-04T18:05:19.931516606Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "cf-facts",
+        "location": "asia-east1",
+        "project_id": "msklad-bi-prod",
+        "revision_name": "cf-facts-00007-xir",
+        "service_name": "cf-facts"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "INFO",
+    "spanId": "f859d1495f6694d2",
+    "timestamp": "2026-08-04T18:02:16.608486Z",
+    "trace": "projects/msklad-bi-prod/traces/4431b0d6c2049756bd03f40d761f8f7c",
+    "traceSampled": true
+  }
+]
+Mon Aug 10 11:26:53 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

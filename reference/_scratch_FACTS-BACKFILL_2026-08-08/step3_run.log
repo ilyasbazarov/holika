@@ -1,0 +1,62 @@
+Mon Aug 10 11:30:05 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== full detail: both fact_returns LOAD jobs since 2026-07-27 ===
+[
+  {
+    "creation_time": "2026-08-09 01:12:05", 
+    "end_time": "2026-08-09 01:12:08", 
+    "error_result": null, 
+    "job_id": "ded95203-263c-49c0-a8df-82cde9dd228d", 
+    "state": "DONE", 
+    "total_bytes_processed": "17520"
+  }, 
+  {
+    "creation_time": "2026-08-09 11:14:59", 
+    "end_time": "2026-08-09 11:15:00", 
+    "error_result": null, 
+    "job_id": "1c9dd1b7-0439-4a11-b2d7-ebf6989dac31", 
+    "state": "DONE", 
+    "total_bytes_processed": "17520"
+  }
+]
+=== current state: core.fact_purchases (freshness, row count, order_date coverage incl 08-01..08-04) ===
+[
+  {
+    "max_d": "2026-08-08", 
+    "max_loaded_at": "2026-08-10 11:01:56", 
+    "min_d": "2024-10-08", 
+    "total_rows": "4424"
+  }
+]
+[]
+=== current state: core.fact_returns (freshness, row count, return_date coverage incl 08-01..08-04) ===
+[
+  {
+    "max_d": "2026-07-22", 
+    "max_loaded_at": "2026-08-09 11:14:59", 
+    "min_d": "2026-05-28", 
+    "total_rows": "104"
+  }
+]
+[]
+=== independent COUNT(*) controls (silent-truncation guard) ===
+[
+  {
+    "n_purchases": "4424", 
+    "n_returns": "104"
+  }
+]
+Mon Aug 10 11:30:22 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

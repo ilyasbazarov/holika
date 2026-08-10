@@ -1,0 +1,18 @@
+Mon Aug 10 11:25:50 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== cf-facts logs mentioning mode=purchases / mode=returns / CF-Facts complete|start, 2026-07-27T00:00Z..now ===
+=== ERROR-severity workflow logs naming step_purchases/step_returns FAILED, 2026-07-27T00:00Z..now ===
+Mon Aug 10 11:26:25 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

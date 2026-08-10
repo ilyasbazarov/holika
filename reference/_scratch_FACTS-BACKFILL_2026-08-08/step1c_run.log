@@ -1,0 +1,22 @@
+Mon Aug 10 11:26:41 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== any cf-facts logs at all, known-good window 2026-08-04T17:59Z..18:10Z (resume confirm success) ===
+2026-08-04T18:01:14.582952Z	cloud_run_revision	INFO		
+2026-08-04T18:01:26.719483Z	cloud_run_revision	INFO	Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.	
+2026-08-04T18:01:28.440197Z	cloud_run_revision	INFO	Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.	
+2026-08-04T18:02:14.165512Z	cloud_run_revision	INFO		
+2026-08-04T18:02:16.608486Z	cloud_run_revision	INFO		
+Mon Aug 10 11:26:44 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

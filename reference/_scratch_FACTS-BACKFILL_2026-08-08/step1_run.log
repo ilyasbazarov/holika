@@ -1,0 +1,50 @@
+Sun Aug  9 19:05:19 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== weekly executions list, 2026-07-27T00:00Z..now ===
+NAME                                  STATE      START_TIME                      END_TIME
+df58f54f-4b7e-4b01-ae82-459c3d23d086  FAILED     2026-08-09T01:00:00.936184120Z  2026-08-09T01:18:20.254031591Z
+5aa84f42-d333-470d-b0b9-a107ce85878c  FAILED     2026-08-02T01:00:00.869139791Z  2026-08-02T01:09:21.729341234Z
+01f7d0b1-1922-4343-ae8b-d75c2f4c77ed  FAILED     2026-07-26T01:00:00.988598538Z  2026-07-26T01:08:38.159671475Z
+3672708e-2389-4537-bf5d-c9273786f01c  SUCCEEDED  2026-07-19T01:00:00.916272632Z  2026-07-19T01:11:58.839917021Z
+60416045-915e-4d18-9ecf-93b9d50babbb  SUCCEEDED  2026-07-12T01:00:01.135046555Z  2026-07-12T01:12:46.087237899Z
+d1266dbb-4ae7-4db7-9509-fb51f2375950  SUCCEEDED  2026-07-05T01:00:01.106786689Z  2026-07-05T01:12:06.096959153Z
+f972f272-307f-41aa-8206-4f34dce0c315  FAILED     2026-06-28T01:00:01.103398017Z  2026-06-28T01:08:30.293650722Z
+165e2a63-8752-4ec9-9447-6513de0b40e7  SUCCEEDED  2026-06-21T01:00:01.036841048Z  2026-06-21T01:12:34.500420464Z
+c93ca195-87db-46a2-9ab3-7f561777799d  FAILED     2026-06-14T01:00:01.116028917Z  2026-06-14T01:08:44.230777352Z
+cf4040a7-285a-4bb7-8f01-b4cb62f0d0fa  SUCCEEDED  2026-06-07T01:00:00.844028384Z  2026-06-07T01:11:56.998540310Z
+43e06de9-ecb0-4730-a539-b08cec0e9d79  SUCCEEDED  2026-05-31T01:00:00.972563473Z  2026-05-31T01:12:18.510844281Z
+f9082e53-5ed3-41e6-80b3-f8e19f1ff88d  SUCCEEDED  2026-05-24T01:00:01.304761069Z  2026-05-24T01:11:34.365343317Z
+d0e37816-88b0-4a00-8214-5905e43330ed  FAILED     2026-05-18T06:36:14.053041190Z  2026-05-18T06:45:09.909030439Z
+eb316b65-2b8b-496a-83e5-7ef918e9d1d9  FAILED     2026-05-17T01:00:01.199578502Z  2026-05-17T01:00:05.101638601Z
+=== per-execution describe (name, state, start, end) ===
+df58f54f-4b7e-4b01-ae82-459c3d23d086	FAILED	2026-08-09T01:00:00.936184120Z	2026-08-09T01:18:20.254031591Z
+5aa84f42-d333-470d-b0b9-a107ce85878c	FAILED	2026-08-02T01:00:00.869139791Z	2026-08-02T01:09:21.729341234Z
+01f7d0b1-1922-4343-ae8b-d75c2f4c77ed	FAILED	2026-07-26T01:00:00.988598538Z	2026-07-26T01:08:38.159671475Z
+3672708e-2389-4537-bf5d-c9273786f01c	SUCCEEDED	2026-07-19T01:00:00.916272632Z	2026-07-19T01:11:58.839917021Z
+60416045-915e-4d18-9ecf-93b9d50babbb	SUCCEEDED	2026-07-12T01:00:01.135046555Z	2026-07-12T01:12:46.087237899Z
+d1266dbb-4ae7-4db7-9509-fb51f2375950	SUCCEEDED	2026-07-05T01:00:01.106786689Z	2026-07-05T01:12:06.096959153Z
+f972f272-307f-41aa-8206-4f34dce0c315	FAILED	2026-06-28T01:00:01.103398017Z	2026-06-28T01:08:30.293650722Z
+165e2a63-8752-4ec9-9447-6513de0b40e7	SUCCEEDED	2026-06-21T01:00:01.036841048Z	2026-06-21T01:12:34.500420464Z
+c93ca195-87db-46a2-9ab3-7f561777799d	FAILED	2026-06-14T01:00:01.116028917Z	2026-06-14T01:08:44.230777352Z
+cf4040a7-285a-4bb7-8f01-b4cb62f0d0fa	SUCCEEDED	2026-06-07T01:00:00.844028384Z	2026-06-07T01:11:56.998540310Z
+43e06de9-ecb0-4730-a539-b08cec0e9d79	SUCCEEDED	2026-05-31T01:00:00.972563473Z	2026-05-31T01:12:18.510844281Z
+f9082e53-5ed3-41e6-80b3-f8e19f1ff88d	SUCCEEDED	2026-05-24T01:00:01.304761069Z	2026-05-24T01:11:34.365343317Z
+d0e37816-88b0-4a00-8214-5905e43330ed	FAILED	2026-05-18T06:36:14.053041190Z	2026-05-18T06:45:09.909030439Z
+eb316b65-2b8b-496a-83e5-7ef918e9d1d9	FAILED	2026-05-17T01:00:01.199578502Z	2026-05-17T01:00:05.101638601Z
+=== step_purchases / step_returns markers in workflow logs, 2026-07-27T00:00Z..now ===
+2026-08-02T01:09:21.628357826Z	CRITICAL	[WEEKLY] DQ Gate FAILED run_id=1785632400.9535375 details={"checks":[{"detail":"staging_count=6960","name":"not_empty","passed":true},{"detail":"yesterday_rev=25921, ma7=4780222, ratio=0.01, threshold=0.03 (weekend), target_date=2026-08-01","name":"drift_check","passed":false},{"detail":"orphan_product_ids=0","name":"fk_integrity","passed":true},{"detail":"max_date=2026-08-01, lag_days=1","name":"freshness","passed":true},{"detail":"bad_margin_rows=0 (core, last 7d)","name":"margin_sanity","passed":true},{"detail":"avg_revenue_kgs=39894.82","name":"currency_normalization","passed":true}],"failed_checks":["drift_check"],"passed":false,"run_id":1785632400.9535375,"status":"FAILED"}
+2026-08-09T01:18:20.134362602Z	CRITICAL	[WEEKLY] DQ Gate FAILED run_id=1786237200.9981554 details={"checks":[{"detail":"staging_count=6892","name":"not_empty","passed":true},{"detail":"yesterday_rev=157694, ma7=5437042, ratio=0.03, threshold=0.03 (weekend), target_date=2026-08-08","name":"drift_check","passed":false},{"detail":"orphan_product_ids=0","name":"fk_integrity","passed":true},{"detail":"max_date=2026-08-08, lag_days=1","name":"freshness","passed":true},{"detail":"bad_margin_rows=0 (core, last 7d)","name":"margin_sanity","passed":true},{"detail":"avg_revenue_kgs=39445.35","name":"currency_normalization","passed":true}],"failed_checks":["drift_check"],"passed":false,"run_id":1786237200.9981554,"status":"FAILED"}
+Sun Aug  9 19:06:11 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

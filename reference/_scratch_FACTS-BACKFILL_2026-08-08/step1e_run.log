@@ -1,0 +1,17 @@
+Mon Aug 10 11:27:08 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== stdout log entries for cf-facts, 2026-08-04T18:00Z..18:06Z ===
+Mon Aug 10 11:27:11 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

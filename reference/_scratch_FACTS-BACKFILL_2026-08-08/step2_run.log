@@ -1,0 +1,2567 @@
+Mon Aug 10 11:27:32 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== LOAD jobs targeting core.fact_purchases, 2026-07-27T00:00:00Z..now ===
+[
+  {
+    "creation_time": "2026-07-27 00:04:52", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 00:04:55", 
+    "error_result": null, 
+    "job_id": "974d9e3a-5680-4ac0-b6d6-859ee77f8cd2", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 01:04:58", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 01:05:00", 
+    "error_result": null, 
+    "job_id": "61b574d5-102d-4c48-ab11-0a9232f031fa", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 02:05:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 02:05:07", 
+    "error_result": null, 
+    "job_id": "13e96eb8-27c1-4fc8-8639-d1497ab2553e", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 03:05:05", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 03:05:07", 
+    "error_result": null, 
+    "job_id": "564cdfc3-1dfd-4a59-98df-b7920a996019", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 04:05:07", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 04:05:10", 
+    "error_result": null, 
+    "job_id": "d65a4040-0909-4db0-9b5b-6ed6667e3f98", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 05:05:18", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 05:05:20", 
+    "error_result": null, 
+    "job_id": "21c7a37e-22a3-412c-bc7c-d08b3e9f52ce", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 06:05:27", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 06:05:30", 
+    "error_result": null, 
+    "job_id": "13357fc7-3d02-4a2b-b679-883204ebed2f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 07:05:55", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 07:05:58", 
+    "error_result": null, 
+    "job_id": "8ee3f85a-3a72-4936-9e16-716708cab135", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 08:05:49", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 08:05:51", 
+    "error_result": null, 
+    "job_id": "189a2ecf-3038-43b8-b00b-0ca43eea41f6", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 09:06:44", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 09:06:47", 
+    "error_result": null, 
+    "job_id": "fb18eb23-f78b-4c8e-80cf-0ce08dd7b048", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 10:05:56", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 10:05:59", 
+    "error_result": null, 
+    "job_id": "7263b8f5-d3c4-41df-9e11-35895c460e32", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 11:06:12", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 11:06:14", 
+    "error_result": null, 
+    "job_id": "f0fe9c0e-ba35-4859-8570-0cf6e428e196", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 12:06:10", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 12:06:13", 
+    "error_result": null, 
+    "job_id": "68b234dc-8feb-499b-8c00-c4d15949339f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 13:06:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 13:06:16", 
+    "error_result": null, 
+    "job_id": "224fdf90-f459-43ae-a620-3641133b2e36", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 14:05:55", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 14:05:58", 
+    "error_result": null, 
+    "job_id": "68aa9f4b-293c-43f4-93a4-d85223c70e27", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 15:05:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 15:05:57", 
+    "error_result": null, 
+    "job_id": "539b7f05-eebc-4f08-96dd-3dd7e0e9996c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 16:05:30", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 16:05:33", 
+    "error_result": null, 
+    "job_id": "190de923-4337-46f3-8d64-a6d11be2431d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 17:05:43", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 17:05:45", 
+    "error_result": null, 
+    "job_id": "7b8dd96a-69ee-4a55-b7d2-13955495990f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 18:05:35", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 18:05:37", 
+    "error_result": null, 
+    "job_id": "aa223433-1be7-4299-bb9b-a55bb98a0bb3", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 19:05:32", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 19:05:34", 
+    "error_result": null, 
+    "job_id": "193c53ad-0858-447f-be8a-f8c8e9c7c607", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 20:04:58", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 20:05:00", 
+    "error_result": null, 
+    "job_id": "94b53ee4-feae-4cdc-8ed2-abb2deba720c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 21:05:00", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 21:05:02", 
+    "error_result": null, 
+    "job_id": "f2e08cf1-b77b-4ba5-846d-0dd55e4b352f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 22:05:44", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 22:05:46", 
+    "error_result": null, 
+    "job_id": "70b4202b-309a-44eb-a7c9-fdef36ce54e1", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-27 23:05:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-27 23:05:05", 
+    "error_result": null, 
+    "job_id": "d5290d14-407b-4ee9-bb2b-f732b321ca37", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 00:05:02", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 00:05:04", 
+    "error_result": null, 
+    "job_id": "ef5c4b50-23c4-4cff-94ad-3a96d5f261e7", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 01:05:00", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 01:05:03", 
+    "error_result": null, 
+    "job_id": "2ad76f7c-1761-4c1c-92da-a0e16ff529b6", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 02:05:31", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 02:05:34", 
+    "error_result": null, 
+    "job_id": "bf715683-dbaf-403a-8a1b-6c4a353ae33f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 03:05:14", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 03:05:16", 
+    "error_result": null, 
+    "job_id": "6bb739fd-a2a0-4679-ac81-4b904dbb850e", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 04:05:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 04:05:05", 
+    "error_result": null, 
+    "job_id": "dbcb988f-0ffd-409f-8c14-7333a548e19a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 05:05:14", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 05:05:16", 
+    "error_result": null, 
+    "job_id": "292c0466-2486-4a9d-92aa-039c1faf5a8f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 06:05:28", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 06:05:30", 
+    "error_result": null, 
+    "job_id": "aea12836-4c41-4467-94e2-0208ca973aa7", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 07:05:53", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 07:05:56", 
+    "error_result": null, 
+    "job_id": "411ba331-86ed-48ef-a8a0-85a6537785ce", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 08:05:57", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 08:05:58", 
+    "error_result": null, 
+    "job_id": "9f67123e-e487-4276-b5d4-b311acbfa0d3", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 09:05:57", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 09:05:59", 
+    "error_result": null, 
+    "job_id": "a596359e-f70f-42aa-b6c7-1d27d3011cb0", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 10:05:59", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 10:06:02", 
+    "error_result": null, 
+    "job_id": "b0de869f-794a-4ada-8d98-4b301d6a8d42", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 11:05:41", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 11:05:43", 
+    "error_result": null, 
+    "job_id": "b4988312-d39e-41ec-b5a1-5d7d6e2e7846", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 12:06:17", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 12:06:20", 
+    "error_result": null, 
+    "job_id": "47f3cc7c-e01d-4517-9e81-a0cb88efa8cc", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 13:06:11", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 13:06:14", 
+    "error_result": null, 
+    "job_id": "840660f4-5274-4d3a-8a70-98da7b7ab4b7", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 14:05:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 14:05:57", 
+    "error_result": null, 
+    "job_id": "233432f3-071c-4034-9a5b-2f4c196ab7a9", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 15:05:44", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 15:05:48", 
+    "error_result": null, 
+    "job_id": "0d5031c8-44ca-4f05-b5c9-f1331b146948", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 16:05:19", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 16:05:21", 
+    "error_result": null, 
+    "job_id": "a2cdb197-b6b6-473b-822f-8cf4dcadee2b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 17:05:37", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 17:05:38", 
+    "error_result": null, 
+    "job_id": "bdaa5612-aa5b-4df3-a754-c2e49390afad", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 18:05:24", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 18:05:26", 
+    "error_result": null, 
+    "job_id": "6ffa229d-a444-43f9-a6de-e949aaabbcba", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 19:05:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 19:05:56", 
+    "error_result": null, 
+    "job_id": "a209e960-e2b2-4f4a-b2ea-0ee6c18ea91a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 21:05:34", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 21:05:37", 
+    "error_result": null, 
+    "job_id": "6431e5cd-d93e-4342-bafc-519c6b7c22fb", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 22:05:14", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 22:05:17", 
+    "error_result": null, 
+    "job_id": "48bd1c61-f9ff-486f-8819-f204514d35f4", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-28 23:05:14", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-28 23:05:16", 
+    "error_result": null, 
+    "job_id": "66846006-18dc-4a0a-9b0e-bac8e498f25f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-29 00:05:02", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-29 00:05:05", 
+    "error_result": null, 
+    "job_id": "df245c27-b95a-4c67-a69e-d647c056ab63", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-29 01:05:20", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-29 01:05:21", 
+    "error_result": null, 
+    "job_id": "0ced42d5-ca3b-4ec7-b9e1-a61719057ec5", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-29 02:04:51", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-29 02:04:53", 
+    "error_result": null, 
+    "job_id": "8787959c-4732-444e-8ec8-c0a2bd52e0de", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-29 03:05:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-29 03:05:06", 
+    "error_result": null, 
+    "job_id": "6f021bb2-dc2e-48ab-a319-47fc0e80f71c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-29 04:04:52", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-29 04:04:55", 
+    "error_result": null, 
+    "job_id": "053f4e1b-257d-4614-8caa-8a484a7ce614", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 11:05:52", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 11:05:55", 
+    "error_result": null, 
+    "job_id": "409e6872-791c-4ea6-a8c6-d29d03e1039a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 12:06:05", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 12:06:08", 
+    "error_result": null, 
+    "job_id": "b6b34125-3ee0-4766-a16e-6ebc0bb4a456", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 13:06:00", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 13:06:03", 
+    "error_result": null, 
+    "job_id": "c273cfb1-3ea3-4667-b9c8-f6125a7f586f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 14:05:53", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 14:05:56", 
+    "error_result": null, 
+    "job_id": "92aae60f-d989-4144-912a-f43ffd547570", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 15:05:35", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 15:05:38", 
+    "error_result": null, 
+    "job_id": "20fdc942-634b-494d-980c-15b590ad03b5", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 16:05:31", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 16:05:33", 
+    "error_result": null, 
+    "job_id": "647ab589-7e40-448f-924e-16876a200f69", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 17:05:16", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 17:05:18", 
+    "error_result": null, 
+    "job_id": "ca4e9571-67f5-4ba2-b182-02b5f31507a5", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 18:05:29", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 18:05:33", 
+    "error_result": null, 
+    "job_id": "a28fb357-23e0-43b8-b879-2071b1b6e535", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 19:05:11", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 19:05:13", 
+    "error_result": null, 
+    "job_id": "c0327afb-58e2-4a8b-bd31-abed002f8528", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 20:05:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 20:05:05", 
+    "error_result": null, 
+    "job_id": "ebaff511-0c57-4eb2-b789-034fc9e99fee", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 21:05:10", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 21:05:12", 
+    "error_result": null, 
+    "job_id": "894f2236-7a54-4e72-9d85-8c124f6f351b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 22:05:08", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 22:05:11", 
+    "error_result": null, 
+    "job_id": "c08e419d-621e-46f0-82f0-845a27f04550", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-30 23:05:21", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-30 23:05:23", 
+    "error_result": null, 
+    "job_id": "23d7a035-6fee-46f9-a7b7-6544a8cbdc47", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 00:05:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 00:05:15", 
+    "error_result": null, 
+    "job_id": "e6d04ab5-435c-4557-80e5-dc6894a5b143", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 01:05:12", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 01:05:14", 
+    "error_result": null, 
+    "job_id": "2103cbec-5406-404b-b4ae-04800688c1dd", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 02:05:12", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 02:05:14", 
+    "error_result": null, 
+    "job_id": "bcdaabe9-0665-47c9-af6b-f3a002950378", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 03:05:15", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 03:05:18", 
+    "error_result": null, 
+    "job_id": "5314d77f-2653-4201-bd09-33060beb0fe8", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 04:05:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 04:05:06", 
+    "error_result": null, 
+    "job_id": "0df13224-5245-44cc-a4b7-8137fa267d2e", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 05:05:19", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 05:05:21", 
+    "error_result": null, 
+    "job_id": "f8221b4a-9060-40bd-a79e-65d517535fe7", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 06:05:11", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 06:05:13", 
+    "error_result": null, 
+    "job_id": "d0fca5c0-e4b5-41db-b536-e90b1cf5870a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 07:05:36", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 07:05:38", 
+    "error_result": null, 
+    "job_id": "2530f29c-8695-4a2d-8168-0040f5a5bcf6", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 08:05:57", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 08:06:00", 
+    "error_result": null, 
+    "job_id": "1316e5a4-8747-42cd-bb7f-350542eebff2", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 09:06:08", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 09:06:11", 
+    "error_result": null, 
+    "job_id": "b5cd9edc-5b9f-4878-88be-8d390598642e", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 10:06:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 10:06:06", 
+    "error_result": null, 
+    "job_id": "d9ab2092-0e5d-4d31-862d-8634980e4437", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 11:05:56", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 11:05:58", 
+    "error_result": null, 
+    "job_id": "1f54bd4c-85ac-443f-9c81-3d29b534d6f6", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 12:06:12", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 12:06:15", 
+    "error_result": null, 
+    "job_id": "8bd646a4-e49f-4a5e-9d82-cc62b8291788", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 13:06:15", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 13:06:18", 
+    "error_result": null, 
+    "job_id": "5f1a2cd4-5216-4021-a30b-c415acee5d8f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 14:05:47", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 14:05:50", 
+    "error_result": null, 
+    "job_id": "dac25ff5-146c-4e86-acef-dccebc033d6f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 15:05:53", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 15:05:56", 
+    "error_result": null, 
+    "job_id": "dc3e6343-a217-4882-8618-25618edc8a3f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 16:05:39", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 16:05:43", 
+    "error_result": null, 
+    "job_id": "a6345bdb-49fe-4385-bff8-d0dcfb501ae0", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 17:05:31", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 17:05:33", 
+    "error_result": null, 
+    "job_id": "64f41cd7-2749-4ca6-9249-14c84f2ae686", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 18:05:10", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 18:05:12", 
+    "error_result": null, 
+    "job_id": "f01e1877-f8af-48ad-b4f9-962fca3d1d50", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 19:05:15", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 19:05:18", 
+    "error_result": null, 
+    "job_id": "93f90c92-3aa3-4cd5-9602-c7aa538d834b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 20:05:02", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 20:05:04", 
+    "error_result": null, 
+    "job_id": "1c636c60-6979-448b-b7fa-8b3147e8dad0", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 21:05:29", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 21:05:31", 
+    "error_result": null, 
+    "job_id": "47eb9ee3-6d11-4d44-896c-072ce0b4a123", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 22:04:55", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 22:04:59", 
+    "error_result": null, 
+    "job_id": "5be78429-5b46-44e3-adb4-78ffe918297a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-07-31 23:05:08", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-07-31 23:05:10", 
+    "error_result": null, 
+    "job_id": "faded25d-5d3e-4519-a4f7-bd6a306baa62", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 00:05:09", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 00:05:12", 
+    "error_result": null, 
+    "job_id": "2c185e42-2614-475f-8c7b-a14846665a9c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 01:05:26", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 01:05:29", 
+    "error_result": null, 
+    "job_id": "81708218-d5cd-4189-9905-97b401baf0b8", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 02:05:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 02:05:16", 
+    "error_result": null, 
+    "job_id": "16a2dcfa-946f-4c5d-8e89-8076342195d6", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 03:05:29", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 03:05:31", 
+    "error_result": null, 
+    "job_id": "0934725b-4594-46fa-b29d-5415e1e5c8b6", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 04:04:49", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 04:04:52", 
+    "error_result": null, 
+    "job_id": "a2e37671-b835-4967-8834-1fd3c284a592", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 05:05:12", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 05:05:15", 
+    "error_result": null, 
+    "job_id": "d73a59c6-b341-4ac1-bc76-ecf16dbd76f4", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 06:05:21", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 06:05:23", 
+    "error_result": null, 
+    "job_id": "21c6a8e0-f848-4ede-8bcf-6e2d6ad20f16", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 07:05:14", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 07:05:16", 
+    "error_result": null, 
+    "job_id": "9482784e-a70c-4097-825d-3ab7e74257ed", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 08:05:26", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 08:05:28", 
+    "error_result": null, 
+    "job_id": "f4c79855-7c39-4ca4-af4d-f5a7dc6579fd", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 09:05:32", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 09:05:35", 
+    "error_result": null, 
+    "job_id": "0584ef15-727c-4fb9-8ddb-b265d6a6a30a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 10:05:34", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 10:05:36", 
+    "error_result": null, 
+    "job_id": "c2d2f354-bf3c-49a6-9e1f-7f9b3aacb2a1", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 11:05:24", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 11:05:27", 
+    "error_result": null, 
+    "job_id": "224ee97b-1de1-4ba9-bae0-7f5c67c497c1", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 12:05:17", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 12:05:19", 
+    "error_result": null, 
+    "job_id": "d3ae5256-0e14-4e73-bf52-2986fb5a3fb0", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 13:06:45", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 13:06:47", 
+    "error_result": null, 
+    "job_id": "94cb5047-87d7-4b5b-ad4c-71b8d39eeb2a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 14:05:26", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 14:05:29", 
+    "error_result": null, 
+    "job_id": "c72be7db-8980-42f5-a378-dffb75ea01c8", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 15:05:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 15:05:15", 
+    "error_result": null, 
+    "job_id": "78f9db26-0047-4c2f-9317-8027d3498bc6", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 16:05:33", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 16:05:35", 
+    "error_result": null, 
+    "job_id": "c1e57cdc-9980-403e-bc4f-bc370471085d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-01 17:05:06", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-01 17:05:09", 
+    "error_result": null, 
+    "job_id": "d72b7f37-7426-4e82-9bd6-b7e3df9a1421", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319085"
+  }, 
+  {
+    "creation_time": "2026-08-04 18:05:15", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-04 18:05:18", 
+    "error_result": null, 
+    "job_id": "a9c24b92-ed59-4b41-9210-ba64647dd2ff", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-04 19:05:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-04 19:05:05", 
+    "error_result": null, 
+    "job_id": "7f9a7324-581e-48d4-9c63-7653f636e735", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-04 20:05:09", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-04 20:05:11", 
+    "error_result": null, 
+    "job_id": "15e19d04-ca33-4ad6-b136-4f862aecb15e", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-04 21:05:30", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-04 21:05:33", 
+    "error_result": null, 
+    "job_id": "6520eab3-f713-4b37-a671-5d61d7ba38fa", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-04 22:05:11", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-04 22:05:15", 
+    "error_result": null, 
+    "job_id": "543d6f16-d221-486a-8085-2b8115c5c73b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-04 23:05:19", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-04 23:05:31", 
+    "error_result": null, 
+    "job_id": "cc771578-3957-4540-8092-11feda5dd576", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 00:05:10", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 00:05:13", 
+    "error_result": null, 
+    "job_id": "c8a14013-b1be-43bb-9965-2fe77923a66d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 01:04:56", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 01:04:58", 
+    "error_result": null, 
+    "job_id": "8fb24767-a876-4b4b-b444-bbe00efe0be5", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 02:05:02", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 02:05:05", 
+    "error_result": null, 
+    "job_id": "1ca09a95-a8a4-4ff8-9df8-66574034f5ff", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 03:05:37", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 03:05:39", 
+    "error_result": null, 
+    "job_id": "eb8a756d-6c10-455b-bb68-c139b45ddc16", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 04:05:21", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 04:05:24", 
+    "error_result": null, 
+    "job_id": "c1a1c08e-d3b7-4518-a4ba-6a88537d7658", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 05:05:33", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 05:05:36", 
+    "error_result": null, 
+    "job_id": "6919aa1d-7537-46b7-991c-8125205b6ff5", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 06:05:35", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 06:05:38", 
+    "error_result": null, 
+    "job_id": "4b2562fd-0cd5-47d6-a178-f52d934ec4ce", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 07:05:40", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 07:05:43", 
+    "error_result": null, 
+    "job_id": "741fef3d-5148-4d80-965a-bb54af51cf1a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 08:05:52", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 08:05:56", 
+    "error_result": null, 
+    "job_id": "a90ea314-4bd3-4c16-a782-976671767c56", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 09:05:52", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 09:05:55", 
+    "error_result": null, 
+    "job_id": "3025021e-9025-4590-8af9-a562fd3c6ef3", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 10:05:47", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 10:05:50", 
+    "error_result": null, 
+    "job_id": "5a879ffd-a367-4e6e-b324-db654d2c78b5", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 11:05:56", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 11:05:58", 
+    "error_result": null, 
+    "job_id": "7870d833-ffd0-4815-b1c7-d1cea544c140", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 12:05:51", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 12:05:54", 
+    "error_result": null, 
+    "job_id": "f312b2b0-c665-4b52-8e21-a4b179894f65", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 13:06:16", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 13:06:18", 
+    "error_result": null, 
+    "job_id": "c48d4f4f-c916-49a2-af67-f5648ccdcd9d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 14:06:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 14:06:16", 
+    "error_result": null, 
+    "job_id": "6056d05d-d096-4d25-8263-eefe2c9fdd85", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 15:05:47", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 15:05:49", 
+    "error_result": null, 
+    "job_id": "3d2550e8-492f-49fb-acd5-b24b60d1235a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 16:05:23", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 16:05:26", 
+    "error_result": null, 
+    "job_id": "d4bb195e-9c08-4b14-8f5d-87f1b69b19f0", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 17:05:15", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 17:05:20", 
+    "error_result": null, 
+    "job_id": "35c84582-f1c7-43f5-ab74-804077b3c9f7", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 18:05:16", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 18:05:19", 
+    "error_result": null, 
+    "job_id": "ec54ca46-4b32-4bd6-b386-7a109b730216", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 19:05:18", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 19:05:21", 
+    "error_result": null, 
+    "job_id": "6adaa788-fe55-4eab-8d1b-c1a129987e3e", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 20:04:50", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 20:04:54", 
+    "error_result": null, 
+    "job_id": "14ba9100-002e-4505-b723-a2579888e470", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 21:05:05", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 21:05:08", 
+    "error_result": null, 
+    "job_id": "87e32355-7e57-49e1-87c6-e3e658d21ef9", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 22:05:24", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 22:05:28", 
+    "error_result": null, 
+    "job_id": "6feeba51-e5ae-4368-b542-d1bcc02f71aa", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-05 23:04:55", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-05 23:04:57", 
+    "error_result": null, 
+    "job_id": "ff884258-b39e-4c8c-9d68-113f710b519f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 00:04:53", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 00:04:56", 
+    "error_result": null, 
+    "job_id": "dfaa2fac-95c6-4867-9ae5-270ec6b5a8a3", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 01:05:27", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 01:05:31", 
+    "error_result": null, 
+    "job_id": "b520edd2-7c01-4188-a685-2ce5d11eeb76", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 02:05:02", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 02:05:08", 
+    "error_result": null, 
+    "job_id": "0728f472-cad0-4e50-8b2b-c3cb68421c91", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 03:05:20", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 03:05:22", 
+    "error_result": null, 
+    "job_id": "0fa7bf5f-f617-411a-9ee6-de156501348d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 04:05:28", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 04:05:30", 
+    "error_result": null, 
+    "job_id": "25c2a511-aa18-421a-89ec-08064ea2d82d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 05:05:45", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 05:05:48", 
+    "error_result": null, 
+    "job_id": "68dfbbb1-fbd9-42d4-9552-7adb4a658a83", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 06:05:52", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 06:05:54", 
+    "error_result": null, 
+    "job_id": "8cc94dbd-c94f-425d-9061-e2e0e3121924", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 07:05:40", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 07:05:43", 
+    "error_result": null, 
+    "job_id": "d1f711fd-ed20-4e52-a5d0-4199b57c24f4", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 08:05:34", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 08:05:37", 
+    "error_result": null, 
+    "job_id": "436f1165-7a56-4420-aace-c62bf4fc298d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 09:06:01", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 09:06:04", 
+    "error_result": null, 
+    "job_id": "07f1ef1f-b0d0-4e5c-9826-a07b12cd8a5b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 10:06:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 10:06:07", 
+    "error_result": null, 
+    "job_id": "3b4566aa-caad-431c-8b86-32f56e100511", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 11:06:09", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 11:06:12", 
+    "error_result": null, 
+    "job_id": "80c3d808-b6df-4324-bc17-fc0347f90410", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 12:06:00", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 12:06:03", 
+    "error_result": null, 
+    "job_id": "2aabb6f0-5607-4ac1-831f-a4a12fa6632c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 13:06:27", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 13:06:30", 
+    "error_result": null, 
+    "job_id": "332b16ec-de61-4226-b401-c0f40d6537a6", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 14:06:08", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 14:06:12", 
+    "error_result": null, 
+    "job_id": "fcf84232-dea7-4fb3-a2a3-0ad97f82b69b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 15:05:59", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 15:06:02", 
+    "error_result": null, 
+    "job_id": "18e24519-361b-4fd0-aa11-17e31745e0ce", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 16:05:25", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 16:05:27", 
+    "error_result": null, 
+    "job_id": "4b629960-a247-458e-9316-21c5a546cf88", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 17:05:21", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 17:05:23", 
+    "error_result": null, 
+    "job_id": "f07d8853-19e0-4539-bd82-bdef0daa3627", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 18:05:00", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 18:05:03", 
+    "error_result": null, 
+    "job_id": "dbf31678-b35a-4fe9-8572-511c4c74779b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 19:05:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 19:05:15", 
+    "error_result": null, 
+    "job_id": "27fd2782-2efe-40b6-a964-9711ec1a678b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 20:04:55", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 20:04:57", 
+    "error_result": null, 
+    "job_id": "c11d52ef-bef3-4f16-b461-62b31b033e6d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 21:05:15", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 21:05:18", 
+    "error_result": null, 
+    "job_id": "788a52fa-e168-4949-9af7-85cb28833727", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 22:04:38", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 22:04:41", 
+    "error_result": null, 
+    "job_id": "5dc83234-f03b-4982-9089-e8b99301855a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-06 23:05:18", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-06 23:05:21", 
+    "error_result": null, 
+    "job_id": "11c6da24-016e-4682-bb39-d171bffa3e3a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 00:05:29", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 00:05:31", 
+    "error_result": null, 
+    "job_id": "a6813753-19ad-4833-8e27-d8570e93b47c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 01:04:56", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 01:04:58", 
+    "error_result": null, 
+    "job_id": "8c63f0ea-1903-4da6-b878-a591f32d6780", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 02:04:44", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 02:04:47", 
+    "error_result": null, 
+    "job_id": "03fd7709-2e76-41b9-8425-95bfbdfae995", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 03:04:55", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 03:04:57", 
+    "error_result": null, 
+    "job_id": "076a2588-4b33-4c91-b0fc-52494d3dde11", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 04:04:53", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 04:04:55", 
+    "error_result": null, 
+    "job_id": "f97fd960-bcca-4e05-bc7d-a859ba5491a8", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 05:04:44", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 05:04:56", 
+    "error_result": null, 
+    "job_id": "c9527f61-2799-4045-be81-5287ed8cb29c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 06:05:18", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 06:05:22", 
+    "error_result": null, 
+    "job_id": "feabefac-8d94-4d54-bca4-f950328e6ddb", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 07:05:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 07:05:16", 
+    "error_result": null, 
+    "job_id": "f647e35a-b626-4b24-82d8-15291ac9b38d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 08:05:02", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 08:05:06", 
+    "error_result": null, 
+    "job_id": "ff8cda1b-d250-4152-938b-8839873a9055", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 09:05:33", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 09:05:36", 
+    "error_result": null, 
+    "job_id": "3e8522f0-8b70-4d59-86be-00174b9cf867", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 10:05:52", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 10:05:55", 
+    "error_result": null, 
+    "job_id": "e01de06f-3272-4e17-a09d-67ca8dd78136", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 11:05:19", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 11:05:22", 
+    "error_result": null, 
+    "job_id": "67af14f2-e9e9-4551-893f-0b5296ce7d11", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 12:05:37", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 12:05:40", 
+    "error_result": null, 
+    "job_id": "7f9da2dc-48cd-4300-a236-c7e31573dd63", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 13:05:26", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 13:05:30", 
+    "error_result": null, 
+    "job_id": "5b4680b7-48dd-4ee8-a4fe-4200c1c9edf1", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 14:05:33", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 14:05:36", 
+    "error_result": null, 
+    "job_id": "30b68ce1-62af-4e41-9356-5f113ebda58f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 15:05:35", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 15:05:38", 
+    "error_result": null, 
+    "job_id": "99e692b0-8b76-45ec-a951-bfe087931506", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 16:05:18", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 16:05:21", 
+    "error_result": null, 
+    "job_id": "214ffe22-5ad3-46ec-b516-4109f384ce5b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 17:05:09", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 17:05:12", 
+    "error_result": null, 
+    "job_id": "10dc546b-749e-4c89-b214-ecdfcd9a9992", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 18:05:08", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 18:05:15", 
+    "error_result": null, 
+    "job_id": "01b04cfd-5e58-4965-a9b9-f94b6c8d1f32", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 19:04:59", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 19:05:01", 
+    "error_result": null, 
+    "job_id": "42275701-6165-44b0-8e1a-5dff86ad500d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 20:04:58", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 20:05:00", 
+    "error_result": null, 
+    "job_id": "9b6147a7-29ff-4b8c-b7f5-47713a37a637", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 21:04:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 21:04:56", 
+    "error_result": null, 
+    "job_id": "83e87b23-c539-4bd5-a3e8-131d52a2ff07", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 22:04:59", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 22:05:02", 
+    "error_result": null, 
+    "job_id": "99cb3990-529a-425b-8ef7-334747a06100", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-07 23:05:00", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-07 23:05:03", 
+    "error_result": null, 
+    "job_id": "4aadc3c1-41a9-41f4-82ad-c80913e902c7", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-08 00:05:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 00:05:07", 
+    "error_result": null, 
+    "job_id": "11833b8d-a9a6-471f-9149-b5bcdd4a2eca", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-08 01:04:37", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 01:04:39", 
+    "error_result": null, 
+    "job_id": "c7bb2b7b-3f92-453b-af1c-264ed59fbd4f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-08 02:05:22", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 02:05:24", 
+    "error_result": null, 
+    "job_id": "63497fc5-3a93-4d9f-ad3b-04078559a17f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-08 03:05:28", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 03:05:30", 
+    "error_result": null, 
+    "job_id": "48a3b19e-a892-493b-b21d-9b98c11be7b7", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-08 04:04:58", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 04:05:00", 
+    "error_result": null, 
+    "job_id": "cd278249-53c3-4d41-bc94-979136835e4c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-08 05:05:11", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 05:05:13", 
+    "error_result": null, 
+    "job_id": "be09575e-0bae-4924-aabf-b02accd2de3f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1319508"
+  }, 
+  {
+    "creation_time": "2026-08-08 06:05:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 06:05:06", 
+    "error_result": null, 
+    "job_id": "0a2dd1fb-2334-4400-ba51-1cab7926fdc0", 
+    "state": "DONE", 
+    "total_bytes_processed": "1323772"
+  }, 
+  {
+    "creation_time": "2026-08-08 07:05:06", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 07:05:10", 
+    "error_result": null, 
+    "job_id": "a8f2ff19-8472-4aa8-8fe8-3ebe494cea4c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 08:05:02", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 08:05:04", 
+    "error_result": null, 
+    "job_id": "7ffdfdd1-289e-44a7-a48b-7b3d30237c89", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 09:05:24", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 09:05:27", 
+    "error_result": null, 
+    "job_id": "34fc4188-20f3-4dd1-aff1-85aeeacc4895", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 10:04:38", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 10:04:40", 
+    "error_result": null, 
+    "job_id": "34ee6675-b198-474f-88f4-452cd7407b9b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 11:04:58", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 11:05:01", 
+    "error_result": null, 
+    "job_id": "729156db-da94-40bd-a4a6-70a64c5c0a22", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 12:05:11", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 12:05:14", 
+    "error_result": null, 
+    "job_id": "19422e5f-6bcc-4b30-aed9-bde9ac173265", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 13:04:47", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 13:04:50", 
+    "error_result": null, 
+    "job_id": "a273768d-5618-4bcf-9f43-2969c998e45f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 14:05:05", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 14:05:08", 
+    "error_result": null, 
+    "job_id": "4e8d098c-de94-460c-828a-59218d8ed1bc", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 15:05:18", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 15:05:20", 
+    "error_result": null, 
+    "job_id": "51768509-978b-4903-b97d-1e546e3561dd", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 16:04:57", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 16:05:00", 
+    "error_result": null, 
+    "job_id": "72c0b691-816e-4103-9431-2b6503e94432", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 17:04:45", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 17:04:48", 
+    "error_result": null, 
+    "job_id": "20858d00-db93-4c74-92d6-bb0d1670240a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 18:04:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 18:04:57", 
+    "error_result": null, 
+    "job_id": "1af0a557-ea35-4fab-8850-726adee4fe4c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 19:04:50", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 19:04:53", 
+    "error_result": null, 
+    "job_id": "375d8265-4d2f-478a-9f37-dbd436730d8d", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 20:04:37", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 20:04:39", 
+    "error_result": null, 
+    "job_id": "9023a617-de53-4ef3-8941-a660ee656094", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 21:05:11", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 21:05:13", 
+    "error_result": null, 
+    "job_id": "dbc49334-8cde-42e7-a5b1-0c0be73f14b5", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 22:04:42", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 22:04:44", 
+    "error_result": null, 
+    "job_id": "98e6b30e-84eb-4048-9e6d-8cc321e2a35e", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-08 23:04:56", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-08 23:04:58", 
+    "error_result": null, 
+    "job_id": "458866ed-2148-4e6d-b7c3-443d33e6ca4a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 00:05:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 00:05:15", 
+    "error_result": null, 
+    "job_id": "31de8c58-623f-451b-8fba-8a3e2a8aeb66", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 01:05:07", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 01:05:10", 
+    "error_result": null, 
+    "job_id": "3654ca48-c054-4cb3-851e-09931b0433cf", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 01:11:46", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 01:11:48", 
+    "error_result": null, 
+    "job_id": "53c6423c-ea25-4bf0-a72d-240f89bf9e27", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 02:05:07", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 02:05:10", 
+    "error_result": null, 
+    "job_id": "8287b278-e1fb-4e1d-9627-75d84532f4c2", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 03:05:11", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 03:05:13", 
+    "error_result": null, 
+    "job_id": "73fc2c13-9752-426a-8454-c744b6e2a803", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 04:05:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 04:05:05", 
+    "error_result": null, 
+    "job_id": "57bad398-aa52-4d1d-bb70-5f1b4d29f576", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 05:05:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 05:05:05", 
+    "error_result": null, 
+    "job_id": "1bf427a9-98f1-4ca3-81dd-5118b65340d5", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 06:04:58", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 06:05:01", 
+    "error_result": null, 
+    "job_id": "dacbadbd-f658-4cd5-9558-6a2cc47cbc42", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 07:05:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 07:05:06", 
+    "error_result": null, 
+    "job_id": "e829aadb-2508-4d48-be1a-0225a6b0056f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 08:05:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 08:05:05", 
+    "error_result": null, 
+    "job_id": "3ce46161-28d4-4c8b-96e4-5394198b3a54", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 09:05:21", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 09:05:23", 
+    "error_result": null, 
+    "job_id": "02909906-d50b-4fab-a957-42d7629ebfd3", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 10:04:55", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 10:04:57", 
+    "error_result": null, 
+    "job_id": "3870ee29-3d0c-4d48-8ae8-099e6f4b86d4", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 11:05:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 11:05:15", 
+    "error_result": null, 
+    "job_id": "87315f4e-89ef-4142-ae96-91f194e253e5", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 11:17:55", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 11:17:58", 
+    "error_result": null, 
+    "job_id": "369a9fa4-ab37-495d-97c8-1e5fab5d5483", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 12:05:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 12:05:07", 
+    "error_result": null, 
+    "job_id": "21fe8f55-ca7c-4e24-b8f8-214df8e39d9f", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 13:05:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 13:05:07", 
+    "error_result": null, 
+    "job_id": "da5226b4-3d24-40f5-9431-762b4554382a", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 14:05:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 14:05:06", 
+    "error_result": null, 
+    "job_id": "15c9e535-f491-4521-8697-579f153d2e0b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 15:05:07", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 15:05:11", 
+    "error_result": null, 
+    "job_id": "4e75020d-dd3c-4cbb-96e5-581133d6013b", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 16:05:09", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 16:05:12", 
+    "error_result": null, 
+    "job_id": "3afc930d-567e-41a4-acfe-e93f2d7c1133", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 17:05:16", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 17:05:19", 
+    "error_result": null, 
+    "job_id": "3f185092-18d1-4c78-89fd-d3422e67485c", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 18:04:34", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 18:04:36", 
+    "error_result": null, 
+    "job_id": "f0ff3b79-8e3d-4364-b577-20e99cba0c47", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 19:04:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 19:04:56", 
+    "error_result": null, 
+    "job_id": "f1b144d0-d3ab-42fb-b40d-3fef6a3b5a39", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 20:04:53", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 20:04:55", 
+    "error_result": null, 
+    "job_id": "159520aa-9704-41d8-9643-b43c79ca6850", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 21:04:45", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 21:04:47", 
+    "error_result": null, 
+    "job_id": "7f750725-1b6b-48b6-9bec-40f7dce30e03", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 22:04:46", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 22:04:48", 
+    "error_result": null, 
+    "job_id": "90fe719c-f346-4e84-b62e-af52dbb4fa90", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-09 23:05:04", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-09 23:05:06", 
+    "error_result": null, 
+    "job_id": "61f1ed21-0a62-4fa2-bb25-36f9c995d6d3", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 00:05:10", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 00:05:12", 
+    "error_result": null, 
+    "job_id": "11188b02-6207-4444-be02-a5aad8eec3c6", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 01:05:05", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 01:05:09", 
+    "error_result": null, 
+    "job_id": "cc7fd9dc-3b3a-429d-af87-1cadf3fbe194", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 02:04:57", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 02:04:59", 
+    "error_result": null, 
+    "job_id": "07c43405-0a47-46cb-a3a8-ed39cfbd2491", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 03:05:09", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 03:05:12", 
+    "error_result": null, 
+    "job_id": "177ee40e-5547-4db9-837b-d1bf2c87d881", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 04:04:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 04:04:56", 
+    "error_result": null, 
+    "job_id": "d6c10196-2bd8-4515-a865-93ac6ab9ef96", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 05:05:03", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 05:05:06", 
+    "error_result": null, 
+    "job_id": "2065480d-09a1-46bf-b5b6-5cbf346ecaa3", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 06:05:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 06:05:57", 
+    "error_result": null, 
+    "job_id": "ddd92210-22e5-4fc6-9c6f-d1d3df7719c7", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 07:05:53", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 07:05:56", 
+    "error_result": null, 
+    "job_id": "39cacbe4-4693-4eb1-ad91-cf4e163b63fb", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 08:05:54", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 08:05:56", 
+    "error_result": null, 
+    "job_id": "4ec892e4-5706-4b5f-ac37-ffce9efcc9b3", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 09:05:49", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 09:05:52", 
+    "error_result": null, 
+    "job_id": "0e25f774-572a-49d3-9c65-1ed97be8f2d6", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 10:05:37", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 10:05:40", 
+    "error_result": null, 
+    "job_id": "52940df0-a8e1-4a06-a39a-c358873bb202", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }, 
+  {
+    "creation_time": "2026-08-10 11:05:13", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_purchases", 
+    "end_time": "2026-08-10 11:05:15", 
+    "error_result": null, 
+    "job_id": "34e1e35d-4de4-4834-9dc3-63f16037cfb9", 
+    "state": "DONE", 
+    "total_bytes_processed": "1327444"
+  }
+]
+=== LOAD jobs targeting core.fact_returns, 2026-07-27T00:00:00Z..now ===
+[
+  {
+    "creation_time": "2026-08-09 01:12:05", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_returns", 
+    "end_time": "2026-08-09 01:12:08", 
+    "error_result": null, 
+    "job_id": "ded95203-263c-49c0-a8df-82cde9dd228d", 
+    "state": "DONE", 
+    "total_bytes_processed": "17520"
+  }, 
+  {
+    "creation_time": "2026-08-09 11:14:59", 
+    "dest_dataset": "core", 
+    "dest_table": "fact_returns", 
+    "end_time": "2026-08-09 11:15:00", 
+    "error_result": null, 
+    "job_id": "1c9dd1b7-0439-4a11-b2d7-ebf6989dac31", 
+    "state": "DONE", 
+    "total_bytes_processed": "17520"
+  }
+]
+=== independent COUNT(*) sanity: any jobs at all targeting core.* since 2026-07-27 (control for silent truncation of above) ===
+[
+  {
+    "dest_table": "dim_counterparties", 
+    "n_jobs": "954"
+  }, 
+  {
+    "dest_table": "dim_employees", 
+    "n_jobs": "318"
+  }, 
+  {
+    "dest_table": "dim_fx_rates", 
+    "n_jobs": "14"
+  }, 
+  {
+    "dest_table": "dim_products", 
+    "n_jobs": "318"
+  }, 
+  {
+    "dest_table": "fact_commissionreportin", 
+    "n_jobs": "13"
+  }, 
+  {
+    "dest_table": "fact_customer_invoices", 
+    "n_jobs": "8"
+  }, 
+  {
+    "dest_table": "fact_inventory", 
+    "n_jobs": "28"
+  }, 
+  {
+    "dest_table": "fact_loss", 
+    "n_jobs": "13"
+  }, 
+  {
+    "dest_table": "fact_payments", 
+    "n_jobs": "30"
+  }, 
+  {
+    "dest_table": "fact_payments_stg", 
+    "n_jobs": "15"
+  }, 
+  {
+    "dest_table": "fact_purchases", 
+    "n_jobs": "247"
+  }, 
+  {
+    "dest_table": "fact_returns", 
+    "n_jobs": "2"
+  }, 
+  {
+    "dest_table": "fact_sales_profit", 
+    "n_jobs": "225"
+  }
+]
+Mon Aug 10 11:27:48 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

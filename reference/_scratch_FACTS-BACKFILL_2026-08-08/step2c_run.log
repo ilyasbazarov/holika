@@ -1,0 +1,313 @@
+Mon Aug 10 11:28:59 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== ALL fact_purchases LOAD jobs, 2026-07-31T00:00Z..2026-08-05T00:00Z (spans the drift_check blockage 08-01T18:00Z..08-04T18:00Z) ===
+[
+  {
+    "creation_time": "2026-07-31 00:05:13", 
+    "error_result": null, 
+    "job_id": "e6d04ab5-435c-4557-80e5-dc6894a5b143", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 01:05:12", 
+    "error_result": null, 
+    "job_id": "2103cbec-5406-404b-b4ae-04800688c1dd", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 02:05:12", 
+    "error_result": null, 
+    "job_id": "bcdaabe9-0665-47c9-af6b-f3a002950378", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 03:05:15", 
+    "error_result": null, 
+    "job_id": "5314d77f-2653-4201-bd09-33060beb0fe8", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 04:05:04", 
+    "error_result": null, 
+    "job_id": "0df13224-5245-44cc-a4b7-8137fa267d2e", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 05:05:19", 
+    "error_result": null, 
+    "job_id": "f8221b4a-9060-40bd-a79e-65d517535fe7", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 06:05:11", 
+    "error_result": null, 
+    "job_id": "d0fca5c0-e4b5-41db-b536-e90b1cf5870a", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 07:05:36", 
+    "error_result": null, 
+    "job_id": "2530f29c-8695-4a2d-8168-0040f5a5bcf6", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 08:05:57", 
+    "error_result": null, 
+    "job_id": "1316e5a4-8747-42cd-bb7f-350542eebff2", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 09:06:08", 
+    "error_result": null, 
+    "job_id": "b5cd9edc-5b9f-4878-88be-8d390598642e", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 10:06:03", 
+    "error_result": null, 
+    "job_id": "d9ab2092-0e5d-4d31-862d-8634980e4437", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 11:05:56", 
+    "error_result": null, 
+    "job_id": "1f54bd4c-85ac-443f-9c81-3d29b534d6f6", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 12:06:12", 
+    "error_result": null, 
+    "job_id": "8bd646a4-e49f-4a5e-9d82-cc62b8291788", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 13:06:15", 
+    "error_result": null, 
+    "job_id": "5f1a2cd4-5216-4021-a30b-c415acee5d8f", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 14:05:47", 
+    "error_result": null, 
+    "job_id": "dac25ff5-146c-4e86-acef-dccebc033d6f", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 15:05:53", 
+    "error_result": null, 
+    "job_id": "dc3e6343-a217-4882-8618-25618edc8a3f", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 16:05:39", 
+    "error_result": null, 
+    "job_id": "a6345bdb-49fe-4385-bff8-d0dcfb501ae0", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 17:05:31", 
+    "error_result": null, 
+    "job_id": "64f41cd7-2749-4ca6-9249-14c84f2ae686", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 18:05:10", 
+    "error_result": null, 
+    "job_id": "f01e1877-f8af-48ad-b4f9-962fca3d1d50", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 19:05:15", 
+    "error_result": null, 
+    "job_id": "93f90c92-3aa3-4cd5-9602-c7aa538d834b", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 20:05:02", 
+    "error_result": null, 
+    "job_id": "1c636c60-6979-448b-b7fa-8b3147e8dad0", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 21:05:29", 
+    "error_result": null, 
+    "job_id": "47eb9ee3-6d11-4d44-896c-072ce0b4a123", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 22:04:55", 
+    "error_result": null, 
+    "job_id": "5be78429-5b46-44e3-adb4-78ffe918297a", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-07-31 23:05:08", 
+    "error_result": null, 
+    "job_id": "faded25d-5d3e-4519-a4f7-bd6a306baa62", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 00:05:09", 
+    "error_result": null, 
+    "job_id": "2c185e42-2614-475f-8c7b-a14846665a9c", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 01:05:26", 
+    "error_result": null, 
+    "job_id": "81708218-d5cd-4189-9905-97b401baf0b8", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 02:05:13", 
+    "error_result": null, 
+    "job_id": "16a2dcfa-946f-4c5d-8e89-8076342195d6", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 03:05:29", 
+    "error_result": null, 
+    "job_id": "0934725b-4594-46fa-b29d-5415e1e5c8b6", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 04:04:49", 
+    "error_result": null, 
+    "job_id": "a2e37671-b835-4967-8834-1fd3c284a592", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 05:05:12", 
+    "error_result": null, 
+    "job_id": "d73a59c6-b341-4ac1-bc76-ecf16dbd76f4", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 06:05:21", 
+    "error_result": null, 
+    "job_id": "21c6a8e0-f848-4ede-8bcf-6e2d6ad20f16", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 07:05:14", 
+    "error_result": null, 
+    "job_id": "9482784e-a70c-4097-825d-3ab7e74257ed", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 08:05:26", 
+    "error_result": null, 
+    "job_id": "f4c79855-7c39-4ca4-af4d-f5a7dc6579fd", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 09:05:32", 
+    "error_result": null, 
+    "job_id": "0584ef15-727c-4fb9-8ddb-b265d6a6a30a", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 10:05:34", 
+    "error_result": null, 
+    "job_id": "c2d2f354-bf3c-49a6-9e1f-7f9b3aacb2a1", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 11:05:24", 
+    "error_result": null, 
+    "job_id": "224ee97b-1de1-4ba9-bae0-7f5c67c497c1", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 12:05:17", 
+    "error_result": null, 
+    "job_id": "d3ae5256-0e14-4e73-bf52-2986fb5a3fb0", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 13:06:45", 
+    "error_result": null, 
+    "job_id": "94cb5047-87d7-4b5b-ad4c-71b8d39eeb2a", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 14:05:26", 
+    "error_result": null, 
+    "job_id": "c72be7db-8980-42f5-a378-dffb75ea01c8", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 15:05:13", 
+    "error_result": null, 
+    "job_id": "78f9db26-0047-4c2f-9317-8027d3498bc6", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 16:05:33", 
+    "error_result": null, 
+    "job_id": "c1e57cdc-9980-403e-bc4f-bc370471085d", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-01 17:05:06", 
+    "error_result": null, 
+    "job_id": "d72b7f37-7426-4e82-9bd6-b7e3df9a1421", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-04 18:05:15", 
+    "error_result": null, 
+    "job_id": "a9c24b92-ed59-4b41-9210-ba64647dd2ff", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-04 19:05:03", 
+    "error_result": null, 
+    "job_id": "7f9a7324-581e-48d4-9c63-7653f636e735", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-04 20:05:09", 
+    "error_result": null, 
+    "job_id": "15e19d04-ca33-4ad6-b136-4f862aecb15e", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-04 21:05:30", 
+    "error_result": null, 
+    "job_id": "6520eab3-f713-4b37-a671-5d61d7ba38fa", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-04 22:05:11", 
+    "error_result": null, 
+    "job_id": "543d6f16-d221-486a-8085-2b8115c5c73b", 
+    "state": "DONE"
+  }, 
+  {
+    "creation_time": "2026-08-04 23:05:19", 
+    "error_result": null, 
+    "job_id": "cc771578-3957-4540-8092-11feda5dd576", 
+    "state": "DONE"
+  }
+]
+=== independent COUNT(*) for same window (control) ===
+[
+  {
+    "n": "48"
+  }
+]
+Mon Aug 10 11:29:05 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
