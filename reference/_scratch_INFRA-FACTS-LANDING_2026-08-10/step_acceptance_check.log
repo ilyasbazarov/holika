@@ -1,0 +1,28 @@
+=== date -u (start) ===
+Mon Aug 10 16:06:38 UTC 2026
+=== acceptance: GAP Q-12|Q-13 count in 01 ===
+0
+=== acceptance: X=39 etc full repo, remaining ===
+MIGRATION_MAP.md:69:| PR-30 | 531–605 | Марты: supplier_price_history, weight_flow, customer_invoices_ar, expenses, abc_xyz (пороги ABC/XYZ) + текущее распределение X/Y/Z | Поля/пороги → `03_PIPELINE_SPEC` §marts (ABC/XYZ пороги — доменная логика); назначение страниц LS → `01_ARCHITECTURE` §потребители; распределение X=39/Y=148/Z=439 → `07_STATE` §контрольные цифры |
+07_ARCHIVE.md:137:| INFRA-FACTS-SWEEP | (`ADR-091 §10`, 2026-08-01) Хвост мелких read-only фактов одной сессией: `Q-6` (ревизия `cf-dq`), `Q-12` (`cf-alert`), `Q-13` (состав шагов `msklad-pipeline-weekly`) — три `gcloud … describe`; `Q-14` (процедура пересборки core из GCS raw); `Q-47` (укладка SQL и лога замера «0 из 128 не-KGS loss» в `/reference` — сейчас метка без артефакта); `Q-55` (три `COUNTIF` по `core.fact_loss`); `Q-11` (свежая выгрузка бизнес-метрик) | задача (discovery, класс A) | **DONE (сессия `INFRA-FACTS-SWEEP`, 2026-08-01; сборка буфера 2026-08-01).** Все семь вопросов закрыты фактом с напечатанной выдержкой (`reference/infra_facts_sweep_2026-08-01.md`, провенанс `reference/_scratch_INFRA-FACTS-SWEEP_2026-08-01/`): `Q-6` — актуальная ревизия `cf-dq-00007-hot` (`updateTime 2026-07-30T10:04:58Z`), новее `cf-dq-00006-lac`; `Q-12` — `cf-alert` факты полны (ревизия `cf-alert-00001-bej`, секреты `telegram-bot-token`/`telegram-chat-id`); `Q-13` — состав шагов `msklad-pipeline-weekly` снят целиком (`dim → fx → facts(weekly) → dq → check_dq → promote(90d) → purchases → returns(90d) → done`); `Q-14` — снапшоты `GCS_RAW` не читаются обратно (0 совпадений), `RUNBOOK_v8 §11.2/§11.3` подтверждён как процедура без команд, не восстановлена этим замером (не гейт, не догадка); `Q-47` — `core.fact_loss` = 129 строк (было 128 на 2026-07-23), не-KGS = 0, DEFER-статус `ADR-036` НЕ переоткрыт; `Q-55` — три `COUNTIF` по `core.fact_loss` (129 строк) = 0, условие переоткрытия `ADR-036` не наступило; `Q-11` — свежая выгрузка `marts.abc_xyz`: X=28/Y=164/Z=338 (было X=39/Y=148/Z=439 на 2026-06-05), ABC A=112/B=151/C=267; расхождение зафиксировано как факт, не сглажено. Обновление `07_STATE §Контрольные цифры` (X/Y/Z) сделано этой же сборкой. Узел `cf-alert` и weekly-DAG (`01_ARCHITECTURE.md §топология/§DAG`) получили полные факты в артефакте, перенос в `01_ARCHITECTURE.md`/`11_INFRA_FACTS.md` НЕ сделан ни сессией (класс A писал только `/reference`), ни этой сборкой — остаётся задачей следующего шага. Причина роста `core.fact_loss` (128→129) не устанавливалась (вне метода строк `Q-47`/`Q-55`) |
+PROJECT_REFERENCE_v6.md:605:**Распределение (актуальное):** X=39, Y=148, Z=439 (626 total). A-класс: 85 SKU → ~80% выручки.
+07_STATE.md:1756:- X/Y/Z распределение (ABC/XYZ марты): X=28, Y=164, Z=338 (`marts.abc_xyz` = 530 строк; было X=39/Y=148/Z=439 на 2026-06-05, `Q-11` закрыт `INFRA-FACTS-SWEEP` 2026-08-01)
+reference/infra_facts_sweep_2026-08-01.md:52:(X=39, Y=148, Z=439 — сумма 626): свежая выгрузка даёт X=28, Y=164, Z=338 (сумма 530). Расхождение
+briefs/INFRA-FACTS-LANDING.md:147:Остаток: `03_PIPELINE_SPEC.md:250` несёт фразу-указатель со старыми числами `X=39, Y=148, Z=439` и
+briefs/INFRA-FACTS-LANDING.md:165:`grep -rn "X=39\|Y=148\|Z=439" --include="*.md" .` · `grep -rn "GAP Q-1[123]\|Q-1[123]" --include="*.md" .`
+briefs/INFRA-FACTS-LANDING.md:228:- `grep -rn "X=39\|Y=148\|Z=439" --include="*.md" .` печатается целиком; каждое оставшееся совпадение
+briefs/INFRA-FACTS-SWEEP.md:37:- `03_PIPELINE_SPEC.md §marts — логика мартов и ABC/XYZ` — текущие цифры X=39/Y=148/Z=439,
+briefs/INFRA-FACTS-SWEEP.md:56:  `/reference`». Текущие цифры в `07_STATE §контрольные цифры`: X=39, Y=148, Z=439
+briefs/INFRA-FACTS-SWEEP.md:110:   с текущими цифрами `07_STATE` (X=39, Y=148, Z=439) — совпадение или расхождение фиксируется как
+=== acceptance: X=39 in 03_PIPELINE_SPEC ===
+0
+=== acceptance: numbers 07_STATE vs 03 ===
+- X/Y/Z распределение (ABC/XYZ марты): X=28, Y=164, Z=338 (`marts.abc_xyz` = 530 строк; было X=39/Y=148/Z=439 на 2026-06-05, `Q-11` закрыт `INFRA-FACTS-SWEEP` 2026-08-01)
+250:Распределение X/Y/Z и A-класс SKU — волатильные цифры, дом `07_STATE` §Контрольные цифры (факт **2026-08-01**: X=28, Y=164, Z=338 при 530 строках `marts.abc_xyz`; A=112, B=151, C=267).
+=== acceptance: shasum ===
+a1a58a2f385ac1d32c488cae45134c08ed9f3e1097bb808eb2d0253527115ff8  reference/code/cf-facts/workflow_weekly.yaml
+821edbeef502d786b2345219a01f0f7c2cee36d8d0b184a7ac63b85395eac47f  reference/code/cf-facts/workflow_hourly.yaml
+=== acceptance: мёртв ===
+(rc=1 means 0 matches if 1)
+=== hook selftest ===
+Mon Aug 10 16:06:38 UTC 2026

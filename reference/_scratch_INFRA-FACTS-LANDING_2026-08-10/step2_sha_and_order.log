@@ -1,0 +1,35 @@
+=== date -u (start) ===
+Mon Aug 10 16:03:24 UTC 2026
+=== shasum weekly/hourly ===
+a1a58a2f385ac1d32c488cae45134c08ed9f3e1097bb808eb2d0253527115ff8  reference/code/cf-facts/workflow_weekly.yaml
+821edbeef502d786b2345219a01f0f7c2cee36d8d0b184a7ac63b85395eac47f  reference/code/cf-facts/workflow_hourly.yaml
+=== expected (brief §Входы п.2) ===
+weekly expected: a1a58a2f385ac1d32c488cae45134c08ed9f3e1097bb808eb2d0253527115ff8
+hourly expected: 821edbeef502d786b2345219a01f0f7c2cee36d8d0b184a7ac63b85395eac47f
+=== step order weekly (programmatic) ===
+6:    - init:
+15:    - step_dim:
+38:    - step_fx:
+61:    - step_facts:
+87:    - step_purchases:
+113:    - step_returns:
+141:    - step_perimeter:
+166:    - step_dq:
+189:    - parse_dq_result:
+194:    - check_dq:
+207:    - step_promote:
+234:    - step_perimeter_promote:
+259:    - done:
+=== step order hourly (programmatic) ===
+4:    - init:
+11:    - step_dim:
+32:    - step_fx:
+53:    - step_facts:
+75:    - step_purchases:
+96:    - step_dq:
+117:    - parse_dq_result:
+120:    - check_dq:
+131:    - step_promote:
+154:    - done:
+=== date -u (end) ===
+Mon Aug 10 16:03:24 UTC 2026
