@@ -1,0 +1,25 @@
+=== date -u (start) ===
+Tue Aug 11 05:13:14 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud run services describe cf-facts (обходной путь, functions describe даёт 403) ===
+cf-facts-00011-mab	cf-facts-00011-mab	11	2026-08-09T11:00:22.235374Z
+=== gcloud functions list (справочно, метка ревизии) ===
+NAME      STATE   UPDATE_TIME
+cf-facts  ACTIVE  2026-08-09T11:00:22.511597469Z
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Tue Aug 11 05:13:24 UTC 2026
