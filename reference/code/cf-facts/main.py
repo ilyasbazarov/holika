@@ -93,7 +93,7 @@ def main(request: flask.Request) -> flask.Response:
         if mode == "hourly":
             result = _run_load(run_id, window_days=HOURLY_WINDOW_DAYS)
         elif mode == "weekly":
-            result = _run_weekly_load(run_id)
+            result = _run_weekly_load(run_id, window_days)
         elif mode == "promote":
             result = _run_promote(window_days)
         elif mode == "purchases":
@@ -163,10 +163,19 @@ def _run_load(run_id: str, window_days: int) -> dict:
     }
 
 
-def _run_weekly_load(run_id: str) -> dict:
+def _run_weekly_load(run_id: str, window_days: int = WEEKLY_WINDOW_DAYS) -> dict:
     """
-    Weekly mode: fetch 90d demands + 90d byvariant COGS.
+    Weekly mode: fetch `window_days` demands + `window_days` byvariant COGS.
     Loads both to BQ staging for the subsequent promote step.
+
+    ROLLBACK-ADJ (2026-08-11): окно стало параметром. Раньше оно было жёстко
+    `WEEKLY_WINDOW_DAYS`, а тело запроса игнорировалось — из-за этого нельзя было
+    выполнить требование мандата «загрузка staging и MERGE одним прогоном с одним
+    window_days» и, как следствие, вытащить май-2026 в паритет (он глубже 90 суток).
+    Умолчание сохраняет прежнее поведение; штатный конвейер передаёт 90 явно
+    (`workflow_weekly.yaml:70`), поэтому расписание этой правкой не затрагивается.
+    Предохранитель `_assert_staging_covers_merge_window` сверяет покрытие staging с
+    окном MERGE — при широком прогоне обе величины обязаны совпадать.
     """
     token   = get_token()
     bq      = bigquery.Client(project=GCP_PROJECT)
@@ -176,17 +185,19 @@ def _run_weekly_load(run_id: str) -> dict:
     ensure_staging_tables(bq)
 
     date_to   = date.today()
-    date_from = date_to - timedelta(days=WEEKLY_WINDOW_DAYS)
+    date_from = date_to - timedelta(days=window_days)
 
     # ── Step 1: demand positions (same as hourly but 90d window)
-    log.info("Weekly load: fetching demands %s → %s", date_from, date_to)
+    log.info("Weekly load (%dd): fetching demands %s → %s", window_days, date_from, date_to)
 
     demand_records = fetch_demand_positions(
         token, date_from, date_to, run_id, session=session
     )
 
     if not demand_records:
-        raise ValueError(f"0 demand positions for 90d window {date_from}→{date_to}")
+        raise ValueError(
+            f"0 demand positions for {window_days}d window {date_from}→{date_to}"
+        )
 
     blob_path = f"{GCS_PREFIX_DEMAND}/weekly_run_{run_id}.ndjson.gz"
     upload_ndjson_gz(gcs, GCS_RAW, blob_path, demand_records)
