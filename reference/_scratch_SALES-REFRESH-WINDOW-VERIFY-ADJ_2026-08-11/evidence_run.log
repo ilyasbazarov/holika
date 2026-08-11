@@ -1,0 +1,86 @@
+=== UTC начало ===
+Tue Aug 11 14:59:56 UTC 2026
+
+=== A. Ложное утверждение — где оно живёт (ADR-044: печатаем строки с номерами) ===
+./07_ARCHIVE.md:232:| SALES-REFRESH-WINDOW-SCOPE-VERIFY | (`SALES-REFRESH-WINDOW-ROLLBACK-ADJ`, 2026-08-11, независимая проверка патча варианта 1) Проверка патча «вариант 1» (область удаления по происхождению строки), закоммиченного в ветке `s/SALES-REFRESH-WINDOW-ROLLBACK-ADJ` @ `0e9b0fc`, до запроса нового мандата класса B | задача (класс A, исполнитель-проверяющий) | **DONE (сессия `SALES-REFRESH-WINDOW-SCOPE-VERIFY`, 2026-08-11); не заводилась → сразу DONE в одном проходе сборки буфера 2026-08-11 (второй проход), строка `07_STATE.md` не заводилась (прецедент `INVOICES-STALENESS-PROBE`).** Восемь пунктов проверки закрыты доказательством (номер строки/вывод команды/число): импорты подтверждены + `py_compile rc=0` всех четырёх файлов; направление предиката в ветке продаж верное (не перевёрнуто); `COALESCE` присутствует в обеих ветках; отрендеренный SQL обеих функций-построителей получен и проверен; `--dry_run` обоих `MERGE` против живых таблиц — успех; собственный запрос разбиения таблицы — сумма частей точно равна итогу (`0` зазора/пересечения), `0` коллизий различителя; `main.py` — умолчание `_run_weekly_load` сохраняет `90`, единственный вызывающий; сплошной поиск по репо — третьего писателя `core.fact_sales_profit` и посторонних веток удаления нет. Патч предмета проверки физически отсутствовал в дереве сессии и в `main` — существовал только закоммиченным в соседней ветке `s/SALES-REFRESH-WINDOW-ROLLBACK-ADJ`; снят через `git show` в `reference/_scratch_SALES-REFRESH-WINDOW-SCOPE-VERIFY_2026-08-11/patch_snapshot/`. Две находки для архитектора: (1) `sales_refresh_window_rollback_adj_2026-08-11.md §7` п.4 ссылается на несуществующую явную передачу `window_days=90` в `workflow_weekly.yaml:70` для `mode="weekly"` — перенесена строкой `Q-108`; (2) числовой ориентир §7 (`42975=5578+37397`) устарел на 20 строк живого прироста продаж (замер `2026-08-11T11:18:38Z` дал `42995=5578+37417`) — разбиение подтверждено заново и точно, расхождение не требует правки кода/предиката, отдельной строки не заводит. Артефакт `reference/sales_refresh_window_scope_verify_2026-08-11.md`. |
+./07_GAPS.md:84:| Q-108 | (`SALES-REFRESH-WINDOW-SCOPE-VERIFY`, 2026-08-11) Артефакт `reference/sales_refresh_window_rollback_adj_2026-08-11.md §7` п.4 утверждает, что `workflow_weekly.yaml:70` передаёт `window_days=90` явно для `mode="weekly"` — независимая проверка это опровергла: поле в теле запроса этого шага отсутствует вовсе, совпадение с `90` достигается умолчанием `_run_weekly_load(..., window_days=WEEKLY_WINDOW_DAYS)` и умолчанием `body.get(..., _default_window_days)` в `main.py:81-88` | факт | **OPEN.** Поведение сегодня безопасно (обе подстановки дают `90`), но текст патча варианта 1 (`ADR-161 §5`) ссылается на несуществующую явную страховку. До запроса нового мандата класса B на деплой патча варианта 1 — решить: либо переформулировать текст артефакта (страховка неявная, через умолчания), либо добавить явную передачу `window_days` в `workflow_weekly.yaml`, чтобы страховка перестала зависеть от совпадения двух независимых умолчаний. Решение владельца/архитектора. |
+./07_STATE.md:1755:| `Q-108` | OPEN | Текст патча варианта 1 `SALES-REFRESH-WINDOW` ссылается на несуществующую явную страховку `window_days` в `workflow_weekly.yaml:70` (независимая проверка `SALES-REFRESH-WINDOW-SCOPE-VERIFY` опровергла) | решение владельца/архитектора: править текст или добавить явную передачу в workflow — предшествует новому мандату класса B |
+./reference/sales_refresh_window_scope_verify_2026-08-11.md:138:явно (`workflow_weekly.yaml:70`)» — **не подтверждается текстом файла**. Строка `70` в снимке
+./reference/sales_refresh_window_scope_verify_2026-08-11.md:156:`workflow_weekly.yaml:70` — не подтверждено, это находка.**
+./reference/sales_refresh_window_scope_verify_2026-08-11.md:194:1. **§7 п.4 патча цитирует несуществующую строку.** `workflow_weekly.yaml:70` НЕ передаёт
+./reference/sales_refresh_window_rollback_adj_2026-08-11.md:167:умолчанием `WEEKLY_WINDOW_DAYS`; штатный конвейер передаёт `90` явно (`workflow_weekly.yaml:70`),
+./reference/code/cf-facts/main.py:176:    (`workflow_weekly.yaml:70`), поэтому расписание этой правкой не затрагивается.
+./reference/_scratch_SALES-REFRESH-WINDOW-SCOPE-VERIFY_2026-08-11/patch_snapshot/sales_refresh_window_rollback_adj_2026-08-11.md:167:умолчанием `WEEKLY_WINDOW_DAYS`; штатный конвейер передаёт `90` явно (`workflow_weekly.yaml:70`),
+./reference/_scratch_SALES-REFRESH-WINDOW-SCOPE-VERIFY_2026-08-11/patch_snapshot/main.py:176:    (`workflow_weekly.yaml:70`), поэтому расписание этой правкой не затрагивается.
+
+=== B. Что на самом деле лежит в workflow_weekly.yaml:63-71 (шаг step_facts) ===
+61:- step_facts:
+62:try:
+63:call: http.post
+64:args:
+65:url: ${cf_facts}
+66:auth:
+67:type: OIDC
+68:body:
+69:run_id: ${run_id}
+70:mode: "weekly"
+71:timeout: 600
+72:result: facts_result
+
+=== C. Все mode/window_days обоих конвейеров ===
+--- reference/code/cf-facts/workflow_hourly.yaml ---
+62:              mode: "hourly"
+84:              mode: "purchases"
+85:              window_days: 90
+140:              mode: "promote"
+141:              window_days: 7
+--- reference/code/cf-facts/workflow_weekly.yaml ---
+70:              mode: "weekly"
+96:              mode: "purchases"
+122:              mode: "returns"
+123:              window_days: 90
+150:              mode: "perimeter"
+151:              window_days: 90
+216:              mode: "promote"
+217:              window_days: 90
+243:              mode: "perimeter_promote"
+244:              window_days: 90
+
+=== D. Разбор window_days в main.py (парсинг, лог, раздача по режимам) ===
+88:    window_days = int(body.get("window_days", _default_window_days))
+90:    log.info("CF-Facts start | mode=%s run_id=%s window_days=%d", mode, run_id, window_days)
+94:            result = _run_load(run_id, window_days=HOURLY_WINDOW_DAYS)
+96:            result = _run_weekly_load(run_id, window_days)
+98:            result = _run_promote(window_days)
+100:            result = _run_purchases()
+102:            result = _run_returns(window_days)
+104:            result = _run_perimeter_load(run_id, window_days)
+106:            result = _run_perimeter_promote(window_days)
+
+=== E. Сигнатуры режимов: кто принимает window_days, кто нет ===
+123:def _run_load(run_id: str, window_days: int) -> dict:
+166:def _run_weekly_load(run_id: str, window_days: int = WEEKLY_WINDOW_DAYS) -> dict:
+224:def _run_promote(window_days: int) -> dict:
+246:def _run_purchases() -> dict:
+294:def _run_returns(window_days: int) -> dict:
+344:def _run_perimeter_load(run_id: str, window_days: int) -> dict:
+382:def _run_perimeter_promote(window_days: int) -> dict:
+
+=== F. Предохранитель: объявление и все места вызова ===
+403:def _assert_staging_covers_merge_window(
+518:    _assert_staging_covers_merge_window(bq, STG_FACT_SALES, window_days, "promote_to_core")
+731:    _assert_staging_covers_merge_window(
+40:HOURLY_WINDOW_DAYS  = 7
+41:WEEKLY_WINDOW_DAYS  = 90
+56:GUARD_TOLERANCE_DAYS = 3
+70:PERIMETER_WINDOW_DAYS = WEEKLY_WINDOW_DAYS
+
+=== G. Ветки удаления MERGE — обе ли под предохранителем ===
+397:THEN DELETE
+412:    которое получит ветка `WHEN NOT MATCHED BY SOURCE ... THEN DELETE`. Свойства
+496:def promote_to_core(
+712:THEN DELETE
+716:def promote_perimeter_to_core(
+
+=== UTC конец ===
+Tue Aug 11 14:59:56 UTC 2026
