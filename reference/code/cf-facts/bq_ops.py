@@ -35,6 +35,7 @@ from config import (
     CORE_FACT_PURCHASES,
     GCP_PROJECT,
     GUARD_TOLERANCE_DAYS,
+    PERIMETER_CHANNEL_NAMES,
     STG_BYVARIANT,
     STG_FACT_SALES,
     STG_FACT_SALES_PERIMETER,
@@ -220,6 +221,12 @@ def load_byvariant_staging(
 # ─── MERGE SQLs ───────────────────────────────────────────────────────────────
 
 # Shared parse expression for transaction_date — Аппендикс Е pattern (maintain consistency)
+# Список меток периметра в виде SQL-кортежа. Строится ОДИН раз из config.PERIMETER_CHANNEL_NAMES,
+# чтобы предикаты обеих веток удаления и метки, которые пишет fetch_perimeter.py, не могли
+# разойтись (ROLLBACK-ADJ §6). Апостроф внутри метки экранируется — метки задаёт наш код, но
+# подстановка в SQL обязана быть безопасной независимо от их содержимого.
+_PERIMETER_NAMES_SQL = "(" + ", ".join("'" + n.replace("'", "''") + "'" for n in PERIMETER_CHANNEL_NAMES) + ")"
+
 _PARSE_DATE = "DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek')"
 
 # COGS proportional allocation formula (shared across both MERGE variants)
@@ -378,6 +385,15 @@ WHEN NOT MATCHED THEN INSERT (
 -- узкой форме, режим `topoff` с раздельными окнами выборки/MERGE этим патчем не строится.
 WHEN NOT MATCHED BY SOURCE
   AND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY)
+  -- ROLLBACK-ADJ §6 вариант 1: удалять ТОЛЬКО свои строки. Источник этого MERGE —
+  -- staging обычных продаж (entity/demand без комиссионных агентов); строки периметра
+  -- (розница и отчёты комиссионера) в него не входят и без этого условия удалялись бы
+  -- как «исчезнувшие из источника». Различитель — ПАРА полей: у периметра
+  -- sales_channel_id всегда NULL (fetch_perimeter.py), у настоящих каналов МойСклада id
+  -- заполнен; COALESCE обязателен, иначе строка с именем канала NULL даёт NULL вместо
+  -- FALSE и не удаляется никогда.
+  AND NOT (T.sales_channel_id IS NULL
+           AND COALESCE(T.sales_channel_name, '') IN {_PERIMETER_NAMES_SQL})
 THEN DELETE
 """
 
@@ -687,6 +703,12 @@ WHEN NOT MATCHED THEN INSERT (
 -- обновлён ниже — задача больше не будущая, это она и есть.
 WHEN NOT MATCHED BY SOURCE
   AND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY)
+  -- ROLLBACK-ADJ §6 вариант 1, зеркало условия в _build_merge_sql: источник этого MERGE —
+  -- staging периметра, и он представляет ТОЛЬКО строки розницы и отчётов комиссионера.
+  -- Оптовые продажи в него не входят: без этого условия ветка удаления снесла бы их все
+  -- (замер 2026-08-11: 6 922 строки, 269 440 872,10 KGS в окне 90 суток).
+  AND T.sales_channel_id IS NULL
+  AND COALESCE(T.sales_channel_name, '') IN {_PERIMETER_NAMES_SQL}
 THEN DELETE
 """
 

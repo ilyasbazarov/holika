@@ -1,0 +1,28 @@
+=== ЯКОРЬ НАЧАЛА ===
+Tue Aug 11 09:06:17 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+--- dry_run: /tmp/merge_sales.sql ---
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 11498374 bytes of data.
+
+--- dry_run: /tmp/merge_perimeter.sql ---
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 13223130 bytes of data.
+
+=== Симметрия предикатов: каждая строка ровно в одной области ===
+[
+  {
+    "gap_or_overlap": "0", 
+    "rows_total": "42975", 
+    "scope_perimeter": "5578", 
+    "scope_sales": "37397"
+  }
+]
+=== ЯКОРЬ КОНЦА ===
+Tue Aug 11 09:06:23 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+

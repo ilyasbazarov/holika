@@ -56,6 +56,7 @@ from typing import Optional
 
 import requests
 
+from config import PERIMETER_CHANNEL_COMMISSION, PERIMETER_CHANNEL_RETAIL
 from helpers import now_utc_str, paginate_entity, parse_href
 
 log = logging.getLogger(__name__)
@@ -185,7 +186,7 @@ def fetch_retaildemand_positions(
     records = _fetch_positions_for(
         token, "entity/retaildemand", docs, "retaildemand", session, run_id, loaded_at,
         has_discount=True,
-        sales_channel_name="Розница",
+        sales_channel_name=PERIMETER_CHANNEL_RETAIL,
     )
     log.info("Fetched %d retaildemand position records from %d docs", len(records), len(docs))
     return records
@@ -227,7 +228,7 @@ def fetch_commission_sales_positions(
         # positions.rows[] entity/commissionreportin НЕ несёт `discount` — подтверждено
         # ключами ответа (sales_perimeter_confirm_2026-08-02.md §6), не домысел.
         has_discount=False,
-        sales_channel_name="Комиссия",
+        sales_channel_name=PERIMETER_CHANNEL_COMMISSION,
     )
     log.info("Fetched %d commissionreportin_sale position records from %d docs", len(records), len(docs))
     return records

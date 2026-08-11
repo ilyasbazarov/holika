@@ -54,6 +54,17 @@ WEEKLY_WINDOW_DAYS  = 90
 # — без допуска один пустой день останавливал бы promote (в т.ч. часовой, ежечасный) на
 # ~24 прогона подряд. Тот же допуск применяется к обоим концам одной константой.
 GUARD_TOLERANCE_DAYS = 3
+
+# ─── Метки канала периметра — ЕДИНЫЙ источник (SALES-REFRESH-WINDOW-ROLLBACK-ADJ §6 вариант 1) ─
+# Значения проставляет fetch_perimeter.py (розница и отчёты комиссионера), и по НИМ ЖЕ обе ветки
+# удаления в bq_ops.py отличают свои строки от чужих. Держать их в двух местах нельзя: смена метки
+# в загрузчике молча расширила бы область удаления соседней ветки — ровно тот дефект, который
+# вскрыт 2026-08-11. Различитель — ПАРА полей: у строк периметра sales_channel_id всегда NULL,
+# у настоящих каналов МойСклада id заполнен. Коллизий в истории ноль (замер
+# reference/_scratch_SALES-REFRESH-WINDOW-ROLLBACK-ADJ_2026-08-11/, запрос B).
+PERIMETER_CHANNEL_RETAIL     = "Розница"
+PERIMETER_CHANNEL_COMMISSION = "Комиссия"
+PERIMETER_CHANNEL_NAMES      = (PERIMETER_CHANNEL_RETAIL, PERIMETER_CHANNEL_COMMISSION)
 # SALES-PERIMETER-EXTEND: тот же скользящий охват, что у весового (weekly) демand-ингеста —
 # отдельный ингест, но не отдельная каденция без основания.
 PERIMETER_WINDOW_DAYS = WEEKLY_WINDOW_DAYS
