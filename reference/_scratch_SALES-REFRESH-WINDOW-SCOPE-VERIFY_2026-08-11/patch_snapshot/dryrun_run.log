@@ -1,0 +1,20 @@
+Tue Aug 11 11:18:26 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== sales merge dry-run ===
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 12122434 bytes of data.
+=== perimeter merge dry-run ===
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 13230550 bytes of data.
+Tue Aug 11 11:18:31 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

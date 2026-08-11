@@ -1,0 +1,33 @@
+Tue Aug 11 11:18:38 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== split check (own query) ===
+[
+  {
+    "bucket": "perimeter", 
+    "n": "5578"
+  }, 
+  {
+    "bucket": "sales", 
+    "n": "37417"
+  }
+]
+=== total row count ===
+[
+  {
+    "n": "42995"
+  }
+]
+Tue Aug 11 11:18:45 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
