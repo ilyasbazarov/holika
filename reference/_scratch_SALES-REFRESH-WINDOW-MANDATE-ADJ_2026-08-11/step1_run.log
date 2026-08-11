@@ -1,0 +1,49 @@
+=== ЯКОРЬ НАЧАЛА ===
+Tue Aug 11 05:32:53 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+=== A. Глубина time travel датасета core (вопрос отката, ADR-145 §5) ===
+  "location": "asia-east1",
+  "maxTimeTravelHours": "168",
+
+=== B. Предикат предохранителя, реплика read-only, обе живые staging ===
+--- B1: staging продаж, что покрывает по датам ---
+[
+  {
+    "max_date": "2026-08-11", 
+    "min_date": "2026-08-04", 
+    "n_rows": "393", 
+    "window_start_7": "2026-08-04", 
+    "window_start_90": "2026-05-13"
+  }
+]
+
+--- B2: staging периметра, то же ---
+[
+  {
+    "max_date": "2026-08-03", 
+    "min_date": "2026-05-04", 
+    "n_rows": "5578"
+  }
+]
+
+=== C. Цена ложного отказа: сколько суток БЕЗ продаж и бывают ли подряд ===
+(вход в решение о допуске; окно — последние 180 суток ядра)
+[
+  {
+    "days_total": "181", 
+    "days_zero": "12", 
+    "pct_zero": "6.63", 
+    "windows_3d_all_zero": "0"
+  }
+]
+
+=== ЯКОРЬ КОНЦА ===
+Tue Aug 11 05:33:04 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
