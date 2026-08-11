@@ -1,0 +1,152 @@
+{
+  "apiVersion": "serving.knative.dev/v1",
+  "kind": "Service",
+  "metadata": {
+    "annotations": {
+      "cloudfunctions.googleapis.com/function-id": "cf-facts",
+      "run.googleapis.com/build-base-image": "asia-east1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312",
+      "run.googleapis.com/build-enable-automatic-updates": "true",
+      "run.googleapis.com/build-function-target": "main",
+      "run.googleapis.com/build-image-uri": "asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--facts:version_1",
+      "run.googleapis.com/build-name": "projects/420804682491/locations/asia-east1/builds/c43c6be6-01b3-4999-afff-d71d47519c54",
+      "run.googleapis.com/build-service-account": "projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com",
+      "run.googleapis.com/build-source-location": "gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786437392633949",
+      "run.googleapis.com/client-name": "gcloud",
+      "run.googleapis.com/custom-audiences": "[\"https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts\"]",
+      "run.googleapis.com/ingress": "all",
+      "run.googleapis.com/ingress-status": "all",
+      "run.googleapis.com/maxScale": "3",
+      "run.googleapis.com/operation-id": "11b073b4-9df3-4519-95f7-a37324be376f",
+      "run.googleapis.com/urls": "[\"https://cf-facts-420804682491.asia-east1.run.app\",\"https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts\",\"https://cf-facts-xw5u2boozq-de.a.run.app\"]",
+      "serving.knative.dev/creator": "service-420804682491@gcf-admin-robot.iam.gserviceaccount.com",
+      "serving.knative.dev/lastModifier": "ilyasbazarov4@gmail.com"
+    },
+    "creationTimestamp": "2026-05-06T08:27:57.556894Z",
+    "generation": 13,
+    "labels": {
+      "cloud.googleapis.com/location": "asia-east1",
+      "goog-cloudfunctions-runtime": "python312",
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions"
+    },
+    "name": "cf-facts",
+    "namespace": "420804682491",
+    "resourceVersion": "AAZYwe015YI",
+    "selfLink": "/apis/serving.knative.dev/v1/namespaces/420804682491/services/cf-facts",
+    "uid": "17b85ad4-5b5a-4591-ad81-bb867d5dabfb"
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "annotations": {
+          "autoscaling.knative.dev/maxScale": "5",
+          "autoscaling.knative.dev/minScale": "1",
+          "cloudfunctions.googleapis.com/trigger-type": "HTTP_TRIGGER",
+          "run.googleapis.com/base-images": "{\"worker\":\"asia-east1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312\"}",
+          "run.googleapis.com/client-name": "gcloud",
+          "run.googleapis.com/secrets": "secret-3c4ed779-9ba6-37e6-8472-c19ef6b101ea:projects/420804682491/secrets/msklad-token",
+          "run.googleapis.com/startup-cpu-boost": "true"
+        },
+        "labels": {
+          "goog-drz-cloudfunctions-id": "cf-facts",
+          "goog-drz-cloudfunctions-location": "asia-east1",
+          "run.googleapis.com/startupProbeType": "Default"
+        },
+        "name": "cf-facts-00012-ber"
+      },
+      "spec": {
+        "containerConcurrency": 1,
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "LOG_EXECUTION_ID",
+                "value": "true"
+              },
+              {
+                "name": "MSKLAD_TOKEN",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "latest",
+                    "name": "secret-3c4ed779-9ba6-37e6-8472-c19ef6b101ea"
+                  }
+                }
+              }
+            ],
+            "image": "asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--facts:version_1",
+            "name": "worker",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "name": "http1"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2048M"
+              }
+            },
+            "startupProbe": {
+              "failureThreshold": 1,
+              "periodSeconds": 240,
+              "tcpSocket": {
+                "port": 8080
+              },
+              "timeoutSeconds": 240
+            }
+          }
+        ],
+        "runtimeClassName": "run.googleapis.com/linux-base-image-update",
+        "serviceAccountName": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+        "timeoutSeconds": 540
+      }
+    },
+    "traffic": [
+      {
+        "percent": 100,
+        "revisionName": "cf-facts-00011-mab"
+      }
+    ]
+  },
+  "status": {
+    "address": {
+      "url": "https://cf-facts-xw5u2boozq-de.a.run.app"
+    },
+    "conditions": [
+      {
+        "lastTransitionTime": "2026-08-11T09:16:31.792248Z",
+        "status": "True",
+        "type": "Ready"
+      },
+      {
+        "severity": "Info",
+        "status": "True",
+        "type": "BaseImageValidated"
+      },
+      {
+        "lastTransitionTime": "2026-08-11T09:16:31.881862Z",
+        "message": "Deploying revision succeeded in 16.29s.",
+        "reason": "Retired",
+        "status": "True",
+        "type": "ConfigurationsReady"
+      },
+      {
+        "lastTransitionTime": "2026-08-11T09:16:31.758821Z",
+        "status": "True",
+        "type": "RoutesReady"
+      }
+    ],
+    "latestCreatedRevisionName": "cf-facts-00012-ber",
+    "latestReadyRevisionName": "cf-facts-00012-ber",
+    "observedGeneration": 13,
+    "traffic": [
+      {
+        "percent": 100,
+        "revisionName": "cf-facts-00011-mab"
+      }
+    ],
+    "url": "https://cf-facts-xw5u2boozq-de.a.run.app"
+  }
+}

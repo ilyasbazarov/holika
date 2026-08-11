@@ -1,0 +1,194 @@
+--- cf-facts/bq_ops.py	2026-08-11 14:10:45
++++ /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW/reference/code/cf-facts/bq_ops.py	2026-08-11 13:34:47
+@@ -34,6 +34,7 @@
+     CORE_FACT_SALES,
+     CORE_FACT_PURCHASES,
+     GCP_PROJECT,
++    GUARD_TOLERANCE_DAYS,
+     STG_BYVARIANT,
+     STG_FACT_SALES,
+     STG_FACT_SALES_PERIMETER,
+\ No newline at end of file
+@@ -368,7 +369,110 @@
+   S.discount,
+   S._loaded_at
+ )
++
++-- SALES-REFRESH-WINDOW (ADR-144 §8, узкая форма): строки, исчезнувшие из источника внутри
++-- окна выборки, удаляются. Условие DELETE обязано ПОВТОРЯТЬ границу окна ON явно (C2,
++-- ADR-101 §7 ловушка ii) — без этого повтора `WHEN NOT MATCHED BY SOURCE` по умолчанию
++-- матчит и удаляет ВСЮ историю за пределами окна (там ON тоже не находит пару), а не только
++-- сироты внутри окна. window_days тот же параметр, что несёт ON — единственный параметр в
++-- узкой форме, режим `topoff` с раздельными окнами выборки/MERGE этим патчем не строится.
++WHEN NOT MATCHED BY SOURCE
++  AND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY)
++THEN DELETE
+ """
++
++
++# ─── Предохранитель ADR-145 §4/§5 (SALES-REFRESH-WINDOW) ──────────────────────
++
++def _assert_staging_covers_merge_window(
++    bq: bigquery.Client,
++    staging_table: str,
++    window_days: int,
++    label: str,
++) -> None:
++    """
++    Предусловие мандата на деплой ветки удаления (`ADR-145 §4/§5`): до исполнения
++    `MERGE` подтвердить, что фактическое покрытие staging по датам не УЖЕ окна,
++    которое получит ветка `WHEN NOT MATCHED BY SOURCE ... THEN DELETE`. Свойства
++    защиты по `ADR-145 §4`: сравнить покрытие staging с окном `MERGE`, ОТКАЗАТЬ при
++    недостаточном покрытии (не предупредить логом), сработать ДО исполнения `MERGE`.
++    Форма и три правки — адъюдикация `reference/sales_refresh_window_mandate_adj_2026-08-11.md §3`.
++
++    Метод: MIN/MAX(transaction_date) в staging (тот же `_PARSE_DATE`, что несёт сам
++    `MERGE`) и обе границы окна `MERGE` (`CURRENT_DATE() - window_days` — нижняя,
++    `CURRENT_DATE() - 1` — верхняя, ADR-145-ADJ §3 правка 3) считаются ОДНИМ запросом
++    BigQuery (правка 2 — обе даты обязаны идти из одних часов: раньше нижняя граница
++    считалась питоновским `date.today()`, а MERGE — `CURRENT_DATE()`; сегодня оба дают
++    UTC и совпадают, но это незаписанное свойство среды, не гарантия).
++
++    Проверяются ОБА конца окна:
++    - нижний (глубина) — если MIN(date) в staging моложе начала окна минус допуск
++      (`GUARD_TOLERANCE_DAYS`, правка 1), staging не дотягивается до всей глубины,
++      которую получит DELETE, и строки внутри окна, отсутствующие в staging не потому
++      что удалены в источнике, а потому что не были выбраны этим прогоном, будут
++      стёрты как «исчезнувшие». Сценарий `ADR-145 §4`: часовой staging (7 суток) при
++      `mode=promote, window_days=90` — MIN(date) окажется около «сегодня-7д», отказ.
++    - верхний (свежесть) — найдено адъюдикацией `MANDATE-ADJ` §1 (первая версия),
++      в исходном запросе отсутствовало: если MAX(date) в staging старше «сегодня-1д»,
++      часть окна около сегодняшнего дня в staging попросту не загружена (устаревший
++      прогон), и та же ветка DELETE снесла бы строки внутри окна, отсутствующие в
++      устаревшем staging, хотя они никуда не делись в источнике. Симметричная
++      опасность нижнему краю.
++
++    Допуск `GUARD_TOLERANCE_DAYS` (`config.py`) применяется к ОБОИМ концам окна
++    (адъюдикация `MANDATE-ADJ` §2, вторая правка верхнего края, 2026-08-11) —
++    измерено (`§C`, окно 180 суток): 6,63% суток без единой продажи, ни одного окна
++    из трёх подряд пустых суток. Первая версия правки не несла допуска на верхнем
++    крае в предположении, что отставание там — признак пропущенного прогона, а не
++    свойство данных; это предположение опровергнуто архитектором: MAX(date) —
++    свойство данных (последний день с продажей), не признак того, что прогон
++    отработал, и без допуска один пустой день останавливал бы `promote` (в т.ч.
++    часовой, вызываемый ежечасно) примерно на 24 прогона подряд до первой продажи
++    нового дня. Асимметрия направления ошибки при выборе допуска: недолёт ГЛУБИНЫ
++    невосстановим (строки удаляются и не возвращаются следующим прогоном), недолёт
++    СВЕЖЕСТИ самоизлечим (следующий успешный прогон подтянет пропущенные даты) —
++    поэтому ложный отказ дороже наверху, допуск обоснован сильнее, чем внизу, а не
++    слабее.
++    """
++    row = next(
++        bq.query(
++            f"""
++            SELECT
++              MIN({_PARSE_DATE}) AS min_date,
++              MAX({_PARSE_DATE}) AS max_date,
++              DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY) AS window_start,
++              DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)             AS freshness_floor
++            FROM `{staging_table}` s
++            """
++        ).result()
++    )
++    tolerant_window_start = row.window_start + timedelta(days=GUARD_TOLERANCE_DAYS)
++    if row.min_date is None or row.min_date > tolerant_window_start:
++        raise ValueError(
++            f"{label}: предохранитель ADR-145 §4 (глубина) — staging покрывает с "
++            f"{row.min_date}, а окно MERGE начинается {row.window_start} "
++            f"(window_days={window_days}, допуск {GUARD_TOLERANCE_DAYS}д → "
++            f"{tolerant_window_start}). Покрытие staging уже окна MERGE — ветка "
++            f"DELETE удалила бы строки внутри окна, отсутствующие в staging не "
++            f"потому что исчезли в источнике. Отказ, MERGE не исполняется."
++        )
++    tolerant_freshness_floor = row.freshness_floor - timedelta(days=GUARD_TOLERANCE_DAYS)
++    if row.max_date is None or row.max_date < tolerant_freshness_floor:
++        raise ValueError(
++            f"{label}: предохранитель ADR-145 §4 (свежесть) — staging доходит "
++            f"только до {row.max_date}, а окно MERGE ожидает свежесть не старше "
++            f"{row.freshness_floor} (допуск {GUARD_TOLERANCE_DAYS}д → "
++            f"{tolerant_freshness_floor}). Верхний край окна в staging не покрыт — "
++            f"ветка DELETE удалила бы строки внутри окна около сегодняшнего дня, "
++            f"отсутствующие в устаревшем staging не потому что исчезли в источнике. "
++            f"Отказ, MERGE не исполняется."
++        )
++    log.info(
++        "%s: предохранитель ADR-145 §4 пройден — staging покрывает %s…%s, "
++        "окно MERGE %s…%s (допуск %sд на обоих концах)",
++        label, row.min_date, row.max_date, row.window_start, row.freshness_floor,
++        GUARD_TOLERANCE_DAYS,
++    )
+ 
+ 
+ # ─── Promote staging → core ───────────────────────────────────────────────────
+\ No newline at end of file
+@@ -393,6 +497,10 @@
+     if staging_count == 0:
+         raise ValueError("promote_to_core: staging table is empty — refuse to MERGE")
+ 
++    # ── Pre-promote: предохранитель ADR-145 §4/§5 — покрытие staging обязано
++    # достигать начала окна MERGE, иначе ветка DELETE сотрёт непокрытую историю
++    _assert_staging_covers_merge_window(bq, STG_FACT_SALES, window_days, "promote_to_core")
++
+     log.info("Staging rows: %d | window_days: %d", staging_count, window_days)
+ 
+     # ── Choose COGS source
+\ No newline at end of file
+@@ -444,19 +552,16 @@
+     MERGE периметра (retaildemand + commissionreportin_sale) → core.fact_sales_profit.
+ 
+     ОТДЕЛЬНЫЙ от `_build_merge_sql` (прецедент ADR-024): своя staging-таблица
+-    (`STG_FACT_SALES_PERIMETER`), свой ON. Не трогает и не расширяет запрос
+-    `_build_merge_sql` — тот патчится отдельной задачей `SALES-REFRESH-WINDOW`
+-    (окно/сироты/замороженная дата, `ADR-100 §7`); смешивать периметр с тем патчем
+-    запрещено брифом `SALES-INGEST-PATCH`.
++    (`STG_FACT_SALES_PERIMETER`), свой ON.
+ 
+     C1 (ADR-030): явный `INSERT (колонки)`, `INSERT ROW` не используется.
+ 
+-    C2 (ADR-101 §7): ветки удаления НЕТ. Причина названа, не скрыта — периметр
+-    новый (без исторического мусора на момент постройки), объём мал (~513 док/мес,
+-    `reference/parity_sales_discriminate_step2_2026-08-02.md`). Тот же класс дефекта
+-    (строки-сироты MERGE без ветки удаления) для ОСНОВНОГО ингеста уже адресуется
+-    отдельной задачей (`SALES-REFRESH-WINDOW`); симметричный фикс для периметра —
+-    будущая отдельная задача, не изобретается здесь молча под видом полноты.
++    C2 (ADR-101 §7, SALES-REFRESH-WINDOW/ADR-144 §7/§8): ветка удаления ЕСТЬ —
++    узкая форма фикса `SALES-REFRESH-WINDOW` называет ОБА `MERGE` cf-facts поимённо
++    (`ADR-144 §7`), симметричный фикс для периметра больше не отложен на будущую
++    отдельную задачу. Условие `WHEN NOT MATCHED BY SOURCE` несёт собственное явное
++    ограничение по дате, повторяющее границу `ON` (`ADR-101 §7` ловушка ii) — без
++    повтора удалило бы всю историю за пределами окна, не только сирот внутри него.
+ 
+     SALES-PERIMETER-CHANNEL-DECIDE: `sales_channel_id`/`sales_channel_name` читаются
+     из staging (константа типа документа, проставленная `fetch_perimeter.py`), не
+\ No newline at end of file
+@@ -575,6 +680,14 @@
+   S.discount,
+   S._loaded_at
+ )
++
++-- SALES-REFRESH-WINDOW (ADR-144 §8, узкая форма): второй MERGE того же класса (ADR-144 §7).
++-- Тот же явный повтор границы ON в условии DELETE, то же обоснование (C2, ADR-101 §7
++-- ловушка ii). Прежний докстринг функции («ветки удаления НЕТ, будущая отдельная задача»)
++-- обновлён ниже — задача больше не будущая, это она и есть.
++WHEN NOT MATCHED BY SOURCE
++  AND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY)
++THEN DELETE
+ """
+ 
+ 
+\ No newline at end of file
+@@ -590,6 +703,13 @@
+     if staging_count == 0:
+         raise ValueError("promote_perimeter_to_core: staging table is empty — refuse to MERGE")
+ 
++    # ── Pre-promote: предохранитель ADR-145 §4/§5 — тот же приём, второй MERGE
++    # того же класса (ADR-144 §7); staging несёт ту же колонку transaction_date_raw
++    # (PERIMETER_STAGING_SCHEMA), _PARSE_DATE применим без изменений
++    _assert_staging_covers_merge_window(
++        bq, STG_FACT_SALES_PERIMETER, window_days, "promote_perimeter_to_core"
++    )
++
+     log.info("Perimeter staging rows: %d | window_days: %d", staging_count, window_days)
+ 
+     merge_sql = _build_perimeter_merge_sql(window_days)
+\ No newline at end of file

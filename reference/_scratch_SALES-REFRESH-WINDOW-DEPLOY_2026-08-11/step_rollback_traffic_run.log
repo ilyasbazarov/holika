@@ -1,0 +1,33 @@
+=== UTC anchor (start) ===
+Tue Aug 11 09:16:13 UTC 2026
+=== auth identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== traffic BEFORE ===
+REVISION_NAME           PERCENT
+['cf-facts-00012-ber']  [100]
+=== update-traffic → cf-facts-00011-mab=100 ===
+Updating traffic...
+Routing traffic................................................................................................done
+Done.
+URL: https://cf-facts-xw5u2boozq-de.a.run.app
+Traffic:
+  100% cf-facts-00011-mab
+=== traffic AFTER ===
+REVISION_NAME           PERCENT
+['cf-facts-00011-mab']  [100]
+=== auth identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Tue Aug 11 09:16:35 UTC 2026

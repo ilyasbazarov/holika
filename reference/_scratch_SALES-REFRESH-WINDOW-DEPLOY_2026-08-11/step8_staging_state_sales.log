@@ -1,0 +1,3 @@
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r649a81a5899faf37_0000019feffdbcc9_1': Unrecognized name:
+transaction_date; Did you mean transaction_date_raw? at [2:66]

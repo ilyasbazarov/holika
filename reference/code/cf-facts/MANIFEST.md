@@ -488,3 +488,56 @@ staging).** Клиент `gcloud functions call` оборвался клиент
 Данные — откат кода сам по себе даты не возвращает (мандат `§3`): обязателен повторный прогон
 `mode=returns`/`mode=purchases` на откаченном коде (оба режима `WRITE_TRUNCATE`, полный рефреш,
 откат данных полон после одного прогона).
+
+---
+
+## Деплой `cf-facts` — узкая форма `SALES-REFRESH-WINDOW` (2026-08-11)
+
+**Мандат:** `ADR-159`/`ADR-158`, текст — `reference/sales_refresh_window_mandate_adj_2026-08-11.md §4`.
+**Задача:** `SALES-REFRESH-WINDOW-DEPLOY` (бриф `briefs/SALES-REFRESH-WINDOW-DEPLOY.md`).
+**База деплоя:** ревизия `cf-facts-00011-mab` — сверена с `master` код-репо `holika-prod` ПОБАЙТОВО
+ДО правки (шаг 1, `reference/_scratch_SALES-REFRESH-WINDOW-DEPLOY_2026-08-11/step1_run.log`,
+`2026-08-11T08:10:20Z…08:10:46Z`): все 10 файлов идентичны, дрейфа нет.
+
+**Патч.** Два файла, перенесены **по diff** (не копированием) против снапшота
+`reference/code/cf-facts/{bq_ops.py,config.py}`:
+`reference/_scratch_SALES-REFRESH-WINDOW-DEPLOY_2026-08-11/{bq_ops.diff,config.diff}` (194 + 24
+строки). Ветка `holika-prod`: `deploy/cf-facts-2026-08-11-refresh-window`, коммит `47b3a45`, push
+подтверждён владельцем в чате.
+
+**Деплой** (`step5_run.log`, `2026-08-11T08:38:15Z`): новая ревизия **`cf-facts-00012-ber`**,
+`generation 1786437392633949`, `--source` указывал на каталог `cf-facts/` выкаченной ветки.
+
+**Read-back** (`step6_run.log`, `2026-08-11T08:38:39Z…08:38:52Z`): архив несёт 11 файлов, мусора нет
+(`.gcloudignore` в архив не попал, как задумано). sha256 всех 11 файлов побайтово совпадает с веткой
+деплоя:
+
+| Файл | sha256 |
+|---|---|
+| `bq_ops.py` | `4b672d5190bf3e2331643f496791b5a9599dd6dd47a02519dc6dc34269647892` |
+| `config.py` | `005383e219c1267ee20bf034bbd6483a5613c3b45d01d96e1d0fa307939878c3` |
+| `deploy_and_workflow.sh` | `2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07` |
+| `fetch_byvariant.py` | `88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1` |
+| `fetch_demands.py` | `b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358` |
+| `fetch_perimeter.py` | `f609d5656fe6cf79941ffb3c904a122afabe2f5b7633a846a7f5ae713314275e` |
+| `fetch_purchases.py` | `159e498789168b0206beca15bf719e3541a2564ec93d786abec8ed7860befafb` |
+| `fetch_returns.py` | `7f3dcefadb0de4782d9f09964f5c5baf5d423375406c1f6f2846356ddd663bd1` |
+| `helpers.py` | `c1d5f0594a46f176dad33afffb3944fae378148cd7d27b0bd2c81230d020dd21` |
+| `main.py` | `97b9ce3aa54085aab0739fd315890db22be8c837e829a9170ebce385ba6642d8` |
+| `requirements.txt` | `0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051` |
+
+Изменены (`bq_ops.py`, `config.py`) — 2; незатронуты (все остальные, включая `deploy_and_workflow.sh`,
+`fetch_perimeter.py`) — 9.
+
+**Снимок до деплоя** (шаг 4, `step4_run.log`, `2026-08-11T08:33:36Z…08:33:57Z`):
+`core.fact_sales_profit_snap_20260811` — `42 975` строк всего; май-2026: `3 411` строк /
+`96 844 445,61` KGS; июль-2026: `4 707` строк / `112 502 581,88` KGS.
+
+**Откат** (не понадобился): код — повторный деплой ревизии `cf-facts-00011-mab`; данные —
+восстановление из снимка `core.fact_sales_profit_snap_20260811` (`CREATE OR REPLACE TABLE … CLONE`),
+дополнительно time travel `168`ч.
+
+**Секреты:** сплошной поиск по обоим `.diff` — 0 совпадений (пустая выдача не есть факт отсутствия,
+`★ Успех инструмента ≠ факт`).
+
+Первый боевой прогон и замер до/после — отдельная секция ниже, по факту исполнения шагов 8-10 брифа.

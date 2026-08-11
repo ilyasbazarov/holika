@@ -1,0 +1,42 @@
+=== UTC anchor (start) ===
+Tue Aug 11 08:33:36 UTC 2026
+=== auth identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== CREATE SNAPSHOT TABLE ===
+Waiting on bqjob_r77ac1abd0b07eb6c_0000019feff4ade9_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r77ac1abd0b07eb6c_0000019feff4ade9_1 ... (1s) Current status: RUNNING                                                                                      Waiting on bqjob_r77ac1abd0b07eb6c_0000019feff4ade9_1 ... (3s) Current status: RUNNING                                                                                      Waiting on bqjob_r77ac1abd0b07eb6c_0000019feff4ade9_1 ... (5s) Current status: RUNNING                                                                                      Waiting on bqjob_r77ac1abd0b07eb6c_0000019feff4ade9_1 ... (5s) Current status: DONE   
+Created msklad-bi-prod.core.fact_sales_profit_snap_20260811
+
+=== snapshot totals (all-time) ===
++-----------+---------------------+
+| row_count |   sum_revenue_kgs   |
++-----------+---------------------+
+|     42975 | 6.951054424627001E8 |
++-----------+---------------------+
+=== snapshot totals — May 2026 ===
++-----------+---------------------+
+| row_count |   sum_revenue_kgs   |
++-----------+---------------------+
+|      3411 | 9.684444560990001E7 |
++-----------+---------------------+
+=== snapshot totals — July 2026 ===
++-----------+----------------------+
+| row_count |   sum_revenue_kgs    |
++-----------+----------------------+
+|      4707 | 1.1250258188010001E8 |
++-----------+----------------------+
+=== auth identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Tue Aug 11 08:33:57 UTC 2026

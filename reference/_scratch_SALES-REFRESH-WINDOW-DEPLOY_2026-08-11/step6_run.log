@@ -1,0 +1,63 @@
+=== UTC anchor (start) ===
+Tue Aug 11 08:38:39 UTC 2026
+=== auth identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud functions describe (post-deploy) ===
+revision=cf-facts-00012-ber
+generation=1786437392633949
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786437392633949 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW/reference/_scratch_SALES-REFRESH-WINDOW-DEPLOY_2026-08-11/postdeploy_archive/function-source.zip
+  
+..........................
+=== full file listing of deployed archive ===
+./bq_ops.py
+./config.py
+./deploy_and_workflow.sh
+./fetch_byvariant.py
+./fetch_demands.py
+./fetch_perimeter.py
+./fetch_purchases.py
+./fetch_returns.py
+./helpers.py
+./main.py
+./requirements.txt
+=== sha256 of deployed archive (all files) ===
+4b672d5190bf3e2331643f496791b5a9599dd6dd47a02519dc6dc34269647892  ./bq_ops.py
+005383e219c1267ee20bf034bbd6483a5613c3b45d01d96e1d0fa307939878c3  ./config.py
+2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07  ./deploy_and_workflow.sh
+88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1  ./fetch_byvariant.py
+b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358  ./fetch_demands.py
+f609d5656fe6cf79941ffb3c904a122afabe2f5b7633a846a7f5ae713314275e  ./fetch_perimeter.py
+159e498789168b0206beca15bf719e3541a2564ec93d786abec8ed7860befafb  ./fetch_purchases.py
+7f3dcefadb0de4782d9f09964f5c5baf5d423375406c1f6f2846356ddd663bd1  ./fetch_returns.py
+c1d5f0594a46f176dad33afffb3944fae378148cd7d27b0bd2c81230d020dd21  ./helpers.py
+97b9ce3aa54085aab0739fd315890db22be8c837e829a9170ebce385ba6642d8  ./main.py
+0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051  ./requirements.txt
+=== sha256 of deploy branch cf-facts/ (source of truth) ===
+b7469a91b24ba455f2e907e5c927c77870a3a94cb89779d5a9fb14cacc3db8d7  ./.gcloudignore
+4b672d5190bf3e2331643f496791b5a9599dd6dd47a02519dc6dc34269647892  ./bq_ops.py
+005383e219c1267ee20bf034bbd6483a5613c3b45d01d96e1d0fa307939878c3  ./config.py
+2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07  ./deploy_and_workflow.sh
+88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1  ./fetch_byvariant.py
+b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358  ./fetch_demands.py
+f609d5656fe6cf79941ffb3c904a122afabe2f5b7633a846a7f5ae713314275e  ./fetch_perimeter.py
+159e498789168b0206beca15bf719e3541a2564ec93d786abec8ed7860befafb  ./fetch_purchases.py
+7f3dcefadb0de4782d9f09964f5c5baf5d423375406c1f6f2846356ddd663bd1  ./fetch_returns.py
+c1d5f0594a46f176dad33afffb3944fae378148cd7d27b0bd2c81230d020dd21  ./helpers.py
+97b9ce3aa54085aab0739fd315890db22be8c837e829a9170ebce385ba6642d8  ./main.py
+0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051  ./requirements.txt
+=== auth identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== UTC anchor (end) ===
+Tue Aug 11 08:38:52 UTC 2026
