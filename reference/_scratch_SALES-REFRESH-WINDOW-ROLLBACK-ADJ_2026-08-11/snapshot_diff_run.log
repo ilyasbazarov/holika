@@ -1,0 +1,48 @@
+=== ЯКОРЬ НАЧАЛА ===
+Tue Aug 11 08:56:32 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+=== Снимок до деплоя против текущей таблицы, окно 90 суток ===
+[
+  {
+    "channel": "(NULL)", 
+    "delta_revenue": "0.0", 
+    "delta_rows": "0", 
+    "revenue_now": "4358627.0", 
+    "revenue_snapshot": "4358627.0", 
+    "rows_now": "6", 
+    "rows_snapshot": "6"
+  }, 
+  {
+    "channel": "Комиссия", 
+    "delta_revenue": "0.0", 
+    "delta_rows": "0", 
+    "revenue_now": "1.150977029E7", 
+    "revenue_snapshot": "1.150977029E7", 
+    "rows_now": "4024", 
+    "rows_snapshot": "4024"
+  }, 
+  {
+    "channel": "Оптовая торговля", 
+    "delta_revenue": "0.0", 
+    "delta_rows": "0", 
+    "revenue_now": "2.694408721E8", 
+    "revenue_snapshot": "2.694408721E8", 
+    "rows_now": "6922", 
+    "rows_snapshot": "6922"
+  }, 
+  {
+    "channel": "Розница", 
+    "delta_revenue": "0.0", 
+    "delta_rows": "0", 
+    "revenue_now": "1188422.0", 
+    "revenue_snapshot": "1188422.0", 
+    "rows_now": "1441", 
+    "rows_snapshot": "1441"
+  }
+]
+=== ЯКОРЬ КОНЦА ===
+Tue Aug 11 08:56:35 UTC 2026
