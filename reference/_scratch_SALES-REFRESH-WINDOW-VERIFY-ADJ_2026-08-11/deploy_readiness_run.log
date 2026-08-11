@@ -1,0 +1,139 @@
+=== UTC начало ===
+Tue Aug 11 15:14:24 UTC 2026
+
+=== 1. Что и когда менялось в снапшоте cf-facts (последние 12 коммитов) ===
+5e49d24 Merge branch 's/SALES-REFRESH-WINDOW-ROLLBACK-ADJ'
+05eb786 docs: SALES-REFRESH-WINDOW-DEPLOY исполнен и откачен — дефект ветки удаления, три числа приёмки
+a336700 docs: SALES-REFRESH-WINDOW-ROLLBACK-ADJ патч варианта 1 — область удаления по происхождению строки, параметризация недельного окна
+8325cfc SALES-REFRESH-WINDOW: применить допуск и к верхнему краю окна предохранителя
+ac7afba SALES-REFRESH-WINDOW: три правки предохранителя по адъюдикации ADR-145-ADJ
+d62c587 SALES-REFRESH-WINDOW: предохранитель ADR-145 §4/§5 в снапшоте cf-facts
+5738a4c INGEST-MOMENT-ZONE-FIX-DEPLOY: объект A (cf-facts) задеплоен, ревизия cf-facts-00011-mab, мандат ADR-147 (задача INGEST-MOMENT-ZONE-FIX-DEPLOY)
+a45837b docs: INGEST-MOMENT-ZONE-FIX подготовка патча зоны времени ингеста
+4c2244a docs: SALES-DOCUMENT-OWNER-DEPLOY деплой завершён DONE (мандат ADR-146, задача SALES-DOCUMENT-OWNER-DEPLOY)
+412f469 docs: SALES-DOCUMENT-OWNER-DEPLOY-MANDATE мандат класса B выдан, ADR-146 (задача SALES-DOCUMENT-OWNER-DEPLOY-MANDATE)
+a8cb927 docs: SALES-REFRESH-WINDOW узкая форма фикса MERGE по ADR-144 §8 (задача SALES-REFRESH-WINDOW)
+f974d63 docs: SALES-DOCUMENT-OWNER-DEPLOY доработка патча (задача SALES-DOCUMENT-OWNER-DEPLOY)
+
+=== 2. Состав патча варианта 1 (коммит a336700) ===
+a336700 docs: SALES-REFRESH-WINDOW-ROLLBACK-ADJ патч варианта 1 — область удаления по происхождению строки, параметризация недельного окна
+ reference/code/cf-facts/bq_ops.py          | 22 ++++++++++++++++++++++
+ reference/code/cf-facts/config.py          | 11 +++++++++++
+ reference/code/cf-facts/fetch_perimeter.py |  5 +++--
+ reference/code/cf-facts/main.py            | 23 +++++++++++++++++------
+ 4 files changed, 53 insertions(+), 8 deletions(-)
+
+=== 3. Живой архив после деплоя 2026-08-09 (INGEST-MOMENT-ZONE-FIX) — есть ли ===
+bq_ops.py
+config.py
+deploy_and_workflow.sh
+fetch_byvariant.py
+fetch_demands.py
+fetch_perimeter.py
+fetch_purchases.py
+fetch_returns.py
+function-source.zip
+helpers.py
+main.py
+requirements.txt
+
+=== 4. ДИФФ: снапшот main (bd8c733) против живого архива 2026-08-09 ===
+--- main.py: различающихся строк 22 ---
+@@ -93,7 +93,7 @@
+@@ -163,10 +163,19 @@
+@@ -176,17 +185,19 @@
+--- bq_ops.py: различающихся строк 141 ---
+@@ -34,6 +34,8 @@
+@@ -219,6 +221,12 @@
+@@ -368,7 +376,119 @@
+@@ -392,6 +512,10 @@
+@@ -444,19 +568,16 @@
+@@ -575,6 +696,20 @@
+@@ -590,6 +725,13 @@
+--- config.py: различающихся строк 24 ---
+@@ -39,6 +39,32 @@
+--- fetch_perimeter.py: различающихся строк 5 ---
+@@ -56,6 +56,7 @@
+@@ -185,7 +186,7 @@
+@@ -227,7 +228,7 @@
+
+=== 5. Полный список файлов живого архива против снапшота ===
+живой архив:
+bq_ops.py
+config.py
+deploy_and_workflow.sh
+fetch_byvariant.py
+fetch_demands.py
+fetch_perimeter.py
+fetch_purchases.py
+fetch_returns.py
+function-source.zip
+helpers.py
+main.py
+requirements.txt
+снапшот:
+MANIFEST.md
+bq_ops.py
+config.py
+deploy_and_workflow.sh
+fetch_byvariant.py
+fetch_demands.py
+fetch_perimeter.py
+fetch_purchases.py
+fetch_returns.py
+helpers.py
+main.py
+requirements.txt
+workflow_hourly.yaml
+workflow_weekly.yaml
+
+=== 6. .gcloudignore снапшота (ADR-040 — условие деплоя) ===
+ФАЙЛА НЕТ в снапшоте
+
+=== 7. Секреты в патче — сплошной поиск с печатью строк (ADR-044) ===
+0 совпадений (пустая выдача фактом не является — проверен и состав файлов выше)
+
+=== 8. MANIFEST снапшота — какая ревизия числится ===
+# MANIFEST · /reference/code/cf-facts/ — снапшот исходника (CODE-REPO-SEED-REST)
+
+**Тип:** discovery-снапшот (`_METHOD §11`), не оракул, не прод-код.
+**Источник:** прямое снятие `gcloud functions describe cf-facts --gen2` — на этой сессии команда
+**отработала без `403`** (прежнее ограничение `07_STATE.md` про обходной путь для `cf-facts` этой
+попыткой НЕ воспроизведено; см. «Первый замер равенства» ниже). Архив скачан по `storageSource` с
+**закреплённым `generation`** (`gcloud storage cp <uri>#<generation>`), не текущим объектом бакета.
+**Дата съёма (UTC):** `2026-08-02T20:49:36Z…20:50:05Z` (`step1_run.log`).
+**Скрипт:** `reference/_scratch_CODE-REPO-SEED-REST_2026-08-03/step1_capture_source.sh`, лог
+`step1_run.log`.
+
+---
+
+## Ревизия и провенанс (`gcloud functions describe cf-facts --gen2 --region=asia-east1 --project=msklad-bi-prod`)
+
+| Поле | Значение |
+|---|---|
+| `serviceConfig.revision` | `cf-facts-00007-xir` |
+| `buildConfig.entryPoint` | `main` |
+| `buildConfig.source.storageSource.bucket` | `gcf-v2-sources-420804682491-asia-east1` |
+| `buildConfig.source.storageSource.object` | `cf-facts/function-source.zip` |
+| `buildConfig.source.storageSource.generation` | `1782334223015697` |
+| Полный URI архива (закреплённый) | `gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1782334223015697` |
+
+Сырой JSON ответа — `reference/_scratch_CODE-REPO-SEED-REST_2026-08-03/cf-facts_describe.json`.
+Кросс-проверка `gcloud run services describe cf-facts` исполнена той же сессией как параллельный
+источник (не как замена) — `reference/_scratch_CODE-REPO-SEED-REST_2026-08-03/cf-facts_run_describe.json`.
+
+## Первый замер равенства снапшот↔деплой (`ADR-021 §2`: успех команды ≠ факт)
+
+**Это ПЕРВЫЙ замер равенства для `cf-facts`.** Предыдущего не было: снапшот, ранее лежавший в этом
+каталоге, был снят обходным путём (`gcloud run services describe`, прямой `functions describe`
+возвращал `403` — зафиксировано `07_STATE.md`, `SALES-REFRESH-WINDOW-GEN` 2026-08-01) без закреплённого
+`generation`, то есть без гарантии побайтового совпадения с конкретной задеплоенной ревизией.
+
+**Побочный факт, полезный для доверия к прежнему снапшоту (не входит в критерий приёмки этой задачи):**
+9 из 10 файлов прежнего снапшота (все, кроме `deploy_and_workflow.sh`, которого в прежнем снапшоте не
+было вовсе) sha256-идентичны файлам этого свежего съёма — см. таблицу ниже, колонка «Прежний снапшот
+(2026-08-01, обходной путь)». Совпадение НЕ заменяет замер (обходной путь не давал закреплённого
+`generation`, совпадение могло быть случайным или отражать отсутствие изменений между двумя разными
+
+=== UTC конец ===
+Tue Aug 11 15:14:24 UTC 2026

@@ -1,0 +1,97 @@
+=== UTC начало ===
+Tue Aug 11 15:16:47 UTC 2026
+
+=== 1. Состав каталога cf-facts в клоне код-репо (что реально уедет в архив) ===
+.
+..
+.gcloudignore
+bq_ops.py
+config.py
+deploy_and_workflow.sh
+fetch_byvariant.py
+fetch_demands.py
+fetch_perimeter.py
+fetch_purchases.py
+fetch_returns.py
+helpers.py
+main.py
+requirements.txt
+
+=== 2. .gcloudignore код-репо — содержимое (ADR-040: условие деплоя) ===
+     1	.gcloudignore
+     2	.git
+     3	.gitignore
+     4	*.bak
+     5	__pycache__/
+     6	*.pyc
+     7	.DS_Store
+     8	src.zip
+     9	patch_*.py
+
+=== 3. Провенанс-архив прошлого деплоя holika-prod — какие ветки в нём ===
+* deploy/cf-facts-2026-08-11-refresh-window
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/deploy/cf-dq-2026-08-10-fail-open
+  remotes/origin/deploy/cf-facts-2026-08-07-channel
+  remotes/origin/deploy/cf-facts-2026-08-07-perimeter
+  remotes/origin/deploy/cf-facts-2026-08-08-document-owner
+  remotes/origin/deploy/cf-facts-2026-08-09-moment-zone
+  remotes/origin/deploy/cf-facts-2026-08-11-refresh-window
+  remotes/origin/deploy/cf-finance-2026-08-03-invoices
+  remotes/origin/deploy/workflows-2026-08-05-dq-scope-split
+  remotes/origin/deploy/workflows-2026-08-07-perimeter-cadence
+  remotes/origin/master
+--- последние коммиты ---
+47b3a45 cf-facts: узкая форма SALES-REFRESH-WINDOW — ветка удаления в обоих MERGE + предохранитель покрытия окна (задача SALES-REFRESH-WINDOW-DEPLOY)
+5ad9544 Merge deploy/cf-dq-2026-08-10-fail-open: закрыт fail-open check_drift (DQ-GATE-FAIL-OPEN-FIX, ADR-152)
+71e4266 fix(cf-dq): close fail-open in check_drift when ma7==0 (DQ-GATE-FAIL-OPEN-FIX)
+508ca64 Merge deploy/cf-facts-2026-08-09-moment-zone: возвраты/закупки по Asia/Bishkek (задача INGEST-MOMENT-ZONE-FIX, мандат ADR-147)
+239e571 cf-facts: возвраты/закупки — дата документа по Asia/Bishkek (UTC+6ч), не срез строки (задача INGEST-MOMENT-ZONE-FIX, мандат ADR-147)
+e9a4cbb Merge deploy/cf-facts-2026-08-08-document-owner: сотрудник-владелец документа в cf-facts (задача SALES-DOCUMENT-OWNER-DEPLOY, мандат ADR-146)
+--- состав cf-facts в архиве код-репо ---
+.
+..
+.gcloudignore
+bq_ops.py
+config.py
+deploy_and_workflow.sh
+fetch_byvariant.py
+fetch_demands.py
+fetch_perimeter.py
+fetch_purchases.py
+fetch_returns.py
+helpers.py
+main.py
+requirements.txt
+
+=== 4. Есть ли в архиве код-репо .gcloudignore и что в нём ===
+     1	.gcloudignore
+     2	.git
+     3	.gitignore
+     4	*.bak
+     5	__pycache__/
+     6	*.pyc
+     7	.DS_Store
+     8	src.zip
+     9	patch_*.py
+
+=== 5. Живая ревизия по записи деплой-сессии (какая обслуживает СЕЙЧАС) ===
+16:1. **Сверка дрейфа** (`step1_run.log`, `08:10:20Z…08:10:46Z`): живая ревизия `cf-facts-00011-mab`
+28:   (`step5_run.log`, завершён `08:38:15Z`) дал новую ревизию **`cf-facts-00012-ber`**,
+65:ревизию `cf-facts-00011-mab`.
+68:`gcloud run services update-traffic cf-facts --to-revisions=cf-facts-00011-mab=100
+70:`09:16:13Z…09:16:35Z`). Способ — перевод трафика (сервис Cloud Run/gen2 CF), пересборка не
+71:требовалась, ревизия `cf-facts-00011-mab` существовала (`READY`) с `2026-08-09T11:00:06Z`.
+77:| (i) | `gcloud run services describe cf-facts` → трафик | `cf-facts-00011-mab`, `100%` (`rollback_accept1_describe.json`) |
+79:| (iii) | То же сопоставление ПОСЛЕ первого часового `promote` на откаченной ревизии | `0` строк / `0,00` KGS по всем четырём каналам — `rollback_accept3_diff.log`. Прогон естественный (расписание `0 * * * *`, execution `0be2309e-a6ed-409c-b64e-37cb51f69fda`, `10:00:02Z…10:06:2xZ`, `SUCCEEDED`), НЕ вызывался вручную. Независимо подтверждено логами Cloud Run: запросы `10:00-10:03 UTC` обслужены ревизией `cf-facts-00011-mab`, не `00012-ber` (`gcloud logging read`, `resource.labels.revision_name`) |
+82:(положительный контроль п.iii). Обслуживание `cf-facts` работает на `cf-facts-00011-mab` штатно.
+
+=== 6. Снимок-откат: существует ли запись о нём и его дата ===
+reference/sales_refresh_window_deploy_2026-08-11.md:24:   `core.fact_sales_profit_snap_20260811` — `42 975` строк всего; май-2026: `3 411` строк /
+reference/sales_refresh_window_rollback_adj_2026-08-11.md:63:Снимок `core.fact_sales_profit_snap_20260811`, снятый шагом 3 мандата ДО деплоя, сопоставлен с
+reference/sales_refresh_window_rollback_adj_2026-08-11.md:105:> (ii) повторное сопоставление снимка `core.fact_sales_profit_snap_20260811` с живой таблицей по
+07_STATE.md:40:**Мандат класса B на деплой `SALES-REFRESH-WINDOW` исполнен и приостановлен в тот же день (`ADR-161`, 2026-08-11).** Следующая сессия по этой задаче обязана знать: (i) снимок `core.fact_sales_profit_snap_20260811` СОХРАНЯЕТСЯ — не удалять, единственное точное доказательство отсутствия ущерба и единственный точный откат данных, если понадобится позже; (ii) ветка `deploy/cf-facts-2026-08-11-refresh-window` код-репо `holika-prod` тоже сохраняется как provenance, НЕ слита в `master`; (iii) структурный гэп `mode=weekly`/`mode=hourly` игнорируют `window_days` остаётся нерешённым независимо от выбора формы фикса — при варианте 1 расширенное окно первого прогона по-прежнему потребует правки `_run_weekly_load`, это войдёт в тот же будущий патч; (iv) живая ревизия `cf-facts-00012-ber` существует в Cloud Run, но трафика не несёт — не путать с активной при следующем `describe`; (v) ветка удаления `WHEN NOT MATCHED BY SOURCE` корректна ТОЛЬКО если источник содержит все строки окна — в `core.fact_sales_profit` пишут два загрузчика, поэтому это условие не выполнено ни для одного из них; любая будущая правка этой ветки обязана начинаться с вопроса «чьи строки этот источник представляет», а не с окна (признака происхождения в таблице нет: `entity_type` у всех строк `product`, различает только `sales_channel_name`). Наблюдение без задачи: строки розницы в ядре есть только за `2026-05-28…2026-05-31` (`1 441`), тогда как комиссия идёт до `2026-08-03` — причина не устанавливалась.
+
+=== UTC конец ===
+Tue Aug 11 15:16:47 UTC 2026

@@ -172,10 +172,24 @@ def _run_weekly_load(run_id: str, window_days: int = WEEKLY_WINDOW_DAYS) -> dict
     `WEEKLY_WINDOW_DAYS`, а тело запроса игнорировалось — из-за этого нельзя было
     выполнить требование мандата «загрузка staging и MERGE одним прогоном с одним
     window_days» и, как следствие, вытащить май-2026 в паритет (он глубже 90 суток).
-    Умолчание сохраняет прежнее поведение; штатный конвейер передаёт 90 явно
-    (`workflow_weekly.yaml:70`), поэтому расписание этой правкой не затрагивается.
-    Предохранитель `_assert_staging_covers_merge_window` сверяет покрытие staging с
-    окном MERGE — при широком прогоне обе величины обязаны совпадать.
+    Расписание этой правкой не затрагивается — но НЕ потому, что workflow передаёт
+    окно явно: шаг `step_facts` (`workflow_weekly.yaml:63-71`) несёт только `run_id`
+    и `mode`, поля `window_days` в нём нет. Значение `90` подставляется ДВАЖДЫ внутри
+    этого файла: `body.get("window_days", _default_window_days)` (`main.py:88`, где
+    `_default_window_days = WEEKLY_WINDOW_DAYS` при `mode="weekly"`) и умолчанием
+    сигнатуры ниже. Обе подстановки дают `WEEKLY_WINDOW_DAYS` (`config.py:41` → `90`),
+    то есть ровно прежнее поведение. Прежняя редакция докстринга называла источником
+    инварианта `workflow_weekly.yaml:70` — этой передачи там нет и не было
+    (VERIFY-ADJ, 2026-08-11, находка `SALES-REFRESH-WINDOW-SCOPE-VERIFY`).
+    Защиту ветки удаления несёт НЕ согласованность объявленных окон, а замер:
+    `_assert_staging_covers_merge_window` (`bq_ops.py:403`) сверяет фактическое
+    покрытие staging с обоими краями окна MERGE и ОТКАЗЫВАЕТ при недостаче,
+    независимо от того, откуда пришло `window_days`.
+
+    ВНИМАНИЕ для ручного широкого прогона: окно принимает из тела запроса только
+    `mode="weekly"`. У `mode="hourly"` (`main.py:94`) и `mode="purchases"`
+    (`main.py:100`) значение парсится, ПОПАДАЕТ В ЛОГ (`main.py:90`) и
+    выбрасывается — лог покажет запрошенное окно, прогон возьмёт своё.
     """
     token   = get_token()
     bq      = bigquery.Client(project=GCP_PROJECT)
