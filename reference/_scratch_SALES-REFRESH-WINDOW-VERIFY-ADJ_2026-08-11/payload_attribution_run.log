@@ -1,0 +1,99 @@
+=== UTC начало ===
+Tue Aug 11 15:15:54 UTC 2026
+
+=== 1. РЕШАЮЩЕЕ: равен ли живой архив снапшоту НА коммите деплоя 5738a4c ===
+(если да — всё, что после, и есть ровно полезная нагрузка; чужого в ней нет по построению)
+temp: /var/folders/2d/fj_bmvzx1sldh94_k8t1qz7w0000gn/T/tmp.xMIwgIyhgq
+  main.py: ИДЕНТИЧНЫ
+  bq_ops.py: РАЗЛИЧАЮТСЯ  ← требует объяснения
+--- reference/_scratch_INGEST-MOMENT-ZONE-FIX-DEPLOY_2026-08-09/live_archive_post/bq_ops.py	2026-08-09 20:24:59
++++ /var/folders/2d/fj_bmvzx1sldh94_k8t1qz7w0000gn/T/tmp.xMIwgIyhgq/bq_ops.py	2026-08-11 21:15:54
+@@ -368,6 +368,16 @@
+   S.discount,
+   S._loaded_at
+ )
++
++-- SALES-REFRESH-WINDOW (ADR-144 §8, узкая форма): строки, исчезнувшие из источника внутри
++-- окна выборки, удаляются. Условие DELETE обязано ПОВТОРЯТЬ границу окна ON явно (C2,
++-- ADR-101 §7 ловушка ii) — без этого повтора `WHEN NOT MATCHED BY SOURCE` по умолчанию
++-- матчит и удаляет ВСЮ историю за пределами окна (там ON тоже не находит пару), а не только
++-- сироты внутри окна. window_days тот же параметр, что несёт ON — единственный параметр в
++-- узкой форме, режим `topoff` с раздельными окнами выборки/MERGE этим патчем не строится.
++WHEN NOT MATCHED BY SOURCE
++  AND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY)
++THEN DELETE
+ """
+ 
+ 
+\ No newline at end of file
+@@ -444,19 +454,16 @@
+     MERGE периметра (retaildemand + commissionreportin_sale) → core.fact_sales_profit.
+ 
+     ОТДЕЛЬНЫЙ от `_build_merge_sql` (прецедент ADR-024): своя staging-таблица
+-    (`STG_FACT_SALES_PERIMETER`), свой ON. Не трогает и не расширяет запрос
+-    `_build_merge_sql` — тот патчится отдельной задачей `SALES-REFRESH-WINDOW`
+-    (окно/сироты/замороженная дата, `ADR-100 §7`); смешивать периметр с тем патчем
+-    запрещено брифом `SALES-INGEST-PATCH`.
++    (`STG_FACT_SALES_PERIMETER`), свой ON.
+ 
+  config.py: ИДЕНТИЧНЫ
+  fetch_perimeter.py: ИДЕНТИЧНЫ
+  fetch_byvariant.py: ИДЕНТИЧНЫ
+  fetch_demands.py: ИДЕНТИЧНЫ
+  fetch_purchases.py: ИДЕНТИЧНЫ
+  fetch_returns.py: ИДЕНТИЧНЫ
+  helpers.py: ИДЕНТИЧНЫ
+  requirements.txt: ИДЕНТИЧНЫ
+  deploy_and_workflow.sh: ИДЕНТИЧНЫ
+
+=== 2. Полезная нагрузка = коммиты снапшота ПОСЛЕ 5738a4c ===
+5e49d24 Merge branch 's/SALES-REFRESH-WINDOW-ROLLBACK-ADJ'
+05eb786 docs: SALES-REFRESH-WINDOW-DEPLOY исполнен и откачен — дефект ветки удаления, три числа приёмки
+a336700 docs: SALES-REFRESH-WINDOW-ROLLBACK-ADJ патч варианта 1 — область удаления по происхождению строки, параметризация недельного окна
+8325cfc SALES-REFRESH-WINDOW: применить допуск и к верхнему краю окна предохранителя
+ac7afba SALES-REFRESH-WINDOW: три правки предохранителя по адъюдикации ADR-145-ADJ
+d62c587 SALES-REFRESH-WINDOW: предохранитель ADR-145 §4/§5 в снапшоте cf-facts
+--- плюс не слитая ветка адъюдикации ---
+8ce95c1 docs: SALES-REFRESH-WINDOW-VERIFY-ADJ адъюдикация двух находок проверки — Q-108 закрыт правкой текста, докстринг приведён к коду
+
+=== 3. Файлы, затронутые полезной нагрузкой (все коммиты после 5738a4c) ===
+ reference/code/cf-facts/MANIFEST.md        |  53 ++++++++++++
+ reference/code/cf-facts/bq_ops.py          | 127 +++++++++++++++++++++++++++++
+ reference/code/cf-facts/config.py          |  26 ++++++
+ reference/code/cf-facts/fetch_perimeter.py |   5 +-
+ reference/code/cf-facts/main.py            |  23 ++++--
+ 5 files changed, 226 insertions(+), 8 deletions(-)
+--- с учётом ветки адъюдикации ---
+ reference/code/cf-facts/MANIFEST.md        |  53 ++++++++++++
+ reference/code/cf-facts/bq_ops.py          | 127 +++++++++++++++++++++++++++++
+ reference/code/cf-facts/config.py          |  26 ++++++
+ reference/code/cf-facts/fetch_perimeter.py |   5 +-
+ reference/code/cf-facts/main.py            |  37 +++++++--
+ 5 files changed, 240 insertions(+), 8 deletions(-)
+
+=== 4. Есть ли среди коммитов после 5738a4c ЧУЖИЕ задачи (не SALES-REFRESH-WINDOW) ===
+чужих коммитов нет — все относятся к SALES-REFRESH-WINDOW
+
+=== 5. Локальный клон код-репо holika-prod — есть ли на машине ===
+/Users/ilyasbazarov/Desktop/msklad_project/cf/
+/Users/ilyasbazarov/Desktop/msklad_project/holika/
+/Users/ilyasbazarov/Desktop/msklad_project/holika_provenance_archive/
+/Users/ilyasbazarov/Desktop/msklad_project/holika_provenance_archive/SALES-REFRESH-WINDOW-DEPLOY_2026-08-11_holika-prod/.git
+/Users/ilyasbazarov/Desktop/msklad_project/holika/.git
+
+=== 6. .gcloudignore: есть ли где-либо в репо (ADR-040 — условие деплоя) ===
+./worktrees/SALES-REFRESH-WINDOW-VERIFY-ADJ/reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step3_work/repo/cf-facts/.gcloudignore
+./worktrees/SALES-REFRESH-WINDOW-VERIFY-ADJ/reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step2_work/master_repo/repo/cf-facts/.gcloudignore
+./worktrees/SALES-REFRESH-WINDOW-VERIFY-ADJ/reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/branch_check/repo/cf-facts/.gcloudignore
+./reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step3_work/repo/cf-facts/.gcloudignore
+./reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/step2_work/master_repo/repo/cf-facts/.gcloudignore
+./reference/_scratch_SALES-PERIMETER-CHANNEL-DECIDE-DEPLOY_2026-08-07/branch_check/repo/cf-facts/.gcloudignore
+
+=== 7. Не-кодовые файлы в каталоге снапшота (поедут в архив, если не исключены) ===
+MANIFEST.md
+deploy_and_workflow.sh
+workflow_hourly.yaml
+workflow_weekly.yaml
+
+=== UTC конец ===
+Tue Aug 11 15:15:55 UTC 2026
