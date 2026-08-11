@@ -1,0 +1,37 @@
+=== date -u (start) ===
+Tue Aug 11 06:42:17 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== dry_run: guard SELECT против stg_msklad.fact_sales_staging ===
+Query successfully validated. Assuming the tables are not modified, running this query will process 9825 bytes of data.
+=== dry_run: guard SELECT против stg_msklad.fact_sales_perimeter_staging ===
+Query successfully validated. Assuming the tables are not modified, running this query will process 139450 bytes of data.
+=== live values (read-only, не dry_run, для сверки с числами адъюдикации) ===
+--- stg_msklad.fact_sales_staging ---
++------------+------------+
+|  min_date  |  max_date  |
++------------+------------+
+| 2026-08-04 | 2026-08-11 |
++------------+------------+
+--- stg_msklad.fact_sales_perimeter_staging ---
++------------+------------+
+|  min_date  |  max_date  |
++------------+------------+
+| 2026-05-04 | 2026-08-03 |
++------------+------------+
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Tue Aug 11 06:42:29 UTC 2026
