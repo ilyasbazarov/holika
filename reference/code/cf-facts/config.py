@@ -39,6 +39,17 @@ GCS_PREFIX_DEMAND  = "demand/incremental"
 # ─── Rolling windows ──────────────────────────────────────────────────────────
 HOURLY_WINDOW_DAYS  = 7
 WEEKLY_WINDOW_DAYS  = 90
+
+# ─── Предохранитель ADR-145 §4/§5 (SALES-REFRESH-WINDOW-MANDATE-ADJ §3, правка 1) ─────
+# Допуск нижнего края окна MERGE в _assert_staging_covers_merge_window (bq_ops.py):
+# сравнение по MIN(transaction_date) даёт ложный отказ, если ровно на границе окна
+# случился день без единой продажи. Измерено по 180-суточному окну core.fact_sales_profit
+# (reference/sales_refresh_window_mandate_adj_2026-08-11.md §2, решение 3): 12 суток без
+# продаж из 181 (6,63%), окон из ТРЁХ подряд пустых суток — ноль. Допуск в 3 суток снимает
+# ложный отказ (не встречен ни разу за 180 суток) ценой трёх суток глубины защиты против
+# класса ошибки в 83 суток (часовой staging при window_days=90). Верхний край окна
+# (свежесть) допуска не несёт — штатный прогон всегда грузит staging до «сегодня».
+GUARD_TOLERANCE_DAYS = 3
 # SALES-PERIMETER-EXTEND: тот же скользящий охват, что у весового (weekly) демand-ингеста —
 # отдельный ингест, но не отдельная каденция без основания.
 PERIMETER_WINDOW_DAYS = WEEKLY_WINDOW_DAYS

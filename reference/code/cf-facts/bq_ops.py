@@ -34,6 +34,7 @@ from config import (
     CORE_FACT_SALES,
     CORE_FACT_PURCHASES,
     GCP_PROJECT,
+    GUARD_TOLERANCE_DAYS,
     STG_BYVARIANT,
     STG_FACT_SALES,
     STG_FACT_SALES_PERIMETER,
@@ -393,43 +394,74 @@ def _assert_staging_covers_merge_window(
     Предусловие мандата на деплой ветки удаления (`ADR-145 §4/§5`): до исполнения
     `MERGE` подтвердить, что фактическое покрытие staging по датам не УЖЕ окна,
     которое получит ветка `WHEN NOT MATCHED BY SOURCE ... THEN DELETE`. Свойства
-    защиты по `ADR-145 §4` (форма выбрана этой сессией, свойства — архитектором):
-    сравнить покрытие staging с окном `MERGE`, ОТКАЗАТЬ при недостаточном покрытии
-    (не предупредить логом), сработать ДО исполнения `MERGE`.
+    защиты по `ADR-145 §4`: сравнить покрытие staging с окном `MERGE`, ОТКАЗАТЬ при
+    недостаточном покрытии (не предупредить логом), сработать ДО исполнения `MERGE`.
+    Форма и три правки — адъюдикация `reference/sales_refresh_window_mandate_adj_2026-08-11.md §3`.
 
-    Метод: MIN(transaction_date) в staging (тот же `_PARSE_DATE`, что несёт сам
-    `MERGE`) сравнивается с началом окна `MERGE` (`CURRENT_DATE() - window_days`).
-    Если минимальная дата в staging моложе начала окна — staging не дотягивается
-    до всей глубины, которую получит `DELETE`, и строки внутри окна, отсутствующие
-    в staging не потому что удалены в источнике, а потому что не были выбраны этим
-    прогоном, будут стёрты как «исчезнувшие». Ровно сценарий `ADR-145 §4`: часовой
-    staging (окно выборки 7 суток) при вызове `mode=promote, window_days=90` —
-    `MIN(date)` в staging окажется около «сегодня-7д», старше начала 90-суточного
-    окна `MERGE» не будет, отказ сработает раньше `MERGE`, а не после него.
+    Метод: MIN/MAX(transaction_date) в staging (тот же `_PARSE_DATE`, что несёт сам
+    `MERGE`) и обе границы окна `MERGE` (`CURRENT_DATE() - window_days` — нижняя,
+    `CURRENT_DATE() - 1` — верхняя, ADR-145-ADJ §3 правка 3) считаются ОДНИМ запросом
+    BigQuery (правка 2 — обе даты обязаны идти из одних часов: раньше нижняя граница
+    считалась питоновским `date.today()`, а MERGE — `CURRENT_DATE()`; сегодня оба дают
+    UTC и совпадают, но это незаписанное свойство среды, не гарантия).
 
-    Направление ошибки — в сторону отказа (fail-closed), не тихого пропуска:
-    сравнение по MIN-дате может дать ложный отказ, если ровно на границе окна
-    случился день без единой продажи (вероятность такого дня в данных проекта не
-    измерена и здесь не утверждается нулевой — открытое свойство метода, названное
-    явно, а не домысленное отсутствие риска).
+    Проверяются ОБА конца окна:
+    - нижний (глубина) — если MIN(date) в staging моложе начала окна минус допуск
+      (`GUARD_TOLERANCE_DAYS`, правка 1), staging не дотягивается до всей глубины,
+      которую получит DELETE, и строки внутри окна, отсутствующие в staging не потому
+      что удалены в источнике, а потому что не были выбраны этим прогоном, будут
+      стёрты как «исчезнувшие». Сценарий `ADR-145 §4`: часовой staging (7 суток) при
+      `mode=promote, window_days=90` — MIN(date) окажется около «сегодня-7д», отказ.
+    - верхний (свежесть) — найдено адъюдикацией `MANDATE-ADJ`, в исходном запросе
+      отсутствовало: если MAX(date) в staging старше «сегодня-1д», часть окна около
+      сегодняшнего дня в staging попросту не загружена (устаревший прогон), и та же
+      ветка DELETE снесла бы строки внутри окна, отсутствующие в устаревшем staging,
+      хотя они никуда не делись в источнике. Симметричная опасность нижнему краю.
+
+    Допуск `GUARD_TOLERANCE_DAYS` (`config.py`) снимает ложный отказ строгого
+    сравнения на нижнем крае — измерено адъюдикацией (`§C`, окно 180 суток): 6,63%
+    суток без единой продажи, ни одного окна из трёх подряд пустых суток. При
+    допуске в трое суток такой отказ требовал бы трёх подряд пустых суток на
+    границе — не встречено ни разу за 180 суток. Верхний край допуска не несёт —
+    штатный прогон всегда загружает staging до «сегодня», отставание на день и
+    больше есть прямой признак устаревшего/пропущенного прогона, а не статистический
+    шум.
     """
     row = next(
         bq.query(
-            f"SELECT MIN({_PARSE_DATE}) AS min_date FROM `{staging_table}` s"
+            f"""
+            SELECT
+              MIN({_PARSE_DATE}) AS min_date,
+              MAX({_PARSE_DATE}) AS max_date,
+              DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY) AS window_start,
+              DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)             AS freshness_floor
+            FROM `{staging_table}` s
+            """
         ).result()
     )
-    window_start = date.today() - timedelta(days=window_days)
-    if row.min_date is None or row.min_date > window_start:
+    tolerant_window_start = row.window_start + timedelta(days=GUARD_TOLERANCE_DAYS)
+    if row.min_date is None or row.min_date > tolerant_window_start:
         raise ValueError(
-            f"{label}: предохранитель ADR-145 §4 — staging покрывает с "
-            f"{row.min_date}, а окно MERGE начинается {window_start} "
-            f"(window_days={window_days}). Покрытие staging уже окна MERGE — "
-            f"ветка DELETE удалила бы строки внутри окна, отсутствующие в staging "
-            f"не потому что исчезли в источнике. Отказ, MERGE не исполняется."
+            f"{label}: предохранитель ADR-145 §4 (глубина) — staging покрывает с "
+            f"{row.min_date}, а окно MERGE начинается {row.window_start} "
+            f"(window_days={window_days}, допуск {GUARD_TOLERANCE_DAYS}д → "
+            f"{tolerant_window_start}). Покрытие staging уже окна MERGE — ветка "
+            f"DELETE удалила бы строки внутри окна, отсутствующие в staging не "
+            f"потому что исчезли в источнике. Отказ, MERGE не исполняется."
+        )
+    if row.max_date is None or row.max_date < row.freshness_floor:
+        raise ValueError(
+            f"{label}: предохранитель ADR-145 §4 (свежесть) — staging доходит "
+            f"только до {row.max_date}, а окно MERGE ожидает свежесть не старше "
+            f"{row.freshness_floor}. Верхний край окна в staging не покрыт — ветка "
+            f"DELETE удалила бы строки внутри окна около сегодняшнего дня, "
+            f"отсутствующие в устаревшем staging не потому что исчезли в источнике. "
+            f"Отказ, MERGE не исполняется."
         )
     log.info(
-        "%s: предохранитель ADR-145 §4 пройден — staging покрывает с %s, "
-        "окно MERGE с %s", label, row.min_date, window_start,
+        "%s: предохранитель ADR-145 §4 пройден — staging покрывает %s…%s, "
+        "окно MERGE %s…сегодня (допуск %sд)",
+        label, row.min_date, row.max_date, row.window_start, GUARD_TOLERANCE_DAYS,
     )
 
 
