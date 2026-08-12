@@ -1,0 +1,27 @@
+=== date -u (start) ===
+Tue Aug 11 16:23:08 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== П2: COUNT(*) core.fact_sales_profit ===
+[
+  {
+    "cnt": "42995", 
+    "measured_at_utc": "2026-08-11 16:23:12"
+  }
+]
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Tue Aug 11 16:23:14 UTC 2026

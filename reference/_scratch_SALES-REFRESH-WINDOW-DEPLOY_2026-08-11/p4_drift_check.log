@@ -1,0 +1,15 @@
+П4 — сверка дрейфа заново, живым съёмом (2026-08-11T16:26-16:27Z)
+
+Живая ревизия (трафик 100%): cf-facts-00011-mab
+Источник (gcloud run revisions describe, annotation run.googleapis.com/build-source-location):
+gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786273160918659
+
+Внимание: gcloud functions describe отдаёт serviceConfig.revision = cf-facts-00012-ber (последняя
+собранная, трафика не несёт, соответствует 07_STATE §примечание iv). Для сверки дрейфа взят архив
+именно ТРАФИК-НЕСУЩЕЙ ревизии 00011-mab, не последней собранной.
+
+master код-репо holika-prod @ 5ad954447d6de5ed5fd27cd029132ac87c42d6b5 (2026-08-10T20:50:48+06:00,
+Merge deploy/cf-dq-2026-08-10-fail-open — cf-facts не тронут этим коммитом).
+
+sha256 (10 файлов, .gcloudignore не входит в архив):
+diff rc=0 (0=идентичны)

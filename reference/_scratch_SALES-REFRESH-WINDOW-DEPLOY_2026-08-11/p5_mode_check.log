@@ -1,0 +1,48 @@
+П5 — фиксация понимания: window_days принимается ТОЛЬКО mode=weekly
+
+main.py (снапшот reference/code/cf-facts/main.py, идентичен извлечённому архиву 00011-mab):
+18:  step_facts (mode=hourly)  →  step_dq  →  step_promote (mode=promote, window_days=7)
+19:  step_facts (mode=weekly)  →  step_dq  →  step_promote (mode=promote, window_days=90)
+83:    _default_window_days = (
+88:    window_days = int(body.get("window_days", _default_window_days))
+90:    log.info("CF-Facts start | mode=%s run_id=%s window_days=%d", mode, run_id, window_days)
+94:            result = _run_load(run_id, window_days=HOURLY_WINDOW_DAYS)
+96:            result = _run_weekly_load(run_id, window_days)
+98:            result = _run_promote(window_days)
+102:            result = _run_returns(window_days)
+104:            result = _run_perimeter_load(run_id, window_days)
+106:            result = _run_perimeter_promote(window_days)
+123:def _run_load(run_id: str, window_days: int) -> dict:
+125:    Fetch demand positions for the last `window_days` days.
+136:    date_from = date_to - timedelta(days=window_days)
+138:    log.info("Fetching demands: %s → %s (%dd rolling)", date_from, date_to, window_days)
+166:def _run_weekly_load(run_id: str, window_days: int = WEEKLY_WINDOW_DAYS) -> dict:
+168:    Weekly mode: fetch `window_days` demands + `window_days` byvariant COGS.
+174:    window_days» и, как следствие, вытащить май-2026 в паритет (он глубже 90 суток).
+177:    и `mode`, поля `window_days` в нём нет. Значение `90` подставляется ДВАЖДЫ внутри
+178:    этого файла: `body.get("window_days", _default_window_days)` (`main.py:88`, где
+179:    `_default_window_days = WEEKLY_WINDOW_DAYS` при `mode="weekly"`) и умолчанием
+187:    независимо от того, откуда пришло `window_days`.
+202:    date_from = date_to - timedelta(days=window_days)
+205:    log.info("Weekly load (%dd): fetching demands %s → %s", window_days, date_from, date_to)
+213:            f"0 demand positions for {window_days}d window {date_from}→{date_to}"
+238:def _run_promote(window_days: int) -> dict:
+243:    window_days drives both the MERGE partition filter and the COGS source selection:
+249:    merge_stats    = promote_to_core(bq, window_days)
+250:    coverage_stats = get_coverage_stats(bq, window_days)
+308:def _run_returns(window_days: int) -> dict:
+310:    Fetch salesreturn + retailsalesreturn positions for last `window_days` days.
+315:      - manual: curl ... -d '{"mode":"returns","window_days":90}'
+328:    date_from = date_to - timedelta(days=window_days)
+330:    log.info("Returns load: fetching %s → %s (%dd window)", date_from, date_to, window_days)
+358:def _run_perimeter_load(run_id: str, window_days: int) -> dict:
+360:    Fetch entity/retaildemand + продажи entity/commissionreportin за `window_days` дней.
+371:    date_from = date_to - timedelta(days=window_days)
+396:def _run_perimeter_promote(window_days: int) -> dict:
+403:    merge_stats = promote_perimeter_to_core(bq, window_days)
+
+Диспетчер (main.py:92-108): mode=hourly → _run_load(run_id, window_days=HOURLY_WINDOW_DAYS) —
+переданный window_days игнорируется (используется константа). mode=purchases → _run_purchases() —
+вызов без аргумента window_days вообще. mode=weekly (main.py:96) → _run_weekly_load(run_id,
+window_days) — единственный путь, реально принимающий значение из тела запроса.
+Вывод: расширенный первый прогон обязан идти mode=weekly. Подтверждено чтением кода.

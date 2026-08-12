@@ -1,0 +1,69 @@
+=== date -u (start) ===
+Tue Aug 11 16:33:06 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== CREATE SNAPSHOT ===
+Waiting on bqjob_r634182f1d3578075_0000019ff1abae11_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r634182f1d3578075_0000019ff1abae11_1 ... (2s) Current status: RUNNING                                                                                      Waiting on bqjob_r634182f1d3578075_0000019ff1abae11_1 ... (3s) Current status: RUNNING                                                                                      Waiting on bqjob_r634182f1d3578075_0000019ff1abae11_1 ... (5s) Current status: RUNNING                                                                                      Waiting on bqjob_r634182f1d3578075_0000019ff1abae11_1 ... (6s) Current status: RUNNING                                                                                      Waiting on bqjob_r634182f1d3578075_0000019ff1abae11_1 ... (6s) Current status: DONE   
+Created msklad-bi-prod.core.fact_sales_profit_snap_20260811_163306
+
+=== число строк / SUM(revenue_kgs) по каналам, снимок ===
+[
+  {
+    "channel_bucket": "UMAI WB", 
+    "cnt": "9", 
+    "sum_revenue_kgs": "4558702.5"
+  }, 
+  {
+    "channel_bucket": "Джунхай", 
+    "cnt": "25", 
+    "sum_revenue_kgs": "814060.5"
+  }, 
+  {
+    "channel_bucket": "К Глобал РФ Маркетплейсы", 
+    "cnt": "4", 
+    "sum_revenue_kgs": "2661030.0"
+  }, 
+  {
+    "channel_bucket": "без канала", 
+    "cnt": "24895", 
+    "sum_revenue_kgs": "1.8853863731209996E8"
+  }, 
+  {
+    "channel_bucket": "комиссия", 
+    "cnt": "4137", 
+    "sum_revenue_kgs": "1.188702633E7"
+  }, 
+  {
+    "channel_bucket": "оптовая торговля", 
+    "cnt": "12484", 
+    "sum_revenue_kgs": "4.8551755422059983E8"
+  }, 
+  {
+    "channel_bucket": "розница", 
+    "cnt": "1441", 
+    "sum_revenue_kgs": "1188421.9999999984"
+  }
+]
+=== число строк / сумма — итог ===
+[
+  {
+    "cnt": "42995", 
+    "sum_revenue_kgs": "6.951654328627E8"
+  }
+]
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Tue Aug 11 16:33:24 UTC 2026

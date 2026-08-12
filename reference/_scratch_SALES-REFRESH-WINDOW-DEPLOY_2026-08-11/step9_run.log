@@ -1,0 +1,288 @@
+=== date -u (start) ===
+Tue Aug 11 16:38:05 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== deploy cf-facts from branch source ===
+Preparing function...
+.........done.
+Updating function (may take a while)...
+[Build]............................................................................................................................................................................................................................................................................................................................................................................................................................done
+[Service]........................warning
+Completed with warnings:
+  [INFO] A new revision will be deployed serving with 0% traffic.
+You can view your function in the Cloud Console here: https://console.cloud.google.com/functions/details/asia-east1/cf-facts?project=msklad-bi-prod
+
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/420804682491/locations/asia-east1/builds/de440f28-72ac-48b4-b3b6-27bb40adda8d
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts
+  entryPoint: main
+  runtime: python312
+  serviceAccount: projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786466307902184'
+      object: cf-facts/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786466307902184'
+      object: cf-facts/function-source.zip
+createTime: '2026-05-06T08:26:29.388991725Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/msklad-bi-prod/locations/asia-east1/functions/cf-facts
+satisfiesPzi: true
+serviceConfig:
+  availableCpu: '1'
+  availableMemory: 2048M
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceCount: 5
+  maxInstanceRequestConcurrency: 1
+  minInstanceCount: 1
+  revision: cf-facts-00014-doh
+  secretEnvironmentVariables:
+  - key: MSKLAD_TOKEN
+    projectId: '420804682491'
+    secret: msklad-token
+    version: latest
+  service: projects/msklad-bi-prod/locations/asia-east1/services/cf-facts
+  serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  timeoutSeconds: 540
+  uri: https://cf-facts-xw5u2boozq-de.a.run.app
+state: ACTIVE
+updateTime: '2026-08-11T16:39:14.718232476Z'
+url: https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts
+=== describe после деплоя ===
+{
+  "buildConfig": {
+    "automaticUpdatePolicy": {},
+    "build": "projects/420804682491/locations/asia-east1/builds/de440f28-72ac-48b4-b3b6-27bb40adda8d",
+    "dockerRegistry": "ARTIFACT_REGISTRY",
+    "dockerRepository": "projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts",
+    "entryPoint": "main",
+    "runtime": "python312",
+    "serviceAccount": "projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com",
+    "source": {
+      "storageSource": {
+        "bucket": "gcf-v2-sources-420804682491-asia-east1",
+        "generation": "1786466307902184",
+        "object": "cf-facts/function-source.zip"
+      }
+    },
+    "sourceProvenance": {
+      "resolvedStorageSource": {
+        "bucket": "gcf-v2-sources-420804682491-asia-east1",
+        "generation": "1786466307902184",
+        "object": "cf-facts/function-source.zip"
+      }
+    }
+  },
+  "createTime": "2026-05-06T08:26:29.388991725Z",
+  "environment": "GEN_2",
+  "labels": {
+    "deployment-tool": "cli-gcloud"
+  },
+  "name": "projects/msklad-bi-prod/locations/asia-east1/functions/cf-facts",
+  "satisfiesPzi": true,
+  "serviceConfig": {
+    "availableCpu": "1",
+    "availableMemory": "2048M",
+    "environmentVariables": {
+      "LOG_EXECUTION_ID": "true"
+    },
+    "ingressSettings": "ALLOW_ALL",
+    "maxInstanceCount": 5,
+    "maxInstanceRequestConcurrency": 1,
+    "minInstanceCount": 1,
+    "revision": "cf-facts-00014-doh",
+    "secretEnvironmentVariables": [
+      {
+        "key": "MSKLAD_TOKEN",
+        "projectId": "420804682491",
+        "secret": "msklad-token",
+        "version": "latest"
+      }
+    ],
+    "service": "projects/msklad-bi-prod/locations/asia-east1/services/cf-facts",
+    "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+    "timeoutSeconds": 540,
+    "uri": "https://cf-facts-xw5u2boozq-de.a.run.app"
+  },
+  "state": "ACTIVE",
+  "updateTime": "2026-08-11T16:39:14.718232476Z",
+  "url": "https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts"
+}
+=== traffic ===
+{
+  "apiVersion": "serving.knative.dev/v1",
+  "kind": "Service",
+  "metadata": {
+    "annotations": {
+      "cloudfunctions.googleapis.com/function-id": "cf-facts",
+      "run.googleapis.com/build-base-image": "asia-east1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312",
+      "run.googleapis.com/build-enable-automatic-updates": "true",
+      "run.googleapis.com/build-function-target": "main",
+      "run.googleapis.com/build-image-uri": "asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--facts:version_1",
+      "run.googleapis.com/build-name": "projects/420804682491/locations/asia-east1/builds/de440f28-72ac-48b4-b3b6-27bb40adda8d",
+      "run.googleapis.com/build-service-account": "projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com",
+      "run.googleapis.com/build-source-location": "gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786466307902184",
+      "run.googleapis.com/client-name": "gcloud",
+      "run.googleapis.com/custom-audiences": "[\"https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts\"]",
+      "run.googleapis.com/ingress": "all",
+      "run.googleapis.com/ingress-status": "all",
+      "run.googleapis.com/maxScale": "3",
+      "run.googleapis.com/operation-id": "c7b293d1-addc-4a5d-96e2-04cbe6218dde",
+      "run.googleapis.com/urls": "[\"https://cf-facts-420804682491.asia-east1.run.app\",\"https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-facts\",\"https://cf-facts-xw5u2boozq-de.a.run.app\"]",
+      "serving.knative.dev/creator": "service-420804682491@gcf-admin-robot.iam.gserviceaccount.com",
+      "serving.knative.dev/lastModifier": "service-420804682491@gcf-admin-robot.iam.gserviceaccount.com"
+    },
+    "creationTimestamp": "2026-05-06T08:27:57.556894Z",
+    "generation": 14,
+    "labels": {
+      "cloud.googleapis.com/location": "asia-east1",
+      "goog-cloudfunctions-runtime": "python312",
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions"
+    },
+    "name": "cf-facts",
+    "namespace": "420804682491",
+    "resourceVersion": "AAZYyBx4uPU",
+    "selfLink": "/apis/serving.knative.dev/v1/namespaces/420804682491/services/cf-facts",
+    "uid": "17b85ad4-5b5a-4591-ad81-bb867d5dabfb"
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "annotations": {
+          "autoscaling.knative.dev/maxScale": "5",
+          "autoscaling.knative.dev/minScale": "1",
+          "cloudfunctions.googleapis.com/trigger-type": "HTTP_TRIGGER",
+          "run.googleapis.com/base-images": "{\"worker\":\"asia-east1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312\"}",
+          "run.googleapis.com/client-name": "gcloud",
+          "run.googleapis.com/secrets": "secret-3c4ed779-9ba6-37e6-8472-c19ef6b101ea:projects/420804682491/secrets/msklad-token",
+          "run.googleapis.com/startup-cpu-boost": "true"
+        },
+        "labels": {
+          "goog-drz-cloudfunctions-id": "cf-facts",
+          "goog-drz-cloudfunctions-location": "asia-east1",
+          "run.googleapis.com/startupProbeType": "Default"
+        },
+        "name": "cf-facts-00014-doh"
+      },
+      "spec": {
+        "containerConcurrency": 1,
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "LOG_EXECUTION_ID",
+                "value": "true"
+              },
+              {
+                "name": "MSKLAD_TOKEN",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "latest",
+                    "name": "secret-3c4ed779-9ba6-37e6-8472-c19ef6b101ea"
+                  }
+                }
+              }
+            ],
+            "image": "asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--facts:version_1",
+            "name": "worker",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "name": "http1"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2048M"
+              }
+            },
+            "startupProbe": {
+              "failureThreshold": 1,
+              "periodSeconds": 240,
+              "tcpSocket": {
+                "port": 8080
+              },
+              "timeoutSeconds": 240
+            }
+          }
+        ],
+        "runtimeClassName": "run.googleapis.com/linux-base-image-update",
+        "serviceAccountName": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+        "timeoutSeconds": 540
+      }
+    },
+    "traffic": [
+      {
+        "percent": 100,
+        "revisionName": "cf-facts-00011-mab"
+      }
+    ]
+  },
+  "status": {
+    "address": {
+      "url": "https://cf-facts-xw5u2boozq-de.a.run.app"
+    },
+    "conditions": [
+      {
+        "lastTransitionTime": "2026-08-11T16:39:14.518102Z",
+        "status": "True",
+        "type": "Ready"
+      },
+      {
+        "severity": "Info",
+        "status": "True",
+        "type": "BaseImageValidated"
+      },
+      {
+        "lastTransitionTime": "2026-08-11T16:39:14.605618Z",
+        "reason": "Retired",
+        "status": "True",
+        "type": "ConfigurationsReady"
+      },
+      {
+        "lastTransitionTime": "2026-08-11T09:16:31.758821Z",
+        "status": "True",
+        "type": "RoutesReady"
+      }
+    ],
+    "latestCreatedRevisionName": "cf-facts-00014-doh",
+    "latestReadyRevisionName": "cf-facts-00012-ber",
+    "observedGeneration": 14,
+    "traffic": [
+      {
+        "percent": 100,
+        "revisionName": "cf-facts-00011-mab"
+      }
+    ],
+    "url": "https://cf-facts-xw5u2boozq-de.a.run.app"
+  }
+}
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Tue Aug 11 16:39:22 UTC 2026
