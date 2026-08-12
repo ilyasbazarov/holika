@@ -1,0 +1,76 @@
+=== UTC anchor (start) ===
+Wed Aug 12 16:07:49 UTC 2026
+=== gcloud auth (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== workflow_hourly.yaml step order (from snapshot, for reference) ===
+4:    - init:
+6:          - run_id: ${sys.now()}
+7:          - cf_dim:       "https://cf-dim-xw5u2boozq-de.a.run.app"
+8:          - cf_fx:        "https://cf-fx-xw5u2boozq-de.a.run.app"
+9:          - cf_facts:     "https://cf-facts-xw5u2boozq-de.a.run.app"
+10:          - cf_dq:        "https://cf-dq-xw5u2boozq-de.a.run.app"
+11:    - step_dim:
+13:          call: http.post
+25:            - log_dim_error:
+26:                call: sys.log
+28:                  text: ${"[HOURLY] step_dim FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+30:            - raise_dim:
+32:    - step_fx:
+34:          call: http.post
+46:            - log_fx_error:
+47:                call: sys.log
+49:                  text: ${"[HOURLY] step_fx FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+51:            - raise_fx:
+53:    - step_facts:
+55:          call: http.post
+68:            - log_facts_error:
+69:                call: sys.log
+71:                  text: ${"[HOURLY] step_facts FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+73:            - raise_facts:
+75:    - step_purchases:
+77:          call: http.post
+91:            - log_purchases_warning:
+92:                call: sys.log
+94:                  text: ${"[HOURLY] step_purchases FAILED (non-blocking) run_id=" + run_id + " error=" + json.encode_to_string(e)}
+96:    - step_dq:
+98:          call: http.post
+110:            - log_dq_error:
+111:                call: sys.log
+113:                  text: ${"[HOURLY] step_dq CRASHED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+115:            - raise_dq:
+117:    - parse_dq_result:
+119:          - dq_parsed: ${json.decode(dq_result.body)}
+120:    - check_dq:
+122:          - condition: ${not(dq_parsed.passed)}
+124:              - log_dq_failed:
+125:                  call: sys.log
+129:              - raise_dq_failed:
+131:    - step_promote:
+133:          call: http.post
+147:            - log_promote_error:
+148:                call: sys.log
+150:                  text: ${"[HOURLY] step_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+152:            - raise_promote:
+154:    - done:
+156:          - log_success:
+157:              call: sys.log
+161:          - return_result:
+=== Cloud Logging: all log entries for the 16:00 workflow execution ===
+2026-08-12T16:00:03.432287810Z	INFO	ACTIVE	
+2026-08-12T16:05:32.043999153Z	ERROR	FAILED	
+=== UTC anchor (end) ===
+Wed Aug 12 16:08:14 UTC 2026
+=== gcloud auth (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

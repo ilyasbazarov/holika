@@ -1,0 +1,35 @@
+{
+  "argument": "{}",
+  "createTime": "2026-08-12T16:00:03.369268766Z",
+  "duration": "328.664507057s",
+  "endTime": "2026-08-12T16:05:32.033775823Z",
+  "error": {
+    "context": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 130",
+    "payload": "\"DQ Gate failed — promote blocked\"",
+    "stackTrace": {
+      "elements": [
+        {
+          "position": {
+            "column": "19",
+            "length": "5",
+            "line": "130"
+          },
+          "routine": "main",
+          "step": "raise_dq_failed"
+        }
+      ]
+    }
+  },
+  "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-hourly/executions/58620e72-5792-40ed-aabf-9510a0c35622",
+  "startTime": "2026-08-12T16:00:03.369268766Z",
+  "state": "FAILED",
+  "status": {
+    "currentSteps": [
+      {
+        "routine": "main",
+        "step": "raise_dq_failed"
+      }
+    ]
+  },
+  "workflowRevisionId": "000004-5fc"
+}

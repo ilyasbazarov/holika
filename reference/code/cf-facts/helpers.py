@@ -112,6 +112,13 @@ def paginate_entity(
         path, len(all_rows), meta_size, pages, has_filter,
     )
 
+    # `<`, а не `!=`: документы, созданные в источнике во время обхода, легитимно
+    # увеличивают набор; уменьшить его может только оборванный обход (SALES-REFRESH-WINDOW-FETCH-ADJ §4/§5).
+    if meta_size is not None and len(all_rows) < meta_size:
+        raise RuntimeError(
+            f"PAGINATE_PROBE FAILED: path={path} fetched={len(all_rows)} < meta_size={meta_size} — обход оборван"
+        )
+
     return all_rows
 
 

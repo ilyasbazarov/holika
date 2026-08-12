@@ -1,0 +1,36 @@
+=== UTC anchor (start) ===
+Wed Aug 12 14:57:21 UTC 2026
+=== gcloud auth (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== deploying cf-facts from --source=/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-DEPLOY-FINAL/reference/_scratch_SALES-REFRESH-WINDOW-DEPLOY-FINAL_2026-08-12/holika-prod/cf-facts ===
+=== параметры сверены с живым describe ДО деплоя (current_describe.json), не угадываются ===
+Preparing function...
+................................done.
+Updating function (may take a while)...
+[Build]....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+[Service]...............................................................................................................................................................warning
+Completed with warnings:
+  [INFO] A new revision will be deployed serving with 0% traffic.
+You can view your function in the Cloud Console here: https://console.cloud.google.com/functions/details/asia-east1/cf-facts?project=msklad-bi-prod
+
+new revision: cf-facts-00017-jon
+generation: 1786546688061530
+update_time: 2026-08-12T14:59:25.175118482Z
+=== traffic status immediately after deploy (Cloud Functions deploy auto-routes 100% to new revision) ===
+{'percent': 100, 'revisionName': 'cf-facts-00011-mab'}
+=== UTC anchor (end) ===
+Wed Aug 12 14:59:42 UTC 2026
+=== gcloud auth (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

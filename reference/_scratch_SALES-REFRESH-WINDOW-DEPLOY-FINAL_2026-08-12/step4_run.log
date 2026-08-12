@@ -1,0 +1,104 @@
+=== UTC anchor (start) ===
+Wed Aug 12 16:12:29 UTC 2026
+=== gcloud auth (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== audit.dq_runs: failed checks, last 6 hours ===
+[
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-12 16:05:31", 
+    "detail": "yesterday_rev=111739, ma7=5097826, ratio=0.02, threshold=0.1 (weekday), target_date=2026-08-11", 
+    "passed": "false", 
+    "run_id": "1786550403.465703"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-12 15:05:49", 
+    "detail": "yesterday_rev=111739, ma7=5097826, ratio=0.02, threshold=0.1 (weekday), target_date=2026-08-11", 
+    "passed": "false", 
+    "run_id": "1786546802.7372653"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-12 14:05:55", 
+    "detail": "yesterday_rev=111739, ma7=5097826, ratio=0.02, threshold=0.1 (weekday), target_date=2026-08-11", 
+    "passed": "false", 
+    "run_id": "1786543203.5363379"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-12 13:06:11", 
+    "detail": "yesterday_rev=111739, ma7=5097826, ratio=0.02, threshold=0.1 (weekday), target_date=2026-08-11", 
+    "passed": "false", 
+    "run_id": "1786539602.5016618"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-12 12:06:47", 
+    "detail": "yesterday_rev=111739, ma7=5097826, ratio=0.02, threshold=0.1 (weekday), target_date=2026-08-11", 
+    "passed": "false", 
+    "run_id": "1786536002.6850634"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-12 11:06:45", 
+    "detail": "yesterday_rev=111739, ma7=5097826, ratio=0.02, threshold=0.1 (weekday), target_date=2026-08-11", 
+    "passed": "false", 
+    "run_id": "1786532402.4600441"
+  }
+]
+=== audit.dq_runs: full result set for most recent run_id ===
+[
+  {
+    "check_name": "not_empty", 
+    "checked_at": "2026-08-12 16:05:31", 
+    "detail": "staging_count=484", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-12 16:05:31", 
+    "detail": "yesterday_rev=111739, ma7=5097826, ratio=0.02, threshold=0.1 (weekday), target_date=2026-08-11", 
+    "passed": "false"
+  }, 
+  {
+    "check_name": "fk_integrity", 
+    "checked_at": "2026-08-12 16:05:31", 
+    "detail": "orphan_product_ids=0", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness", 
+    "checked_at": "2026-08-12 16:05:31", 
+    "detail": "max_date=2026-08-12, lag_days=0", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "margin_sanity", 
+    "checked_at": "2026-08-12 16:05:31", 
+    "detail": "bad_margin_rows=0 (core, last 7d)", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "currency_normalization", 
+    "checked_at": "2026-08-12 16:05:31", 
+    "detail": "avg_revenue_kgs=73169.21", 
+    "passed": "true"
+  }
+]
+=== UTC anchor (end) ===
+Wed Aug 12 16:12:35 UTC 2026
+=== gcloud auth (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

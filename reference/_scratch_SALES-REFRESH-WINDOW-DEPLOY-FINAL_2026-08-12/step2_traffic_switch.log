@@ -1,0 +1,29 @@
+=== UTC anchor (start) ===
+Wed Aug 12 15:17:45 UTC 2026
+=== gcloud auth (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== traffic switch: cf-facts -> cf-facts-00017-jon (100%) ===
+Updating traffic...
+Routing traffic............................................................................................................................done
+Done.
+URL: https://cf-facts-xw5u2boozq-de.a.run.app
+Traffic:
+  100% cf-facts-00017-jon
+=== read-back: traffic status after switch ===
+{'percent': 100, 'revisionName': 'cf-facts-00017-jon'}
+=== UTC anchor (end) ===
+Wed Aug 12 15:18:08 UTC 2026
+=== gcloud auth (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

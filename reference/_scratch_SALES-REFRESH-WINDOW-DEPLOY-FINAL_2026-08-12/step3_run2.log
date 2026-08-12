@@ -1,0 +1,38 @@
+=== UTC anchor (start) ===
+Wed Aug 12 16:05:52 UTC 2026
+=== gcloud auth (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== traffic status (confirm still on cf-facts-00017-jon) ===
+{'percent': 100, 'revisionName': 'cf-facts-00017-jon'}
+=== Cloud Logging: PAGINATE_PROBE lines since traffic switch (2026-08-12T15:17:45Z) ===
+count of PAGINATE_PROBE lines:
+       0
+--- lines ---
+--- lines with has_filter=true ---
+0
+=== Cloud Logging: any PAGINATE_PROBE FAILED / fetched<meta_size ===
+count of FAILED lines:
+       0
+=== Cloud Logging: execution status of hourly runs since switch ===
+total log lines for cf-facts-00017-jon:
+      11
+severity ERROR count:
+0
+=== BigQuery: fact_sales_profit row count vs snap_20260811_163306, since traffic switch ===
+[{"missing_from_live":"34"}]
+=== UTC anchor (end) ===
+Wed Aug 12 16:06:29 UTC 2026
+=== gcloud auth (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

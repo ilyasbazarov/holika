@@ -1,0 +1,57 @@
+[
+  {
+    "insertId": "1u32a10b14",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-12T16:05:32Z",
+      "failure": {
+        "exception": "RuntimeError: \"DQ Gate failed — promote blocked\"\nin step \"raise_dq_failed\", routine \"main\", line: 130: \"DQ Gate failed — promote blocked\"",
+        "source": "main.raise_dq_failed, line: 130"
+      },
+      "state": "FAILED"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "58620e72-5792-40ed-aabf-9510a0c35622",
+      "workflows.googleapis.com/revision_id": "000004-5fc"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-12T16:05:32.779671382Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-08-12T16:05:32.043999153Z"
+  },
+  {
+    "insertId": "16r5vi9c2t2",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.workflows.type.ExecutionsSystemLog",
+      "activityTime": "2026-08-12T16:00:03Z",
+      "start": {
+        "argument": "{}"
+      },
+      "state": "ACTIVE"
+    },
+    "labels": {
+      "workflows.googleapis.com/execution_id": "58620e72-5792-40ed-aabf-9510a0c35622",
+      "workflows.googleapis.com/revision_id": "000004-5fc"
+    },
+    "logName": "projects/msklad-bi-prod/logs/workflows.googleapis.com%2Fexecutions_system",
+    "receiveTimestamp": "2026-08-12T16:00:04.307872478Z",
+    "resource": {
+      "labels": {
+        "location": "asia-east1",
+        "resource_container": "420804682491",
+        "workflow_id": "msklad-pipeline-hourly"
+      },
+      "type": "workflows.googleapis.com/Workflow"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-12T16:00:03.432287810Z"
+  }
+]

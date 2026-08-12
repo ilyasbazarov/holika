@@ -1,0 +1,384 @@
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand?filter=moment%3e%3d2026-08-11+00%3a00%3a00%3bmoment%3c%3d2026-08-11+23%3a59%3a59&limit=100",
+    "type" : "demand",
+    "mediaType" : "application/json",
+    "size" : 2,
+    "limit" : 100,
+    "offset" : 0
+  },
+  "rows" : [ {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/6a718cb1-953b-11f1-0a80-10330025fc80",
+      "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+      "type" : "demand",
+      "mediaType" : "application/json",
+      "uuidHref" : "https://online.moysklad.ru/app/#demand/edit?id=6a718cb1-953b-11f1-0a80-10330025fc80"
+    },
+    "id" : "6a718cb1-953b-11f1-0a80-10330025fc80",
+    "accountId" : "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "owner" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/a8e3252a-947b-11f1-0a80-1a470027b451",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#employee/edit?id=a8e3252a-947b-11f1-0a80-1a470027b451"
+      }
+    },
+    "shared" : true,
+    "group" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/group/1b9aa1e5-2f09-11ef-0a80-171b00152e5a",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type" : "group",
+        "mediaType" : "application/json"
+      }
+    },
+    "updated" : "2026-08-11 07:17:02.987",
+    "name" : "04748",
+    "externalCode" : "k7gPkXRJgdfRpt1-8NAUi0",
+    "moment" : "2026-08-11 07:16:00.000",
+    "applicable" : true,
+    "rate" : {
+      "currency" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/1fb4954e-fa31-11ee-0a80-08920071069f",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type" : "currency",
+          "mediaType" : "application/json",
+          "uuidHref" : "https://online.moysklad.ru/app/#currency/edit?id=1fb4954e-fa31-11ee-0a80-08920071069f"
+        }
+      }
+    },
+    "sum" : 5174820.0,
+    "store" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/store/b1fe15f8-44fb-11ef-0a80-114f002a2936",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type" : "store",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#warehouse/edit?id=b1fe15f8-44fb-11ef-0a80-114f002a2936"
+      }
+    },
+    "contract" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/contract/3aab7fc7-089d-11f1-0a80-1741000e1b74",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+        "type" : "contract",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#contract/edit?id=3aab7fc7-089d-11f1-0a80-1741000e1b74"
+      }
+    },
+    "project" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/project/448dfc24-44fc-11ef-0a80-019e0028ceab",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/project/metadata",
+        "type" : "project",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#project/edit?id=448dfc24-44fc-11ef-0a80-019e0028ceab"
+      }
+    },
+    "agent" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/424b88a1-5014-11f0-0a80-0df8002eb35e",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=424b88a1-5014-11f0-0a80-0df8002eb35e"
+      }
+    },
+    "organization" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/organization/717cd8a5-da4d-11f0-0a80-103c0005e57f",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type" : "organization",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#mycompany/edit?id=717cd8a5-da4d-11f0-0a80-103c0005e57f"
+      }
+    },
+    "organizationAccount" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/organization/717cd8a5-da4d-11f0-0a80-103c0005e57f/accounts/717cdd76-da4d-11f0-0a80-103c0005e580",
+        "type" : "account",
+        "mediaType" : "application/json"
+      }
+    },
+    "state" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/states/1d4b8d69-8bdf-11ef-0a80-06e90000186c",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+        "type" : "state",
+        "mediaType" : "application/json"
+      }
+    },
+    "attributes" : [ {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/172629b3-e3b8-11ef-0a80-050f0046e0dd",
+        "type" : "attributemetadata",
+        "mediaType" : "application/json"
+      },
+      "id" : "172629b3-e3b8-11ef-0a80-050f0046e0dd",
+      "name" : "Планируемая дата оплаты",
+      "type" : "time",
+      "value" : "2026-08-31 12:07:00.000"
+    }, {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/96eb76fd-ed79-11f0-0a80-1b8400a543c2",
+        "type" : "attributemetadata",
+        "mediaType" : "application/json"
+      },
+      "id" : "96eb76fd-ed79-11f0-0a80-1b8400a543c2",
+      "name" : "Способ оплаты",
+      "type" : "customentity",
+      "value" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/customentity/e6c873f3-ed78-11f0-0a80-0c3700a6dd7b/4a46fdab-ed79-11f0-0a80-18d100a46094",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/e6c873f3-ed78-11f0-0a80-0c3700a6dd7b",
+          "type" : "customentity",
+          "mediaType" : "application/json",
+          "uuidHref" : "https://online.moysklad.ru/app/#custom_e6c873f3-ed78-11f0-0a80-0c3700a6dd7b/edit?id=4a46fdab-ed79-11f0-0a80-18d100a46094"
+        },
+        "name" : "Договор (безналичный)"
+      }
+    } ],
+    "created" : "2026-08-11 07:16:24.663",
+    "printed" : true,
+    "published" : false,
+    "files" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/6a718cb1-953b-11f1-0a80-10330025fc80/files",
+        "type" : "files",
+        "mediaType" : "application/json",
+        "size" : 0,
+        "limit" : 1000,
+        "offset" : 0
+      }
+    },
+    "positions" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/6a718cb1-953b-11f1-0a80-10330025fc80/positions",
+        "type" : "demandposition",
+        "mediaType" : "application/json",
+        "size" : 4,
+        "limit" : 1000,
+        "offset" : 0
+      }
+    },
+    "vatEnabled" : false,
+    "payedSum" : 0.0,
+    "customerOrder" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/bb56b056-93d1-11f1-0a80-165d002057e5",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+        "type" : "customerorder",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#customerorder/edit?id=bb56b056-93d1-11f1-0a80-165d002057e5"
+      }
+    },
+    "shipmentAddress" : "г. Ош, улица Гастелло дом 1а, кв. 59",
+    "shipmentAddressFull" : {
+      "addInfo" : "г. Ош, улица Гастелло дом 1а, кв. 59"
+    },
+    "salesChannel" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/4a07eb32-2e47-11ef-0a80-0f4200606f40",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/metadata",
+        "type" : "saleschannel",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#saleschannel/edit?id=4a07eb32-2e47-11ef-0a80-0f4200606f40"
+      }
+    }
+  }, {
+    "meta" : {
+      "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/787044ea-956d-11f1-0a80-10330047a4e6",
+      "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+      "type" : "demand",
+      "mediaType" : "application/json",
+      "uuidHref" : "https://online.moysklad.ru/app/#demand/edit?id=787044ea-956d-11f1-0a80-10330047a4e6"
+    },
+    "id" : "787044ea-956d-11f1-0a80-10330047a4e6",
+    "accountId" : "1f6439aa-fa31-11ee-0a80-11ef00013531",
+    "owner" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/a8e3252a-947b-11f1-0a80-1a470027b451",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#employee/edit?id=a8e3252a-947b-11f1-0a80-1a470027b451"
+      }
+    },
+    "shared" : true,
+    "group" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/group/1354ebf9-8add-11ef-0a80-08af000f95aa",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+        "type" : "group",
+        "mediaType" : "application/json"
+      }
+    },
+    "updated" : "2026-08-11 13:16:33.325",
+    "name" : "04749",
+    "externalCode" : "1LIFX2PNjgyEQDYV-Y9lh2",
+    "moment" : "2026-08-11 13:14:00.000",
+    "applicable" : true,
+    "rate" : {
+      "currency" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/9ac2585d-8036-11ef-0a80-0d7a00094bfe",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+          "type" : "currency",
+          "mediaType" : "application/json",
+          "uuidHref" : "https://online.moysklad.ru/app/#currency/edit?id=9ac2585d-8036-11ef-0a80-0d7a00094bfe"
+        }
+      },
+      "value" : 1.11
+    },
+    "sum" : 5404540.0,
+    "store" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/store/b1fe15f8-44fb-11ef-0a80-114f002a2936",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/store/metadata",
+        "type" : "store",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#warehouse/edit?id=b1fe15f8-44fb-11ef-0a80-114f002a2936"
+      }
+    },
+    "contract" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/contract/78c8e792-9499-11f1-0a80-0cab002eb387",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/contract/metadata",
+        "type" : "contract",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#contract/edit?id=78c8e792-9499-11f1-0a80-0cab002eb387"
+      }
+    },
+    "project" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/project/448dfc24-44fc-11ef-0a80-019e0028ceab",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/project/metadata",
+        "type" : "project",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#project/edit?id=448dfc24-44fc-11ef-0a80-019e0028ceab"
+      }
+    },
+    "agent" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1a425fc0-87c0-11ef-0a80-1568002f43a7",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/counterparty/metadata",
+        "type" : "counterparty",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#company/edit?id=1a425fc0-87c0-11ef-0a80-1568002f43a7"
+      }
+    },
+    "organization" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/organization/717cd8a5-da4d-11f0-0a80-103c0005e57f",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/organization/metadata",
+        "type" : "organization",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#mycompany/edit?id=717cd8a5-da4d-11f0-0a80-103c0005e57f"
+      }
+    },
+    "organizationAccount" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/organization/717cd8a5-da4d-11f0-0a80-103c0005e57f/accounts/bb86041e-da4f-11f0-0a80-190200062d9b",
+        "type" : "account",
+        "mediaType" : "application/json"
+      }
+    },
+    "state" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/states/1d4b8d69-8bdf-11ef-0a80-06e90000186c",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata",
+        "type" : "state",
+        "mediaType" : "application/json"
+      }
+    },
+    "attributes" : [ {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/172629b3-e3b8-11ef-0a80-050f0046e0dd",
+        "type" : "attributemetadata",
+        "mediaType" : "application/json"
+      },
+      "id" : "172629b3-e3b8-11ef-0a80-050f0046e0dd",
+      "name" : "Планируемая дата оплаты",
+      "type" : "time",
+      "value" : "2026-08-17 12:01:00.000"
+    }, {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/metadata/attributes/96eb76fd-ed79-11f0-0a80-1b8400a543c2",
+        "type" : "attributemetadata",
+        "mediaType" : "application/json"
+      },
+      "id" : "96eb76fd-ed79-11f0-0a80-1b8400a543c2",
+      "name" : "Способ оплаты",
+      "type" : "customentity",
+      "value" : {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/customentity/e6c873f3-ed78-11f0-0a80-0c3700a6dd7b/12fe5527-ed79-11f0-0a80-0b1a00a3d9f3",
+          "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/e6c873f3-ed78-11f0-0a80-0c3700a6dd7b",
+          "type" : "customentity",
+          "mediaType" : "application/json",
+          "uuidHref" : "https://online.moysklad.ru/app/#custom_e6c873f3-ed78-11f0-0a80-0c3700a6dd7b/edit?id=12fe5527-ed79-11f0-0a80-0b1a00a3d9f3"
+        },
+        "name" : "Безналичный"
+      }
+    } ],
+    "created" : "2026-08-11 13:14:42.979",
+    "printed" : true,
+    "published" : false,
+    "files" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/787044ea-956d-11f1-0a80-10330047a4e6/files",
+        "type" : "files",
+        "mediaType" : "application/json",
+        "size" : 0,
+        "limit" : 1000,
+        "offset" : 0
+      }
+    },
+    "positions" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/demand/787044ea-956d-11f1-0a80-10330047a4e6/positions",
+        "type" : "demandposition",
+        "mediaType" : "application/json",
+        "size" : 20,
+        "limit" : 1000,
+        "offset" : 0
+      }
+    },
+    "vatEnabled" : true,
+    "vatIncluded" : true,
+    "vatSum" : 0.0,
+    "payedSum" : 0.0,
+    "customerOrder" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/cdd406b9-949c-11f1-0a80-11600030452c",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/customerorder/metadata",
+        "type" : "customerorder",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#customerorder/edit?id=cdd406b9-949c-11f1-0a80-11600030452c"
+      }
+    },
+    "salesChannel" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/4a07eb32-2e47-11ef-0a80-0f4200606f40",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/saleschannel/metadata",
+        "type" : "saleschannel",
+        "mediaType" : "application/json",
+        "uuidHref" : "https://online.moysklad.ru/app/#saleschannel/edit?id=4a07eb32-2e47-11ef-0a80-0f4200606f40"
+      }
+    }
+  } ]
+}

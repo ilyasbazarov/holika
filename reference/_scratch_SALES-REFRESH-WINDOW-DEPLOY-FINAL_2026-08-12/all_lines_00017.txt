@@ -1,0 +1,11 @@
+2026-08-12T15:17:56.319182Z	INFO	Starting new instance. Reason: MANUAL_OR_CUSTOMER_MIN_INSTANCE - Instance started because of customer-configured min-instances or manual scaling.
+2026-08-12T15:17:59.987803Z	INFO	Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+2026-08-12T15:18:01.255614Z	INFO	
+2026-08-12T15:18:03.297048Z	WARNING	The request was not authenticated. Either allow unauthenticated invocations or set the proper Authorization header. Empty Authorization header value. Read more at https://cloud.google.com/run/docs/securing/authenticating Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#unauthorized-client
+2026-08-12T15:18:03.419126Z	WARNING	The request was not authenticated. Either allow unauthenticated invocations or set the proper Authorization header. Empty Authorization header value. Read more at https://cloud.google.com/run/docs/securing/authenticating Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#unauthorized-client
+2026-08-12T15:18:03.776709Z	WARNING	The request was not authenticated. Either allow unauthenticated invocations or set the proper Authorization header. Empty Authorization header value. Read more at https://cloud.google.com/run/docs/securing/authenticating Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#unauthorized-client
+2026-08-12T15:18:03.984144Z	WARNING	The request was not authenticated. Either allow unauthenticated invocations or set the proper Authorization header. Empty Authorization header value. Read more at https://cloud.google.com/run/docs/securing/authenticating Additional troubleshooting documentation can be found at: https://cloud.google.com/run/docs/troubleshooting#unauthorized-client
+2026-08-12T16:01:06.205533Z	INFO	
+2026-08-12T16:01:31.147631Z	INFO	Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+2026-08-12T16:01:34.514190Z	INFO	Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+2026-08-12T16:02:00.062259Z	INFO	
