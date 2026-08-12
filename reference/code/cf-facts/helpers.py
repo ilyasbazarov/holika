@@ -92,7 +92,12 @@ def paginate_entity(
         page_params = {**(params or {}), "limit": PAGE_SIZE, "offset": offset}
         data = _api_get(session, url, headers, page_params)
         if offset == 0:
-            meta_size = data.get("meta", {}).get("size")
+            # `or {}`, а не `.get("meta", {})`: второй вариант возвращает None, когда ключ
+            # ЕСТЬ со значением null, и следующий `.get` роняет AttributeError. Здесь это
+            # не мелочь — функция общая для всех двенадцати обходов ингеста cf-facts, и
+            # исключение внутри неё валит прогон целиком. Стадия A обязана быть неспособной
+            # что-либо сломать (ревью архитектора, VERIFY стадии A).
+            meta_size = (data.get("meta") or {}).get("size")
         rows = data.get("rows", [])
         all_rows.extend(rows)
         pages += 1
