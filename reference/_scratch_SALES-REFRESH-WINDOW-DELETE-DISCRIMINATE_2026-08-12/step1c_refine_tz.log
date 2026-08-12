@@ -1,0 +1,14 @@
+group          date(Bishkek)  missing_rows  distinct_demands   positions_in_archive -> verdict
+G1_marketplace 2026-05-12                2                 0                      0 -> DOCUMENT ABSENT -> hypothesis (a) plausible, needs step 3
+G2_0603        2026-06-03                2                 1                     13 -> DOCUMENT PRESENT -> partial loss, defect (b)
+G3_0604        2026-06-04                1                 1                     17 -> DOCUMENT PRESENT -> partial loss, defect (b)
+G4_0615        2026-06-15                1                 1                      6 -> DOCUMENT PRESENT -> partial loss, defect (b)
+G5_0702        2026-07-02                1                 1                     48 -> DOCUMENT PRESENT -> partial loss, defect (b)
+G6_0711        2026-07-11                1                 1                      1 -> DOCUMENT PRESENT -> partial loss, defect (b)
+G7_0713        2026-07-13                6                 1                     10 -> DOCUMENT PRESENT -> partial loss, defect (b)
+G8_0720        2026-07-20                1                 1                     33 -> DOCUMENT PRESENT -> partial loss, defect (b)
+G9_0721        2026-07-21                8                 0                      0 -> DOCUMENT ABSENT -> hypothesis (a) plausible, needs step 3
+G10_0727a      2026-07-27                1                 1                     11 -> DOCUMENT PRESENT -> partial loss, defect (b)
+G11_0727b      2026-07-27                1                 1                     11 -> DOCUMENT PRESENT -> partial loss, defect (b)
+G12_0729       2026-07-29                1                 1                     18 -> DOCUMENT PRESENT -> partial loss, defect (b)
+G13_0730       2026-07-30                3                 4                     45 -> DOCUMENT PRESENT -> partial loss, defect (b)

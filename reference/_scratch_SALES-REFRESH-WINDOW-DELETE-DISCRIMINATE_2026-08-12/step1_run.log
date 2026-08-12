@@ -1,0 +1,78 @@
+=== date -u (start) ===
+Wed Aug 12 06:56:46 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== downloading archive ===
+Copying gs://msklad-raw-msklad-bi-prod/demand/incremental/weekly_run_salesrefreshwindowdeploy106b.ndjson.gz to file://archive_106b.ndjson.gz
+  
+................................
+    7689 archive_106b.ndjson
+=== running hash recompute + membership check ===
+archive records processed: 7690
+archive unique transaction_id (hash collisions if < n): 7690
+
+=== STEP 1 RESULT: 0 found in archive / 29 not found (of 29) ===
+
+--- FOUND (present in raw archive, means выгрузка вернула, дефект archive->staging) ---
+
+--- NOT FOUND (absent from raw archive entirely) ---
+  MISS   G1_marketplace 2026-05-12 31d135bc-4df8-11f1-0a80-1c8a0053c5b4 786f54b87f1e81ecf04efead3ab59250 rev=1980000.00
+  MISS   G1_marketplace 2026-05-12 31d135bc-4df8-11f1-0a80-1c8a0053c5b4 8e05d4b486a48d5b018df201217eb7f3 rev=0.00
+  MISS   G2_0603        2026-06-03 b3667c34-3ca3-11f0-0a80-15ce0025d38d 143035c08bea9f9bf479465da01dd254 rev=50760.00
+  MISS   G2_0603        2026-06-03 b3667c34-3ca3-11f0-0a80-15ce0025d38d 2dd7b9fda0f4e372442019fde4bdb1f3 rev=77760.00
+  MISS   G3_0604        2026-06-04 18a13a53-87c0-11ef-0a80-1568002f42aa df2d662ffe4189c916953d812391d381 rev=1776.00
+  MISS   G4_0615        2026-06-15 b3667c34-3ca3-11f0-0a80-15ce0025d38d 7339a844877d1d393033bc3e5ab545cf rev=118800.00
+  MISS   G5_0702        2026-07-02 2db2c3dd-5f17-11f1-0a80-1d6500046ebf b4fb95a49cf529aec2f8c243001aaaa5 rev=2538.0108
+  MISS   G6_0711        2026-07-11 b3667c34-3ca3-11f0-0a80-15ce0025d38d 117c9c069f920f1d87d550f755040ce2 rev=4950.00
+  MISS   G7_0713        2026-07-13 4d4bb3c6-7396-11f1-0a80-1357002a9eb8 b52aba22dc70fed8a720cff790470ee9 rev=1560.00
+  MISS   G7_0713        2026-07-13 4d4bb3c6-7396-11f1-0a80-1357002a9eb8 c5ba231dc86abad9b5aa75d77452c6ae rev=1680.00
+  MISS   G7_0713        2026-07-13 4d4bb3c6-7396-11f1-0a80-1357002a9eb8 844460b779964f97e1de571086dfeeef rev=1720.00
+  MISS   G7_0713        2026-07-13 4d4bb3c6-7396-11f1-0a80-1357002a9eb8 dd3e3bb9d3677ac6ee454a833bfd0284 rev=3020.00
+  MISS   G7_0713        2026-07-13 4d4bb3c6-7396-11f1-0a80-1357002a9eb8 5981baeb9fa0cbcf2da68ff6f355762f rev=3200.00
+  MISS   G7_0713        2026-07-13 4d4bb3c6-7396-11f1-0a80-1357002a9eb8 41559c6b38b39dfcbffcfa726b131a8f rev=4000.00
+  MISS   G8_0720        2026-07-20 a08652a8-5e52-11f1-0a80-0cb7000604b7 95a69af832733a3601c244b913e3fb93 rev=1457.3001
+  MISS   G9_0721        2026-07-21 356fb156-83ed-11f1-0a80-173600242e0d b0878364dc7ef46e2e1d971aa18be751 rev=3229.20
+  MISS   G9_0721        2026-07-21 356fb156-83ed-11f1-0a80-173600242e0d 65d08e698b0541471dc772f3d6e91e33 rev=2610.00
+  MISS   G9_0721        2026-07-21 356fb156-83ed-11f1-0a80-173600242e0d 20d93da5fba41b9110bfecce95608aaf rev=3480.00
+  MISS   G9_0721        2026-07-21 356fb156-83ed-11f1-0a80-173600242e0d 0b47b431aaef54236c0c24882a47e9e9 rev=3250.00
+  MISS   G9_0721        2026-07-21 356fb156-83ed-11f1-0a80-173600242e0d c393fa3a9646c4cc699ac38c9fed8680 rev=3455.00
+  MISS   G9_0721        2026-07-21 356fb156-83ed-11f1-0a80-173600242e0d a4e3b8435c8bada17b55c9cce8484ad6 rev=3400.00
+  MISS   G9_0721        2026-07-21 356fb156-83ed-11f1-0a80-173600242e0d ab1ae815d0cf68034d9053606b5c3087 rev=3345.00
+  MISS   G9_0721        2026-07-21 356fb156-83ed-11f1-0a80-173600242e0d b68dfe99b406e5709972520aa83b5899 rev=4250.00
+  MISS   G10_0727a      2026-07-27 75d7c694-78f9-11f0-0a80-077d000b5e09 99e65fddd5719ed7d20095f820e33c0d rev=14875.92
+  MISS   G11_0727b      2026-07-27 f4201bf6-6390-11f0-0a80-0fa2000d75eb 86baf50a0682bc43d9536cf267010f58 rev=7668.00
+  MISS   G12_0729       2026-07-29 79dc242a-1baf-11f1-0a80-138a002eeb35 f79a38d440ea111ccb43e8047fb23a59 rev=3833.985
+  MISS   G13_0730       2026-07-30 b3667c34-3ca3-11f0-0a80-15ce0025d38d 48a33a41ddc9d429a533c0f1f0f21fb1 rev=19872.00
+  MISS   G13_0730       2026-07-30 b3667c34-3ca3-11f0-0a80-15ce0025d38d 4200c0b0d7184d80e1c98aba9d16660b rev=31050.00
+  MISS   G13_0730       2026-07-30 b3667c34-3ca3-11f0-0a80-15ce0025d38d 961a459badd6e45493e4db351ca30d90 rev=49680.00
+
+=== STEP 2: for NOT FOUND transaction_ids, search archive by (agent_id, date) ===
+  group=G1_marketplace date=2026-05-12 agent=31d135bc-4df8-11f1-0a80-1c8a0053c5b4 missing_rows=2 archive_matches_same_agent_date=0 -> DOCUMENT ABSENT (hypothesis a)
+  group=G2_0603        date=2026-06-03 agent=b3667c34-3ca3-11f0-0a80-15ce0025d38d missing_rows=2 archive_matches_same_agent_date=13 -> DOCUMENT PRESENT (partial loss -> defect b)
+  group=G3_0604        date=2026-06-04 agent=18a13a53-87c0-11ef-0a80-1568002f42aa missing_rows=1 archive_matches_same_agent_date=17 -> DOCUMENT PRESENT (partial loss -> defect b)
+  group=G4_0615        date=2026-06-15 agent=b3667c34-3ca3-11f0-0a80-15ce0025d38d missing_rows=1 archive_matches_same_agent_date=6 -> DOCUMENT PRESENT (partial loss -> defect b)
+  group=G5_0702        date=2026-07-02 agent=2db2c3dd-5f17-11f1-0a80-1d6500046ebf missing_rows=1 archive_matches_same_agent_date=48 -> DOCUMENT PRESENT (partial loss -> defect b)
+  group=G6_0711        date=2026-07-11 agent=b3667c34-3ca3-11f0-0a80-15ce0025d38d missing_rows=1 archive_matches_same_agent_date=1 -> DOCUMENT PRESENT (partial loss -> defect b)
+  group=G7_0713        date=2026-07-13 agent=4d4bb3c6-7396-11f1-0a80-1357002a9eb8 missing_rows=6 archive_matches_same_agent_date=10 -> DOCUMENT PRESENT (partial loss -> defect b)
+  group=G8_0720        date=2026-07-20 agent=a08652a8-5e52-11f1-0a80-0cb7000604b7 missing_rows=1 archive_matches_same_agent_date=33 -> DOCUMENT PRESENT (partial loss -> defect b)
+  group=G9_0721        date=2026-07-21 agent=356fb156-83ed-11f1-0a80-173600242e0d missing_rows=8 archive_matches_same_agent_date=0 -> DOCUMENT ABSENT (hypothesis a)
+  group=G10_0727a      date=2026-07-27 agent=75d7c694-78f9-11f0-0a80-077d000b5e09 missing_rows=1 archive_matches_same_agent_date=11 -> DOCUMENT PRESENT (partial loss -> defect b)
+  group=G11_0727b      date=2026-07-27 agent=f4201bf6-6390-11f0-0a80-0fa2000d75eb missing_rows=1 archive_matches_same_agent_date=11 -> DOCUMENT PRESENT (partial loss -> defect b)
+  group=G12_0729       date=2026-07-29 agent=79dc242a-1baf-11f1-0a80-138a002eeb35 missing_rows=1 archive_matches_same_agent_date=18 -> DOCUMENT PRESENT (partial loss -> defect b)
+  group=G13_0730       date=2026-07-30 agent=b3667c34-3ca3-11f0-0a80-15ce0025d38d missing_rows=3 archive_matches_same_agent_date=45 -> DOCUMENT PRESENT (partial loss -> defect b)
+=== date -u (end) ===
+Wed Aug 12 06:56:56 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

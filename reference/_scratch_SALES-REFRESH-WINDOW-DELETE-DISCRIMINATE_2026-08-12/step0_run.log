@@ -1,0 +1,68 @@
+=== date -u (start) ===
+Wed Aug 12 06:55:03 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud storage ls -L (object stat) ===
+gs://msklad-raw-msklad-bi-prod/demand/incremental/weekly_run_salesrefreshwindowdeploy106b.ndjson.gz:
+  Creation Time:               2026-08-12T05:02:06Z
+  Update Time:                 2026-08-12T05:02:06Z
+  Storage Class Update Time:   2026-08-12T05:02:06Z
+  Storage Class:               STANDARD
+  Content-Length:              283445
+  Content-Type:                application/x-ndjson
+  Hash (CRC32C):               cSdQ/w==
+  Hash (MD5):                  YtcPvTNXoygddylxXW4Qvg==
+  ETag:                        CMTUu+mnmpYDEAE=
+  Generation:                  1786510926867012
+  Metageneration:              1
+  ACL:
+  [
+    {
+      "entity": "project-owners-420804682491",
+      "projectTeam": {
+        "projectNumber": "420804682491",
+        "team": "owners"
+      },
+      "role": "OWNER"
+    },
+    {
+      "entity": "project-editors-420804682491",
+      "projectTeam": {
+        "projectNumber": "420804682491",
+        "team": "editors"
+      },
+      "role": "OWNER"
+    },
+    {
+      "entity": "project-viewers-420804682491",
+      "projectTeam": {
+        "projectNumber": "420804682491",
+        "team": "viewers"
+      },
+      "role": "READER"
+    },
+    {
+      "email": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+      "entity": "user-etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+      "role": "OWNER"
+    }
+  ]
+TOTAL: 1 objects, 283445 bytes (276.80kiB)
+=== gcloud storage ls (prefix listing, sanity) ===
+gs://msklad-raw-msklad-bi-prod/demand/incremental/weekly_run_salesrefreshwindowdeploy106b.ndjson.gz
+=== date -u (end) ===
+Wed Aug 12 06:55:15 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
