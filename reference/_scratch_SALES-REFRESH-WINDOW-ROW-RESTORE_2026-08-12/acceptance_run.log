@@ -1,0 +1,99 @@
+=== date -u (start) ===
+Wed Aug 12 11:24:24 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== ПРИЁМКА 1: наличие, сумма revenue_kgs, рост числа строк ===
+--- присутствие каждого id ровно один раз ---
+[
+  {
+    "n": "1", 
+    "revenue_kgs": "1980000.0", 
+    "transaction_id": "786f54b87f1e81ecf04efead3ab59250"
+  }, 
+  {
+    "n": "1", 
+    "revenue_kgs": "0.0", 
+    "transaction_id": "8e05d4b486a48d5b018df201217eb7f3"
+  }
+]
+--- сумма revenue_kgs по обеим строкам вместе (ожидание 1980000.00) ---
+[
+  {
+    "revenue_kgs_sum": "1980000.0"
+  }
+]
+--- общее число строк target СЕЙЧАС (ожидание 42986 + 2) ---
+[
+  {
+    "row_count_after": "42988"
+  }
+]
+=== ПРИЁМКА 2 (ГЛАВНОЕ): разность SUM(revenue_kgs) за 2026-05-01..2026-05-31 снимок минус живая (ожидание ТОЧНО 1630239.81) ===
+[
+  {
+    "diff": "1630239.808499962", 
+    "live_sum": "9.521420580140002E7", 
+    "snap_sum": "9.684444560989998E7"
+  }
+]
+=== ПРИЁМКА 3: разность раскладывается на семь именованных идентификаторов сирот и ни на что ещё ===
+--- строки, присутствующие в снимке за май, но отсутствующие в живой таблице (LEFT JOIN, COUNT(*)) ---
+[
+  {
+    "revenue_kgs": "619752.0", 
+    "transaction_date": "2026-05-09", 
+    "transaction_id": "40a28a8926d5110f8beb82e0a9952bca"
+  }, 
+  {
+    "revenue_kgs": "5400.0", 
+    "transaction_date": "2026-05-26", 
+    "transaction_id": "4c22df388e46d8141ba12fd1572f011c"
+  }, 
+  {
+    "revenue_kgs": "59240.5185", 
+    "transaction_date": "2026-05-07", 
+    "transaction_id": "606576a8890ee120b127c09a25cafdfd"
+  }, 
+  {
+    "revenue_kgs": "30750.0", 
+    "transaction_date": "2026-05-26", 
+    "transaction_id": "8ece1fa6771e0271522dce7b263f9283"
+  }, 
+  {
+    "revenue_kgs": "33701.25", 
+    "transaction_date": "2026-05-26", 
+    "transaction_id": "a28436b786066e7a886db6b86d59eae8"
+  }, 
+  {
+    "revenue_kgs": "843045.0", 
+    "transaction_date": "2026-05-09", 
+    "transaction_id": "d257b8f9cca0c9e251ccfd052bfcc57b"
+  }, 
+  {
+    "revenue_kgs": "38351.04", 
+    "transaction_date": "2026-05-07", 
+    "transaction_id": "d564a1906e5fd33ca375200be5da039b"
+  }
+]
+--- COUNT(*) той же выборки (ожидание ровно 7) ---
+[
+  {
+    "n_missing": "7"
+  }
+]
+=== date -u (end) ===
+Wed Aug 12 11:24:41 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
