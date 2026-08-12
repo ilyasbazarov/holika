@@ -5,6 +5,7 @@ from config import (
     DQ_CURRENCY_MAX_AVG_REV,
     DQ_FRESHNESS_PURCHASES_MAX_HOURS, DQ_FRESHNESS_RETURNS_MAX_HOURS,
     DQ_FRESHNESS_INVENTORY_MAX_HOURS, DQ_FRESHNESS_INVOICES_MAX_HOURS,
+    DQ_FRESHNESS_PAYMENTS_MAX_HOURS, DQ_FRESHNESS_COMMISSIONREPORTIN_MAX_HOURS,
 )
 from helpers import get_bq_client, run_scalar, run_row, write_dq_results
 
@@ -46,14 +47,22 @@ def check_drift(bq):
     
     if not row or row.get("target_date") is None:
         return False, "target_date=NULL"
-        
+
     target_rev  = float(row.get("target_rev", 0) or 0)
     day_of_week = int(row.get("day_of_week", 2) or 2)
     target_date = row.get("target_date", "")
     is_weekend  = day_of_week in (1, 7)
     threshold   = DQ_DRIFT_WEEKEND_THRESHOLD if is_weekend else DQ_DRIFT_THRESHOLD
     day_label   = "weekend" if is_weekend else "weekday"
-    
+
+    # DQ-GATE-METRIC-REDESIGN (ADR-153, кандидат 1): исход "документов не было
+    # вовсе" уходит в отдельную диагностическую функцию check_drift_zero_docs
+    # (всегда passed=True, notify, не блокирует promote). Здесь, в блокирующем
+    # чеке, остаётся только класс "документы есть, выручка ниже нормы".
+    if target_rev == 0:
+        return True, (f"yesterday_rev=0, target_date={target_date} "
+                       f"(документов не было — см. check_drift_zero_docs, notify)")
+
     # ma7 считаем за 7 полных дней ДО вчерашнего (T-8 до T-2)
     ma7 = run_scalar(bq, f"""
         SELECT COALESCE(AVG(daily_rev),0) FROM (
@@ -82,6 +91,45 @@ def check_drift(bq):
     return (ratio >= threshold,
             f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, ratio={ratio:.2f}, "
             f"threshold={threshold} ({day_label}), target_date={target_date}")
+
+def check_drift_zero_docs(bq):
+    # DQ-GATE-METRIC-REDESIGN (ADR-153, кандидат 1): диагностика по исходу
+    # "документов не было вовсе" (target_rev == 0). ВСЕГДА passed=True — не
+    # блокирует promote. Механизм "две функции" по образцу пары
+    # technical/business блока freshness ниже. НЕ подключена к CHECKS —
+    # доставка исхода в telegram-канал notify — отдельная задача класса B
+    # (вторая лог-метрика, ADR-153 §Последствия).
+    row = run_row(bq, f"""
+        WITH target_d AS (
+            SELECT DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY) AS d
+        )
+        SELECT
+            CAST(target_d.d AS STRING) AS target_date,
+            EXTRACT(DAYOFWEEK FROM target_d.d) AS day_of_week,
+            COALESCE(SUM(s.revenue_kgs), 0) AS target_rev
+        FROM target_d
+        LEFT JOIN `{STAGING}` s
+          ON DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek') = target_d.d
+        GROUP BY target_d.d
+    """)
+
+    if not row or row.get("target_date") is None:
+        return True, "target_date=NULL (notify-only, не блокирует)"
+
+    target_rev  = float(row.get("target_rev", 0) or 0)
+    target_date = row.get("target_date", "")
+
+    ma7 = run_scalar(bq, f"""
+        SELECT COALESCE(AVG(daily_rev),0) FROM (
+            SELECT transaction_date, SUM(revenue_kgs) AS daily_rev
+            FROM `{CORE_FACT}`
+            WHERE transaction_date >= DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 8 DAY)
+              AND transaction_date  <  DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY)
+            GROUP BY 1)
+    """) or 0.0
+
+    return True, (f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, target_date={target_date} "
+                   f"(notify, не блокирует promote)")
 
 def check_fk_integrity(bq):
     orphans = run_scalar(bq, f"""
@@ -137,18 +185,27 @@ CHECKS = [
 ]
 
 # ═══════════════════════════════════════════════════════════════════════════
-# DQ-FRESHNESS-COVERAGE (подготовка, класс A, 2026-08-09) — проверки свежести
-# для шести таблиц ядра без наблюдателя. НЕ включены в CHECKS выше — эта
-# задача не подключает проверки к живому гейту (подключение/деплой —
-# отдельная задача класса B, "DQ-FRESHNESS-COVERAGE, деплой", мандат не
-# выдан). Полное обоснование, вывод порогов и dry_run-логи —
-# reference/dq_freshness_coverage_2026-08-09.md.
+# DQ-FRESHNESS-COVERAGE (подготовка, класс A, 2026-08-09 + остаток 2026-08-12)
+# — проверки свежести для шести таблиц ядра без наблюдателя. НЕ включены в
+# CHECKS выше — эта задача не подключает проверки к живому гейту (подключение/
+# деплой — отдельная задача класса B, "DQ-FRESHNESS-COVERAGE, деплой", мандат
+# не выдан). Полное обоснование, вывод порогов и dry_run-логи —
+# reference/dq_freshness_coverage_2026-08-09.md (четыре таблицы) +
+# reference/dq_cfdq_prep_2026-08-12.md (остаток: fact_payments,
+# fact_commissionreportin, ADR-155).
 #
 # Форма (A)/(B) — reference/invoices_loader_design_2026-08-02.md §9.2:
 #   (A) техническая свежесть — блокирующая ПО ФОРМЕ (passed=False возможен),
 #       но нигде не подключена; порог = 2 × период каденции.
 #   (B) бизнес-свежесть — диагностика, ВСЕГДА passed=True, порога нет
 #       (осознанный отказ — нет эмпирики пауз между документами).
+#
+# Все шесть таблиц (fact_purchases/fact_returns/fact_inventory/
+# fact_customer_invoices/fact_payments/fact_commissionreportin) теперь несут
+# обе проверки (A)/(B). У последних двух построчный стамп _loaded_at
+# (cf-finance/main.py:72, cf-loss-commission/main.py:149) не мешает порогу
+# (A) — MAX(_loaded_at) остаётся верным, direction ошибки безопасное
+# (ADR-155); поле distinct_load_stamps для них неинформативно.
 # ═══════════════════════════════════════════════════════════════════════════
 
 # ─── core.fact_purchases — часовая каденция (step_purchases, NON-BLOCKING) ───
@@ -228,20 +285,30 @@ def check_freshness_inventory_business(bq):
 
 # ─── core.fact_payments — суточная каденция (finance-daily-update) ───
 #
-# ⚠ Проверка (A) НЕ ЗАВЕДЕНА. Инвариант "один стамп _loaded_at на прогон"
-# ОПРОВЕРГНУТ чтением reference/code/cf-finance/main.py:72 —
-# `"_loaded_at": datetime.datetime.now(datetime.timezone.utc).strftime(...)`
+# Построчный стамп _loaded_at (cf-finance/main.py:72 — datetime.now()
 # вызывается ОТДЕЛЬНО на каждую строку внутри цикла постранично, а не один
-# раз на прогон (форма, названная антипаттерном в
-# reference/invoices_loader_design_2026-08-02.md §6.4: "разброс по
-# микросекундам, который дал бы datetime.now() внутри цикла (форма
-# cf-finance/main.py:68)" — тот же файл, тот же класс дефекта). Без
-# единого стампа "MAX(_loaded_at)" остаётся вычислимым, но готовность-условие
-# "COUNT(DISTINCT _loaded_at) == 1 на прогон" не выполняется, а именно на
-# нём построена семантика проверки (A) по образцу invoices. Открытый вопрос
-# зафиксирован в reference/dq_freshness_coverage_2026-08-09.md, порог не
-# назначен (config.py), функция технической проверки не пишется как готовая
-# — только бизнес-диагностика ниже (она от инварианта не зависит).
+# раз на прогон) снят с критического пути этой проверки (ADR-155): MAX по
+# построчным стампам равен моменту окончания прогона, отличие от единого
+# стампа — минуты против порога 48ч, направление ошибки безопасное.
+# distinct_load_stamps для этой таблицы НЕ читать как число прогонов —
+# построчный стамп даёт разброс внутри одного прогона. Дефект самого
+# загрузчика остаётся отдельной строкой (LOADER-LOADED-AT-STAMP, ADR-155 §4),
+# фикс-форвардом в cf-finance, вне scope этой проверки.
+
+def check_freshness_payments_technical(bq):
+    row = run_row(bq, f"""
+        SELECT
+            TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
+            COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
+            COUNT(*) AS n_rows
+        FROM `{CORE_PAYMENTS}`
+    """)
+    if not row or row.get("load_lag_hours") is None:
+        return False, "load_lag_hours=NULL (таблица пустая)"
+    lag = row["load_lag_hours"]
+    return (lag <= DQ_FRESHNESS_PAYMENTS_MAX_HOURS,
+            f"load_lag_hours={lag}, distinct_load_stamps={row['distinct_load_stamps']} "
+            f"(построчный стамп, не стамп прогона), n_rows={row['n_rows']}")
 
 def check_freshness_payments_business(bq):
     row = run_row(bq, f"""
@@ -254,13 +321,28 @@ def check_freshness_payments_business(bq):
 
 # ─── core.fact_commissionreportin — суточная каденция (loss-commission-daily-update) ───
 #
-# ⚠ Проверка (A) НЕ ЗАВЕДЕНА. Тот же класс дефекта, что у fact_payments выше:
-# reference/code/cf-loss-commission/main.py:149 (fetch_commission) —
-# `"_loaded_at": datetime.datetime.utcnow().isoformat()` вызывается ОТДЕЛЬНО
-# на каждую строку (isoformat() несёт микросекунды, разброс гарантирован при
-# любом прогоне длиннее одной микросекунды). Тот же дефект пронаблюдён и в
-# соседней fetch_loss (main.py:123, вне scope этой задачи). Открытый вопрос —
-# reference/dq_freshness_coverage_2026-08-09.md.
+# Тот же класс дефекта построчного стампа, что у fact_payments выше
+# (cf-loss-commission/main.py:149, fetch_commission —
+# datetime.utcnow().isoformat() отдельно на каждую строку), снят с
+# критического пути этой проверки тем же основанием (ADR-155). Тот же дефект
+# пронаблюдён и в соседней fetch_loss (main.py:123, core.fact_loss, вне scope
+# этой задачи). distinct_load_stamps для этой таблицы НЕ читать как число
+# прогонов.
+
+def check_freshness_commissionreportin_technical(bq):
+    row = run_row(bq, f"""
+        SELECT
+            TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
+            COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
+            COUNT(*) AS n_rows
+        FROM `{CORE_COMMISSIONREPORTIN}`
+    """)
+    if not row or row.get("load_lag_hours") is None:
+        return False, "load_lag_hours=NULL (таблица пустая)"
+    lag = row["load_lag_hours"]
+    return (lag <= DQ_FRESHNESS_COMMISSIONREPORTIN_MAX_HOURS,
+            f"load_lag_hours={lag}, distinct_load_stamps={row['distinct_load_stamps']} "
+            f"(построчный стамп, не стамп прогона), n_rows={row['n_rows']}")
 
 def check_freshness_commissionreportin_business(bq):
     row = run_row(bq, f"""
