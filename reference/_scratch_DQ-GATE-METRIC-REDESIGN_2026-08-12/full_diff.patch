@@ -33,7 +33,7 @@ index a1f31e6..d3ebcd9 100644
 +# datetime.utcnow() отдельно на каждую строку). Поле distinct_load_stamps для
 +# этой таблицы неинформативно — построчный стамп, не стамп прогона.
 diff --git a/reference/code/cf-dq/main.py b/reference/code/cf-dq/main.py
-index 26bdb10..7771aa7 100644
+index 26bdb10..5c49b2d 100644
 --- a/reference/code/cf-dq/main.py
 +++ b/reference/code/cf-dq/main.py
 @@ -5,6 +5,7 @@ from config import (
@@ -90,7 +90,7 @@ index 26bdb10..7771aa7 100644
      # ma7 считаем за 7 полных дней ДО вчерашнего (T-8 до T-2)
      ma7 = run_scalar(bq, f"""
          SELECT COALESCE(AVG(daily_rev),0) FROM (
-@@ -83,6 +113,49 @@ def check_drift(bq):
+@@ -83,6 +113,61 @@ def check_drift(bq):
              f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, ratio={ratio:.2f}, "
              f"threshold={threshold} ({day_label}), target_date={target_date}")
  
@@ -105,42 +105,54 @@ index 26bdb10..7771aa7 100644
 +    # msklad_dq_gate_failed этот исход не попадает, поскольку passed всегда
 +    # True; доставка в telegram-канал notify отдельным каналом — вне scope,
 +    # отдельная задача класса B (вторая лог-метрика, ADR-153 §Последствия).
-+    row = run_row(bq, f"""
-+        WITH target_d AS (
-+            SELECT DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY) AS d
-+        )
-+        SELECT
-+            CAST(target_d.d AS STRING) AS target_date,
-+            EXTRACT(DAYOFWEEK FROM target_d.d) AS day_of_week,
-+            COALESCE(SUM(s.revenue_kgs), 0) AS target_rev
-+        FROM target_d
-+        LEFT JOIN `{STAGING}` s
-+          ON DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek') = target_d.d
-+        GROUP BY target_d.d
-+    """)
++    #
++    # Правка ревью (2026-08-12, третий заход): main() перехватывает
++    # исключение любой проверки в CHECKS и превращает его в passed=False
++    # (reference/code/cf-dq/main.py, цикл for name, fn in CHECKS) — контракт
++    # агрегации МЕНЯТЬ НЕЛЬЗЯ (ADR-153 §2: форма "две функции" выбрана именно
++    # чтобы не трогать main()). Значит гарантия "ВСЕГДА passed=True" обязана
++    # держаться ВНУТРИ этой функции: оба запроса обёрнуты в try/except,
++    # любое исключение (испорченный ответ BQ, таймаут, что угодно) уходит в
++    # notify-detail, а не в блок гейта.
++    try:
++        row = run_row(bq, f"""
++            WITH target_d AS (
++                SELECT DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY) AS d
++            )
++            SELECT
++                CAST(target_d.d AS STRING) AS target_date,
++                EXTRACT(DAYOFWEEK FROM target_d.d) AS day_of_week,
++                COALESCE(SUM(s.revenue_kgs), 0) AS target_rev
++            FROM target_d
++            LEFT JOIN `{STAGING}` s
++              ON DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek') = target_d.d
++            GROUP BY target_d.d
++        """)
 +
-+    if not row or row.get("target_date") is None:
-+        return True, "target_date=NULL (notify-only, не блокирует)"
++        if not row or row.get("target_date") is None:
++            return True, "target_date=NULL (notify-only, не блокирует)"
 +
-+    target_rev  = float(row.get("target_rev", 0) or 0)
-+    target_date = row.get("target_date", "")
++        target_rev  = float(row.get("target_rev", 0) or 0)
++        target_date = row.get("target_date", "")
 +
-+    ma7 = run_scalar(bq, f"""
-+        SELECT COALESCE(AVG(daily_rev),0) FROM (
-+            SELECT transaction_date, SUM(revenue_kgs) AS daily_rev
-+            FROM `{CORE_FACT}`
-+            WHERE transaction_date >= DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 8 DAY)
-+              AND transaction_date  <  DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY)
-+            GROUP BY 1)
-+    """) or 0.0
++        ma7 = run_scalar(bq, f"""
++            SELECT COALESCE(AVG(daily_rev),0) FROM (
++                SELECT transaction_date, SUM(revenue_kgs) AS daily_rev
++                FROM `{CORE_FACT}`
++                WHERE transaction_date >= DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 8 DAY)
++                  AND transaction_date  <  DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY)
++                GROUP BY 1)
++        """) or 0.0
 +
-+    return True, (f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, target_date={target_date} "
-+                   f"(notify, не блокирует promote)")
++        return True, (f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, target_date={target_date} "
++                       f"(notify, не блокирует promote)")
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 +
  def check_fk_integrity(bq):
      orphans = run_scalar(bq, f"""
          SELECT COUNT(DISTINCT s.product_id) FROM `{STAGING}` s
-@@ -130,6 +203,7 @@ def check_currency_normalization(bq):
+@@ -130,6 +215,7 @@ def check_currency_normalization(bq):
  CHECKS = [
      ("not_empty",              check_not_empty),
      ("drift_check",            check_drift),
@@ -148,7 +160,7 @@ index 26bdb10..7771aa7 100644
      ("fk_integrity",           check_fk_integrity),
      ("freshness",              check_freshness),
      ("margin_sanity",          check_margin_sanity),
-@@ -137,18 +211,27 @@ CHECKS = [
+@@ -137,18 +223,27 @@ CHECKS = [
  ]
  
  # ═══════════════════════════════════════════════════════════════════════════
@@ -182,7 +194,7 @@ index 26bdb10..7771aa7 100644
  # ═══════════════════════════════════════════════════════════════════════════
  
  # ─── core.fact_purchases — часовая каденция (step_purchases, NON-BLOCKING) ───
-@@ -228,20 +311,30 @@ def check_freshness_inventory_business(bq):
+@@ -228,20 +323,30 @@ def check_freshness_inventory_business(bq):
  
  # ─── core.fact_payments — суточная каденция (finance-daily-update) ───
  #
@@ -226,7 +238,7 @@ index 26bdb10..7771aa7 100644
  
  def check_freshness_payments_business(bq):
      row = run_row(bq, f"""
-@@ -254,13 +347,28 @@ def check_freshness_payments_business(bq):
+@@ -254,13 +359,28 @@ def check_freshness_payments_business(bq):
  
  # ─── core.fact_commissionreportin — суточная каденция (loss-commission-daily-update) ───
  #

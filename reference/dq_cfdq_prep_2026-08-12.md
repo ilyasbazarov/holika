@@ -560,10 +560,10 @@ index e37d4e1..7771aa7 100644
      ("currency_normalization", check_currency_normalization),
 ```
 
-Совокупный дифф ветки против `main` (оба захода, оба файла) —
-`reference/_scratch_DQ-GATE-METRIC-REDESIGN_2026-08-12/full_diff.patch` (обновлён, 264 строки,
+Совокупный дифф ветки против `main` (все три захода, оба файла) —
+`reference/_scratch_DQ-GATE-METRIC-REDESIGN_2026-08-12/full_diff.patch` (обновлён после §11,
 затрагивает ровно `reference/code/cf-dq/main.py` + `reference/code/cf-dq/config.py`,
-`git diff --stat`: `main.py | 164 …`, `config.py | 26 …`).
+`git diff --stat`: `main.py | 176 …`, `config.py | 26 …`).
 
 ### 9.6 Приёмка (4) — `CHECKS` несёт `drift_zero_docs` строго один раз, состав проверен построчно
 
@@ -623,7 +623,7 @@ IDENTICAL
 как «сутки без документов» на фоне обычной торговли), и не пересекается со случаем Б
 (`target_rev>0`).
 
-## 10. Самодостаточность (обновлено)
+## 10. Самодостаточность (первые два захода)
 
 Документ содержит: приёмку `py_compile` первого и второго заходов (§1, §9.3); `dry_run` всех
 изменённых/новых SQL с байтовыми оценками и рамкой `date -u`/`gcloud auth list` (§2, §9.4); дифф
@@ -632,3 +632,184 @@ IDENTICAL
 номерами (§4, §9.6); побайтовое сравнение ветки `ma7 == 0` внутри `check_drift` против прода,
 подтверждённое после обоих заходов (§5, §9.7); таблицы старое/новое поведение на ТРЁХ случаях —
 двух исходных (§6) плюс найденном ревью (§9.8); явный список НЕ сделанного (§7).
+
+---
+
+## 11. Правка по ревью архитектора (2026-08-12, третий заход) — `check_drift_zero_docs` под `try/except`
+
+### 11.1 Дефект своими словами
+
+`check_drift_zero_docs` объявлена «ВСЕГДА `passed=True`» (§9.2), но эта гарантия держалась только
+на отсутствии исключения внутри тела функции. Общий цикл `main()` (`reference/code/cf-dq/main.py`,
+`for name, fn in CHECKS: … try: passed, detail = fn(bq) except Exception as e: passed, detail =
+False, f"EXCEPTION: {e}"`) перехватывает исключение ЛЮБОЙ проверки и превращает его в
+`passed=False`, что роняет `all_passed`. Оба запроса `check_drift_zero_docs` (запрос `target_d`/
+`target_rev` и запрос `ma7`) способны бросить исключение (испорченный ответ BigQuery, таймаут,
+что угодно) — то есть до правки функция была НОВЫМ источником ложной блокировки гейта, ровно тем
+классом дефекта, который сама задача (§9.1, `ADR-152`) устраняла в другом месте той же функции.
+
+### 11.2 Правка
+
+Оба запроса (и производная от них ветвление) обёрнуты в `try/except Exception as e`; `except`
+возвращает `True, f"EXCEPTION (notify-only, не блокирует): {e}"`. `main()` и остальные пять
+исходных проверок (`not_empty`/`drift_check`/`fk_integrity`/`freshness`/`margin_sanity`/
+`currency_normalization`) НЕ трогались — контракт агрегации меняться не должен (`ADR-153 §2`:
+форма «две функции» выбрана архитектором именно для того, чтобы `main()` остался прежним).
+Правка целиком локальна внутри тела `check_drift_zero_docs`.
+
+### 11.3 Приёмка (1) — `py_compile`
+
+```
+$ python3 -m py_compile reference/code/cf-dq/main.py reference/code/cf-dq/config.py && echo "PY_COMPILE_RC=0"
+PY_COMPILE_RC=0
+```
+
+### 11.4 Приёмка (2) — дифф целиком, затронут ровно один файл
+
+```
+$ git diff --stat -- reference/code/cf-dq/main.py reference/code/cf-dq/config.py
+ reference/code/cf-dq/main.py | 72 ++++++++++++++++++++++++++------------------
+ 1 file changed, 42 insertions(+), 30 deletions(-)
+```
+
+`config.py` третьим заходом не затронут (правка не касается порогов). Дифф третьего захода —
+`reference/_scratch_DQ-GATE-METRIC-REDESIGN_2026-08-12/round3_diff.patch`, воспроизведён дословно:
+
+```diff
+diff --git a/reference/code/cf-dq/main.py b/reference/code/cf-dq/main.py
+index 7771aa7..5c49b2d 100644
+--- a/reference/code/cf-dq/main.py
++++ b/reference/code/cf-dq/main.py
+@@ -124,37 +124,49 @@ def check_drift_zero_docs(bq):
+     # msklad_dq_gate_failed этот исход не попадает, поскольку passed всегда
+     # True; доставка в telegram-канал notify отдельным каналом — вне scope,
+     # отдельная задача класса B (вторая лог-метрика, ADR-153 §Последствия).
+-    row = run_row(bq, f"""
+-        WITH target_d AS (
+-            SELECT DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY) AS d
+-        )
+-        SELECT
+-            CAST(target_d.d AS STRING) AS target_date,
+-            EXTRACT(DAYOFWEEK FROM target_d.d) AS day_of_week,
+-            COALESCE(SUM(s.revenue_kgs), 0) AS target_rev
+-        FROM target_d
+-        LEFT JOIN `{STAGING}` s
+-          ON DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek') = target_d.d
+-        GROUP BY target_d.d
+-    """)
+-
+-    if not row or row.get("target_date") is None:
+-        return True, "target_date=NULL (notify-only, не блокирует)"
+-
+-    target_rev  = float(row.get("target_rev", 0) or 0)
+-    target_date = row.get("target_date", "")
+-
+-    ma7 = run_scalar(bq, f"""
+-        SELECT COALESCE(AVG(daily_rev),0) FROM (
+-            SELECT transaction_date, SUM(revenue_kgs) AS daily_rev
+-            FROM `{CORE_FACT}`
+-            WHERE transaction_date >= DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 8 DAY)
+-              AND transaction_date  <  DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY)
+-            GROUP BY 1)
+-    """) or 0.0
++    #
++    # Правка ревью (2026-08-12, третий заход): main() перехватывает
++    # исключение любой проверки в CHECKS и превращает его в passed=False
++    # (reference/code/cf-dq/main.py, цикл for name, fn in CHECKS) — контракт
++    # агрегации МЕНЯТЬ НЕЛЬЗЯ (ADR-153 §2: форма "две функции" выбрана именно
++    # чтобы не трогать main()). Значит гарантия "ВСЕГДА passed=True" обязана
++    # держаться ВНУТРИ этой функции: оба запроса обёрнуты в try/except,
++    # любое исключение (испорченный ответ BQ, таймаут, что угодно) уходит в
++    # notify-detail, а не в блок гейта.
++    try:
++        row = run_row(bq, f"""
++            WITH target_d AS (
++                SELECT DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY) AS d
++            )
++            SELECT
++                CAST(target_d.d AS STRING) AS target_date,
++                EXTRACT(DAYOFWEEK FROM target_d.d) AS day_of_week,
++                COALESCE(SUM(s.revenue_kgs), 0) AS target_rev
++            FROM target_d
++            LEFT JOIN `{STAGING}` s
++              ON DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek') = target_d.d
++            GROUP BY target_d.d
++        """)
++
++        if not row or row.get("target_date") is None:
++            return True, "target_date=NULL (notify-only, не блокирует)"
++
++        target_rev  = float(row.get("target_rev", 0) or 0)
++        target_date = row.get("target_date", "")
++
++        ma7 = run_scalar(bq, f"""
++            SELECT COALESCE(AVG(daily_rev),0) FROM (
++                SELECT transaction_date, SUM(revenue_kgs) AS daily_rev
++                FROM `{CORE_FACT}`
++                WHERE transaction_date >= DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 8 DAY)
++                  AND transaction_date  <  DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY)
++                GROUP BY 1)
++        """) or 0.0
+ 
+-    return True, (f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, target_date={target_date} "
+-                   f"(notify, не блокирует promote)")
++        return True, (f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, target_date={target_date} "
++                       f"(notify, не блокирует promote)")
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ def check_fk_integrity(bq):
+     orphans = run_scalar(bq, f"""
+```
+
+Запросы внутри `try` — те же текстовые формы, что уже дважды прошли `--dry_run` (§9.4); новых
+SQL-конструкций правка не вносит (только `try:`/`except:` вокруг существующего тела), повторный
+`dry_run` не требуется по приёмке этого захода.
+
+### 11.5 Приёмка (3) — печать совпавших строк: ни один путь функции не возвращает `False`
+
+```
+$ sed -n '/^def check_drift_zero_docs/,/^def check_fk_integrity/p' reference/code/cf-dq/main.py | grep -n "return "
+37:            return True, "target_date=NULL (notify-only, не блокирует)"
+51:        return True, (f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, target_date={target_date} "
+54:        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+```
+
+Все ТРИ `return` внутри тела функции (от объявления `def check_drift_zero_docs` до следующего
+`def check_fk_integrity`) — `True`. Путей, возвращающих `False`, нет: ранний выход при
+`target_date IS NULL`, штатный путь с числами, аварийный путь по исключению — все три ветки
+несут константу `True`. Гарантия «ВСЕГДА `passed=True`» теперь верна структурно, а не только по
+отсутствию ошибок при чтении.
+
+### 11.6 Приёмка (4) — `main()` не тронут
+
+```
+$ git diff -- reference/code/cf-dq/main.py | grep -n "def main(request)"
+$ echo "выдача пуста — main() не в диффе"
+выдача пуста — main() не в диффе
+```
+
+Единственный хунк диффа третьего захода (`@@ -124,37 +124,49 @@ def check_drift_zero_docs(bq):`)
+лежит целиком внутри тела `check_drift_zero_docs`; строка объявления `def main(request):`
+(`reference/code/cf-dq/main.py:410`) в дифф не попала.
+
+### 11.7 Что этой правкой НЕ делалось
+
+- `main()` и цикл агрегации `for name, fn in CHECKS` не менялись — контракт (`ADR-153 §2`)
+  сохранён дословно.
+- Остальные пять исходных проверок и четыре функции свежести (`fact_payments`/
+  `fact_commissionreportin`) не трогались.
+- `config.py` не трогался.
+- Текст SQL внутри `try` не менялся — те же запросы, что уже проверены `--dry_run` (§9.4).
+- Ничего не задеплоено.
+
+## 12. Самодостаточность (итог, все три захода)
+
+Документ содержит: приёмку `py_compile` всех трёх заходов (§1, §9.3, §11.3); `dry_run` всех
+SQL-запросов, введённых первым и вторым заходом, с байтовыми оценками (§2, §9.4) — третий заход
+новых SQL-конструкций не вносит (§11.4); дифф каждого захода по отдельности плюс совокупный дифф
+ветки против `main`, во всех разрезах ровно два файла (`main.py`+`config.py`) (§3, §9.5, §11.4);
+грепы, подтверждающие точный состав `CHECKS` (§4, §9.6) и отсутствие `return False` внутри
+`check_drift_zero_docs` (§11.5); подтверждение, что `main()` не в диффе третьего захода (§11.6);
+побайтовое сравнение ветки `ma7 == 0` против прода (§5, §9.7); таблицы старое/новое поведение на
+трёх случаях (§6, §9.8); списки НЕ сделанного по каждому заходу (§7, §11.7).

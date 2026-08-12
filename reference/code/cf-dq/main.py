@@ -124,37 +124,49 @@ def check_drift_zero_docs(bq):
     # msklad_dq_gate_failed этот исход не попадает, поскольку passed всегда
     # True; доставка в telegram-канал notify отдельным каналом — вне scope,
     # отдельная задача класса B (вторая лог-метрика, ADR-153 §Последствия).
-    row = run_row(bq, f"""
-        WITH target_d AS (
-            SELECT DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY) AS d
-        )
-        SELECT
-            CAST(target_d.d AS STRING) AS target_date,
-            EXTRACT(DAYOFWEEK FROM target_d.d) AS day_of_week,
-            COALESCE(SUM(s.revenue_kgs), 0) AS target_rev
-        FROM target_d
-        LEFT JOIN `{STAGING}` s
-          ON DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek') = target_d.d
-        GROUP BY target_d.d
-    """)
+    #
+    # Правка ревью (2026-08-12, третий заход): main() перехватывает
+    # исключение любой проверки в CHECKS и превращает его в passed=False
+    # (reference/code/cf-dq/main.py, цикл for name, fn in CHECKS) — контракт
+    # агрегации МЕНЯТЬ НЕЛЬЗЯ (ADR-153 §2: форма "две функции" выбрана именно
+    # чтобы не трогать main()). Значит гарантия "ВСЕГДА passed=True" обязана
+    # держаться ВНУТРИ этой функции: оба запроса обёрнуты в try/except,
+    # любое исключение (испорченный ответ BQ, таймаут, что угодно) уходит в
+    # notify-detail, а не в блок гейта.
+    try:
+        row = run_row(bq, f"""
+            WITH target_d AS (
+                SELECT DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY) AS d
+            )
+            SELECT
+                CAST(target_d.d AS STRING) AS target_date,
+                EXTRACT(DAYOFWEEK FROM target_d.d) AS day_of_week,
+                COALESCE(SUM(s.revenue_kgs), 0) AS target_rev
+            FROM target_d
+            LEFT JOIN `{STAGING}` s
+              ON DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek') = target_d.d
+            GROUP BY target_d.d
+        """)
 
-    if not row or row.get("target_date") is None:
-        return True, "target_date=NULL (notify-only, не блокирует)"
+        if not row or row.get("target_date") is None:
+            return True, "target_date=NULL (notify-only, не блокирует)"
 
-    target_rev  = float(row.get("target_rev", 0) or 0)
-    target_date = row.get("target_date", "")
+        target_rev  = float(row.get("target_rev", 0) or 0)
+        target_date = row.get("target_date", "")
 
-    ma7 = run_scalar(bq, f"""
-        SELECT COALESCE(AVG(daily_rev),0) FROM (
-            SELECT transaction_date, SUM(revenue_kgs) AS daily_rev
-            FROM `{CORE_FACT}`
-            WHERE transaction_date >= DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 8 DAY)
-              AND transaction_date  <  DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY)
-            GROUP BY 1)
-    """) or 0.0
+        ma7 = run_scalar(bq, f"""
+            SELECT COALESCE(AVG(daily_rev),0) FROM (
+                SELECT transaction_date, SUM(revenue_kgs) AS daily_rev
+                FROM `{CORE_FACT}`
+                WHERE transaction_date >= DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 8 DAY)
+                  AND transaction_date  <  DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY)
+                GROUP BY 1)
+        """) or 0.0
 
-    return True, (f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, target_date={target_date} "
-                   f"(notify, не блокирует promote)")
+        return True, (f"yesterday_rev={target_rev:.0f}, ma7={float(ma7):.0f}, target_date={target_date} "
+                       f"(notify, не блокирует promote)")
+    except Exception as e:
+        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 def check_fk_integrity(bq):
     orphans = run_scalar(bq, f"""
