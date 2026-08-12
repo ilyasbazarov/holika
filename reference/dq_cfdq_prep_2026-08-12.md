@@ -10,10 +10,11 @@
 объявлен в тексте запуска (ровно два плюс артефакт); определение задачи процитировано, не
 пересказано.
 
-**Назначение файла.** Самодостаточный артефакт приёмки для обоих ходов: печать
-`py_compile`, дифф целиком (2 файла), `dry_run` двух новых SQL, грепы, подтверждающие
-неподключение к `CHECKS` и дословную сохранность ветки `ma7 == 0`, и таблица
-старое/новое поведение `drift_check` на двух заданных случаях.
+**Назначение файла.** Самодостаточный артефакт приёмки для обоих ходов ПЛЮС правки по ревью
+архитектора (§9, второй заход того же дня): печать `py_compile`, дифф целиком (2 файла), `dry_run`
+изменённых/новых SQL, грепы, подтверждающие состав `CHECKS` и дословную сохранность ветки
+`ma7 == 0`, и таблица старое/новое поведение `drift_check` на ТРЁХ случаях (двух исходных плюс
+найденном ревью).
 
 ---
 
@@ -395,12 +396,13 @@ IDENTICAL
 
 ---
 
-## 7. Что этой сессией НЕ делалось (по контракту брифа)
+## 7. Что этой сессией НЕ делалось (по контракту брифа, первый заход)
 
-- Новые функции (`check_drift_zero_docs`, `check_freshness_payments_technical`,
-  `check_freshness_commissionreportin_technical`) НЕ добавлены в `CHECKS` — подтверждено §4.
-- Контракт агрегации `main()` (`reference/code/cf-dq/main.py:384-413`) не тронут — дифф §3 не
-  касается этих строк.
+- `check_freshness_payments_technical`/`check_freshness_commissionreportin_technical` НЕ
+  добавлены в `CHECKS` — подтверждено §4. (`check_drift_zero_docs` на момент первого захода тоже
+  не была добавлена; подключена вторым заходом по ревью архитектора — см. §9.)
+- Контракт агрегации `main()` (`reference/code/cf-dq/main.py:410-438`, номера строк после §9)
+  не тронут ни первым, ни вторым заходом — дифф §3/§9 не касается этих строк.
 - Текст уведомления и лог-метрика `msklad_dq_gate_failed` не правились (класс B, отдельная
   задача — вторая лог-метрика, `ADR-153 §Последствия`).
 - Пороги `DQ_DRIFT_THRESHOLD`/`DQ_DRIFT_WEEKEND_THRESHOLD` (`0,10`/`0,03`) не менялись
@@ -411,10 +413,222 @@ IDENTICAL
   «без правок»); дефект построчного `_loaded_at` остаётся отдельной строкой
   `LOADER-LOADED-AT-STAMP` (`ADR-155 §4`, не заводится этой сессией).
 
-## 8. Самодостаточность
+---
 
-Документ содержит: приёмку `py_compile` (§1); `dry_run` двух новых SQL с байтовыми оценками и
-рамкой `date -u`/`gcloud auth list` (§2); дифф целиком, ровно два файла (§3); грепы,
-подтверждающие неподключение к `CHECKS` строками с номерами (§4); побайтовое сравнение ветки
-`ma7 == 0` до/после (§5); таблицы старое/новое поведение на двух заданных случаях (§6); явный
-список НЕ сделанного (§7).
+## 9. Правка по ревью архитектора (2026-08-12, второй заход)
+
+### 9.1 Дефект своими словами
+
+Ранний возврат `if target_rev == 0: return True, …` (первый заход, §3, строки диффа `62-64`) стоял
+ВЫШЕ ветки `ma7 == 0`. Ветка `ma7 == 0` — единственное место, различающее «легитимный первый запуск
+проекта» от «промоут остановлен при непустой истории `core`» (`ADR-152`, закрытие fail-open). При
+`target_rev == 0` функция возвращалась ДО этого различителя — то есть КАЖДЫЙ нулевой день, включая
+день, где `core` имеет историю, а окно `T-8..T-2` пусто (реальный признак остановленного промоута),
+после первого захода тихо получал `passed=True`. Это отменяло защиту `ADR-152` молча — ровно тот
+класс ошибки, который `00_CHARTER §главный принцип` и `05_CONVENTIONS ★ anti-improvisation`
+запрещают (тихое послабление гейта без явного правила).
+
+### 9.2 Правка
+
+Внутри ветки `target_rev == 0`, ДО возврата `True`, теперь выполняется тот же различитель: считается
+`ma7` за то же окно `T-8..T-2`; если `ma7 == 0` И `COUNT(*)` по `core.fact_sales_profit` больше нуля
+— функция возвращает `False` с тем же по смыслу detail, что и существующая ветка `ma7 == 0` ниже по
+функции (`окно T-8..T-2 пусто при непустой истории core — вероятная остановка промоута, блокирую
+вместо тихого пропуска`). Порядок остальных условий не менялся. Запрос дублирован сознательно (по
+формулировке правки — «дублирование допустимо, в помощник выносить не обязательно»); обе точки
+вызова (различитель внутри `target_rev == 0` и штатная ветка `ma7 == 0` для `target_rev > 0`) читают
+одну и ту же пару запросов (`AVG` по `daily_rev` за `T-8..T-2`, `COUNT(*)` без окна) и дают
+одинаковый исход на одинаковом входе.
+
+Дополнительно — `check_drift_zero_docs` подключена в `CHECKS` отдельной строкой
+`("drift_zero_docs", check_drift_zero_docs)`. Функция всегда возвращает `passed=True` — заблокировать
+`all_passed` не может по построению (`main()` не тронут). Без подключения нулевой день (после
+возможного будущего деплоя) не оставлял бы в `checks`/`audit.dq_runs` вообще никакой строки для
+класса «документов не было» — тихий пропуск, запрещённый тем же принципом.
+
+### 9.3 Приёмка (1) — `py_compile`
+
+```
+$ python3 -m py_compile reference/code/cf-dq/main.py reference/code/cf-dq/config.py && echo "PY_COMPILE_RC=0"
+PY_COMPILE_RC=0
+```
+
+### 9.4 Приёмка (2) — `dry_run` запросов различителя
+
+Скрипт с логом:
+`reference/_scratch_DQ-GATE-METRIC-REDESIGN_2026-08-12/dry_run_drift_zero_docs_guard.sh` →
+`.../dry_run_drift_zero_docs_guard.log`. `date -u`/`gcloud auth list` первой и последней командой.
+
+```
+=== date -u (start) ===
+Wed Aug 12 17:14:17 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+=== dry_run: ma7 (T-8..T-2) — используется внутри target_rev==0 различителя ===
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 6224 bytes of data.
+=== dry_run: COUNT(*) core.fact_sales_profit — used как ever_had_data ===
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 0 bytes of data.
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+=== date -u (end) ===
+Wed Aug 12 17:14:22 UTC 2026
+```
+
+Оба запроса, использованные внутри нового различителя, — те же текстовые формы, что уже несёт
+существующая ветка `ma7 == 0` (не переизобретены), синтаксически валидны против живых схем,
+авторизация не деградировала между началом и концом.
+
+### 9.5 Приёмка (3) — дифф второго захода целиком, ровно один изменённый файл
+
+```
+$ git diff --stat -- reference/code/cf-dq/main.py reference/code/cf-dq/config.py
+ reference/code/cf-dq/main.py | 36 +++++++++++++++++++++++++++++++-----
+ 1 file changed, 31 insertions(+), 5 deletions(-)
+```
+
+`config.py` вторым заходом не тронут (правка касалась только `check_drift`/`CHECKS` в `main.py`).
+Полный текст диффа второго захода —
+`reference/_scratch_DQ-GATE-METRIC-REDESIGN_2026-08-12/round2_diff.patch`, воспроизведён дословно:
+
+```diff
+diff --git a/reference/code/cf-dq/main.py b/reference/code/cf-dq/main.py
+index e37d4e1..7771aa7 100644
+--- a/reference/code/cf-dq/main.py
++++ b/reference/code/cf-dq/main.py
+@@ -58,8 +58,29 @@ def check_drift(bq):
+     # DQ-GATE-METRIC-REDESIGN (ADR-153, кандидат 1): исход "документов не было
+     # вовсе" уходит в отдельную диагностическую функцию check_drift_zero_docs
+     # (всегда passed=True, notify, не блокирует promote). Здесь, в блокирующем
+-    # чеке, остаётся только класс "документы есть, выручка ниже нормы".
++    # чеке, остаётся только класс "документы есть, выручка ниже нормы" —
++    # НО ПЕРЕД возвратом обязан пройти тот же различитель ADR-152, что и
++    # ветка ma7 == 0 ниже (ревью архитектора, 2026-08-12): нулевой день сам по
++    # себе не отличим от остановленного промоута (пустое окно T-8..T-2 при
++    # непустой истории core), а этот путь возвращался бы раньше проверки и
++    # молча снимал бы защиту ADR-152 для КАЖДОГО нулевого дня. Дублирует
++    # запрос ma7/COUNT(*) ниже по функции — так и задумано (ревью §правка):
++    # обе точки вызова обязаны дать тот же исход по тому же входу.
+     if target_rev == 0:
++        ma7_zero_check = run_scalar(bq, f"""
++            SELECT COALESCE(AVG(daily_rev),0) FROM (
++                SELECT transaction_date, SUM(revenue_kgs) AS daily_rev
++                FROM `{CORE_FACT}`
++                WHERE transaction_date >= DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 8 DAY)
++                  AND transaction_date  <  DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY)
++                GROUP BY 1)
++        """) or 0.0
++        if ma7_zero_check == 0:
++            ever_had_data = run_scalar(bq, f"SELECT COUNT(*) FROM `{CORE_FACT}`") or 0
++            if ever_had_data > 0:
++                return False, (f"yesterday_rev=0, ma7=0, core_ever_rows={ever_had_data} "
++                                f"(окно T-8..T-2 пусто при непустой истории core — вероятная "
++                                f"остановка промоута, блокирую вместо тихого пропуска)")
+         return True, (f"yesterday_rev=0, target_date={target_date} "
+                        f"(документов не было — см. check_drift_zero_docs, notify)")
+ 
+@@ -95,10 +116,14 @@ def check_drift(bq):
+ def check_drift_zero_docs(bq):
+     # DQ-GATE-METRIC-REDESIGN (ADR-153, кандидат 1): диагностика по исходу
+     # "документов не было вовсе" (target_rev == 0). ВСЕГДА passed=True — не
+-    # блокирует promote. Механизм "две функции" по образцу пары
+-    # technical/business блока freshness ниже. НЕ подключена к CHECKS —
+-    # доставка исхода в telegram-канал notify — отдельная задача класса B
+-    # (вторая лог-метрика, ADR-153 §Последствия).
++    # блокирует promote, не может провалить CHECKS. Механизм "две функции" по
++    # образцу пары technical/business блока freshness ниже. Подключена к
++    # CHECKS отдельной строкой "drift_zero_docs" (ревью архитектора,
++    # 2026-08-12) — иначе нулевой день после выезда не оставлял бы вообще
++    # никакого следа (тихий пропуск, запрещён). В фильтр лог-метрики
++    # msklad_dq_gate_failed этот исход не попадает, поскольку passed всегда
++    # True; доставка в telegram-канал notify отдельным каналом — вне scope,
++    # отдельная задача класса B (вторая лог-метрика, ADR-153 §Последствия).
+     row = run_row(bq, f"""
+         WITH target_d AS (
+             SELECT DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY) AS d
+@@ -178,6 +203,7 @@ def check_currency_normalization(bq):
+ CHECKS = [
+     ("not_empty",              check_not_empty),
+     ("drift_check",            check_drift),
++    ("drift_zero_docs",        check_drift_zero_docs),
+     ("fk_integrity",           check_fk_integrity),
+     ("freshness",              check_freshness),
+     ("margin_sanity",          check_margin_sanity),
+     ("currency_normalization", check_currency_normalization),
+```
+
+Совокупный дифф ветки против `main` (оба захода, оба файла) —
+`reference/_scratch_DQ-GATE-METRIC-REDESIGN_2026-08-12/full_diff.patch` (обновлён, 264 строки,
+затрагивает ровно `reference/code/cf-dq/main.py` + `reference/code/cf-dq/config.py`,
+`git diff --stat`: `main.py | 164 …`, `config.py | 26 …`).
+
+### 9.6 Приёмка (4) — `CHECKS` несёт `drift_zero_docs` строго один раз, состав проверен построчно
+
+```
+$ grep -n "^CHECKS = \[\|(\"not_empty\"\|(\"drift_check\"\|(\"drift_zero_docs\"\|(\"fk_integrity\"\|(\"freshness\"\|(\"margin_sanity\"\|(\"currency_normalization\"\|^\]" reference/code/cf-dq/main.py
+203:CHECKS = [
+204:    ("not_empty",              check_not_empty),
+205:    ("drift_check",            check_drift),
+206:    ("drift_zero_docs",        check_drift_zero_docs),
+207:    ("fk_integrity",           check_fk_integrity),
+208:    ("freshness",              check_freshness),
+209:    ("margin_sanity",          check_margin_sanity),
+210:    ("currency_normalization", check_currency_normalization),
+211:]
+```
+
+Семь пар — шесть исходных плюс ровно одна новая (`drift_zero_docs`). Ни одна из четырёх функций
+свежести (`check_freshness_payments_technical`/`_business`,
+`check_freshness_commissionreportin_technical`/`_business`) в списке не встречается — их подключение
+не входило ни в первый, ни во второй заход (отдельная задача класса B «`DQ-FRESHNESS-COVERAGE`,
+деплой»).
+
+### 9.7 Приёмка (5) — ветка `ma7 == 0` внутри `check_drift` по-прежнему дословно как в проде
+
+```
+$ git show main:reference/code/cf-dq/main.py | sed -n '/if ma7 == 0:/,/threshold={threshold} ({day_label}), target_date={target_date}"/p' > /tmp/ma7_orig.txt
+$ sed -n '/if ma7 == 0:/,/threshold={threshold} ({day_label}), target_date={target_date}"/p' reference/code/cf-dq/main.py > /tmp/ma7_now.txt
+$ diff /tmp/ma7_orig.txt /tmp/ma7_now.txt && echo "IDENTICAL"
+IDENTICAL
+```
+
+Сравнение — против `main` (задеплоенная ревизия `cf-dq-00008-cev`), после ОБОИХ заходов. Новый
+различитель внутри `target_rev == 0` — отдельный блок кода с собственным (не дословно совпадающим,
+но эквивалентным по смыслу) текстом detail; штатная ветка `ma7 == 0`, обслуживающая класс
+`target_rev > 0`, не редактировалась ни разу.
+
+### 9.8 Таблица старое/новое поведение — третий случай (найден ревью)
+
+**Случай В: нулевой день ПРИ пустом окне ядра (`ma7 == 0`) и непустой истории `core`**
+(например, если бы `2026-08-02` — день из наблюдения `07_STATE.md:172`/`DQ-DRIFT-SOURCE-CORRECTION`
+— пришёлся на день с `target_rev=0` при остановленном промоуте).
+
+| | **Форма первого захода этой сессии (дефект ревью)** | **Форма после правки ревью (эта версия)** | **Задеплоенная форма (`cf-dq-00008-cev`, для сравнения)** |
+|---|---|---|---|
+| Путь | `target_rev=0` → ранний `return True` СРАЗУ, ветка `ma7==0`/`core_ever_rows` НЕ достигается | `target_rev=0` → считается `ma7` → `ma7==0` И `COUNT(*)>0` → `return False` ДО достижения диагностического `return True` | `target_rev=0` → `ma7` считается → `ratio=0/ma7=0` (или отдельно `ma7==0` даёт свой `return False`) → блокирует |
+| Исход | `passed=True` — **тихо пропускает остановленный промоут** (регресс `ADR-152`) | `passed=False` — **блокирует, как и было в проде** | `passed=False` — блокирует |
+| Оценка | ДЕФЕКТ (найден ревью, не задеплоен) | Соответствует принятому решению `ADR-153 §1`+`ADR-152` — форма патча защиту не снимает | эталон поведения для этого класса входа |
+
+Случай подтверждает: патч после правки НЕ отменяет `ADR-152` ни для одного класса входа — защита
+от «остановленный промоут выглядит как нулевой день» сохранена И для `target_rev==0`, И для
+`target_rev>0` (штатная ветка `ma7==0` ниже, случай не рассматривался отдельно в §6, но не менялась
+ни разу — см. §9.7).
+
+Случаи А и Б из §6 (сутки без документов при НЕПУСТОМ окне `ma7`; `2026-08-11`) поведением второго
+захода не затронуты — правка ревью адресует ТОЛЬКО пересечение `target_rev==0` И `ma7==0`, которое
+в случае А не возникает (`ma7` в случае А по построению отличен от нуля, иначе он не был бы указан
+как «сутки без документов» на фоне обычной торговли), и не пересекается со случаем Б
+(`target_rev>0`).
+
+## 10. Самодостаточность (обновлено)
+
+Документ содержит: приёмку `py_compile` первого и второго заходов (§1, §9.3); `dry_run` всех
+изменённых/новых SQL с байтовыми оценками и рамкой `date -u`/`gcloud auth list` (§2, §9.4); дифф
+целиком для каждого захода плюс совокупный дифф ветки против `main`, во всех случаях ровно два
+файла (`main.py`+`config.py`) (§3, §9.5); грепы, подтверждающие точный состав `CHECKS` строками с
+номерами (§4, §9.6); побайтовое сравнение ветки `ma7 == 0` внутри `check_drift` против прода,
+подтверждённое после обоих заходов (§5, §9.7); таблицы старое/новое поведение на ТРЁХ случаях —
+двух исходных (§6) плюс найденном ревью (§9.8); явный список НЕ сделанного (§7).

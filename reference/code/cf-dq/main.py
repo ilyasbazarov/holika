@@ -58,8 +58,29 @@ def check_drift(bq):
     # DQ-GATE-METRIC-REDESIGN (ADR-153, кандидат 1): исход "документов не было
     # вовсе" уходит в отдельную диагностическую функцию check_drift_zero_docs
     # (всегда passed=True, notify, не блокирует promote). Здесь, в блокирующем
-    # чеке, остаётся только класс "документы есть, выручка ниже нормы".
+    # чеке, остаётся только класс "документы есть, выручка ниже нормы" —
+    # НО ПЕРЕД возвратом обязан пройти тот же различитель ADR-152, что и
+    # ветка ma7 == 0 ниже (ревью архитектора, 2026-08-12): нулевой день сам по
+    # себе не отличим от остановленного промоута (пустое окно T-8..T-2 при
+    # непустой истории core), а этот путь возвращался бы раньше проверки и
+    # молча снимал бы защиту ADR-152 для КАЖДОГО нулевого дня. Дублирует
+    # запрос ma7/COUNT(*) ниже по функции — так и задумано (ревью §правка):
+    # обе точки вызова обязаны дать тот же исход по тому же входу.
     if target_rev == 0:
+        ma7_zero_check = run_scalar(bq, f"""
+            SELECT COALESCE(AVG(daily_rev),0) FROM (
+                SELECT transaction_date, SUM(revenue_kgs) AS daily_rev
+                FROM `{CORE_FACT}`
+                WHERE transaction_date >= DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 8 DAY)
+                  AND transaction_date  <  DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY)
+                GROUP BY 1)
+        """) or 0.0
+        if ma7_zero_check == 0:
+            ever_had_data = run_scalar(bq, f"SELECT COUNT(*) FROM `{CORE_FACT}`") or 0
+            if ever_had_data > 0:
+                return False, (f"yesterday_rev=0, ma7=0, core_ever_rows={ever_had_data} "
+                                f"(окно T-8..T-2 пусто при непустой истории core — вероятная "
+                                f"остановка промоута, блокирую вместо тихого пропуска)")
         return True, (f"yesterday_rev=0, target_date={target_date} "
                        f"(документов не было — см. check_drift_zero_docs, notify)")
 
@@ -95,10 +116,14 @@ def check_drift(bq):
 def check_drift_zero_docs(bq):
     # DQ-GATE-METRIC-REDESIGN (ADR-153, кандидат 1): диагностика по исходу
     # "документов не было вовсе" (target_rev == 0). ВСЕГДА passed=True — не
-    # блокирует promote. Механизм "две функции" по образцу пары
-    # technical/business блока freshness ниже. НЕ подключена к CHECKS —
-    # доставка исхода в telegram-канал notify — отдельная задача класса B
-    # (вторая лог-метрика, ADR-153 §Последствия).
+    # блокирует promote, не может провалить CHECKS. Механизм "две функции" по
+    # образцу пары technical/business блока freshness ниже. Подключена к
+    # CHECKS отдельной строкой "drift_zero_docs" (ревью архитектора,
+    # 2026-08-12) — иначе нулевой день после выезда не оставлял бы вообще
+    # никакого следа (тихий пропуск, запрещён). В фильтр лог-метрики
+    # msklad_dq_gate_failed этот исход не попадает, поскольку passed всегда
+    # True; доставка в telegram-канал notify отдельным каналом — вне scope,
+    # отдельная задача класса B (вторая лог-метрика, ADR-153 §Последствия).
     row = run_row(bq, f"""
         WITH target_d AS (
             SELECT DATE_SUB(CURRENT_DATE('Asia/Bishkek'), INTERVAL 1 DAY) AS d
@@ -178,6 +203,7 @@ def check_currency_normalization(bq):
 CHECKS = [
     ("not_empty",              check_not_empty),
     ("drift_check",            check_drift),
+    ("drift_zero_docs",        check_drift_zero_docs),
     ("fk_integrity",           check_fk_integrity),
     ("freshness",              check_freshness),
     ("margin_sanity",          check_margin_sanity),
