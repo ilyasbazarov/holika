@@ -85,16 +85,27 @@ def paginate_entity(
     url = f"{MSKLAD_BASE}/{path}"
     all_rows: list = []
     offset = 0
+    meta_size = None
+    pages = 0
 
     while True:
         page_params = {**(params or {}), "limit": PAGE_SIZE, "offset": offset}
         data = _api_get(session, url, headers, page_params)
+        if offset == 0:
+            meta_size = data.get("meta", {}).get("size")
         rows = data.get("rows", [])
         all_rows.extend(rows)
+        pages += 1
         log.debug("Fetched %d rows from %s (offset=%d)", len(rows), path, offset)
         if len(rows) < PAGE_SIZE:
             break
         offset += PAGE_SIZE
+
+    has_filter = "filter" in (params or {})
+    log.info(
+        "PAGINATE_PROBE path=%s fetched=%d meta_size=%s pages=%d has_filter=%s",
+        path, len(all_rows), meta_size, pages, has_filter,
+    )
 
     return all_rows
 
