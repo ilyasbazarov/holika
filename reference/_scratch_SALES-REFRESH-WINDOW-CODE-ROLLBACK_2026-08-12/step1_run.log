@@ -1,0 +1,26 @@
+Wed Aug 12 07:52:38 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== traffic switch: cf-facts -> cf-facts-00011-mab (100%) ===
+Updating traffic...
+Routing traffic...............................................................................................................................done
+Done.
+URL: https://cf-facts-xw5u2boozq-de.a.run.app
+Traffic:
+  100% cf-facts-00011-mab
+=== read-back 1: traffic status after switch ===
+REVISION_NAME           PERCENT
+['cf-facts-00011-mab']  [100]
+Wed Aug 12 07:53:01 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

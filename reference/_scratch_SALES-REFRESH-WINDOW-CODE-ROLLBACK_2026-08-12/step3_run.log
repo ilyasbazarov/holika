@@ -1,0 +1,44 @@
+Wed Aug 12 09:19:10 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== read-back 3: core.fact_sales_profit vs snap_20260811_163306, after first natural hourly run, by channel ===
+[
+  {
+    "missing_from_live": "6", 
+    "sales_channel_id": null
+  }, 
+  {
+    "missing_from_live": "28", 
+    "sales_channel_id": "4a07eb32-2e47-11ef-0a80-0f4200606f40"
+  }, 
+  {
+    "missing_from_live": "2", 
+    "sales_channel_id": "dd774cfb-1f75-11f1-0a80-19f10017e258"
+  }
+]
+=== total missing_from_live (expected: still 36, zero new since step2) ===
+[
+  {
+    "total_missing_from_live": "36"
+  }
+]
+=== cf-facts traffic status (confirm still on cf-facts-00011-mab) ===
+REVISION_NAME           PERCENT
+['cf-facts-00011-mab']  [100]
+=== Cloud Logging: which revision served cf-facts requests since traffic switch (2026-08-12T07:52:38Z) ===
+revision_name counts since traffic switch:
+  : 2
+  cf-facts-00011-mab: 15
+Wed Aug 12 09:19:24 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

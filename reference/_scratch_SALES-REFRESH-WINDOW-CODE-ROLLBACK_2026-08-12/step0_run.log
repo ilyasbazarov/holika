@@ -1,0 +1,41 @@
+Wed Aug 12 07:52:05 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== cf-facts traffic BEFORE rollback ===
+REVISION_NAME           PERCENT
+['cf-facts-00014-doh']  [100]
+=== core.fact_sales_profit vs snap_20260811_163306 — pre-rollback baseline, rows in snapshot missing from live, by channel ===
+[
+  {
+    "missing_from_live": "6", 
+    "sales_channel_id": null
+  }, 
+  {
+    "missing_from_live": "28", 
+    "sales_channel_id": "4a07eb32-2e47-11ef-0a80-0f4200606f40"
+  }, 
+  {
+    "missing_from_live": "2", 
+    "sales_channel_id": "dd774cfb-1f75-11f1-0a80-19f10017e258"
+  }
+]
+=== total row counts, snapshot vs live ===
+[
+  {
+    "live_rows": "42986", 
+    "snapshot_rows": "42995"
+  }
+]
+Wed Aug 12 07:52:14 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

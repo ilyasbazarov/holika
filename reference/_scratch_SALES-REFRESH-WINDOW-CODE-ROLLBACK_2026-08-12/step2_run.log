@@ -1,0 +1,37 @@
+Wed Aug 12 07:53:16 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== read-back 2: core.fact_sales_profit vs snap_20260811_163306, immediately after traffic switch, by channel ===
+[
+  {
+    "missing_from_live": "6", 
+    "sales_channel_id": null
+  }, 
+  {
+    "missing_from_live": "28", 
+    "sales_channel_id": "4a07eb32-2e47-11ef-0a80-0f4200606f40"
+  }, 
+  {
+    "missing_from_live": "2", 
+    "sales_channel_id": "dd774cfb-1f75-11f1-0a80-19f10017e258"
+  }
+]
+=== total missing_from_live (expected: 36, no new since step0) ===
+[
+  {
+    "total_missing_from_live": "36"
+  }
+]
+Wed Aug 12 07:53:22 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
