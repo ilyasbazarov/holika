@@ -1,0 +1,33 @@
+{
+  "access": [
+    {
+      "role": "WRITER",
+      "specialGroup": "projectWriters"
+    },
+    {
+      "role": "OWNER",
+      "specialGroup": "projectOwners"
+    },
+    {
+      "role": "OWNER",
+      "userByEmail": "ilyasbazarov4@gmail.com"
+    },
+    {
+      "role": "READER",
+      "specialGroup": "projectReaders"
+    }
+  ],
+  "creationTime": "1777444615522",
+  "datasetReference": {
+    "datasetId": "core",
+    "projectId": "msklad-bi-prod"
+  },
+  "etag": "QVuNBinTUlIVRIm3+b7zyg==",
+  "id": "msklad-bi-prod:core",
+  "kind": "bigquery#dataset",
+  "lastModifiedTime": "1777444615522",
+  "location": "asia-east1",
+  "maxTimeTravelHours": "168",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/datasets/core",
+  "type": "DEFAULT"
+}
