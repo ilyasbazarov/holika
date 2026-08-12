@@ -9,3 +9,12 @@
 2026-08-12T16:01:31.147631Z	INFO	Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
 2026-08-12T16:01:34.514190Z	INFO	Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
 2026-08-12T16:02:00.062259Z	INFO	
+2026-08-12T17:00:58.040374Z	INFO	
+2026-08-12T17:01:22.181877Z	INFO	Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+2026-08-12T17:01:24.590106Z	INFO	Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+2026-08-12T17:01:56.461537Z	INFO	
+2026-08-12T18:01:01.100121Z	INFO	
+2026-08-12T18:01:17.042653Z	INFO	Starting new instance. Reason: AUTOSCALING - Instance started due to configured scaling factors (e.g. CPU utilization, request throughput, etc.) or no existing capacity for current traffic.
+2026-08-12T18:01:19.960550Z	INFO	Default STARTUP TCP probe succeeded after 1 attempt for container "worker" on port 8080.
+2026-08-12T18:01:55.581058Z	INFO	
+2026-08-12T18:05:10.327940Z	INFO	

@@ -1,0 +1,38 @@
+=== UTC anchor (start) ===
+Wed Aug 12 18:11:24 UTC 2026
+=== gcloud auth (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== BigQuery job history: MERGE jobs into fact_sales_profit since 18:00Z ===
+[
+  {
+    "creation_time": "2026-08-12 18:05:11", 
+    "deleted": "0", 
+    "inserted": "111", 
+    "job_id": "1b1a37c6-8452-4569-a456-a076e7bcbcf5", 
+    "query": "\nMERGE `msklad-bi-prod.core.fact_sales_profit` T\nUSING (\n  SELECT\n    TO_HEX(MD5(CONCAT(s.demand_id, '|', s.position_id)))            AS transaction_id,\n    DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek')                                                   AS transaction_date,\n    s.product_id,\n    s.entity_type,\n    s.discount,\n    s.agent_id,\n    s.document_owner_employee_id,\n    s.quantity                                                      AS sell_quantity,\n    CAST(0.0 AS FLOAT64)                                            AS return_quantity,\n    s.revenue_kgs                                                   AS sell_sum_kgs,\n    CAST(0.0 AS FLOAT64)                                            AS return_sum_kgs,\n    s.revenue_kgs                                                   AS revenue_kgs,\n    CASE\n      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0\n        THEN ROUND(b.cogs_kgs * SAFE_DIVIDE(s.revenue_kgs, NULLIF(b.sell_sum_kgs, 0)), 4)\n      ELSE NULL\n    END                                                             AS cogs_kgs,\n    CASE\n      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0\n        THEN ROUND(s.revenue_kgs - b.cogs_kgs * SAFE_DIVIDE(s.revenue_kgs, NULLIF(b.sell_sum_kgs, 0)), 4)\n      ELSE NULL\n    END                                                             AS margin_kgs,\n    ROUND(SAFE_DIVIDE(s.revenue_kgs, fx.rate_kgs_per_usd), 4)       AS revenue_usd,\n    CASE\n      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0 AND fx.rate_kgs_per_usd IS NOT NULL\n        THEN ROUND(SAFE_DIVIDE(b.cogs_kgs * SAFE_DIVIDE(s.revenue_kgs, NULLIF(b.sell_sum_kgs, 0)), fx.rate_kgs_per_usd), 4)\n      ELSE NULL\n    END                                                             AS cogs_usd,\n    CASE\n      WHEN b.cogs_kgs IS NOT NULL AND b.sell_sum_kgs > 0 AND fx.rate_kgs_per_usd IS NOT NULL\n        THEN ROUND(SAFE_DIVIDE(s.revenue_kgs - b.cogs_kgs * SAFE_DIVIDE(s.revenue_kgs, NULLIF(b.sell_sum_kgs, 0)), fx.rate_kgs_per_usd), 4)\n      ELSE NULL\n    END                                                             AS margin_usd,\n    s.sales_channel_id,\n    s.sales_channel_name,\n    s.project_id,\n    s.project_name,\n    CURRENT_TIMESTAMP()                                             AS _loaded_at\n  FROM `msklad-bi-prod.stg_msklad.fact_sales_staging` s\n  LEFT JOIN `msklad-bi-prod.core.fact_sales_profit_byvariant_backup` b\n    ON  s.product_id = b.product_id\n    AND DATE_TRUNC(\n          DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek'),\n          WEEK(SATURDAY)\n        ) = b._week_start\n  LEFT JOIN `msklad-bi-prod.core.dim_fx_rates` fx\n    ON  DATE(PARSE_TIMESTAMP('%Y-%m-%d %H:%M:%E3S', s.transaction_date_raw), 'Asia/Bishkek') = fx.date\n) S\nON  T.transaction_id   = S.transaction_id\nAND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)\n\nWHEN MATCHED THEN UPDATE SET\n  T.sell_quantity   = S.sell_quantity,\n  T.return_quantity = S.return_quantity,\n  T.sell_sum_kgs    = S.sell_sum_kgs,\n  T.return_sum_kgs  = S.return_sum_kgs,\n  T.revenue_kgs     = S.revenue_kgs,\n  T.cogs_kgs        = S.cogs_kgs,\n  T.margin_kgs      = S.margin_kgs,\n  T.revenue_usd     = S.revenue_usd,\n  T.cogs_usd        = S.cogs_usd,\n  T.margin_usd      = S.margin_usd,\n  T.sales_channel_id   = S.sales_channel_id,\n  T.sales_channel_name = S.sales_channel_name,\n  T.project_id         = S.project_id,\n  T.project_name       = S.project_name,\n  T.discount        = S.discount,\n  T._loaded_at      = S._loaded_at,\n  T.document_owner_employee_id = S.document_owner_employee_id\n\nWHEN NOT MATCHED THEN INSERT (\n  transaction_id,\n  transaction_date,\n  product_id,\n  entity_type,\n  agent_id,\n  document_owner_employee_id,\n  sell_quantity,\n  return_quantity,\n  sell_sum_kgs,\n  return_sum_kgs,\n  revenue_kgs,\n  cogs_kgs,\n  margin_kgs,\n  revenue_usd,\n  cogs_usd,\n  margin_usd,\n  sales_channel_id,\n  sales_channel_name,\n  project_id,\n  project_name,\n  discount,\n  _loaded_at\n) VALUES (\n  S.transaction_id,\n  S.transaction_date,\n  S.product_id,\n  S.entity_type,\n  S.agent_id,\n  S.document_owner_employee_id,\n  S.sell_quantity,\n  S.return_quantity,\n  S.sell_sum_kgs,\n  S.return_sum_kgs,\n  S.revenue_kgs,\n  S.cogs_kgs,\n  S.margin_kgs,\n  S.revenue_usd,\n  S.cogs_usd,\n  S.margin_usd,\n  S.sales_channel_id,\n  S.sales_channel_name,\n  S.project_id,\n  S.project_name,\n  S.discount,\n  S._loaded_at\n)\n\n-- SALES-REFRESH-WINDOW (ADR-144 §8, узкая форма): строки, исчезнувшие из источника внутри\n-- окна выборки, удаляются. Условие DELETE обязано ПОВТОРЯТЬ границу окна ON явно (C2,\n-- ADR-101 §7 ловушка ii) — без этого повтора `WHEN NOT MATCHED BY SOURCE` по умолчанию\n-- матчит и удаляет ВСЮ историю за пределами окна (там ON тоже не находит пару), а не только\n-- сироты внутри окна. window_days тот же параметр, что несёт ON — единственный параметр в\n-- узкой форме, режим `topoff` с раздельными окнами выборки/MERGE этим патчем не строится.\nWHEN NOT MATCHED BY SOURCE\n  AND T.transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY)\n  -- ROLLBACK-ADJ §6 вариант 1: удалять ТОЛЬКО свои строки. Источник этого MERGE —\n  -- staging обычных продаж (entity/demand без комиссионных агентов); строки периметра\n  -- (розница и отчёты комиссионера) в него не входят и без этого условия удалялись бы\n  -- как «исчезнувшие из источника». Различитель — ПАРА полей: у периметра\n  -- sales_channel_id всегда NULL (fetch_perimeter.py), у настоящих каналов МойСклада id\n  -- заполнен; COALESCE обязателен, иначе строка с именем канала NULL даёт NULL вместо\n  -- FALSE и не удаляется никогда.\n  AND NOT (T.sales_channel_id IS NULL\n           AND COALESCE(T.sales_channel_name, '') IN ('Розница', 'Комиссия'))\nTHEN DELETE\n", 
+    "updated": "373"
+  }
+]
+=== core.fact_sales_profit — 2026-08-12, after this run (compare vs step6 baseline: 27 rows / 1054231.43) ===
+[
+  {
+    "n_rows": "138", 
+    "total_revenue_kgs": "4240469.9258"
+  }
+]
+=== UTC anchor (end) ===
+Wed Aug 12 18:11:30 UTC 2026
+=== gcloud auth (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

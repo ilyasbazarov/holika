@@ -1,0 +1,14 @@
+=== UTC anchor (start) ===
+Wed Aug 12 18:11:12 UTC 2026
+=== gcloud auth (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== BigQuery job history: MERGE jobs into fact_sales_profit since 18:00Z ===
+Error in query string: Error processing job
+'project-c451b48a-07ae-4de4-961:bqjob_r11b77e33beed120e_0000019ff72bd94e_1':
+Syntax error: Expected end of input but got "-" at [9:29]
