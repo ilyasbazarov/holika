@@ -1,0 +1,42 @@
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/420804682491/locations/asia-east1/builds/5a854eaa-bc59-44d5-a43f-6e307487846d
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts
+  entryPoint: main
+  runtime: python312
+  serviceAccount: projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786372858921485'
+      object: cf-dq/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786372858921485'
+      object: cf-dq/function-source.zip
+createTime: '2026-05-07T12:53:10.388923634Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/msklad-bi-prod/locations/asia-east1/functions/cf-dq
+satisfiesPzi: true
+serviceConfig:
+  allTrafficOnLatestRevision: true
+  availableCpu: '0.3333'
+  availableMemory: 512Mi
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceCount: 6
+  maxInstanceRequestConcurrency: 1
+  minInstanceCount: 1
+  revision: cf-dq-00008-cev
+  service: projects/msklad-bi-prod/locations/asia-east1/services/cf-dq
+  serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  timeoutSeconds: 120
+  uri: https://cf-dq-xw5u2boozq-de.a.run.app
+state: ACTIVE
+updateTime: '2026-08-10T14:42:35.892464988Z'
+url: https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-dq

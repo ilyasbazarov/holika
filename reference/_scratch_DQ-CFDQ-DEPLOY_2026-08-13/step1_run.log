@@ -1,0 +1,55 @@
+=== date -u (start) ===
+Wed Aug 12 19:07:12 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud run services describe cf-dq (status.traffic) ===
+status:
+  latestCreatedRevisionName: cf-dq-00008-cev
+  latestReadyRevisionName: cf-dq-00008-cev
+  traffic:
+  - latestRevision: true
+    percent: 100
+    revisionName: cf-dq-00008-cev
+=== obslugivayuschaya revision name (status.traffic, percent=100) ===
+SERVING_REV=cf-dq-00008-cev
+=== gcloud run revisions describe (source generation of serving revision) ===
+metadata:
+  annotations:
+    autoscaling.knative.dev/maxScale: '6'
+    autoscaling.knative.dev/minScale: '1'
+    cloudfunctions.googleapis.com/trigger-type: HTTP_TRIGGER
+    run.googleapis.com/base-images: '{"worker":"asia-east1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312"}'
+    run.googleapis.com/build-function-target: '{"worker":"main"}'
+    run.googleapis.com/build-id: '{"worker":"5a854eaa-bc59-44d5-a43f-6e307487846d"}'
+    run.googleapis.com/build-source-location: '{"worker":"gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1786372858921485"}'
+    run.googleapis.com/client-name: gcloud
+    run.googleapis.com/operation-id: 387de9f6-a478-438d-9ec1-c656183545f1
+    run.googleapis.com/startup-cpu-boost: 'true'
+    serving.knative.dev/creator: service-420804682491@gcf-admin-robot.iam.gserviceaccount.com
+  creationTimestamp: '2026-08-10T14:42:19.832124Z'
+  name: cf-dq-00008-cev
+=== gcloud functions describe cf-dq (for storageSource generation, cross-check only) ===
+buildConfig:
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786372858921485'
+      object: cf-dq/function-source.zip
+serviceConfig:
+  revision: cf-dq-00008-cev
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Wed Aug 12 19:07:25 UTC 2026

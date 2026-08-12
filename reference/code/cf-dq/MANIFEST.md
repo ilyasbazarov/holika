@@ -132,3 +132,81 @@ sha256 всех пяти файлов посчитан напрямую с ди�
 `git push origin master`. Инвариант «основная ветка = то, что стоит в проде» восстановлен: `master`
 несёт ровно `cf-dq/main.py` (хунк `ma7`) + новый `cf-dq/.gcloudignore`, идентичные деплою
 `cf-dq-00008-cev`.
+
+## Деплой `DQ-CFDQ-DEPLOY` (2026-08-12, мандат `ADR-173 §5`)
+
+**Предусловия П1/П2 — read-only, ДО деплоя.** Обслуживающая ревизия снята через
+`gcloud run services describe cf-dq --format="yaml(status.traffic)"` (НЕ через `functions
+describe` — прецедент подмены `…deploy_final_adj…§2`): `status.traffic` вернул
+`revisionName=cf-dq-00008-cev, percent=100, latestRevision=true` — обслуживающая ревизия
+совпадает с последней, подмены нет. Эта ревизия — откатная (§2 ниже). Дрейф: архив
+`cf-dq-00008-cev` (generation `1786372858921485`) скачан и сверен побайтово с `master`
+код-репо `holika-prod` — все четыре файла (`main.py`/`config.py`/`helpers.py`/
+`requirements.txt`) `IDENTICAL`, дрейфа нет. Скрипты/логи —
+`reference/_scratch_DQ-CFDQ-DEPLOY_2026-08-13/step1_live_revision_and_drift.sh`+`step1_run.log`,
+`step2_drift_check.sh`+`step2_run.log`.
+
+**Объём (П1, `git diff --stat master`):** ровно два файла — `cf-dq/main.py`, `cf-dq/config.py`.
+Патч перенесён из `reference/code/cf-dq/{main.py,config.py}` (снапшот, прошедший ревью в три
+захода, `ADR-173`) поверх ветки `deploy/cf-dq-2026-08-12-drift-and-freshness` от `master`
+(коммит-основание `5ad9544`). `.gcloudignore` (`cf-dq/.gcloudignore`, заведён прошлым деплоем)
+уже исключает `patch_*.py`/`*.bak`/`__pycache__/`/`*.pyc`/`.DS_Store`/`src.zip`/
+`function-source*.zip` — проверен, правки не потребовалось. Сплошной поиск секретов по диффу
+(`grep -inE "secret|token|password|api[_-]?key|bearer|AIza|ya29\.|-----BEGIN"`) — пусто, печатается
+явно (не как факт по умолчанию).
+
+**Коммит в ветку:** `c9b967ffcae01ceeae3b6fd0e6e2cba0549ed738`, ветка выложена в `origin`
+(владелец подтвердил push). Деплой — `gcloud functions deploy cf-dq --gen2
+--runtime=python312 --region=asia-east1 --source=cf-dq/ --entry-point=main --trigger-http
+--service-account=etl-sa@msklad-bi-prod.iam.gserviceaccount.com --memory=512Mi --cpu=0.3333
+--timeout=120s --min-instances=1 --max-instances=6 --concurrency=1 --ingress-settings=all
+--set-env-vars=LOG_EXECUTION_ID=true --set-secrets=MSKLAD_TOKEN=msklad-token:latest` —
+параметры сняты с живой конфигурации ДО деплоя (`live_config_before_deploy.yaml`), не
+изобретены. Владелец подтвердил деплой отдельным ответом («Да, деплоить») на объявление
+действия (объект/откат) — `ADR-077 §6`. Скрипт/лог —
+`reference/_scratch_DQ-CFDQ-DEPLOY_2026-08-13/step5_deploy.sh`+`step5_run.log`;
+`date -u`/`gcloud auth list` в начале и в конце — авторизация не деградировала.
+
+**Новая ревизия:** `cf-dq-00009-coy`, `updateTime=2026-08-12T19:14:47.725221603Z`, `state=ACTIVE`.
+**Источник:** `gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip`
+(generation `1786561996565446`), деплой из ветки `deploy/cf-dq-2026-08-12-drift-and-freshness`
+(коммит `c9b967f`), `--source=cf-dq/`.
+
+**Read-back (условие 1 из 3 — выполнено).** `status.traffic` после деплоя —
+`revisionName=cf-dq-00009-coy, percent=100`. Архив новой ревизии скачан и распакован: ровно
+4 исполняемых файла (`main.py`/`config.py`/`helpers.py`/`requirements.txt`), мусора нет.
+sha256 всех четырёх файлов побайтово совпадают с веткой деплоя (`IDENTICAL` по всем).
+
+| Файл | sha256 (новый архив = ветка деплоя) |
+|---|---|
+| `main.py` | `477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67` |
+| `config.py` | `360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756` |
+| `helpers.py` | `0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146` (не менялся) |
+| `requirements.txt` | `587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516` (не менялся) |
+
+Скрипт/лог read-back — `reference/_scratch_DQ-CFDQ-DEPLOY_2026-08-13/step6_readback.sh`+
+`step6_run.log`.
+
+**Условия 2 и 3 — ПОДТВЕРЖДЕНЫ первым естественным часовым прогоном** (`run_id=1786564802.7168841`,
+`checked_at=2026-08-12 20:04:52 UTC`, запрос —
+`reference/_scratch_DQ-CFDQ-DEPLOY_2026-08-13/step8_first_natural_run_compare.log`).
+Условие 2 (запись несёт оба исхода метрики `drift_check`): семь строк вместо шести —
+`drift_check` (`passed=true`, `yesterday_rev=4240470, ma7=4453347, ratio=0.95, threshold=0.1
+(weekday), target_date=2026-08-12`) и новая `drift_zero_docs` (`passed=true`, тот же
+`target_date`, `notify, не блокирует promote`) — обе присутствуют в одной записи. Условие 3
+(регрессия остальных пяти проверок): `not_empty`/`fk_integrity`/`freshness`/`margin_sanity`/
+`currency_normalization` побайтово идентичны прошлому прогону
+(`run_id=1786561202.3581266`, `checked_at=2026-08-12 19:02:14 UTC`, ДО деплоя) — совпадают и
+`passed`, и `detail` по каждой из пяти. **Приёмка `ADR-173 §5` закрыта полностью, деплой
+`DQ-CFDQ-DEPLOY` считается завершённым и подтверждённым.**
+
+**Откатная ревизия (П2):** `cf-dq-00008-cev` — откат командой
+`gcloud run services update-traffic cf-dq --region=asia-east1 --project=msklad-bi-prod
+--to-revisions=cf-dq-00008-cev=100`, пересборка не требуется. Не потребовался — деплой успешен.
+
+**Слияние ветки в `master` код-репо — ИСПОЛНЕНО** (владелец подтвердил отдельным сообщением
+«Да, отправить»). `deploy/cf-dq-2026-08-12-drift-and-freshness` (`c9b967f`) слита в `master`
+merge-коммитом `9a08b5aa2522eb0340c5568e8763ff90255d3ec8` (не fast-forward, `--no-ff`),
+отправлено `git push origin master` (`5ad9544..9a08b5a`). Инвариант «основная ветка = то, что
+стоит в проде» восстановлен: `master` несёт ровно `cf-dq/main.py`+`cf-dq/config.py`
+(переделка `drift_check` + две проверки свежести), идентичные деплою `cf-dq-00009-coy`.

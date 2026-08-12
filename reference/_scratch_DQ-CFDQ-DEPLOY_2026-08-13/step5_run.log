@@ -1,0 +1,76 @@
+=== date -u (start) ===
+Wed Aug 12 19:12:53 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Preparing function...
+..done.
+Updating function (may take a while)...
+[Build]............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+[Service]...........................................................................................................warning
+Completed with warnings:
+  [INFO] A new revision will be deployed serving with 100% traffic.
+You can view your function in the Cloud Console here: https://console.cloud.google.com/functions/details/asia-east1/cf-dq?project=msklad-bi-prod
+
+buildConfig:
+  automaticUpdatePolicy: {}
+  build: projects/420804682491/locations/asia-east1/builds/05cebbfe-521b-4110-8f76-194362fc1da3
+  dockerRegistry: ARTIFACT_REGISTRY
+  dockerRepository: projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts
+  entryPoint: main
+  runtime: python312
+  serviceAccount: projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786561996565446'
+      object: cf-dq/function-source.zip
+  sourceProvenance:
+    resolvedStorageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786561996565446'
+      object: cf-dq/function-source.zip
+createTime: '2026-05-07T12:53:10.388923634Z'
+environment: GEN_2
+labels:
+  deployment-tool: cli-gcloud
+name: projects/msklad-bi-prod/locations/asia-east1/functions/cf-dq
+satisfiesPzi: true
+serviceConfig:
+  allTrafficOnLatestRevision: true
+  availableCpu: '0.3333'
+  availableMemory: 512Mi
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceCount: 6
+  maxInstanceRequestConcurrency: 1
+  minInstanceCount: 1
+  revision: cf-dq-00009-coy
+  secretEnvironmentVariables:
+  - key: MSKLAD_TOKEN
+    projectId: '420804682491'
+    secret: msklad-token
+    version: latest
+  service: projects/msklad-bi-prod/locations/asia-east1/services/cf-dq
+  serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  timeoutSeconds: 120
+  uri: https://cf-dq-xw5u2boozq-de.a.run.app
+state: ACTIVE
+updateTime: '2026-08-12T19:14:47.725221603Z'
+url: https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-dq
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (end) ===
+Wed Aug 12 19:14:50 UTC 2026

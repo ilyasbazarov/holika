@@ -1,0 +1,93 @@
+[
+  {
+    "check_name": "currency_normalization", 
+    "checked_at": "2026-08-12 19:02:14", 
+    "detail": "avg_revenue_kgs=73169.21", 
+    "passed": "true", 
+    "run_id": "1786561202.3581266"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-12 19:02:14", 
+    "detail": "yesterday_rev=4240470, ma7=4453347, ratio=0.95, threshold=0.1 (weekday), target_date=2026-08-12", 
+    "passed": "true", 
+    "run_id": "1786561202.3581266"
+  }, 
+  {
+    "check_name": "fk_integrity", 
+    "checked_at": "2026-08-12 19:02:14", 
+    "detail": "orphan_product_ids=0", 
+    "passed": "true", 
+    "run_id": "1786561202.3581266"
+  }, 
+  {
+    "check_name": "freshness", 
+    "checked_at": "2026-08-12 19:02:14", 
+    "detail": "max_date=2026-08-12, lag_days=1", 
+    "passed": "true", 
+    "run_id": "1786561202.3581266"
+  }, 
+  {
+    "check_name": "margin_sanity", 
+    "checked_at": "2026-08-12 19:02:14", 
+    "detail": "bad_margin_rows=0 (core, last 7d)", 
+    "passed": "true", 
+    "run_id": "1786561202.3581266"
+  }, 
+  {
+    "check_name": "not_empty", 
+    "checked_at": "2026-08-12 19:02:14", 
+    "detail": "staging_count=484", 
+    "passed": "true", 
+    "run_id": "1786561202.3581266"
+  }, 
+  {
+    "check_name": "currency_normalization", 
+    "checked_at": "2026-08-12 20:04:52", 
+    "detail": "avg_revenue_kgs=73169.21", 
+    "passed": "true", 
+    "run_id": "1786564802.7168841"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-12 20:04:52", 
+    "detail": "yesterday_rev=4240470, ma7=4453347, ratio=0.95, threshold=0.1 (weekday), target_date=2026-08-12", 
+    "passed": "true", 
+    "run_id": "1786564802.7168841"
+  }, 
+  {
+    "check_name": "drift_zero_docs", 
+    "checked_at": "2026-08-12 20:04:52", 
+    "detail": "yesterday_rev=4240470, ma7=4453347, target_date=2026-08-12 (notify, не блокирует promote)", 
+    "passed": "true", 
+    "run_id": "1786564802.7168841"
+  }, 
+  {
+    "check_name": "fk_integrity", 
+    "checked_at": "2026-08-12 20:04:52", 
+    "detail": "orphan_product_ids=0", 
+    "passed": "true", 
+    "run_id": "1786564802.7168841"
+  }, 
+  {
+    "check_name": "freshness", 
+    "checked_at": "2026-08-12 20:04:52", 
+    "detail": "max_date=2026-08-12, lag_days=1", 
+    "passed": "true", 
+    "run_id": "1786564802.7168841"
+  }, 
+  {
+    "check_name": "margin_sanity", 
+    "checked_at": "2026-08-12 20:04:52", 
+    "detail": "bad_margin_rows=0 (core, last 7d)", 
+    "passed": "true", 
+    "run_id": "1786564802.7168841"
+  }, 
+  {
+    "check_name": "not_empty", 
+    "checked_at": "2026-08-12 20:04:52", 
+    "detail": "staging_count=484", 
+    "passed": "true", 
+    "run_id": "1786564802.7168841"
+  }
+]
