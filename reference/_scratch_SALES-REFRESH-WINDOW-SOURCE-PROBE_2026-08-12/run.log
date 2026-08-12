@@ -1,0 +1,171 @@
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+2026-08-12 15:53:30,690 INFO $ date -u
+Wed Aug 12 09:53:30 UTC 2026
+2026-08-12 15:53:30,694 INFO $ gcloud auth list
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+2026-08-12 15:53:32,402 INFO === pair G1 (рабочая) date=2026-05-12 agent=31d135bc-4df8-11f1-0a80-1c8a0053c5b4 true_window=[2026-05-11T18:00:00+00:00;2026-05-12T18:00:00+00:00) ===
+2026-08-12 15:53:33,848 INFO [G1] entity/demand headers page=1 offset=0 got=25 total_so_far=25
+2026-08-12 15:53:33,857 INFO [G1] headers_fetched=25 matched_demands=1
+2026-08-12 15:53:34,274 INFO [G1] demand=4ec09bec-4df8-11f1-0a80-1c8a0053cab5 positions page=1 offset=0 got=2 total_so_far=2
+2026-08-12 15:53:34,275 INFO === pair G2 (рабочая) date=2026-06-03 agent=b3667c34-3ca3-11f0-0a80-15ce0025d38d true_window=[2026-06-02T18:00:00+00:00;2026-06-03T18:00:00+00:00) ===
+2026-08-12 15:53:35,733 INFO [G2] entity/demand headers page=1 offset=0 got=34 total_so_far=34
+2026-08-12 15:53:35,741 INFO [G2] headers_fetched=34 matched_demands=1
+2026-08-12 15:53:36,200 INFO [G2] demand=713677f9-5f1b-11f1-0a80-16c30046f88a positions page=1 offset=0 got=13 total_so_far=13
+2026-08-12 15:53:36,202 INFO === pair G3 (рабочая) date=2026-06-04 agent=18a13a53-87c0-11ef-0a80-1568002f42aa true_window=[2026-06-03T18:00:00+00:00;2026-06-04T18:00:00+00:00) ===
+2026-08-12 15:53:37,777 INFO [G3] entity/demand headers page=1 offset=0 got=38 total_so_far=38
+2026-08-12 15:53:37,788 INFO [G3] headers_fetched=38 matched_demands=1
+2026-08-12 15:53:38,399 INFO [G3] demand=df03bd21-5fd1-11f1-0a80-16c6003f30cb positions page=1 offset=0 got=17 total_so_far=17
+2026-08-12 15:53:38,401 INFO === pair G4 (рабочая) date=2026-06-15 agent=b3667c34-3ca3-11f0-0a80-15ce0025d38d true_window=[2026-06-14T18:00:00+00:00;2026-06-15T18:00:00+00:00) ===
+2026-08-12 15:53:40,033 INFO [G4] entity/demand headers page=1 offset=0 got=49 total_so_far=49
+2026-08-12 15:53:40,044 INFO [G4] headers_fetched=49 matched_demands=1
+2026-08-12 15:53:40,572 INFO [G4] demand=05f075fd-6874-11f1-0a80-0c09025e9f48 positions page=1 offset=0 got=6 total_so_far=6
+2026-08-12 15:53:40,573 INFO === pair G5 (рабочая) date=2026-07-02 agent=2db2c3dd-5f17-11f1-0a80-1d6500046ebf true_window=[2026-07-01T18:00:00+00:00;2026-07-02T18:00:00+00:00) ===
+2026-08-12 15:53:42,287 INFO [G5] entity/demand headers page=1 offset=0 got=52 total_so_far=52
+2026-08-12 15:53:42,298 INFO [G5] headers_fetched=52 matched_demands=1
+2026-08-12 15:53:43,146 INFO [G5] demand=bae95933-75e6-11f1-0a80-114600ce8b9f positions page=1 offset=0 got=48 total_so_far=48
+2026-08-12 15:53:43,150 INFO === pair G6 (рабочая) date=2026-07-11 agent=b3667c34-3ca3-11f0-0a80-15ce0025d38d true_window=[2026-07-10T18:00:00+00:00;2026-07-11T18:00:00+00:00) ===
+2026-08-12 15:53:44,136 INFO [G6] entity/demand headers page=1 offset=0 got=25 total_so_far=25
+2026-08-12 15:53:44,143 INFO [G6] headers_fetched=25 matched_demands=1
+2026-08-12 15:53:44,833 INFO [G6] demand=c72daa86-7ced-11f1-0a80-115900bf92ab positions page=1 offset=0 got=1 total_so_far=1
+2026-08-12 15:53:44,834 INFO === pair G7 (рабочая) date=2026-07-13 agent=4d4bb3c6-7396-11f1-0a80-1357002a9eb8 true_window=[2026-07-12T18:00:00+00:00;2026-07-13T18:00:00+00:00) ===
+2026-08-12 15:53:46,231 INFO [G7] entity/demand headers page=1 offset=0 got=32 total_so_far=32
+2026-08-12 15:53:46,239 INFO [G7] headers_fetched=32 matched_demands=1
+2026-08-12 15:53:46,958 INFO [G7] demand=26bd90d7-7e97-11f1-0a80-115901c6364d positions page=1 offset=0 got=10 total_so_far=10
+2026-08-12 15:53:46,960 INFO === pair G8 (рабочая) date=2026-07-20 agent=a08652a8-5e52-11f1-0a80-0cb7000604b7 true_window=[2026-07-19T18:00:00+00:00;2026-07-20T18:00:00+00:00) ===
+2026-08-12 15:53:48,459 INFO [G8] entity/demand headers page=1 offset=0 got=42 total_so_far=42
+2026-08-12 15:53:48,472 INFO [G8] headers_fetched=42 matched_demands=1
+2026-08-12 15:53:49,103 INFO [G8] demand=2ab78b59-8416-11f1-0a80-0f9a002aaf50 positions page=1 offset=0 got=33 total_so_far=33
+2026-08-12 15:53:49,106 INFO === pair G9 (рабочая) date=2026-07-21 agent=356fb156-83ed-11f1-0a80-173600242e0d true_window=[2026-07-20T18:00:00+00:00;2026-07-21T18:00:00+00:00) ===
+2026-08-12 15:53:50,734 INFO [G9] entity/demand headers page=1 offset=0 got=49 total_so_far=49
+2026-08-12 15:53:50,743 INFO [G9] headers_fetched=49 matched_demands=0
+2026-08-12 15:53:50,743 INFO === pair G10 (рабочая) date=2026-07-27 agent=75d7c694-78f9-11f0-0a80-077d000b5e09 true_window=[2026-07-26T18:00:00+00:00;2026-07-27T18:00:00+00:00) ===
+2026-08-12 15:53:51,964 INFO [G10] entity/demand headers page=1 offset=0 got=29 total_so_far=29
+2026-08-12 15:53:51,971 INFO [G10] headers_fetched=29 matched_demands=1
+2026-08-12 15:53:52,475 INFO [G10] demand=37ba4d35-896a-11f1-0a80-0184012f4ebb positions page=1 offset=0 got=11 total_so_far=11
+2026-08-12 15:53:52,476 INFO === pair G11 (рабочая) date=2026-07-27 agent=f4201bf6-6390-11f0-0a80-0fa2000d75eb true_window=[2026-07-26T18:00:00+00:00;2026-07-27T18:00:00+00:00) ===
+2026-08-12 15:53:53,514 INFO [G11] entity/demand headers page=1 offset=0 got=29 total_so_far=29
+2026-08-12 15:53:53,520 INFO [G11] headers_fetched=29 matched_demands=1
+2026-08-12 15:53:54,002 INFO [G11] demand=25bf30d5-8982-11f1-0a80-0184013a7688 positions page=1 offset=0 got=11 total_so_far=11
+2026-08-12 15:53:54,003 INFO === pair G12 (рабочая) date=2026-07-29 agent=79dc242a-1baf-11f1-0a80-138a002eeb35 true_window=[2026-07-28T18:00:00+00:00;2026-07-29T18:00:00+00:00) ===
+2026-08-12 15:53:55,594 INFO [G12] entity/demand headers page=1 offset=0 got=49 total_so_far=49
+2026-08-12 15:53:55,604 INFO [G12] headers_fetched=49 matched_demands=1
+2026-08-12 15:53:56,102 INFO [G12] demand=18ad3801-8b13-11f1-0a80-142b001cb22b positions page=1 offset=0 got=18 total_so_far=18
+2026-08-12 15:53:56,104 INFO === pair G13 (рабочая) date=2026-07-30 agent=b3667c34-3ca3-11f0-0a80-15ce0025d38d true_window=[2026-07-29T18:00:00+00:00;2026-07-30T18:00:00+00:00) ===
+2026-08-12 15:53:57,342 INFO [G13] entity/demand headers page=1 offset=0 got=38 total_so_far=38
+2026-08-12 15:53:57,350 INFO [G13] headers_fetched=38 matched_demands=4
+2026-08-12 15:53:57,802 INFO [G13] demand=7940c2f3-8be3-11f1-0a80-143300262b56 positions page=1 offset=0 got=11 total_so_far=11
+2026-08-12 15:53:58,427 INFO [G13] demand=ac67b4ba-8be3-11f1-0a80-143300264646 positions page=1 offset=0 got=23 total_so_far=23
+2026-08-12 15:53:58,875 INFO [G13] demand=c9eba0a7-8c01-11f1-0a80-14330037d8da positions page=1 offset=0 got=7 total_so_far=7
+2026-08-12 15:53:59,344 INFO [G13] demand=f0c33170-8c01-11f1-0a80-14330037ede0 positions page=1 offset=0 got=4 total_so_far=4
+2026-08-12 15:53:59,345 INFO === pair C1 (контрольная-сирота) date=2026-05-07 agent=b2c49334-f066-11f0-0a80-0c49000a9f1e true_window=[2026-05-06T18:00:00+00:00;2026-05-07T18:00:00+00:00) ===
+2026-08-12 15:54:00,303 INFO [C1] entity/demand headers page=1 offset=0 got=19 total_so_far=19
+2026-08-12 15:54:00,306 INFO [C1] headers_fetched=19 matched_demands=1
+2026-08-12 15:54:00,719 INFO [C1] demand=34ba9289-49f0-11f1-0a80-0fc70040c7f4 positions page=1 offset=0 got=4 total_so_far=4
+2026-08-12 15:54:00,720 INFO === pair C2 (контрольная-сирота) date=2026-05-09 agent=deb32c34-990c-11ef-0a80-19eb00083704 true_window=[2026-05-08T18:00:00+00:00;2026-05-09T18:00:00+00:00) ===
+2026-08-12 15:54:01,710 INFO [C2] entity/demand headers page=1 offset=0 got=27 total_so_far=27
+2026-08-12 15:54:01,717 INFO [C2] headers_fetched=27 matched_demands=2
+2026-08-12 15:54:02,181 INFO [C2] demand=14b7d25d-4b58-11f1-0a80-0fc70131e06c positions page=1 offset=0 got=11 total_so_far=11
+2026-08-12 15:54:02,690 INFO [C2] demand=caae9380-4b8d-11f1-0a80-0fc701596a8a positions page=1 offset=0 got=5 total_so_far=5
+2026-08-12 15:54:02,691 INFO === pair C3 (контрольная-сирота) date=2026-05-26 agent=b2c49334-f066-11f0-0a80-0c49000a9f1e true_window=[2026-05-25T18:00:00+00:00;2026-05-26T18:00:00+00:00) ===
+2026-08-12 15:54:03,989 INFO [C3] entity/demand headers page=1 offset=0 got=30 total_so_far=30
+2026-08-12 15:54:03,995 INFO [C3] headers_fetched=30 matched_demands=0
+
+======================================================================
+КОНТРОЛЬ 1 (положительный) — 7 сирот ADR-100 §1, обязаны быть НЕ НАЙДЕНЫ
+======================================================================
+  40a28a8926d5110f8beb82e0a9952bca [C2] -> не найден
+  4c22df388e46d8141ba12fd1572f011c [C3] -> не найден
+  606576a8890ee120b127c09a25cafdfd [C1] -> не найден
+  8ece1fa6771e0271522dce7b263f9283 [C3] -> не найден
+  a28436b786066e7a886db6b86d59eae8 [C3] -> не найден
+  d257b8f9cca0c9e251ccfd052bfcc57b [C2] -> не найден
+  d564a1906e5fd33ca375200be5da039b [C1] -> не найден
+ВЕРДИКТ КОНТРОЛЯ 1: PASS
+
+======================================================================
+КОНТРОЛЬ 2 (отрицательный) — заведомо живые позиции, обязаны НАЙТИСЬ (>=10)
+======================================================================
+  08819b78f1a5fa679af1ef3523c8deab [G8] -> найден
+  0a1041061f4a4c1974eefd4dab6a7c0b [G6] -> найден
+  188b8d914e78cbbdfaeac34d2ff43684 [G4] -> найден
+  1cd0fb44de17a4370b9b14e6b18c96a7 [G10] -> найден
+  1f19951488bc6cc0eaa1f3825438cf18 [G12] -> найден
+  230fde746b89630f976efdcb866ab86c [G5] -> найден
+  2ee40d52c1dcae3294329de545dbc2bb [C2] -> найден
+  4dcb30d16132609ba0136a41b39e4b0a [G12] -> найден
+  56c7d27f3f312ec4b750ae762256c6be [G7] -> найден
+  5d0c34c473dc24313f81d5842f9bdb8c [G13] -> найден
+  5efec8d8054d05c801acf66414f18596 [G3] -> найден
+  69ef08435e31a5452d3ffa6435752582 [G4] -> найден
+  70946ab1c1ef42b2b58bc158861915eb [G11] -> найден
+  843325ca2e52cffddf00a786fb00ce3b [G2] -> найден
+  843a773615d45b5a281f1218aa41952a [G7] -> найден
+  87d529f8479825c72e620ee0ec1127c3 [C1] -> найден
+  a49005c6e0b06b4e6d2f7ee3b770e700 [C2] -> найден
+  c115921db66e589a92039354ca491dce [G2] -> найден
+  cd30134861ff166a92c9f556950ee8f5 [G13] -> найден
+  d3d252f0b7fc45eb9de8967b2144e72f [C1] -> найден
+  d8ec7deabcbe6c2b7983373bbdd1f744 [G11] -> найден
+  d92f150e6837443cc3c6bcb662baf154 [G10] -> найден
+  da718c701385314275d097ed657e765c [G5] -> найден
+  edb3f4a7e8c47117139a0c71bd192fd4 [G8] -> найден
+  f43a122ab13468f6deddfa8df4846409 [G3] -> найден
+Найдено живых: 25/25 (нужно >=10)
+ВЕРДИКТ КОНТРОЛЯ 2: PASS
+
+======================================================================
+ДОВЕРИЕ К МЕТОДУ: ПОДТВЕРЖДЕНО
+======================================================================
+
+======================================================================
+ВЕРДИКТ ПО 29 УДАЛЁННЫМ ПОЗИЦИЯМ
+======================================================================
+  0b47b431aaef54236c0c24882a47e9e9 [G9] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  117c9c069f920f1d87d550f755040ce2 [G6] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  143035c08bea9f9bf479465da01dd254 [G2] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  20d93da5fba41b9110bfecce95608aaf [G9] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  2dd7b9fda0f4e372442019fde4bdb1f3 [G2] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  41559c6b38b39dfcbffcfa726b131a8f [G7] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  4200c0b0d7184d80e1c98aba9d16660b [G13] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  48a33a41ddc9d429a533c0f1f0f21fb1 [G13] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  5981baeb9fa0cbcf2da68ff6f355762f [G7] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  65d08e698b0541471dc772f3d6e91e33 [G9] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  7339a844877d1d393033bc3e5ab545cf [G4] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  786f54b87f1e81ecf04efead3ab59250 [G1] -> ЖИВА в источнике (demand=4ec09bec-4df8-11f1-0a80-1c8a0053cab5, position=4ec0a5c8-4df8-11f1-0a80-1c8a0053cab8) => ДЕФЕКТ (b1)
+  844460b779964f97e1de571086dfeeef [G7] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  86baf50a0682bc43d9536cf267010f58 [G11] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  8e05d4b486a48d5b018df201217eb7f3 [G1] -> ЖИВА в источнике (demand=4ec09bec-4df8-11f1-0a80-1c8a0053cab5, position=4ec0a893-4df8-11f1-0a80-1c8a0053cab9) => ДЕФЕКТ (b1)
+  95a69af832733a3601c244b913e3fb93 [G8] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  961a459badd6e45493e4db351ca30d90 [G13] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  99e65fddd5719ed7d20095f820e33c0d [G10] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  a4e3b8435c8bada17b55c9cce8484ad6 [G9] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  ab1ae815d0cf68034d9053606b5c3087 [G9] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  b0878364dc7ef46e2e1d971aa18be751 [G9] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  b4fb95a49cf529aec2f8c243001aaaa5 [G5] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  b52aba22dc70fed8a720cff790470ee9 [G7] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  b68dfe99b406e5709972520aa83b5899 [G9] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  c393fa3a9646c4cc699ac38c9fed8680 [G9] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  c5ba231dc86abad9b5aa75d77452c6ae [G7] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  dd3e3bb9d3677ac6ee454a833bfd0284 [G7] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  df2d662ffe4189c916953d812391d381 [G3] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+  f79a38d440ea111ccb43e8047fb23a59 [G12] -> не найдена ни в одном документе пары => УДАЛЕНИЕ ЗАКОННО (b2)
+
+Итог: дефект (b1) = 2 строк; законно (b2) = 27 строк.
+2026-08-12 15:54:03,998 INFO verdict written to /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-SOURCE-PROBE/reference/_scratch_SALES-REFRESH-WINDOW-SOURCE-PROBE_2026-08-12/verdict.json
+2026-08-12 15:54:03,998 INFO $ date -u
+Wed Aug 12 09:54:04 UTC 2026
+2026-08-12 15:54:04,006 INFO $ gcloud auth list
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
