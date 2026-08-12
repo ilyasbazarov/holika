@@ -39,11 +39,21 @@ DQ_FRESHNESS_INVOICES_MAX_HOURS = 48
 # core.fact_customer_invoices — перенесено без изменений из
 # reference/invoices_loader_design_2026-08-02.md §9.2 (суточный загрузчик → 2 × 24ч = 48ч).
 
-# DQ_FRESHNESS_PAYMENTS_MAX_HOURS / DQ_FRESHNESS_COMMISSIONREPORTIN_MAX_HOURS — НЕ заводятся.
-# Номинальная величина по формуле была бы 48ч (finance-daily-update / loss-commission-daily-update,
-# суточная каденция, "0 3 * * *" Asia/Bishkek, 11_INFRA_FACTS.md), но инвариант "один стамп
-# _loaded_at на прогон" ОПРОВЕРГНУТ чтением кода для обеих таблиц (cf-finance/main.py:72,
-# cf-loss-commission/main.py:149 — datetime.now()/utcnow() вызывается ОТДЕЛЬНО на каждую строку,
-# не один раз на прогон), см. reference/dq_freshness_coverage_2026-08-09.md §открытые вопросы.
-# Проверка (A) для этих двух таблиц не готова к переносу — константа порога не заводится, чтобы
-# не создавать видимость готовой проверки (05_CONVENTIONS ★ anti-improvisation).
+DQ_FRESHNESS_PAYMENTS_MAX_HOURS = 48
+# finance-daily-update, расписание "0 3 * * *" Asia/Bishkek (11_INFRA_FACTS.md:25)
+# → суточная каденция → 2 × 24ч = 48ч. Величина берётся как MAX(_loaded_at)
+# (ADR-155): дефект построчного стампа (cf-finance/main.py:72 — datetime.now()
+# вызывается отдельно на каждую строку, не один раз на прогон) не блокирует
+# готовность порогового значения — MAX по построчным стампам равен моменту
+# окончания прогона, отличие от единого стампа на прогон (минуты) пренебрежимо
+# мало относительно порога (48ч), направление ошибки безопасное (ADR-155 §2).
+# Поле distinct_load_stamps для этой таблицы неинформативно — построчный
+# стамп, не стамп прогона.
+
+DQ_FRESHNESS_COMMISSIONREPORTIN_MAX_HOURS = 48
+# loss-commission-daily-update, расписание "0 3 * * *" Asia/Bishkek
+# (11_INFRA_FACTS.md:26) → суточная каденция → 2 × 24ч = 48ч. Тот же вывод
+# порога и то же снятие дефекта построчного стампа (ADR-155), что у
+# DQ_FRESHNESS_PAYMENTS_MAX_HOURS выше (cf-loss-commission/main.py:149 —
+# datetime.utcnow() отдельно на каждую строку). Поле distinct_load_stamps для
+# этой таблицы неинформативно — построчный стамп, не стамп прогона.
