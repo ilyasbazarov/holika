@@ -1,0 +1,275 @@
+=== date -u (start) ===
+Wed Aug 12 11:23:26 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== 1) оба идентификатора отсутствуют в target — ожидание 0 ===
+[]
+=== 2) оба идентификатора присутствуют в снимке ровно по одному разу — ожидание 1 и 1 ===
+[
+  {
+    "n": "1", 
+    "transaction_id": "8e05d4b486a48d5b018df201217eb7f3"
+  }, 
+  {
+    "n": "1", 
+    "transaction_id": "786f54b87f1e81ecf04efead3ab59250"
+  }
+]
+=== 3a) схема снимка — полный список имя+тип ===
+[
+  {
+    "column_name": "transaction_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "1"
+  }, 
+  {
+    "column_name": "transaction_date", 
+    "data_type": "DATE", 
+    "ordinal_position": "2"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "3"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "ordinal_position": "4"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "5"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "6"
+  }, 
+  {
+    "column_name": "return_quantity", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "7"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "8"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "9"
+  }, 
+  {
+    "column_name": "margin_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "10"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "11"
+  }, 
+  {
+    "column_name": "cogs_usd", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "12"
+  }, 
+  {
+    "column_name": "margin_usd", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "13"
+  }, 
+  {
+    "column_name": "_week_start", 
+    "data_type": "DATE", 
+    "ordinal_position": "14"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "ordinal_position": "15"
+  }, 
+  {
+    "column_name": "sell_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "16"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "17"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "18"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "19"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "20"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "21"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "22"
+  }, 
+  {
+    "column_name": "document_owner_employee_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "23"
+  }
+]
+=== 3b) схема цели — полный список имя+тип ===
+[
+  {
+    "column_name": "transaction_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "1"
+  }, 
+  {
+    "column_name": "transaction_date", 
+    "data_type": "DATE", 
+    "ordinal_position": "2"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "3"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING", 
+    "ordinal_position": "4"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "5"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "6"
+  }, 
+  {
+    "column_name": "return_quantity", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "7"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "8"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "9"
+  }, 
+  {
+    "column_name": "margin_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "10"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "11"
+  }, 
+  {
+    "column_name": "cogs_usd", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "12"
+  }, 
+  {
+    "column_name": "margin_usd", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "13"
+  }, 
+  {
+    "column_name": "_week_start", 
+    "data_type": "DATE", 
+    "ordinal_position": "14"
+  }, 
+  {
+    "column_name": "_loaded_at", 
+    "data_type": "TIMESTAMP", 
+    "ordinal_position": "15"
+  }, 
+  {
+    "column_name": "sell_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "16"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "17"
+  }, 
+  {
+    "column_name": "discount", 
+    "data_type": "FLOAT64", 
+    "ordinal_position": "18"
+  }, 
+  {
+    "column_name": "sales_channel_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "19"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "20"
+  }, 
+  {
+    "column_name": "project_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "21"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING", 
+    "ordinal_position": "22"
+  }, 
+  {
+    "column_name": "document_owner_employee_id", 
+    "data_type": "STRING", 
+    "ordinal_position": "23"
+  }
+]
+=== 4) общее число строк target ДО вставки (нужно приёмке) ===
+[
+  {
+    "row_count_before": "42986"
+  }
+]
+=== date -u (end) ===
+Wed Aug 12 11:23:41 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
