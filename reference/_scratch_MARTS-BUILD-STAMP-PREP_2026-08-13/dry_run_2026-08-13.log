@@ -1,0 +1,32 @@
+=== date -u (первая команда) ===
+Thu Aug 13 09:41:40 UTC 2026
+=== gcloud auth list (первая команда) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== dry_run: sq_marts_customer_invoices_ar_stamped_2026-08-13.sql ===
+Query successfully validated. Assuming the tables are not modified, running this query will process 1415414 bytes of data.
+rc=0
+
+=== dry_run: sq_marts_expenses_stamped_2026-08-13.sql ===
+Query successfully validated. Assuming the tables are not modified, running this query will process 1533969 bytes of data.
+rc=0
+
+=== dry_run: sq_marts_weight_flow_stamped_2026-08-13.sql ===
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 3230365 bytes of data.
+rc=0
+
+=== date -u (последняя команда) ===
+Thu Aug 13 09:41:51 UTC 2026
+=== gcloud auth list (последняя команда) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
