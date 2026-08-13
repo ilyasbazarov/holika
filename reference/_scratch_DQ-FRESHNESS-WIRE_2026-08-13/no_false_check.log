@@ -1,0 +1,24 @@
+=== check_freshness_purchases_technical ===
+14:            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_PURCHASES_MAX_HOURS}, "
+18:        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_PURCHASES_MAX_HOURS}, VERDICT={verdict}, "
+22:        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+=== check_freshness_returns_technical ===
+13:            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_RETURNS_MAX_HOURS}, "
+17:        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_RETURNS_MAX_HOURS}, VERDICT={verdict}, "
+21:        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+=== check_freshness_inventory_technical ===
+13:            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_INVENTORY_MAX_HOURS}, "
+17:        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_INVENTORY_MAX_HOURS}, VERDICT={verdict}, "
+21:        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+=== check_freshness_payments_technical ===
+14:            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_PAYMENTS_MAX_HOURS}, "
+18:        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_PAYMENTS_MAX_HOURS}, VERDICT={verdict}, "
+23:        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+=== check_freshness_commissionreportin_technical ===
+14:            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_COMMISSIONREPORTIN_MAX_HOURS}, "
+18:        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_COMMISSIONREPORTIN_MAX_HOURS}, VERDICT={verdict}, "
+23:        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+=== check_freshness_invoices_technical ===
+14:            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_INVOICES_MAX_HOURS}, "
+18:        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_INVOICES_MAX_HOURS}, VERDICT={verdict}, "
+22:        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
