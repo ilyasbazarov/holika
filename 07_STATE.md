@@ -3,7 +3,7 @@
 # 07 · STATE — Текущее состояние проекта
 
 **Статус:** LIVING (обновляется каждую сессию через `STATE_PATCH`).
-**updated_at:** 2026-08-13 · **обновил:** архитектор (сессия: `PARITY-CLIENT-JULY-RECHECK`, точечное заведение строк по прямому указанию владельца — прецедент `ADR-145`/`ADR-146`, сборщику повторно не применять)
+**updated_at:** 2026-08-13 · **обновил:** архитектор (сессия: `SALES-OVERVIEW-OWNER-SWITCH-MANDATE`, точечное заведение строк по прямому указанию владельца — прецедент `ADR-145`/`ADR-146`, сборщику повторно не применять)
 
 > **Правило компактности (ADR-064):** здесь живёт ТОЛЬКО открытое (open / DEFER / IN PROGRESS / READY /
 > ожидает решения). Полностью закрытые Q/задачи/блокеры переезжают в `07_ARCHIVE.md` однострочной выжимкой
@@ -1742,6 +1742,7 @@ COGS уже определён; гэп принадлежит исключите
 | DQ-GATE-BLOCK-BOUNDED | A | да | постоянный | документная работа, облачных вызовов нет; форма назначена (`ADR-154`) — длительность блока из `audit.dq_runs`, порог эскалации `24` часовых прогона, ручное снятие получает процедуру. Пишет: `reference/dq_gate_block_bounded_<date>.md` |
 | DQ-GATE-SCOPE-CONFIRM | A | да | постоянный, гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` | подтверждение на первом реальном провале `drift_check` после разделения периметра, что закупки/возвраты исполнились, а промоут — нет; форма запроса — из скриптов `DQ-SOURCE-CAPTURE`. Пишет: `reference/dq_gate_scope_confirm_<date>.md` |
 | PARALLEL-CHECK-BLOCK-END | A | нет | постоянный | правка `tools/parallel_check.sh` и нового самотеста, облачных вызовов нет. Пишет: `tools/parallel_check.sh`, `tools/parallel_check_selftest.sh`, `reference/parallel_check_block_end_<date>.md` |
+| SALES-OVERVIEW-OWNER-SWITCH | B | нет | **ВЫДАН поимённо** (владелец, чат 2026-08-13) | объект ОДИН — `transferConfig` `sq_marts_sales_overview` (`69ff34b4-0000-2b2b-a390-14c14ef7af10`); форма правки предписана дословно (четыре места, локализация подтверждена грепом), три предусловия read-only, четыре проверки приёмки с числами, откат возвратом прежнего текста запроса — `reference/sales_overview_owner_switch_mandate_2026-08-13.md`. Пакетное расширение запрещено (`ADR-115 §5`). Пишет: `reference/sales_overview_owner_switch_<date>.md`, `reference/sql/sq_marts_sales_overview.sql`, `reference/_scratch_SALES-OVERVIEW-OWNER-SWITCH_<date>/` |
 | DQ-FRESHNESS-WIRE | A | да | постоянный | подключение двенадцати уже задеплоенных функций свежести к списку `CHECKS` в снапшоте, ничего не деплоит; форма подключения наблюдающая (`07_GAPS.md` строка `DQ-FRESHNESS-WIRE`). Пишет: `reference/code/cf-dq/main.py`, `reference/dq_freshness_wire_<date>.md`, `reference/_scratch_DQ-FRESHNESS-WIRE_<date>/` |
 | DQ-FRESHNESS-WIRE, деплой | B | нет | НЕ выдан | выезд `cf-dq`; дополнительно гейтится `ADR-065` |
 | PARITY-CLIENT-JULY-RECHECK | A | да | постоянный | read-only замеры BigQuery по замечаниям клиента, живых вызовов к МойСклад не требует. Пишет: `reference/parity_client_july_recheck_<date>.md`, `reference/_scratch_PARITY-CLIENT-JULY-RECHECK_<date>/` |
@@ -1858,6 +1859,7 @@ COGS уже определён; гэп принадлежит исключите
 | `Q-107` | OPEN | Проверка готовности деплоя не спрашивает «чьи строки представляет источник» для операций удаления (`NEW_CONVENTIONS`, `SALES-REFRESH-WINDOW-ROLLBACK-ADJ`, 2026-08-11) | апрув владельца (proposed) |
 | `Q-109` | OPEN | Критерий дефект/норма обязан прогоняться по размеченному набору обеих категорий ДО вердикта, не после (`NEW_CONVENTIONS`, `SALES-REFRESH-WINDOW-DEFECT-ADJ`, 2026-08-12) | апрув владельца (proposed) |
 | `DQ-FRESHNESS-WIRE` | READY | Двенадцать функций свежести задеплоены, но не входят в `CHECKS` и не исполняются — шесть таблиц ядра без наблюдателя; доисполнение строки `2` списка закрытия | гейтов нет; подготовка класс A исполнима сейчас, деплой (`DQ-FRESHNESS-WIRE-DEPLOY`) класс B, мандат НЕ выдан |
+| `SALES-OVERVIEW-OWNER-SWITCH` | READY | Разрез по менеджеру в витрине продаж переводится на владельца документа с границей `2026-05-01` (закрывает замечание клиента по июлю) | гейтов нет — мандат класса B ВЫДАН поимённо `2026-08-13`; форма, приёмка и откат — `reference/sales_overview_owner_switch_mandate_2026-08-13.md` |
 | `MARTS-BUILD-STAMP-PREP` | READY | Остаток класса A `MARTS-BUILD-STAMP`: три готовых текста SQL под выбранную форму плюс проверка потребителей `marts.weight_flow` | гейтов нет; форма выбрана `MARTS-STAMP-FORM-ADJ`, применение — класс B на трёх объектах, мандат НЕ выдан |
 | `PARITY-CLIENT-JULY-RECHECK` | PARTIAL | Четыре величины июля, предъявленные клиентом: менеджер, возвраты, две строки Топ-20; шаг 1 замерен, два остатка названы | занимает место снятой строки `4` списка закрытия; остаток (i) правило-мост возвратов — архитектор, (ii) настройки графика Топ-20 — владелец (интерфейс Looker Studio) |
 

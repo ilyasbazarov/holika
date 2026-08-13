@@ -1,0 +1,73 @@
+=== START 2026-08-13T10:32:16Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+--- BL1 витрина: апрель-2026 по менеджеру (эталон неизменности истории) ---
+[
+  {
+    "manager_name": "Турдалиева А. М.", 
+    "revenue_kgs": "5.740602562E7"
+  }, 
+  {
+    "manager_name": "Турсунбекова М.", 
+    "revenue_kgs": "1.950679128E7"
+  }, 
+  {
+    "manager_name": "Омурбекова Э. О.", 
+    "revenue_kgs": "4582772.94"
+  }, 
+  {
+    "manager_name": "(NULL)", 
+    "revenue_kgs": "2851639.89"
+  }, 
+  {
+    "manager_name": "Бейшеналиева К.", 
+    "revenue_kgs": "652772.7"
+  }, 
+  {
+    "manager_name": "Бактияр кызы Ч.", 
+    "revenue_kgs": "43689.93"
+  }, 
+  {
+    "manager_name": "Казакбаев Н. К.", 
+    "revenue_kgs": "41543.47"
+  }
+]
+
+--- BL2 витрина: суммарная выручка июля и мая (инвариант — не меняется) ---
+[
+  {
+    "all_total": "6.9965710114E8", 
+    "april_total": "8.508523583E7", 
+    "july_total": "1.1232445748E8", 
+    "may_total": "9.521420579E7"
+  }
+]
+
+--- BL3 ожидаемый ПОСЛЕ правки разрез мая по владельцу документа ---
+[
+  {
+    "manager_name": "Турдалиева А. М.", 
+    "revenue_kgs": "7.722946941E7"
+  }, 
+  {
+    "manager_name": "Турсунбекова М.", 
+    "revenue_kgs": "1.193186613E7"
+  }, 
+  {
+    "manager_name": "Не указан", 
+    "revenue_kgs": "5301450.08"
+  }, 
+  {
+    "manager_name": "Бактияр кызы Ч.", 
+    "revenue_kgs": "751420.18"
+  }
+]
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T10:32:25Z ===

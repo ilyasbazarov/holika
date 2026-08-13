@@ -1,0 +1,159 @@
+=== START 2026-08-13T10:12:16Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+--- O1 заполненность document_owner_employee_id по месяцам, вся история ---
+[
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "1.691684102E7", 
+    "revenue_without_owner": "1.691684102E7", 
+    "total_rows": "2262", 
+    "ym": "2025-05"
+  }, 
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "1.039358241E7", 
+    "revenue_without_owner": "1.039358241E7", 
+    "total_rows": "3489", 
+    "ym": "2025-06"
+  }, 
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "1.606084942E7", 
+    "revenue_without_owner": "1.606084942E7", 
+    "total_rows": "2099", 
+    "ym": "2025-07"
+  }, 
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "9316025.85", 
+    "revenue_without_owner": "9316025.85", 
+    "total_rows": "2309", 
+    "ym": "2025-08"
+  }, 
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "1.418425151E7", 
+    "revenue_without_owner": "1.418425151E7", 
+    "total_rows": "2639", 
+    "ym": "2025-09"
+  }, 
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "2.248274516E7", 
+    "revenue_without_owner": "2.248274516E7", 
+    "total_rows": "2592", 
+    "ym": "2025-10"
+  }, 
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "1.720988883E7", 
+    "revenue_without_owner": "1.720988883E7", 
+    "total_rows": "3014", 
+    "ym": "2025-11"
+  }, 
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "1.667513352E7", 
+    "revenue_without_owner": "1.667513352E7", 
+    "total_rows": "2017", 
+    "ym": "2025-12"
+  }, 
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "3.10997299E7", 
+    "revenue_without_owner": "3.10997299E7", 
+    "total_rows": "2184", 
+    "ym": "2026-01"
+  }, 
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "2.642932194E7", 
+    "revenue_without_owner": "2.642932194E7", 
+    "total_rows": "1960", 
+    "ym": "2026-02"
+  }, 
+  {
+    "filled": "0", 
+    "filled_pct": "0.0", 
+    "revenue_kgs": "8.70003167E7", 
+    "revenue_without_owner": "8.70003167E7", 
+    "total_rows": "2802", 
+    "ym": "2026-03"
+  }, 
+  {
+    "filled": "194", 
+    "filled_pct": "7.8", 
+    "revenue_kgs": "8.508523581E7", 
+    "revenue_without_owner": "8.050954722E7", 
+    "total_rows": "2499", 
+    "ym": "2026-04"
+  }, 
+  {
+    "filled": "1354", 
+    "filled_pct": "39.8", 
+    "revenue_kgs": "9.52142058E7", 
+    "revenue_without_owner": "5301450.08", 
+    "total_rows": "3404", 
+    "ym": "2026-05"
+  }, 
+  {
+    "filled": "2804", 
+    "filled_pct": "61.8", 
+    "revenue_kgs": "9.667655205E7", 
+    "revenue_without_owner": "6394683.37", 
+    "total_rows": "4540", 
+    "ym": "2026-06"
+  }, 
+  {
+    "filled": "2912", 
+    "filled_pct": "62.2", 
+    "revenue_kgs": "1.1232445746E8", 
+    "revenue_without_owner": "3334723.58", 
+    "total_rows": "4684", 
+    "ym": "2026-07"
+  }, 
+  {
+    "filled": "633", 
+    "filled_pct": "96.6", 
+    "revenue_kgs": "4.303071558E7", 
+    "revenue_without_owner": "24591.3", 
+    "total_rows": "655", 
+    "ym": "2026-08"
+  }
+]
+
+--- O2 владельцы документов, которых нет в dim_employees ---
+[
+  {
+    "orphan_owner_ids": "0", 
+    "revenue_kgs": null
+  }
+]
+
+--- O3 май-2026: разрез по обеим атрибуциям ---
+[
+  {
+    "may_revenue_no_doc_owner": "5301450.08", 
+    "may_revenue_total": "9.52142058E7"
+  }
+]
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T10:12:26Z ===
