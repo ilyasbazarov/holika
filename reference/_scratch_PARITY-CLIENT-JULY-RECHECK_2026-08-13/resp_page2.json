@@ -1,0 +1,22 @@
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/report/profit/bycounterparty?momentFrom=2026-07-01%2000:00:00&momentTo=2026-07-31%2023:59:59&limit=100&offset=100",
+    "type" : "salesbycounterparty",
+    "mediaType" : "application/json",
+    "size" : 100,
+    "limit" : 100,
+    "offset" : 100,
+    "previousHref" : "https://api.moysklad.ru/api/remap/1.2/report/profit/bycounterparty?offset=0&momentFrom=2026-07-01%2000%3A00%3A00&momentTo=2026-07-31%2023%3A59%3A59&limit=100"
+  },
+  "rows" : [ ]
+}

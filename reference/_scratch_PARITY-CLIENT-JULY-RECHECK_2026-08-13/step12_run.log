@@ -1,0 +1,35 @@
+=== START 2026-08-13T11:07:23Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+--- страница 2 (offset=100): проверка полноты ---
+строк на 2-й странице: 0 | meta.size: 100
+returnSum 2-й страницы: 0.00
+
+--- есть ли UMAI WB в наших возвратах вообще ---
+  {
+    "agent_name": "UMAI WB (Договор КР)", 
+    "has_basis": "false", 
+    "return_date": "2026-06-24", 
+    "return_id": "4c7db61a-6fa4-11f1-0a80-05070006c6e8", 
+    "sum_kgs": "761.0"
+  }
+]
+
+--- есть ли UMAI WB в справочнике контрагентов ---
+  }, 
+  {
+    "agent_id": "021baf6c-8326-11f0-0a80-06b300442173", 
+    "name": "Instagram sumailaws (SUMAYA)"
+  }, 
+  {
+    "agent_id": "0276f431-2ff5-11ef-0a80-11d40019917f", 
+    "name": "UMAI WB (Договор КР)"
+  }
+]
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T11:07:31Z ===

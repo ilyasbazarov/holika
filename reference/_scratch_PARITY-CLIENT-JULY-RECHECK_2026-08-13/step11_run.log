@@ -1,0 +1,23 @@
+=== START 2026-08-13T11:06:50Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+токен получен, длина: 40
+
+--- GET bycounterparty, июль-2026 ---
+
+HTTP_CODE=200
+размер ответа:    86668 байт
+строк в ответе: 100 | meta.size: 100
+СУММА returnSum по всем контрагентам: 64190.13
+
+контрагенты с ненулевым returnSum:
+  Эргешева Алтынай Avenue_cosmeticskg (Договор КР)             returnSum=    62709.00  returnCount=1.0  sellSum=1836648.52
+  UMAI WB (Договор КР)                                         returnSum=     1481.13  returnCount=1.0  sellSum=3097648.79
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T11:06:52Z ===

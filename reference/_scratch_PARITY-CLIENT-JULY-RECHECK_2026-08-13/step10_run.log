@@ -1,0 +1,62 @@
+=== START 2026-08-13T11:04:51Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+--- X1 четыре строки, исчезнувшие по этому товару ---
+[
+  {
+    "agent_id": "75d7c694-78f9-11f0-0a80-077d000b5e09", 
+    "revenue_kgs": "14875.92", 
+    "sales_channel_name": "Оптовая торговля", 
+    "sell_quantity": "20.0", 
+    "transaction_date": "2026-07-27", 
+    "transaction_id": "99e65fddd5719ed7d20095f820e33c0d"
+  }, 
+  {
+    "agent_id": "f4201bf6-6390-11f0-0a80-0fa2000d75eb", 
+    "revenue_kgs": "7668.0", 
+    "sales_channel_name": "Оптовая торговля", 
+    "sell_quantity": "10.0", 
+    "transaction_date": "2026-07-27", 
+    "transaction_id": "86baf50a0682bc43d9536cf267010f58"
+  }, 
+  {
+    "agent_id": "79dc242a-1baf-11f1-0a80-138a002eeb35", 
+    "revenue_kgs": "3833.99", 
+    "sales_channel_name": "Оптовая торговля", 
+    "sell_quantity": "5.0", 
+    "transaction_date": "2026-07-29", 
+    "transaction_id": "f79a38d440ea111ccb43e8047fb23a59"
+  }, 
+  {
+    "agent_id": "a08652a8-5e52-11f1-0a80-0cb7000604b7", 
+    "revenue_kgs": "1457.3", 
+    "sales_channel_name": "Оптовая торговля", 
+    "sell_quantity": "2.0", 
+    "transaction_date": "2026-07-20", 
+    "transaction_id": "95a69af832733a3601c244b913e3fb93"
+  }
+]
+
+--- X2 сколько всего строк июля исчезло из ядра против снимка и на какую сумму ---
+[
+  {
+    "lost_revenue_kgs": "178124.42", 
+    "lost_rows": "23"
+  }
+]
+
+--- X3 Турдалиева за июль по снимку (по владельцу документа) — что видел клиент ---
+[
+  {
+    "revenue_kgs": "7.474582028E7"
+  }
+]
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T11:05:01Z ===
