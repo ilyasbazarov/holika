@@ -1,0 +1,134 @@
+=== START 2026-08-13T09:58:04Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+--- H1 все товары со словом spray в витрине за июль ---
+[
+  {
+    "product_id": "da7c9a06-6c8d-11f1-0a80-1be70017b13b", 
+    "product_name": "Round Lab Birch Juice Moisturizing  Sun Spray100ml", 
+    "revenue_kgs": "3586610.7"
+  }, 
+  {
+    "product_id": "cd058644-2e59-11ef-0a80-0b8700a94f77", 
+    "product_name": "Reclar Ion Double Care Toner Mist Sprayer (white) (Элегантное портативное электронное устройство, создающее мягкий увлажняющий «туман» на поверхности кожи)", 
+    "revenue_kgs": "0.0"
+  }
+]
+
+--- H2 есть ли в витрине за июль строка ровно на 27835.21 ---
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r6d09c5c98bc4d9ad_0000019ffa8ec6a4_1': Aggregations of aggregations
+are not allowed at [6:22]
+
+--- H3 топ-25 товаров витрины за июль (что рисует график) ---
+[
+  {
+    "product_name": "Dr. Althea 345 Relief Cream 50 ml ( Лёгкий успокаивающий крем )", 
+    "revenue_kgs": "7284100.27"
+  }, 
+  {
+    "product_name": "Medicube AGE-R BOOSTER PRO EX PINK ( Гаджет для домашнего ухода за кожей (розовый))", 
+    "revenue_kgs": "5593238.22"
+  }, 
+  {
+    "product_name": "Celimax Dual Barrier Creamy Toner 150 ml ( Барьерный кремовый тонер )", 
+    "revenue_kgs": "4269115.06"
+  }, 
+  {
+    "product_name": "Round Lab Birch Juice Moisturizing  Sun Spray100ml", 
+    "revenue_kgs": "3586610.7"
+  }, 
+  {
+    "product_name": "MEDICUBE_(US) AGE-R BOOSTER PRO YELLOW", 
+    "revenue_kgs": "3391206.6"
+  }, 
+  {
+    "product_name": "Medicube AGE-R BOOSTER PRO EX Black", 
+    "revenue_kgs": "3173693.31"
+  }, 
+  {
+    "product_name": "Skin1004 Madagascar Centella Hyalu-Cica Water-Fit Sun Serum 50ml", 
+    "revenue_kgs": "2911959.18"
+  }, 
+  {
+    "product_name": "ANUA PDRN Hyaluronic Acid Capsule 100 Serum 30ml", 
+    "revenue_kgs": "2626852.93"
+  }, 
+  {
+    "product_name": "Round Lab Birch Juice Moisturizing Sunscreen 50 ml(Увлажняющий санскрин с берёзовым соком )", 
+    "revenue_kgs": "2577149.97"
+  }, 
+  {
+    "product_name": "Skin1004 Madagascar Centella Poremizing Velvet Finish Sunscreen 50ml ( Солнцезащитный крем с эффектом «вельветового финиша» )", 
+    "revenue_kgs": "2085827.39"
+  }, 
+  {
+    "product_name": "MEDICUBE_(US) AGE-R BOOSTER PRO X2 PINK", 
+    "revenue_kgs": "2055007.38"
+  }, 
+  {
+    "product_name": "Skin1004 Madagascar Centella Tone Brightening Capsule Ampoule 100ml (Осветляющая капсульная ампула)", 
+    "revenue_kgs": "2047013.37"
+  }, 
+  {
+    "product_name": "MEDICUBE_(US) AGE-R BOOSTER PRO PURPLE", 
+    "revenue_kgs": "1961526.7"
+  }, 
+  {
+    "product_name": "Dr. Althea Aqua Glowing Sunscreen 45ml ( Увлажняющий солнцезащитный крем )", 
+    "revenue_kgs": "1757674.72"
+  }, 
+  {
+    "product_name": "Dr. Althea Green Tea Fresh Sunscreen 45ml ( Успокаивающий солнцезащитный крем )", 
+    "revenue_kgs": "1654625.57"
+  }, 
+  {
+    "product_name": "MEDICUBE_(US) AGE-R BOOSTER PRO X2 WHITE", 
+    "revenue_kgs": "1440692.78"
+  }, 
+  {
+    "product_name": "Beauty Of Joseon Relief Sun : Rice + Probiotics 50ml (Солнцезащитный крем с экстрактом риса и пробиотиками)", 
+    "revenue_kgs": "1358593.09"
+  }, 
+  {
+    "product_name": "Axis-Y Vegan Collagen Eye Serum (Сыворотка для кожи вокруг глаз с коллагеном)", 
+    "revenue_kgs": "1339105.46"
+  }, 
+  {
+    "product_name": "Celimax The Vita-A Retinol Shot Tightening Serum 30ml ( Антивозрастная сыворотка с ретинолом и микроиглами )", 
+    "revenue_kgs": "1321664.08"
+  }, 
+  {
+    "product_name": "SKIN1004 Madagascar Centella Hyalu-Cica Water-Fit Sun Serum 100ml", 
+    "revenue_kgs": "1251039.6"
+  }, 
+  {
+    "product_name": "Skin1004 Madagascar Centella PDRN 1.5 Cream (Крем для лица с PDRN и центеллой 1,5%)", 
+    "revenue_kgs": "1209573.27"
+  }, 
+  {
+    "product_name": "Celimax Dual Barrier Mild Gel Cleanser 200ml ( Гель-пенка для умывания с комплексом церамидов )", 
+    "revenue_kgs": "1148912.4"
+  }, 
+  {
+    "product_name": "Celimax Oil Control Mattifying Sun Stick 19g ( Солнцезащитный стик для жирной кожи )", 
+    "revenue_kgs": "1128058.53"
+  }, 
+  {
+    "product_name": "Axis-Y Dark Spot Correcting Glow Serum 50ml (Осветляющая сыворотка от пигментных пятен с 5% ниацинамида)", 
+    "revenue_kgs": "1095222.32"
+  }, 
+  {
+    "product_name": "Beauty Of Joseon Relief  Sun Aqua-Fresh : Rice + B5 50ml", 
+    "revenue_kgs": "1085914.56"
+  }
+]
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T09:58:12Z ===

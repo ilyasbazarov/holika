@@ -1,0 +1,85 @@
+=== START 2026-08-13T09:57:26Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+--- D1 Sun Spray по дням, 25 июня - 5 августа (витрина) ---
+[
+  {
+    "revenue_kgs": "1752665.0", 
+    "transaction_date": "2026-07-18"
+  }, 
+  {
+    "revenue_kgs": "417969.0", 
+    "transaction_date": "2026-07-19"
+  }, 
+  {
+    "revenue_kgs": "386464.8", 
+    "transaction_date": "2026-07-20"
+  }, 
+  {
+    "revenue_kgs": "1020308.3", 
+    "transaction_date": "2026-07-21"
+  }, 
+  {
+    "revenue_kgs": "1533.6", 
+    "transaction_date": "2026-07-22"
+  }, 
+  {
+    "revenue_kgs": "7670.0", 
+    "transaction_date": "2026-07-23"
+  }
+]
+
+--- D2 кандидаты периода: суммы при сдвигах границ ---
+[
+  {
+    "jul01_aug01": "3586610.7", 
+    "jul01_jul31": "3586610.7", 
+    "jun30_aug01": "3586610.7", 
+    "jun30_jul31": "3586610.7"
+  }
+]
+
+--- D3 июльские возвраты: агрегат по документу (return_id) ---
+[
+  {
+    "agent_name": "ОсОО «Неман Фарм» +996555924007 (ДОГОВОР) Дордой Плаза", 
+    "d": "2026-07-22", 
+    "doc_sum_kgs": "110783.04", 
+    "has_basis": "false", 
+    "n_pos": "30", 
+    "return_id": "4a822a16-85c8-11f1-0a80-1011000f86be"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм»  22 +996700711751 (ДОГОВОР) проспект Чуй 4а", 
+    "d": "2026-07-15", 
+    "doc_sum_kgs": "92661.33", 
+    "has_basis": "false", 
+    "n_pos": "29", 
+    "return_id": "44eb3f7d-803a-11f1-0a80-00b70021a260"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм» 96 +996700711751 (ДОГОВОР) Ч.Айтматова 97/4", 
+    "d": "2026-07-22", 
+    "doc_sum_kgs": "68032.29", 
+    "has_basis": "false", 
+    "n_pos": "21", 
+    "return_id": "e3cfc032-85ca-11f1-0a80-174e000fe79c"
+  }, 
+  {
+    "agent_name": "Эргешева Алтынай Avenue_cosmeticskg (Договор КР)", 
+    "d": "2026-07-01", 
+    "doc_sum_kgs": "62709.0", 
+    "has_basis": "true", 
+    "n_pos": "11", 
+    "return_id": "0d9650b7-7549-11f1-0a80-19c400103fb5"
+  }
+]
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T09:57:34Z ===

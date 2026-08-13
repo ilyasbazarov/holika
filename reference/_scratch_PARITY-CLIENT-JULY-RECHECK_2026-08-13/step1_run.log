@@ -1,0 +1,141 @@
+=== START 2026-08-13T09:52:57Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+
+--- A1 возвраты core.fact_returns за июль-2026 (все контрагенты) ---
+[
+  {
+    "n_rows": "91", 
+    "sum_kgs": "334185.66"
+  }
+]
+
+--- A2 возвраты за окно 2025-08-12..2026-08-13 ---
+[
+  {
+    "n_rows": "104", 
+    "sum_kgs": "993368.66"
+  }
+]
+
+--- A3 гипотеза живого запроса: возвраты за 365 суток, но ТОЛЬКО по контрагентам с продажами в июле ---
+[
+  {
+    "all_history": "721322.0", 
+    "july_only": "62709.0", 
+    "rolling365_to_jul31": "721322.0"
+  }
+]
+
+--- A4 то же для окна 2025-08-12..2026-08-13 (контрагенты с продажами в этом окне) ---
+[
+  {
+    "all_history": "993368.66", 
+    "window_only": "993368.66"
+  }
+]
+
+--- A5 вся история возвратов без фильтра контрагента ---
+[
+  {
+    "max_d": "2026-07-22", 
+    "min_d": "2026-05-28", 
+    "n_rows": "104", 
+    "sum_all": "993368.66"
+  }
+]
+
+--- B1 поиск товара Round Lab Birch Juice Sun Spray в продажах июля ---
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r422b3feaa4e7c026_0000019ffa8a3e34_1': Name product_name not found
+inside p at [7:15]
+
+--- B2 тот же товар — разрез по каналу и типу сущности ---
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r61038cdd84bef203_0000019ffa8a44dd_1': Name product_name not found
+inside p at [7:15]
+
+--- B3 возвраты по этому товару за июль ---
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r1987462f7876b8fa_0000019ffa8a4b90_1': Name product_name not found
+inside p at [7:15]
+
+--- B4 контроль: MEDICUBE AGE-R BOOSTER PRO YELLOW за июль (сошёлся у клиента) ---
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r46ed8b051fb36cc7_0000019ffa8a5221_1': Name product_name not found
+inside p at [7:15]
+
+--- C1 июль по менеджеру КОНТРАГЕНТА (как считает витрина сегодня) ---
+[
+  {
+    "manager_name": "Турдалиева А. М.", 
+    "revenue_kgs": "7.700681986E7"
+  }, 
+  {
+    "manager_name": "Турсунбекова М.", 
+    "revenue_kgs": "2.127322517E7"
+  }, 
+  {
+    "manager_name": "Омурбекова Э. О.", 
+    "revenue_kgs": "1.154936093E7"
+  }, 
+  {
+    "manager_name": null, 
+    "revenue_kgs": "1858696.9"
+  }, 
+  {
+    "manager_name": "Казакбаев Н. К.", 
+    "revenue_kgs": "282358.79"
+  }, 
+  {
+    "manager_name": "Бейшеналиева К.", 
+    "revenue_kgs": "268909.5"
+  }, 
+  {
+    "manager_name": "Бактияр кызы Ч.", 
+    "revenue_kgs": "85086.32"
+  }
+]
+
+--- C2 июль по ВЛАДЕЛЬЦУ ДОКУМЕНТА (новое поле, как режет МойСклад) ---
+[
+  {
+    "manager_name": "Турдалиева А. М.", 
+    "n_rows": "830", 
+    "revenue_kgs": "7.474582028E7"
+  }, 
+  {
+    "manager_name": "Турсунбекова М.", 
+    "n_rows": "801", 
+    "revenue_kgs": "2.315231577E7"
+  }, 
+  {
+    "manager_name": "Омурбекова Э. О.", 
+    "n_rows": "1281", 
+    "revenue_kgs": "1.109159783E7"
+  }, 
+  {
+    "manager_name": null, 
+    "n_rows": "1772", 
+    "revenue_kgs": "3334723.58"
+  }
+]
+
+--- C3 заполненность нового поля за июль ---
+[
+  {
+    "filled_rows": "2912", 
+    "null_rows": "1772", 
+    "total_rows": "4684"
+  }
+]
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+=== END 2026-08-13T09:53:25Z ===

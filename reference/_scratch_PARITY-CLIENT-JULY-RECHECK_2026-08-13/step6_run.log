@@ -1,0 +1,39 @@
+=== START 2026-08-13T09:58:42Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+--- T1 Sun Spray в ЯДРЕ на 2026-08-12 06:00 UTC (до деплоя SALES-REFRESH-WINDOW) ---
+[
+  {
+    "n_rows": "24", 
+    "revenue_kgs": "3586610.7"
+  }
+]
+
+--- T2 Sun Spray в ЯДРЕ сейчас ---
+[
+  {
+    "n_rows": "24", 
+    "revenue_kgs": "3586610.7"
+  }
+]
+
+--- T3 Турдалиева по владельцу документа на 2026-08-12 06:00 UTC ---
+Error in query string: Error processing job 'msklad-bi-
+prod:bqjob_r11a1ebfbac4e1fe9_0000019ffa8f6051_1': Syntax error: Expected end of
+input but got identifier "f" at [3:104]
+
+--- T4 когда витрина sales_overview последний раз пересобиралась ---
+[
+  {
+    "mart_refreshed_at": "2026-08-13 09:34:03"
+  }
+]
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T09:58:51Z ===

@@ -1,0 +1,359 @@
+=== START 2026-08-13T09:55:17Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+--- R1 июльские возвраты — разрез по return_type и has_basis ---
+[
+  {
+    "has_basis": "false", 
+    "n_distinct_ids": "3", 
+    "n_rows": "80", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "271476.66"
+  }, 
+  {
+    "has_basis": "true", 
+    "n_distinct_ids": "1", 
+    "n_rows": "11", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "62709.0"
+  }
+]
+
+--- R2 дубли: один return_id встречается более одного раза ---
+[
+  {
+    "dup_excess_kgs": "331770.75", 
+    "dup_groups": "4"
+  }
+]
+
+--- R3 июльские возвраты по датам ---
+[
+  {
+    "n_rows": "11", 
+    "return_date": "2026-07-01", 
+    "sum_kgs": "62709.0"
+  }, 
+  {
+    "n_rows": "29", 
+    "return_date": "2026-07-15", 
+    "sum_kgs": "92661.33"
+  }, 
+  {
+    "n_rows": "51", 
+    "return_date": "2026-07-22", 
+    "sum_kgs": "178815.33"
+  }
+]
+
+--- R4 топ-15 июльских возвратов построчно ---
+[
+  {
+    "agent_name": "Эргешева Алтынай Avenue_cosmeticskg (Договор КР)", 
+    "product_name": "Reclar Galvanic Water Peeler (Silver Version) (Аппарат для ультразвуковой чистки лица)", 
+    "quantity": "3.0", 
+    "return_date": "2026-07-01", 
+    "return_id": "0d9650b7-7549-11f1-0a80-19c400103fb5", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "18159.0"
+  }, 
+  {
+    "agent_name": "Эргешева Алтынай Avenue_cosmeticskg (Договор КР)", 
+    "product_name": "Reclar Magic Recovery Cream 50g (Восстанавливающий крем с пробиотиками и PDRN)", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-01", 
+    "return_id": "0d9650b7-7549-11f1-0a80-19c400103fb5", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "12100.0"
+  }, 
+  {
+    "agent_name": "Эргешева Алтынай Avenue_cosmeticskg (Договор КР)", 
+    "product_name": "Reclar Microbiome Facial Toner 200ml (Увлажняющий тоник с пробиотиками для восстановления кожи)", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-01", 
+    "return_id": "0d9650b7-7549-11f1-0a80-19c400103fb5", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "9900.0"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм» +996555924007 (ДОГОВОР) Дордой Плаза", 
+    "product_name": "Beplain Cica PDRN Skin Booster Serum 30ml", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-22", 
+    "return_id": "4a822a16-85c8-11f1-0a80-1011000f86be", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "6844.8"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм»  22 +996700711751 (ДОГОВОР) проспект Чуй 4а", 
+    "product_name": "Beplain Cica PDRN Skin Booster Serum 30ml", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-15", 
+    "return_id": "44eb3f7d-803a-11f1-0a80-00b70021a260", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "6844.8"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм» +996555924007 (ДОГОВОР) Дордой Плаза", 
+    "product_name": "Beplain Cicaterol Blemish Pad 70 Pads + 20 Pads SET OY", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-22", 
+    "return_id": "4a822a16-85c8-11f1-0a80-1011000f86be", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "6254.25"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм» +996555924007 (ДОГОВОР) Дордой Плаза", 
+    "product_name": "Beplain Cicaful Ampoule 30ml N1 (Ампула с экстрактом центеллы)", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-22", 
+    "return_id": "4a822a16-85c8-11f1-0a80-1011000f86be", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "6179.85"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм»  22 +996700711751 (ДОГОВОР) проспект Чуй 4а", 
+    "product_name": "Beplain Cicaful Ampoule 30ml N1 (Ампула с экстрактом центеллы)", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-15", 
+    "return_id": "44eb3f7d-803a-11f1-0a80-00b70021a260", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "6179.85"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм» +996555924007 (ДОГОВОР) Дордой Плаза", 
+    "product_name": "Beplain Cicaterol Moisturizer 60ml N1 (Успокаивающий крем с экстрактом азиатской центеллы)", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-22", 
+    "return_id": "4a822a16-85c8-11f1-0a80-1011000f86be", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "6012.45"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм»  22 +996700711751 (ДОГОВОР) проспект Чуй 4а", 
+    "product_name": "Beplain Cicaterol Moisturizer 60ml N1 (Успокаивающий крем с экстрактом азиатской центеллы)", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-15", 
+    "return_id": "44eb3f7d-803a-11f1-0a80-00b70021a260", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "6012.45"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм»  22 +996700711751 (ДОГОВОР) проспект Чуй 4а", 
+    "product_name": "Beplain Cicaterol Capsule Barrier Cream 50ml", 
+    "quantity": "6.0", 
+    "return_date": "2026-07-15", 
+    "return_id": "44eb3f7d-803a-11f1-0a80-00b70021a260", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "6009.66"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм» +996555924007 (ДОГОВОР) Дордой Плаза", 
+    "product_name": "Beplain Chamomile pH-Balanced Lotion 150ml N1", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-22", 
+    "return_id": "4a822a16-85c8-11f1-0a80-1011000f86be", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "5714.85"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм»  22 +996700711751 (ДОГОВОР) проспект Чуй 4а", 
+    "product_name": "Beplain Cicaterol Ampoule 30ml", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-15", 
+    "return_id": "44eb3f7d-803a-11f1-0a80-00b70021a260", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "5593.95"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм» +996555924007 (ДОГОВОР) Дордой Плаза", 
+    "product_name": "Beplain Cicaterol Ampoule 30ml", 
+    "quantity": "5.0", 
+    "return_date": "2026-07-22", 
+    "return_id": "4a822a16-85c8-11f1-0a80-1011000f86be", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "5593.95"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм» 96 +996700711751 (ДОГОВОР) Ч.Айтматова 97/4", 
+    "product_name": "Beplain Cica PDRN Skin Booster Serum 30ml", 
+    "quantity": "4.0", 
+    "return_date": "2026-07-22", 
+    "return_id": "e3cfc032-85ca-11f1-0a80-174e000fe79c", 
+    "return_type": "salesreturn", 
+    "sum_kgs": "5475.84"
+  }
+]
+
+--- R5 июльские возвраты по контрагентам ---
+[
+  {
+    "agent_name": "ОсОО «Неман Фарм» +996555924007 (ДОГОВОР) Дордой Плаза", 
+    "n_rows": "30", 
+    "sum_kgs": "110783.04"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм»  22 +996700711751 (ДОГОВОР) проспект Чуй 4а", 
+    "n_rows": "29", 
+    "sum_kgs": "92661.33"
+  }, 
+  {
+    "agent_name": "ОсОО «Неман Фарм» 96 +996700711751 (ДОГОВОР) Ч.Айтматова 97/4", 
+    "n_rows": "21", 
+    "sum_kgs": "68032.29"
+  }, 
+  {
+    "agent_name": "Эргешева Алтынай Avenue_cosmeticskg (Договор КР)", 
+    "n_rows": "11", 
+    "sum_kgs": "62709.0"
+  }
+]
+
+--- B1 Round Lab Birch Juice — продажи июля, разрез по каналу ---
+[
+  {
+    "entity_type": "product", 
+    "n_rows": "24", 
+    "product_name": "Round Lab Birch Juice Moisturizing  Sun Spray100ml", 
+    "revenue_kgs": "3586610.7", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "43", 
+    "product_name": "Round Lab Birch Juice Moisturizing Sunscreen 50 ml(Увлажняющий санскрин с берёзовым соком )", 
+    "revenue_kgs": "2575509.09", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "22", 
+    "product_name": "Round Lab Birch Juice Moisturizing Sun Stick 19 g", 
+    "revenue_kgs": "395180.29", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "6", 
+    "product_name": "Round Lab Birch Juice Moisturizing Mask 25ml (10ea) (Увлажняющая маска с берёзовым соком )", 
+    "revenue_kgs": "63381.66", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "2", 
+    "product_name": "Round Lab Birch Juice Moisturizing Serum 50 ml(Увлажняющая сыворотка с берёзовым соком)", 
+    "revenue_kgs": "43092.0", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "6", 
+    "product_name": "Round Lab Birch Juice Moisturizing peeling cleansing oil 200ml", 
+    "revenue_kgs": "32396.5", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "12", 
+    "product_name": "Round Lab Birch Juice Moisturizing Cream 80 ml(Увлажняющий крем для чувствительной кожи с берёзовым соком )", 
+    "revenue_kgs": "21804.36", 
+    "sales_channel_name": "Комиссия"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "7", 
+    "product_name": "Round Lab Birch Juice Moisturizing double gel mask 23ml(10ea) (Гелевая маска для глубокого увлажнения )", 
+    "revenue_kgs": "12716.5", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "4", 
+    "product_name": "Round Lab Birch Juice Moisturizing Sun Cushion 15 g", 
+    "revenue_kgs": "9910.44", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "2", 
+    "product_name": "Round Lab Birch Juice Moisturizing Toner 300 ml(Увлажняющий тоник с берёзовым соком)", 
+    "revenue_kgs": "4329.94", 
+    "sales_channel_name": "Комиссия"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "1", 
+    "product_name": "Round Lab Birch Juice Moisturizing Sunscreen 50 ml(Увлажняющий санскрин с берёзовым соком )", 
+    "revenue_kgs": "1640.88", 
+    "sales_channel_name": "Комиссия"
+  }, 
+  {
+    "entity_type": "product", 
+    "n_rows": "9", 
+    "product_name": "Пробник Round Lab Birch juice moisturizing tone-up sunscreen 2ml", 
+    "revenue_kgs": "0.0", 
+    "sales_channel_name": "Оптовая торговля"
+  }
+]
+
+--- B2 Round Lab Birch Juice — возвраты июля ---
+[]
+
+--- B3 контроль MEDICUBE AGE-R BOOSTER PRO — продажи июля по каналу ---
+[
+  {
+    "n_rows": "15", 
+    "product_name": "Medicube AGE-R BOOSTER PRO EX PINK ( Гаджет для домашнего ухода за кожей (розовый))", 
+    "revenue_kgs": "5593238.22", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "n_rows": "10", 
+    "product_name": "MEDICUBE_(US) AGE-R BOOSTER PRO YELLOW", 
+    "revenue_kgs": "3391206.6", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "n_rows": "6", 
+    "product_name": "Medicube AGE-R BOOSTER PRO EX Black", 
+    "revenue_kgs": "3173693.31", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "n_rows": "20", 
+    "product_name": "MEDICUBE_(US) AGE-R BOOSTER PRO X2 PINK", 
+    "revenue_kgs": "2055007.38", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "n_rows": "9", 
+    "product_name": "MEDICUBE_(US) AGE-R BOOSTER PRO PURPLE", 
+    "revenue_kgs": "1961526.7", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "n_rows": "17", 
+    "product_name": "MEDICUBE_(US) AGE-R BOOSTER PRO X2 WHITE", 
+    "revenue_kgs": "1440692.79", 
+    "sales_channel_name": "Оптовая торговля"
+  }, 
+  {
+    "n_rows": "1", 
+    "product_name": "MEDICUBE_(US) AGE-R BOOSTER PRO WHITE", 
+    "revenue_kgs": "23256.0", 
+    "sales_channel_name": "Оптовая торговля"
+  }
+]
+
+--- B4 MEDICUBE — возвраты июля ---
+[]
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T09:55:39Z ===

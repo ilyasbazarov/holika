@@ -1,0 +1,205 @@
+=== START 2026-08-13T09:56:50Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+--- S1 все product_id с именем Sun Spray — ядро, июль ---
+[
+  {
+    "dim_entity_type": "product", 
+    "n_rows": "24", 
+    "product_id": "da7c9a06-6c8d-11f1-0a80-1be70017b13b", 
+    "product_name": "Round Lab Birch Juice Moisturizing  Sun Spray100ml", 
+    "revenue_kgs": "3586610.7"
+  }
+]
+
+--- S2 та же выборка из ВИТРИНЫ marts.sales_overview ---
+[
+  {
+    "n_rows": "24", 
+    "product_id": "da7c9a06-6c8d-11f1-0a80-1be70017b13b", 
+    "product_name": "Round Lab Birch Juice Moisturizing  Sun Spray100ml", 
+    "revenue_kgs": "3586610.7"
+  }
+]
+
+--- S3 витрина: тот же товар по ИМЕНИ (как рисует график Топ-20) ---
+[
+  {
+    "n_product_ids": "1", 
+    "product_name": "Round Lab Birch Juice Moisturizing  Sun Spray100ml", 
+    "revenue_kgs": "3586610.7"
+  }
+]
+
+--- S4 схема витрины sales_overview — есть ли document_owner_employee_id и как назван менеджер ---
+[
+  {
+    "column_name": "transaction_date", 
+    "data_type": "DATE"
+  }, 
+  {
+    "column_name": "week_start", 
+    "data_type": "DATE"
+  }, 
+  {
+    "column_name": "month_start", 
+    "data_type": "DATE"
+  }, 
+  {
+    "column_name": "iso_week_label", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "product_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "product_name", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "article", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "product_folder", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "entity_type", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "parent_product_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "parent_product_name", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "agent_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "counterparty_name", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "country", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "owner_employee_id", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "manager_name", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "manager_position", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "sales_channel_name", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "project_name", 
+    "data_type": "STRING"
+  }, 
+  {
+    "column_name": "sell_quantity", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "revenue_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "cogs_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "margin_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "margin_kgs_adjusted", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "margin_pct", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "discount_percent", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "return_quantity", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "return_sum_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "return_no_basis_sum_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "return_doc_count", 
+    "data_type": "INT64"
+  }, 
+  {
+    "column_name": "net_revenue_kgs", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "net_quantity", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "revenue_usd", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "cogs_usd", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "margin_usd", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "return_sum_usd", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "rate_kgs_per_usd", 
+    "data_type": "FLOAT64"
+  }, 
+  {
+    "column_name": "is_cogs_missing", 
+    "data_type": "BOOL"
+  }, 
+  {
+    "column_name": "is_agent_missing", 
+    "data_type": "BOOL"
+  }, 
+  {
+    "column_name": "_mart_refreshed_at", 
+    "data_type": "TIMESTAMP"
+  }
+]
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T09:57:02Z ===
