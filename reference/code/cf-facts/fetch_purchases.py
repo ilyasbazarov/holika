@@ -38,6 +38,14 @@ from helpers import now_utc_str, paginate_entity, parse_href, parse_moment_to_bi
 log = logging.getLogger(__name__)
 
 
+def _fetch_currency_map(token: str, session: requests.Session) -> dict:
+    """Build {uuid: isoCode} map for all currencies (INGEST-CURRENCY-ASSERT Шаг 3).
+    НЕ через expand=rate.currency — ловушка Q-49/02_ERP_CONTRACTS.md:425 (expand молча
+    роняется в NULL при limit>100 в списочном ответе); отдельный запрос entity/currency."""
+    rows = paginate_entity(token, "entity/currency", session=session)
+    return {parse_href(row.get("meta", {}).get("href", "")): row.get("isoCode") for row in rows}
+
+
 def _parse_date_kgt(moment_str: str) -> Optional[str]:
     """
     Parse МойСклад moment string to DATE by Asia/Bishkek.
@@ -81,8 +89,12 @@ def fetch_purchase_positions(
     orders = paginate_entity(token, "entity/purchaseorder", params=params, session=session)
     log.info("Found %d purchaseorders", len(orders))
 
+    # INGEST-CURRENCY-ASSERT Шаг 3: currency UUID → isoCode, для детекции ниже.
+    currency_map = _fetch_currency_map(token, session)
+
     all_records: list[dict] = []
     skipped = 0
+    currency_mismatch = 0
 
     for order in orders:
         order_id = order.get("id")
@@ -98,6 +110,20 @@ def fetch_purchase_positions(
             order.get("agent", {}).get("meta", {}).get("href", "")
         )
         currency_rate = order.get("rate", {}).get("value")  # KGS per unit
+
+        # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS либо
+        # применён rate.value» — арифметика currency_rate/price_kgs (ниже, `or 1.0` на
+        # точке использования) НЕ меняется, только лог.
+        rate_obj    = order.get("rate", {}) or {}
+        has_rate    = rate_obj.get("value") is not None
+        currency_id = parse_href(rate_obj.get("currency", {}).get("meta", {}).get("href", ""))
+        iso_code    = currency_map.get(currency_id) if currency_id else None
+        if not (iso_code == "KGS" or has_rate):
+            currency_mismatch += 1
+            log.warning(
+                "Order %s: currency=%s (iso=%s) без rate.value — класс ошибки ADR-101 §5",
+                order_id, currency_id, iso_code,
+            )
 
         # Planned delivery (optional field)
         delivery_str  = order.get("deliveryPlannedMoment")
@@ -169,6 +195,12 @@ def fetch_purchase_positions(
 
     if skipped:
         log.warning("Skipped %d orders (missing id)", skipped)
+
+    if currency_mismatch:
+        log.warning(
+            "%d заказов с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)",
+            currency_mismatch,
+        )
 
     log.info(
         "Fetched %d position records from %d purchaseorders",

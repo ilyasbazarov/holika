@@ -15,6 +15,24 @@ def parse_href(meta_obj):
     href = (meta_obj or {}).get("meta", {}).get("href")
     return href.split("/")[-1].split("?")[0] if href else None
 
+def _fetch_currency_map(token):
+    """Build {uuid: isoCode} map for all currencies (INGEST-CURRENCY-ASSERT Шаг 3).
+    НЕ через expand=rate.currency — ловушка Q-49/02_ERP_CONTRACTS.md:425 (expand молча
+    роняется в NULL при limit>100 в списочном ответе); отдельный запрос entity/currency.
+    cf-finance не несёт helpers.py/paginate_entity — пагинация инлайн, тем же приёмом,
+    что уже использует run_etl() ниже (nextHref)."""
+    headers = {"Authorization": f"Bearer {token}", "Accept-Encoding": "gzip"}
+    url = "https://api.moysklad.ru/api/remap/1.2/entity/currency?limit=100"
+    currency_map = {}
+    while url:
+        resp = requests.get(url, headers=headers)
+        time.sleep(0.25)
+        resp_json = resp.json()
+        for row in resp_json.get("rows", []):
+            currency_map[parse_href(row)] = row.get("isoCode")
+        url = resp_json.get("meta", {}).get("nextHref")
+    return currency_map
+
 def trigger_marts():
     print("Triggering scheduled query via API...")
     client = bigquery_datatransfer.DataTransferServiceClient()
@@ -35,6 +53,10 @@ def run_etl():
     token = os.environ.get("MSKLAD_TOKEN") or os.environ.get("TOKEN")
     bq = bigquery.Client(project=PROJECT)
     
+    # INGEST-CURRENCY-ASSERT Шаг 3: currency UUID → isoCode, для детекции ниже.
+    currency_map = _fetch_currency_map(token)
+    currency_mismatch = 0
+
     records = []
     for entity_type in ["paymentout", "cashout"]:
         url = f"https://api.moysklad.ru/api/remap/1.2/entity/{entity_type}?expand=expenseItem,agent,project,salesChannel&limit=100"
@@ -50,7 +72,20 @@ def run_etl():
                     continue
                 
                 expense_id = parse_href(row.get("expenseItem"))
-                
+
+                # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS
+                # либо применён rate.value» — арифметика sum_kgs НЕ меняется, только лог.
+                rate_obj    = row.get("rate") or {}
+                has_rate    = rate_obj.get("value") is not None
+                currency_id = parse_href(rate_obj.get("currency"))
+                iso_code    = currency_map.get(currency_id) if currency_id else None
+                if not (iso_code == "KGS" or has_rate):
+                    currency_mismatch += 1
+                    print(
+                        f"WARNING: {entity_type} {row.get('id')}: currency={currency_id} "
+                        f"(iso={iso_code}) без rate.value — класс ошибки ADR-101 §5"
+                    )
+
                 records.append({
                     "payment_id": row.get("id"),
                     "payment_name": str(row.get("name")) if row.get("name") is not None else None,
@@ -72,6 +107,12 @@ def run_etl():
                     "_loaded_at": datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
                 })
             url = resp_json.get("meta", {}).get("nextHref")
+
+    if currency_mismatch:
+        print(
+            f"WARNING: {currency_mismatch} платежей с валютой ≠ KGS без rate.value "
+            f"(currency_mismatch, INGEST-CURRENCY-ASSERT)"
+        )
 
     if records:
         print(f"Loading {len(records)} records to STG...")
