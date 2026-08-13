@@ -1,0 +1,136 @@
+=== START 2026-08-13T10:43:04Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+
+--- N1 документ Эргешевой построчно (has_basis=true, 2026-07-01) ---
+[
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Galvanic Water Peeler (Silver Version) (Аппарат для ультразвуковой чистки лица)", 
+    "quantity": "3.0", 
+    "sum_kgs": "18159.0"
+  }, 
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Magic Recovery Cream 50g (Восстанавливающий крем с пробиотиками и PDRN)", 
+    "quantity": "5.0", 
+    "sum_kgs": "12100.0"
+  }, 
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Microbiome Facial Toner 200ml (Увлажняющий тоник с пробиотиками для восстановления кожи)", 
+    "quantity": "5.0", 
+    "sum_kgs": "9900.0"
+  }, 
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Anti-Aging Power Toner 200ml (Усиленный антивозрастной тоник с розой)", 
+    "quantity": "3.0", 
+    "sum_kgs": "5346.0"
+  }, 
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Ion Double Care Toner Mist Sprayer (white) (Элегантное портативное электронное устройство, создающее мягкий увлажняющий «туман» на поверхности кожи)", 
+    "quantity": "1.0", 
+    "sum_kgs": "4290.0"
+  }, 
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Calming & Soothing Facial Toner 200ml (Успокаивающий тоник с себорегулирующим эффектом)", 
+    "quantity": "3.0", 
+    "sum_kgs": "3507.0"
+  }, 
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Anti-Aging Power Serum 50ml (Антивозрастная сыворотка с розой и глутатионом)", 
+    "quantity": "2.0", 
+    "sum_kgs": "3132.0"
+  }, 
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Vant 36 X Reclar Camellia Essence 100ml", 
+    "quantity": "2.0", 
+    "sum_kgs": "1826.0"
+  }, 
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Anti-Aging Active Cream 50ml", 
+    "quantity": "1.0", 
+    "sum_kgs": "1674.0"
+  }, 
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Calming & Soothing SpotTok 2.7 ml (Точечное средство для борьбы с воспалениями)", 
+    "quantity": "5.0", 
+    "sum_kgs": "1650.0"
+  }, 
+  {
+    "cost_kgs": "0.0", 
+    "product_name": "Reclar Microbiome Boost Serum 50ml (Увлажняющая сыворотка с пробиотиками для восстановления кожи)", 
+    "quantity": "1.0", 
+    "sum_kgs": "1125.0"
+  }
+]
+
+--- N2 все возвраты по датам и признаку основания, вся история ---
+[
+  {
+    "has_basis": "true", 
+    "n_docs": "7", 
+    "n_pos": "7", 
+    "return_date": "2026-05-28", 
+    "sum_kgs": "420.0"
+  }, 
+  {
+    "has_basis": "true", 
+    "n_docs": "1", 
+    "n_pos": "1", 
+    "return_date": "2026-05-31", 
+    "sum_kgs": "150.0"
+  }, 
+  {
+    "has_basis": "false", 
+    "n_docs": "1", 
+    "n_pos": "5", 
+    "return_date": "2026-06-24", 
+    "sum_kgs": "658613.0"
+  }, 
+  {
+    "has_basis": "true", 
+    "n_docs": "1", 
+    "n_pos": "11", 
+    "return_date": "2026-07-01", 
+    "sum_kgs": "62709.0"
+  }, 
+  {
+    "has_basis": "false", 
+    "n_docs": "1", 
+    "n_pos": "29", 
+    "return_date": "2026-07-15", 
+    "sum_kgs": "92661.33"
+  }, 
+  {
+    "has_basis": "false", 
+    "n_docs": "2", 
+    "n_pos": "51", 
+    "return_date": "2026-07-22", 
+    "sum_kgs": "178815.33"
+  }
+]
+
+--- N3 продажи Эргешевой за июль (контрагент возврата) ---
+[
+  {
+    "agent_name": "Эргешева Алтынай Avenue_cosmeticskg (Договор КР)", 
+    "n_rows": "288", 
+    "revenue_kgs": "1836648.52"
+  }
+]
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-13T10:43:13Z ===
