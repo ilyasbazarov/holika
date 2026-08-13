@@ -1,0 +1,351 @@
+diff --git a/reference/code/cf-facts/fetch_perimeter.py b/reference/code/cf-facts/fetch_perimeter.py
+index 04fdf7d..af74e5b 100644
+--- a/reference/code/cf-facts/fetch_perimeter.py
++++ b/reference/code/cf-facts/fetch_perimeter.py
+@@ -61,6 +61,22 @@ from helpers import now_utc_str, paginate_entity, parse_href
+ 
+ log = logging.getLogger(__name__)
+ 
++_CURRENCY_MAP_CACHE: dict = {}
++
++
++def _fetch_currency_map(token: str, session: requests.Session) -> dict:
++    """Build {uuid: isoCode} map for all currencies (INGEST-CURRENCY-ASSERT Шаг 3).
++    НЕ через expand=rate.currency — ловушка Q-49/02_ERP_CONTRACTS.md:425 (expand молча
++    роняется в NULL при limit>100 в списочном ответе); отдельный запрос entity/currency.
++    Кэш модульного уровня — эта функция вызывается из ДВУХ входных точек модуля
++    (`fetch_retaildemand_positions`/`fetch_commission_sales_positions`) за один прогон."""
++    if not _CURRENCY_MAP_CACHE:
++        rows = paginate_entity(token, "entity/currency", session=session)
++        _CURRENCY_MAP_CACHE.update(
++            {parse_href(row.get("meta", {}).get("href", "")): row.get("isoCode") for row in rows}
++        )
++    return _CURRENCY_MAP_CACHE
++
+ 
+ def _format_moment(d: date) -> str:
+     """МойСклад datetime filter format: 'YYYY-MM-DD HH:MM:SS'."""
+@@ -89,6 +105,10 @@ def _fetch_positions_for(
+     """
+     all_records: list[dict] = []
+     skipped = 0
++    currency_mismatch = 0
++
++    # INGEST-CURRENCY-ASSERT Шаг 3: currency UUID → isoCode, для детекции ниже.
++    currency_map = _fetch_currency_map(token, session)
+ 
+     for doc in docs:
+         doc_id = doc.get("id")
+@@ -126,6 +146,20 @@ def _fetch_positions_for(
+                 continue
+ 
+             currency_rate = doc.get("rate", {}).get("value") or 1.0
++
++            # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS либо
++            # применён rate.value» — арифметика currency_rate/price_kgs НЕ меняется, только лог.
++            rate_obj    = doc.get("rate", {}) or {}
++            has_rate    = rate_obj.get("value") is not None
++            currency_id = parse_href(rate_obj.get("currency", {}).get("meta", {}).get("href", ""))
++            iso_code    = currency_map.get(currency_id) if currency_id else None
++            if not (iso_code == "KGS" or has_rate):
++                currency_mismatch += 1
++                log.warning(
++                    "%s %s position %s: currency=%s (iso=%s) без rate.value — "
++                    "класс ошибки ADR-101 §5", doc_type, doc_id, pos_id, currency_id, iso_code,
++                )
++
+             price_kgs = pos.get("price", 0) / 100.0 * currency_rate
+             quantity  = pos.get("quantity", 0.0)
+             discount  = pos.get("discount", 0.0) if has_discount else 0.0
+@@ -152,6 +186,12 @@ def _fetch_positions_for(
+     if skipped:
+         log.warning("Skipped %d %s docs (missing id)", skipped, doc_type)
+ 
++    if currency_mismatch:
++        log.warning(
++            "%d позиций %s с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)",
++            currency_mismatch, doc_type,
++        )
++
+     return all_records
+ 
+ 
+diff --git a/reference/code/cf-facts/fetch_purchases.py b/reference/code/cf-facts/fetch_purchases.py
+index bd78925..aded06f 100644
+--- a/reference/code/cf-facts/fetch_purchases.py
++++ b/reference/code/cf-facts/fetch_purchases.py
+@@ -38,6 +38,14 @@ from helpers import now_utc_str, paginate_entity, parse_href, parse_moment_to_bi
+ log = logging.getLogger(__name__)
+ 
+ 
++def _fetch_currency_map(token: str, session: requests.Session) -> dict:
++    """Build {uuid: isoCode} map for all currencies (INGEST-CURRENCY-ASSERT Шаг 3).
++    НЕ через expand=rate.currency — ловушка Q-49/02_ERP_CONTRACTS.md:425 (expand молча
++    роняется в NULL при limit>100 в списочном ответе); отдельный запрос entity/currency."""
++    rows = paginate_entity(token, "entity/currency", session=session)
++    return {parse_href(row.get("meta", {}).get("href", "")): row.get("isoCode") for row in rows}
++
++
+ def _parse_date_kgt(moment_str: str) -> Optional[str]:
+     """
+     Parse МойСклад moment string to DATE by Asia/Bishkek.
+@@ -81,8 +89,12 @@ def fetch_purchase_positions(
+     orders = paginate_entity(token, "entity/purchaseorder", params=params, session=session)
+     log.info("Found %d purchaseorders", len(orders))
+ 
++    # INGEST-CURRENCY-ASSERT Шаг 3: currency UUID → isoCode, для детекции ниже.
++    currency_map = _fetch_currency_map(token, session)
++
+     all_records: list[dict] = []
+     skipped = 0
++    currency_mismatch = 0
+ 
+     for order in orders:
+         order_id = order.get("id")
+@@ -99,6 +111,20 @@ def fetch_purchase_positions(
+         )
+         currency_rate = order.get("rate", {}).get("value")  # KGS per unit
+ 
++        # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS либо
++        # применён rate.value» — арифметика currency_rate/price_kgs (ниже, `or 1.0` на
++        # точке использования) НЕ меняется, только лог.
++        rate_obj    = order.get("rate", {}) or {}
++        has_rate    = rate_obj.get("value") is not None
++        currency_id = parse_href(rate_obj.get("currency", {}).get("meta", {}).get("href", ""))
++        iso_code    = currency_map.get(currency_id) if currency_id else None
++        if not (iso_code == "KGS" or has_rate):
++            currency_mismatch += 1
++            log.warning(
++                "Order %s: currency=%s (iso=%s) без rate.value — класс ошибки ADR-101 §5",
++                order_id, currency_id, iso_code,
++            )
++
+         # Planned delivery (optional field)
+         delivery_str  = order.get("deliveryPlannedMoment")
+         planned_delivery_date = _parse_date_kgt(delivery_str) if delivery_str else None
+@@ -170,6 +196,12 @@ def fetch_purchase_positions(
+     if skipped:
+         log.warning("Skipped %d orders (missing id)", skipped)
+ 
++    if currency_mismatch:
++        log.warning(
++            "%d заказов с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)",
++            currency_mismatch,
++        )
++
+     log.info(
+         "Fetched %d position records from %d purchaseorders",
+         len(all_records), len(orders) - skipped,
+diff --git a/reference/code/cf-facts/fetch_returns.py b/reference/code/cf-facts/fetch_returns.py
+index 37abe88..7a47855 100644
+--- a/reference/code/cf-facts/fetch_returns.py
++++ b/reference/code/cf-facts/fetch_returns.py
+@@ -27,6 +27,14 @@ log = logging.getLogger(__name__)
+ _POSITION_REQUEST_DELAY = 0.21  # чуть больше 1/5 сек — запас на jitter
+ 
+ 
++def _fetch_currency_map(token: str, session: req_lib.Session) -> dict:
++    """Build {uuid: isoCode} map for all currencies (INGEST-CURRENCY-ASSERT Шаг 3).
++    НЕ через expand=rate.currency — ловушка Q-49/02_ERP_CONTRACTS.md:425 (expand молча
++    роняется в NULL при limit>100 в списочном ответе); отдельный запрос entity/currency."""
++    rows = paginate_entity(token, "entity/currency", session=session)
++    return {parse_href(row.get("meta", {}).get("href", "")): row.get("isoCode") for row in rows}
++
++
+ def fetch_return_positions(
+     token: str,
+     date_from: date,
+@@ -38,6 +46,10 @@ def fetch_return_positions(
+     Формат записи совместим со схемой core.fact_returns (FACT_RETURNS_SCHEMA в bq_ops.py).
+     """
+     records: list[dict] = []
++    currency_mismatch = 0
++
++    # INGEST-CURRENCY-ASSERT Шаг 3: currency UUID → isoCode, для детекции ниже.
++    currency_map = _fetch_currency_map(token, session)
+ 
+     # Формат фильтра МойСклад: момент документа + только проведённые
+     date_from_str = date_from.strftime("%Y-%m-%d 00:00:00")
+@@ -77,6 +89,20 @@ def fetch_return_positions(
+             time.sleep(_POSITION_REQUEST_DELAY)  # rate limit guard
+ 
+             currency_rate = doc.get("rate", {}).get("value") or 1.0  # KGS per currency unit
++
++            # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS либо
++            # применён rate.value» — арифметика currency_rate/sum_kgs НЕ меняется, только лог.
++            rate_obj    = doc.get("rate", {}) or {}
++            has_rate    = rate_obj.get("value") is not None
++            currency_id = parse_href(rate_obj.get("currency", {}).get("meta", {}).get("href", ""))
++            iso_code    = currency_map.get(currency_id) if currency_id else None
++            if not (iso_code == "KGS" or has_rate):
++                currency_mismatch += 1
++                log.warning(
++                    "%s %s: currency=%s (iso=%s) без rate.value — класс ошибки ADR-101 §5",
++                    entity_type, return_id, currency_id, iso_code,
++                )
++
+             for pos in positions:
+                 price    = pos.get("price", 0.0)      # тыйыны
+                 quantity = pos.get("quantity", 0.0)
+@@ -107,6 +133,12 @@ def fetch_return_positions(
+ 
+         log.info("%s: %d positions collected", entity_type, len(records))
+ 
++    if currency_mismatch:
++        log.warning(
++            "%d документов с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)",
++            currency_mismatch,
++        )
++
+     return records
+ 
+ 
+diff --git a/reference/code/cf-finance/main.py b/reference/code/cf-finance/main.py
+index 7fa5be6..1c90246 100644
+--- a/reference/code/cf-finance/main.py
++++ b/reference/code/cf-finance/main.py
+@@ -15,6 +15,24 @@ def parse_href(meta_obj):
+     href = (meta_obj or {}).get("meta", {}).get("href")
+     return href.split("/")[-1].split("?")[0] if href else None
+ 
++def _fetch_currency_map(token):
++    """Build {uuid: isoCode} map for all currencies (INGEST-CURRENCY-ASSERT Шаг 3).
++    НЕ через expand=rate.currency — ловушка Q-49/02_ERP_CONTRACTS.md:425 (expand молча
++    роняется в NULL при limit>100 в списочном ответе); отдельный запрос entity/currency.
++    cf-finance не несёт helpers.py/paginate_entity — пагинация инлайн, тем же приёмом,
++    что уже использует run_etl() ниже (nextHref)."""
++    headers = {"Authorization": f"Bearer {token}", "Accept-Encoding": "gzip"}
++    url = "https://api.moysklad.ru/api/remap/1.2/entity/currency?limit=100"
++    currency_map = {}
++    while url:
++        resp = requests.get(url, headers=headers)
++        time.sleep(0.25)
++        resp_json = resp.json()
++        for row in resp_json.get("rows", []):
++            currency_map[parse_href(row)] = row.get("isoCode")
++        url = resp_json.get("meta", {}).get("nextHref")
++    return currency_map
++
+ def trigger_marts():
+     print("Triggering scheduled query via API...")
+     client = bigquery_datatransfer.DataTransferServiceClient()
+@@ -35,6 +53,10 @@ def run_etl():
+     token = os.environ.get("MSKLAD_TOKEN") or os.environ.get("TOKEN")
+     bq = bigquery.Client(project=PROJECT)
+     
++    # INGEST-CURRENCY-ASSERT Шаг 3: currency UUID → isoCode, для детекции ниже.
++    currency_map = _fetch_currency_map(token)
++    currency_mismatch = 0
++
+     records = []
+     for entity_type in ["paymentout", "cashout"]:
+         url = f"https://api.moysklad.ru/api/remap/1.2/entity/{entity_type}?expand=expenseItem,agent,project,salesChannel&limit=100"
+@@ -50,7 +72,20 @@ def run_etl():
+                     continue
+                 
+                 expense_id = parse_href(row.get("expenseItem"))
+-                
++
++                # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS
++                # либо применён rate.value» — арифметика sum_kgs НЕ меняется, только лог.
++                rate_obj    = row.get("rate") or {}
++                has_rate    = rate_obj.get("value") is not None
++                currency_id = parse_href(rate_obj.get("currency"))
++                iso_code    = currency_map.get(currency_id) if currency_id else None
++                if not (iso_code == "KGS" or has_rate):
++                    currency_mismatch += 1
++                    print(
++                        f"WARNING: {entity_type} {row.get('id')}: currency={currency_id} "
++                        f"(iso={iso_code}) без rate.value — класс ошибки ADR-101 §5"
++                    )
++
+                 records.append({
+                     "payment_id": row.get("id"),
+                     "payment_name": str(row.get("name")) if row.get("name") is not None else None,
+@@ -73,6 +108,12 @@ def run_etl():
+                 })
+             url = resp_json.get("meta", {}).get("nextHref")
+ 
++    if currency_mismatch:
++        print(
++            f"WARNING: {currency_mismatch} платежей с валютой ≠ KGS без rate.value "
++            f"(currency_mismatch, INGEST-CURRENCY-ASSERT)"
++        )
++
+     if records:
+         print(f"Loading {len(records)} records to STG...")
+         
+diff --git a/reference/code/cf-facts/fetch_demands.py b/reference/code/cf-facts/fetch_demands.py
+index 495a3f4..cf23804 100644
+--- a/reference/code/cf-facts/fetch_demands.py
++++ b/reference/code/cf-facts/fetch_demands.py
+@@ -30,6 +30,13 @@ def _fetch_project_map(token: str, session: requests.Session) -> dict:
+     rows = paginate_entity(token, "entity/project", session=session)
+     return {row["id"]: row.get("name") for row in rows}
+ 
++def _fetch_currency_map(token: str, session: requests.Session) -> dict:
++    """Build {uuid: isoCode} map for all currencies (INGEST-CURRENCY-ASSERT Шаг 3).
++    НЕ через expand=rate.currency — ловушка Q-49/02_ERP_CONTRACTS.md:425 (expand молча
++    роняется в NULL при limit>100 в списочном ответе); отдельный запрос entity/currency."""
++    rows = paginate_entity(token, "entity/currency", session=session)
++    return {parse_href(row.get("meta", {}).get("href", "")): row.get("isoCode") for row in rows}
++
+ def _format_moment(d: date) -> str:
+     """МойСклад datetime filter format: 'YYYY-MM-DD HH:MM:SS'."""
+     return f"{d.isoformat()} 00:00:00"
+@@ -55,7 +62,12 @@ def fetch_demand_positions(
+     # ── Build lookup maps (fetched once, reused for all demands)
+     channel_map = _fetch_sales_channel_map(token, session)
+     project_map = _fetch_project_map(token, session)
+-    log.info("Loaded %d sales channels, %d projects", len(channel_map), len(project_map))
++    # INGEST-CURRENCY-ASSERT Шаг 3: currency UUID → isoCode, для детекции ниже.
++    currency_map = _fetch_currency_map(token, session)
++    log.info(
++        "Loaded %d sales channels, %d projects, %d currencies",
++        len(channel_map), len(project_map), len(currency_map),
++    )
+ 
+     loaded_at = now_utc_str()
+ 
+@@ -80,6 +92,7 @@ def fetch_demand_positions(
+     # ── Step 2: per-demand positions fetch
+     all_records: list[dict] = []
+     skipped_demands = 0
++    currency_mismatch = 0
+ 
+     for demand in demands:
+         demand_id = demand.get("id")
+@@ -146,6 +159,20 @@ def fetch_demand_positions(
+ 
+             # Financial fields (all in тыйыны → ÷100 → KGS)
+             currency_rate = demand.get("rate", {}).get("value") or 1.0  # KGS per currency unit
++
++            # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS либо
++            # применён rate.value» — арифметика currency_rate/price_kgs НЕ меняется, только лог.
++            rate_obj    = demand.get("rate", {}) or {}
++            has_rate    = rate_obj.get("value") is not None
++            currency_id = parse_href(rate_obj.get("currency", {}).get("meta", {}).get("href", ""))
++            iso_code    = currency_map.get(currency_id) if currency_id else None
++            if not (iso_code == "KGS" or has_rate):
++                currency_mismatch += 1
++                log.warning(
++                    "Demand %s position %s: currency=%s (iso=%s) без rate.value — "
++                    "класс ошибки ADR-101 §5", demand_id, pos_id, currency_id, iso_code,
++                )
++
+             price_kgs  = pos.get("price", 0) / 100.0 * currency_rate
+             quantity   = pos.get("quantity", 0.0)
+             discount   = pos.get("discount", 0.0)          # percent, 0–100
+@@ -174,6 +201,12 @@ def fetch_demand_positions(
+     if skipped_demands:
+         log.warning("Skipped %d demands (missing id)", skipped_demands)
+ 
++    if currency_mismatch:
++        log.warning(
++            "%d позиций с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)",
++            currency_mismatch,
++        )
++
+     # ── SALES-CONSIGNMENT-REVENUE (ADR-103 §7, ADR-104 §5): отгрузка комиссионеру на
+     # реализацию — не продажа, МойСклад её продажей не считает. Различитель (`SALES-INGEST-PATCH`
+     # Шаг 1) — agent_id, единственный уже загружаемый признак; список исчерпывающе измерен

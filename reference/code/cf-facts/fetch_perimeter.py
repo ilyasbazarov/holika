@@ -61,6 +61,22 @@ from helpers import now_utc_str, paginate_entity, parse_href
 
 log = logging.getLogger(__name__)
 
+_CURRENCY_MAP_CACHE: dict = {}
+
+
+def _fetch_currency_map(token: str, session: requests.Session) -> dict:
+    """Build {uuid: isoCode} map for all currencies (INGEST-CURRENCY-ASSERT Шаг 3).
+    НЕ через expand=rate.currency — ловушка Q-49/02_ERP_CONTRACTS.md:425 (expand молча
+    роняется в NULL при limit>100 в списочном ответе); отдельный запрос entity/currency.
+    Кэш модульного уровня — эта функция вызывается из ДВУХ входных точек модуля
+    (`fetch_retaildemand_positions`/`fetch_commission_sales_positions`) за один прогон."""
+    if not _CURRENCY_MAP_CACHE:
+        rows = paginate_entity(token, "entity/currency", session=session)
+        _CURRENCY_MAP_CACHE.update(
+            {parse_href(row.get("meta", {}).get("href", "")): row.get("isoCode") for row in rows}
+        )
+    return _CURRENCY_MAP_CACHE
+
 
 def _format_moment(d: date) -> str:
     """МойСклад datetime filter format: 'YYYY-MM-DD HH:MM:SS'."""
@@ -89,6 +105,10 @@ def _fetch_positions_for(
     """
     all_records: list[dict] = []
     skipped = 0
+    currency_mismatch = 0
+
+    # INGEST-CURRENCY-ASSERT Шаг 3: currency UUID → isoCode, для детекции ниже.
+    currency_map = _fetch_currency_map(token, session)
 
     for doc in docs:
         doc_id = doc.get("id")
@@ -126,6 +146,20 @@ def _fetch_positions_for(
                 continue
 
             currency_rate = doc.get("rate", {}).get("value") or 1.0
+
+            # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS либо
+            # применён rate.value» — арифметика currency_rate/price_kgs НЕ меняется, только лог.
+            rate_obj    = doc.get("rate", {}) or {}
+            has_rate    = rate_obj.get("value") is not None
+            currency_id = parse_href(rate_obj.get("currency", {}).get("meta", {}).get("href", ""))
+            iso_code    = currency_map.get(currency_id) if currency_id else None
+            if not (iso_code == "KGS" or has_rate):
+                currency_mismatch += 1
+                log.warning(
+                    "%s %s position %s: currency=%s (iso=%s) без rate.value — "
+                    "класс ошибки ADR-101 §5", doc_type, doc_id, pos_id, currency_id, iso_code,
+                )
+
             price_kgs = pos.get("price", 0) / 100.0 * currency_rate
             quantity  = pos.get("quantity", 0.0)
             discount  = pos.get("discount", 0.0) if has_discount else 0.0
@@ -151,6 +185,12 @@ def _fetch_positions_for(
 
     if skipped:
         log.warning("Skipped %d %s docs (missing id)", skipped, doc_type)
+
+    if currency_mismatch:
+        log.warning(
+            "%d позиций %s с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)",
+            currency_mismatch, doc_type,
+        )
 
     return all_records
 

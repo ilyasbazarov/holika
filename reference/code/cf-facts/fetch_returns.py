@@ -27,6 +27,14 @@ log = logging.getLogger(__name__)
 _POSITION_REQUEST_DELAY = 0.21  # чуть больше 1/5 сек — запас на jitter
 
 
+def _fetch_currency_map(token: str, session: req_lib.Session) -> dict:
+    """Build {uuid: isoCode} map for all currencies (INGEST-CURRENCY-ASSERT Шаг 3).
+    НЕ через expand=rate.currency — ловушка Q-49/02_ERP_CONTRACTS.md:425 (expand молча
+    роняется в NULL при limit>100 в списочном ответе); отдельный запрос entity/currency."""
+    rows = paginate_entity(token, "entity/currency", session=session)
+    return {parse_href(row.get("meta", {}).get("href", "")): row.get("isoCode") for row in rows}
+
+
 def fetch_return_positions(
     token: str,
     date_from: date,
@@ -38,6 +46,10 @@ def fetch_return_positions(
     Формат записи совместим со схемой core.fact_returns (FACT_RETURNS_SCHEMA в bq_ops.py).
     """
     records: list[dict] = []
+    currency_mismatch = 0
+
+    # INGEST-CURRENCY-ASSERT Шаг 3: currency UUID → isoCode, для детекции ниже.
+    currency_map = _fetch_currency_map(token, session)
 
     # Формат фильтра МойСклад: момент документа + только проведённые
     date_from_str = date_from.strftime("%Y-%m-%d 00:00:00")
@@ -77,6 +89,20 @@ def fetch_return_positions(
             time.sleep(_POSITION_REQUEST_DELAY)  # rate limit guard
 
             currency_rate = doc.get("rate", {}).get("value") or 1.0  # KGS per currency unit
+
+            # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS либо
+            # применён rate.value» — арифметика currency_rate/sum_kgs НЕ меняется, только лог.
+            rate_obj    = doc.get("rate", {}) or {}
+            has_rate    = rate_obj.get("value") is not None
+            currency_id = parse_href(rate_obj.get("currency", {}).get("meta", {}).get("href", ""))
+            iso_code    = currency_map.get(currency_id) if currency_id else None
+            if not (iso_code == "KGS" or has_rate):
+                currency_mismatch += 1
+                log.warning(
+                    "%s %s: currency=%s (iso=%s) без rate.value — класс ошибки ADR-101 §5",
+                    entity_type, return_id, currency_id, iso_code,
+                )
+
             for pos in positions:
                 price    = pos.get("price", 0.0)      # тыйыны
                 quantity = pos.get("quantity", 0.0)
@@ -106,6 +132,12 @@ def fetch_return_positions(
                 })
 
         log.info("%s: %d positions collected", entity_type, len(records))
+
+    if currency_mismatch:
+        log.warning(
+            "%d документов с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)",
+            currency_mismatch,
+        )
 
     return records
 

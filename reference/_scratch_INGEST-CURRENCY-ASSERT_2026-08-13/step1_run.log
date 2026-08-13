@@ -1,0 +1,47 @@
+Thu Aug 13 09:21:42 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud functions describe cf-dq ===
+buildConfig:
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786561996565446'
+      object: cf-dq/function-source.zip
+serviceConfig:
+  revision: cf-dq-00009-coy
+state: ACTIVE
+updateTime: '2026-08-12T19:14:47.725221603Z'
+=== sha256 живого снапшота в reference/code/cf-dq/ ===
+477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67  reference/code/cf-dq/main.py
+360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756  reference/code/cf-dq/config.py
+0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146  reference/code/cf-dq/helpers.py
+587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516  reference/code/cf-dq/requirements.txt
+=== MANIFEST.md — зафиксированная последняя ревизия/sha256 (cf-dq-00009-coy) ===
+|---|---|
+| `main.py` | `0e910907af0e4cb0a84ea43b5660b6e66d62932f9f5e059343f6e5e7c74e2d0b` |
+| `config.py` | `7a818364c78fdf21cb32d8ce52d54da0972a6de511d1f6023fb8ea812fc543b6` (не менялся) |
+| `helpers.py` | `0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146` (не менялся) |
+| `requirements.txt` | `587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516` (не менялся) |
+
+--
+| Файл | sha256 (новый архив = ветка деплоя) |
+|---|---|
+| `main.py` | `477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67` |
+| `config.py` | `360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756` |
+| `helpers.py` | `0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146` (не менялся) |
+| `requirements.txt` | `587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516` (не менялся) |
+
+Thu Aug 13 09:21:47 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

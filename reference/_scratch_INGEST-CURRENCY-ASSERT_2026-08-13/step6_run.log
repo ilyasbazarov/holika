@@ -1,0 +1,21 @@
+Demand demand-1 has no agent — agent_id will be NULL
+Demand demand-1 has no owner — document_owner_employee_id will be NULL
+Demand demand-1 has no agent — agent_id will be NULL
+Demand demand-1 has no owner — document_owner_employee_id will be NULL
+=== VERDICT ===
+demands_kgs_no_rate: OK (no mismatch expected, arithmetic verified)
+demands_usd_with_rate: OK (no mismatch expected, arithmetic verified)
+demands_usd_no_rate_detected: OK mismatch_count=1
+returns_kgs_no_rate: OK (arithmetic verified)
+returns_usd_with_rate: OK (arithmetic verified)
+returns_usd_no_rate_detected: OK mismatch_count=2
+purchases_kgs_no_rate: OK (arithmetic verified)
+purchases_usd_with_rate: OK (arithmetic verified)
+purchases_usd_no_rate_detected: OK mismatch_count=1
+perimeter_kgs_no_rate: OK (arithmetic verified)
+perimeter_usd_with_rate: OK (arithmetic verified)
+perimeter_usd_no_rate_detected: OK mismatch_count=1
+finance_kgs_no_rate: OK (no mismatch, run_etl completed)
+finance_usd_with_rate: OK (no mismatch, run_etl completed)
+finance_usd_no_rate_detected: OK mismatch_lines=2
+ALL OFFLINE CURRENCY-DETECT TESTS PASSED
