@@ -1,0 +1,32 @@
+# провенанс проверок сессии CLOSE-LIST-BOARD, база c6c22aeb42f5fcc70d559ab00da00674f9b02f8a
+Fri Aug 14 10:02:46 UTC 2026
+
+## приземление трёх коммитов в main
+cc37bff: в main
+   2026-08-13 docs: MARTS-BUILD-STAMP-PREP три готовых текста + проверка потребителей (weight_flow CONTEXT GAP)
+c9905a3: в main
+   2026-08-13 docs: DQ-FRESHNESS-WIRE подключение 12 проверок свежести к CHECKS (наблюдающая форма) — 7→19
+544280c: в main
+   2026-08-13 docs: SALES-OVERVIEW-OWNER-SWITCH мандат класса B выдан поимённо — атрибуция менеджера на владельца документа с границей 2026-05-01
+
+## MARTS-BUILD-STAMP-PREP — три текста SQL
+12:sq_marts_customer_invoices_ar_stamped_2026-08-13.sql
+16:sq_marts_expenses_stamped_2026-08-13.sql
+25:sq_marts_weight_flow_stamped_2026-08-13.sql
+
+## DQ-FRESHNESS-WIRE — CHECKS в снапшоте cf-dq
+215:CHECKS = [
+вхождений check_freshness: 31
+
+## предохранитель ADR-145 в снапшоте cf-facts
+403:def _assert_staging_covers_merge_window(
+518:    _assert_staging_covers_merge_window(bq, STG_FACT_SALES, window_days, "promote_to_core")
+731:    _assert_staging_covers_merge_window(
+
+## SOURCE-PROBE архивирован (гейт 07_STATE:1862 протух)
+1
+0
+
+## две таблицы MARTS-BUILD-STAMP не в ограничениях
+0
+Fri Aug 14 10:02:46 UTC 2026
