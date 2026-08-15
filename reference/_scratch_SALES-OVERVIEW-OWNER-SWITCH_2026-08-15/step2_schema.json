@@ -1,0 +1,140 @@
+{
+  "clustering": {
+    "fields": [
+      "product_id",
+      "agent_id"
+    ]
+  },
+  "creationTime": "1777794201720",
+  "etag": "But8llt62ld29Af/S+7/pA==",
+  "id": "msklad-bi-prod:core.fact_sales_profit",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1786773918750",
+  "location": "asia-east1",
+  "numActiveLogicalBytes": "6326888",
+  "numActivePhysicalBytes": "11170129",
+  "numBytes": "11291546",
+  "numCurrentPhysicalBytes": "4203203",
+  "numLongTermBytes": "4964658",
+  "numLongTermLogicalBytes": "4964658",
+  "numLongTermPhysicalBytes": "2367052",
+  "numPartitions": "434",
+  "numRows": "43213",
+  "numTimeTravelPhysicalBytes": "9333978",
+  "numTotalLogicalBytes": "11291546",
+  "numTotalPhysicalBytes": "13537181",
+  "partitionDefinition": {
+    "partitionedColumn": [
+      {
+        "field": "transaction_date"
+      }
+    ]
+  },
+  "schema": {
+    "fields": [
+      {
+        "name": "transaction_id",
+        "type": "STRING"
+      },
+      {
+        "name": "transaction_date",
+        "type": "DATE"
+      },
+      {
+        "name": "product_id",
+        "type": "STRING"
+      },
+      {
+        "name": "entity_type",
+        "type": "STRING"
+      },
+      {
+        "name": "agent_id",
+        "type": "STRING"
+      },
+      {
+        "name": "sell_quantity",
+        "type": "FLOAT"
+      },
+      {
+        "name": "return_quantity",
+        "type": "FLOAT"
+      },
+      {
+        "name": "revenue_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "cogs_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "margin_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "revenue_usd",
+        "type": "FLOAT"
+      },
+      {
+        "name": "cogs_usd",
+        "type": "FLOAT"
+      },
+      {
+        "name": "margin_usd",
+        "type": "FLOAT"
+      },
+      {
+        "name": "_week_start",
+        "type": "DATE"
+      },
+      {
+        "name": "_loaded_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "sell_sum_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "return_sum_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "name": "discount",
+        "type": "FLOAT"
+      },
+      {
+        "name": "sales_channel_id",
+        "type": "STRING"
+      },
+      {
+        "name": "sales_channel_name",
+        "type": "STRING"
+      },
+      {
+        "name": "project_id",
+        "type": "STRING"
+      },
+      {
+        "name": "project_name",
+        "type": "STRING"
+      },
+      {
+        "name": "document_owner_employee_id",
+        "type": "STRING"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/datasets/core/tables/fact_sales_profit",
+  "tableReference": {
+    "datasetId": "core",
+    "projectId": "msklad-bi-prod",
+    "tableId": "fact_sales_profit"
+  },
+  "timePartitioning": {
+    "field": "transaction_date",
+    "type": "DAY"
+  },
+  "type": "TABLE"
+}
