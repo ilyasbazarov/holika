@@ -14,7 +14,7 @@ CREATE OR REPLACE TABLE `msklad-bi-prod.marts.sales_overview` AS
 
 WITH
 
--- ── БЛОК ВОЗВРАТОВ ──────────────────────────────────────────────────────
+-- ── БЛОК ВОЗВРАТОВ ─────────────────────────────────────────────────────────
 returns_agg AS (
   SELECT
     return_date,
@@ -27,17 +27,17 @@ returns_agg AS (
   FROM `msklad-bi-prod.core.fact_returns`
   GROUP BY return_date, product_id, agent_id
 ),
--- ─────────────────────────────────────────────────────────────────────────
+-- ───────────────────────────────────────────────────────────────────────────
 
 main AS (
   SELECT
-    -- ── Временной срез ──────────────────────────────────────────────────
+    -- ── Временной срез ───────────────────────────────────────────────────
     f.transaction_date,
     DATE_TRUNC(f.transaction_date, WEEK(SATURDAY)) AS week_start,
     DATE_TRUNC(f.transaction_date, MONTH)           AS month_start,
     FORMAT_DATE('%Y-W%V', f.transaction_date)       AS iso_week_label,
 
-    -- ── Продукт ──────────────────────────────────────────────────────
+    -- ── Продукт ──────────────────────────────────────────────────────────
     f.product_id,
     p.name                                          AS product_name,
     p.article,
@@ -46,28 +46,19 @@ main AS (
     p.parent_product_id,
     p_parent.name                                   AS parent_product_name,
 
-    -- ── Контрагент + менеджер ────────────────────────────────────────
+    -- ── Контрагент + менеджер ─────────────────────────────────────────────
     f.agent_id,
     c.name                                          AS counterparty_name,
     COALESCE(c.country, 'Не указана')               AS country,
-    -- Атрибуция менеджера (SALES-OVERVIEW-OWNER-SWITCH, 2026-08-13):
-    -- до 2026-05-01 — менеджер контрагента (историческая семантика, сохраняется байт-в-байт);
-    -- с 2026-05-01 — владелец документа, совпадает с разрезом отчёта МойСклада.
-    IF(f.transaction_date < DATE '2026-05-01',
-       c.owner_employee_id,
-       f.document_owner_employee_id)                AS owner_employee_id,
-    IF(f.transaction_date < DATE '2026-05-01',
-       e_agent.full_name,
-       COALESCE(e_doc.full_name, 'Не указан'))      AS manager_name,
-    IF(f.transaction_date < DATE '2026-05-01',
-       e_agent.position,
-       e_doc.position)                              AS manager_position,
+    c.owner_employee_id,
+    e.full_name                                     AS manager_name,
+    e.position                                      AS manager_position,
 
-    -- ── Канал продаж / Проект ────────────────────────────────────────
+    -- ── Канал продаж / Проект ─────────────────────────────────────────────
     COALESCE(f.sales_channel_name, 'Не указан')     AS sales_channel_name,
     COALESCE(f.project_name, 'Не указан')           AS project_name,
 
-    -- ── Продажи (KGS) ──────────────────────────────────────────────
+    -- ── Продажи (KGS) ─────────────────────────────────────────────────────
     f.sell_quantity,
     ROUND(f.revenue_kgs, 2)                         AS revenue_kgs,
     ROUND(COALESCE(f.cogs_kgs, 0), 2)               AS cogs_kgs,
@@ -84,17 +75,17 @@ main AS (
     )                                               AS margin_pct,
     f.discount AS discount_percent,
 
-    -- ── Возвраты ──────────────────────────────────────────────────
+    -- ── Возвраты ──────────────────────────────────────────────────────────
     COALESCE(r.return_quantity, 0)                  AS return_quantity,
     COALESCE(r.return_sum_kgs, 0)                   AS return_sum_kgs,
     COALESCE(r.no_basis_sum_kgs, 0)                 AS return_no_basis_sum_kgs,
     COALESCE(r.return_doc_count, 0)                 AS return_doc_count,
 
-    -- ── Нетто (продажи - возвраты) ──────────────────────────────────
+    -- ── Нетто (продажи - возвраты) ────────────────────────────────────────
     ROUND(f.revenue_kgs - COALESCE(r.return_sum_kgs, 0), 2) AS net_revenue_kgs,
     f.sell_quantity - COALESCE(r.return_quantity, 0)         AS net_quantity,
 
-    -- ── USD ──────────────────────────────────────────────────────
+    -- ── USD ───────────────────────────────────────────────────────────────
     ROUND(COALESCE(f.revenue_usd, 0), 2)            AS revenue_usd,
     ROUND(COALESCE(f.cogs_usd, 0), 2)               AS cogs_usd,
     ROUND(COALESCE(f.margin_usd, 0), 2)             AS margin_usd,
@@ -104,11 +95,11 @@ main AS (
     )                                               AS return_sum_usd,
     fx.rate_kgs_per_usd,
 
-    -- ── Флаги качества данных ──────────────────────────────────────
+    -- ── Флаги качества данных ─────────────────────────────────────────────
     CASE WHEN f.cogs_kgs IS NULL THEN TRUE ELSE FALSE END AS is_cogs_missing,
     CASE WHEN f.agent_id IS NULL THEN TRUE ELSE FALSE END AS is_agent_missing,
 
-    -- ── Метаданные ──────────────────────────────────────────────────
+    -- ── Метаданные ────────────────────────────────────────────────────────
     CURRENT_TIMESTAMP()                             AS _mart_refreshed_at
 
   FROM `msklad-bi-prod.core.fact_sales_profit` f
@@ -123,11 +114,8 @@ main AS (
     ON f.agent_id = c.agent_id
     AND c.scd2_is_current = TRUE
 
-  LEFT JOIN `msklad-bi-prod.core.dim_employees` e_agent
-    ON c.owner_employee_id = e_agent.employee_id
-
-  LEFT JOIN `msklad-bi-prod.core.dim_employees` e_doc
-    ON f.document_owner_employee_id = e_doc.employee_id
+  LEFT JOIN `msklad-bi-prod.core.dim_employees` e
+    ON c.owner_employee_id = e.employee_id
 
   LEFT JOIN `msklad-bi-prod.core.dim_fx_rates` fx
     ON f.transaction_date = fx.date

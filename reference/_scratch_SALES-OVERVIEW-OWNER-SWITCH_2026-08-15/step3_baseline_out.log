@@ -1,0 +1,104 @@
+Waiting on bqjob_ref75d994d439655_000001a0045bff10_1 ... (0s) Current status: RUNNING                                                                                     Waiting on bqjob_ref75d994d439655_000001a0045bff10_1 ... (2s) Current status: RUNNING                                                                                     Waiting on bqjob_ref75d994d439655_000001a0045bff10_1 ... (2s) Current status: DONE   
+[[
+  {
+    "manager_name": "Турдалиева А. М.", 
+    "metric": "jul_by_document_owner", 
+    "revenue_kgs": "7.474582028E7"
+  }, 
+  {
+    "manager_name": "Турсунбекова М.", 
+    "metric": "jul_by_document_owner", 
+    "revenue_kgs": "2.315231577E7"
+  }, 
+  {
+    "manager_name": "Омурбекова Э. О.", 
+    "metric": "jul_by_document_owner", 
+    "revenue_kgs": "1.109159783E7"
+  }, 
+  {
+    "manager_name": "Не указан", 
+    "metric": "jul_by_document_owner", 
+    "revenue_kgs": "3334723.58"
+  }
+]
+,
+[
+  {
+    "period": "apr", 
+    "revenue_kgs": "8.508523581E7"
+  }, 
+  {
+    "period": "jul", 
+    "revenue_kgs": "1.1232445746E8"
+  }, 
+  {
+    "period": "may", 
+    "revenue_kgs": "9.52142058E7"
+  }, 
+  {
+    "period": "all_history", 
+    "revenue_kgs": "7.0152675252E8"
+  }
+]
+,
+[
+  {
+    "manager_name": "Турдалиева А. М.", 
+    "metric": "apr_by_agent_owner", 
+    "revenue_kgs": "5.740602559E7"
+  }, 
+  {
+    "manager_name": "Турсунбекова М.", 
+    "metric": "apr_by_agent_owner", 
+    "revenue_kgs": "1.950679128E7"
+  }, 
+  {
+    "manager_name": "Омурбекова Э. О.", 
+    "metric": "apr_by_agent_owner", 
+    "revenue_kgs": "4582772.94"
+  }, 
+  {
+    "manager_name": "Не указан", 
+    "metric": "apr_by_agent_owner", 
+    "revenue_kgs": "2851639.89"
+  }, 
+  {
+    "manager_name": "Бейшеналиева К.", 
+    "metric": "apr_by_agent_owner", 
+    "revenue_kgs": "652772.7"
+  }, 
+  {
+    "manager_name": "Бактияр кызы Ч.", 
+    "metric": "apr_by_agent_owner", 
+    "revenue_kgs": "43689.93"
+  }, 
+  {
+    "manager_name": "Казакбаев Н. К.", 
+    "metric": "apr_by_agent_owner", 
+    "revenue_kgs": "41543.47"
+  }
+]
+,
+[
+  {
+    "manager_name": "Турдалиева А. М.", 
+    "metric": "may_by_document_owner", 
+    "revenue_kgs": "7.722946941E7"
+  }, 
+  {
+    "manager_name": "Турсунбекова М.", 
+    "metric": "may_by_document_owner", 
+    "revenue_kgs": "1.193186613E7"
+  }, 
+  {
+    "manager_name": "Не указан", 
+    "metric": "may_by_document_owner", 
+    "revenue_kgs": "5301450.08"
+  }, 
+  {
+    "manager_name": "Бактияр кызы Ч.", 
+    "metric": "may_by_document_owner", 
+    "revenue_kgs": "751420.18"
+  }
+]
+]

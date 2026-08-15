@@ -1,0 +1,104 @@
+Waiting on bqjob_ra41d1736d1b9ba7_000001a00476fc7c_1 ... (0s) Current status: RUNNING                                                                                     Waiting on bqjob_ra41d1736d1b9ba7_000001a00476fc7c_1 ... (0s) Current status: DONE   
+[[
+  {
+    "check_id": "1_jul_by_manager", 
+    "manager_name": "Турдалиева А. М.", 
+    "revenue_kgs": "7.474582028E7"
+  }, 
+  {
+    "check_id": "1_jul_by_manager", 
+    "manager_name": "Турсунбекова М.", 
+    "revenue_kgs": "2.315231576E7"
+  }, 
+  {
+    "check_id": "1_jul_by_manager", 
+    "manager_name": "Омурбекова Э. О.", 
+    "revenue_kgs": "1.109159786E7"
+  }, 
+  {
+    "check_id": "1_jul_by_manager", 
+    "manager_name": "Не указан", 
+    "revenue_kgs": "3334723.58"
+  }
+]
+,
+[
+  {
+    "check_id": "2_jul", 
+    "revenue_kgs": "1.1232445748E8"
+  }, 
+  {
+    "check_id": "2_may", 
+    "revenue_kgs": "9.521420579E7"
+  }, 
+  {
+    "check_id": "2_apr", 
+    "revenue_kgs": "8.508523583E7"
+  }, 
+  {
+    "check_id": "2_all_history", 
+    "revenue_kgs": "7.0152675273E8"
+  }
+]
+,
+[
+  {
+    "check_id": "3_apr_by_manager", 
+    "manager_name": "Турдалиева А. М.", 
+    "revenue_kgs": "5.740602562E7"
+  }, 
+  {
+    "check_id": "3_apr_by_manager", 
+    "manager_name": "Турсунбекова М.", 
+    "revenue_kgs": "1.950679128E7"
+  }, 
+  {
+    "check_id": "3_apr_by_manager", 
+    "manager_name": "Омурбекова Э. О.", 
+    "revenue_kgs": "4582772.94"
+  }, 
+  {
+    "check_id": "3_apr_by_manager", 
+    "manager_name": null, 
+    "revenue_kgs": "2851639.89"
+  }, 
+  {
+    "check_id": "3_apr_by_manager", 
+    "manager_name": "Бейшеналиева К.", 
+    "revenue_kgs": "652772.7"
+  }, 
+  {
+    "check_id": "3_apr_by_manager", 
+    "manager_name": "Бактияр кызы Ч.", 
+    "revenue_kgs": "43689.93"
+  }, 
+  {
+    "check_id": "3_apr_by_manager", 
+    "manager_name": "Казакбаев Н. К.", 
+    "revenue_kgs": "41543.47"
+  }
+]
+,
+[
+  {
+    "check_id": "4_may_by_manager", 
+    "manager_name": "Турдалиева А. М.", 
+    "revenue_kgs": "7.722946938E7"
+  }, 
+  {
+    "check_id": "4_may_by_manager", 
+    "manager_name": "Турсунбекова М.", 
+    "revenue_kgs": "1.193186613E7"
+  }, 
+  {
+    "check_id": "4_may_by_manager", 
+    "manager_name": "Не указан", 
+    "revenue_kgs": "5301450.08"
+  }, 
+  {
+    "check_id": "4_may_by_manager", 
+    "manager_name": "Бактияр кызы Ч.", 
+    "revenue_kgs": "751420.2"
+  }
+]
+]

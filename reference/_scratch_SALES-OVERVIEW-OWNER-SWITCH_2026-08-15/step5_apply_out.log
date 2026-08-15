@@ -1,0 +1,25 @@
+Sat Aug 15 07:45:13 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Sat Aug 15 07:45:17 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== date -u (start) ===
+=== gcloud auth list (start) ===
+=== bq update --transfer_config ===
+rc: 0
+stdout: Transfer configuration 'projects/420804682491/locations/asia-east1/transferConfigs/69ff34b4-0000-2b2b-a390-14c14ef7af10' successfully updated.
+
+stderr: 
+=== date -u (end) ===
+=== gcloud auth list (end) ===
