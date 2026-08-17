@@ -1,0 +1,75 @@
+2026-08-18 00:51:21,159 INFO main CF-Facts start | mode=promote run_id=1786842001.2609222 window_days=90
+2026-08-18 00:51:21,159 INFO bq_ops promote_to_core: предохранитель ADR-145 §4 пройден — staging покрывает с 2026-05-18 (окно MERGE с 2026-05-18, допуск 3д), последняя запись 2026-08-16 01:18:21+00:00 (прогон начался 2026-08-16 01:00:01.260922+00:00)
+2026-08-18 00:51:21,159 INFO bq_ops Staging rows: 1 | window_days: 90
+2026-08-18 00:51:21,159 INFO bq_ops COGS source: msklad-bi-prod.stg_msklad.byvariant_staging
+2026-08-18 00:51:21,159 INFO bq_ops MERGE complete: {'staging_rows': 1, 'window_days': 90, 'cogs_source': 'msklad-bi-prod.stg_msklad.byvariant_staging', 'affected_rows': 0}
+2026-08-18 00:51:21,159 INFO bq_ops Coverage stats (last 90d): {'agent_coverage': 1.0, 'cogs_coverage': 1.0, 'usd_coverage': 1.0, 'total_rows': 1, 'total_revenue_kgs': 1.0}
+2026-08-18 00:51:21,159 INFO main CF-Facts complete | mode=promote | {'merge_stats': {'staging_rows': 1, 'window_days': 90, 'cogs_source': 'msklad-bi-prod.stg_msklad.byvariant_staging', 'affected_rows': 0}, 'coverage_stats': {'agent_coverage': 1.0, 'cogs_coverage': 1.0, 'usd_coverage': 1.0, 'total_rows': 1, 'total_revenue_kgs': 1.0}}
+2026-08-18 00:51:21,159 INFO main CF-Facts start | mode=perimeter_promote run_id=1786842001.2609222 window_days=90
+2026-08-18 00:51:21,159 INFO bq_ops promote_perimeter_to_core: предохранитель ADR-145 §4 пройден — staging покрывает с 2026-05-18 (окно MERGE с 2026-05-18, допуск 3д), последняя запись 2026-08-16 01:18:21+00:00 (прогон начался 2026-08-16 01:00:01.260922+00:00)
+2026-08-18 00:51:21,159 INFO bq_ops Perimeter staging rows: 1 | window_days: 90
+2026-08-18 00:51:21,159 INFO bq_ops Perimeter MERGE complete: {'staging_rows': 1, 'window_days': 90, 'affected_rows': 0}
+2026-08-18 00:51:21,159 INFO main CF-Facts complete | mode=perimeter_promote | {'merge_stats': {'staging_rows': 1, 'window_days': 90, 'affected_rows': 0}}
+2026-08-18 00:51:21,159 INFO main CF-Facts start | mode=promote run_id=1786842001.2609222 window_days=90
+2026-08-18 00:51:21,159 ERROR main CF-Facts FAILED | mode=promote run_id=1786842001.2609222
+Traceback (most recent call last):
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-PREP2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-PREP2_2026-08-18/../code/cf-facts/main.py", line 129, in main
+    result = _run_promote(window_days, run_id)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-PREP2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-PREP2_2026-08-18/../code/cf-facts/main.py", line 285, in _run_promote
+    merge_stats    = promote_to_core(bq, window_days, run_started_at)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-PREP2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-PREP2_2026-08-18/../code/cf-facts/bq_ops.py", line 532, in promote_to_core
+    _assert_staging_covers_merge_window(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bq, STG_FACT_SALES, window_days, "promote_to_core", run_started_at
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-PREP2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-PREP2_2026-08-18/../code/cf-facts/bq_ops.py", line 483, in _assert_staging_covers_merge_window
+    raise ValueError(
+    ...<6 lines>...
+    )
+ValueError: promote_to_core: предохранитель ADR-145 §4 (свежесть) — staging последний раз записана 2026-08-16 00:00:01.260922+00:00, а этот прогон начался 2026-08-16 01:00:01.260922+00:00. Staging не переписана в рамках текущего прогона — ветка DELETE удалила бы строки внутри окна около сегодняшнего дня, отсутствующие в устаревшем staging не потому что исчезли в источнике. Отказ, MERGE не исполняется.
+2026-08-18 00:51:21,160 INFO main CF-Facts start | mode=promote run_id=20260816T011821 window_days=90
+2026-08-18 00:51:21,163 INFO bq_ops promote_to_core: предохранитель ADR-145 §4 пройден — staging покрывает с 2026-05-18 (окно MERGE с 2026-05-18, допуск 3д), последняя запись 2026-08-16 01:18:21+00:00 (прогон начался 2026-08-16 01:18:21+00:00)
+2026-08-18 00:51:21,163 INFO bq_ops Staging rows: 1 | window_days: 90
+2026-08-18 00:51:21,163 INFO bq_ops COGS source: msklad-bi-prod.stg_msklad.byvariant_staging
+2026-08-18 00:51:21,163 INFO bq_ops MERGE complete: {'staging_rows': 1, 'window_days': 90, 'cogs_source': 'msklad-bi-prod.stg_msklad.byvariant_staging', 'affected_rows': 0}
+2026-08-18 00:51:21,163 INFO bq_ops Coverage stats (last 90d): {'agent_coverage': 1.0, 'cogs_coverage': 1.0, 'usd_coverage': 1.0, 'total_rows': 1, 'total_revenue_kgs': 1.0}
+2026-08-18 00:51:21,163 INFO main CF-Facts complete | mode=promote | {'merge_stats': {'staging_rows': 1, 'window_days': 90, 'cogs_source': 'msklad-bi-prod.stg_msklad.byvariant_staging', 'affected_rows': 0}, 'coverage_stats': {'agent_coverage': 1.0, 'cogs_coverage': 1.0, 'usd_coverage': 1.0, 'total_rows': 1, 'total_revenue_kgs': 1.0}}
+2026-08-18 00:51:21,163 INFO main CF-Facts start | mode=promote run_id=abc window_days=90
+2026-08-18 00:51:21,163 ERROR main CF-Facts FAILED | mode=promote run_id=abc
+Traceback (most recent call last):
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-PREP2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-PREP2_2026-08-18/../code/cf-facts/main.py", line 129, in main
+    result = _run_promote(window_days, run_id)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-PREP2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-PREP2_2026-08-18/../code/cf-facts/main.py", line 283, in _run_promote
+    run_started_at = _parse_run_started_at(run_id)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-PREP2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-PREP2_2026-08-18/../code/cf-facts/main.py", line 101, in _parse_run_started_at
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: Неразбираемый run_id='abc' (str) — ожидался float (эпоха секунд, sys.now()), строка-число того же вида, либо строка формата %Y%m%dT%H%M%S (run_ts()). Отказ, promote не исполняется (fail-closed, ADR-145).
+date -u (старт скрипта): 2026-08-17T18:51:21.118600+00:00
+
+=== Контроль (i): позитивный — run_id float, staging свежее старта прогона ===
+  run_id=1786842001.2609222 → status=200 body={'status': 'ok', 'mode': 'promote', 'run_id': 1786842001.2609222, 'merge_stats': {'staging_rows': 1, 'window_days': 90, 'cogs_source': 'msklad-bi-prod.stg_msklad.byvariant_staging', 'affected_rows': 0}, 'coverage_stats': {'agent_coverage': 1.0, 'cogs_coverage': 1.0, 'usd_coverage': 1.0, 'total_rows': 1, 'total_revenue_kgs': 1.0}}
+  ok  HTTP 200 (MERGE исполнен через main())
+  ok  status=ok
+
+=== Контроль (i-perimeter): тот же позитивный, mode=perimeter_promote ===
+  run_id=1786842001.2609222 → status=200 body={'status': 'ok', 'mode': 'perimeter_promote', 'run_id': 1786842001.2609222, 'merge_stats': {'staging_rows': 1, 'window_days': 90, 'affected_rows': 0}}
+  ok  HTTP 200 (perimeter MERGE исполнен через main())
+
+=== Контроль (ii): отрицательный — _loaded_at состарен на 1ч до старта прогона ===
+  run_id=1786842001.2609222, _loaded_at состарен → status=500 error=promote_to_core: предохранитель ADR-145 §4 (свежесть) — staging последний раз записана 2026-08-16 00:00:01.260922+00:00, а этот прогон начался 2026-08-16 01:00:01.260922+00:00. Staging не переписана в рамках текущего прогона — ветка DELETE удалила бы строки внутри окна около сегодняшнего дня, отсутствующие в устаревшем staging не потому что исчезли в источнике. Отказ, MERGE не исполняется.
+  ok  HTTP 500 (MERGE отказал)
+  ok  причина — предохранитель свежести ADR-145 §4
+
+=== Контроль (iii): разбор форм run_id ===
+  run_id="20260816T011821" (строка run_ts()) → status=200 body={'status': 'ok', 'mode': 'promote', 'run_id': '20260816T011821', 'merge_stats': {'staging_rows': 1, 'window_days': 90, 'cogs_source': 'msklad-bi-prod.stg_msklad.byvariant_staging', 'affected_rows': 0}, 'coverage_stats': {'agent_coverage': 1.0, 'cogs_coverage': 1.0, 'usd_coverage': 1.0, 'total_rows': 1, 'total_revenue_kgs': 1.0}}
+  ok  строка %Y%m%dT%H%M%S разбирается, HTTP 200
+  run_id="abc" (неразбираемое) → status=500 error=Неразбираемый run_id='abc' (str) — ожидался float (эпоха секунд, sys.now()), строка-число того же вида, либо строка формата %Y%m%dT%H%M%S (run_ts()). Отказ, promote не исполняется (fail-closed, ADR-145).
+  ok  HTTP 500 на неразбираемом run_id
+  ok  названная ошибка — 'Неразбираемый run_id'
+
+ИТОГ: все контроли прошли как ожидалось.
+date -u (конец скрипта): 2026-08-17T18:51:21.164153+00:00
