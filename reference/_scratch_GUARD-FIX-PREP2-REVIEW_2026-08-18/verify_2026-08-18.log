@@ -1,0 +1,204 @@
+=== UTC-якорь (начало) ===
+Mon Aug 17 20:23:41 UTC 2026
+=== база ===
+9edff2f0e7af423d1ebe5d4da166a4553020ff26
+=== версии интерпретаторов (ADR-186 §5iii) ===
+Python 3.9.6
+Python 3.14.6
+
+=== П1. Три уровня обвязки — печать совпавших строк с номерами (ADR-044) ===
+reference/code/cf-facts/bq_ops.py:9:  - promote_to_core(): MERGE staging → core.fact_sales_profit
+reference/code/cf-facts/bq_ops.py:501:def promote_to_core(
+reference/code/cf-facts/bq_ops.py:732:def promote_perimeter_to_core(
+reference/code/cf-facts/main.py:79:def _parse_run_started_at(run_id) -> datetime:
+reference/code/cf-facts/main.py:129:            result = _run_promote(window_days, run_id)
+reference/code/cf-facts/main.py:137:            result = _run_perimeter_promote(window_days, run_id)
+reference/code/cf-facts/main.py:269:def _run_promote(window_days: int, run_id) -> dict:
+reference/code/cf-facts/main.py:283:    run_started_at = _parse_run_started_at(run_id)
+reference/code/cf-facts/main.py:285:    merge_stats    = promote_to_core(bq, window_days, run_started_at)
+reference/code/cf-facts/main.py:432:def _run_perimeter_promote(window_days: int, run_id) -> dict:
+reference/code/cf-facts/main.py:442:    run_started_at = _parse_run_started_at(run_id)
+reference/code/cf-facts/main.py:443:    merge_stats = promote_perimeter_to_core(bq, window_days, run_started_at)
+
+=== П2. Машинный обход ВСЕХ вызовов: не осталось ли старой арности ===
+-- определения --
+   reference/code/cf-facts/main.py:432 def _run_perimeter_promote(window_days, run_id) — параметров 2, обязательных 2
+   reference/code/cf-facts/main.py:269 def _run_promote(window_days, run_id) — параметров 2, обязательных 2
+   reference/code/cf-facts/bq_ops.py:732 def promote_perimeter_to_core(bq, window_days, run_started_at) — параметров 3, обязательных 3
+   reference/code/cf-facts/bq_ops.py:501 def promote_to_core(bq, window_days, run_started_at) — параметров 3, обязательных 3
+-- вызовы --
+   reference/code/cf-facts/main.py:129 _run_promote(...) — аргументов 2 — ok
+   reference/code/cf-facts/main.py:137 _run_perimeter_promote(...) — аргументов 2 — ok
+   reference/code/cf-facts/main.py:285 promote_to_core(...) — аргументов 3 — ok
+   reference/code/cf-facts/main.py:443 promote_perimeter_to_core(...) — аргументов 3 — ok
+вызовов найдено: 4 · расхождений: 0
+
+=== П2a. Дефекты ПОРЯДКА определений на уровне модуля — все файлы cf-facts (ADR-186 §5) ===
+проверено файлов: 9 · с дефектом порядка: 0
+
+=== П3/П4. py_compile обоих патченных файлов ===
+py_compile: ok (rc=0)
+
+=== П4a. ФАКТ-ПРОВЕРКА ИСПОЛНЕНИЕМ: реальный импорт патченных модулей (ADR-186 §5) ===
+интерпретатор импорта: Python 3.14.6
+  импорт ok: config
+  импорт ok: helpers
+  импорт ok: bq_ops
+  импорт ok: main
+модулей с провалом импорта: 0
+
+=== П5. Три вида run_id + fail-closed на неразбираемом ===
+  [ok] float эпохи (sys.now()): разобрано -> 2026-08-16T01:00:01.260922+00:00
+  [ok] строка-число того же вида: разобрано -> 2026-08-16T01:00:01.260922+00:00
+  [ok] строка %Y%m%dT%H%M%S (run_ts): разобрано -> 2026-08-16T01:18:21+00:00
+  [ok] неразбираемая строка: ОТКАЗ (fail-closed): Неразбираемый run_id='abc' (str) — ожидался float (эпоха секунд, sys.n…
+  [ok] None (вызов без run_id): ОТКАЗ (fail-closed): Неразбираемый run_id=None (NoneType) — ожидался float (эпоха секунд, s…
+
+=== П5a. Оба контроля на числах инцидента 2026-08-16 — ВОСПРОИЗВЕДЕНИЕ стенда PREP2 ===
+(запускаю чужой стенд по ТЕКУЩЕМУ снапшоту: приёмка §7 п.5 требует прогона через main(),
+ а не через promote_to_core напрямую; переиспользование чужого стенда законно, свой
+ не переписываю — иначе проверял бы свою реализацию, а не патч)
+  File "/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/GUARD-FIX-PREP2-REVIEW/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-PREP2_2026-08-18/../code/cf-facts/main.py", line 101, in _parse_run_started_at
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: Неразбираемый run_id='abc' (str) — ожидался float (эпоха секунд, sys.now()), строка-число того же вида, либо строка формата %Y%m%dT%H%M%S (run_ts()). Отказ, promote не исполняется (fail-closed, ADR-145).
+date -u (старт скрипта): 2026-08-17T20:23:41.863080+00:00
+
+=== Контроль (i): позитивный — run_id float, staging свежее старта прогона ===
+  run_id=1786842001.2609222 → status=200 body={'status': 'ok', 'mode': 'promote', 'run_id': 1786842001.2609222, 'merge_stats': {'staging_rows': 1, 'window_days': 90, 'cogs_source': 'msklad-bi-prod.stg_msklad.byvariant_staging', 'affected_rows': 0}, 'coverage_stats': {'agent_coverage': 1.0, 'cogs_coverage': 1.0, 'usd_coverage': 1.0, 'total_rows': 1, 'total_revenue_kgs': 1.0}}
+  ok  HTTP 200 (MERGE исполнен через main())
+  ok  status=ok
+
+=== Контроль (i-perimeter): тот же позитивный, mode=perimeter_promote ===
+  run_id=1786842001.2609222 → status=200 body={'status': 'ok', 'mode': 'perimeter_promote', 'run_id': 1786842001.2609222, 'merge_stats': {'staging_rows': 1, 'window_days': 90, 'affected_rows': 0}}
+  ok  HTTP 200 (perimeter MERGE исполнен через main())
+
+=== Контроль (ii): отрицательный — _loaded_at состарен на 1ч до старта прогона ===
+  run_id=1786842001.2609222, _loaded_at состарен → status=500 error=promote_to_core: предохранитель ADR-145 §4 (свежесть) — staging последний раз записана 2026-08-16 00:00:01.260922+00:00, а этот прогон начался 2026-08-16 01:00:01.260922+00:00. Staging не переписана в рамках текущего прогона — ветка DELETE удалила бы строки внутри окна около сегодняшнего дня, отсутствующие в устаревшем staging не потому что исчезли в источнике. Отказ, MERGE не исполняется.
+  ok  HTTP 500 (MERGE отказал)
+  ok  причина — предохранитель свежести ADR-145 §4
+
+=== Контроль (iii): разбор форм run_id ===
+  run_id="20260816T011821" (строка run_ts()) → status=200 body={'status': 'ok', 'mode': 'promote', 'run_id': '20260816T011821', 'merge_stats': {'staging_rows': 1, 'window_days': 90, 'cogs_source': 'msklad-bi-prod.stg_msklad.byvariant_staging', 'affected_rows': 0}, 'coverage_stats': {'agent_coverage': 1.0, 'cogs_coverage': 1.0, 'usd_coverage': 1.0, 'total_rows': 1, 'total_revenue_kgs': 1.0}}
+  ok  строка %Y%m%dT%H%M%S разбирается, HTTP 200
+  run_id="abc" (неразбираемое) → status=500 error=Неразбираемый run_id='abc' (str) — ожидался float (эпоха секунд, sys.now()), строка-число того же вида, либо строка формата %Y%m%dT%H%M%S (run_ts()). Отказ, promote не исполняется (fail-closed, ADR-145).
+  ok  HTTP 500 на неразбираемом run_id
+  ok  названная ошибка — 'Неразбираемый run_id'
+
+ИТОГ: все контроли прошли как ожидалось.
+date -u (конец скрипта): 2026-08-17T20:23:41.881783+00:00
+
+=== П6. Дифф: нижний край, GUARD_TOLERANCE_DAYS и тела MERGE не изменены ===
+-- файлы, затронутые коммитом PREP2 (56d40c1) --
+reference/code/cf-facts/main.py
+-- есть ли GUARD_TOLERANCE_DAYS в диффе PREP2 --
+  совпадений 0 — не тронут
+-- есть ли в диффе PREP2 строки тел MERGE --
+  совпадений 0 — не тронуты
+-- где живёт GUARD_TOLERANCE_DAYS сейчас --
+reference/code/cf-facts//config.py:56:GUARD_TOLERANCE_DAYS = 3
+reference/code/cf-facts//bq_ops.py:37:    GUARD_TOLERANCE_DAYS,
+reference/code/cf-facts//bq_ops.py:426:      (`CURRENT_DATE() - window_days`), с допуском `GUARD_TOLERANCE_DAYS`. Если
+reference/code/cf-facts//bq_ops.py:454:    Допуск `GUARD_TOLERANCE_DAYS` (`config.py`) с этой правкой применяется ТОЛЬКО
+reference/code/cf-facts//bq_ops.py:472:    tolerant_window_start = row.window_start + timedelta(days=GUARD_TOLERANCE_DAYS)
+reference/code/cf-facts//bq_ops.py:477:            f"(window_days={window_days}, допуск {GUARD_TOLERANCE_DAYS}д → "
+reference/code/cf-facts//bq_ops.py:494:        label, row.min_date, row.window_start, GUARD_TOLERANCE_DAYS,
+Binary file reference/code/cf-facts//__pycache__/config.cpython-314.pyc matches
+Binary file reference/code/cf-facts//__pycache__/bq_ops.cpython-314.pyc matches
+
+=== П7. Предохранитель: верхний край и нижний край в bq_ops.py ===
+403:def _assert_staging_covers_merge_window(
+404-    bq: bigquery.Client,
+405-    staging_table: str,
+406-    window_days: int,
+407-    label: str,
+408-    run_started_at: datetime,
+409-) -> None:
+410-    """
+411-    Предусловие мандата на деплой ветки удаления (`ADR-145 §4/§5`): до исполнения
+412-    `MERGE` подтвердить, что фактическое покрытие staging по датам не УЖЕ окна,
+413-    которое получит ветка `WHEN NOT MATCHED BY SOURCE ... THEN DELETE`. Свойства
+414-    защиты по `ADR-145 §4`: сравнить покрытие staging с окном `MERGE`, ОТКАЗАТЬ при
+415-    недостаточном покрытии (не предупредить логом), сработать ДО исполнения `MERGE`.
+416-    Форма и три правки — адъюдикация `reference/sales_refresh_window_mandate_adj_2026-08-11.md §3`.
+417-    Верхний край переформулирован по `reference/sales_refresh_window_guard_form_adj_2026-08-17.md §2`
+418-    (ф3-точная) — см. ниже.
+419-
+420-    Проверяются ОБА конца окна, но разными признаками, потому что отвечают на РАЗНЫЕ
+421-    вопросы:
+422-
+423-    - нижний (глубина) — вопрос К ДАННЫМ: «дотягивается ли staging до всей глубины,
+424-      которую получит DELETE». Метод не меняется: MIN(transaction_date) в staging
+425-      (`_PARSE_DATE`, тот же, что несёт сам `MERGE`) против начала окна `MERGE`
+426-      (`CURRENT_DATE() - window_days`), с допуском `GUARD_TOLERANCE_DAYS`. Если
+427-      MIN(date) моложе начала окна минус допуск, staging не дотягивается до всей
+428-      глубины, и строки внутри окна, отсутствующие в staging не потому что удалены
+429-      в источнике, а потому что не были выбраны этим прогоном, будут стёрты как
+430-      «исчезнувшие». Сценарий `ADR-145 §4`: часовой staging (7 суток) при
+431-      `mode=promote, window_days=90` — MIN(date) окажется около «сегодня-7д», отказ.
+432-    - верхний (свежесть) — вопрос О ПРОГОНЕ: «staging от ЭТОГО прогона или от
+433-      старого». Прежняя форма отвечала на него через MAX(transaction_date) —
+434-      свойство ДАННЫХ (дата последнего документа), не признак прогона; на плотном
+435-      потоке продаж подмена незаметна, на разрежённом потоке периметра она даёт
+436-      ложный отказ на свежей staging (замер `sales_refresh_window_perimeter_density_
+437-      2026-08-17.md`, отказ `2026-08-16` на staging, загруженной за 31с до проверки —
+438-      `sales_refresh_window_stage3_2026-08-17.md §3`). Признак прогона —
+439-      `_loaded_at` (проставляется загрузчиком на момент загрузки,
+440-      `fetch_perimeter.py:181`; staging пишется `WRITE_TRUNCATE` целиком при каждой
+441-      загрузке), сравнённый с моментом начала ЭТОГО прогона — `run_started_at`,
+442-      который обязан зафиксировать и передать сюда вызывающий код (это НЕ момент
+443:      входа в `_assert_staging_covers_merge_window`/`promote_to_core` — staging
+444-      грузится отдельным, более ранним прогоном той же цепочки; вызывающая сторона
+445-      обязана передать момент начала ИМЕННО ТОГО прогона, а не текущего вызова
+446-      промоута). Критерий без числа допуска: либо staging переписана в рамках
+447-      текущего прогона (`MAX(_loaded_at) >= run_started_at`), либо нет — ложных
+448-      отказов и ложных пропусков по построению не бывает.
+449-
+450-    Обе даты нижнего края (`MIN(transaction_date)`, `window_start`) по-прежнему
+451-    считаются ОДНИМ запросом BigQuery вместе с `MAX(_loaded_at)` (правка 2 —
+452-    исходные часы обязаны совпадать; `CURRENT_DATE()` даёт UTC).
+453-
+454-    Допуск `GUARD_TOLERANCE_DAYS` (`config.py`) с этой правкой применяется ТОЛЬКО
+455-    к нижнему краю (глубина) — асимметрия `ADR-145`/`MANDATE-ADJ §2` («недолёт
+456-    глубины невосстановим») остаётся в силе там, где и была измерена (`§C`, окно
+457-    180 суток, 6,63% пустых суток продаж). На верхнем крае числа допуска больше не
+458-    существует вовсе — вопрос «от этого прогона или нет» бинарен, калибровать под
+459-    плотность потока нечего.
+460-    """
+461-    row = next(
+462-        bq.query(
+
+=== UTC-якорь (конец) ===
+Mon Aug 17 20:23:41 UTC 2026
+
+=== П8 (дополнение ревью). Полезная нагрузка будущего деплоя: атрибуция по коммитам ===
+-- date -u --
+Mon Aug 17 20:26:21 UTC 2026
+-- коммиты reference/code/cf-facts/ после кода задеплоенной ревизии (543b6c1 / cf-facts-00017-jon) --
+56d40c1 docs: SALES-REFRESH-WINDOW-GUARD-FIX-PREP2 обвязка run_started_at через main()/_run_promote/_run_perimeter_promote
+a5c6a36 docs: SALES-REFRESH-WINDOW-GUARD-FIX-PREP форма ф3-точная в bq_ops.py — верхний край предохранителя на MAX(_loaded_at), оба контроля числами
+5f484d4 docs: INGEST-CURRENCY-ASSERT шаги 1-2 — детекция «забыли ×rate» в снапшоте
+4c7b0d8 docs: SALES-REFRESH-WINDOW-DEPLOY-FINAL закрытие сессии — ступень 2 приёмки закрыта, ступень 3 ждёт недельного прогона
+81dcf9e docs: SALES-REFRESH-WINDOW-DEPLOY-FINAL промежуточный коммит — деплой исполнен, приёмка ждёт снятия DQ-гейта
+6c68779 docs: SALES-REFRESH-WINDOW-PROBE-PREP правка ревью — meta через (or {}), исключение внутри общего помощника невозможно
+586a769 docs: SALES-REFRESH-WINDOW-PROBE-PREP патч стадии A проверки полноты (paginate_entity)
+cebb5b8 docs: SALES-REFRESH-WINDOW-DEPLOY второй заход — деплой исполнен, приёмка провалена (28 удалённых оптовых строк), откат отложен по указанию владельца до адъюдикации архитектора
+
+-- файлы по коммитам --
+  [5f484d4] docs: INGEST-CURRENCY-ASSERT шаги 1-2 — детекция «за�
+      reference/code/cf-facts/fetch_demands.py
+      reference/code/cf-facts/fetch_perimeter.py
+      reference/code/cf-facts/fetch_purchases.py
+      reference/code/cf-facts/fetch_returns.py
+  [a5c6a36] docs: SALES-REFRESH-WINDOW-GUARD-FIX-PREP форма ф3-точная 
+      reference/code/cf-facts/bq_ops.py
+  [56d40c1] docs: SALES-REFRESH-WINDOW-GUARD-FIX-PREP2 обвязка run_started_
+      reference/code/cf-facts/main.py
+
+-- пересечение наборов файлов: ЧУЖОЙ патч (INGEST-CURRENCY-ASSERT) против ГВАРД-патча --
+   чужой (не задеплоен, мандат 6б НЕ выдан): ['reference/code/cf-facts/fetch_demands.py', 'reference/code/cf-facts/fetch_perimeter.py', 'reference/code/cf-facts/fetch_purchases.py', 'reference/code/cf-facts/fetch_returns.py']
+   гвард (объект этого деплоя):             ['reference/code/cf-facts/bq_ops.py', 'reference/code/cf-facts/main.py']
+   пересечение: ПУСТО — разделение по файлам чистое
+-- date -u --
+Mon Aug 17 20:26:21 UTC 2026
