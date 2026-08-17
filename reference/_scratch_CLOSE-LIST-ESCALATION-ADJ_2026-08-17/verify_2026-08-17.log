@@ -1,0 +1,47 @@
+Mon Aug 17 09:42:14 UTC 2026
+база: 30b1f272a5bf1187b85c8b2fe5d85098d377a79b
+
+## 1. Допуск предохранителя — одна константа на две ветки
+reference/code/cf-facts/config.py:56:GUARD_TOLERANCE_DAYS = 3
+reference/code/cf-facts/bq_ops.py:37:    GUARD_TOLERANCE_DAYS,
+reference/code/cf-facts/bq_ops.py:426:      (`GUARD_TOLERANCE_DAYS`, правка 1), staging не дотягивается до всей глубины,
+reference/code/cf-facts/bq_ops.py:438:    Допуск `GUARD_TOLERANCE_DAYS` (`config.py`) применяется к ОБОИМ концам окна
+reference/code/cf-facts/bq_ops.py:465:    tolerant_window_start = row.window_start + timedelta(days=GUARD_TOLERANCE_DAYS)
+reference/code/cf-facts/bq_ops.py:470:            f"(window_days={window_days}, допуск {GUARD_TOLERANCE_DAYS}д → "
+reference/code/cf-facts/bq_ops.py:475:    tolerant_freshness_floor = row.freshness_floor - timedelta(days=GUARD_TOLERANCE_DAYS)
+reference/code/cf-facts/bq_ops.py:480:            f"{row.freshness_floor} (допуск {GUARD_TOLERANCE_DAYS}д → "
+reference/code/cf-facts/bq_ops.py:490:        GUARD_TOLERANCE_DAYS,
+-- вызовы предохранителя:
+403:def _assert_staging_covers_merge_window(
+518:    _assert_staging_covers_merge_window(bq, STG_FACT_SALES, window_days, "promote_to_core")
+731:    _assert_staging_covers_merge_window(
+
+## 2. На чём калиброван допуск (докстринг предохранителя)
+    отработал, и без допуска один пустой день останавливал бы `promote` (в т.ч.
+    часовой, вызываемый ежечасно) примерно на 24 прогона подряд до первой продажи
+    нового дня. Асимметрия направления ошибки при выборе допуска: недолёт ГЛУБИНЫ
+    невосстановим (строки удаляются и не возвращаются следующим прогоном), недолёт
+    СВЕЖЕСТИ самоизлечим (следующий успешный прогон подтянет пропущенные даты) —
+    поэтому ложный отказ дороже наверху, допуск обоснован сильнее, чем внизу, а не
+
+## 3. Ветка периметра — два типа документов, оба applicable=true
+219:            "filter": f"moment>={moment_from};moment<={moment_to};applicable=true",
+259:            "filter": f"moment>={moment_from};moment<={moment_to};applicable=true",
+
+## 4. Прецедент того же класса — ADR-153 разделение по наличию документов
+165:| ADR-153 | Форма метрики `drift_check` принята — разделение по наличию документов; механизм две функции; канал `
+184:| ADR-172 | Приёмка деплоя `SALES-REFRESH-WINDOW-DEPLOY-FINAL` переписана под фактический объект (пять файлов вместо одног
+
+## 5. Наблюдающие проверки свежести — ни одна не может вернуть False
+12
+      14
+-- канал алерта срабатывает на провале гейта:
+161:| ADR-149 | Мандат класса B на `DQ-ALERT-FILTER-FIX` выдан поимённо и исполнен тем же заходом; ф�
+
+## 6. Снапшоты витрин строки 7 — дата выгрузки
+39:живого снапшота (`reference/sql/sq_marts_*.sql`, выгрузка 2026-07-07) плюс вставка колонок по
+51:  («без изменений, строки 31-49 снапшота») — в готовом тексте это полный текст CTE, переписанный
+
+## 7. Дрейф живого конфига от снапшота, замеренный 2026-08-15
+14:  отличался от снапшота ТОЛЬКО в длине декоративных полосок-разделителей комментариев (26 строк diff)
+Mon Aug 17 09:42:14 UTC 2026
