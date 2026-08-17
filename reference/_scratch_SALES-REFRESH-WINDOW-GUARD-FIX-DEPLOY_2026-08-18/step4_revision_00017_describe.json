@@ -1,0 +1,141 @@
+{
+  "apiVersion": "serving.knative.dev/v1",
+  "kind": "Revision",
+  "metadata": {
+    "annotations": {
+      "autoscaling.knative.dev/maxScale": "5",
+      "autoscaling.knative.dev/minScale": "1",
+      "cloudfunctions.googleapis.com/trigger-type": "HTTP_TRIGGER",
+      "run.googleapis.com/base-images": "{\"worker\":\"asia-east1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312\"}",
+      "run.googleapis.com/build-function-target": "{\"worker\":\"main\"}",
+      "run.googleapis.com/build-id": "{\"worker\":\"d8d6ca38-621e-45fc-97dd-4601046fbc41\"}",
+      "run.googleapis.com/build-source-location": "{\"worker\":\"gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786546688061530\"}",
+      "run.googleapis.com/client-name": "gcloud",
+      "run.googleapis.com/operation-id": "77f001d9-9be6-4f4f-807a-5918a7b170e1",
+      "run.googleapis.com/secrets": "secret-3c4ed779-9ba6-37e6-8472-c19ef6b101ea:projects/420804682491/secrets/msklad-token",
+      "run.googleapis.com/startup-cpu-boost": "true",
+      "serving.knative.dev/creator": "service-420804682491@gcf-admin-robot.iam.gserviceaccount.com"
+    },
+    "creationTimestamp": "2026-08-12T14:59:10.564872Z",
+    "generation": 1,
+    "labels": {
+      "cloud.googleapis.com/location": "asia-east1",
+      "goog-cloudfunctions-runtime": "python312",
+      "goog-drz-cloudfunctions-id": "cf-facts",
+      "goog-drz-cloudfunctions-location": "asia-east1",
+      "goog-managed-by": "cloudfunctions",
+      "run.googleapis.com/startupProbeType": "Default",
+      "serving.knative.dev/configuration": "cf-facts",
+      "serving.knative.dev/configurationGeneration": "14",
+      "serving.knative.dev/route": "cf-facts",
+      "serving.knative.dev/service": "cf-facts",
+      "serving.knative.dev/serviceUid": "17b85ad4-5b5a-4591-ad81-bb867d5dabfb"
+    },
+    "name": "cf-facts-00017-jon",
+    "namespace": "420804682491",
+    "ownerReferences": [
+      {
+        "apiVersion": "serving.knative.dev/v1",
+        "blockOwnerDeletion": true,
+        "controller": true,
+        "kind": "Configuration",
+        "name": "cf-facts",
+        "uid": "e8f2dd87-ed83-417d-9e92-87b621d059f0"
+      }
+    ],
+    "resourceVersion": "AAZY2xfoQG4",
+    "selfLink": "/apis/serving.knative.dev/v1/namespaces/420804682491/revisions/cf-facts-00017-jon",
+    "uid": "34232082-d87c-491a-8c90-dd20a376572d"
+  },
+  "spec": {
+    "containerConcurrency": 1,
+    "containers": [
+      {
+        "env": [
+          {
+            "name": "LOG_EXECUTION_ID",
+            "value": "true"
+          },
+          {
+            "name": "MSKLAD_TOKEN",
+            "valueFrom": {
+              "secretKeyRef": {
+                "key": "latest",
+                "name": "secret-3c4ed779-9ba6-37e6-8472-c19ef6b101ea"
+              }
+            }
+          }
+        ],
+        "image": "asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--facts@sha256:b5578a7ee740e0538b7e1eff75ea5e8d95e0419fb51069b3dc879587b9197cae",
+        "name": "worker",
+        "ports": [
+          {
+            "containerPort": 8080,
+            "name": "http1"
+          }
+        ],
+        "resources": {
+          "limits": {
+            "cpu": "1",
+            "memory": "2048M"
+          }
+        },
+        "startupProbe": {
+          "failureThreshold": 1,
+          "periodSeconds": 240,
+          "tcpSocket": {
+            "port": 8080
+          },
+          "timeoutSeconds": 240
+        }
+      }
+    ],
+    "runtimeClassName": "run.googleapis.com/linux-base-image-update",
+    "serviceAccountName": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+    "timeoutSeconds": 540
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastTransitionTime": "2026-08-12T15:18:01.236578Z",
+        "message": "Deploying revision succeeded in 8.98s.",
+        "status": "True",
+        "type": "Ready"
+      },
+      {
+        "lastTransitionTime": "2026-08-12T15:18:01.315869Z",
+        "severity": "Info",
+        "status": "True",
+        "type": "Active"
+      },
+      {
+        "lastTransitionTime": "2026-08-12T15:17:59.995041Z",
+        "message": "Containers became healthy in 3.5s.",
+        "status": "True",
+        "type": "ContainerHealthy"
+      },
+      {
+        "lastTransitionTime": "2026-08-12T15:17:52.908236Z",
+        "message": "Container image import completed.",
+        "status": "True",
+        "type": "ContainerReady"
+      },
+      {
+        "lastTransitionTime": "2026-08-12T15:18:01.179825Z",
+        "message": "Min instances provisioned successfully  in 8.92s.",
+        "status": "True",
+        "type": "MinInstancesProvisioned"
+      },
+      {
+        "lastTransitionTime": "2026-08-12T15:17:56.498469Z",
+        "message": "Provisioning imported containers completed in 4.24s. Checking container health. This will wait for up to 4m for the configured startup probe, including an initial delay of 0s.",
+        "status": "True",
+        "type": "ResourcesAvailable"
+      }
+    ],
+    "desiredReplicas": 1,
+    "imageDigest": "asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--facts@sha256:b5578a7ee740e0538b7e1eff75ea5e8d95e0419fb51069b3dc879587b9197cae",
+    "logUrl": "https://console.cloud.google.com/logs/viewer?project=msklad-bi-prod&resource=cloud_run_revision/service_name/cf-facts/revision_name/cf-facts-00017-jon&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22cf-facts%22%0Aresource.labels.revision_name%3D%22cf-facts-00017-jon%22",
+    "observedGeneration": 1
+  }
+}

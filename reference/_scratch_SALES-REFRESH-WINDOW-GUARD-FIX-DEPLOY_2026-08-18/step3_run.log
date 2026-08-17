@@ -1,0 +1,55 @@
+=== UTC anchor (start) ===
+Mon Aug 17 20:50:07 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+From https://github.com/ilyasbazarov/holika-prod
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+master HEAD (fresh): 9a08b5aa2522eb0340c5568e8763ff90255d3ec8
+=== creating branch deploy/cf-facts-2026-08-18-guard-fix-f3 from master ===
+Switched to a new branch 'deploy/cf-facts-2026-08-18-guard-fix-f3'
+=== copying exactly two files from doc-repo snapshot (== commit 56d40c1) ===
+=== git status before commit ===
+ M cf-facts/bq_ops.py
+ M cf-facts/main.py
+[deploy/cf-facts-2026-08-18-guard-fix-f3 82c5027] deploy: cf-facts guard-fix f3 (bq_ops.py верхний край + main.py run_started_at)
+ 2 files changed, 253 insertions(+), 24 deletions(-)
+=== git diff --stat master (ОБЯЗАНО показать ровно 2 файла — ADR-189 §3) ===
+ cf-facts/bq_ops.py | 188 +++++++++++++++++++++++++++++++++++++++++++++++++----
+ cf-facts/main.py   |  89 +++++++++++++++++++++----
+ 2 files changed, 253 insertions(+), 24 deletions(-)
+NFILES=2
+=== .gcloudignore (cf-facts/) — сверка с ADR-040 ===
+.gcloudignore
+.git
+.gitignore
+*.bak
+__pycache__/
+*.pyc
+.DS_Store
+src.zip
+patch_*.py
+=== сплошной поиск секретов по диффу (ADR-044, пустая выдача не факт) ===
+371:     token   = get_token()
+385:         token, date_from, date_to, run_id, session=session
+2
+=== new branch HEAD ===
+82c5027e6838405cc2d0ad79639db67fea325e11
+=== UTC anchor (end) ===
+Mon Aug 17 20:50:09 UTC 2026
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

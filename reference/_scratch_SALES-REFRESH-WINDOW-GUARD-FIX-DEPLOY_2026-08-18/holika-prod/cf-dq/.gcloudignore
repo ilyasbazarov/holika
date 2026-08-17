@@ -1,0 +1,10 @@
+.gcloudignore
+.git
+.gitignore
+*.bak
+__pycache__/
+*.pyc
+.DS_Store
+src.zip
+function-source*.zip
+patch_*.py
