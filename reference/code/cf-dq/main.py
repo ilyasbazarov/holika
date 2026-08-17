@@ -291,13 +291,16 @@ def check_freshness_purchases_technical(bq):
         return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 def check_freshness_purchases_business(bq):
-    row = run_row(bq, f"""
-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(order_date), DAY) AS business_lag_days
-        FROM `{CORE_PURCHASES}`
-    """)
-    if not row or row.get("business_lag_days") is None:
-        return True, "business_lag_days=NULL (таблица пустая)"
-    return True, f"business_lag_days={row['business_lag_days']}"
+    try:
+        row = run_row(bq, f"""
+            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(order_date), DAY) AS business_lag_days
+            FROM `{CORE_PURCHASES}`
+        """)
+        if not row or row.get("business_lag_days") is None:
+            return True, "business_lag_days=NULL (таблица пустая)"
+        return True, f"business_lag_days={row['business_lag_days']}"
+    except Exception as e:
+        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 # ─── core.fact_returns — недельная каденция (step_returns, ТОЛЬКО weekly) ───
 
@@ -324,13 +327,16 @@ def check_freshness_returns_technical(bq):
         return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 def check_freshness_returns_business(bq):
-    row = run_row(bq, f"""
-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(return_date), DAY) AS business_lag_days
-        FROM `{CORE_RETURNS}`
-    """)
-    if not row or row.get("business_lag_days") is None:
-        return True, "business_lag_days=NULL (таблица пустая)"
-    return True, f"business_lag_days={row['business_lag_days']}"
+    try:
+        row = run_row(bq, f"""
+            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(return_date), DAY) AS business_lag_days
+            FROM `{CORE_RETURNS}`
+        """)
+        if not row or row.get("business_lag_days") is None:
+            return True, "business_lag_days=NULL (таблица пустая)"
+        return True, f"business_lag_days={row['business_lag_days']}"
+    except Exception as e:
+        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 # ─── core.fact_inventory — суточная каденция (cf-inventory-trigger) ───
 
@@ -357,13 +363,16 @@ def check_freshness_inventory_technical(bq):
         return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 def check_freshness_inventory_business(bq):
-    row = run_row(bq, f"""
-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(date_snapshot), DAY) AS business_lag_days
-        FROM `{CORE_INVENTORY}`
-    """)
-    if not row or row.get("business_lag_days") is None:
-        return True, "business_lag_days=NULL (таблица пустая)"
-    return True, f"business_lag_days={row['business_lag_days']}"
+    try:
+        row = run_row(bq, f"""
+            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(date_snapshot), DAY) AS business_lag_days
+            FROM `{CORE_INVENTORY}`
+        """)
+        if not row or row.get("business_lag_days") is None:
+            return True, "business_lag_days=NULL (таблица пустая)"
+        return True, f"business_lag_days={row['business_lag_days']}"
+    except Exception as e:
+        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 # ─── core.fact_payments — суточная каденция (finance-daily-update) ───
 #
@@ -402,13 +411,16 @@ def check_freshness_payments_technical(bq):
         return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 def check_freshness_payments_business(bq):
-    row = run_row(bq, f"""
-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(moment), DAY) AS business_lag_days
-        FROM `{CORE_PAYMENTS}`
-    """)
-    if not row or row.get("business_lag_days") is None:
-        return True, "business_lag_days=NULL (таблица пустая)"
-    return True, f"business_lag_days={row['business_lag_days']}"
+    try:
+        row = run_row(bq, f"""
+            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(moment), DAY) AS business_lag_days
+            FROM `{CORE_PAYMENTS}`
+        """)
+        if not row or row.get("business_lag_days") is None:
+            return True, "business_lag_days=NULL (таблица пустая)"
+        return True, f"business_lag_days={row['business_lag_days']}"
+    except Exception as e:
+        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 # ─── core.fact_commissionreportin — суточная каденция (loss-commission-daily-update) ───
 #
@@ -445,13 +457,16 @@ def check_freshness_commissionreportin_technical(bq):
         return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 def check_freshness_commissionreportin_business(bq):
-    row = run_row(bq, f"""
-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), DATE(MAX(moment)), DAY) AS business_lag_days
-        FROM `{CORE_COMMISSIONREPORTIN}`
-    """)
-    if not row or row.get("business_lag_days") is None:
-        return True, "business_lag_days=NULL (таблица пустая)"
-    return True, f"business_lag_days={row['business_lag_days']}"
+    try:
+        row = run_row(bq, f"""
+            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), DATE(MAX(moment)), DAY) AS business_lag_days
+            FROM `{CORE_COMMISSIONREPORTIN}`
+        """)
+        if not row or row.get("business_lag_days") is None:
+            return True, "business_lag_days=NULL (таблица пустая)"
+        return True, f"business_lag_days={row['business_lag_days']}"
+    except Exception as e:
+        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 # ─── core.fact_customer_invoices — перенесено БЕЗ ИЗМЕНЕНИЙ ───
 # Источник: reference/invoices_loader_design_2026-08-02.md §9.2 (уже готовый
@@ -482,13 +497,16 @@ def check_freshness_invoices_technical(bq):
         return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 def check_freshness_invoices_business(bq):
-    row = run_row(bq, f"""
-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(moment), DAY) AS business_lag_days
-        FROM `{CORE_INVOICES}`
-    """)
-    if not row or row.get("business_lag_days") is None:
-        return True, "business_lag_days=NULL (таблица пустая)"
-    return True, f"business_lag_days={row['business_lag_days']}"
+    try:
+        row = run_row(bq, f"""
+            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(moment), DAY) AS business_lag_days
+            FROM `{CORE_INVOICES}`
+        """)
+        if not row or row.get("business_lag_days") is None:
+            return True, "business_lag_days=NULL (таблица пустая)"
+        return True, f"business_lag_days={row['business_lag_days']}"
+    except Exception as e:
+        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
 
 @functions_framework.http
 def main(request):

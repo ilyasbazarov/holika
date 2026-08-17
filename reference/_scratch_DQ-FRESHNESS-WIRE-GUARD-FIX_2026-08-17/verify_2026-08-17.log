@@ -1,0 +1,18 @@
+2026-08-17T17:08:39Z
+| Функция | `try` | `except Exception` | Может ли заблокировать конвейер |
+|---|---|---|---|
+| `check_freshness_purchases_technical` | ДА | ДА | нет |
+| `check_freshness_purchases_business` | ДА | ДА | нет |
+| `check_freshness_returns_technical` | ДА | ДА | нет |
+| `check_freshness_returns_business` | ДА | ДА | нет |
+| `check_freshness_inventory_technical` | ДА | ДА | нет |
+| `check_freshness_inventory_business` | ДА | ДА | нет |
+| `check_freshness_payments_technical` | ДА | ДА | нет |
+| `check_freshness_payments_business` | ДА | ДА | нет |
+| `check_freshness_commissionreportin_technical` | ДА | ДА | нет |
+| `check_freshness_commissionreportin_business` | ДА | ДА | нет |
+| `check_freshness_invoices_technical` | ДА | ДА | нет |
+| `check_freshness_invoices_business` | ДА | ДА | нет |
+
+ИТОГ: все двенадцать защищены, блокирующих нет
+2026-08-17T17:08:39Z
