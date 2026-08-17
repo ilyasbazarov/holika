@@ -1,0 +1,125 @@
+=== date -u (start) ===
+Mon Aug 17 19:02:10 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+    cloudfunctions.googleapis.com/function-id: cf-dq
+    run.googleapis.com/build-base-image: asia-east1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312
+    run.googleapis.com/build-enable-automatic-updates: 'true'
+    run.googleapis.com/build-function-target: main
+    run.googleapis.com/build-image-uri: asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--dq:version_1
+    run.googleapis.com/build-name: projects/420804682491/locations/asia-east1/builds/05cebbfe-521b-4110-8f76-194362fc1da3
+    run.googleapis.com/build-service-account: projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com
+    run.googleapis.com/build-source-location: gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1786561996565446
+    run.googleapis.com/client-name: gcloud
+    run.googleapis.com/custom-audiences: '["https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-dq"]'
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+    run.googleapis.com/maxScale: '6'
+    run.googleapis.com/operation-id: ba3f4a04-34c8-454c-ad5d-0dad5fd3ee1a
+    run.googleapis.com/urls: '["https://cf-dq-420804682491.asia-east1.run.app","https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-dq","https://cf-dq-xw5u2boozq-de.a.run.app"]'
+    serving.knative.dev/creator: service-420804682491@gcf-admin-robot.iam.gserviceaccount.com
+    serving.knative.dev/lastModifier: service-420804682491@gcf-admin-robot.iam.gserviceaccount.com
+  creationTimestamp: '2026-05-07T12:54:08.684849Z'
+  generation: 9
+  labels:
+    cloud.googleapis.com/location: asia-east1
+    goog-cloudfunctions-runtime: python312
+    goog-drz-cloudfunctions-id: cf-dq
+    goog-drz-cloudfunctions-location: asia-east1
+    goog-managed-by: cloudfunctions
+  name: cf-dq
+  namespace: '420804682491'
+  resourceVersion: AAZY3maX318
+  selfLink: /apis/serving.knative.dev/v1/namespaces/420804682491/services/cf-dq
+  uid: f102ba4b-1aab-4e2c-92e7-39017aedb877
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: '6'
+        autoscaling.knative.dev/minScale: '1'
+        cloudfunctions.googleapis.com/trigger-type: HTTP_TRIGGER
+        run.googleapis.com/base-images: '{"worker":"asia-east1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312"}'
+        run.googleapis.com/client-name: gcloud
+        run.googleapis.com/secrets: secret-3c4ed779-9ba6-37e6-8472-c19ef6b101ea:projects/420804682491/secrets/msklad-token
+        run.googleapis.com/startup-cpu-boost: 'true'
+      labels:
+        goog-drz-cloudfunctions-id: cf-dq
+        goog-drz-cloudfunctions-location: asia-east1
+        run.googleapis.com/startupProbeType: Default
+      name: cf-dq-00009-coy
+    spec:
+      containerConcurrency: 1
+      containers:
+      - env:
+        - name: LOG_EXECUTION_ID
+          value: 'true'
+        - name: MSKLAD_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: latest
+              name: secret-3c4ed779-9ba6-37e6-8472-c19ef6b101ea
+        image: asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--dq:version_1
+        name: worker
+        ports:
+        - containerPort: 8080
+          name: http1
+        resources:
+          limits:
+            cpu: '0.3333'
+            memory: 512Mi
+        startupProbe:
+          failureThreshold: 1
+          periodSeconds: 240
+          tcpSocket:
+            port: 8080
+          timeoutSeconds: 240
+      runtimeClassName: run.googleapis.com/linux-base-image-update
+      serviceAccountName: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+      timeoutSeconds: 120
+  traffic:
+  - latestRevision: true
+    percent: 100
+status:
+  address:
+    url: https://cf-dq-xw5u2boozq-de.a.run.app
+  conditions:
+  - lastTransitionTime: '2026-08-12T19:14:47.477087Z'
+    status: 'True'
+    type: Ready
+  - lastTransitionTime: '2026-08-12T19:14:46.295831Z'
+    status: 'True'
+    type: ConfigurationsReady
+  - lastTransitionTime: '2026-08-12T19:14:47.444787Z'
+    status: 'True'
+    type: RoutesReady
+  latestCreatedRevisionName: cf-dq-00009-coy
+  latestReadyRevisionName: cf-dq-00009-coy
+  observedGeneration: 9
+  traffic:
+  - latestRevision: true
+    percent: 100
+    revisionName: cf-dq-00009-coy
+  url: https://cf-dq-xw5u2boozq-de.a.run.app
+
+=== date -u (end) ===
+Mon Aug 17 19:02:13 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

@@ -1,0 +1,64 @@
+=== date -u (start) ===
+Mon Aug 17 18:59:14 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== П2: обслуживающая ревизия cf-dq (status.traffic) ===
+status:
+  traffic:
+  - latestRevision: true
+    percent: 100
+    revisionName: cf-dq-00009-coy
+
+=== П3a: describe cf-dq (generation, storageSource) ===
+cf-dq-00009-coy	gcf-v2-sources-420804682491-asia-east1	cf-dq/function-source.zip	1786561996565446
+
+=== П3b: скачивание и распаковка живого архива ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1786561996565446 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/live_archive/function-source.zip
+  
+.........................
+--- содержимое архива ---
+config.py
+requirements.txt
+main.py
+helpers.py
+--- sha256 живого архива ---
+360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756  unzipped/config.py
+0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146  unzipped/helpers.py
+477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67  unzipped/main.py
+587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516  unzipped/requirements.txt
+
+=== П3c: клон master код-репо для сверки ===
+--- sha256 master код-репо (cf-dq/) ---
+360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/master_clone/cf-dq/config.py
+0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/master_clone/cf-dq/helpers.py
+477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/master_clone/cf-dq/main.py
+bb1bc968b81573431c5f7c912539918d51d1ee18cd34b040a109ccf213eeb22a  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/master_clone/cf-dq/patch_dq.py
+587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/master_clone/cf-dq/requirements.txt
+
+=== П3d: побайтовое сравнение живого архива vs master ===
+main.py: IDENTICAL
+config.py: IDENTICAL
+helpers.py: IDENTICAL
+requirements.txt: IDENTICAL
+
+=== П4: git diff --stat master vs holika-снапшот (не применено, только показ) ===
+Files /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/master_clone/cf-dq/main.py and /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/master_clone/cf-dq/main.py.holika differ
+main.py: master != holika-снапшот (есть дельта — ожидаемо, это и есть патч)
+
+=== date -u (end) ===
+Mon Aug 17 18:59:43 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

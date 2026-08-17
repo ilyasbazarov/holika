@@ -1,0 +1,278 @@
+=== date -u (start) ===
+Mon Aug 17 19:05:24 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== status.traffic текущий (кто реально обслуживает) ===
+status:
+  traffic:
+  - latestRevision: true
+    percent: 100
+    revisionName: cf-dq-00009-coy
+
+=== список ревизий cf-dq ===
+NAME             STATUS  MESSAGE
+cf-dq-00010-kiq  False   The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable within the allocated timeout. This can happen when the container port is misconfigured or if the timeout is too short. The health check timeout can be extended. Logs for this revision might contain more information.
+
+                         Logs URL: https://console.cloud.google.com/logs/viewer?project=msklad-bi-prod&resource=cloud_run_revision/service_name/cf-dq/revision_name/cf-dq-00010-kiq&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22cf-dq%22%0Aresource.labels.revision_name%3D%22cf-dq-00010-kiq%22
+                         For more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start
+cf-dq-00009-coy  True    Deploying revision succeeded in 9.94s.
+cf-dq-00008-cev  True    Deploying revision succeeded in 13.85s.
+cf-dq-00007-hot  True    Updating revision scaling succeeded in 5.12s.
+cf-dq-00006-lac  True    Deploying revision succeeded in 11.76s.
+cf-dq-00005-pet  True    Deploying revision succeeded in 7.66s.
+cf-dq-00004-teh  True    Deploying revision succeeded in 18.46s.
+cf-dq-00003-reh  True    Deploying revision succeeded in 13.47s.
+cf-dq-00002-gov  True    Deploying revision succeeded in 8.43s.
+cf-dq-00001-wiz  True    Deploying revision succeeded in 16.46s.
+
+=== логи упавшей ревизии cf-dq-00010-kiq ===
+2026-08-17T19:05:06.010701Z	ERROR	Default STARTUP TCP probe failed 1 time consecutively for container "worker" on port 8080. The instance was not started.
+Connection failed with status CANCELLED.
+2026-08-17T19:05:05.924176044Z	WARNING	Container called exit(1).
+2026-08-17T19:05:05.817579Z	ERROR	Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/bin/functions-framework", line 6, in <module>
+    sys.exit(_cli())
+             ^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1569, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1490, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1353, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 907, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/_cli.py", line 47, in _cli
+    app = create_app(target, source, signature_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 406, in create_app
+    raise e from None
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 387, in create_app
+    spec.loader.exec_module(source_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/main.py", line 223, in <module>
+    ("freshness_purchases_technical",         check_freshness_purchases_technical),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'check_freshness_purchases_technical' is not defined
+2026-08-17T19:05:04.797018Z	INFO	Starting new instance. Reason: MANUAL_OR_CUSTOMER_MIN_INSTANCE - Instance started because of customer-configured min-instances or manual scaling.
+2026-08-17T19:05:03.030626Z	ERROR	Default STARTUP TCP probe failed 1 time consecutively for container "worker" on port 8080. The instance was not started.
+Connection failed with status CANCELLED.
+2026-08-17T19:05:02.947800409Z	WARNING	Container called exit(1).
+2026-08-17T19:05:01.859356Z	ERROR	Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/bin/functions-framework", line 6, in <module>
+    sys.exit(_cli())
+             ^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1569, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1490, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1353, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 907, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/_cli.py", line 47, in _cli
+    app = create_app(target, source, signature_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 406, in create_app
+    raise e from None
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 387, in create_app
+    spec.loader.exec_module(source_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/main.py", line 223, in <module>
+    ("freshness_purchases_technical",         check_freshness_purchases_technical),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'check_freshness_purchases_technical' is not defined
+2026-08-17T19:05:00.797042Z	INFO	Starting new instance. Reason: MANUAL_OR_CUSTOMER_MIN_INSTANCE - Instance started because of customer-configured min-instances or manual scaling.
+2026-08-17T19:04:59.736828Z	ERROR	
+2026-08-17T19:04:59.013382Z	ERROR	Default STARTUP TCP probe failed 1 time consecutively for container "worker" on port 8080. The instance was not started.
+Connection failed with status CANCELLED.
+2026-08-17T19:04:58.930175297Z	WARNING	Container called exit(1).
+2026-08-17T19:04:58.805475Z	ERROR	Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/bin/functions-framework", line 6, in <module>
+    sys.exit(_cli())
+             ^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1569, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1490, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1353, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 907, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/_cli.py", line 47, in _cli
+    app = create_app(target, source, signature_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 406, in create_app
+    raise e from None
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 387, in create_app
+    spec.loader.exec_module(source_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/main.py", line 223, in <module>
+    ("freshness_purchases_technical",         check_freshness_purchases_technical),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'check_freshness_purchases_technical' is not defined
+2026-08-17T19:04:57.796994Z	INFO	Starting new instance. Reason: MANUAL_OR_CUSTOMER_MIN_INSTANCE - Instance started because of customer-configured min-instances or manual scaling.
+2026-08-17T19:04:57.021049Z	ERROR	Default STARTUP TCP probe failed 1 time consecutively for container "worker" on port 8080. The instance was not started.
+Connection failed with status CANCELLED.
+2026-08-17T19:04:56.933040226Z	WARNING	Container called exit(1).
+2026-08-17T19:04:56.829666Z	ERROR	Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/bin/functions-framework", line 6, in <module>
+    sys.exit(_cli())
+             ^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1569, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1490, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1353, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 907, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/_cli.py", line 47, in _cli
+    app = create_app(target, source, signature_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 406, in create_app
+    raise e from None
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 387, in create_app
+    spec.loader.exec_module(source_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/main.py", line 223, in <module>
+    ("freshness_purchases_technical",         check_freshness_purchases_technical),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'check_freshness_purchases_technical' is not defined
+2026-08-17T19:04:55.796906Z	INFO	Starting new instance. Reason: MANUAL_OR_CUSTOMER_MIN_INSTANCE - Instance started because of customer-configured min-instances or manual scaling.
+2026-08-17T19:04:55.022732Z	ERROR	Default STARTUP TCP probe failed 1 time consecutively for container "worker" on port 8080. The instance was not started.
+Connection failed with status CANCELLED.
+2026-08-17T19:04:54.935019896Z	WARNING	Container called exit(1).
+2026-08-17T19:04:54.835791Z	ERROR	Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/bin/functions-framework", line 6, in <module>
+    sys.exit(_cli())
+             ^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1569, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1490, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1353, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 907, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/_cli.py", line 47, in _cli
+    app = create_app(target, source, signature_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 406, in create_app
+    raise e from None
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 387, in create_app
+    spec.loader.exec_module(source_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/main.py", line 223, in <module>
+    ("freshness_purchases_technical",         check_freshness_purchases_technical),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'check_freshness_purchases_technical' is not defined
+2026-08-17T19:04:53.797056Z	INFO	Starting new instance. Reason: MANUAL_OR_CUSTOMER_MIN_INSTANCE - Instance started because of customer-configured min-instances or manual scaling.
+2026-08-17T19:04:53.003650Z	ERROR	Default STARTUP TCP probe failed 1 time consecutively for container "worker" on port 8080. The instance was not started.
+Connection failed with status CANCELLED.
+2026-08-17T19:04:52.918172644Z	WARNING	Container called exit(1).
+2026-08-17T19:04:52.806440Z	ERROR	Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/bin/functions-framework", line 6, in <module>
+    sys.exit(_cli())
+             ^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1569, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1490, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1353, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 907, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/_cli.py", line 47, in _cli
+    app = create_app(target, source, signature_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 406, in create_app
+    raise e from None
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 387, in create_app
+    spec.loader.exec_module(source_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/main.py", line 223, in <module>
+    ("freshness_purchases_technical",         check_freshness_purchases_technical),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'check_freshness_purchases_technical' is not defined
+2026-08-17T19:04:51.796787Z	INFO	Starting new instance. Reason: MANUAL_OR_CUSTOMER_MIN_INSTANCE - Instance started because of customer-configured min-instances or manual scaling.
+2026-08-17T19:04:50.843917Z	ERROR	Default STARTUP TCP probe failed 1 time consecutively for container "worker" on port 8080. The instance was not started.
+Connection failed with status CANCELLED.
+2026-08-17T19:04:50.763609930Z	WARNING	Container called exit(1).
+2026-08-17T19:04:49.689339Z	ERROR	Traceback (most recent call last):
+  File "/layers/google.python.pip/pip/bin/functions-framework", line 6, in <module>
+    sys.exit(_cli())
+             ^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1569, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1490, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 1353, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/click/core.py", line 907, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/_cli.py", line 47, in _cli
+    app = create_app(target, source, signature_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 406, in create_app
+    raise e from None
+  File "/layers/google.python.pip/pip/lib/python3.12/site-packages/functions_framework/__init__.py", line 387, in create_app
+    spec.loader.exec_module(source_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/main.py", line 223, in <module>
+    ("freshness_purchases_technical",         check_freshness_purchases_technical),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'check_freshness_purchases_technical' is not defined
+2026-08-17T19:04:47.628121Z	INFO	Starting new instance. Reason: MANUAL_OR_CUSTOMER_MIN_INSTANCE - Instance started because of customer-configured min-instances or manual scaling.
+
+=== date -u (end) ===
+Mon Aug 17 19:05:33 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

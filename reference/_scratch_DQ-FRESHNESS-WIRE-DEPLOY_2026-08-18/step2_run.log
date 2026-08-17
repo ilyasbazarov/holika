@@ -1,0 +1,49 @@
+=== date -u (start) ===
+Mon Aug 17 19:00:00 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== git diff --stat master (П4: обязан быть ровно один файл) ===
+ cf-dq/main.py | 339 ++++++++++++++++++++++++++++++++++++----------------------
+ 1 file changed, 214 insertions(+), 125 deletions(-)
+
+=== .gcloudignore (cf-dq/) — проверка наличия и содержимого ===
+.gcloudignore
+.git
+.gitignore
+*.bak
+__pycache__/
+*.pyc
+.DS_Store
+src.zip
+function-source*.zip
+patch_*.py
+
+=== сплошной поиск секретов по диффу ===
+NO_MATCHES (пусто)
+
+=== git status ===
+On branch deploy/cf-dq-2026-08-18-freshness-wire
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   cf-dq/main.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+=== date -u (end) ===
+Mon Aug 17 19:00:02 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

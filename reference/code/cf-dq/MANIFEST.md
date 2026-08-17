@@ -210,3 +210,56 @@ merge-коммитом `9a08b5aa2522eb0340c5568e8763ff90255d3ec8` (не fast-for
 отправлено `git push origin master` (`5ad9544..9a08b5a`). Инвариант «основная ветка = то, что
 стоит в проде» восстановлен: `master` несёт ровно `cf-dq/main.py`+`cf-dq/config.py`
 (переделка `drift_check` + две проверки свежести), идентичные деплою `cf-dq-00009-coy`.
+
+## Попытка деплоя `DQ-FRESHNESS-WIRE-DEPLOY` (2026-08-18) — НЕУСПЕХ, ветка не слита
+
+**Предусловия П1-П4 — все закрыты чисто ДО деплоя.** П1: ветка `s/DQ-FRESHNESS-WIRE-GUARD-FIX`
+слита в `main` холики (`330e42b`). П2: обслуживающая ревизия снята `status.traffic` —
+`cf-dq-00009-coy, percent=100` — совпадает с откатной. П3: архив `cf-dq-00009-coy`
+(`generation=1786561996565446`) скачан и сверен побайтово с `master` код-репо — все четыре
+файла `IDENTICAL`, дрейфа нет. П4: ветка `deploy/cf-dq-2026-08-18-freshness-wire` от `master`
+(коммит-основание `9a08b5a`), `git diff --stat master` — ровно один файл `cf-dq/main.py`
+(`214 insertions, 125 deletions`). `.gcloudignore` присутствует и содержит нужные исключения;
+сплошной поиск секретов по диффу — пусто. Коммит патча `2a3228d`, ветка выложена в `origin`
+(владелец подтвердил «Да, push и деплоить»). Скрипты/логи —
+`reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/step1_run.log`,
+`step2_run.log`, `step3_push_run.log`.
+
+**Деплой упал на healthcheck.** Команда та же, что в `DQ-CFDQ-DEPLOY` (параметры сняты с живой
+конфигурации ДО деплоя, `step4_live_config_before_deploy.log`). Новая ревизия
+**`cf-dq-00010-kiq`** не прошла startup-проверку: «The user-provided container failed to start
+and listen on the port… within the allocated timeout». Лог/скрипт —
+`reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/step5_deploy_run.log`.
+
+**Read-only диагностика после срыва (запрет слепого retry соблюдён).**
+`reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_2026-08-18/step6_diagnose_run.log`:
+`status.traffic` после срыва — `cf-dq-00009-coy, percent=100` (объект не задет, откат не
+потребовался — Cloud Run gen2 не переключает трафик на ревизию, не прошедшую healthcheck).
+Логи ревизии `cf-dq-00010-kiq` дают точную причину — `NameError` при импорте модуля:
+
+```
+File "/workspace/main.py", line 223, in <module>
+    ("freshness_purchases_technical",         check_freshness_purchases_technical),
+NameError: name 'check_freshness_purchases_technical' is not defined
+```
+
+**Корень — порядок определений в самом ревьюнутом снапшоте, не артефакт переноса патча.**
+`reference/code/cf-dq/main.py`: `CHECKS = [...]` (строки `215-235`) ссылается на все
+двенадцать функций `check_freshness_*_technical`/`_business`, которые определены НИЖЕ по
+файлу (первая — `check_freshness_purchases_technical` на строке `270`). Python исполняет
+модуль сверху вниз; на строке присвоения `CHECKS` эти имена ещё не существуют — `NameError`
+на любом импорте, включая локальный. **Ни `DQ-FRESHNESS-WIRE-DEPLOY-REVIEW`
+(`reference/dq_freshness_wire_deploy_review_2026-08-17.md`), ни `GUARD-FIXES-REVIEW`
+(`reference/guard_fixes_review_2026-08-17.md`) дефект не поймали** — оба ревью проверяли
+наличие `try/except` текстовым разбором каждой функции, но ни разу не пытались реально
+импортировать модуль (`python3 -c "import main"` или эквивалент). Класс ошибки — тот же, что
+`★ Успех инструмента ≠ факт`/`ADR-044`: вывод о работоспособности сделан по образцу и
+текстовому совпадению, не по факту исполнения.
+
+**Итог по процедуре (`05_CONVENTIONS §Процедура деплоя` п.8):** ветка
+`deploy/cf-dq-2026-08-18-freshness-wire` (коммит `2a3228d`, запушена в `origin`) **НЕ слита**
+в `master`. `master` код-репо остаётся неизменным с прошлого деплоя (`9a08b5a`) — инвариант
+«основная ветка = то, что стоит в проде» не нарушен: прод как был на `cf-dq-00009-coy`, так и
+остался, и `master` этой ревизии соответствует. Мандат класса B на этот объект патча
+**исчерпан неуспешной попыткой**; дальнейшее — правка `CHECKS` (перенос списка ПОСЛЕ
+определений функций, класс A) с повторным ревью, затем новый деплой-заход.

@@ -1,0 +1,32 @@
+=== date -u (start) ===
+Mon Aug 17 19:03:15 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+Preparing function...
+.........done.
+Updating function (may take a while)...
+[Build].................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+[Service]..............................................................................................................................................................................................................................................................................failed
+Failed.
+ERROR: (gcloud.functions.deploy) OperationError: code=3, message=Could not create or update Cloud Run service cf-dq, Container Healthcheck failed. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable within the allocated timeout. This can happen when the container port is misconfigured or if the timeout is too short. The health check timeout can be extended. Logs for this revision might contain more information.
+
+Logs URL: https://console.cloud.google.com/logs/viewer?project=msklad-bi-prod&resource=cloud_run_revision/service_name/cf-dq/revision_name/cf-dq-00010-kiq&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22cf-dq%22%0Aresource.labels.revision_name%3D%22cf-dq-00010-kiq%22 
+For more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start
+
+=== date -u (end) ===
+Mon Aug 17 19:05:02 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
