@@ -1,0 +1,36 @@
+Mon Aug 17 17:16:16 UTC 2026
+база: b1ededa2cab2cf683317f009cbaab1db0d9ead23
+
+## 1. SALES: вызовы promote_* и их фактическая обвязка
+249: [_run_promote(window_days:]     merge_stats    = promote_to_core(bq, window_days)
+403: [_run_perimeter_promote(window_days:]     merge_stats = promote_perimeter_to_core(bq, window_days)
+238:def _run_promote(window_days: int) -> dict:
+396:def _run_perimeter_promote(window_days: int) -> dict:
+-- новая сигнатура требует третий аргумент:
+501:def promote_to_core(
+502-    bq: bigquery.Client,
+503-    window_days: int,
+504-    run_started_at: datetime,
+505-) -> dict:
+
+## 2. Источник run_id — два разных формата
+82:    run_id      = body.get("run_id") or run_ts()
+def run_ts() -> str:
+    """Compact timestamp string for run_id / file names: YYYYMMDDTHHMMSS."""
+    return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+
+reference/code/cf-facts/workflow_hourly.yaml:6:          - run_id: ${sys.now()}
+reference/code/cf-facts/workflow_weekly.yaml:8:          - run_id: ${sys.now()}
+-- step_promote получает тот же run_id:
+138-            body:
+139-              run_id: ${run_id}
+140:              mode: "promote"
+
+## 3. Нижний край предохранителя сохранён
+37:    GUARD_TOLERANCE_DAYS,
+426:      (`CURRENT_DATE() - window_days`), с допуском `GUARD_TOLERANCE_DAYS`. Если
+454:    Допуск `GUARD_TOLERANCE_DAYS` (`config.py`) с этой правкой применяется ТОЛЬКО
+472:    tolerant_window_start = row.window_start + timedelta(days=GUARD_TOLERANCE_DAYS)
+473:    if row.min_date is None or row.min_date > tolerant_window_start:
+477:            f"(window_days={window_days}, допуск {GUARD_TOLERANCE_DAYS}д → "
+Mon Aug 17 17:16:16 UTC 2026
