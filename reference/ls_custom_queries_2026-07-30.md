@@ -17,8 +17,23 @@
 | `msklad_counterparty_returns` | `reference/sql/msklad_counterparty_returns.sql` | `core.fact_sales_profit` + `core.dim_counterparties` + `core.fact_returns` | продажи по параметрам дашборда, возвраты скользящим окном 365 дней | Операционка |
 | `msklad_expenses` | `reference/sql/msklad_expenses.sql` | `marts.expenses` | по параметрам дашборда | Расходы |
 | `fact_returns` | `reference/sql/fact_returns.sql` | `core.fact_returns` | скользящее окно 90 дней | Executive summary |
-| `msklad_customer_invoices_ar` | `reference/sql/msklad_customer_invoices_ar.sql` | `marts.customer_invoices_ar` | периода нет | Операционка |
-| `msklad_inventory_latest` | `reference/sql/msklad_inventory_latest.sql` | `marts.inventory_health` | последний `date_snapshot` | Склад |
+| `msklad_customer_invoices_ar` | `reference/sql/msklad_customer_invoices_ar.sql` | `marts.customer_invoices_ar` | снимок на момент — исключение §2 `ADR-087` | Операционка |
+| `msklad_inventory_latest` | `reference/sql/msklad_inventory_latest.sql` | `marts.inventory_health` | снимок на момент (последний `date_snapshot`) — исключение §2 `ADR-087` | Склад |
+
+## Исключения §2 (`ADR-087`): снимок на момент
+
+Задача `LS-PERIOD-CONTRACT`, пункт (а). `ADR-087 §2` разрешает ровно один класс исключения из
+правила «период Custom Query берётся из параметров дашборда `@DS_START_DATE`/`@DS_END_DATE`» —
+величину, которая по своей природе периода не имеет. Оба исключения ниже объявлены строкой
+инвентаря; вторая половина объявления (`ADR-087 §2`) — подпись на самой странице дашборда — за
+владельцем в интерфейсе Looker Studio, этой сессии недоступна.
+
+| Источник | Страница | Класс | Проверка текстом запроса |
+|---|---|---|---|
+| `msklad_customer_invoices_ar` | Операционка | задолженность на сейчас | `reference/sql/msklad_customer_invoices_ar.sql` не читает `@DS_START_DATE`/`@DS_END_DATE` и не несёт временного фильтра — `WHERE` фильтрует только `total_unpaid_kgs`/`state_name`, дата нигде не участвует |
+| `msklad_inventory_latest` | Склад | остатки на складе на сейчас | `reference/sql/msklad_inventory_latest.sql` не читает параметры дашборда; период задан подзапросом `WHERE date_snapshot = (SELECT MAX(date_snapshot) FROM marts.inventory_health)` — последний доступный снимок, не окно |
+
+Расхождения объявленного с текстом запроса (`ADR-087 §4`) не найдено ни у одного из двух.
 
 ## Страницы дашборда и все источники на них
 
@@ -95,8 +110,13 @@ Query у дашборда ровно пять, и все пять сняты в 
 
 ## Что осталось за владельцем
 
-По инвентарю ничего: задача `LS-QUERY-SNAPSHOT` закрыта 2026-07-30, строка перенесена в
-`07_ARCHIVE.md`. Три правки самого дашборда идут отдельными строками реестра и исполняются владельцем
-в интерфейсе: `LS-RETURNS-FX-HARDCODE`, `LS-PERIOD-CONTRACT`, `LS-INVENTORY-EXPLICIT-COLUMNS`.
+По инвентарю задачи `LS-QUERY-SNAPSHOT` — ничего: закрыта 2026-07-30, строка перенесена в
+`07_ARCHIVE.md`. Правки самого дашборда идут отдельными строками реестра и исполняются владельцем
+в интерфейсе: `LS-RETURNS-FX-HARDCODE`, `LS-INVENTORY-EXPLICIT-COLUMNS`.
+
+Задача `LS-PERIOD-CONTRACT`, пункт (б): подпись на страницах «Операционка» и «Склад» о том, что
+соответствующий блок показывает снимок на момент, а не период дашборда (`ADR-087 §2`) — за
+владельцем в интерфейсе Looker Studio, инструменту недоступно. Пункт (а) (строки-исключения выше)
+закрыт этой сессией.
 
 --- END reference/ls_custom_queries_2026-07-30.md ---
