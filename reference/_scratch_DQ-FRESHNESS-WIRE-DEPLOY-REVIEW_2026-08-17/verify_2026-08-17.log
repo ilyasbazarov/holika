@@ -1,0 +1,49 @@
+Mon Aug 17 16:55:51 UTC 2026
+база: b1ededa2cab2cf683317f009cbaab1db0d9ead23
+
+## 1. Дрейф снапшота от задеплоенной ревизии cf-dq-00009-coy
+
+## 2. main(): внешний except превращает исключение проверки в passed=False
+168:    except Exception as e:
+290:    except Exception as e:
+323:    except Exception as e:
+    for name, fn in CHECKS:
+        if staging_empty and name != "not_empty":
+            results.append({"name": name, "passed": True, "detail": "SKIP (staging пустой)"})
+            continue
+        try:
+            passed, detail = fn(bq)
+        except Exception as e:
+            passed, detail = False, f"EXCEPTION: {e}"
+        log.info("%s %s: %s", "✅" if passed else "❌", name, detail)
+        results.append({"name": name, "passed": passed, "detail": detail})
+        if not passed:
+            all_passed = False
+            if name == "not_empty":
+                staging_empty = True
+
+## 3. Покрытие try/except по всем двенадцати подключённым проверкам
+check_freshness_purchases_technical                  try=ДА  except=ДА
+check_freshness_purchases_business                   try=НЕТ except=НЕТ
+check_freshness_returns_technical                    try=ДА  except=ДА
+check_freshness_returns_business                     try=НЕТ except=НЕТ
+check_freshness_inventory_technical                  try=ДА  except=ДА
+check_freshness_inventory_business                   try=НЕТ except=НЕТ
+check_freshness_payments_technical                   try=ДА  except=ДА
+check_freshness_payments_business                    try=НЕТ except=НЕТ
+check_freshness_commissionreportin_technical         try=ДА  except=ДА
+check_freshness_commissionreportin_business          try=НЕТ except=НЕТ
+check_freshness_invoices_technical                   try=ДА  except=ДА
+check_freshness_invoices_business                    try=НЕТ except=НЕТ
+
+## 4. run_row не глотает исключения (helpers.py)
+def run_row(bq: bigquery.Client, sql: str) -> dict | None:
+    rows = list(bq.query(sql).result())
+    if not rows:
+        return None
+    return dict(rows[0])
+
+
+## 5. Утверждение, которое опровергнуто (dq_gate_block_bounded_2026-08-17.md)
+46:`freshness_*_technical`/`freshness_*_business`) структурно не могут вернуть `False` — они читают
+Mon Aug 17 16:55:51 UTC 2026
