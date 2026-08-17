@@ -1,0 +1,31 @@
+=== UTC anchor (start) ===
+Mon Aug 17 21:33:27 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== traffic ДО переключения ===
+{'percent': 100, 'revisionName': 'cf-facts-00017-jon'}
+=== переключение трафика на новую ревизию cf-facts-00019-tip ===
+Updating traffic...
+Routing traffic.............................................................................................done
+Done.
+URL: https://cf-facts-xw5u2boozq-de.a.run.app
+Traffic:
+  100% cf-facts-00019-tip
+=== traffic ПОСЛЕ переключения ===
+{'percent': 100, 'revisionName': 'cf-facts-00019-tip'}
+=== UTC anchor (end) ===
+Mon Aug 17 21:33:49 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

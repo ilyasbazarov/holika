@@ -1,0 +1,62 @@
+=== UTC anchor (start) ===
+Mon Aug 17 21:29:16 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== confirm новая ревизия (read-only describe) ===
+buildConfig:
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1787002011706032'
+      object: cf-facts/function-source.zip
+serviceConfig:
+  revision: cf-facts-00019-tip
+bucket=gcf-v2-sources-420804682491-asia-east1 object=cf-facts/function-source.zip generation=1787002011706032
+=== скачивание архива по закреплённому generation ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1787002011706032 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2_2026-08-18/new_revision_archive/function-source.zip
+  
+..........................
+=== состав архива ===
+unpacked/bq_ops.py
+unpacked/config.py
+unpacked/deploy_and_workflow.sh
+unpacked/fetch_byvariant.py
+unpacked/fetch_demands.py
+unpacked/fetch_perimeter.py
+unpacked/fetch_purchases.py
+unpacked/fetch_returns.py
+unpacked/helpers.py
+unpacked/main.py
+unpacked/requirements.txt
+=== мусор (.bak/__pycache__/.DS_Store/src.zip/patch_*.py) — ожидание: 0 совпадений ===
+=== sha256 архива против ветки деплоя (HEAD, коммит после патча) ===
+bq_ops.py                      archive=fa95515da7fb5e949a0e3b9d436596577ca65b55b42b1525eb32eda2df3e7a8f branch=fa95515da7fb5e949a0e3b9d436596577ca65b55b42b1525eb32eda2df3e7a8f MATCH
+config.py                      archive=475a785d68e276d3ca87c17f82106a2b6c41eb2132985285cb015c6bd0a9e7c9 branch=475a785d68e276d3ca87c17f82106a2b6c41eb2132985285cb015c6bd0a9e7c9 MATCH
+deploy_and_workflow.sh         archive=2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07 branch=2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07 MATCH
+fetch_byvariant.py             archive=88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1 branch=88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1 MATCH
+fetch_demands.py               archive=b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358 branch=b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358 MATCH
+fetch_perimeter.py             archive=07ddd1a01b7afa234bdb5db5003db6205f0bd0c6b26269fd0c267eae45d0e03b branch=07ddd1a01b7afa234bdb5db5003db6205f0bd0c6b26269fd0c267eae45d0e03b MATCH
+fetch_purchases.py             archive=159e498789168b0206beca15bf719e3541a2564ec93d786abec8ed7860befafb branch=159e498789168b0206beca15bf719e3541a2564ec93d786abec8ed7860befafb MATCH
+fetch_returns.py               archive=7f3dcefadb0de4782d9f09964f5c5baf5d423375406c1f6f2846356ddd663bd1 branch=7f3dcefadb0de4782d9f09964f5c5baf5d423375406c1f6f2846356ddd663bd1 MATCH
+helpers.py                     archive=661cc5ae8feb2166977bca155d436009573c7b085a9fb358b349d8fd5663852d branch=661cc5ae8feb2166977bca155d436009573c7b085a9fb358b349d8fd5663852d MATCH
+main.py                        archive=256327490d08070380bc0c30dba8a49e3493b24c8183f33475f197df6fb468df branch=256327490d08070380bc0c30dba8a49e3493b24c8183f33475f197df6fb468df MATCH
+requirements.txt               archive=0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051 branch=0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051 MATCH
+ALL_MATCH=1
+=== traffic всё ещё на старой ревизии (ожидание до переключения) ===
+{'percent': 100, 'revisionName': 'cf-facts-00017-jon'}
+=== UTC anchor (end) ===
+Mon Aug 17 21:29:39 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

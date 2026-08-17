@@ -677,3 +677,95 @@ fix-f3` от `master`. Read-only проверка предусловия П3 (с
 **Развилка вынесена владельцу/архитектору** (не решена этой сессией): вести ветку гард-фикса
 от `deploy/cf-facts-2026-08-12-completeness-and-delete` (`543b6c1`, содержимое текущего
 прода) вместо `master`, либо дождаться слияния ступени 3 и только потом деплоить от `master`.
+
+---
+
+## Деплой `cf-facts` — guard-fix ф3/ф4, второй заход (2026-08-18, класс B, мандат
+## `guard_fix_deploy_mandate_2026-08-18_rev2.md`) — ИСПОЛНЕН, read-back подтверждён
+
+**Что зафиксировано:** соответствие «ревизия ↔ коммит» для патча guard-fix ф3/ф4
+(`bq_ops.py` — верхний край предохранителя на `MAX(_loaded_at)`, коммит `a5c6a36`;
+`main.py` — обвязка `run_started_at` через `main()`/`_run_promote`/`_run_perimeter_promote`,
+коммит `56d40c1`), задача `SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY` (второй заход,
+`SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2`). Первый заход (см. секцию выше) остановился
+на предусловии П3, т.к. мандат редакции 1 предписывал базу `master` — исправлено
+редакцией 2: база `543b6c1` (`deploy/cf-facts-2026-08-12-completeness-and-delete`, тот же
+коммит, чей код равен обслуживавшей на момент старта ревизии `cf-facts-00017-jon`).
+
+**Предусловия (`guard_fix_deploy_mandate_2026-08-18_rev2.md §4`), все закрыты фактами
+ДО деплоя:**
+
+| # | Предусловие | Результат |
+|---|---|---|
+| П2 | Обслуживающая ревизия | `cf-facts-00017-jon`, `percent=100` — совпадает с ожиданием |
+| П6 | `git merge-base --is-ancestor 543b6c1 <HEAD ветки>` | ИСТИНА (ветка заведена от `543b6c1`, `HEAD` на момент проверки = `543b6c1` дословно) |
+| П3 | sha256 архива обслуживающей ревизии (`generation=1786546688061530`) против базы `543b6c1`, все 10 файлов | `ALL_MATCH=1`, дрейфа нет |
+| П4 | `git diff --stat 543b6c1` в ветке после патча | ровно `2` файла (`bq_ops.py`, `main.py`); `.gcloudignore` несёт `*.bak`/`__pycache__/`/`*.pyc`/`.DS_Store`/`src.zip`/`patch_*.py`; сплошной поиск секретов по диффу — `0` совпадений |
+| П7 | Импорт всех `9` модулей `cf-facts` из каталога ВЕТКИ (не снапшота), стабы в `sys.modules`, интерпретатор назван | `python3.14.6`; импортированы `bq_ops, config, fetch_byvariant, fetch_demands, fetch_perimeter, fetch_purchases, fetch_returns, helpers, main`; провалов `0` |
+
+П1 (контракт `run_id` в обоих Cloud Workflow) переиспользован по артефакту первого захода
+(`reference/sales_refresh_window_guard_fix_deploy_2026-08-18.md §2`) без повторного съёма
+(`guard_fix_deploy_mandate_2026-08-18_rev2.md §3`).
+
+**Ветка код-репо:** `deploy/cf-facts-2026-08-18-guard-fix-f3-v2`, заведена от `543b6c1` командой
+`git checkout -b <ветка> 543b6c1` (не diff-переносом), коммит патча `2770792` — ровно два файла
+скопированы дословно из замороженного снапшота `reference/code/cf-facts/{bq_ops.py,main.py}`
+(коммиты `a5c6a36`/`56d40c1`, код не правился ни строкой). Ветка запушена в `origin` ПОСЛЕ
+подтверждения владельца в чате (`2026-08-18`).
+
+| Поле | До | После |
+|---|---|---|
+| Ревизия `cf-facts` | `cf-facts-00017-jon` | **`cf-facts-00019-tip`** |
+| `generation` архива | `1786546688061530` | **`1787002011706032`** |
+| `updateTime` (UTC) | — | **`2026-08-17T21:28:19.920977392Z`** |
+
+**Деплой:** `gcloud functions deploy cf-facts --source=<каталог cf-facts/ ветки деплоя>`, флаги
+сверены с живым `describe` ДО деплоя (`step8_run.log`) — идентичны параметрам, которыми
+задеплоена текущая обслуживающая ревизия (`runtime=python312`, `memory=2048MB`, `timeout=540s`,
+`service-account=etl-sa@...`, `ingress-settings=all`, `max-instances=5`,
+`env-vars=LOG_EXECUTION_ID=true`; `min-instances`/секрет `MSKLAD_TOKEN` — sticky, не заданы явно
+и не менялись). Деплой отдал новую ревизию с `0%` трафика (эта функция не авто-роутит, тот же
+факт, что и у предыдущего деплоя `SALES-REFRESH-WINDOW-DEPLOY-FINAL`) — трафик переведён
+отдельным подтверждённым владельцем шагом.
+
+**Read-back (`step10_run.log`):** архив новой ревизии скачан по закреплённому `generation`,
+распакован, несёт `11` файлов, мусора (`.bak`/`__pycache__`/`.DS_Store`/`src.zip`/
+`patch_*.py`/`*.pyc`) — `0`. sha256 всех `11` файлов побайтово совпадает с веткой деплоя
+(`ALL_MATCH=1`):
+
+| Файл | sha256 (новая ревизия) |
+|---|---|
+| `bq_ops.py` | `fa95515da7fb5e949a0e3b9d436596577ca65b55b42b1525eb32eda2df3e7a8f` |
+| `main.py` | `256327490d08070380bc0c30dba8a49e3493b24c8183f33475f197df6fb468df` |
+| `config.py` / `fetch_byvariant.py` / `fetch_demands.py` / `fetch_perimeter.py` / `fetch_purchases.py` / `fetch_returns.py` / `helpers.py` / `requirements.txt` / `deploy_and_workflow.sh` | не изменены — sha256 идентичен предыдущей ревизии `cf-facts-00017-jon` |
+
+**Переключение трафика (`step11_run.log`, подтверждено владельцем отдельным сообщением ПОСЛЕ
+блокировки первой попытки классификатором инструмента):**
+`gcloud run services update-traffic cf-facts --to-revisions=cf-facts-00019-tip=100` —
+`status.traffic` после: `{'percent': 100, 'revisionName': 'cf-facts-00019-tip'}`.
+
+**Слияние ветки в `master` — НЕ ИСПОЛНЕНО, вопрос вынесен владельцу/архитектору.** Мандат
+редакции 1 §4 п.6 (не переписан редакцией 2) предписывает слияние после успешного read-back;
+но `07_STATE.md` §Подробности для модели прямо запрещает слияние `deploy/cf-facts-2026-08-12-
+completeness-and-delete` (`543b6c1`) в `master` до ступени 3 (`2026-08-23`), а эта ветка — прямой
+потомок `543b6c1`: слияние её в `master` перенесло бы туда ровно тот же запрещённый пока
+`543b6c1`-остаток (`GUARD_TOLERANCE_DAYS`, ветка удаления, константы канала периметра) через
+другое имя ветки. Исполнитель не адъюдицирует конфликт двух предписаний — ветка
+`deploy/cf-facts-2026-08-18-guard-fix-f3-v2` остаётся НЕслитой; `master` не тронут.
+
+**Приёмка (`guard_fix_deploy_mandate_2026-08-18.md §4`):**
+1. Read-back — выполнено, `ALL_MATCH=1`.
+2. Запись «ревизия ↔ коммит» — эта секция.
+3. Обслуживающая ревизия после деплоя — снята живым съёмом, `percent=100` на `cf-facts-00019-tip`.
+4. Ручная проверка `promote` — НЕ делалась (прямое указание мандата редакции 2 §4).
+5. Ступень 3 — закрывается прогоном `2026-08-23`, не этой сессией.
+6. Слияние ветки в `master` — см. выше, вынесено владельцу/архитектору, не исполнено.
+
+**Откат** (не понадобился): трафик — `gcloud run services update-traffic cf-facts
+--to-revisions=cf-facts-00017-jon=100`, пересборка не требуется.
+
+**Секреты:** сплошной поиск по диффу `bq_ops.py`/`main.py` против базы `543b6c1` — `0`
+совпадений на `token|secret|password|key|api_key` (регистронезависимо).
+
+Провенанс — `reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2_2026-08-18/step1_run.log`
+… `step11_run.log`.

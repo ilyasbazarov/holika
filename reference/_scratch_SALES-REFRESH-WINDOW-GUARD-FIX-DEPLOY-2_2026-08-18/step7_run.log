@@ -1,0 +1,42 @@
+=== UTC anchor (start) ===
+Mon Aug 17 21:23:49 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Already on 'deploy/cf-facts-2026-08-18-guard-fix-f3-v2'
+HEAD ветки деплоя: 2770792f3f1f81ff8b0f155afcd60d35953ac208
+используемый интерпретатор: /opt/homebrew/bin/python3.14
+Python 3.14.6
+=== П7: импорт всех модулей cf-facts из каталога ВЕТКИ (не reference/code/) ===
+date -u (старт скрипта): 2026-08-17T21:23:50.332074+00:00
+интерпретатор: 3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]
+sys.executable: /opt/homebrew/opt/python@3.14/bin/python3.14
+каталог проверки (ветка деплоя): /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2_2026-08-18/holika-prod/cf-facts
+модулей .py в каталоге: 9 — ['bq_ops', 'config', 'fetch_byvariant', 'fetch_demands', 'fetch_perimeter', 'fetch_purchases', 'fetch_returns', 'helpers', 'main']
+  ok   импорт bq_ops
+  ok   импорт config
+  ok   импорт fetch_byvariant
+  ok   импорт fetch_demands
+  ok   импорт fetch_perimeter
+  ok   импорт fetch_purchases
+  ok   импорт fetch_returns
+  ok   импорт helpers
+  ok   импорт main
+
+модулей проверено: 9, провалов импорта: 0
+date -u (конец скрипта): 2026-08-17T21:23:50.364363+00:00
+=== UTC anchor (end) ===
+Mon Aug 17 21:23:50 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

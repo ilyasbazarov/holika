@@ -1,0 +1,30 @@
+=== UTC anchor (start) ===
+Mon Aug 17 21:20:22 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Step 1: clone code-repo, create deploy branch from base 543b6c1 ===
+Cloning into '/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2_2026-08-18/holika-prod'...
+--- verify base commit exists ---
+commit
+543b6c1eea16b2ce6d3a8e0fc54722521c637255 2026-08-12 20:49:00 +0600 cf-facts: проверка полноты выгрузки с отказом + ветка удаления вариант 1 (SALES-REFRESH-WINDOW-DEPLOY-FINAL)
+--- create branch from base ---
+Switched to a new branch 'deploy/cf-facts-2026-08-18-guard-fix-f3-v2'
+HEAD now: 543b6c1eea16b2ce6d3a8e0fc54722521c637255
+--- confirm HEAD equals base commit exactly (before any patch) ---
+OK: HEAD == 543b6c1
+=== UTC anchor (end) ===
+Mon Aug 17 21:20:26 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

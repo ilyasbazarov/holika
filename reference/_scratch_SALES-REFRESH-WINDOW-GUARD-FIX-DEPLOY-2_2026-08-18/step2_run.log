@@ -1,0 +1,27 @@
+=== UTC anchor (start) ===
+Mon Aug 17 21:20:37 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== П2: обслуживающая ревизия cf-facts (read-only) ===
+{'percent': 100, 'revisionName': 'cf-facts-00017-jon'}
+=== П2: то же в yaml для читаемости ===
+status:
+  traffic:
+  - percent: 100
+    revisionName: cf-facts-00017-jon
+=== UTC anchor (end) ===
+Mon Aug 17 21:20:46 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

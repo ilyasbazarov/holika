@@ -1,0 +1,84 @@
+=== UTC anchor (start) ===
+Mon Aug 17 21:21:34 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== confirm serving revision + source pointer (read-only) ===
+buildConfig:
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786546688061530'
+      object: cf-facts/function-source.zip
+serviceConfig:
+  revision: cf-facts-00017-jon
+bucket=gcf-v2-sources-420804682491-asia-east1 object=cf-facts/function-source.zip generation=1786546688061530
+=== cross-check against serving traffic (must be cf-facts-00017-jon) ===
+{'percent': 100, 'revisionName': 'cf-facts-00017-jon'}
+=== download archive by pinned generation ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786546688061530 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2_2026-08-18/serving_archive/function-source.zip
+  
+...........................
+unpacked/bq_ops.py
+unpacked/config.py
+unpacked/deploy_and_workflow.sh
+unpacked/fetch_byvariant.py
+unpacked/fetch_demands.py
+unpacked/fetch_perimeter.py
+unpacked/fetch_purchases.py
+unpacked/fetch_returns.py
+unpacked/helpers.py
+unpacked/main.py
+unpacked/requirements.txt
+=== sha256 of archive files ===
+3be740b767c52447d01e3c192887a968d9e3dbd742ed617d68c3ff40704487c0  ./bq_ops.py
+475a785d68e276d3ca87c17f82106a2b6c41eb2132985285cb015c6bd0a9e7c9  ./config.py
+2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07  ./deploy_and_workflow.sh
+88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1  ./fetch_byvariant.py
+b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358  ./fetch_demands.py
+07ddd1a01b7afa234bdb5db5003db6205f0bd0c6b26269fd0c267eae45d0e03b  ./fetch_perimeter.py
+159e498789168b0206beca15bf719e3541a2564ec93d786abec8ed7860befafb  ./fetch_purchases.py
+7f3dcefadb0de4782d9f09964f5c5baf5d423375406c1f6f2846356ddd663bd1  ./fetch_returns.py
+661cc5ae8feb2166977bca155d436009573c7b085a9fb358b349d8fd5663852d  ./helpers.py
+40fee8152969270b0a260196c26dd0cb7a95de2ca9ebfbb69f9e74667d1eb684  ./main.py
+0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051  ./requirements.txt
+=== sha256 of branch-base (543b6c1) files, cf-facts/ dir ===
+b7469a91b24ba455f2e907e5c927c77870a3a94cb89779d5a9fb14cacc3db8d7  ./.gcloudignore
+3be740b767c52447d01e3c192887a968d9e3dbd742ed617d68c3ff40704487c0  ./bq_ops.py
+475a785d68e276d3ca87c17f82106a2b6c41eb2132985285cb015c6bd0a9e7c9  ./config.py
+2e9391517c772a03a22f6751135888796778ea0889e15f97d63ba9bafcab9d07  ./deploy_and_workflow.sh
+88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1  ./fetch_byvariant.py
+b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358  ./fetch_demands.py
+07ddd1a01b7afa234bdb5db5003db6205f0bd0c6b26269fd0c267eae45d0e03b  ./fetch_perimeter.py
+159e498789168b0206beca15bf719e3541a2564ec93d786abec8ed7860befafb  ./fetch_purchases.py
+7f3dcefadb0de4782d9f09964f5c5baf5d423375406c1f6f2846356ddd663bd1  ./fetch_returns.py
+661cc5ae8feb2166977bca155d436009573c7b085a9fb358b349d8fd5663852d  ./helpers.py
+40fee8152969270b0a260196c26dd0cb7a95de2ca9ebfbb69f9e74667d1eb684  ./main.py
+0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051  ./requirements.txt
+=== П3 comparison table ===
+bq_ops.py                      archive=3be740b767c52447d01e3c192887a968d9e3dbd742ed617d68c3ff40704487c0 base=3be740b767c52447d01e3c192887a968d9e3dbd742ed617d68c3ff40704487c0 MATCH
+config.py                      archive=475a785d68e276d3ca87c17f82106a2b6c41eb2132985285cb015c6bd0a9e7c9 base=475a785d68e276d3ca87c17f82106a2b6c41eb2132985285cb015c6bd0a9e7c9 MATCH
+fetch_byvariant.py             archive=88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1 base=88e1a13881103e0faa5ec21a5a07ddd2fc83e9cc9eb4fb9fe67a0da25fb60ff1 MATCH
+fetch_demands.py               archive=b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358 base=b092863efa75346208ee4aa8aa7cde60be42024415638386f76ec6fc96bcf358 MATCH
+fetch_perimeter.py             archive=07ddd1a01b7afa234bdb5db5003db6205f0bd0c6b26269fd0c267eae45d0e03b base=07ddd1a01b7afa234bdb5db5003db6205f0bd0c6b26269fd0c267eae45d0e03b MATCH
+fetch_purchases.py             archive=159e498789168b0206beca15bf719e3541a2564ec93d786abec8ed7860befafb base=159e498789168b0206beca15bf719e3541a2564ec93d786abec8ed7860befafb MATCH
+fetch_returns.py               archive=7f3dcefadb0de4782d9f09964f5c5baf5d423375406c1f6f2846356ddd663bd1 base=7f3dcefadb0de4782d9f09964f5c5baf5d423375406c1f6f2846356ddd663bd1 MATCH
+helpers.py                     archive=661cc5ae8feb2166977bca155d436009573c7b085a9fb358b349d8fd5663852d base=661cc5ae8feb2166977bca155d436009573c7b085a9fb358b349d8fd5663852d MATCH
+main.py                        archive=40fee8152969270b0a260196c26dd0cb7a95de2ca9ebfbb69f9e74667d1eb684 base=40fee8152969270b0a260196c26dd0cb7a95de2ca9ebfbb69f9e74667d1eb684 MATCH
+requirements.txt               archive=0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051 base=0c041a8d50f4731ad71aabcf678f388c13d8ba9af6ccb6548af9ccb6fc514051 MATCH
+ALL_MATCH=1
+=== UTC anchor (end) ===
+Mon Aug 17 21:21:57 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

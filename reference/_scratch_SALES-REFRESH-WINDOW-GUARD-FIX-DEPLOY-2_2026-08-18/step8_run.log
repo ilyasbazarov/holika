@@ -1,0 +1,36 @@
+=== UTC anchor (start) ===
+Mon Aug 17 21:25:34 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== read-only: полный live describe cf-facts ДО деплоя, JSON в файл ===
+=== ключевые параметры serviceConfig ===
+revision: cf-facts-00017-jon
+availableMemory: 2048M
+timeoutSeconds: 540
+serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+maxInstanceCount: 5
+minInstanceCount: 1
+ingressSettings: ALLOW_ALL
+environmentVariables: {'LOG_EXECUTION_ID': 'true'}
+secretEnvironmentVariables: [{'key': 'MSKLAD_TOKEN', 'projectId': '420804682491', 'secret': 'msklad-token', 'version': 'latest'}]
+runtime: python312
+entryPoint: main
+allowUnauthenticated (invoker check via IAM, separate call below)
+=== confirm traffic (still serving 00017-jon before deploy) ===
+{'percent': 100, 'revisionName': 'cf-facts-00017-jon'}
+=== UTC anchor (end) ===
+Mon Aug 17 21:25:40 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
