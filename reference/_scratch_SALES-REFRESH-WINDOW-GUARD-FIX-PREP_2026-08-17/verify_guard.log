@@ -1,0 +1,21 @@
+Mon Aug 17 15:04:29 UTC 2026
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+=== Контроль (i): позитивный — реальные числа упавшего прогона 2026-08-16 ===
+run_started_at = 2026-08-16T01:00:01.260922+00:00
+max(_loaded_at) = 2026-08-16T01:18:21+00:00
+РЕЗУЛЬТАТ: пройдено (новая проверка НЕ отказала) — ОЖИДАЕМО
+
+=== Контроль (ii): отрицательный — _loaded_at состарен до-начала-прогона ===
+run_started_at = 2026-08-16T01:00:01.260922+00:00
+max(_loaded_at) [искусственно состарен] = 2026-08-16T00:00:01.260922+00:00
+РЕЗУЛЬТАТ: отказ (ОЖИДАЕМО) — promote_perimeter_to_core: предохранитель ADR-145 §4 (свежесть) — staging последний раз записана 2026-08-16 00:00:01.260922+00:00, а этот прогон начался 2026-08-16 01:00:01.260922+00:00. Staging не переписана в рамках текущего прогона — ветка DELETE удалила бы строки внутри окна около сегодняшнего дня, отсутствующие в устаревшем staging не потому что исчезли в источнике. Отказ, MERGE не исполняется.
+
+Оба контроля прошли как ожидалось.
+Mon Aug 17 15:04:29 UTC 2026

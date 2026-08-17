@@ -22,7 +22,7 @@ Partition: PARTITION BY transaction_date (DATE column — NOT DATE(col)) — А�
 """
 
 import logging
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 
 from google.cloud import bigquery
 
@@ -405,6 +405,7 @@ def _assert_staging_covers_merge_window(
     staging_table: str,
     window_days: int,
     label: str,
+    run_started_at: datetime,
 ) -> None:
     """
     Предусловие мандата на деплой ветки удаления (`ADR-145 §4/§5`): до исполнения
@@ -413,51 +414,57 @@ def _assert_staging_covers_merge_window(
     защиты по `ADR-145 §4`: сравнить покрытие staging с окном `MERGE`, ОТКАЗАТЬ при
     недостаточном покрытии (не предупредить логом), сработать ДО исполнения `MERGE`.
     Форма и три правки — адъюдикация `reference/sales_refresh_window_mandate_adj_2026-08-11.md §3`.
+    Верхний край переформулирован по `reference/sales_refresh_window_guard_form_adj_2026-08-17.md §2`
+    (ф3-точная) — см. ниже.
 
-    Метод: MIN/MAX(transaction_date) в staging (тот же `_PARSE_DATE`, что несёт сам
-    `MERGE`) и обе границы окна `MERGE` (`CURRENT_DATE() - window_days` — нижняя,
-    `CURRENT_DATE() - 1` — верхняя, ADR-145-ADJ §3 правка 3) считаются ОДНИМ запросом
-    BigQuery (правка 2 — обе даты обязаны идти из одних часов: раньше нижняя граница
-    считалась питоновским `date.today()`, а MERGE — `CURRENT_DATE()`; сегодня оба дают
-    UTC и совпадают, но это незаписанное свойство среды, не гарантия).
+    Проверяются ОБА конца окна, но разными признаками, потому что отвечают на РАЗНЫЕ
+    вопросы:
 
-    Проверяются ОБА конца окна:
-    - нижний (глубина) — если MIN(date) в staging моложе начала окна минус допуск
-      (`GUARD_TOLERANCE_DAYS`, правка 1), staging не дотягивается до всей глубины,
-      которую получит DELETE, и строки внутри окна, отсутствующие в staging не потому
-      что удалены в источнике, а потому что не были выбраны этим прогоном, будут
-      стёрты как «исчезнувшие». Сценарий `ADR-145 §4`: часовой staging (7 суток) при
+    - нижний (глубина) — вопрос К ДАННЫМ: «дотягивается ли staging до всей глубины,
+      которую получит DELETE». Метод не меняется: MIN(transaction_date) в staging
+      (`_PARSE_DATE`, тот же, что несёт сам `MERGE`) против начала окна `MERGE`
+      (`CURRENT_DATE() - window_days`), с допуском `GUARD_TOLERANCE_DAYS`. Если
+      MIN(date) моложе начала окна минус допуск, staging не дотягивается до всей
+      глубины, и строки внутри окна, отсутствующие в staging не потому что удалены
+      в источнике, а потому что не были выбраны этим прогоном, будут стёрты как
+      «исчезнувшие». Сценарий `ADR-145 §4`: часовой staging (7 суток) при
       `mode=promote, window_days=90` — MIN(date) окажется около «сегодня-7д», отказ.
-    - верхний (свежесть) — найдено адъюдикацией `MANDATE-ADJ` §1 (первая версия),
-      в исходном запросе отсутствовало: если MAX(date) в staging старше «сегодня-1д»,
-      часть окна около сегодняшнего дня в staging попросту не загружена (устаревший
-      прогон), и та же ветка DELETE снесла бы строки внутри окна, отсутствующие в
-      устаревшем staging, хотя они никуда не делись в источнике. Симметричная
-      опасность нижнему краю.
+    - верхний (свежесть) — вопрос О ПРОГОНЕ: «staging от ЭТОГО прогона или от
+      старого». Прежняя форма отвечала на него через MAX(transaction_date) —
+      свойство ДАННЫХ (дата последнего документа), не признак прогона; на плотном
+      потоке продаж подмена незаметна, на разрежённом потоке периметра она даёт
+      ложный отказ на свежей staging (замер `sales_refresh_window_perimeter_density_
+      2026-08-17.md`, отказ `2026-08-16` на staging, загруженной за 31с до проверки —
+      `sales_refresh_window_stage3_2026-08-17.md §3`). Признак прогона —
+      `_loaded_at` (проставляется загрузчиком на момент загрузки,
+      `fetch_perimeter.py:181`; staging пишется `WRITE_TRUNCATE` целиком при каждой
+      загрузке), сравнённый с моментом начала ЭТОГО прогона — `run_started_at`,
+      который обязан зафиксировать и передать сюда вызывающий код (это НЕ момент
+      входа в `_assert_staging_covers_merge_window`/`promote_to_core` — staging
+      грузится отдельным, более ранним прогоном той же цепочки; вызывающая сторона
+      обязана передать момент начала ИМЕННО ТОГО прогона, а не текущего вызова
+      промоута). Критерий без числа допуска: либо staging переписана в рамках
+      текущего прогона (`MAX(_loaded_at) >= run_started_at`), либо нет — ложных
+      отказов и ложных пропусков по построению не бывает.
 
-    Допуск `GUARD_TOLERANCE_DAYS` (`config.py`) применяется к ОБОИМ концам окна
-    (адъюдикация `MANDATE-ADJ` §2, вторая правка верхнего края, 2026-08-11) —
-    измерено (`§C`, окно 180 суток): 6,63% суток без единой продажи, ни одного окна
-    из трёх подряд пустых суток. Первая версия правки не несла допуска на верхнем
-    крае в предположении, что отставание там — признак пропущенного прогона, а не
-    свойство данных; это предположение опровергнуто архитектором: MAX(date) —
-    свойство данных (последний день с продажей), не признак того, что прогон
-    отработал, и без допуска один пустой день останавливал бы `promote` (в т.ч.
-    часовой, вызываемый ежечасно) примерно на 24 прогона подряд до первой продажи
-    нового дня. Асимметрия направления ошибки при выборе допуска: недолёт ГЛУБИНЫ
-    невосстановим (строки удаляются и не возвращаются следующим прогоном), недолёт
-    СВЕЖЕСТИ самоизлечим (следующий успешный прогон подтянет пропущенные даты) —
-    поэтому ложный отказ дороже наверху, допуск обоснован сильнее, чем внизу, а не
-    слабее.
+    Обе даты нижнего края (`MIN(transaction_date)`, `window_start`) по-прежнему
+    считаются ОДНИМ запросом BigQuery вместе с `MAX(_loaded_at)` (правка 2 —
+    исходные часы обязаны совпадать; `CURRENT_DATE()` даёт UTC).
+
+    Допуск `GUARD_TOLERANCE_DAYS` (`config.py`) с этой правкой применяется ТОЛЬКО
+    к нижнему краю (глубина) — асимметрия `ADR-145`/`MANDATE-ADJ §2` («недолёт
+    глубины невосстановим») остаётся в силе там, где и была измерена (`§C`, окно
+    180 суток, 6,63% пустых суток продаж). На верхнем крае числа допуска больше не
+    существует вовсе — вопрос «от этого прогона или нет» бинарен, калибровать под
+    плотность потока нечего.
     """
     row = next(
         bq.query(
             f"""
             SELECT
               MIN({_PARSE_DATE}) AS min_date,
-              MAX({_PARSE_DATE}) AS max_date,
               DATE_SUB(CURRENT_DATE(), INTERVAL {window_days} DAY) AS window_start,
-              DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)             AS freshness_floor
+              MAX(_loaded_at) AS max_loaded_at
             FROM `{staging_table}` s
             """
         ).result()
@@ -472,22 +479,20 @@ def _assert_staging_covers_merge_window(
             f"DELETE удалила бы строки внутри окна, отсутствующие в staging не "
             f"потому что исчезли в источнике. Отказ, MERGE не исполняется."
         )
-    tolerant_freshness_floor = row.freshness_floor - timedelta(days=GUARD_TOLERANCE_DAYS)
-    if row.max_date is None or row.max_date < tolerant_freshness_floor:
+    if row.max_loaded_at is None or row.max_loaded_at < run_started_at:
         raise ValueError(
-            f"{label}: предохранитель ADR-145 §4 (свежесть) — staging доходит "
-            f"только до {row.max_date}, а окно MERGE ожидает свежесть не старше "
-            f"{row.freshness_floor} (допуск {GUARD_TOLERANCE_DAYS}д → "
-            f"{tolerant_freshness_floor}). Верхний край окна в staging не покрыт — "
+            f"{label}: предохранитель ADR-145 §4 (свежесть) — staging последний "
+            f"раз записана {row.max_loaded_at}, а этот прогон начался "
+            f"{run_started_at}. Staging не переписана в рамках текущего прогона — "
             f"ветка DELETE удалила бы строки внутри окна около сегодняшнего дня, "
             f"отсутствующие в устаревшем staging не потому что исчезли в источнике. "
             f"Отказ, MERGE не исполняется."
         )
     log.info(
-        "%s: предохранитель ADR-145 §4 пройден — staging покрывает %s…%s, "
-        "окно MERGE %s…%s (допуск %sд на обоих концах)",
-        label, row.min_date, row.max_date, row.window_start, row.freshness_floor,
-        GUARD_TOLERANCE_DAYS,
+        "%s: предохранитель ADR-145 §4 пройден — staging покрывает с %s (окно "
+        "MERGE с %s, допуск %sд), последняя запись %s (прогон начался %s)",
+        label, row.min_date, row.window_start, GUARD_TOLERANCE_DAYS,
+        row.max_loaded_at, run_started_at,
     )
 
 
@@ -496,12 +501,21 @@ def _assert_staging_covers_merge_window(
 def promote_to_core(
     bq: bigquery.Client,
     window_days: int,
+    run_started_at: datetime,
 ) -> dict:
     """
     Execute MERGE from staging into core.fact_sales_profit.
 
     window_days=7  → hourly mode: uses byvariant backup for COGS
     window_days=90 → weekly mode: uses fresh byvariant_staging for COGS
+
+    run_started_at: момент начала ТЕКУЩЕГО прогона (не момент входа в эту функцию —
+    staging для этого прогона грузится более ранним, отдельным шагом той же цепочки).
+    Прокидывается в предохранитель свежести `_assert_staging_covers_merge_window`
+    (`sales_refresh_window_guard_form_adj_2026-08-17.md §2`). Вызывающая сторона
+    (main.py) на момент этого патча ещё НЕ обновлена передавать сюда реальный момент
+    начала прогона — обновление вызывающей стороны в объём этой правки не входит
+    (`SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY`, класс B).
 
     Returns stats dict for logging / Cloud Monitoring.
     """
@@ -515,7 +529,9 @@ def promote_to_core(
 
     # ── Pre-promote: предохранитель ADR-145 §4/§5 — покрытие staging обязано
     # достигать начала окна MERGE, иначе ветка DELETE сотрёт непокрытую историю
-    _assert_staging_covers_merge_window(bq, STG_FACT_SALES, window_days, "promote_to_core")
+    _assert_staging_covers_merge_window(
+        bq, STG_FACT_SALES, window_days, "promote_to_core", run_started_at
+    )
 
     log.info("Staging rows: %d | window_days: %d", staging_count, window_days)
 
@@ -716,8 +732,14 @@ THEN DELETE
 def promote_perimeter_to_core(
     bq: bigquery.Client,
     window_days: int,
+    run_started_at: datetime,
 ) -> dict:
-    """MERGE stg_msklad.fact_sales_perimeter_staging → core.fact_sales_profit."""
+    """
+    MERGE stg_msklad.fact_sales_perimeter_staging → core.fact_sales_profit.
+
+    run_started_at: см. `promote_to_core` — момент начала текущего прогона, ту же
+    ответственность несёт вызывающая сторона (main.py, не обновлена этим патчем).
+    """
     count_row = next(
         bq.query(f"SELECT COUNT(*) AS cnt FROM `{STG_FACT_SALES_PERIMETER}`").result()
     )
@@ -729,7 +751,7 @@ def promote_perimeter_to_core(
     # того же класса (ADR-144 §7); staging несёт ту же колонку transaction_date_raw
     # (PERIMETER_STAGING_SCHEMA), _PARSE_DATE применим без изменений
     _assert_staging_covers_merge_window(
-        bq, STG_FACT_SALES_PERIMETER, window_days, "promote_perimeter_to_core"
+        bq, STG_FACT_SALES_PERIMETER, window_days, "promote_perimeter_to_core", run_started_at
     )
 
     log.info("Perimeter staging rows: %d | window_days: %d", staging_count, window_days)
