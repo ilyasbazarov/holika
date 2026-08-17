@@ -1,0 +1,143 @@
+=== UTC anchor (start) ===
+Mon Aug 17 09:17:59 UTC 2026
+=== gcloud auth (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== jobs whose query text mentions fact_sales_perimeter_staging, since 2026-08-16T00:50:00Z (perimeter promote attempts) ===
+[
+  {
+    "creation_time": "2026-08-16 01:18:51", 
+    "deleted": null, 
+    "end_time": "2026-08-16 01:18:51", 
+    "error_message": null, 
+    "error_reason": null, 
+    "inserted": null, 
+    "job_id": "40fc4826-742b-4fb5-b94a-c034edd953de", 
+    "statement_type": "SELECT", 
+    "updated": null
+  }, 
+  {
+    "creation_time": "2026-08-16 01:18:52", 
+    "deleted": null, 
+    "end_time": "2026-08-16 01:18:52", 
+    "error_message": null, 
+    "error_reason": null, 
+    "inserted": null, 
+    "job_id": "0d26bf6f-9c6c-44b5-9302-870da2143204", 
+    "statement_type": "SELECT", 
+    "updated": null
+  }
+]
+=== isolate the ONE weekly-run sales MERGE (90-day window): jobs between 01:00Z and 01:19Z on 2026-08-16 touching fact_sales_profit, with error info ===
+[
+  {
+    "creation_time": "2026-08-16 01:04:54", 
+    "deleted": null, 
+    "end_time": "2026-08-16 01:04:54", 
+    "error_reason": null, 
+    "inserted": null, 
+    "job_id": "707b560d-14d9-4fe0-a166-266e61631580", 
+    "statement_type": "SELECT", 
+    "updated": null
+  }, 
+  {
+    "creation_time": "2026-08-16 01:04:54", 
+    "deleted": null, 
+    "end_time": "2026-08-16 01:04:54", 
+    "error_reason": null, 
+    "inserted": null, 
+    "job_id": "c11f785f-22f5-4330-ae1d-b7756dbec1a2", 
+    "statement_type": "SELECT", 
+    "updated": null
+  }, 
+  {
+    "creation_time": "2026-08-16 01:04:55", 
+    "deleted": null, 
+    "end_time": "2026-08-16 01:04:55", 
+    "error_reason": null, 
+    "inserted": null, 
+    "job_id": "9c710c01-f81e-41fb-9d21-611a7a2c48e0", 
+    "statement_type": "SELECT", 
+    "updated": null
+  }, 
+  {
+    "creation_time": "2026-08-16 01:04:57", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 01:04:58", 
+    "error_reason": null, 
+    "inserted": "0", 
+    "job_id": "c9c0e0cc-ae79-4aec-bbfa-d00e27bb6d65", 
+    "statement_type": "MERGE", 
+    "updated": "398"
+  }, 
+  {
+    "creation_time": "2026-08-16 01:04:59", 
+    "deleted": null, 
+    "end_time": "2026-08-16 01:04:59", 
+    "error_reason": null, 
+    "inserted": null, 
+    "job_id": "2d48c08c-2d7c-41cd-82d8-1ddc66ba32bd", 
+    "statement_type": "SELECT", 
+    "updated": null
+  }, 
+  {
+    "creation_time": "2026-08-16 01:18:44", 
+    "deleted": null, 
+    "end_time": "2026-08-16 01:18:44", 
+    "error_reason": null, 
+    "inserted": null, 
+    "job_id": "a5291d7d-e40c-455e-b421-0cb31adce2bd", 
+    "statement_type": "SELECT", 
+    "updated": null
+  }, 
+  {
+    "creation_time": "2026-08-16 01:18:45", 
+    "deleted": null, 
+    "end_time": "2026-08-16 01:18:45", 
+    "error_reason": null, 
+    "inserted": null, 
+    "job_id": "635defa8-efa0-4593-af30-50a7b6495ef1", 
+    "statement_type": "SELECT", 
+    "updated": null
+  }, 
+  {
+    "creation_time": "2026-08-16 01:18:46", 
+    "deleted": null, 
+    "end_time": "2026-08-16 01:18:46", 
+    "error_reason": null, 
+    "inserted": null, 
+    "job_id": "b2d3774f-8c1f-4fcc-a981-cf40b0c73677", 
+    "statement_type": "SELECT", 
+    "updated": null
+  }, 
+  {
+    "creation_time": "2026-08-16 01:18:48", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 01:18:50", 
+    "error_reason": null, 
+    "inserted": "0", 
+    "job_id": "39293e3f-4baa-4fae-8311-b9fdf2f0e311", 
+    "statement_type": "MERGE", 
+    "updated": "7133"
+  }, 
+  {
+    "creation_time": "2026-08-16 01:18:51", 
+    "deleted": null, 
+    "end_time": "2026-08-16 01:18:51", 
+    "error_reason": null, 
+    "inserted": null, 
+    "job_id": "c7ce832b-8b66-4607-9e73-a9c09f7d1f60", 
+    "statement_type": "SELECT", 
+    "updated": null
+  }
+]
+=== staging coverage: MAX(transaction_date) in fact_sales_perimeter_staging as of now ===
+Error in query string: Error processing job
+'project-c451b48a-07ae-4de4-961:bqjob_r78029ced5ccec233_000001a00f03912b_1':
+Unrecognized name: transaction_date; Did you mean transaction_date_raw? at
+[2:12]

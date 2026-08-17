@@ -1,0 +1,35 @@
+{
+  "argument": "{}",
+  "createTime": "2026-08-16T01:00:01.196471149Z",
+  "duration": "1131.420775991s",
+  "endTime": "2026-08-16T01:18:52.617247140Z",
+  "error": {
+    "context": "HTTP server responded with error code 500\nin step \"raise_perimeter_promote\", routine \"main\", line: 256",
+    "payload": "{\"body\":{\"error\":\"promote_perimeter_to_core: предохранитель ADR-145 §4 (свежесть) — staging доходит только до 2026-08-10, а окно MERGE ожидает свежесть не старше 2026-08-15 (допуск 3д → 2026-08-12). Верхний край окна в staging не покрыт — ветка DELETE удалила бы строки внутри окна около сегодняшнего дня, отсутствующие в устаревшем staging не потому что исчезли в источнике. Отказ, MERGE не исполняется.\",\"mode\":\"perimeter_promote\",\"run_id\":1786842001.2609222,\"status\":\"error\"},\"code\":500,\"headers\":{\"Alt-Svc\":\"h3=\\\":443\\\"; ma=2592000,h3-29=\\\":443\\\"; ma=2592000\",\"Content-Length\":\"1571\",\"Content-Type\":\"application/json\",\"Date\":\"Sun, 16 Aug 2026 01:18:52 GMT\",\"Server\":\"Google Frontend\",\"X-Cloud-Trace-Context\":\"c8b215cc4f359bc2e7032eb3bbf9c28a;o=1\"},\"message\":\"HTTP server responded with error code 500\",\"tags\":[\"HttpError\"]}",
+    "stackTrace": {
+      "elements": [
+        {
+          "position": {
+            "column": "17",
+            "length": "5",
+            "line": "256"
+          },
+          "routine": "main",
+          "step": "raise_perimeter_promote"
+        }
+      ]
+    }
+  },
+  "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/d5921070-150a-4327-9bfc-e87342a608d9",
+  "startTime": "2026-08-16T01:00:01.196471149Z",
+  "state": "FAILED",
+  "status": {
+    "currentSteps": [
+      {
+        "routine": "main",
+        "step": "raise_perimeter_promote"
+      }
+    ]
+  },
+  "workflowRevisionId": "000005-124"
+}
