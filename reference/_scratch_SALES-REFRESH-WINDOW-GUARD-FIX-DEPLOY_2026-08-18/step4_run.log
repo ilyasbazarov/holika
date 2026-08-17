@@ -1,0 +1,54 @@
+=== UTC anchor (start) ===
+Mon Aug 17 20:50:37 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== П2: обслуживающая ревизия (status.traffic) ===
+{'percent': 100, 'revisionName': 'cf-facts-00017-jon'}
+=== П2: полный describe для generation обслуживающей ревизии ===
+name: cf-facts-00017-jon
+=== П3: скачиваем архив, закреплённый generation обслуживающей ревизии cf-facts-00017-jon ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-facts/function-source.zip#1786546688061530 to file://./archive.zip
+  
+.......................
+=== файлы в архиве обслуживающей ревизии ===
+total 288
+drwxr-xr-x@ 13 ilyasbazarov  staff    416 Aug 18 02:51 .
+drwx------@  4 ilyasbazarov  staff    128 Aug 18 02:51 ..
+-rw-r--r--@  1 ilyasbazarov  staff  42820 Aug 12 20:48 bq_ops.py
+-rw-r--r--@  1 ilyasbazarov  staff   8742 Aug 12 20:48 config.py
+-rw-r--r--@  1 ilyasbazarov  staff   7533 Aug 12 20:47 deploy_and_workflow.sh
+-rw-r--r--@  1 ilyasbazarov  staff   4379 Aug 12 20:47 fetch_byvariant.py
+-rw-r--r--@  1 ilyasbazarov  staff   8209 Aug 12 20:47 fetch_demands.py
+-rw-r--r--@  1 ilyasbazarov  staff  11685 Aug 12 20:48 fetch_perimeter.py
+-rw-r--r--@  1 ilyasbazarov  staff   6903 Aug 12 20:47 fetch_purchases.py
+-rw-r--r--@  1 ilyasbazarov  staff   5575 Aug 12 20:47 fetch_returns.py
+-rw-r--r--@  1 ilyasbazarov  staff   7685 Aug 12 20:48 helpers.py
+-rw-r--r--@  1 ilyasbazarov  staff  17789 Aug 12 20:48 main.py
+-rw-r--r--@  1 ilyasbazarov  staff    164 Aug 12 20:47 requirements.txt
+=== П3: sha256 каждого файла архива vs master код-репо (СВЕЖИЙ, до правки этой сессии) ===
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+bq_ops.py: archive(00017-jon)=3be740b767c52447d01e3c192887a968d9e3dbd742ed617d68c3ff40704487c0 master=e8bb06596bc64a22889890cff583a2d8ed8325ef4c5941d48a8769c2e18c90d8 -> MISMATCH
+config.py: archive(00017-jon)=475a785d68e276d3ca87c17f82106a2b6c41eb2132985285cb015c6bd0a9e7c9 master=56e77eff536ce8fe2a1c3a015c2633ed1317e8a9cbbd9729165d5a7af38de63a -> MISMATCH
+fetch_perimeter.py: archive(00017-jon)=07ddd1a01b7afa234bdb5db5003db6205f0bd0c6b26269fd0c267eae45d0e03b master=f609d5656fe6cf79941ffb3c904a122afabe2f5b7633a846a7f5ae713314275e -> MISMATCH
+helpers.py: archive(00017-jon)=661cc5ae8feb2166977bca155d436009573c7b085a9fb358b349d8fd5663852d master=c1d5f0594a46f176dad33afffb3944fae378148cd7d27b0bd2c81230d020dd21 -> MISMATCH
+main.py: archive(00017-jon)=40fee8152969270b0a260196c26dd0cb7a95de2ca9ebfbb69f9e74667d1eb684 master=97b9ce3aa54085aab0739fd315890db22be8c837e829a9170ebce385ba6642d8 -> MISMATCH
+ALL_MATCH=0
+=== workdir (не убирается, ADR-043) ===
+/var/folders/2d/fj_bmvzx1sldh94_k8t1qz7w0000gn/T/tmp.8fiRz9lImJ
+=== UTC anchor (end) ===
+Mon Aug 17 20:51:00 UTC 2026
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

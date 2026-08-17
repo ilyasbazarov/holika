@@ -1,0 +1,68 @@
+=== UTC anchor (start) ===
+Mon Aug 17 20:48:14 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== gcloud workflows describe (live): msklad-pipeline-hourly ===
+revisionId= 000004-5fc
+updateTime= 2026-08-05T05:16:54.045332507Z
+=== source lines with numbers, filtered around step_promote / step_perimeter_promote for msklad-pipeline-hourly ===
+6:          - run_id: ${sys.now()}
+19:              run_id: ${run_id}
+28:                  text: ${"[HOURLY] step_dim FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+40:              run_id: ${run_id}
+49:                  text: ${"[HOURLY] step_fx FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+61:              run_id: ${run_id}
+71:                  text: ${"[HOURLY] step_facts FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+83:              run_id: ${run_id}
+94:                  text: ${"[HOURLY] step_purchases FAILED (non-blocking) run_id=" + run_id + " error=" + json.encode_to_string(e)}
+104:              run_id: ${run_id}
+113:                  text: ${"[HOURLY] step_dq CRASHED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+127:                    text: ${"[HOURLY] DQ Gate FAILED run_id=" + run_id + " details=" + json.encode_to_string(dq_parsed)}
+131:    - step_promote:
+139:              run_id: ${run_id}
+150:                  text: ${"[HOURLY] step_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+159:                text: ${"[HOURLY] Pipeline COMPLETED run_id=" + run_id}
+=== gcloud workflows describe (live): msklad-pipeline-weekly ===
+revisionId= 000005-124
+updateTime= 2026-08-07T14:07:30.884386952Z
+=== source lines with numbers, filtered around step_promote / step_perimeter_promote for msklad-pipeline-weekly ===
+8:          - run_id: ${sys.now()}
+23:              run_id: ${run_id}
+32:                  text: ${"[WEEKLY] step_dim FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+46:              run_id: ${run_id}
+55:                  text: ${"[WEEKLY] step_fx FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+69:              run_id: ${run_id}
+79:                  text: ${"[WEEKLY] step_facts FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+95:              run_id: ${run_id}
+105:                  text: ${"[WEEKLY] step_purchases FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+121:              run_id: ${run_id}
+132:                  text: ${"[WEEKLY] step_returns FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+149:              run_id: ${run_id}
+160:                  text: ${"[WEEKLY] step_perimeter FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+174:              run_id: ${run_id}
+183:                  text: ${"[WEEKLY] step_dq CRASHED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+201:                    text: ${"[WEEKLY] DQ Gate FAILED run_id=" + run_id + " details=" + json.encode_to_string(dq_parsed)}
+207:    - step_promote:
+215:              run_id: ${run_id}
+226:                  text: ${"[WEEKLY] step_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+233:    # защищает, поэтому стоит ПОСЛЕ step_promote, а не рядом со step_perimeter.
+234:    - step_perimeter_promote:
+242:              run_id: ${run_id}
+253:                  text: ${"[WEEKLY] step_perimeter_promote FAILED run_id=" + run_id + " error=" + json.encode_to_string(e)}
+264:                text: ${"[WEEKLY] Pipeline COMPLETED run_id=" + run_id}
+=== UTC anchor (end) ===
+Mon Aug 17 20:48:21 UTC 2026
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

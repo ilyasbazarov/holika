@@ -1,0 +1,62 @@
+=== UTC anchor (start) ===
+Mon Aug 17 20:48:48 UTC 2026
+=== identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== clone code-repo master (read-only) ===
+Cloning into '/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY/reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY_2026-08-18/holika-prod'...
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+master HEAD: 9a08b5aa2522eb0340c5568e8763ff90255d3ec8
+=== searching for target commits a5c6a36 / 56d40c1 (all branches) ===
+NOT FOUND in --oneline (short hash may differ in length)
+a5c6a36 MISSING as object
+56d40c1 MISSING as object
+=== branches containing a5c6a36 ===
+none / not an ancestor of any branch tip
+=== branches containing 56d40c1 ===
+none / not an ancestor of any branch tip
+=== does deploy/cf-facts-2026-08-18-guard-fix-f3 already exist (local+remote)? ===
+does not exist yet
+=== master cf-facts/ file list ===
+total 256
+drwxr-xr-x@ 14 ilyasbazarov  staff    448 Aug 18 02:48 .
+drwxr-xr-x@  8 ilyasbazarov  staff    256 Aug 18 02:48 ..
+-rw-r--r--@  1 ilyasbazarov  staff     84 Aug 18 02:48 .gcloudignore
+-rw-r--r--@  1 ilyasbazarov  staff  30734 Aug 18 02:48 bq_ops.py
+-rw-r--r--@  1 ilyasbazarov  staff   5719 Aug 18 02:48 config.py
+-rw-r--r--@  1 ilyasbazarov  staff   7533 Aug 18 02:48 deploy_and_workflow.sh
+-rw-r--r--@  1 ilyasbazarov  staff   4379 Aug 18 02:48 fetch_byvariant.py
+-rw-r--r--@  1 ilyasbazarov  staff   8209 Aug 18 02:48 fetch_demands.py
+-rw-r--r--@  1 ilyasbazarov  staff  11593 Aug 18 02:48 fetch_perimeter.py
+-rw-r--r--@  1 ilyasbazarov  staff   6903 Aug 18 02:48 fetch_purchases.py
+-rw-r--r--@  1 ilyasbazarov  staff   5575 Aug 18 02:48 fetch_returns.py
+-rw-r--r--@  1 ilyasbazarov  staff   6155 Aug 18 02:48 helpers.py
+-rw-r--r--@  1 ilyasbazarov  staff  15222 Aug 18 02:48 main.py
+-rw-r--r--@  1 ilyasbazarov  staff    164 Aug 18 02:48 requirements.txt
+=== master .gcloudignore (if present) ===
+no top-level .gcloudignore
+.gcloudignore
+.git
+.gitignore
+*.bak
+__pycache__/
+*.pyc
+.DS_Store
+src.zip
+patch_*.py
+=== UTC anchor (end) ===
+Mon Aug 17 20:48:51 UTC 2026
+=== identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

@@ -650,3 +650,30 @@ describe`, `status.traffic`), а не через `functions describe` (тот о
 **Слияние ветки `deploy/cf-facts-2026-08-12-completeness-and-delete` в `master`** — только
 после ступени 3 (первый недельный прогон), решение архитектора
 (`…deploy_final_adj…§8`). Не сливать до этого момента.
+
+---
+
+## Попытка деплоя `cf-facts` — guard-fix ф3/ф4 (2026-08-18, класс B, мандат
+## `guard_fix_deploy_mandate_2026-08-18.md`) — СТОП на предусловии П3, деплой НЕ исполнялся
+
+**Что произошло:** мандат предписывал вести ветку деплоя `deploy/cf-facts-2026-08-18-guard-
+fix-f3` от `master`. Read-only проверка предусловия П3 (сверка sha256 архива обслуживающей
+ревизии `cf-facts-00017-jon` против свежего `master`) показала расхождение по всем пяти
+файлам, которые менял патч `SALES-REFRESH-WINDOW` (`bq_ops.py`, `config.py`,
+`fetch_perimeter.py`, `helpers.py`, `main.py`): `master` не несёт коммиты `47b3a45`/
+`9ae9a84`/`543b6c1` (`merge-base --is-ancestor` → `NO` для всех трёх) — они намеренно не
+слиты до ступени 3 (`2026-08-23`). Полный разбор —
+`reference/sales_refresh_window_guard_fix_deploy_2026-08-18.md §5/§7`.
+
+**Что НЕ было сделано:** `git push` и `gcloud functions deploy` не вызывались ни разу. Ветка
+`deploy/cf-facts-2026-08-18-guard-fix-f3` (коммит `82c5027`) существует ТОЛЬКО в локальном
+клоне код-репо внутри
+`reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY_2026-08-18/holika-prod/`, на
+`origin` её нет (подтверждено `git ls-remote`).
+
+**Обслуживающая ревизия** осталась `cf-facts-00017-jon, percent=100` — не менялась, откат не
+требовался.
+
+**Развилка вынесена владельцу/архитектору** (не решена этой сессией): вести ветку гард-фикса
+от `deploy/cf-facts-2026-08-12-completeness-and-delete` (`543b6c1`, содержимое текущего
+прода) вместо `master`, либо дождаться слияния ступени 3 и только потом деплоить от `master`.

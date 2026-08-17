@@ -1,0 +1,9 @@
+*.bak
+__pycache__/
+patch_main_finance.py
+patch_code.py
+patch_timeout.py
+function-source.zip
+archive/
+.DS_Store
+src.zip
