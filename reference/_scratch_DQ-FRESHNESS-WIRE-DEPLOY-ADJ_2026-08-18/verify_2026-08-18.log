@@ -1,0 +1,63 @@
+=== UTC-якорь (начало) ===
+Mon Aug 17 19:50:26 UTC 2026
+=== база ===
+7f5eaff03cf57ea6b76574e54c309410cc261abf
+
+=== 1. Дефект порядка определений в ревьюнутом снапшоте cf-dq ===
+215:CHECKS = [
+270:def check_freshness_purchases_technical(bq):
+293:def check_freshness_purchases_business(bq):
+307:def check_freshness_returns_technical(bq):
+329:def check_freshness_returns_business(bq):
+343:def check_freshness_inventory_technical(bq):
+365:def check_freshness_inventory_business(bq):
+389:def check_freshness_payments_technical(bq):
+413:def check_freshness_payments_business(bq):
+435:def check_freshness_commissionreportin_technical(bq):
+459:def check_freshness_commissionreportin_business(bq):
+476:def check_freshness_invoices_technical(bq):
+499:def check_freshness_invoices_business(bq):
+
+=== 2. Статическое разрешение имён на уровне модуля — все снапшоты reference/code ===
+ДЕФЕКТ ПОРЯДКА: reference/code/cf-dq/main.py
+   строка 215 — неопределённых имён: 12
+       check_freshness_commissionreportin_business
+       check_freshness_commissionreportin_technical
+       check_freshness_inventory_business
+       check_freshness_inventory_technical
+       check_freshness_invoices_business
+       check_freshness_invoices_technical
+       check_freshness_payments_business
+       check_freshness_payments_technical
+       check_freshness_purchases_business
+       check_freshness_purchases_technical
+       check_freshness_returns_business
+       check_freshness_returns_technical
+проверено файлов: 19 · файлов с дефектом порядка: 1
+
+=== 3. Когда дефект родился — трассировка по истории файла ===
+e1cffe9 docs: DQ-FRESHNESS-WIRE-GUARD-FIX перенос try/except на шесть check_freshness_*_business
+c9905a3 docs: DQ-FRESHNESS-WIRE подключение 12 проверок свежести к CHECKS (наблюдающая форма) — 7→19
+348f4ff docs: DQ-GATE-METRIC-REDESIGN правка ревью — check_drift_zero_docs под try/except, гарантия passed=True структурная
+36414c1 docs: DQ-GATE-METRIC-REDESIGN правка ревью — защита ADR-152 для target_rev==0, drift_zero_docs подключена в CHECKS
+9d766dd docs: DQ-GATE-METRIC-REDESIGN подготовка обеих правок cf-dq (drift_check + freshness остаток)
+2a9c9a4 docs: DQ-GATE-FAIL-OPEN-FIX фикс fail-open ветки ma7==0 в check_drift (подготовка, класс A)
+eaa53c1 docs: DQ-FRESHNESS-COVERAGE проверки свежести для шести таблиц ядра (подготовка, класс A)
+15be042 docs: DQ-SOURCE-CAPTURE снапшот cf-dq, периметр DQ-Gate, путь сигнала, реконструкция суббот
+eaa53c1: чисто []
+9d766dd: чисто []
+36414c1: чисто []
+348f4ff: чисто []
+c9905a3: ДЕФЕКТ [(215, 12)]
+e1cffe9: ДЕФЕКТ [(215, 12)]
+
+=== 4. Приземление коммитов доски (git merge-base --is-ancestor) ===
+  c9905a3 — в main
+  e1cffe9 — в main
+  330e42b — в main
+  cc37bff — в main
+  61e48c1 — в main
+  56d40c1 — в main
+
+=== UTC-якорь (конец) ===
+Mon Aug 17 19:50:27 UTC 2026
