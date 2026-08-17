@@ -74,6 +74,37 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name
 log = logging.getLogger(__name__)
 
 
+# ─── run_id → run_started_at (SALES-REFRESH-WINDOW-GUARD-FIX-PREP2) ───────────
+
+def _parse_run_started_at(run_id) -> datetime:
+    """
+    `run_id` (`main.py:82`) приходит в трёх видах (`guard_fixes_review_2026-08-17.md §5`):
+      - float: `sys.now()` обоих workflow, эпоха секунд (напр. 1786842001.2609222)
+      - строка-число того же вида (напр. "1786842001.2609222")
+      - строка `%Y%m%dT%H%M%S` — локальный fallback `run_ts()` при вызове без run_id
+        в теле (напр. "20260816T011821")
+    Неразбираемое значение — отказ с названной ошибкой (fail-closed): предохранитель
+    свежести (`bq_ops.py:_assert_staging_covers_merge_window`) защищает ветку удаления,
+    асимметрия ADR-145 запрещает трактовать неопределённость в пользу исполнения MERGE.
+    """
+    if isinstance(run_id, (int, float)):
+        return datetime.fromtimestamp(float(run_id), tz=timezone.utc)
+    if isinstance(run_id, str):
+        try:
+            return datetime.fromtimestamp(float(run_id), tz=timezone.utc)
+        except ValueError:
+            pass
+        try:
+            return datetime.strptime(run_id, "%Y%m%dT%H%M%S").replace(tzinfo=timezone.utc)
+        except ValueError:
+            pass
+    raise ValueError(
+        f"Неразбираемый run_id={run_id!r} ({type(run_id).__name__}) — ожидался float "
+        "(эпоха секунд, sys.now()), строка-число того же вида, либо строка формата "
+        "%Y%m%dT%H%M%S (run_ts()). Отказ, promote не исполняется (fail-closed, ADR-145)."
+    )
+
+
 # ─── Main entry point ─────────────────────────────────────────────────────────
 
 def main(request: flask.Request) -> flask.Response:
@@ -95,7 +126,7 @@ def main(request: flask.Request) -> flask.Response:
         elif mode == "weekly":
             result = _run_weekly_load(run_id, window_days)
         elif mode == "promote":
-            result = _run_promote(window_days)
+            result = _run_promote(window_days, run_id)
         elif mode == "purchases":
             result = _run_purchases()
         elif mode == "returns":
@@ -103,7 +134,7 @@ def main(request: flask.Request) -> flask.Response:
         elif mode == "perimeter":
             result = _run_perimeter_load(run_id, window_days)
         elif mode == "perimeter_promote":
-            result = _run_perimeter_promote(window_days)
+            result = _run_perimeter_promote(window_days, run_id)
         else:
             raise ValueError(
                 f"Unknown mode: {mode!r}. Expected: hourly | weekly | promote | purchases | "
@@ -235,7 +266,7 @@ def _run_weekly_load(run_id: str, window_days: int = WEEKLY_WINDOW_DAYS) -> dict
 
 # ─── Promote mode ─────────────────────────────────────────────────────────────
 
-def _run_promote(window_days: int) -> dict:
+def _run_promote(window_days: int, run_id) -> dict:
     """
     MERGE staging → core.fact_sales_profit.
     Called by Workflow AFTER CF-DQ passes.
@@ -243,10 +274,15 @@ def _run_promote(window_days: int) -> dict:
     window_days drives both the MERGE partition filter and the COGS source selection:
       7  → hourly → byvariant backup
       90 → weekly → fresh byvariant_staging
+
+    run_id: момент старта ТЕКУЩЕГО прогона Workflow (`main.py:82`), переводится в
+    `run_started_at` и форвардится в предохранитель свежести `ADR-145 §4/§5`
+    (`SALES-REFRESH-WINDOW-GUARD-FIX-PREP2`).
     """
     bq = bigquery.Client(project=GCP_PROJECT)
+    run_started_at = _parse_run_started_at(run_id)
 
-    merge_stats    = promote_to_core(bq, window_days)
+    merge_stats    = promote_to_core(bq, window_days, run_started_at)
     coverage_stats = get_coverage_stats(bq, window_days)
 
     return {
@@ -393,12 +429,16 @@ def _run_perimeter_load(run_id: str, window_days: int) -> dict:
     }
 
 
-def _run_perimeter_promote(window_days: int) -> dict:
+def _run_perimeter_promote(window_days: int, run_id) -> dict:
     """
     MERGE stg_msklad.fact_sales_perimeter_staging → core.fact_sales_profit.
     ОТДЕЛЬНЫЙ MERGE от `promote_to_core` (`_build_perimeter_merge_sql`, не
     `_build_merge_sql`) — не пересекается с патчем `SALES-REFRESH-WINDOW`.
+
+    run_id: см. `_run_promote` — момент старта текущего прогона Workflow,
+    переводится в `run_started_at` для того же предохранителя свежести.
     """
     bq = bigquery.Client(project=GCP_PROJECT)
-    merge_stats = promote_perimeter_to_core(bq, window_days)
+    run_started_at = _parse_run_started_at(run_id)
+    merge_stats = promote_perimeter_to_core(bq, window_days, run_started_at)
     return {"merge_stats": merge_stats}
