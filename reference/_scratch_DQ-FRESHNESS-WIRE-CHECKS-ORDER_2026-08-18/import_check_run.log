@@ -1,0 +1,13 @@
+date -u (старт скрипта): 2026-08-17T22:40:34.890762+00:00
+интерпретатор: 3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]
+sys.executable: /opt/homebrew/opt/python@3.14/bin/python3.14
+каталог проверки (ветка деплоя): /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-CHECKS-ORDER/reference/code/cf-dq
+модулей .py в каталоге: 4 — ['config', 'helpers', 'main', 'patch_dq']
+  ok   импорт config
+  ok   импорт helpers
+  ok   импорт main
+  len(CHECKS)=19
+  FAIL импорт patch_dq: FileNotFoundError: [Errno 2] No such file or directory: 'main.py'
+
+модулей проверено: 4, провалов импорта: 1
+  провал: patch_dq — [Errno 2] No such file or directory: 'main.py'

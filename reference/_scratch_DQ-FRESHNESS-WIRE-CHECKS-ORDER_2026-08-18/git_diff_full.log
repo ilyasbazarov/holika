@@ -1,0 +1,62 @@
+diff --git a/reference/code/cf-dq/main.py b/reference/code/cf-dq/main.py
+index 785241b..737bf60 100644
+--- a/reference/code/cf-dq/main.py
++++ b/reference/code/cf-dq/main.py
+@@ -212,28 +212,6 @@ def check_currency_normalization(bq):
+     """) or 0.0
+     return float(avg_rev) < DQ_CURRENCY_MAX_AVG_REV, f"avg_revenue_kgs={float(avg_rev):.2f}"
+ 
+-CHECKS = [
+-    ("not_empty",              check_not_empty),
+-    ("drift_check",            check_drift),
+-    ("drift_zero_docs",        check_drift_zero_docs),
+-    ("fk_integrity",           check_fk_integrity),
+-    ("freshness",              check_freshness),
+-    ("margin_sanity",          check_margin_sanity),
+-    ("currency_normalization", check_currency_normalization),
+-    ("freshness_purchases_technical",         check_freshness_purchases_technical),
+-    ("freshness_purchases_business",          check_freshness_purchases_business),
+-    ("freshness_returns_technical",           check_freshness_returns_technical),
+-    ("freshness_returns_business",            check_freshness_returns_business),
+-    ("freshness_inventory_technical",         check_freshness_inventory_technical),
+-    ("freshness_inventory_business",          check_freshness_inventory_business),
+-    ("freshness_payments_technical",          check_freshness_payments_technical),
+-    ("freshness_payments_business",           check_freshness_payments_business),
+-    ("freshness_commissionreportin_technical", check_freshness_commissionreportin_technical),
+-    ("freshness_commissionreportin_business", check_freshness_commissionreportin_business),
+-    ("freshness_invoices_technical",          check_freshness_invoices_technical),
+-    ("freshness_invoices_business",           check_freshness_invoices_business),
+-]
+-
+ # ═══════════════════════════════════════════════════════════════════════════
+ # DQ-FRESHNESS-COVERAGE (подготовка, класс A, 2026-08-09 + остаток 2026-08-12)
+ # — проверки свежести для шести таблиц ядра без наблюдателя. ПОДКЛЮЧЕНЫ к
+@@ -508,6 +486,28 @@ def check_freshness_invoices_business(bq):
+     except Exception as e:
+         return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
++CHECKS = [
++    ("not_empty",              check_not_empty),
++    ("drift_check",            check_drift),
++    ("drift_zero_docs",        check_drift_zero_docs),
++    ("fk_integrity",           check_fk_integrity),
++    ("freshness",              check_freshness),
++    ("margin_sanity",          check_margin_sanity),
++    ("currency_normalization", check_currency_normalization),
++    ("freshness_purchases_technical",         check_freshness_purchases_technical),
++    ("freshness_purchases_business",          check_freshness_purchases_business),
++    ("freshness_returns_technical",           check_freshness_returns_technical),
++    ("freshness_returns_business",            check_freshness_returns_business),
++    ("freshness_inventory_technical",         check_freshness_inventory_technical),
++    ("freshness_inventory_business",          check_freshness_inventory_business),
++    ("freshness_payments_technical",          check_freshness_payments_technical),
++    ("freshness_payments_business",           check_freshness_payments_business),
++    ("freshness_commissionreportin_technical", check_freshness_commissionreportin_technical),
++    ("freshness_commissionreportin_business", check_freshness_commissionreportin_business),
++    ("freshness_invoices_technical",          check_freshness_invoices_technical),
++    ("freshness_invoices_business",           check_freshness_invoices_business),
++]
++
+ @functions_framework.http
+ def main(request):
+     body   = request.get_json(silent=True) or {}

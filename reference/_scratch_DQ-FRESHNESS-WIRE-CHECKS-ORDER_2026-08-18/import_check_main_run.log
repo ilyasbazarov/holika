@@ -1,0 +1,11 @@
+date -u (старт скрипта): 2026-08-17T22:41:04.110427+00:00
+интерпретатор: 3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]
+sys.executable: /opt/homebrew/opt/python@3.14/bin/python3.14
+каталог проверки (ветка деплоя): /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-CHECKS-ORDER/reference/code/cf-dq
+Примечание: patch_dq.py НЕ входит в проверку — одноразовый локальный скрипт правки,
+читающий 'main.py' по относительному пути от CWD; не импортируется main.py, не
+деплоится, не часть графа исполнения CF (не декорирован functions_framework.http).
+
+ok   импорт main
+len(CHECKS)=19
+date -u (конец скрипта): 2026-08-17T22:41:04.134874+00:00
