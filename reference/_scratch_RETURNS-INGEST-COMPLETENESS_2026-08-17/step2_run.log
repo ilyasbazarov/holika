@@ -1,0 +1,28 @@
+=== START 2026-08-17T09:18:52Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+токен получен, длина: 40
+
+--- контроль A: entity/salesreturn, июль-2026, БЕЗ фильтра по agent (позитивный контроль на непустоту) ---
+
+HTTP_CODE=200
+размер ответа:    25833 байт
+строк в ответе: 4 | meta.size: 4
+  id=0d9650b7-7549-11f1-0a80-19c400103fb5 moment=2026-07-01 15:33:00.000 applicable=True sum=62709.00 agent_href_tail=...rty/1352596a-87c0-11ef-0a80-1568002f3f89
+  id=44eb3f7d-803a-11f1-0a80-00b70021a260 moment=2026-07-15 13:44:00.000 applicable=True sum=92661.33 agent_href_tail=...rty/86d280cf-4b70-11f0-0a80-06c0000e9b6d
+  id=4a822a16-85c8-11f1-0a80-1011000f86be moment=2026-07-22 12:39:00.000 applicable=True sum=110783.04 agent_href_tail=...rty/0b86ce25-944f-11f0-0a80-090700174a5f
+  id=e3cfc032-85ca-11f1-0a80-174e000fe79c moment=2026-07-22 15:26:00.000 applicable=True sum=68032.29 agent_href_tail=...rty/03f35ef9-3ab8-11f0-0a80-0cb700033d2d
+
+--- контроль B: entity/salesreturn, июль-2026, agent=Эргешева (известный совпадающий возврат — позитивный контроль синтаксиса agent-фильтра) ---
+0d9650b7-7549-11f1-0a80-19c400103fb5 | moment= 2026-07-01 15:33:00.000 | agent_href= https://api.moysklad.ru/api/remap/1.2/entity/counterparty/1352596a-87c0-11ef-0a80-1568002f3f89
+44eb3f7d-803a-11f1-0a80-00b70021a260 | moment= 2026-07-15 13:44:00.000 | agent_href= https://api.moysklad.ru/api/remap/1.2/entity/counterparty/86d280cf-4b70-11f0-0a80-06c0000e9b6d
+4a822a16-85c8-11f1-0a80-1011000f86be | moment= 2026-07-22 12:39:00.000 | agent_href= https://api.moysklad.ru/api/remap/1.2/entity/counterparty/0b86ce25-944f-11f0-0a80-090700174a5f
+e3cfc032-85ca-11f1-0a80-174e000fe79c | moment= 2026-07-22 15:26:00.000 | agent_href= https://api.moysklad.ru/api/remap/1.2/entity/counterparty/03f35ef9-3ab8-11f0-0a80-0cb700033d2d
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-17T09:18:55Z ===

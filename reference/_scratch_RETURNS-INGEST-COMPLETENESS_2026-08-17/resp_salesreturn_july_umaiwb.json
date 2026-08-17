@@ -1,0 +1,21 @@
+{
+  "context" : {
+    "employee" : {
+      "meta" : {
+        "href" : "https://api.moysklad.ru/api/remap/1.2/context/employee",
+        "metadataHref" : "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+        "type" : "employee",
+        "mediaType" : "application/json"
+      }
+    }
+  },
+  "meta" : {
+    "href" : "https://api.moysklad.ru/api/remap/1.2/entity/salesreturn?filter=moment%3e%3d2026-07-01+00%3a00%3a00%3bmoment%3c%3d2026-07-31+23%3a59%3a59%3bagent%3dhttps%3a%2f%2fapi.moysklad.ru%2fapi%2fremap%2f1.2%2fentity%2fcounterparty%2f0276f431-2ff5-11ef-0a80-11d40019917f",
+    "type" : "salesreturn",
+    "mediaType" : "application/json",
+    "size" : 0,
+    "limit" : 1000,
+    "offset" : 0
+  },
+  "rows" : [ ]
+}
