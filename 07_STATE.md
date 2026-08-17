@@ -3,7 +3,7 @@
 # 07 · STATE — Текущее состояние проекта
 
 **Статус:** LIVING (обновляется каждую сессию через `STATE_PATCH`).
-**updated_at:** 2026-08-17 · **обновил:** сборка (буфер 2026-08-17, второй проход)
+**updated_at:** 2026-08-17 · **обновил:** сборка (корректирующий коммит 2026-08-17, третий проход)
 
 > **Правило компактности (ADR-064):** здесь живёт ТОЛЬКО открытое (open / DEFER / IN PROGRESS / READY /
 > ожидает решения). Полностью закрытые Q/задачи/блокеры переезжают в `07_ARCHIVE.md` однострочной выжимкой
@@ -1867,7 +1867,7 @@ discovery-сессии по `RETURNS-INGEST-TYPE-DISCOVERY`: `retailsalesreturn`
 | REGISTRY-COLUMN-SPLIT | A | нет | постоянный, гейт порядка (после `ADR-106 §1`) | Пишет: `06_DECISIONS_LOG.md`, `06_INDEX.md`, `07_GAPS.md`, `07_STATE.md`, `07_ARCHIVE.md`, `reference/**`; документная правка, облачных вызовов нет |
 | SALES-MERGE-DRYRUN | A | да | постоянный, PARTIAL (`SALES-MERGE-DRYRUN`, 2026-08-02) | `bq query --dry_run` (в `allow`) и чтение `fetch_byvariant.py`. Пишет: `reference/sales_merge_dryrun_<date>.md` |
 | INTRANSIT-CADENCE-COST-PROBE | A | да | постоянный | read-only замер стоимости (BigQuery slot-время) часовой пересборки `sq_marts_in_transit` против текущей суточной; предусловие повторного рассмотрения варианта (A) правки каденции витрины «в пути» (`ADR-130 §1`). Пишет: `reference/intransit_cadence_cost_probe_<date>.md` |
-| MARTS-BUILD-STAMP | A | да | постоянный | подготовка правки текстов витрин, ничего не применяет. Пишет: `reference/marts_build_stamp_<date>.md` |
+| MARTS-BUILD-STAMP | A | да | постоянный | подготовка правки текстов витрин, ничего не применяет. Пишет: `reference/marts_build_stamp_<date>.md`, `reference/marts_build_stamp_p0_<date>.md`, `reference/_scratch_MARTS-BUILD-STAMP-P0_<date>/` |
 | DQ-GATE-SCOPE-CONFIRM | A | да | постоянный, гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` | подтверждение на первом реальном провале `drift_check` после разделения периметра, что закупки/возвраты исполнились, а промоут — нет; форма запроса — из скриптов `DQ-SOURCE-CAPTURE`. Пишет: `reference/dq_gate_scope_confirm_<date>.md` |
 | PARALLEL-CHECK-BLOCK-END | A | нет | постоянный | правка `tools/parallel_check.sh` и нового самотеста, облачных вызовов нет. Пишет: `tools/parallel_check.sh`, `tools/parallel_check_selftest.sh`, `reference/parallel_check_block_end_<date>.md` |
 | DQ-FRESHNESS-WIRE | A | да | постоянный | подключение двенадцати уже задеплоенных функций свежести к списку `CHECKS` в снапшоте, ничего не деплоит; форма подключения наблюдающая (`07_GAPS.md` строка `DQ-FRESHNESS-WIRE`). Пишет: `reference/code/cf-dq/main.py`, `reference/dq_freshness_wire_<date>.md`, `reference/_scratch_DQ-FRESHNESS-WIRE_<date>/` |
@@ -1876,6 +1876,7 @@ discovery-сессии по `RETURNS-INGEST-TYPE-DISCOVERY`: `retailsalesreturn`
 | MARTS-BUILD-STAMP-PREP | A | да | постоянный | сборка трёх готовых текстов SQL под форму, выбранную `MARTS-STAMP-FORM-ADJ`, плюс проверка потребителей `marts.weight_flow`; `bq query --dry_run` без записей. Пишет: `reference/marts_build_stamp_prep_<date>.md`, `reference/sql/`, `reference/_scratch_MARTS-BUILD-STAMP-PREP_<date>/` |
 | HANDOVER-PACKAGE | A | да | постоянный | документная подготовка, живых вызовов нет; гейт — исполнение очереди передачи (`ADR-140 §4`), сам документ собирается последним. Пишет: `reference/handover_package_<date>.md` |
 | SALES-REFRESH-WINDOW-PERIMETER-DENSITY | A | да | постоянный | read-only замер плотности потока периметра за `180` суток по методике `sales_refresh_window_mandate_adj_2026-08-11.md §C`, дословно скопированной с замера ветки продаж; форма фикса выбирается ПОСЛЕ замера. Пишет: `reference/sales_refresh_window_perimeter_density_<date>.md`, `reference/_scratch_SALES-REFRESH-WINDOW-PERIMETER-DENSITY_<date>/` |
+| RETURNS-BRIDGE-RULE-ADJ | A | да | постоянный | адъюдикация по репо, облачных вызовов нет. Пишет: `reference/returns_bridge_rule_adj_<date>.md`, `reference/parity_registry.md`, `reference/_scratch_RETURNS-BRIDGE-RULE-ADJ_<date>/` |
 
 ---
 ## Статусы задач (Epic M — миграция)
@@ -1982,12 +1983,12 @@ discovery-сессии по `RETURNS-INGEST-TYPE-DISCOVERY`: `retailsalesreturn`
 | `DQ-GATE-SCOPE-CONFIRM` | OPEN | Подтверждение на первом реальном провале `drift_check` после разделения периметра, что закупки/возвраты исполнились, а промоут — нет | нет — гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` архивирован DONE; гейт снят фактом (`ADR-140 §последствия`) |
 | `Q-105` | OPEN | Версионируется ли `owner` документа `entity/demand` отдельно от документа или вместе с `updated` | требует живого запроса (класс B) либо документации API, мандат не выдан |
 | `SALES-PERIMETER-CHANNEL-REAL` | DEFER | Метки канала периметра — константы вместо поимённых каналов источника | решение владельца; финиш не гейтит |
-| `HANDOVER-PACKAGE` | OPEN | Документ передачи клиенту: реестр известных ограничений (`ADR-140 §4`), клиентский runbook «где смотреть», текст риска `R1` (`ADR-140 §5`) | исполнение очереди передачи; собирается последним |
+| `HANDOVER-PACKAGE` | OPEN | Документ передачи клиенту: реестр известных ограничений (`ADR-140 §4`), клиентский runbook «где смотреть» (обязательный раздел — еженедельная проверка свежести шести таблиц ядра, `ADR-181 §1`), текст риска `R1` (`ADR-140 §5`) | исполнение очереди передачи; собирается последним |
 | `Q-106` | OPEN | Хвост ответа владельцу обязан кончаться таблицей задач с фиксированными колонками (`NEW_CONVENTIONS`, `SALES-JULY-K2K3-ADJ`, 2026-08-08) | апрув владельца (proposed) |
 | `Q-107` | OPEN | Проверка готовности деплоя не спрашивает «чьи строки представляет источник» для операций удаления (`NEW_CONVENTIONS`, `SALES-REFRESH-WINDOW-ROLLBACK-ADJ`, 2026-08-11) | апрув владельца (proposed) |
 | `Q-109` | OPEN | Критерий дефект/норма обязан прогоняться по размеченному набору обеих категорий ДО вердикта, не после (`NEW_CONVENTIONS`, `SALES-REFRESH-WINDOW-DEFECT-ADJ`, 2026-08-12) | апрув владельца (proposed) |
 | `DQ-FRESHNESS-WIRE` | PARTIAL | Подготовка DONE — двенадцать функций свежести подключены к `CHECKS` (`7`→`19` пар); в проде не исполняются до выезда, шесть таблиц ядра наблюдателя пока не имеют | остаток — `DQ-FRESHNESS-WIRE, деплой`, класс B, мандат НЕ выдан, гейтится `ADR-065` |
-| `RETURNS-INGEST-TYPE-DISCOVERY` | OPEN | Какой тип документа МойСклад несёт возврат UMAI WB `1 481,13` за июль-2026 (не `salesreturn`, не `retailsalesreturn`, подтверждено живыми `GET`) | гейт для решения о расширении периметра `fetch_returns.py`; класс не определён — READY-квалификация архитектору |
+| `RETURNS-BRIDGE-RULE-ADJ` | READY | Правило-мост пары «Возвраты покупателей» реестра паритета — остаток (i) строки `PARITY-CLIENT-JULY-RECHECK` (`ADR-181 §4`) | нет — класс A, мандат постоянный, адъюдикация по репо |
 | `MARTS-BUILD-STAMP-PREP` | PARTIAL | Три готовых текста SQL собраны и прошли `bq --dry_run`; потребители `customer_invoices_ar`/`expenses` подтверждены безопасными грепом, потребитель `weight_flow` закрыт текстом в `reference/handover_limitations.md` (не строкой реестра, `ADR-156 §2/§5`) | остаток — класс B применение на трёх объектах, пакетный мандат запрещён (`ADR-115 §5`), мандат НЕ выдан |
 | `PARITY-CLIENT-JULY-RECHECK` | PARTIAL | Четыре величины июля от клиента: менеджер закрыт мандатом, Топ-20 закрыт фактом (клиент смотрел страницу до деплоя), возвраты разложены живым оракулом — найден непогруженный документ UMAI WB `1 481,13` | занимает место снятой строки `4` списка закрытия; остаток (i) правило-мост возвратов — архитектор, (ii) настройки графика Топ-20 — владелец (интерфейс Looker Studio) |
 | `Q-110` | OPEN | При расхождении числа на клиентской странице с эталоном первым шагом проверяется снимок таблицы на дату, когда клиент смотрел (`NEW_CONVENTIONS`, `PARITY-CLIENT-JULY-RECHECK`, 2026-08-13) | апрув владельца (proposed) |
