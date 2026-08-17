@@ -1,0 +1,25 @@
+{
+  "dataSourceId": "scheduled_query",
+  "datasetRegion": "asia-east1",
+  "destinationDatasetId": "marts",
+  "displayName": "sq_marts_weight_flow",
+  "emailPreferences": {},
+  "name": "projects/420804682491/locations/asia-east1/transferConfigs/6a1f9418-0000-276f-a1e4-d4f547ee7418",
+  "nextRunTime": "2026-08-17T23:30:00Z",
+  "ownerInfo": {
+    "email": "ilyasbazarov4@gmail.com"
+  },
+  "params": {
+    "query": "-- =============================================================================\n-- marts.weight_flow\n-- Scheduled Query: \u0435\u0436\u0435\u0434\u043d\u0435\u0432\u043d\u043e\n-- \u0412\u0435\u0441 \u043f\u0440\u0438\u043d\u044f\u0442\u044b\u0445 \u0442\u043e\u0432\u0430\u0440\u043e\u0432 (inbound) \u0438 \u043e\u0442\u0433\u0440\u0443\u0436\u0435\u043d\u043d\u044b\u0445 (outbound) \u043f\u043e \u0434\u0430\u0442\u0430\u043c.\n-- \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0434\u043b\u044f KPI \u043a\u043b\u0430\u0434\u043e\u0432\u0449\u0438\u043a\u043e\u0432.\n-- \u041f\u043e\u043a\u0440\u044b\u0442\u0438\u0435 ~32.6% \u2014 \u0440\u0430\u0441\u0442\u0451\u0442 \u043f\u043e \u043c\u0435\u0440\u0435 \u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f weight \u0432 \u041c\u043e\u0439\u0421\u043a\u043b\u0430\u0434\u0435.\n-- =============================================================================\n\nCREATE OR REPLACE TABLE `msklad-bi-prod.marts.weight_flow` AS\n\nWITH\n\noutbound AS (\n  SELECT\n    f.transaction_date                                    AS flow_date,\n    DATE_TRUNC(f.transaction_date, WEEK(SATURDAY))        AS week_start,\n    DATE_TRUNC(f.transaction_date, MONTH)                 AS month_start,\n    'outbound'                                            AS flow_direction,\n    ROUND(SUM(f.sell_quantity * COALESCE(p.weight, 0)), 2) AS weight_kg,\n    COUNT(*)                                              AS positions_total,\n    COUNTIF(COALESCE(p.weight, 0) > 0)                   AS positions_with_weight,\n    ROUND(\n      SAFE_DIVIDE(COUNTIF(COALESCE(p.weight, 0) > 0), COUNT(*)) * 100, 1\n    )                                                     AS weight_coverage_pct\n  FROM `msklad-bi-prod.core.fact_sales_profit` f\n  LEFT JOIN `msklad-bi-prod.core.dim_products` p\n    ON f.product_id = p.product_id\n  GROUP BY f.transaction_date\n),\n\ninbound AS (\n  SELECT\n    pu.order_date                                          AS flow_date,\n    DATE_TRUNC(pu.order_date, WEEK(SATURDAY))              AS week_start,\n    DATE_TRUNC(pu.order_date, MONTH)                       AS month_start,\n    'inbound'                                              AS flow_direction,\n    ROUND(SUM(pu.quantity_shipped * COALESCE(p.weight, 0)), 2) AS weight_kg,\n    COUNT(*)                                               AS positions_total,\n    COUNTIF(COALESCE(p.weight, 0) > 0)                    AS positions_with_weight,\n    ROUND(\n      SAFE_DIVIDE(COUNTIF(COALESCE(p.weight, 0) > 0), COUNT(*)) * 100, 1\n    )                                                      AS weight_coverage_pct\n  FROM `msklad-bi-prod.core.fact_purchases` pu\n  LEFT JOIN `msklad-bi-prod.core.dim_products` p\n    ON pu.product_id = p.product_id\n  WHERE pu.status_name IN ('\u041f\u0440\u0438\u0431\u044b\u043b', '\u041f\u0440\u0438\u0431\u044b\u043b \u0447\u0430\u0441\u0442\u0438\u0447\u043d\u043e')\n    AND pu.quantity_shipped > 0\n  GROUP BY pu.order_date\n)\n\nSELECT * FROM outbound\nUNION ALL\nSELECT * FROM inbound\nORDER BY flow_date DESC, flow_direction;"
+  },
+  "schedule": "every 24 hours",
+  "scheduleOptions": {},
+  "scheduleOptionsV2": {
+    "timeBasedSchedule": {
+      "schedule": "every 24 hours"
+    }
+  },
+  "state": "SUCCEEDED",
+  "updateTime": "2026-06-02T23:30:07.532584Z",
+  "userId": "8522307959247193051"
+}

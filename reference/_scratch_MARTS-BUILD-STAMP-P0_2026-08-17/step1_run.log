@@ -1,0 +1,22 @@
+Mon Aug 17 10:40:25 UTC 2026
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+-- bq show --transfer_config : sq_marts_customer_invoices_ar (6a23f3ea-0000-2952-853d-582429be7ecc)
+rc=0 for customer_invoices_ar
+-- bq show --transfer_config : sq_marts_expenses (6a22a243-0000-20fd-a458-883d24f4cad4)
+rc=0 for expenses
+-- bq show --transfer_config : sq_marts_weight_flow (6a1f9418-0000-276f-a1e4-d4f547ee7418)
+rc=0 for weight_flow
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Mon Aug 17 10:40:32 UTC 2026

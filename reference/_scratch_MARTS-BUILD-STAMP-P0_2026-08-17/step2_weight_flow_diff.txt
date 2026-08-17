@@ -1,0 +1,19 @@
+--- ../sql/sq_marts_weight_flow.sql	2026-08-17 16:37:25
++++ step1_weight_flow_live_query.sql	2026-08-17 16:40:38
+@@ -3,7 +3,7 @@
+ -- Scheduled Query: ежедневно
+ -- Вес принятых товаров (inbound) и отгруженных (outbound) по датам.
+ -- Используется для KPI кладовщиков.
+--- Покрытие ~32.6% — растёт по мере заполнения weight в МойСклад.
++-- Покрытие ~32.6% — растёт по мере заполнения weight в МойСкладе.
+ -- =============================================================================
+ 
+ CREATE OR REPLACE TABLE `msklad-bi-prod.marts.weight_flow` AS
+\ No newline at end of file
+@@ -51,4 +51,4 @@
+ SELECT * FROM outbound
+ UNION ALL
+ SELECT * FROM inbound
+-ORDER BY flow_date DESC, flow_direction;
++ORDER BY flow_date DESC, flow_direction;
+\ No newline at end of file
