@@ -1,0 +1,68 @@
+=== UTC anchor (start) ===
+Mon Aug 17 09:15:09 UTC 2026
+=== gcloud auth (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== executions of msklad-pipeline-weekly since 2026-08-15 ===
+NAME                                  STATE      START_TIME                      END_TIME
+d5921070-150a-4327-9bfc-e87342a608d9  FAILED     2026-08-16T01:00:01.196471149Z  2026-08-16T01:18:52.617247140Z
+df58f54f-4b7e-4b01-ae82-459c3d23d086  FAILED     2026-08-09T01:00:00.936184120Z  2026-08-09T01:18:20.254031591Z
+5aa84f42-d333-470d-b0b9-a107ce85878c  FAILED     2026-08-02T01:00:00.869139791Z  2026-08-02T01:09:21.729341234Z
+01f7d0b1-1922-4343-ae8b-d75c2f4c77ed  FAILED     2026-07-26T01:00:00.988598538Z  2026-07-26T01:08:38.159671475Z
+3672708e-2389-4537-bf5d-c9273786f01c  SUCCEEDED  2026-07-19T01:00:00.916272632Z  2026-07-19T01:11:58.839917021Z
+60416045-915e-4d18-9ecf-93b9d50babbb  SUCCEEDED  2026-07-12T01:00:01.135046555Z  2026-07-12T01:12:46.087237899Z
+d1266dbb-4ae7-4db7-9509-fb51f2375950  SUCCEEDED  2026-07-05T01:00:01.106786689Z  2026-07-05T01:12:06.096959153Z
+f972f272-307f-41aa-8206-4f34dce0c315  FAILED     2026-06-28T01:00:01.103398017Z  2026-06-28T01:08:30.293650722Z
+165e2a63-8752-4ec9-9447-6513de0b40e7  SUCCEEDED  2026-06-21T01:00:01.036841048Z  2026-06-21T01:12:34.500420464Z
+c93ca195-87db-46a2-9ab3-7f561777799d  FAILED     2026-06-14T01:00:01.116028917Z  2026-06-14T01:08:44.230777352Z
+=== full detail of execution closest to 2026-08-16T01:00Z (most recent within window) ===
+{
+  "argument": "{}",
+  "createTime": "2026-08-16T01:00:01.196471149Z",
+  "duration": "1131.420775991s",
+  "endTime": "2026-08-16T01:18:52.617247140Z",
+  "error": {
+    "context": "HTTP server responded with error code 500\nin step \"raise_perimeter_promote\", routine \"main\", line: 256",
+    "payload": "{\"body\":{\"error\":\"promote_perimeter_to_core: предохранитель ADR-145 §4 (свежесть) — staging доходит только до 2026-08-10, а окно MERGE ожидает свежесть не старше 2026-08-15 (допуск 3д → 2026-08-12). Верхний край окна в staging не покрыт — ветка DELETE удалила бы строки внутри окна около сегодняшнего дня, отсутствующие в устаревшем staging не потому что исчезли в источнике. Отказ, MERGE не исполняется.\",\"mode\":\"perimeter_promote\",\"run_id\":1786842001.2609222,\"status\":\"error\"},\"code\":500,\"headers\":{\"Alt-Svc\":\"h3=\\\":443\\\"; ma=2592000,h3-29=\\\":443\\\"; ma=2592000\",\"Content-Length\":\"1571\",\"Content-Type\":\"application/json\",\"Date\":\"Sun, 16 Aug 2026 01:18:52 GMT\",\"Server\":\"Google Frontend\",\"X-Cloud-Trace-Context\":\"c8b215cc4f359bc2e7032eb3bbf9c28a;o=1\"},\"message\":\"HTTP server responded with error code 500\",\"tags\":[\"HttpError\"]}",
+    "stackTrace": {
+      "elements": [
+        {
+          "position": {
+            "column": "17",
+            "length": "5",
+            "line": "256"
+          },
+          "routine": "main",
+          "step": "raise_perimeter_promote"
+        }
+      ]
+    }
+  },
+  "name": "projects/420804682491/locations/asia-east1/workflows/msklad-pipeline-weekly/executions/d5921070-150a-4327-9bfc-e87342a608d9",
+  "startTime": "2026-08-16T01:00:01.196471149Z",
+  "state": "FAILED",
+  "status": {
+    "currentSteps": [
+      {
+        "routine": "main",
+        "step": "raise_perimeter_promote"
+      }
+    ]
+  },
+  "workflowRevisionId": "000005-124"
+}
+=== UTC anchor (end) ===
+Mon Aug 17 09:15:18 UTC 2026
+=== gcloud auth (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

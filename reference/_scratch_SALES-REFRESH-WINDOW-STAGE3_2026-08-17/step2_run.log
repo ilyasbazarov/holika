@@ -1,0 +1,815 @@
+=== UTC anchor (start) ===
+Mon Aug 17 09:16:34 UTC 2026
+=== gcloud auth (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== BigQuery job history: MERGE jobs into fact_sales_profit since 2026-08-16T00:50:00Z ===
+[
+  {
+    "creation_time": "2026-08-16 01:04:57", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 01:04:58", 
+    "inserted": "0", 
+    "job_id": "c9c0e0cc-ae79-4aec-bbfa-d00e27bb6d65", 
+    "updated": "398"
+  }, 
+  {
+    "creation_time": "2026-08-16 01:18:48", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 01:18:50", 
+    "inserted": "0", 
+    "job_id": "39293e3f-4baa-4fae-8311-b9fdf2f0e311", 
+    "updated": "7133"
+  }, 
+  {
+    "creation_time": "2026-08-16 02:04:56", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 02:04:58", 
+    "inserted": "0", 
+    "job_id": "ae742318-55cf-4b9b-84e3-13fe67049a7c", 
+    "updated": "398"
+  }, 
+  {
+    "creation_time": "2026-08-16 04:04:56", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 04:04:58", 
+    "inserted": "0", 
+    "job_id": "79e60104-44ee-4429-a03e-48418e20adf5", 
+    "updated": "398"
+  }, 
+  {
+    "creation_time": "2026-08-16 05:05:19", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 05:05:21", 
+    "inserted": "2", 
+    "job_id": "2d70fe29-f0b6-4dc8-a8ee-01e8653c7c3e", 
+    "updated": "398"
+  }, 
+  {
+    "creation_time": "2026-08-16 06:04:57", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 06:04:59", 
+    "inserted": "0", 
+    "job_id": "ce7fb3ee-3ee0-418b-a622-8b7e1e8a029f", 
+    "updated": "400"
+  }, 
+  {
+    "creation_time": "2026-08-16 07:05:07", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 07:05:08", 
+    "inserted": "0", 
+    "job_id": "437a5238-7481-4657-a431-ef4d7730f74e", 
+    "updated": "400"
+  }, 
+  {
+    "creation_time": "2026-08-16 08:05:36", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 08:05:38", 
+    "inserted": "0", 
+    "job_id": "cd440bc0-a0ad-46dd-9bc3-ecab8b4e68e3", 
+    "updated": "400"
+  }, 
+  {
+    "creation_time": "2026-08-16 09:05:11", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 09:05:13", 
+    "inserted": "0", 
+    "job_id": "8a36abea-198c-400b-b363-f4171ba034a4", 
+    "updated": "400"
+  }, 
+  {
+    "creation_time": "2026-08-16 10:05:39", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 10:05:41", 
+    "inserted": "0", 
+    "job_id": "68c9fcff-d52a-4574-a39d-31b860841281", 
+    "updated": "400"
+  }, 
+  {
+    "creation_time": "2026-08-16 11:05:15", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 11:05:17", 
+    "inserted": "4", 
+    "job_id": "4bbac267-9dd7-47ad-85ec-9d4f05569d37", 
+    "updated": "400"
+  }, 
+  {
+    "creation_time": "2026-08-16 12:05:49", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 12:05:50", 
+    "inserted": "0", 
+    "job_id": "2c47adc8-23ee-41a7-ae56-f84630c2a7b0", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 13:04:54", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 13:04:56", 
+    "inserted": "0", 
+    "job_id": "80057563-748b-4056-8cb0-df9c5bf68db7", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 14:04:53", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 14:04:54", 
+    "inserted": "0", 
+    "job_id": "1e83dcd2-cdca-4534-aade-575390810700", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 15:05:06", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 15:05:08", 
+    "inserted": "0", 
+    "job_id": "44797729-cc43-499c-9477-bb4fbc0c26ce", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 16:05:17", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 16:05:19", 
+    "inserted": "0", 
+    "job_id": "48ce66e0-8420-4de3-9af1-aad70fd955e5", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 17:05:17", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 17:05:18", 
+    "inserted": "0", 
+    "job_id": "d28abed2-56b0-4c86-815c-af5c52a74e1f", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 18:05:00", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 18:05:02", 
+    "inserted": "0", 
+    "job_id": "dc683918-8542-4f0c-8ef5-bb098fe09621", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 19:04:53", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 19:04:54", 
+    "inserted": "0", 
+    "job_id": "b07c31e4-d3ff-4345-8570-9cea428a329a", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 20:04:59", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 20:05:00", 
+    "inserted": "0", 
+    "job_id": "6b9ef950-9020-4b95-bebf-7ebe29be7f95", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 21:04:51", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 21:04:53", 
+    "inserted": "0", 
+    "job_id": "37076cf9-b26f-4c23-bb3f-5eb386055812", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 22:04:45", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 22:04:46", 
+    "inserted": "0", 
+    "job_id": "ec53df6c-e25d-4eb1-b09e-9c9376b8d7b3", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-16 23:04:50", 
+    "deleted": "0", 
+    "end_time": "2026-08-16 23:04:51", 
+    "inserted": "0", 
+    "job_id": "242d9285-5634-4381-9771-0e94527b0d75", 
+    "updated": "404"
+  }, 
+  {
+    "creation_time": "2026-08-17 00:05:14", 
+    "deleted": "0", 
+    "end_time": "2026-08-17 00:05:15", 
+    "inserted": "0", 
+    "job_id": "2caaf864-ac27-49d2-b3cb-1c5a41c422b7", 
+    "updated": "394"
+  }, 
+  {
+    "creation_time": "2026-08-17 01:04:55", 
+    "deleted": "0", 
+    "end_time": "2026-08-17 01:04:57", 
+    "inserted": "0", 
+    "job_id": "212bd334-9a96-46ad-b8a9-54091e1e320f", 
+    "updated": "394"
+  }, 
+  {
+    "creation_time": "2026-08-17 02:04:46", 
+    "deleted": "0", 
+    "end_time": "2026-08-17 02:04:47", 
+    "inserted": "0", 
+    "job_id": "0978f1ec-6d5a-462c-bb7a-2d965a39e1cb", 
+    "updated": "394"
+  }, 
+  {
+    "creation_time": "2026-08-17 03:05:10", 
+    "deleted": "0", 
+    "end_time": "2026-08-17 03:05:11", 
+    "inserted": "0", 
+    "job_id": "f9882875-0375-4233-9c22-7828594639f6", 
+    "updated": "394"
+  }, 
+  {
+    "creation_time": "2026-08-17 04:05:03", 
+    "deleted": "0", 
+    "end_time": "2026-08-17 04:05:05", 
+    "inserted": "0", 
+    "job_id": "ba8bd2e2-5749-4492-93fd-d2a937682f76", 
+    "updated": "394"
+  }, 
+  {
+    "creation_time": "2026-08-17 05:05:31", 
+    "deleted": "0", 
+    "end_time": "2026-08-17 05:05:33", 
+    "inserted": "0", 
+    "job_id": "69e16b3e-a07a-4842-b34d-3e756a7e5db4", 
+    "updated": "394"
+  }, 
+  {
+    "creation_time": "2026-08-17 06:05:39", 
+    "deleted": "0", 
+    "end_time": "2026-08-17 06:05:40", 
+    "inserted": "0", 
+    "job_id": "028645a4-d73f-4267-a780-5166182d8b6a", 
+    "updated": "394"
+  }, 
+  {
+    "creation_time": "2026-08-17 07:06:03", 
+    "deleted": "0", 
+    "end_time": "2026-08-17 07:06:04", 
+    "inserted": "0", 
+    "job_id": "1cb807ec-58e2-46a5-a81f-ef03836565fa", 
+    "updated": "394"
+  }, 
+  {
+    "creation_time": "2026-08-17 08:05:56", 
+    "deleted": "0", 
+    "end_time": "2026-08-17 08:05:58", 
+    "inserted": "0", 
+    "job_id": "691ca566-13d0-4753-9d19-a923ada54824", 
+    "updated": "394"
+  }, 
+  {
+    "creation_time": "2026-08-17 09:07:16", 
+    "deleted": "0", 
+    "end_time": "2026-08-17 09:07:18", 
+    "inserted": "0", 
+    "job_id": "41659e05-3d4f-4576-8864-9c778d14a859", 
+    "updated": "394"
+  }
+]
+=== BigQuery job history: any MERGE into perimeter table since 2026-08-16T00:50:00Z (expect none — guard tripped) ===
+[
+  {
+    "creation_time": "2026-08-16 01:00:30", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "67686170-a18b-4140-b462-5a61a40482f0", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 01:00:33", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "7e74016e-79d5-4574-a4fb-f9d16385e9c6", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 01:00:56", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "f6e78e83-0d2a-4606-8f1b-f0149f233ef6", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 01:01:04", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "0914f493-4c0c-4bb3-92e1-17c2bfd6fe13", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 02:00:32", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "604e0cd8-6e19-45eb-8d80-8781d2173388", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 02:00:59", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "a70c1826-acc5-416f-81fb-cadad9b1ea12", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 03:00:33", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "01ea79a8-f85d-41f0-bd82-49b0774960fd", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 03:00:58", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "a9b1345a-7115-4820-9041-b5a8b6a74f07", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 04:00:43", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "b7dc8ae3-105f-4cc3-80f0-be2530e9d837", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 04:01:12", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "29a96a7f-10df-4e32-8519-a300006ffa04", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 05:00:45", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "fe37731d-0bcb-40bb-a1ba-bf1f31a05d7d", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 05:01:11", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "56d5a7d3-575b-424a-89a6-5545bc3f9688", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 06:00:43", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "41180849-4445-479d-9121-9334b08c3425", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 06:01:08", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "dc8e854e-c3e6-4908-9693-9a75615ca7dc", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 07:00:29", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "56e4e6ee-857f-453f-82d4-4b8f174e295f", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 07:00:56", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "57b0a0f2-decd-4131-948f-4f21a083ec7a", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 08:00:41", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "2dc863bd-582f-42b9-a766-25be1cad30cd", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 08:01:10", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "645e0acb-622b-496c-ae0c-02e7e3663a2e", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 09:00:32", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "fa2b4de6-0a35-4ef0-aa34-6a24eecd468f", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 09:01:04", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "ca495627-3671-4f0c-a4cb-3c3e01a63965", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 10:00:49", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "fffeed76-b176-4d94-a1ea-a822cfca5828", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 10:01:21", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "5461aaef-aece-44de-9701-eac59561babd", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 11:00:25", 
+    "deleted": "0", 
+    "inserted": "7", 
+    "job_id": "35bb9f3c-125f-4331-8081-0546677a06a7", 
+    "updated": "4690"
+  }, 
+  {
+    "creation_time": "2026-08-16 11:00:53", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "41f957ed-0cb9-4e6f-908a-c34f01224787", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 12:00:42", 
+    "deleted": "0", 
+    "inserted": "2", 
+    "job_id": "d225a7a6-8004-4578-ae95-5ba2220af2dc", 
+    "updated": "4697"
+  }, 
+  {
+    "creation_time": "2026-08-16 12:01:09", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "3b7018bb-2092-46c6-afe3-0ff8b4f2d808", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 13:00:32", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "b0bf07bf-cebe-4621-a0bc-1bf19876dd33", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 13:00:58", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "14778b35-8a8f-4216-a0f5-47c7eea26843", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 14:00:22", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "4f48ac73-ed8e-4709-b92e-324d15dab209", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 14:00:52", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "f798d81b-0f03-4eb1-8690-1af73c85a0d9", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 15:00:44", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "2e5127dc-c7b6-483c-b682-c2ba1865b2aa", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 15:01:13", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "e1ee069e-4f3f-456a-852f-44ac76ea661e", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 16:00:41", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "8d2baf5b-b336-4383-98c7-63d8f23cf8c5", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 16:01:09", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "163cc197-e664-42e3-984b-98eec581637a", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 17:00:35", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "27a0bd16-014e-4ad2-bb31-eb695bc6e99b", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 17:01:07", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "3b55e252-082f-43df-8ecf-5fb1e03ff1b9", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 18:00:27", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "e1a6b0d9-36ab-4428-b433-22f4d478b40f", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 18:00:54", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "a8d859ad-c040-4d6b-8806-a6823aa70d94", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 18:00:59", 
+    "deleted": "0", 
+    "inserted": "1", 
+    "job_id": "3d1dd602-ef98-424a-b1df-eedaa74063c0", 
+    "updated": "0"
+  }, 
+  {
+    "creation_time": "2026-08-16 19:00:30", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "66a25771-71ee-4936-b651-8d19deac7293", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 19:00:58", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "03ca9c6d-3d01-4233-9da5-3b68444d45ad", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 20:00:31", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "2c6eed86-c177-42a8-94a6-7dad37eb5b8f", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 20:00:56", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "1728db88-90cc-4eec-9835-bb6617e43d66", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 21:00:12", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "9c105da7-113f-4a2d-ae99-27c9a524065b", 
+    "updated": "131"
+  }, 
+  {
+    "creation_time": "2026-08-16 21:00:30", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "31187fa9-cf2e-4265-b8b3-13be998e6f3c", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 21:00:54", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "776c8db7-a7b5-4c33-9c90-a7c5112262cf", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 21:01:16", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "5ec0c2cc-7d44-4f2f-a84d-90e92fe12c7d", 
+    "updated": "194"
+  }, 
+  {
+    "creation_time": "2026-08-16 21:14:19", 
+    "deleted": "0", 
+    "inserted": "1552", 
+    "job_id": "ef98c0b0-89ed-4674-b959-77f0e2600155", 
+    "updated": "5164"
+  }, 
+  {
+    "creation_time": "2026-08-16 22:00:34", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "c82af0d6-6124-45e3-b15a-eaaf253797f1", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 22:00:59", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "60ad6b59-3a2b-4f2c-8385-96242ef8f23a", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-16 22:10:32", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "f336c22f-27d2-4fff-9a11-e4b9e8b44d90", 
+    "updated": "4560"
+  }, 
+  {
+    "creation_time": "2026-08-16 23:00:32", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "43ed2033-7b62-4ec2-98f9-22fee6862a28", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-16 23:00:58", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "9a30408c-6fe2-4c77-af73-be1d3d72a6a8", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-17 00:00:46", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "6427b378-3f11-489d-aecd-1f4b540c6159", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-17 00:01:13", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "b1d5491f-0b91-4cae-89e0-dc3bdb0653ab", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-17 01:00:24", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "73a95953-460a-4fd0-a9ef-83042f2cbcd8", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-17 01:00:58", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "d47bca14-6da1-4330-a9ec-c125c3a1924d", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-17 02:00:34", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "852e3549-7c5b-4784-8254-5e4e61a3b9ea", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-17 02:01:00", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "99af6ac7-7157-46f1-a362-bb28adf4f648", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-17 03:00:35", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "113cde2c-70d5-4955-8af3-4ac44657ef6d", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-17 03:01:05", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "9358db8a-6c3b-43b1-bba3-25c5c18e8d86", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-17 04:00:30", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "d8667544-f8fa-4afd-a5bd-2c61fa2afc21", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-17 04:00:56", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "979f970a-3906-416b-ae63-87821b8bafa6", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-17 05:00:40", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "be3c3b09-98cf-4f34-bf28-c7557dfbdad9", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-17 05:01:11", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "232c35df-3dee-4c14-9fac-50506367e4c0", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-17 06:00:43", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "68d06535-006c-4540-afac-aec92330e858", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-17 06:01:15", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "41c15c19-19cd-4eff-a3c3-a7e7e24c29e1", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-17 07:00:50", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "95ef6c25-a0ac-4ebc-b51e-cdcfddee2fa2", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-17 07:01:27", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "f2a75984-33e5-4cfd-9f96-d56264b76ba7", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-17 08:00:35", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "19f71add-d057-4d3b-9299-2553d4faf439", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-17 08:01:08", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "45ecfd0a-60ba-4b45-bcd8-a43832abb024", 
+    "updated": "15"
+  }, 
+  {
+    "creation_time": "2026-08-17 09:01:01", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "f209463f-5de0-4b02-b749-9e6a0828f729", 
+    "updated": "4699"
+  }, 
+  {
+    "creation_time": "2026-08-17 09:01:33", 
+    "deleted": "0", 
+    "inserted": "0", 
+    "job_id": "08b6f54b-9df1-40bb-9fed-d4a92fbb1ed9", 
+    "updated": "15"
+  }
+]
+=== core.fact_sales_profit — May 2026 totals, current state ===
+[
+  {
+    "n_rows": "3404", 
+    "total_revenue_kgs": "9.52142058014E7"
+  }
+]
+=== core.fact_sales_profit vs snap_20260811_163306 — current diff (row count only, same method as scope_verify) ===
+[
+  {
+    "live_rows": "43270", 
+    "snap_rows": "42995"
+  }
+]
+=== UTC anchor (end) ===
+Mon Aug 17 09:16:51 UTC 2026
+=== gcloud auth (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
