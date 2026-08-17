@@ -3,7 +3,7 @@
 # 07 · STATE — Текущее состояние проекта
 
 **Статус:** LIVING (обновляется каждую сессию через `STATE_PATCH`).
-**updated_at:** 2026-08-17 · **обновил:** сборка (буфер 2026-08-17, седьмой проход, доисполнение §7)
+**updated_at:** 2026-08-18 · **обновил:** сборка (буфер 2026-08-18)
 
 > **Правило компактности (ADR-064):** здесь живёт ТОЛЬКО открытое (open / DEFER / IN PROGRESS / READY /
 > ожидает решения). Полностью закрытые Q/задачи/блокеры переезжают в `07_ARCHIVE.md` однострочной выжимкой
@@ -18,16 +18,17 @@
 
 > Блок ЗАМЕНЯЕТСЯ целиком каждой сборкой, не дописывается (`ADR-084 §1`). Ровно пять строк.
 
-**Прошлый шаг:** ревью двух фиксов — `cf-dq` ГОТОВ и гейт снят; `cf-facts` НЕ ГОТОВ, обвязка
-трёх уровней отсутствует (`reference/guard_fixes_review_2026-08-17.md`).
-**Где мы:** список закрытия — осталось `7` из `9`; мандат на выезд `cf-dq` выдан и задача
-исполнима, деплой `cf-facts` по сроку отодвинут на одну итерацию подготовки.
-**Следующий шаг:** `DQ-FRESHNESS-WIRE, деплой` (класс B, мандат выдан) и
-`SALES-REFRESH-WINDOW-GUARD-FIX-PREP2` (класс A) — параллельны по файлам, но деплой класса B
-не совмещается ни с чем (`ADR-102`).
-**Развилки на владельце:** пять невыданных мандатов класса B (`INGEST-CURRENCY-ASSERT` ×2,
-`MARTS-BUILD-STAMP` ×3); два действия в интерфейсе Looker Studio (`4е`, `9б`); `git push`.
-**Счётчик:** строк списка закрытия осталось `7` из `9`.
+**Прошлый шаг:** обвязка `run_started_at` для `SALES-REFRESH-WINDOW-GUARD-FIX-PREP2` исполнена
+и закрыта — `reference/sales_refresh_window_guard_fix_prep2_2026-08-18.md`.
+**Где мы:** обе подготовки (`PREP` верхний край, `PREP2` обвязка) закрыты; деплой `cf-facts`
+ждёт повторного ревью архитектора, гейт на выкладку `SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY`.
+**Следующий шаг:** повторное ревью архитектора `PREP2` → запрос мандата класса B на
+`SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY` → деплой `cf-facts` → первый недельный прогон
+(`2026-08-23`), исполняющий ветку периметра.
+**Развилки на владельце:** нет (ревью — роль архитектора; мандат B запрашивается после ревью).
+**Счётчик:** срок `2026-09-29`, шесть недельных прогонов; цепочка `PREP2 → ревью → мандат →
+деплой` обязана уложиться до `2026-08-23`, чтобы не сдвинуться на `08-30`
+(`guard_fixes_review_2026-08-17.md §8`).
 
 ### Подробности для модели
 
@@ -60,19 +61,6 @@
 верно для семи из тринадцати было — до правки `DQ-FRESHNESS-WIRE-GUARD-FIX`.** Список
 блокирующих проверок в §1 того документа пополнен шестью именами при этой правке;
 диагностический запрос, порог `24` часа и процедура ручного снятия не менялись.
-
-**`promote_to_core`/`promote_perimeter_to_core` (`bq_ops.py`) с этим патчем несут обязательный
-параметр `run_started_at: datetime`, которого `main.py` (строки `:249`, `:403`) пока НЕ
-передаёт — вызовы упадут `TypeError` при реальном исполнении.** Это сознательный незакрытый
-хвост. **Переназначен (`GUARD-FIXES-REVIEW`, 2026-08-17, `ADR-185 §5/§9`): объём НЕ
-`SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY`, а новая подготовка `SALES-REFRESH-WINDOW-GUARD-FIX-PREP2`**
-— ревью архитектора отклонило написание этого кода внутри деплой-сессии (`ADR-170 §3`); хвост
-оказался шире одной сигнатуры (три уровня вызова, три формата `run_id`, не два). Обновить
-`main.py`, разобрав ТРИ формата `run_id` (float `sys.now()`, строка-число, строка
-`YYYYMMDDTHHMMSS` от локального fallback `run_ts()`). Побочно найдено: комментарий в
-`config.py` (~строка 44, «Допуск ОБОИХ краёв окна MERGE») устарел этим патчем — допуск
-`GUARD_TOLERANCE_DAYS` теперь только на нижнем крае; `config.py` не правился (вне «пишет»
-этой задачи).
 
 **Плотность потока периметра измерена и в пересчёте не нуждается.** Комиссия — рекуррентный
 цикл с пятью сериями пустых суток ровно по `6`; розница — единственная вспышка `4` суток
@@ -1910,6 +1898,18 @@ discovery-сессии по `RETURNS-INGEST-TYPE-DISCOVERY`: `retailsalesreturn`
 кроме `audit.dq_runs`. Диагностический запрос для оператора существует
 (`dq_gate_block_bounded_2026-08-17.md §1`) — механизм pull, не push.
 
+**Текстовое ревью (`try/except` есть, `CHECKS` несёт N пар) не ловит ошибки ПОРЯДКА определений
+в Python-модуле.** `main.py` исполняется сверху вниз при импорте; список/структура, ссылающаяся
+по имени на функции, обязана идти строго ПОСЛЕ их определений, иначе `NameError` при любом
+импорте — Cloud Run здесь не при чём, тот же результат дал бы локальный
+`python3 -c "import main"`. Оба прошлых ревью (`DQ-FRESHNESS-WIRE-DEPLOY-REVIEW`,
+`GUARD-FIXES-REVIEW §2`) проверяли текст функций по одной, не порядок модуля целиком, и ни разу
+не пытались реально импортировать модуль. Правило на будущее для любого ревью Python-CF патча:
+факт-проверка обязана включать попытку реального импорта модуля, не только построчный текстовый
+разбор. Найдено на попытке деплоя `DQ-FRESHNESS-WIRE, деплой` (`2026-08-18`) — `NameError` на
+`main.py:223` (`CHECKS` ссылался на `check_freshness_purchases_technical` до её определения).
+Полный разбор — `reference/dq_freshness_wire_deploy_2026-08-18.md`.
+
 ---
 
 ## Мандат Claude Code: класс задач (ADR-076)
@@ -1940,8 +1940,7 @@ discovery-сессии по `RETURNS-INGEST-TYPE-DISCOVERY`: `retailsalesreturn`
 | SALES-REFRESH-WINDOW, деплой | B | нет | ВЫДАН, ИСПОЛНЕН, приёмка НЕ подтверждена — третье число мис-специфицировано (`DELETE-ADJ`, `ADR-164`); откат приостановлен решением владельца; слияние ветки в `master` запрещено до закрытия `SALES-REFRESH-WINDOW-DELETE-DISCRIMINATE`; откат кода рекомендован архитектором `2026-08-12` независимо от исхода различителя (`ADR-165`); слияние ветки `…-v2` в `master` остаётся запрещённым | объект — деплой `cf-facts` из НОВОЙ ветки `deploy/cf-facts-2026-08-11-refresh-window-v2` код-репо, четыре файла; откат — трафик на `cf-facts-00011-mab` плюс СВЕЖИЙ снимок таблицы; пять предусловий и приёмка из трёх чисел — `reference/sales_refresh_window_deploy_mandate_2026-08-11.md §3/§4`. Прежняя ветка `…-refresh-window` остаётся провенансом, базой и целью слияния не является |
 | SALES-REFRESH-WINDOW-DELETE-DISCRIMINATE | A | нет | постоянный | различитель остатка (`29` строк / `2 407 220,42` KGS) удалённых боевым прогоном `SALES-REFRESH-WINDOW-DEPLOY`, не объяснённых опознанием сирот `ADR-100 §1`; три ступени класса A по GCS-архиву сырого ответа источника, не по снимку своей таблицы (`00_CHARTER §главный принцип`); третья ступень (единичный `GET` к складу по паре маркетплейса) — класс B, мандат отдельно. Форма — `reference/sales_refresh_window_delete_adj_2026-08-12.md §4/§4a`. Пишет: `reference/sales_refresh_window_delete_discriminate_<date>.md`, `reference/_scratch_SALES-REFRESH-WINDOW-DELETE-DISCRIMINATE_<date>/`. Ступени 0-2 исполнены `2026-08-12` (сессия `SALES-REFRESH-WINDOW-DELETE-DISCRIMINATE`); остаток квалифицирует `SALES-REFRESH-WINDOW-SOURCE-PROBE` (`ADR-166`) |
 | SALES-REFRESH-WINDOW-DEPLOY-FINAL | B | нет | ЗАФИКСИРОВАН ПОСТФАКТУМ (владелец, чат 2026-08-12: расхождение объёма с `…stage_a_mandate…§4` объявлено снятым), форма прецедента `ADR-117`/`ADR-118` | объект — ревизия `cf-facts-00017-jon` из ветки `deploy/cf-facts-2026-08-12-completeness-and-delete` (`543b6c1`), пять файлов; откат — трафик на `cf-facts-00011-mab`. Приёмка — `reference/sales_refresh_window_deploy_final_adj_2026-08-12.md §2/§3/§4`. Пишет: `reference/sales_refresh_window_deploy_final_<date>.md`, `reference/_scratch_SALES-REFRESH-WINDOW-DEPLOY-FINAL_<date>/`, `reference/code/cf-facts/`, `reference/handover_limitations.md` |
-| SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY | B | нет | НЕ выдан; клауза архивной строки `SALES-REFRESH-WINDOW-GUARD-FIX-PREP` «хвост закрывается объёмом этого деплоя» ОТМЕНЕНА (`ADR-185 §5/§9`) — доработку обвязки несёт `SALES-REFRESH-WINDOW-GUARD-FIX-PREP2`; предусловия — `PREP2` закрыта и повторное ревью архитектора пройдено | деплой `cf-facts`, процедура вариант Б, откат — трафик на `cf-facts-00017-jon` |
-| SALES-REFRESH-WINDOW-GUARD-FIX-PREP2 | A | нет | постоянный | правка снапшота `reference/code/cf-facts/`, ничего не деплоит. Пишет: `reference/code/cf-facts/main.py`, `reference/sales_refresh_window_guard_fix_prep2_<date>.md`, `reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-PREP2_<date>/` |
+| SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY | B | нет | НЕ выдан; клауза архивной строки `SALES-REFRESH-WINDOW-GUARD-FIX-PREP` «хвост закрывается объёмом этого деплоя» ОТМЕНЕНА (`ADR-185 §5/§9`) — доработку обвязки несёт `SALES-REFRESH-WINDOW-GUARD-FIX-PREP2`; предусловие `PREP2` закрыта ИСПОЛНЕНО (DONE `2026-08-18`); остаётся повторное ревью архитектора | деплой `cf-facts`, процедура вариант Б, откат — трафик на `cf-facts-00017-jon` |
 | AUDIT-SNAPSHOT-FIX-EMPLOYEES, подготовка | A | да | постоянный | DDL и текст запроса готовятся, не применяются. Пишет: `reference/sql/sq_audit_dim_employees_snapshot.sql`, `reference/audit_snapshot_fix_employees_<date>.md` |
 | AUDIT-SNAPSHOT-FIX-EMPLOYEES, исполнение | B | нет | НЕ выдан | пересоздание таблицы `audit.*` и правка живого `transferConfig` |
 | AUDIT-COUNTERPARTIES-SNAPSHOT-RETIRE | B | нет | НЕ выдан | отключение живого `transferConfig`; read-back обязателен |
@@ -1958,7 +1957,7 @@ discovery-сессии по `RETURNS-INGEST-TYPE-DISCOVERY`: `retailsalesreturn`
 | DQ-GATE-SCOPE-CONFIRM | A | да | постоянный, гейт `DQ-GATE-SCOPE-SPLIT-DEPLOY` | подтверждение на первом реальном провале `drift_check` после разделения периметра, что закупки/возвраты исполнились, а промоут — нет; форма запроса — из скриптов `DQ-SOURCE-CAPTURE`. Пишет: `reference/dq_gate_scope_confirm_<date>.md` |
 | PARALLEL-CHECK-BLOCK-END | A | нет | постоянный | правка `tools/parallel_check.sh` и нового самотеста, облачных вызовов нет. Пишет: `tools/parallel_check.sh`, `tools/parallel_check_selftest.sh`, `reference/parallel_check_block_end_<date>.md` |
 | DQ-FRESHNESS-WIRE | A | да | постоянный | подключение двенадцати уже задеплоенных функций свежести к списку `CHECKS` в снапшоте, ничего не деплоит; форма подключения наблюдающая (`07_GAPS.md` строка `DQ-FRESHNESS-WIRE`). Пишет: `reference/code/cf-dq/main.py`, `reference/dq_freshness_wire_<date>.md`, `reference/_scratch_DQ-FRESHNESS-WIRE_<date>/` |
-| DQ-FRESHNESS-WIRE, деплой | B | нет | ВЫДАН поимённо | Мандат класса B выдан поимённо владельцем `2026-08-17` (`ADR-185 §8`). **Объект:** деплой `cf-dq` одним файлом `main.py` — подключение двенадцати проверок свежести к `CHECKS` (`7`→`19` пар, коммит `c9905a3`) ПЛЮС защита шести `check_freshness_*_business` (`DQ-FRESHNESS-WIRE-GUARD-FIX`, DONE `2026-08-17`). `config.py` и `helpers.py` не меняются. **Откат:** трафик на ревизию `cf-dq-00009-coy`, пересборка не требуется (форма — `reference/code/cf-dq/MANIFEST.md`). **Приёмка:** пять пунктов `reference/dq_freshness_wire_deploy_review_2026-08-17.md §5`, пункт 3 (состав живого механизма из `audit.dq_runs`) обязателен и замене не подлежит (`Q-111`). **Предусловия:** ветка `s/DQ-FRESHNESS-WIRE-GUARD-FIX` слита в `main` проходом сборки; ветка деплоя код-репо заведена от `master`; процедура — вариант Б. Пакетное расширение запрещено (`ADR-115 §5`). Пишет: `reference/dq_freshness_wire_deploy_<date>.md`, `reference/code/cf-dq/MANIFEST.md`, `reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_<date>/` |
+| DQ-FRESHNESS-WIRE, деплой | B | нет | ИСЧЕРПАН попыткой — НЕУСПЕХ `2026-08-18` | Мандат класса B выдан поимённо владельцем `2026-08-17` (`ADR-185 §8`). **Объект:** деплой `cf-dq` одним файлом `main.py` — подключение двенадцати проверок свежести к `CHECKS` (`7`→`19` пар, коммит `c9905a3`) ПЛЮС защита шести `check_freshness_*_business` (`DQ-FRESHNESS-WIRE-GUARD-FIX`, DONE `2026-08-17`). `config.py` и `helpers.py` не меняются. **Откат:** трафик на ревизию `cf-dq-00009-coy`, пересборка не требуется (форма — `reference/code/cf-dq/MANIFEST.md`). **Приёмка:** пять пунктов `reference/dq_freshness_wire_deploy_review_2026-08-17.md §5`, пункт 3 (состав живого механизма из `audit.dq_runs`) обязателен и замене не подлежит (`Q-111`). **Предусловия:** ветка `s/DQ-FRESHNESS-WIRE-GUARD-FIX` слита в `main` проходом сборки; ветка деплоя код-репо заведена от `master`; процедура — вариант Б. Пакетное расширение запрещено (`ADR-115 §5`). **Попытка `2026-08-18` — НЕУСПЕХ:** ветка `deploy/cf-dq-2026-08-18-freshness-wire` (`2a3228d`) запушена, `gcloud functions deploy cf-dq` упал на healthcheck (ревизия `cf-dq-00010-kiq`); прод не задет, обслуживающая ревизия осталась `cf-dq-00009-coy, percent=100`; корень — `NameError: name 'check_freshness_purchases_technical' is not defined` (`main.py:223`, `CHECKS` определён ДО функций, на которые ссылается); дефект подтверждён присутствующим в ревьюнутом снапшоте, не артефакт переноса; ветка код-репо НЕ слита в `master`. Мандат на это содержание патча исчерпан этой попыткой; новая попытка требует правки класса A (перестановка блока `CHECKS` после определений функций) и повторного архитекторского ревью по факту исполнения — решает архитектор, нужен ли новый мандат класса B. Пишет: `reference/dq_freshness_wire_deploy_<date>.md`, `reference/code/cf-dq/MANIFEST.md`, `reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY_<date>/` |
 | PARITY-CLIENT-JULY-RECHECK | A | да | постоянный | read-only замеры BigQuery по замечаниям клиента, живых вызовов к МойСклад не требует. Пишет: `reference/parity_client_july_recheck_<date>.md`, `reference/_scratch_PARITY-CLIENT-JULY-RECHECK_<date>/` |
 | MARTS-BUILD-STAMP-PREP | A | да | постоянный | сборка трёх готовых текстов SQL под форму, выбранную `MARTS-STAMP-FORM-ADJ`, плюс проверка потребителей `marts.weight_flow`; `bq query --dry_run` без записей. Пишет: `reference/marts_build_stamp_prep_<date>.md`, `reference/sql/`, `reference/_scratch_MARTS-BUILD-STAMP-PREP_<date>/` |
 | HANDOVER-PACKAGE | A | да | постоянный | документная подготовка, живых вызовов нет; гейт — исполнение очереди передачи (`ADR-140 §4`), сам документ собирается последним. Пишет: `reference/handover_package_<date>.md` |
@@ -2042,8 +2041,7 @@ discovery-сессии по `RETURNS-INGEST-TYPE-DISCOVERY`: `retailsalesreturn`
 | `SALES-REFRESH-WINDOW` | OPEN | Восстановление двух строк исполнено и принято `2026-08-12`, майский паритет восстановлен фактически; фактический объект деплоя `2026-08-12` шире стадии A — пять файлов (отказ полноты плюс ветка удаления варианта 1), выложен до окна `ADR-144 §8(3)`, новой майской подвижки не ожидается, проверяется ступенью 3 (`ADR-172 §6`); ступень 2 закрыта числами (`MERGE` inserted=111 deleted=0 updated=373, core за 12 августа сходится со staging, расхождение со снимком стабильно `34`) | `SALES-REFRESH-WINDOW-DEPLOY-FINAL` (класс B, мандат зафиксирован постфактум) — ступень 3 (первый недельный прогон `2026-08-16T01:00Z`); жёсткий срок `2026-09-29` (`ADR-142`) |
 | `SALES-REFRESH-WINDOW-DELETE-DISCRIMINATE` | PARTIAL | Ступени 0-2 различителя исполнены классом A целиком (архив источника + перекрёстная проверка); вывод «`19` строк подтверждённый дефект» СНЯТ адъюдикацией (`DEFECT-ADJ`, `ADR-165`) — критерий опровергнут положительным контролем; все `29` строк не квалифицированы | нет — остаток квалифицирует `SALES-REFRESH-WINDOW-SOURCE-PROBE` (класс B, мандат выдан `ADR-166`); строка не архивируется до его закрытия |
 | `SALES-REFRESH-WINDOW-DEPLOY-FINAL` | PARTIAL | Деплой `cf-facts` с проверкой полноты выгрузки и веткой удаления исполнен (ревизия `cf-facts-00017-jon`), приёмка переписана на три ступени, ступени 1 и 2 закрыты; слияние ветки код-репо `deploy/cf-facts-2026-08-12-completeness-and-delete` в `master` ЗАПРЕЩЕНО до ступени 3 (решение архитектора, чат 2026-08-13) | форма фикса выбрана — ф3 (`MAX(_loaded_at)`, `ADR-183`); ступень 3 закрывается первым недельным прогоном, на котором ветка периметра фактически исполнила `MERGE`, после выкладки `SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY`. Жёсткий срок `2026-09-29`, до него шесть прогонов |
-| `SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY` | READY | Деплой `cf-facts` с патчем формы ф3; ревью архитектора пройдено — обвязка (`run_started_at` через `promote_to_core`/`promote_perimeter_to_core`) шире заявленного и в объём ЭТОГО деплоя не входит | класс B, мандат НЕ выдан; предусловия — `SALES-REFRESH-WINDOW-GUARD-FIX-PREP2` закрыта и повторное ревью архитектора пройдено (`ADR-185 §5/§9`) |
-| `SALES-REFRESH-WINDOW-GUARD-FIX-PREP2` | READY | Протяжка `run_started_at` через `main()` → `_run_promote`/`_run_perimeter_promote` → `promote_to_core`/`promote_perimeter_to_core`; разбор трёх видов `run_id` (`ADR-185 §9`) | класс A, мандат постоянный; приёмка из шести пунктов (`ADR-185 §6`) |
+| `SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY` | READY | Деплой `cf-facts` с патчем формы ф3; ревью архитектора пройдено — обвязка (`run_started_at` через `promote_to_core`/`promote_perimeter_to_core`) шире заявленного и в объём ЭТОГО деплоя не входит; обвязка закрыта `SALES-REFRESH-WINDOW-GUARD-FIX-PREP2` (DONE `2026-08-18`) | класс B, мандат НЕ выдан; предусловие `PREP2` закрыта ИСПОЛНЕНО; остаётся повторное ревью архитектора (`ADR-185 §5/§9`) |
 | `Q-94` | DEFER | Можно ли проверить язык ответа владельцу машинно | нет |
 | `Q-97` | OPEN | Единственный документ зоны паритета, не переписанный после валютной правки | один живой запрос — мандат класса B не выдан |
 | `AUDIT-SNAPSHOT-FIX-EMPLOYEES` | READY | Снимок сотрудников несёт `snapshot_at` последней колонкой | подготовка — класс A; пересоздание таблицы — мандат не выдан |
@@ -2073,7 +2071,7 @@ discovery-сессии по `RETURNS-INGEST-TYPE-DISCOVERY`: `retailsalesreturn`
 | `Q-106` | OPEN | Хвост ответа владельцу обязан кончаться таблицей задач с фиксированными колонками (`NEW_CONVENTIONS`, `SALES-JULY-K2K3-ADJ`, 2026-08-08) | апрув владельца (proposed) |
 | `Q-107` | OPEN | Проверка готовности деплоя не спрашивает «чьи строки представляет источник» для операций удаления (`NEW_CONVENTIONS`, `SALES-REFRESH-WINDOW-ROLLBACK-ADJ`, 2026-08-11) | апрув владельца (proposed) |
 | `Q-109` | OPEN | Критерий дефект/норма обязан прогоняться по размеченному набору обеих категорий ДО вердикта, не после (`NEW_CONVENTIONS`, `SALES-REFRESH-WINDOW-DEFECT-ADJ`, 2026-08-12) | апрув владельца (proposed) |
-| `DQ-FRESHNESS-WIRE` | PARTIAL | Подготовка DONE — двенадцать функций свежести подключены к `CHECKS` (`7`→`19` пар); в проде не исполняются до выезда, шесть таблиц ядра наблюдателя пока не имеют; `DQ-FRESHNESS-WIRE-GUARD-FIX` (защита шести `*_business`) DONE и архивирована, ревью готовности пройдено (`ADR-185 §1`) | остаток — `DQ-FRESHNESS-WIRE, деплой`, класс B, **мандат ВЫДАН поимённо `2026-08-17`**, гейтов не осталось; предусловие — слияние ветки `s/DQ-FRESHNESS-WIRE-GUARD-FIX` в `main` этим же проходом |
+| `DQ-FRESHNESS-WIRE` | PARTIAL | Подготовка DONE — двенадцать функций свежести подключены к `CHECKS` (`7`→`19` пар); в проде не исполняются до выезда, шесть таблиц ядра наблюдателя пока не имеют; `DQ-FRESHNESS-WIRE-GUARD-FIX` (защита шести `*_business`) DONE и архивирована, ревью готовности пройдено (`ADR-185 §1`); первая попытка деплоя (`2026-08-18`) упала на `NameError` (порядок определений `CHECKS` в `main.py:223`), прод не задет | остаток — `DQ-FRESHNESS-WIRE, деплой`, класс B; мандат на текущее содержание патча ИСЧЕРПАН неуспешной попыткой; гейт — правка класса A (перестановка `CHECKS` после определений функций) + повторное архитекторское ревью, вопрос нового мандата класса B решает архитектор |
 | `MARTS-BUILD-STAMP-PREP` | PARTIAL | Три готовых текста SQL собраны и прошли `bq --dry_run`; потребители `customer_invoices_ar`/`expenses` подтверждены безопасными грепом, потребитель `weight_flow` закрыт текстом в `reference/handover_limitations.md` (не строкой реестра, `ADR-156 §2/§5`) | остаток — класс B применение на трёх объектах, пакетный мандат запрещён (`ADR-115 §5`), мандат НЕ выдан |
 | `PARITY-CLIENT-JULY-RECHECK` | PARTIAL | Четыре величины июля от клиента: менеджер закрыт мандатом, Топ-20 закрыт фактом (клиент смотрел страницу до деплоя), возвраты разложены живым оракулом — найден непогруженный документ UMAI WB `1 481,13` | занимает место снятой строки `4` списка закрытия; остаток (i) правило-мост возвратов ЗАКРЫТ (`RETURNS-BRIDGE-RULE-ADJ`, DONE, `ADR-182`); остаток (ii) настройки графика Топ-20 — владелец (интерфейс Looker Studio) |
 | `Q-110` | OPEN | При расхождении числа на клиентской странице с эталоном первым шагом проверяется снимок таблицы на дату, когда клиент смотрел (`NEW_CONVENTIONS`, `PARITY-CLIENT-JULY-RECHECK`, 2026-08-13) | апрув владельца (proposed) |
@@ -2084,6 +2082,9 @@ discovery-сессии по `RETURNS-INGEST-TYPE-DISCOVERY`: `retailsalesreturn`
 | `Q-115` | OPEN | Проверка, отвечающая на вопрос о ПРОГОНЕ, обязана опираться на признак прогона, а не на признак данных (`NEW_CONVENTIONS`, `SALES-REFRESH-WINDOW-GUARD-FORM-ADJ`, 2026-08-17) | апрув владельца (proposed) |
 | `Q-116` | OPEN | Проверка, объявленная неблокирующей, обязана удовлетворять двум условиям сразу: возврат «прошло» на всех путях И перехват исключений внутри себя (`NEW_CONVENTIONS`, `DQ-FRESHNESS-WIRE-DEPLOY-REVIEW`, 2026-08-17) | апрув владельца (proposed) |
 | `Q-117` | OPEN | Назначая форму правки, архитектор объявляет полный набор файлов на запись; объём подготовки проверяется на достижимость формы, не на затронутость одного файла (`NEW_CONVENTIONS`, `GUARD-FIXES-REVIEW`, 2026-08-17) | апрув владельца (proposed) |
+| `Q-118` | OPEN | Ревью Python-патчей CF, построенное на текстовом разборе без попытки импорта, структурно не ловит ошибки ПОРЯДКА определений (`DQ-FRESHNESS-WIRE-DEPLOY`, 2026-08-18) | решает архитектор — стоит ли формализовать факт-проверку исполнением как обязательный шаг ревью CF-патчей (`05_CONVENTIONS §Процедура деплоя`) |
+| `Q-119` | OPEN | Ревью Python-патча CF обязано включать попытку реального импорта модуля, не только текстовый/grep-разбор (`NEW_CONVENTIONS`, `DQ-FRESHNESS-WIRE-DEPLOY`, 2026-08-18) | апрув владельца (proposed) |
+| `Q-120` | OPEN | Две сессии одного дня независимо взяли один и тот же «следующий свободный» `Q`-номер (`Q-117`) для собственных `proposed`/открытых пунктов — `_ASSEMBLER.md` не несёт правила нумерации `Q`-реестра (в отличие от явного §5 для ADR) (сборка буфера, 2026-08-18) | решение архитектора/владельца: формализовать нумерацию `Q`-реестра в `_ASSEMBLER.md` (аналогично §5) либо оставить решение сборщика разовым |
 
 ---
 
