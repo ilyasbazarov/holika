@@ -1,0 +1,24 @@
+=== START 2026-08-17T09:14:07Z ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+токен получен, длина: 40
+
+--- GET entity/salesreturn, июль-2026, agent=UMAI WB (Договор КР) ---
+
+HTTP_CODE=200
+размер ответа:      739 байт
+строк в ответе: 0 | meta.size: 0
+
+--- контроль: тот же фильтр по retailsalesreturn (K4 — второй известный тип) ---
+
+HTTP_CODE=200
+размер ответа:      751 байт
+строк в ответе: 0 | meta.size: 0
+
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+=== END 2026-08-17T09:14:11Z ===
