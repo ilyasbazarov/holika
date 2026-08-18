@@ -1,0 +1,125 @@
+{
+  "creationTime": "1780657825648",
+  "etag": "ZFS9LG88EpaBdK1mNs9QGQ==",
+  "id": "msklad-bi-prod:marts.expenses",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1787043487082",
+  "location": "asia-east1",
+  "numActiveLogicalBytes": "1139769",
+  "numActivePhysicalBytes": "402583",
+  "numBytes": "1139769",
+  "numCurrentPhysicalBytes": "48819",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "3302",
+  "numTimeTravelPhysicalBytes": "353764",
+  "numTotalLogicalBytes": "1139769",
+  "numTotalPhysicalBytes": "402583",
+  "schema": {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "moment",
+        "type": "DATE"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "month_start",
+        "type": "DATE"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "week_start",
+        "type": "DATE"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "year_num",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "year_month",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "payment_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "expense_item_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "expense_item_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "agent_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "agent_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "project_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "project_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "sales_channel_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "sales_channel_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "payment_count",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "total_sum_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "total_sum_usd",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "_marts_built_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "_source_max_loaded_at",
+        "type": "TIMESTAMP"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/datasets/marts/tables/expenses",
+  "tableReference": {
+    "datasetId": "marts",
+    "projectId": "msklad-bi-prod",
+    "tableId": "expenses"
+  },
+  "type": "TABLE"
+}

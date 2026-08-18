@@ -1,0 +1,33 @@
+=== date -u (start) ===
+Tue Aug 18 08:55:02 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq show --transfer_config (JSON, params ЦЕЛИКОМ) ===
+rc=0
+=== состав live params (ВСЕ поля, урок MARTS-STAMP-CUSTINVAR) ===
+ключи params: ['destination_table_name_template', 'partitioning_field', 'query', 'write_disposition']
+destination_table_name_template = 'expenses'
+partitioning_field = ''
+write_disposition = 'WRITE_TRUNCATE'
+=== длины файлов (байт) ===
+    3182 reference/_scratch_MARTS-STAMP-EXPENSES_2026-08-18/live_query_extracted_2026-08-18.sql
+    3182 reference/sql/sq_marts_expenses.sql
+    6364 total
+=== diff (живой снимок vs снимок репо) ===
+diff rc=0
+=== date -u (end) ===
+Tue Aug 18 08:55:06 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

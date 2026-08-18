@@ -1,0 +1,35 @@
+=== date -u (start) ===
+Tue Aug 18 08:57:48 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq show --transfer_config (после правки) ===
+rc=0
+ключи params: ['destination_table_name_template', 'partitioning_field', 'query', 'write_disposition']
+destination_table_name_template: 'expenses'
+partitioning_field: ''
+write_disposition: 'WRITE_TRUNCATE'
+=== длины (байт) ===
+    4111 reference/_scratch_MARTS-STAMP-EXPENSES_2026-08-18/postupdate_query_extracted_2026-08-18.sql
+    4111 reference/sql/sq_marts_expenses_stamped_2026-08-13.sql
+    8222 total
+=== diff (read-back vs подготовленный файл) ===
+diff rc=0
+=== sha256 сравнение ===
+8de7ebd348f3bc2fe0ae372bd047df4e520c5ec4b20ffbd3a48d435cbd3ad1f7  reference/_scratch_MARTS-STAMP-EXPENSES_2026-08-18/postupdate_query_extracted_2026-08-18.sql
+8de7ebd348f3bc2fe0ae372bd047df4e520c5ec4b20ffbd3a48d435cbd3ad1f7  reference/sql/sq_marts_expenses_stamped_2026-08-13.sql
+=== date -u (end) ===
+Tue Aug 18 08:57:51 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
