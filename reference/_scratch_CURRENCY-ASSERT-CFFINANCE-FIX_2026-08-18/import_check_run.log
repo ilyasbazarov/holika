@@ -1,0 +1,15 @@
+=== python3 --version ===
+Python 3.9.6
+=== import_check.py run ===
+OK   импорт invoices.py
+OK   импорт main.py
+  имя parse_href: есть
+  имя _fetch_currency_map: есть
+  имя run_etl: есть
+  имя trigger_marts: есть
+  имя main: есть
+  parse_href(None) = None
+  parse_href({'meta':{'href':'https://x/y/uuid-1'}}) = uuid-1
+  parse_href({'meta': None}) = ИСКЛЮЧЕНИЕ AttributeError: 'NoneType' object has no attribute 'get'
+=== VERDICT ===
+ALL IMPORTS OK
