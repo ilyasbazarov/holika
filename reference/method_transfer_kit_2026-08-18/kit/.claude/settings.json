@@ -1,0 +1,18 @@
+{
+  "_comment": "ШАБЛОН. Заменить блоки <…> под инструменты нового домена. Принцип разреза: allow — read-only и локальный git; ask — всё не-идемпотентное и всё, что трогает живые объекты; deny — необратимое и переписывающее историю. Команда, отсутствующая во всех трёх списках, спрашивается по умолчанию — это норма, а не пробел (пример: git rm при сборке буфера).",
+  "permissions": {
+    "allow": [
+      "Read", "Grep", "Glob",
+      "Bash(git status:*)", "Bash(git diff:*)", "Bash(git log:*)", "Bash(git rev-parse:*)",
+      "Bash(git add:*)", "Bash(git commit:*)",
+      "Bash(date:*)", "Bash(cat:*)", "Bash(ls:*)"
+    ],
+    "ask": [
+      "Bash(git push:*)"
+    ],
+    "deny": [
+      "Bash(git push --force*)", "Bash(git reset --hard*)", "Bash(git rebase:*)",
+      "Bash(rm -rf:*)"
+    ]
+  }
+}
