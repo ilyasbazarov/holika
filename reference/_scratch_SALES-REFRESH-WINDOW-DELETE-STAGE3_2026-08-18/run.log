@@ -1,0 +1,29 @@
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+=== UTC anchor (start) ===
+2026-08-18T10:10:02.327624+00:00
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+--- шаг1 entity/demand: meta.size=2 rows_returned=2
+--- шаг1 entity/demand: поля первой строки: ['accountId', 'agent', 'applicable', 'attributes', 'contract', 'created', 'customerOrder', 'externalCode', 'files', 'group', 'id', 'invoicesOut', 'meta', 'moment', 'name', 'organization', 'organizationAccount', 'owner', 'payedSum', 'payments', 'positions', 'printed', 'project', 'published', 'rate', 'salesChannel', 'shared', 'shipmentAddress', 'shipmentAddressFull', 'state', 'store', 'sum', 'updated', 'vatEnabled']
+Всего документов entity/demand за 2026-05-12: 2
+Документов с agent_id=31d135bc-4df8-11f1-0a80-1c8a0053c5b4: 1
+  demand id=4ec09bec-4df8-11f1-0a80-1c8a0053cab5 name=04235 moment=2026-05-12 14:44:00.000
+--- шаг2 positions demand=4ec09bec-4df8-11f1-0a80-1c8a0053cab5: meta.size=2 rows_returned=2
+--- шаг2 positions demand=4ec09bec-4df8-11f1-0a80-1c8a0053cab5: поля первой строки: ['accountId', 'assortment', 'discount', 'id', 'meta', 'overhead', 'price', 'quantity', 'vat', 'vatEnabled']
+Сумма позиций найденных документов: 1980000.0 KGS
+Ожидаемая сумма остатка (ступень 2): 1980000.0 KGS
+Совпадение (допуск 0,01 KGS): True
+РЕЗУЛЬТАТ: документ по паре (2026-05-12, agent_id) в источнике НАЙДЕН.
+Гипотеза (b) подтверждена для этой пары: удаление было дефектом выгрузки/загрузки.
+=== UTC anchor (end) ===
+2026-08-18T10:10:07.942434+00:00
+=== caller identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+Всего живых вызовов API: 2
