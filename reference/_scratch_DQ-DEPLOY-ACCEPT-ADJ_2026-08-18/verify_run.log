@@ -1,0 +1,75 @@
+=== UTC-якорь (начало) ===
+Mon Aug 17 22:54:23 UTC 2026
+=== HEAD ===
+67b65e579d951dee6dea0deb06a80b6383ea4642
+
+=== 1. Позиция блока CHECKS и точки входа (номера строк, ADR-044) ===
+477:def check_freshness_invoices_business(bq):
+489:CHECKS = [
+509:]
+511:@functions_framework.http
+512:def main(request):
+
+=== 2. Состав файла cf-dq/ ===
+MANIFEST.md
+config.py
+helpers.py
+main.py
+patch_dq.py
+requirements.txt
+--- .gcloudignore, если есть ---
+ФАЙЛА .gcloudignore НЕТ
+--- patch_dq.py в индексе git? ---
+  reference/code/cf-dq/MANIFEST.md
+  reference/code/cf-dq/config.py
+  reference/code/cf-dq/helpers.py
+  reference/code/cf-dq/main.py
+  reference/code/cf-dq/patch_dq.py
+  reference/code/cf-dq/requirements.txt
+
+=== 3. Независимая проверка форвард-ссылок на уровне модуля (AST) ===
+проблемных форвард-ссылок на уровне модуля: 0
+
+=== 4. Состав CHECKS: имена пар и их количество (текстом, без импорта) ===
+19
+--- имена ---
+not_empty
+drift_check
+drift_zero_docs
+fk_integrity
+freshness
+margin_sanity
+currency_normalization
+freshness_purchases_technical
+freshness_purchases_business
+freshness_returns_technical
+freshness_returns_business
+freshness_inventory_technical
+freshness_inventory_business
+freshness_payments_technical
+freshness_payments_business
+freshness_commissionreportin_technical
+freshness_commissionreportin_business
+freshness_invoices_technical
+freshness_invoices_business
+
+=== 5. Все ли двенадцать проверок свежести несут try/except (ADR-184) ===
+функций check_freshness_*: 12
+нарушений: 0
+
+=== 6. Дифф main.py между состоянием ДО правки и текущим ===
+ reference/code/cf-dq/main.py | 44 ++++++++++++++++++++++----------------------
+ 1 file changed, 22 insertions(+), 22 deletions(-)
+--- сводка по типам строк (без содержимого) ---
+21
+21
+--- есть ли изменения ВНЕ блока CHECKS: строки диффа, не начинающиеся с пары кавычек/скобки блока ---
+cat: illegal option -- A
+usage: cat [-belnstuv] [file ...]
+
+=== 7. Все ли файлы, кроме main.py, не тронуты этой правкой ===
+ reference/code/cf-dq/main.py | 44 ++++++++++++++++++++++----------------------
+ 1 file changed, 22 insertions(+), 22 deletions(-)
+
+=== UTC-якорь (конец) ===
+Mon Aug 17 22:54:23 UTC 2026
