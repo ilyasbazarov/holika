@@ -1,0 +1,331 @@
+{
+  "call_count_first_run": 40,
+  "call_count_resume": 9,
+  "call_count_total": 49,
+  "input_rows": [
+    {
+      "transaction_date": "2026-06-03",
+      "agent_id": "b3667c34-3ca3-11f0-0a80-15ce0025d38d",
+      "transaction_id": "143035c08bea9f9bf479465da01dd254",
+      "product_id": "5985aaa8-e2da-11f0-0a80-0b1a00161827",
+      "sell_quantity": "60.0",
+      "revenue_kgs": "50760.0",
+      "loaded_at": "2026-06-10 13:02:14"
+    },
+    {
+      "transaction_date": "2026-06-03",
+      "agent_id": "b3667c34-3ca3-11f0-0a80-15ce0025d38d",
+      "transaction_id": "2dd7b9fda0f4e372442019fde4bdb1f3",
+      "product_id": "74c10471-8b01-11ef-0a80-15690019f23d",
+      "sell_quantity": "120.0",
+      "revenue_kgs": "77760.0",
+      "loaded_at": "2026-06-10 13:02:14"
+    },
+    {
+      "transaction_date": "2026-06-04",
+      "agent_id": "18a13a53-87c0-11ef-0a80-1568002f42aa",
+      "transaction_id": "df2d662ffe4189c916953d812391d381",
+      "product_id": "fc95d8fb-2e59-11ef-0a80-0b8700a9ad77",
+      "sell_quantity": "240.0",
+      "revenue_kgs": "1776.0",
+      "loaded_at": "2026-06-05 08:02:11"
+    },
+    {
+      "transaction_date": "2026-06-15",
+      "agent_id": "b3667c34-3ca3-11f0-0a80-15ce0025d38d",
+      "transaction_id": "7339a844877d1d393033bc3e5ab545cf",
+      "product_id": "10c5a5d4-857f-11f0-0a80-0bc5002ca4f9",
+      "sell_quantity": "200.0",
+      "revenue_kgs": "118800.0",
+      "loaded_at": "2026-06-15 05:02:21"
+    },
+    {
+      "transaction_date": "2026-07-02",
+      "agent_id": "2db2c3dd-5f17-11f1-0a80-1d6500046ebf",
+      "transaction_id": "b4fb95a49cf529aec2f8c243001aaaa5",
+      "product_id": "2be8aba8-87e4-11ef-0a80-11f10092c32c",
+      "sell_quantity": "3.0",
+      "revenue_kgs": "2538.0108",
+      "loaded_at": "2026-07-09 10:02:29"
+    },
+    {
+      "transaction_date": "2026-07-11",
+      "agent_id": "b3667c34-3ca3-11f0-0a80-15ce0025d38d",
+      "transaction_id": "117c9c069f920f1d87d550f755040ce2",
+      "product_id": "a974ba93-857a-11f0-0a80-0bc5002c3efe",
+      "sell_quantity": "50.0",
+      "revenue_kgs": "4950.0",
+      "loaded_at": "2026-07-15 05:02:14"
+    },
+    {
+      "transaction_date": "2026-07-13",
+      "agent_id": "4d4bb3c6-7396-11f1-0a80-1357002a9eb8",
+      "transaction_id": "41559c6b38b39dfcbffcfa726b131a8f",
+      "product_id": "194933b8-a652-11ef-0a80-119e0008e35a",
+      "sell_quantity": "5.0",
+      "revenue_kgs": "4000.0",
+      "loaded_at": "2026-07-15 04:02:02"
+    },
+    {
+      "transaction_date": "2026-07-13",
+      "agent_id": "4d4bb3c6-7396-11f1-0a80-1357002a9eb8",
+      "transaction_id": "5981baeb9fa0cbcf2da68ff6f355762f",
+      "product_id": "065803bd-8564-11f0-0a80-01f6002ae5fc",
+      "sell_quantity": "2.0",
+      "revenue_kgs": "3200.0",
+      "loaded_at": "2026-07-15 04:02:02"
+    },
+    {
+      "transaction_date": "2026-07-13",
+      "agent_id": "4d4bb3c6-7396-11f1-0a80-1357002a9eb8",
+      "transaction_id": "844460b779964f97e1de571086dfeeef",
+      "product_id": "fc7028da-2e59-11ef-0a80-0b8700a9ad4e",
+      "sell_quantity": "2.0",
+      "revenue_kgs": "1720.0",
+      "loaded_at": "2026-07-15 04:02:02"
+    },
+    {
+      "transaction_date": "2026-07-13",
+      "agent_id": "4d4bb3c6-7396-11f1-0a80-1357002a9eb8",
+      "transaction_id": "b52aba22dc70fed8a720cff790470ee9",
+      "product_id": "dd96f052-a651-11ef-0a80-07ad0008faed",
+      "sell_quantity": "2.0",
+      "revenue_kgs": "1560.0",
+      "loaded_at": "2026-07-15 04:02:02"
+    },
+    {
+      "transaction_date": "2026-07-13",
+      "agent_id": "4d4bb3c6-7396-11f1-0a80-1357002a9eb8",
+      "transaction_id": "c5ba231dc86abad9b5aa75d77452c6ae",
+      "product_id": "fc5cc590-2e59-11ef-0a80-0b8700a9ad3f",
+      "sell_quantity": "2.0",
+      "revenue_kgs": "1680.0",
+      "loaded_at": "2026-07-15 04:02:02"
+    },
+    {
+      "transaction_date": "2026-07-13",
+      "agent_id": "4d4bb3c6-7396-11f1-0a80-1357002a9eb8",
+      "transaction_id": "dd3e3bb9d3677ac6ee454a833bfd0284",
+      "product_id": "5a354124-b05c-11ef-0a80-07b600b86085",
+      "sell_quantity": "2.0",
+      "revenue_kgs": "3020.0",
+      "loaded_at": "2026-07-15 04:02:02"
+    },
+    {
+      "transaction_date": "2026-07-20",
+      "agent_id": "a08652a8-5e52-11f1-0a80-0cb7000604b7",
+      "transaction_id": "95a69af832733a3601c244b913e3fb93",
+      "product_id": "da7c9a06-6c8d-11f1-0a80-1be70017b13b",
+      "sell_quantity": "2.0",
+      "revenue_kgs": "1457.3001",
+      "loaded_at": "2026-07-27 08:02:31"
+    },
+    {
+      "transaction_date": "2026-07-21",
+      "agent_id": "356fb156-83ed-11f1-0a80-173600242e0d",
+      "transaction_id": "0b47b431aaef54236c0c24882a47e9e9",
+      "product_id": "c64007e3-2e59-11ef-0a80-0b8700a9415d",
+      "sell_quantity": "5.0",
+      "revenue_kgs": "3250.0",
+      "loaded_at": "2026-07-22 04:01:59"
+    },
+    {
+      "transaction_date": "2026-07-21",
+      "agent_id": "356fb156-83ed-11f1-0a80-173600242e0d",
+      "transaction_id": "20d93da5fba41b9110bfecce95608aaf",
+      "product_id": "c7a0b6c5-979d-11ef-0a80-0e390015ac1c",
+      "sell_quantity": "5.0",
+      "revenue_kgs": "3480.0",
+      "loaded_at": "2026-07-22 04:01:59"
+    },
+    {
+      "transaction_date": "2026-07-21",
+      "agent_id": "356fb156-83ed-11f1-0a80-173600242e0d",
+      "transaction_id": "65d08e698b0541471dc772f3d6e91e33",
+      "product_id": "a9db916a-8417-11f0-0a80-01f600123bdf",
+      "sell_quantity": "3.0",
+      "revenue_kgs": "2610.0",
+      "loaded_at": "2026-07-22 04:01:59"
+    },
+    {
+      "transaction_date": "2026-07-21",
+      "agent_id": "356fb156-83ed-11f1-0a80-173600242e0d",
+      "transaction_id": "a4e3b8435c8bada17b55c9cce8484ad6",
+      "product_id": "5991ddba-8865-11ef-0a80-1640004f7873",
+      "sell_quantity": "5.0",
+      "revenue_kgs": "3400.0",
+      "loaded_at": "2026-07-22 04:01:59"
+    },
+    {
+      "transaction_date": "2026-07-21",
+      "agent_id": "356fb156-83ed-11f1-0a80-173600242e0d",
+      "transaction_id": "ab1ae815d0cf68034d9053606b5c3087",
+      "product_id": "3f05bbf2-979e-11ef-0a80-0e390015bad3",
+      "sell_quantity": "5.0",
+      "revenue_kgs": "3345.0",
+      "loaded_at": "2026-07-22 04:01:59"
+    },
+    {
+      "transaction_date": "2026-07-21",
+      "agent_id": "356fb156-83ed-11f1-0a80-173600242e0d",
+      "transaction_id": "b0878364dc7ef46e2e1d971aa18be751",
+      "product_id": "c1bec27d-8580-11f0-0a80-1b8f002b1924",
+      "sell_quantity": "3.0",
+      "revenue_kgs": "3229.2",
+      "loaded_at": "2026-07-22 04:01:59"
+    },
+    {
+      "transaction_date": "2026-07-21",
+      "agent_id": "356fb156-83ed-11f1-0a80-173600242e0d",
+      "transaction_id": "b68dfe99b406e5709972520aa83b5899",
+      "product_id": "9a11276e-71cd-11ef-0a80-011d00136cf0",
+      "sell_quantity": "5.0",
+      "revenue_kgs": "4250.0",
+      "loaded_at": "2026-07-22 04:01:59"
+    },
+    {
+      "transaction_date": "2026-07-21",
+      "agent_id": "356fb156-83ed-11f1-0a80-173600242e0d",
+      "transaction_id": "c393fa3a9646c4cc699ac38c9fed8680",
+      "product_id": "fc7028da-2e59-11ef-0a80-0b8700a9ad4e",
+      "sell_quantity": "5.0",
+      "revenue_kgs": "3455.0",
+      "loaded_at": "2026-07-22 04:01:59"
+    },
+    {
+      "transaction_date": "2026-07-27",
+      "agent_id": "f4201bf6-6390-11f0-0a80-0fa2000d75eb",
+      "transaction_id": "86baf50a0682bc43d9536cf267010f58",
+      "product_id": "da7c9a06-6c8d-11f1-0a80-1be70017b13b",
+      "sell_quantity": "10.0",
+      "revenue_kgs": "7668.0",
+      "loaded_at": "2026-08-01 17:02:14"
+    },
+    {
+      "transaction_date": "2026-07-27",
+      "agent_id": "75d7c694-78f9-11f0-0a80-077d000b5e09",
+      "transaction_id": "99e65fddd5719ed7d20095f820e33c0d",
+      "product_id": "da7c9a06-6c8d-11f1-0a80-1be70017b13b",
+      "sell_quantity": "20.0",
+      "revenue_kgs": "14875.92",
+      "loaded_at": "2026-08-01 17:02:14"
+    },
+    {
+      "transaction_date": "2026-07-29",
+      "agent_id": "79dc242a-1baf-11f1-0a80-138a002eeb35",
+      "transaction_id": "f79a38d440ea111ccb43e8047fb23a59",
+      "product_id": "da7c9a06-6c8d-11f1-0a80-1be70017b13b",
+      "sell_quantity": "5.0",
+      "revenue_kgs": "3833.985",
+      "loaded_at": "2026-08-05 08:06:02"
+    },
+    {
+      "transaction_date": "2026-07-30",
+      "agent_id": "b3667c34-3ca3-11f0-0a80-15ce0025d38d",
+      "transaction_id": "4200c0b0d7184d80e1c98aba9d16660b",
+      "product_id": "d4484b6b-6008-11f1-0a80-05aa000e3ea1",
+      "sell_quantity": "50.0",
+      "revenue_kgs": "31050.0",
+      "loaded_at": "2026-08-01 12:02:13"
+    },
+    {
+      "transaction_date": "2026-07-30",
+      "agent_id": "b3667c34-3ca3-11f0-0a80-15ce0025d38d",
+      "transaction_id": "48a33a41ddc9d429a533c0f1f0f21fb1",
+      "product_id": "d4484b6b-6008-11f1-0a80-05aa000e3ea1",
+      "sell_quantity": "32.0",
+      "revenue_kgs": "19872.0",
+      "loaded_at": "2026-08-01 12:02:13"
+    },
+    {
+      "transaction_date": "2026-07-30",
+      "agent_id": "b3667c34-3ca3-11f0-0a80-15ce0025d38d",
+      "transaction_id": "961a459badd6e45493e4db351ca30d90",
+      "product_id": "d4484b6b-6008-11f1-0a80-05aa000e3ea1",
+      "sell_quantity": "80.0",
+      "revenue_kgs": "49680.0",
+      "loaded_at": "2026-08-01 12:02:13"
+    }
+  ],
+  "found": {},
+  "unresolved_final": [
+    "143035c08bea9f9bf479465da01dd254",
+    "2dd7b9fda0f4e372442019fde4bdb1f3",
+    "df2d662ffe4189c916953d812391d381",
+    "7339a844877d1d393033bc3e5ab545cf",
+    "b4fb95a49cf529aec2f8c243001aaaa5",
+    "117c9c069f920f1d87d550f755040ce2",
+    "41559c6b38b39dfcbffcfa726b131a8f",
+    "5981baeb9fa0cbcf2da68ff6f355762f",
+    "844460b779964f97e1de571086dfeeef",
+    "b52aba22dc70fed8a720cff790470ee9",
+    "c5ba231dc86abad9b5aa75d77452c6ae",
+    "dd3e3bb9d3677ac6ee454a833bfd0284",
+    "95a69af832733a3601c244b913e3fb93",
+    "0b47b431aaef54236c0c24882a47e9e9",
+    "20d93da5fba41b9110bfecce95608aaf",
+    "65d08e698b0541471dc772f3d6e91e33",
+    "a4e3b8435c8bada17b55c9cce8484ad6",
+    "ab1ae815d0cf68034d9053606b5c3087",
+    "b0878364dc7ef46e2e1d971aa18be751",
+    "b68dfe99b406e5709972520aa83b5899",
+    "c393fa3a9646c4cc699ac38c9fed8680",
+    "86baf50a0682bc43d9536cf267010f58",
+    "99e65fddd5719ed7d20095f820e33c0d",
+    "f79a38d440ea111ccb43e8047fb23a59",
+    "4200c0b0d7184d80e1c98aba9d16660b",
+    "48a33a41ddc9d429a533c0f1f0f21fb1",
+    "961a459badd6e45493e4db351ca30d90"
+  ],
+  "negative_branch_checked": {
+    "2026-06-03": {
+      "retaildemand": false,
+      "commissionreportin": false
+    },
+    "2026-06-04": {
+      "retaildemand": false,
+      "commissionreportin": false
+    },
+    "2026-06-15": {
+      "retaildemand": false,
+      "commissionreportin": false
+    },
+    "2026-07-02": {
+      "retaildemand": false,
+      "commissionreportin": false
+    },
+    "2026-07-11": {
+      "retaildemand": false,
+      "commissionreportin": false
+    },
+    "2026-07-13": {
+      "retaildemand": false,
+      "commissionreportin": false
+    },
+    "2026-07-20": {
+      "retaildemand": false,
+      "commissionreportin": false
+    },
+    "2026-07-21": {
+      "retaildemand": false,
+      "commissionreportin": false
+    },
+    "2026-07-27": {
+      "retaildemand": false,
+      "commissionreportin": false
+    },
+    "2026-07-29": {
+      "retaildemand": false,
+      "commissionreportin": false
+    },
+    "2026-07-30": {
+      "retaildemand": false,
+      "commissionreportin": false
+    }
+  },
+  "control_found": {
+    "786f54b87f1e81ecf04efead3ab59250": "4ec09bec-4df8-11f1-0a80-1c8a0053cab5",
+    "8e05d4b486a48d5b018df201217eb7f3": "4ec09bec-4df8-11f1-0a80-1c8a0053cab5"
+  },
+  "control_matched_count": 1
+}

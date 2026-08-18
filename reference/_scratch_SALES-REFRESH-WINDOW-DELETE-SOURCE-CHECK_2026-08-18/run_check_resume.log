@@ -1,0 +1,49 @@
+=== UTC anchor (start) ===
+Tue Aug 18 11:01:04 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+=== NEGATIVE BRANCH (resume) DATE 2026-07-20: agents=['a08652a8-5e52-11f1-0a80-0cb7000604b7'] ===
+CALL #1: GET entity/commissionreportin params={'filter': 'moment>=2026-07-20 00:00:00;moment<=2026-07-20 23:59:59', 'limit': 100}
+commissionreportin 2026-07-20: 2 docs, 0 match input agents
+=== NEGATIVE BRANCH (resume) DATE 2026-07-21: agents=['356fb156-83ed-11f1-0a80-173600242e0d'] ===
+CALL #2: GET entity/retaildemand params={'filter': 'moment>=2026-07-21 00:00:00;moment<=2026-07-21 23:59:59', 'limit': 100}
+retaildemand 2026-07-21: 0 docs, 0 match input agents
+CALL #3: GET entity/commissionreportin params={'filter': 'moment>=2026-07-21 00:00:00;moment<=2026-07-21 23:59:59', 'limit': 100}
+commissionreportin 2026-07-21: 0 docs, 0 match input agents
+=== NEGATIVE BRANCH (resume) DATE 2026-07-27: agents=['75d7c694-78f9-11f0-0a80-077d000b5e09', 'f4201bf6-6390-11f0-0a80-0fa2000d75eb'] ===
+CALL #4: GET entity/retaildemand params={'filter': 'moment>=2026-07-27 00:00:00;moment<=2026-07-27 23:59:59', 'limit': 100}
+retaildemand 2026-07-27: 0 docs, 0 match input agents
+CALL #5: GET entity/commissionreportin params={'filter': 'moment>=2026-07-27 00:00:00;moment<=2026-07-27 23:59:59', 'limit': 100}
+commissionreportin 2026-07-27: 1 docs, 0 match input agents
+=== NEGATIVE BRANCH (resume) DATE 2026-07-29: agents=['79dc242a-1baf-11f1-0a80-138a002eeb35'] ===
+CALL #6: GET entity/retaildemand params={'filter': 'moment>=2026-07-29 00:00:00;moment<=2026-07-29 23:59:59', 'limit': 100}
+retaildemand 2026-07-29: 0 docs, 0 match input agents
+CALL #7: GET entity/commissionreportin params={'filter': 'moment>=2026-07-29 00:00:00;moment<=2026-07-29 23:59:59', 'limit': 100}
+commissionreportin 2026-07-29: 0 docs, 0 match input agents
+=== NEGATIVE BRANCH (resume) DATE 2026-07-30: agents=['b3667c34-3ca3-11f0-0a80-15ce0025d38d'] ===
+CALL #8: GET entity/retaildemand params={'filter': 'moment>=2026-07-30 00:00:00;moment<=2026-07-30 23:59:59', 'limit': 100}
+retaildemand 2026-07-30: 0 docs, 0 match input agents
+CALL #9: GET entity/commissionreportin params={'filter': 'moment>=2026-07-30 00:00:00;moment<=2026-07-30 23:59:59', 'limit': 100}
+commissionreportin 2026-07-30: 0 docs, 0 match input agents
+FINAL: 0/27 found, 27 НЕ НАЙДЕН
+TOTAL API CALLS THIS RESUME: 9 / cap 20
+TOTAL API CALLS COMBINED (first run 40 + this 9): 49
+Result written to reference/_scratch_SALES-REFRESH-WINDOW-DELETE-SOURCE-CHECK_2026-08-18/result_final.json
+=== UTC anchor (end) ===
+Tue Aug 18 11:01:12 UTC 2026
+=== caller identity (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

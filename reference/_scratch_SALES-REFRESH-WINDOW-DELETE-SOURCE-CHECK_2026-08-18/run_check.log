@@ -1,0 +1,100 @@
+=== UTC anchor (start) ===
+Tue Aug 18 10:58:33 UTC 2026
+=== caller identity (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+/Users/ilyasbazarov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Input: 27 rows, 11 unique dates, 12 date+agent pairs
+=== POSITIVE CONTROL: date=2026-05-12 agent=31d135bc-4df8-11f1-0a80-1c8a0053c5b4 ===
+CALL #1: GET entity/demand params={'filter': 'moment>=2026-05-12 00:00:00;moment<=2026-05-12 23:59:59', 'limit': 100}
+Control: 2 demand docs on 2026-05-12, 1 match agent 31d135bc-4df8-11f1-0a80-1c8a0053c5b4
+CALL #2: GET entity/demand/4ec09bec-4df8-11f1-0a80-1c8a0053cab5/positions params=None
+Control found: {'786f54b87f1e81ecf04efead3ab59250': '4ec09bec-4df8-11f1-0a80-1c8a0053cab5', '8e05d4b486a48d5b018df201217eb7f3': '4ec09bec-4df8-11f1-0a80-1c8a0053cab5'}
+=== DATE 2026-06-03: agents=['b3667c34-3ca3-11f0-0a80-15ce0025d38d'] ===
+CALL #3: GET entity/demand params={'filter': 'moment>=2026-06-03 00:00:00;moment<=2026-06-03 23:59:59', 'limit': 100}
+11 demand docs on 2026-06-03, 1 match input agents
+CALL #4: GET entity/demand/713677f9-5f1b-11f1-0a80-16c30046f88a/positions params=None
+=== DATE 2026-06-04: agents=['18a13a53-87c0-11ef-0a80-1568002f42aa'] ===
+CALL #5: GET entity/demand params={'filter': 'moment>=2026-06-04 00:00:00;moment<=2026-06-04 23:59:59', 'limit': 100}
+11 demand docs on 2026-06-04, 1 match input agents
+CALL #6: GET entity/demand/df03bd21-5fd1-11f1-0a80-16c6003f30cb/positions params=None
+=== DATE 2026-06-15: agents=['b3667c34-3ca3-11f0-0a80-15ce0025d38d'] ===
+CALL #7: GET entity/demand params={'filter': 'moment>=2026-06-15 00:00:00;moment<=2026-06-15 23:59:59', 'limit': 100}
+10 demand docs on 2026-06-15, 1 match input agents
+CALL #8: GET entity/demand/05f075fd-6874-11f1-0a80-0c09025e9f48/positions params=None
+=== DATE 2026-07-02: agents=['2db2c3dd-5f17-11f1-0a80-1d6500046ebf'] ===
+CALL #9: GET entity/demand params={'filter': 'moment>=2026-07-02 00:00:00;moment<=2026-07-02 23:59:59', 'limit': 100}
+12 demand docs on 2026-07-02, 1 match input agents
+CALL #10: GET entity/demand/bae95933-75e6-11f1-0a80-114600ce8b9f/positions params=None
+=== DATE 2026-07-11: agents=['b3667c34-3ca3-11f0-0a80-15ce0025d38d'] ===
+CALL #11: GET entity/demand params={'filter': 'moment>=2026-07-11 00:00:00;moment<=2026-07-11 23:59:59', 'limit': 100}
+7 demand docs on 2026-07-11, 1 match input agents
+CALL #12: GET entity/demand/c72daa86-7ced-11f1-0a80-115900bf92ab/positions params=None
+=== DATE 2026-07-13: agents=['4d4bb3c6-7396-11f1-0a80-1357002a9eb8'] ===
+CALL #13: GET entity/demand params={'filter': 'moment>=2026-07-13 00:00:00;moment<=2026-07-13 23:59:59', 'limit': 100}
+10 demand docs on 2026-07-13, 1 match input agents
+CALL #14: GET entity/demand/26bd90d7-7e97-11f1-0a80-115901c6364d/positions params=None
+=== DATE 2026-07-20: agents=['a08652a8-5e52-11f1-0a80-0cb7000604b7'] ===
+CALL #15: GET entity/demand params={'filter': 'moment>=2026-07-20 00:00:00;moment<=2026-07-20 23:59:59', 'limit': 100}
+12 demand docs on 2026-07-20, 1 match input agents
+CALL #16: GET entity/demand/2ab78b59-8416-11f1-0a80-0f9a002aaf50/positions params=None
+=== DATE 2026-07-21: agents=['356fb156-83ed-11f1-0a80-173600242e0d'] ===
+CALL #17: GET entity/demand params={'filter': 'moment>=2026-07-21 00:00:00;moment<=2026-07-21 23:59:59', 'limit': 100}
+17 demand docs on 2026-07-21, 0 match input agents
+=== DATE 2026-07-27: agents=['75d7c694-78f9-11f0-0a80-077d000b5e09', 'f4201bf6-6390-11f0-0a80-0fa2000d75eb'] ===
+CALL #18: GET entity/demand params={'filter': 'moment>=2026-07-27 00:00:00;moment<=2026-07-27 23:59:59', 'limit': 100}
+16 demand docs on 2026-07-27, 2 match input agents
+CALL #19: GET entity/demand/25bf30d5-8982-11f1-0a80-0184013a7688/positions params=None
+CALL #20: GET entity/demand/37ba4d35-896a-11f1-0a80-0184012f4ebb/positions params=None
+=== DATE 2026-07-29: agents=['79dc242a-1baf-11f1-0a80-138a002eeb35'] ===
+CALL #21: GET entity/demand params={'filter': 'moment>=2026-07-29 00:00:00;moment<=2026-07-29 23:59:59', 'limit': 100}
+8 demand docs on 2026-07-29, 1 match input agents
+CALL #22: GET entity/demand/18ad3801-8b13-11f1-0a80-142b001cb22b/positions params=None
+=== DATE 2026-07-30: agents=['b3667c34-3ca3-11f0-0a80-15ce0025d38d'] ===
+CALL #23: GET entity/demand params={'filter': 'moment>=2026-07-30 00:00:00;moment<=2026-07-30 23:59:59', 'limit': 100}
+16 demand docs on 2026-07-30, 4 match input agents
+CALL #24: GET entity/demand/7940c2f3-8be3-11f1-0a80-143300262b56/positions params=None
+CALL #25: GET entity/demand/ac67b4ba-8be3-11f1-0a80-143300264646/positions params=None
+CALL #26: GET entity/demand/c9eba0a7-8c01-11f1-0a80-14330037d8da/positions params=None
+CALL #27: GET entity/demand/f0c33170-8c01-11f1-0a80-14330037ede0/positions params=None
+After demand branch: 0/27 found, 27 unresolved
+=== NEGATIVE BRANCH DATE 2026-06-03: agents=['b3667c34-3ca3-11f0-0a80-15ce0025d38d'] ===
+CALL #28: GET entity/retaildemand params={'filter': 'moment>=2026-06-03 00:00:00;moment<=2026-06-03 23:59:59', 'limit': 100}
+retaildemand 2026-06-03: 0 docs, 0 match input agents
+CALL #29: GET entity/commissionreportin params={'filter': 'moment>=2026-06-03 00:00:00;moment<=2026-06-03 23:59:59', 'limit': 100}
+commissionreportin 2026-06-03: 0 docs, 0 match input agents
+=== NEGATIVE BRANCH DATE 2026-06-04: agents=['18a13a53-87c0-11ef-0a80-1568002f42aa'] ===
+CALL #30: GET entity/retaildemand params={'filter': 'moment>=2026-06-04 00:00:00;moment<=2026-06-04 23:59:59', 'limit': 100}
+retaildemand 2026-06-04: 0 docs, 0 match input agents
+CALL #31: GET entity/commissionreportin params={'filter': 'moment>=2026-06-04 00:00:00;moment<=2026-06-04 23:59:59', 'limit': 100}
+commissionreportin 2026-06-04: 0 docs, 0 match input agents
+=== NEGATIVE BRANCH DATE 2026-06-15: agents=['b3667c34-3ca3-11f0-0a80-15ce0025d38d'] ===
+CALL #32: GET entity/retaildemand params={'filter': 'moment>=2026-06-15 00:00:00;moment<=2026-06-15 23:59:59', 'limit': 100}
+retaildemand 2026-06-15: 0 docs, 0 match input agents
+CALL #33: GET entity/commissionreportin params={'filter': 'moment>=2026-06-15 00:00:00;moment<=2026-06-15 23:59:59', 'limit': 100}
+commissionreportin 2026-06-15: 3 docs, 0 match input agents
+=== NEGATIVE BRANCH DATE 2026-07-02: agents=['2db2c3dd-5f17-11f1-0a80-1d6500046ebf'] ===
+CALL #34: GET entity/retaildemand params={'filter': 'moment>=2026-07-02 00:00:00;moment<=2026-07-02 23:59:59', 'limit': 100}
+retaildemand 2026-07-02: 0 docs, 0 match input agents
+CALL #35: GET entity/commissionreportin params={'filter': 'moment>=2026-07-02 00:00:00;moment<=2026-07-02 23:59:59', 'limit': 100}
+commissionreportin 2026-07-02: 0 docs, 0 match input agents
+=== NEGATIVE BRANCH DATE 2026-07-11: agents=['b3667c34-3ca3-11f0-0a80-15ce0025d38d'] ===
+CALL #36: GET entity/retaildemand params={'filter': 'moment>=2026-07-11 00:00:00;moment<=2026-07-11 23:59:59', 'limit': 100}
+retaildemand 2026-07-11: 0 docs, 0 match input agents
+CALL #37: GET entity/commissionreportin params={'filter': 'moment>=2026-07-11 00:00:00;moment<=2026-07-11 23:59:59', 'limit': 100}
+commissionreportin 2026-07-11: 0 docs, 0 match input agents
+=== NEGATIVE BRANCH DATE 2026-07-13: agents=['4d4bb3c6-7396-11f1-0a80-1357002a9eb8'] ===
+CALL #38: GET entity/retaildemand params={'filter': 'moment>=2026-07-13 00:00:00;moment<=2026-07-13 23:59:59', 'limit': 100}
+retaildemand 2026-07-13: 0 docs, 0 match input agents
+CALL #39: GET entity/commissionreportin params={'filter': 'moment>=2026-07-13 00:00:00;moment<=2026-07-13 23:59:59', 'limit': 100}
+commissionreportin 2026-07-13: 2 docs, 0 match input agents
+=== NEGATIVE BRANCH DATE 2026-07-20: agents=['a08652a8-5e52-11f1-0a80-0cb7000604b7'] ===
+CALL #40: GET entity/retaildemand params={'filter': 'moment>=2026-07-20 00:00:00;moment<=2026-07-20 23:59:59', 'limit': 100}
+retaildemand 2026-07-20: 0 docs, 0 match input agents
+STOP: call cap reached before commissionreportin list for 2026-07-20
