@@ -1,0 +1,31 @@
+=== date -u (start) ===
+Tue Aug 18 08:24:22 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq show --transfer_config (после правки) ===
+rc=0
+=== длины (байт) ===
+    3473 reference/_scratch_MARTS-STAMP-WEIGHTFLOW_2026-08-18/postupdate_query_extracted_2026-08-18.sql
+    3473 reference/sql/sq_marts_weight_flow_stamped_2026-08-13.sql
+    6946 total
+=== diff (read-back vs подготовленный файл) ===
+diff rc=0
+=== sha256 сравнение ===
+ba18dc56cb20af7881480c503ecfecf89de760e4e2caae99c0fa262355cc3a45  reference/_scratch_MARTS-STAMP-WEIGHTFLOW_2026-08-18/postupdate_query_extracted_2026-08-18.sql
+ba18dc56cb20af7881480c503ecfecf89de760e4e2caae99c0fa262355cc3a45  reference/sql/sq_marts_weight_flow_stamped_2026-08-13.sql
+=== date -u (end) ===
+Tue Aug 18 08:24:24 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

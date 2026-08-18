@@ -1,0 +1,38 @@
+=== date -u (start) ===
+Tue Aug 18 08:26:15 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq show (схема таблицы) ===
+rc=0
+колонки: ['flow_date', 'week_start', 'month_start', 'flow_direction', 'weight_kg', 'positions_total', 'positions_with_weight', 'weight_coverage_pct', '_marts_built_at', '_source_max_loaded_at']
+_marts_built_at в схеме: True
+_source_max_loaded_at в схеме: True
+=== bq query: непустота и значения двух колонок ===
+rc=0
+[
+  {
+    "built_at_nonnull": "559", 
+    "max_built_at": "2026-08-18 08:24:42", 
+    "max_source_loaded": "2026-08-18 08:01:45", 
+    "min_built_at": "2026-08-18 08:24:42", 
+    "min_source_loaded": "2026-08-18 08:01:45", 
+    "source_loaded_nonnull": "559", 
+    "total_rows": "559"
+  }
+]
+=== date -u (end) ===
+Tue Aug 18 08:26:21 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

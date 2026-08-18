@@ -1,0 +1,70 @@
+{
+  "creationTime": "1787041483662",
+  "etag": "I+hHWlh5Tgz+VUQFZ4LR7w==",
+  "id": "msklad-bi-prod:marts.weight_flow",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1787041483663",
+  "location": "asia-east1",
+  "numActiveLogicalBytes": "45715",
+  "numActivePhysicalBytes": "64495",
+  "numBytes": "45715",
+  "numCurrentPhysicalBytes": "8079",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "559",
+  "numTimeTravelPhysicalBytes": "56416",
+  "numTotalLogicalBytes": "45715",
+  "numTotalPhysicalBytes": "64495",
+  "schema": {
+    "fields": [
+      {
+        "name": "flow_date",
+        "type": "DATE"
+      },
+      {
+        "name": "week_start",
+        "type": "DATE"
+      },
+      {
+        "name": "month_start",
+        "type": "DATE"
+      },
+      {
+        "name": "flow_direction",
+        "type": "STRING"
+      },
+      {
+        "name": "weight_kg",
+        "type": "FLOAT"
+      },
+      {
+        "name": "positions_total",
+        "type": "INTEGER"
+      },
+      {
+        "name": "positions_with_weight",
+        "type": "INTEGER"
+      },
+      {
+        "name": "weight_coverage_pct",
+        "type": "FLOAT"
+      },
+      {
+        "name": "_marts_built_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "_source_max_loaded_at",
+        "type": "TIMESTAMP"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/datasets/marts/tables/weight_flow",
+  "tableReference": {
+    "datasetId": "marts",
+    "projectId": "msklad-bi-prod",
+    "tableId": "weight_flow"
+  },
+  "type": "TABLE"
+}

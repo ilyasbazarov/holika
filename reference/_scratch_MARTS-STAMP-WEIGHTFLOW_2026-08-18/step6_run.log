@@ -1,0 +1,26 @@
+=== date -u (start) ===
+Tue Aug 18 08:24:55 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+poll 1: state=RUNNING
+poll 2: state=RUNNING
+poll 3: state=RUNNING
+poll 4: state=RUNNING
+poll 5: state=SUCCEEDED
+=== финальное состояние: SUCCEEDED ===
+=== date -u (end) ===
+Tue Aug 18 08:26:02 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
