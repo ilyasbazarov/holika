@@ -1,0 +1,35 @@
+=== UTC anchor (start) ===
+Tue Aug 18 18:31:29 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== доисполнение хвоста: push сделан ранее, ревизия НЕ создавалась (step5_run.log) ===
+HEAD ветки: 1636de19fdcdde3665c1e86be07a642c0740a061
+Preparing function...
+............done.
+Updating function (may take a while)...
+[Build]...............................................................................................................................................................................................................................................................................................................................................................................................................................................done
+[Service]................................................................................................................warning
+Completed with warnings:
+  [INFO] A new revision will be deployed serving with 100% traffic.
+You can view your function in the Cloud Console here: https://console.cloud.google.com/functions/details/asia-east1/cf-finance?project=msklad-bi-prod
+
+  новая ревизия : cf-finance-00014-gub
+  state         : ACTIVE
+  updateTime    : 2026-08-18T18:32:45.564295005Z
+  generation    : 1787077910394011
+=== UTC anchor (end) ===
+Tue Aug 18 18:32:56 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

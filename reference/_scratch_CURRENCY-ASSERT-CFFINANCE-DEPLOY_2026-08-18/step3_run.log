@@ -1,0 +1,29 @@
+=== UTC anchor (start) ===
+Tue Aug 18 18:27:48 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== Базовое состояние core.fact_payments ДО выкладки (read-only) ===
+[
+  {
+    "max_loaded_at": "2026-08-17 21:14:33", 
+    "max_moment": "2026-08-17", 
+    "n_rows": "5175"
+  }
+]
+=== UTC anchor (end) ===
+Tue Aug 18 18:27:51 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

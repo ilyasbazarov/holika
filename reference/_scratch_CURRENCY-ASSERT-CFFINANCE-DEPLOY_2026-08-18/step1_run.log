@@ -1,0 +1,60 @@
+=== UTC anchor (start) ===
+Tue Aug 18 18:25:05 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== П2. Живой describe cf-finance (обслуживающая ревизия + флаги для деплоя) ===
+  обслуживающая ревизия : cf-finance-00013-jaq
+  state                 : ACTIVE
+  updateTime            : 2026-08-03T14:24:36.418899289Z
+  runtime / entryPoint  : python312 / main
+  service account       : etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  memory / timeout      : 512M / 1800
+  maxInstances / ingress: 16 / ALLOW_ALL
+  env vars              : {'LOG_EXECUTION_ID': 'true'}
+  архив                 : gs://gcf-v2-sources-420804682491-asia-east1/cf-finance/function-source.zip generation 1785767015791249
+
+=== П3a. Скачиваю АРХИВ обслуживающей ревизии (то, что реально работает в проде) ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-finance/function-source.zip#1785767015791249...
+/ [0 files][    0.0 B/ 10.1 KiB]                                                / [0 files][ 10.1 KiB/ 10.1 KiB]                                                -- [1 files][ 10.1 KiB/ 10.1 KiB]                                                
+Operation completed over 1 objects/10.1 KiB.                                     
+  архив развёрнут
+  состав архива:
+    invoices.py
+    main.py
+    requirements.txt
+  sha256 файлов архива:
+    dc1768d973c2898addf5ee92116e831272437e3a9140683c92eb09cd74701886  ./invoices.py
+    1afbaa3707182b54fc0c14600682d0220fe94a257f92093a862e55da27a2c6df  ./main.py
+    f986310a048c5c90c93e511ec3ef0eeacf71feb2ecf591d45b001097e6707164  ./requirements.txt
+
+=== П3b. Клонирую код-репо и ищу коммит, чей cf-finance равен архиву ===
+  клон готов
+  голова master: 9d9ecbadc2166d66670996de34c8703d053bad26 — 2026-08-18 10:53:09 +0600 Merge remote-tracking branch 'origin/deploy/cf-dq-2026-08-18-freshness-wire-v2'
+  последние коммиты, трогавшие cf-finance:
+    e6b9627 2026-08-03 19:47:57 +0600 cf-finance: add invoices mode dispatcher and invoices.py loader (task INVOICES-LOADER-DEPLOY)
+    81812f4 2026-08-03 02:54:43 +0600 Seed cf-facts from deployed revision cf-facts-00007-xir (generation 1782334223015697); seed cf-dq from deployed revision cf-dq-00007-hot (generation 1781780276907576); move cf-finance under cf-finance/ for per-CF layout consistency
+
+  сверка sha256 cf-finance по коммитам против архива:
+    e6b9627 main.py СОВПАДАЕТ
+    e6b9627 invoices.py СОВПАДАЕТ
+    e6b9627 requirements.txt СОВПАДАЕТ
+    81812f4 main.py расходится
+    81812f4 invoices.py расходится
+    81812f4 requirements.txt расходится
+=== UTC anchor (end) ===
+Tue Aug 18 18:25:36 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

@@ -1,0 +1,58 @@
+=== UTC anchor (start) ===
+Tue Aug 18 18:48:56 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== 1. Хвост журнала ПОСЛЕ MERGE — чем кончился прогон ===
+2026-08-18T18:47:34.083414Z	WARNING: cashout edba8045-7755-11ef-0a80-14480013fd29: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:34.083754Z	WARNING: cashout f1b34665-7751-11ef-0a80-11450013572d: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:34.083931Z	WARNING: cashout f493c3b1-7754-11ef-0a80-10690013c5ab: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:34.084468Z	WARNING: 34 платежей с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)
+2026-08-18T18:47:34.084527Z	Loading 6750 records to STG...
+2026-08-18T18:47:36.615801Z	Running MERGE...
+2026-08-18T18:47:37.733019Z	Cleaning up excluded system expenses (ghosts removal)...
+2026-08-18T18:47:38.799241Z	Triggering scheduled query via API...
+2026-08-18T18:47:39.249885Z	WARNING: trigger_marts() failed (non-fatal, marts have their own schedule): 403 User does not have sufficient permissions to update projects/420804682491/locations/asia-east1/transferConfigs/6a22a243-0000-20fd-a458-883d24f4cad4. Please follow https://cloud.google.com/bigquery/docs/working-with-transfers#required_roles_2 to get required permissions.
+
+=== 2. Схема core.fact_payments ===
+    payment_id STRING
+    payment_name STRING
+    payment_type STRING
+    moment DATE
+    expense_item_id STRING
+    expense_item_name STRING
+    agent_id STRING
+    agent_name STRING
+    project_id STRING
+    project_name STRING
+    sales_channel_id STRING
+    sales_channel_name STRING
+    payment_purpose STRING
+    sum_kgs FLOAT
+    _loaded_at TIMESTAMP
+
+=== 3. Двадцать два помеченных платежа из журнала: что они такое в ядре ===
+[
+  {
+    "max_moment": "2024-09-17", 
+    "min_moment": "2024-06-18", 
+    "n_rows": "21", 
+    "sum_kgs_total": "378517.09"
+  }
+]
+=== UTC anchor (end) ===
+Tue Aug 18 18:49:02 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

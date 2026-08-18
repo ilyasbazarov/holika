@@ -1,0 +1,48 @@
+=== UTC anchor (start) ===
+Tue Aug 18 18:33:19 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== Приёмка 1. Read-back: скачиваю АРХИВ новой ревизии по generation ===
+  обслуживающая ревизия: cf-finance-00014-gub, generation: 1787077910394011
+  состав архива:
+    ./invoices.py
+    ./main.py
+    ./requirements.txt
+
+  побайтовая сверка архив ↔ ветка деплоя:
+    main.py СОВПАДАЕТ  d87db5ed08ac9a6942c343cabef47dd1435ba05ad761b4550047250342fbb6fc
+    invoices.py СОВПАДАЕТ  dc1768d973c2898addf5ee92116e831272437e3a9140683c92eb09cd74701886
+    requirements.txt СОВПАДАЕТ  f986310a048c5c90c93e511ec3ef0eeacf71feb2ecf591d45b001097e6707164
+  ALL_MATCH=1
+
+  мусор в архиве (.bak/__pycache__/.pyc) — ожидание: ничего:
+
+=== Приёмка 4. Детекция присутствует в ВЫЛОЖЕННОМ коде (греп по архиву, с печатью строк) ===
+19:    """Build {uuid: isoCode} map for all currencies (INGEST-CURRENCY-ASSERT Шаг 3).
+28:        resp = requests.get(url, headers=headers, timeout=90)   # 02_ERP_CONTRACTS §поведение API
+30:        resp.raise_for_status()
+57:    # INGEST-CURRENCY-ASSERT Шаг 3: карта валют для детекции ниже. Диагностика не имеет права
+64:              f"детекция INGEST-CURRENCY-ASSERT в этом прогоне НЕ выполнялась")
+83:                # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS
+120:        print("WARNING: детекция INGEST-CURRENCY-ASSERT в этом прогоне НЕ выполнялась "
+124:              f"(currency_mismatch, INGEST-CURRENCY-ASSERT)")
+
+=== Приёмка 2. Трафик ===
+{'latestRevision': True, 'percent': 100, 'revisionName': 'cf-finance-00014-gub'}
+=== UTC anchor (end) ===
+Tue Aug 18 18:33:30 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
