@@ -1,0 +1,33 @@
+Tue Aug 18 16:35:51 UTC 2026
+== 1. объём против базы деплоя (a4422d6 = INVOICES-LOADER-BUILD, содержимое код-репо) ==
+ reference/code/cf-finance/MANIFEST.md | 35 +++++++++++++++++++++++
+ reference/code/cf-finance/main.py     | 52 ++++++++++++++++++++++++++++++++++-
+ 2 files changed, 86 insertions(+), 1 deletion(-)
+
+== 2. арифметика: строка расчёта суммы в диффе патча целиком ==
+55:+                # либо применён rate.value» — арифметика sum_kgs НЕ меняется, только лог.
+
+== 3. факт-проверка ИСПОЛНЕНИЕМ (скрипт ревью, без изменений) ==
+OK   импорт invoices.py
+OK   импорт main.py
+  имя parse_href: есть
+  имя _fetch_currency_map: есть
+  имя run_etl: есть
+  имя trigger_marts: есть
+  имя main: есть
+  parse_href(None) = None
+  parse_href({'meta':{'href':'https://x/y/uuid-1'}}) = uuid-1
+  parse_href({'meta': None}) = ИСКЛЮЧЕНИЕ AttributeError: 'NoneType' object has no attribute 'get'
+=== VERDICT ===
+ALL IMPORTS OK
+rc_import=0
+
+== 4. sha256 трёх файлов снапшота ==
+d87db5ed08ac9a6942c343cabef47dd1435ba05ad761b4550047250342fbb6fc  reference/code/cf-finance/main.py
+dc1768d973c2898addf5ee92116e831272437e3a9140683c92eb09cd74701886  reference/code/cf-finance/invoices.py
+f986310a048c5c90c93e511ec3ef0eeacf71feb2ecf591d45b001097e6707164  reference/code/cf-finance/requirements.txt
+
+== 5. существующий запрос run_etl (main.py:66 базы) НЕ ретрофитнут — ожидание: без timeout ==
+28:        resp = requests.get(url, headers=headers, timeout=90)   # 02_ERP_CONTRACTS §поведение API
+73:            resp = requests.get(url, headers=headers)
+Tue Aug 18 16:35:52 UTC 2026

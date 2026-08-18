@@ -1,0 +1,15 @@
+Tue Aug 18 16:36:35 UTC 2026
+--- СПРАВОЧНИК ЖИВ ---
+  run_etl упала: НЕТ
+  | WARNING: paymentout p3: currency=uuid-usd (iso=USD) без rate.value — класс ошибки ADR-101 §5
+  | WARNING: cashout p3: currency=uuid-usd (iso=USD) без rate.value — класс ошибки ADR-101 §5
+  | WARNING: 2 платежей с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)
+  | Loading 6 records to STG...
+--- СПРАВОЧНИК ОТКАЗАЛ ---
+  run_etl упала: НЕТ
+  | WARNING: карта валют недоступна (TimeoutError: connection timed out) — детекция INGEST-CURRENCY-ASSERT в этом прогоне НЕ выполнялась
+  | WARNING: детекция INGEST-CURRENCY-ASSERT в этом прогоне НЕ выполнялась (карта валют недоступна)
+  | Loading 6 records to STG...
+=== VERDICT ===
+rc=0
+Tue Aug 18 16:36:36 UTC 2026
