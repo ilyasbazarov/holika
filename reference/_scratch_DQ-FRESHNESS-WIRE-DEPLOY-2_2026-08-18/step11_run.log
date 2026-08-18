@@ -1,0 +1,32 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:05:26 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+--- П4: is-ancestor(прод-коммит, HEAD ветки деплоя) ---
+TRUE: c9b967ffcae01ceeae3b6fd0e6e2cba0549ed738 является предком HEAD ветки деплоя
+--- П7: факт-проверка исполнением, каталог ВЕТКИ ДЕПЛОЯ (не снапшот reference/code/) ---
+Python 3.14.6
+date -u (старт факт-проверки): 2026-08-17T23:05:26.763501+00:00
+интерпретатор: 3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]
+каталог проверки (ветка деплоя, код-репо): /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY-2/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY-2_2026-08-18/holika-prod/cf-dq
+ok   импорт main
+len(CHECKS)=19
+date -u (конец факт-проверки): 2026-08-17T23:05:26.784252+00:00
+import_check rc=0
+П7 пройден
+=== UTC anchor (end) ===
+Mon Aug 17 23:05:26 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

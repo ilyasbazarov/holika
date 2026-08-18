@@ -1,0 +1,37 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:02:58 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== П3 полная сверка: все четыре файла архива против прод-коммита ===
+main.py              archive=477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67 commit=477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67 MATCH
+config.py            archive=360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756 commit=360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756 MATCH
+helpers.py           archive=0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146 commit=0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146 MATCH
+requirements.txt     archive=587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516 commit=587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516 MATCH
+ALL_MATCH=1
+=== какие ветки содержат прод-коммит ===
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/deploy/cf-dq-2026-08-12-drift-and-freshness
+  remotes/origin/deploy/cf-dq-2026-08-18-freshness-wire
+  remotes/origin/master
+=== is-ancestor: прод-коммит -> origin/master ===
+TRUE: c9b967ffcae01ceeae3b6fd0e6e2cba0549ed738 является предком origin/master
+=== head master (для сравнения) ===
+9a08b5aa2522eb0340c5568e8763ff90255d3ec8 2026-08-13 02:11:27 +0600 Merge deploy/cf-dq-2026-08-12-drift-and-freshness: drift_check redesign + freshness checks (DQ-CFDQ-DEPLOY, ADR-153/ADR-155/ADR-173)
+=== есть ли коммиты между прод-коммитом и master, трогающие cf-dq/ ===
+=== UTC anchor (end) ===
+Mon Aug 17 23:03:00 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

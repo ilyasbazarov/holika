@@ -1,0 +1,422 @@
+diff --git a/cf-dq/main.py b/cf-dq/main.py
+index 5c49b2d..737bf60 100644
+--- a/cf-dq/main.py
++++ b/cf-dq/main.py
+@@ -212,29 +212,26 @@ def check_currency_normalization(bq):
+     """) or 0.0
+     return float(avg_rev) < DQ_CURRENCY_MAX_AVG_REV, f"avg_revenue_kgs={float(avg_rev):.2f}"
+ 
+-CHECKS = [
+-    ("not_empty",              check_not_empty),
+-    ("drift_check",            check_drift),
+-    ("drift_zero_docs",        check_drift_zero_docs),
+-    ("fk_integrity",           check_fk_integrity),
+-    ("freshness",              check_freshness),
+-    ("margin_sanity",          check_margin_sanity),
+-    ("currency_normalization", check_currency_normalization),
+-]
+-
+ # ═══════════════════════════════════════════════════════════════════════════
+ # DQ-FRESHNESS-COVERAGE (подготовка, класс A, 2026-08-09 + остаток 2026-08-12)
+-# — проверки свежести для шести таблиц ядра без наблюдателя. НЕ включены в
+-# CHECKS выше — эта задача не подключает проверки к живому гейту (подключение/
+-# деплой — отдельная задача класса B, "DQ-FRESHNESS-COVERAGE, деплой", мандат
+-# не выдан). Полное обоснование, вывод порогов и dry_run-логи —
+-# reference/dq_freshness_coverage_2026-08-09.md (четыре таблицы) +
+-# reference/dq_cfdq_prep_2026-08-12.md (остаток: fact_payments,
+-# fact_commissionreportin, ADR-155).
++# — проверки свежести для шести таблиц ядра без наблюдателя. ПОДКЛЮЧЕНЫ к
++# CHECKS выше задачей DQ-FRESHNESS-WIRE (класс A, 2026-08-13, 07_GAPS.md
++# строка DQ-FRESHNESS-WIRE) в НАБЛЮДАЮЩЕЙ форме: все шесть технических (A)
++# структурно не могут вернуть False (try/except, всегда passed=True, вердикт
++# lag=X/threshold=Y/VERDICT=OK|EXCEEDED печатается в detail) — по образцу
++# check_drift_zero_docs выше (ADR-153, ревью ADR-173). Основание — DQ Gate
++# есть единый выключатель всего конвейера, блокирующее подключение шести
++# новых условий перед передачей клиенту повторило бы класс отказа, который
++# чинила переделка метрики дрейфа. Деплой — отдельная задача класса B
++# (DQ-FRESHNESS-WIRE-DEPLOY, мандат не выдан). Полное обоснование, вывод
++# порогов и dry_run-логи — reference/dq_freshness_coverage_2026-08-09.md
++# (четыре таблицы) + reference/dq_cfdq_prep_2026-08-12.md (остаток:
++# fact_payments, fact_commissionreportin, ADR-155) +
++# reference/dq_freshness_wire_2026-08-13.md (подключение к CHECKS).
+ #
+ # Форма (A)/(B) — reference/invoices_loader_design_2026-08-02.md §9.2:
+-#   (A) техническая свежесть — блокирующая ПО ФОРМЕ (passed=False возможен),
+-#       но нигде не подключена; порог = 2 × период каденции.
++#   (A) техническая свежесть — наблюдающая (passed всегда True, VERDICT в
++#       detail), порог = 2 × период каденции.
+ #   (B) бизнес-свежесть — диагностика, ВСЕГДА passed=True, порога нет
+ #       (осознанный отказ — нет эмпирики пауз между документами).
+ #
+@@ -249,77 +246,111 @@ CHECKS = [
+ # ─── core.fact_purchases — часовая каденция (step_purchases, NON-BLOCKING) ───
+ 
+ def check_freshness_purchases_technical(bq):
+-    row = run_row(bq, f"""
+-        SELECT
+-            TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
+-            COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
+-            COUNT(*) AS n_rows
+-        FROM `{CORE_PURCHASES}`
+-    """)
+-    if not row or row.get("load_lag_hours") is None:
+-        return False, "load_lag_hours=NULL (таблица пустая)"
+-    lag = row["load_lag_hours"]
+-    return (lag <= DQ_FRESHNESS_PURCHASES_MAX_HOURS,
+-            f"load_lag_hours={lag}, distinct_load_stamps={row['distinct_load_stamps']}, n_rows={row['n_rows']}")
++    # DQ-FRESHNESS-WIRE: подключена в НАБЛЮДАЮЩЕЙ форме (07_GAPS.md строка
++    # DQ-FRESHNESS-WIRE) — структурно не может вернуть False, по образцу
++    # check_drift_zero_docs выше (ADR-153, ревью ADR-173).
++    try:
++        row = run_row(bq, f"""
++            SELECT
++                TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
++                COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
++                COUNT(*) AS n_rows
++            FROM `{CORE_PURCHASES}`
++        """)
++        if not row or row.get("load_lag_hours") is None:
++            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_PURCHASES_MAX_HOURS}, "
++                           f"VERDICT=UNKNOWN (notify, не блокирует)")
++        lag = row["load_lag_hours"]
++        verdict = "OK" if lag <= DQ_FRESHNESS_PURCHASES_MAX_HOURS else "EXCEEDED"
++        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_PURCHASES_MAX_HOURS}, VERDICT={verdict}, "
++                       f"distinct_load_stamps={row['distinct_load_stamps']}, n_rows={row['n_rows']} "
++                       f"(notify, не блокирует)")
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ def check_freshness_purchases_business(bq):
+-    row = run_row(bq, f"""
+-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(order_date), DAY) AS business_lag_days
+-        FROM `{CORE_PURCHASES}`
+-    """)
+-    if not row or row.get("business_lag_days") is None:
+-        return True, "business_lag_days=NULL (таблица пустая)"
+-    return True, f"business_lag_days={row['business_lag_days']}"
++    try:
++        row = run_row(bq, f"""
++            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(order_date), DAY) AS business_lag_days
++            FROM `{CORE_PURCHASES}`
++        """)
++        if not row or row.get("business_lag_days") is None:
++            return True, "business_lag_days=NULL (таблица пустая)"
++        return True, f"business_lag_days={row['business_lag_days']}"
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ # ─── core.fact_returns — недельная каденция (step_returns, ТОЛЬКО weekly) ───
+ 
+ def check_freshness_returns_technical(bq):
+-    row = run_row(bq, f"""
+-        SELECT
+-            TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
+-            COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
+-            COUNT(*) AS n_rows
+-        FROM `{CORE_RETURNS}`
+-    """)
+-    if not row or row.get("load_lag_hours") is None:
+-        return False, "load_lag_hours=NULL (таблица пустая)"
+-    lag = row["load_lag_hours"]
+-    return (lag <= DQ_FRESHNESS_RETURNS_MAX_HOURS,
+-            f"load_lag_hours={lag}, distinct_load_stamps={row['distinct_load_stamps']}, n_rows={row['n_rows']}")
++    # DQ-FRESHNESS-WIRE: наблюдающая форма, см. комментарий у
++    # check_freshness_purchases_technical выше.
++    try:
++        row = run_row(bq, f"""
++            SELECT
++                TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
++                COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
++                COUNT(*) AS n_rows
++            FROM `{CORE_RETURNS}`
++        """)
++        if not row or row.get("load_lag_hours") is None:
++            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_RETURNS_MAX_HOURS}, "
++                           f"VERDICT=UNKNOWN (notify, не блокирует)")
++        lag = row["load_lag_hours"]
++        verdict = "OK" if lag <= DQ_FRESHNESS_RETURNS_MAX_HOURS else "EXCEEDED"
++        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_RETURNS_MAX_HOURS}, VERDICT={verdict}, "
++                       f"distinct_load_stamps={row['distinct_load_stamps']}, n_rows={row['n_rows']} "
++                       f"(notify, не блокирует)")
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ def check_freshness_returns_business(bq):
+-    row = run_row(bq, f"""
+-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(return_date), DAY) AS business_lag_days
+-        FROM `{CORE_RETURNS}`
+-    """)
+-    if not row or row.get("business_lag_days") is None:
+-        return True, "business_lag_days=NULL (таблица пустая)"
+-    return True, f"business_lag_days={row['business_lag_days']}"
++    try:
++        row = run_row(bq, f"""
++            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(return_date), DAY) AS business_lag_days
++            FROM `{CORE_RETURNS}`
++        """)
++        if not row or row.get("business_lag_days") is None:
++            return True, "business_lag_days=NULL (таблица пустая)"
++        return True, f"business_lag_days={row['business_lag_days']}"
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ # ─── core.fact_inventory — суточная каденция (cf-inventory-trigger) ───
+ 
+ def check_freshness_inventory_technical(bq):
+-    row = run_row(bq, f"""
+-        SELECT
+-            TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
+-            COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
+-            COUNT(*) AS n_rows
+-        FROM `{CORE_INVENTORY}`
+-    """)
+-    if not row or row.get("load_lag_hours") is None:
+-        return False, "load_lag_hours=NULL (таблица пустая)"
+-    lag = row["load_lag_hours"]
+-    return (lag <= DQ_FRESHNESS_INVENTORY_MAX_HOURS,
+-            f"load_lag_hours={lag}, distinct_load_stamps={row['distinct_load_stamps']}, n_rows={row['n_rows']}")
++    # DQ-FRESHNESS-WIRE: наблюдающая форма, см. комментарий у
++    # check_freshness_purchases_technical выше.
++    try:
++        row = run_row(bq, f"""
++            SELECT
++                TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
++                COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
++                COUNT(*) AS n_rows
++            FROM `{CORE_INVENTORY}`
++        """)
++        if not row or row.get("load_lag_hours") is None:
++            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_INVENTORY_MAX_HOURS}, "
++                           f"VERDICT=UNKNOWN (notify, не блокирует)")
++        lag = row["load_lag_hours"]
++        verdict = "OK" if lag <= DQ_FRESHNESS_INVENTORY_MAX_HOURS else "EXCEEDED"
++        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_INVENTORY_MAX_HOURS}, VERDICT={verdict}, "
++                       f"distinct_load_stamps={row['distinct_load_stamps']}, n_rows={row['n_rows']} "
++                       f"(notify, не блокирует)")
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ def check_freshness_inventory_business(bq):
+-    row = run_row(bq, f"""
+-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(date_snapshot), DAY) AS business_lag_days
+-        FROM `{CORE_INVENTORY}`
+-    """)
+-    if not row or row.get("business_lag_days") is None:
+-        return True, "business_lag_days=NULL (таблица пустая)"
+-    return True, f"business_lag_days={row['business_lag_days']}"
++    try:
++        row = run_row(bq, f"""
++            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(date_snapshot), DAY) AS business_lag_days
++            FROM `{CORE_INVENTORY}`
++        """)
++        if not row or row.get("business_lag_days") is None:
++            return True, "business_lag_days=NULL (таблица пустая)"
++        return True, f"business_lag_days={row['business_lag_days']}"
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ # ─── core.fact_payments — суточная каденция (finance-daily-update) ───
+ #
+@@ -334,28 +365,40 @@ def check_freshness_inventory_business(bq):
+ # фикс-форвардом в cf-finance, вне scope этой проверки.
+ 
+ def check_freshness_payments_technical(bq):
+-    row = run_row(bq, f"""
+-        SELECT
+-            TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
+-            COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
+-            COUNT(*) AS n_rows
+-        FROM `{CORE_PAYMENTS}`
+-    """)
+-    if not row or row.get("load_lag_hours") is None:
+-        return False, "load_lag_hours=NULL (таблица пустая)"
+-    lag = row["load_lag_hours"]
+-    return (lag <= DQ_FRESHNESS_PAYMENTS_MAX_HOURS,
+-            f"load_lag_hours={lag}, distinct_load_stamps={row['distinct_load_stamps']} "
+-            f"(построчный стамп, не стамп прогона), n_rows={row['n_rows']}")
++    # DQ-FRESHNESS-WIRE: наблюдающая форма, см. комментарий у
++    # check_freshness_purchases_technical выше. Построчный стамп _loaded_at
++    # остаётся снят с критического пути (ADR-155, комментарий выше).
++    try:
++        row = run_row(bq, f"""
++            SELECT
++                TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
++                COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
++                COUNT(*) AS n_rows
++            FROM `{CORE_PAYMENTS}`
++        """)
++        if not row or row.get("load_lag_hours") is None:
++            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_PAYMENTS_MAX_HOURS}, "
++                           f"VERDICT=UNKNOWN (notify, не блокирует)")
++        lag = row["load_lag_hours"]
++        verdict = "OK" if lag <= DQ_FRESHNESS_PAYMENTS_MAX_HOURS else "EXCEEDED"
++        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_PAYMENTS_MAX_HOURS}, VERDICT={verdict}, "
++                       f"distinct_load_stamps={row['distinct_load_stamps']} "
++                       f"(построчный стамп, не стамп прогона), n_rows={row['n_rows']} "
++                       f"(notify, не блокирует)")
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ def check_freshness_payments_business(bq):
+-    row = run_row(bq, f"""
+-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(moment), DAY) AS business_lag_days
+-        FROM `{CORE_PAYMENTS}`
+-    """)
+-    if not row or row.get("business_lag_days") is None:
+-        return True, "business_lag_days=NULL (таблица пустая)"
+-    return True, f"business_lag_days={row['business_lag_days']}"
++    try:
++        row = run_row(bq, f"""
++            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(moment), DAY) AS business_lag_days
++            FROM `{CORE_PAYMENTS}`
++        """)
++        if not row or row.get("business_lag_days") is None:
++            return True, "business_lag_days=NULL (таблица пустая)"
++        return True, f"business_lag_days={row['business_lag_days']}"
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ # ─── core.fact_commissionreportin — суточная каденция (loss-commission-daily-update) ───
+ #
+@@ -368,28 +411,40 @@ def check_freshness_payments_business(bq):
+ # прогонов.
+ 
+ def check_freshness_commissionreportin_technical(bq):
+-    row = run_row(bq, f"""
+-        SELECT
+-            TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
+-            COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
+-            COUNT(*) AS n_rows
+-        FROM `{CORE_COMMISSIONREPORTIN}`
+-    """)
+-    if not row or row.get("load_lag_hours") is None:
+-        return False, "load_lag_hours=NULL (таблица пустая)"
+-    lag = row["load_lag_hours"]
+-    return (lag <= DQ_FRESHNESS_COMMISSIONREPORTIN_MAX_HOURS,
+-            f"load_lag_hours={lag}, distinct_load_stamps={row['distinct_load_stamps']} "
+-            f"(построчный стамп, не стамп прогона), n_rows={row['n_rows']}")
++    # DQ-FRESHNESS-WIRE: наблюдающая форма, см. комментарий у
++    # check_freshness_purchases_technical выше. Построчный стамп _loaded_at
++    # остаётся снят с критического пути (ADR-155, комментарий выше).
++    try:
++        row = run_row(bq, f"""
++            SELECT
++                TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
++                COUNT(DISTINCT _loaded_at) AS distinct_load_stamps,
++                COUNT(*) AS n_rows
++            FROM `{CORE_COMMISSIONREPORTIN}`
++        """)
++        if not row or row.get("load_lag_hours") is None:
++            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_COMMISSIONREPORTIN_MAX_HOURS}, "
++                           f"VERDICT=UNKNOWN (notify, не блокирует)")
++        lag = row["load_lag_hours"]
++        verdict = "OK" if lag <= DQ_FRESHNESS_COMMISSIONREPORTIN_MAX_HOURS else "EXCEEDED"
++        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_COMMISSIONREPORTIN_MAX_HOURS}, VERDICT={verdict}, "
++                       f"distinct_load_stamps={row['distinct_load_stamps']} "
++                       f"(построчный стамп, не стамп прогона), n_rows={row['n_rows']} "
++                       f"(notify, не блокирует)")
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ def check_freshness_commissionreportin_business(bq):
+-    row = run_row(bq, f"""
+-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), DATE(MAX(moment)), DAY) AS business_lag_days
+-        FROM `{CORE_COMMISSIONREPORTIN}`
+-    """)
+-    if not row or row.get("business_lag_days") is None:
+-        return True, "business_lag_days=NULL (таблица пустая)"
+-    return True, f"business_lag_days={row['business_lag_days']}"
++    try:
++        row = run_row(bq, f"""
++            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), DATE(MAX(moment)), DAY) AS business_lag_days
++            FROM `{CORE_COMMISSIONREPORTIN}`
++        """)
++        if not row or row.get("business_lag_days") is None:
++            return True, "business_lag_days=NULL (таблица пустая)"
++        return True, f"business_lag_days={row['business_lag_days']}"
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ # ─── core.fact_customer_invoices — перенесено БЕЗ ИЗМЕНЕНИЙ ───
+ # Источник: reference/invoices_loader_design_2026-08-02.md §9.2 (уже готовый
+@@ -397,27 +452,61 @@ def check_freshness_commissionreportin_business(bq):
+ # сверяет форму с образцом остальных пяти таблиц).
+ 
+ def check_freshness_invoices_technical(bq):
+-    row = run_row(bq, f"""
+-        SELECT
+-          TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
+-          COUNT(DISTINCT _loaded_at)                                 AS distinct_load_stamps,
+-          COUNT(*)                                                   AS n_rows
+-        FROM `{CORE_INVOICES}`
+-    """)
+-    if not row or row.get("load_lag_hours") is None:
+-        return False, "load_lag_hours=NULL (таблица пустая)"
+-    lag = row["load_lag_hours"]
+-    return (lag <= DQ_FRESHNESS_INVOICES_MAX_HOURS,
+-            f"load_lag_hours={lag}, distinct_load_stamps={row['distinct_load_stamps']}, n_rows={row['n_rows']}")
++    # DQ-FRESHNESS-WIRE: наблюдающая форма, см. комментарий у
++    # check_freshness_purchases_technical выше. Сама проверка (запрос/порог)
++    # не переизобретается — только форма подключения меняется.
++    try:
++        row = run_row(bq, f"""
++            SELECT
++              TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), MAX(_loaded_at), HOUR) AS load_lag_hours,
++              COUNT(DISTINCT _loaded_at)                                 AS distinct_load_stamps,
++              COUNT(*)                                                   AS n_rows
++            FROM `{CORE_INVOICES}`
++        """)
++        if not row or row.get("load_lag_hours") is None:
++            return True, (f"lag=NULL (таблица пустая), threshold={DQ_FRESHNESS_INVOICES_MAX_HOURS}, "
++                           f"VERDICT=UNKNOWN (notify, не блокирует)")
++        lag = row["load_lag_hours"]
++        verdict = "OK" if lag <= DQ_FRESHNESS_INVOICES_MAX_HOURS else "EXCEEDED"
++        return True, (f"lag={lag}, threshold={DQ_FRESHNESS_INVOICES_MAX_HOURS}, VERDICT={verdict}, "
++                       f"distinct_load_stamps={row['distinct_load_stamps']}, n_rows={row['n_rows']} "
++                       f"(notify, не блокирует)")
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
+ 
+ def check_freshness_invoices_business(bq):
+-    row = run_row(bq, f"""
+-        SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(moment), DAY) AS business_lag_days
+-        FROM `{CORE_INVOICES}`
+-    """)
+-    if not row or row.get("business_lag_days") is None:
+-        return True, "business_lag_days=NULL (таблица пустая)"
+-    return True, f"business_lag_days={row['business_lag_days']}"
++    try:
++        row = run_row(bq, f"""
++            SELECT DATE_DIFF(CURRENT_DATE('Asia/Bishkek'), MAX(moment), DAY) AS business_lag_days
++            FROM `{CORE_INVOICES}`
++        """)
++        if not row or row.get("business_lag_days") is None:
++            return True, "business_lag_days=NULL (таблица пустая)"
++        return True, f"business_lag_days={row['business_lag_days']}"
++    except Exception as e:
++        return True, f"EXCEPTION (notify-only, не блокирует): {e}"
++
++CHECKS = [
++    ("not_empty",              check_not_empty),
++    ("drift_check",            check_drift),
++    ("drift_zero_docs",        check_drift_zero_docs),
++    ("fk_integrity",           check_fk_integrity),
++    ("freshness",              check_freshness),
++    ("margin_sanity",          check_margin_sanity),
++    ("currency_normalization", check_currency_normalization),
++    ("freshness_purchases_technical",         check_freshness_purchases_technical),
++    ("freshness_purchases_business",          check_freshness_purchases_business),
++    ("freshness_returns_technical",           check_freshness_returns_technical),
++    ("freshness_returns_business",            check_freshness_returns_business),
++    ("freshness_inventory_technical",         check_freshness_inventory_technical),
++    ("freshness_inventory_business",          check_freshness_inventory_business),
++    ("freshness_payments_technical",          check_freshness_payments_technical),
++    ("freshness_payments_business",           check_freshness_payments_business),
++    ("freshness_commissionreportin_technical", check_freshness_commissionreportin_technical),
++    ("freshness_commissionreportin_business", check_freshness_commissionreportin_business),
++    ("freshness_invoices_technical",          check_freshness_invoices_technical),
++    ("freshness_invoices_business",           check_freshness_invoices_business),
++]
+ 
+ @functions_framework.http
+ def main(request):

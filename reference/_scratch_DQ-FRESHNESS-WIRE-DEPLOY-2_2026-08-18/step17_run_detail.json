@@ -1,0 +1,97 @@
+[
+  {
+    "check_name": "currency_normalization", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "drift_zero_docs", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "fk_integrity", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_commissionreportin_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_commissionreportin_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_inventory_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_inventory_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_invoices_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_invoices_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_payments_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_payments_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_purchases_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_purchases_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_returns_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_returns_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "margin_sanity", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "not_empty", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }
+]

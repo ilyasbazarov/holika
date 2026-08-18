@@ -1,0 +1,46 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:06:47 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+Already on 'deploy/cf-dq-2026-08-18-freshness-wire-v2'
+HEAD ветки деплоя: 16d93ecdaab11d840ae1bcf5dee92165f2871bdf
+=== push ветки в origin (владелец подтвердил явным «да» в чате) ===
+remote: 
+remote: Create a pull request for 'deploy/cf-dq-2026-08-18-freshness-wire-v2' on GitHub by visiting:        
+remote:      https://github.com/ilyasbazarov/holika-prod/pull/new/deploy/cf-dq-2026-08-18-freshness-wire-v2        
+remote: 
+To https://github.com/ilyasbazarov/holika-prod.git
+ * [new branch]      deploy/cf-dq-2026-08-18-freshness-wire-v2 -> deploy/cf-dq-2026-08-18-freshness-wire-v2
+=== gcloud functions deploy cf-dq, --source=/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY-2/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY-2_2026-08-18/holika-prod/cf-dq ===
+=== флаги сверены с живым describe ДО деплоя (step12_run.log), не угадываются ===
+Preparing function...
+.........done.
+Updating function (may take a while)...
+[Build]..............................................................................................................................................................................................................................................................................................................................................done
+[Service].....................................................................................................warning
+Completed with warnings:
+  [INFO] A new revision will be deployed serving with 100% traffic.
+You can view your function in the Cloud Console here: https://console.cloud.google.com/functions/details/asia-east1/cf-dq?project=msklad-bi-prod
+
+new revision: cf-dq-00011-tij
+generation: 1787008025864914
+state: ACTIVE
+update_time: 2026-08-17T23:07:53.428992883Z
+=== traffic status сразу после деплоя ===
+{'latestRevision': True, 'percent': 100, 'revisionName': 'cf-dq-00011-tij'}
+=== UTC anchor (end) ===
+Mon Aug 17 23:08:05 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

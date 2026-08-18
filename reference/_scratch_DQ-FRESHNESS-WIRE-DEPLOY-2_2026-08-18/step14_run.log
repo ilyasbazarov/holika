@@ -1,0 +1,49 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:08:25 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+--- Пункт приёмки 1: sha256 архива новой ревизии против ветки деплоя ---
+generation=1787008025864914
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1787008025864914 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY-2/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY-2_2026-08-18/new_revision_archive/function-source.zip
+  
+.........................
+--- содержимое архива новой ревизии ---
+unpacked/config.py
+unpacked/helpers.py
+unpacked/main.py
+unpacked/requirements.txt
+--- sha256 архива ---
+360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756  ./config.py
+0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146  ./helpers.py
+fa25793a7d94268d9e1fb664329544b013fc80ec01a4febdd99a70ae1e2fefa1  ./main.py
+587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516  ./requirements.txt
+--- sha256 ветки деплоя (cf-dq/) ---
+360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756  ./config.py
+0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146  ./helpers.py
+fa25793a7d94268d9e1fb664329544b013fc80ec01a4febdd99a70ae1e2fefa1  ./main.py
+bb1bc968b81573431c5f7c912539918d51d1ee18cd34b040a109ccf213eeb22a  ./patch_dq.py
+587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516  ./requirements.txt
+--- сопоставление (архив vs ветка) ---
+config.py            archive=360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756 branch=360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756 MATCH
+helpers.py           archive=0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146 branch=0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146 MATCH
+main.py              archive=fa25793a7d94268d9e1fb664329544b013fc80ec01a4febdd99a70ae1e2fefa1 branch=fa25793a7d94268d9e1fb664329544b013fc80ec01a4febdd99a70ae1e2fefa1 MATCH
+requirements.txt     archive=587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516 branch=587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516 MATCH
+ALL_MATCH=1
+--- Пункт приёмки 2: обслуживающая ревизия = новая, percent=100 ---
+{'latestRevision': True, 'percent': 100, 'revisionName': 'cf-dq-00011-tij'}
+=== UTC anchor (end) ===
+Mon Aug 17 23:08:40 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

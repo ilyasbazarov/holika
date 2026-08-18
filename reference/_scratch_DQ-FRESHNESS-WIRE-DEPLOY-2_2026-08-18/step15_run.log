@@ -1,0 +1,99 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:09:23 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+--- уникальные run_id за последние 6 часов, с числом проверок и временем в каждом ---
+[
+  {
+    "first_checked_at": "2026-08-17 23:05:16", 
+    "last_checked_at": "2026-08-17 23:05:16", 
+    "n_checks": "7", 
+    "run_id": "1787007602.5744402"
+  }, 
+  {
+    "first_checked_at": "2026-08-17 22:05:03", 
+    "last_checked_at": "2026-08-17 22:05:03", 
+    "n_checks": "7", 
+    "run_id": "1787004002.299829"
+  }, 
+  {
+    "first_checked_at": "2026-08-17 21:05:30", 
+    "last_checked_at": "2026-08-17 21:05:30", 
+    "n_checks": "7", 
+    "run_id": "1787000402.7748456"
+  }, 
+  {
+    "first_checked_at": "2026-08-17 20:04:43", 
+    "last_checked_at": "2026-08-17 20:04:43", 
+    "n_checks": "7", 
+    "run_id": "1786996802.3674245"
+  }, 
+  {
+    "first_checked_at": "2026-08-17 19:05:17", 
+    "last_checked_at": "2026-08-17 19:05:17", 
+    "n_checks": "7", 
+    "run_id": "1786993202.6456857"
+  }, 
+  {
+    "first_checked_at": "2026-08-17 18:05:02", 
+    "last_checked_at": "2026-08-17 18:05:02", 
+    "n_checks": "7", 
+    "run_id": "1786989602.6492474"
+  }
+]
+--- детали самого свежего прогона ---
+[
+  {
+    "check_name": "currency_normalization", 
+    "checked_at": "2026-08-17 23:05:16", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-17 23:05:16", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "drift_zero_docs", 
+    "checked_at": "2026-08-17 23:05:16", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "fk_integrity", 
+    "checked_at": "2026-08-17 23:05:16", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness", 
+    "checked_at": "2026-08-17 23:05:16", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "margin_sanity", 
+    "checked_at": "2026-08-17 23:05:16", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "not_empty", 
+    "checked_at": "2026-08-17 23:05:16", 
+    "passed": "true"
+  }
+]
+--- расписание Cloud Scheduler, задание hourly workflow (для cf-dq/workflow_hourly) ---
+msklad-pipeline-hourly        0 * * * *   ENABLED  2026-08-17T23:00:02.464253Z
+=== UTC anchor (end) ===
+Mon Aug 17 23:09:32 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

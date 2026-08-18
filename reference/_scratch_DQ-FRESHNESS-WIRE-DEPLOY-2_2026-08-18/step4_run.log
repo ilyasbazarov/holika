@@ -1,0 +1,84 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:01:32 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== full object metadata, both generations (all fields) ===
+--- generation 1786561996565446 (full json) ---
+{
+  "bucket": "gcf-v2-sources-420804682491-asia-east1",
+  "content_type": "application/zip",
+  "crc32c_hash": "U2zSYA==",
+  "creation_time": "2026-08-12T19:13:16+0000",
+  "etag": "CMbXsonmm5YDEAE=",
+  "generation": "1786561996565446",
+  "md5_hash": "Iylpy0RxbjGqcfcernHRzw==",
+  "metageneration": 1,
+  "name": "cf-dq/function-source.zip",
+  "noncurrent_time": "2026-08-17T19:03:35+0000",
+  "size": 9195,
+  "storage_class": "STANDARD",
+  "storage_class_update_time": "2026-08-12T19:13:16+0000",
+  "storage_url": "gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1786561996565446",
+  "update_time": "2026-08-12T19:13:16+0000"
+}
+--- generation 1786993415115340 (full json) ---
+{
+  "bucket": "gcf-v2-sources-420804682491-asia-east1",
+  "content_type": "application/zip",
+  "crc32c_hash": "zufBPg==",
+  "creation_time": "2026-08-17T19:03:35+0000",
+  "etag": "CMyk5Z2tqJYDEAE=",
+  "generation": "1786993415115340",
+  "md5_hash": "ix0yr53eg8/ZwdxpsSjB3A==",
+  "metageneration": 1,
+  "name": "cf-dq/function-source.zip",
+  "size": 9940,
+  "storage_class": "STANDARD",
+  "storage_class_update_time": "2026-08-17T19:03:35+0000",
+  "storage_url": "gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1786993415115340",
+  "update_time": "2026-08-17T19:03:35+0000"
+}
+=== download OLDER generation (candidate: serving cf-dq-00009-coy) ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1786561996565446 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY-2/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY-2_2026-08-18/archive_older_gen/function-source.zip
+  
+.......................
+--- contents (older) ---
+unpacked/config.py
+unpacked/helpers.py
+unpacked/main.py
+unpacked/requirements.txt
+--- sha256 (older) ---
+360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756  ./config.py
+0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146  ./helpers.py
+477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67  ./main.py
+587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516  ./requirements.txt
+=== download NEWER generation (candidate: latest build cf-dq-00010-kiq) ===
+Copying gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1786993415115340 to file:///Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY-2/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY-2_2026-08-18/archive_newer_gen/function-source.zip
+  
+.........................
+--- contents (newer) ---
+unpacked/config.py
+unpacked/helpers.py
+unpacked/main.py
+unpacked/requirements.txt
+--- sha256 (newer) ---
+360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756  ./config.py
+0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146  ./helpers.py
+1e3cd3fed83e1313e8806051af295ca0ddfb8acbd9fc031eb99ec624b1275089  ./main.py
+587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516  ./requirements.txt
+=== UTC anchor (end) ===
+Mon Aug 17 23:01:54 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

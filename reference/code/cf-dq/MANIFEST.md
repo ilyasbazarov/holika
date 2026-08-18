@@ -263,3 +263,92 @@ NameError: name 'check_freshness_purchases_technical' is not defined
 остался, и `master` этой ревизии соответствует. Мандат класса B на этот объект патча
 **исчерпан неуспешной попыткой**; дальнейшее — правка `CHECKS` (перенос списка ПОСЛЕ
 определений функций, класс A) с повторным ревью, затем новый деплой-заход.
+
+---
+
+## Деплой `cf-dq` — DQ-FRESHNESS-WIRE, второй заход (`2026-08-18`)
+
+**Мандат:** класс B, выдан заново поимённо архитектором (ревью
+`reference/review_request_dq_checks_order_2026-08-18.md`), подтверждён владельцем явным «да» в
+чате. Объект — деплой `cf-dq` одним файлом `main.py` из НОВОЙ ветки код-репо
+`deploy/cf-dq-2026-08-18-freshness-wire-v2`.
+
+**Прод-коммит определён замером, не именем `master` (`ADR-190 §3`).** Обслуживающая ревизия на
+момент старта — `cf-dq-00009-coy` (`status.traffic`, `percent=100`); ревизия
+`serviceConfig.revision=cf-dq-00010-kiq` из `functions describe` — это ПОСЛЕДНИЙ СОБРАННЫЙ
+билд (неудачная попытка `2026-08-18`, healthcheck fail), НЕ обслуживающая ревизия — расхождение
+между «последний билд» и «то, что реально отдаёт трафик» ожидаемо после проваленного
+деплоя и подтверждено `gcloud run revisions describe` по обеим ревизиям. Архив, реально
+использованный сборкой `cf-dq-00009-coy` (`sourceStorage` generation `1786561996565446`,
+`creation_time=2026-08-12T19:13:16Z`, соответствует `metadata.creationTimestamp` ревизии
+`2026-08-12T19:14:36Z`), скачан и просеян по истории `cf-dq/main.py` в код-репо: sha256
+`main.py` (`477c216c…86e67`) совпадает **только** с коммитом
+`c9b967ffcae01ceeae3b6fd0e6e2cba0549ed738` («cf-dq: переделка метрики drift_check
++ две проверки свежести», `DQ-CFDQ-DEPLOY`, `2026-08-13`). Все четыре файла архива (`main.py`,
+`config.py`, `helpers.py`, `requirements.txt`) сверены с этим коммитом побайтово — `ALL_MATCH=1`
+(`step6_run.log`). `git merge-base --is-ancestor c9b967f origin/master` — истина, коммитов между
+прод-коммитом и `master`, трогающих `cf-dq/`, нет: `master` и прод-коммит эквивалентны для этой
+функции на момент замера (дрейфа нет).
+
+**Патч.** Прод-коммит несёт СТАРУЮ форму `CHECKS` (7 пар, без подключения свежести) — сама
+подготовка `DQ-FRESHNESS-WIRE`/`DQ-FRESHNESS-WIRE-GUARD-FIX` в прод ещё не доехала (обе неудачные
+попытки `2026-08-18` трафика не получили). Содержание патча дословно равно содержанию
+неудачной первой попытки (`origin/deploy/cf-dq-2026-08-18-freshness-wire`, коммит `2a3228d`):
+diff между веткой первой попытки и файлом `reference/code/cf-dq/main.py` (уже исправленным
+сессией `DQ-FRESHNESS-WIRE-CHECKS-ORDER`) показывает РОВНО перемещение блока `CHECKS`, ни одна
+строка внутри блока и ни одна функция не изменены (`step8_run.log`). `cf-dq/main.py` ветки
+деплоя заменён целиком на этот проверенный файл.
+
+**П5.** `git diff --stat` против прод-коммита — ровно один файл, `cf-dq/main.py` (`step9_run.log`).
+Поиск секретов по диффу (`bearer|msklad-token|api[_-]?key|secret|password|-----BEGIN`) —
+0 совпадений (`step10_run.log`).
+
+**П6.** `.gcloudignore` ветки уже несёт `*.bak`, `__pycache__/`, `*.pyc`, `patch_*.py` — не
+правился, проверен как есть (`step7_run.log`).
+
+**П7 — факт-проверка исполнением на содержимом ВЕТКИ ДЕПЛОЯ.** Импорт `main` из
+`holika-prod/cf-dq/` (не снапшот `reference/code/`), `python 3.14.6` (Homebrew; системный
+`python3.9.6` машины не тянет `dict | None`, см. `07_STATE.md §Подробности для модели`) —
+`rc=0`, `len(CHECKS)=19` (`step11_run.log`).
+
+**Деплой исполнен** (`step13_run.log`): новая ревизия **`cf-dq-00011-tij`**, generation
+`1787008025864914`. Healthcheck пройден (в отличие от `cf-dq-00010-kiq`) — Cloud Build/Run
+завершились без предупреждений о старте контейнера, единственное предупреждение —
+информационное «A new revision will be deployed serving with 100% traffic». Трафик переведён:
+`{'latestRevision': True, 'percent': 100, 'revisionName': 'cf-dq-00011-tij'}`.
+
+Флаги деплоя сняты с живой конфигурации до правки (`step12_run.log`), не угадывались:
+`--memory=512Mi --timeout=120s --min-instances=1 --max-instances=6 --concurrency=1
+--service-account=etl-sa@msklad-bi-prod.iam.gserviceaccount.com --ingress-settings=all
+--set-env-vars=LOG_EXECUTION_ID=true --set-secrets=MSKLAD_TOKEN=msklad-token:latest
+--no-allow-unauthenticated` (IAM-политика инвокера — без `allUsers`, приватный доступ подтверждён
+`step12_run.log`).
+
+**Read-back (пункт приёмки 1).** Архив новой ревизии (generation `1787008025864914`) скачан и
+сверен побайтово с веткой деплоя — `ALL_MATCH=1` по всем четырём файлам (`config.py`,
+`helpers.py`, `main.py`, `requirements.txt`); `patch_dq.py` в архиве легитимно отсутствует
+(исключён `.gcloudignore`) (`step14_run.log`).
+
+**Пункт приёмки 2.** `status.traffic` сразу после деплоя —
+`{'latestRevision': True, 'percent': 100, 'revisionName': 'cf-dq-00011-tij'}` (`step14_run.log`).
+
+**Пункты приёмки 3–5 (обязательны, не заменяются фактом выкладки) — ЗАКРЫТЫ.** Последний
+часовой прогон ПЕРЕД деплоем — `run_id=1787007602.5744402`, `checked_at=2026-08-17 23:05:16
+UTC`, `7` проверок (старый код). Первый естественный прогон ПОСЛЕ деплоя —
+`run_id=1787011202.5458951`, `checked_at=2026-08-18 00:04:48 UTC` (фоновый опрос сессии не
+сохранил уведомление из-за перезапуска инструмента между `23:48 UTC` и `04:14 UTC`; факт снят
+прямым запросом `audit.dq_runs` по возобновлении, обнаружено ещё четыре последующих часовых
+прогона `01:05`/`02:05`/`03:05`/`04:05 UTC`, тоже по `19` проверок — регресса нет) (`step17_run.log`).
+
+- **Пункт 3.** Прогон `00:04:48 UTC` несёт РОВНО `19` именованных проверок; все двенадцать
+  `freshness_*` присутствуют поимённо (`freshness_{purchases,returns,inventory,payments,
+  commissionreportin,invoices}_{technical,business}`).
+- **Пункт 4.** Шесть блокирующих проверок (`not_empty`, `drift_check`, `drift_zero_docs`,
+  `fk_integrity`, `freshness`, `currency_normalization`) — все `passed=true`.
+- **Пункт 5.** Ни одна из двенадцати `freshness_*` не несёт `passed=false`; контрольный запрос
+  `COUNT(*) WHERE run_id=… AND passed=false` по всему прогону — `0`.
+
+**Приёмка деплоя `cf-dq-00011-tij` полна по всем пяти пунктам.** Ветка код-репо
+`deploy/cf-dq-2026-08-18-freshness-wire-v2` (коммит `16d93ec`) запушена в `origin`, **НЕ слита**
+в `master` — запрет мандата, слияние требует отдельного решения. Неудачная ветка первой попытки
+`deploy/cf-dq-2026-08-18-freshness-wire` (`2a3228d`) остаётся провенансом.

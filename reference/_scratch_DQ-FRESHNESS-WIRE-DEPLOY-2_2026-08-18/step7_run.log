@@ -1,0 +1,59 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:03:21 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+--- verify prod-commit exists ---
+commit
+c9b967ffcae01ceeae3b6fd0e6e2cba0549ed738 2026-08-13 01:08:48 +0600 cf-dq: переделка метрики drift_check (DQ-GATE-METRIC-REDESIGN, ADR-153) + две проверки свежести fact_payments/fact_commissionreportin (DQ-FRESHNESS-COVERAGE, ADR-155) (задача DQ-CFDQ-DEPLOY)
+--- create branch from prod-commit ---
+Switched to a new branch 'deploy/cf-dq-2026-08-18-freshness-wire-v2'
+HEAD now: c9b967ffcae01ceeae3b6fd0e6e2cba0549ed738
+--- confirm HEAD equals prod-commit exactly (before any patch) ---
+OK: HEAD == c9b967ffcae01ceeae3b6fd0e6e2cba0549ed738
+--- П6 (предварительно): .gcloudignore в cf-dq/ (или общий) ---
+./cf-dq/.gcloudignore
+./cf-facts/.gcloudignore
+--- ./cf-facts/.gcloudignore ---
+.gcloudignore
+.git
+.gitignore
+*.bak
+__pycache__/
+*.pyc
+.DS_Store
+src.zip
+patch_*.py
+--- ./cf-dq/.gcloudignore ---
+.gcloudignore
+.git
+.gitignore
+*.bak
+__pycache__/
+*.pyc
+.DS_Store
+src.zip
+function-source*.zip
+patch_*.py
+--- П6 (предварительно): patch_dq.py в этом дереве? ---
+cf-dq/.gcloudignore
+cf-dq/config.py
+cf-dq/helpers.py
+cf-dq/main.py
+cf-dq/patch_dq.py
+cf-dq/requirements.txt
+=== UTC anchor (end) ===
+Mon Aug 17 23:03:23 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

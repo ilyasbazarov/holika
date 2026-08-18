@@ -1,0 +1,37 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:02:15 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== clone code-repo ===
+Cloning into '/Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/DQ-FRESHNESS-WIRE-DEPLOY-2/reference/_scratch_DQ-FRESHNESS-WIRE-DEPLOY-2_2026-08-18/holika-prod'...
+=== целевые sha256 (обслуживающая ревизия cf-dq-00009-coy, генерация 1786561996565446) ===
+main.py:         477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67
+config.py:       360d0a195abc0bc53ad8bb59ce292bf6b7045486169fcc466dd4d6636ff0a756
+helpers.py:      0f335877c29d9c18c5e8d9617ab38768c6d2ba01986d178abaff92d4ce9dd146
+requirements.txt:587133daa6a4c31e57bfd84c371ea4d6e0831e69ed66babf12c15dbebfd6b516
+=== история cf-dq/main.py: все коммиты, тронувшие файл ===
+c9b967ffcae01ceeae3b6fd0e6e2cba0549ed738 2026-08-13 01:08:48 +0600 cf-dq: переделка метрики drift_check (DQ-GATE-METRIC-REDESIGN, ADR-153) + две проверки свежести fact_payments/fact_commissionreportin (DQ-FRESHNESS-COVERAGE, ADR-155) (задача DQ-CFDQ-DEPLOY)
+71e42669ab7cdefb788a9a8ff3c87ad87b411893 2026-08-10 20:33:49 +0600 fix(cf-dq): close fail-open in check_drift when ma7==0 (DQ-GATE-FAIL-OPEN-FIX)
+81812f4d06fccb5ea0500b565269b07755831fb0 2026-08-03 02:54:43 +0600 Seed cf-facts from deployed revision cf-facts-00007-xir (generation 1782334223015697); seed cf-dq from deployed revision cf-dq-00007-hot (generation 1781780276907576); move cf-finance under cf-finance/ for per-CF layout consistency
+=== перебор: sha256 cf-dq/main.py на каждом коммите истории ===
+c9b967ffcae01ceeae3b6fd0e6e2cba0549ed738 477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67
+71e42669ab7cdefb788a9a8ff3c87ad87b411893 0e910907af0e4cb0a84ea43b5660b6e66d62932f9f5e059343f6e5e7c74e2d0b
+81812f4d06fccb5ea0500b565269b07755831fb0 9693010ae04cd14859b7ed53bba25fa28cbf1962a9b127c012a75d521d86ea09
+=== найденный коммит(ы), совпадающий с обслуживающей ревизией ===
+c9b967ffcae01ceeae3b6fd0e6e2cba0549ed738 477c216ceaa3623a2f254129673413e9697b50bcd263c2451bd0334eb5486e67
+=== UTC anchor (end) ===
+Mon Aug 17 23:02:18 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

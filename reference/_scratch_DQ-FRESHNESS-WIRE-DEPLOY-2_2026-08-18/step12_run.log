@@ -1,0 +1,52 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:06:07 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== IAM invoker policy на cf-dq (allow-unauthenticated или нет) ===
+{
+  "etag": "BwZStYI7bK4=",
+  "version": 1
+}
+--- allUsers в bindings? ---
+0
+0
+=== trigger type (http) ===
+
+  null
+(пусто выше = HTTP-триггер, не событийный)
+=== полный набор флагов конфигурации функции (сверка перед деплоем) ===
+buildConfig:
+  entryPoint: main
+  runtime: python312
+serviceConfig:
+  availableCpu: '0.3333'
+  availableMemory: 512Mi
+  environmentVariables:
+    LOG_EXECUTION_ID: 'true'
+  ingressSettings: ALLOW_ALL
+  maxInstanceCount: 6
+  maxInstanceRequestConcurrency: 1
+  minInstanceCount: 1
+  secretEnvironmentVariables:
+  - key: MSKLAD_TOKEN
+    projectId: '420804682491'
+    secret: msklad-token
+    version: latest
+  serviceAccountEmail: etl-sa@msklad-bi-prod.iam.gserviceaccount.com
+  timeoutSeconds: 120
+=== UTC anchor (end) ===
+Mon Aug 17 23:06:16 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

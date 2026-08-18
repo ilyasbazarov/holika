@@ -1,0 +1,29 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:01:03 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== timeCreated по обеим генерациям объекта function-source.zip ===
+--- generation 1786561996565446 ---
+size: 9195
+--- generation 1786993415115340 ---
+size: 9940
+=== revision cf-dq-00009-coy creationTimestamp (для сопоставления) ===
+2026-08-12T19:14:36.212453Z
+=== revision cf-dq-00010-kiq creationTimestamp (для сопоставления) ===
+2026-08-17T19:04:33.905006Z
+=== UTC anchor (end) ===
+Mon Aug 17 23:01:15 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

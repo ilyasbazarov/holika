@@ -1,0 +1,76 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:04:19 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== контроль: сколько пар в CHECKS у прод-коммита (базы) ===
+7
+=== контроль: сколько пар в CHECKS у неудачной попытки (origin/deploy/cf-dq-2026-08-18-freshness-wire) ===
+19
+=== диф: неудачная попытка (origin/deploy/cf-dq-2026-08-18-freshness-wire) vs holika reference/code/cf-dq/main.py (уже исправленный) ===
+215,236d214
+< CHECKS = [
+<     ("not_empty",              check_not_empty),
+<     ("drift_check",            check_drift),
+<     ("drift_zero_docs",        check_drift_zero_docs),
+<     ("fk_integrity",           check_fk_integrity),
+<     ("freshness",              check_freshness),
+<     ("margin_sanity",          check_margin_sanity),
+<     ("currency_normalization", check_currency_normalization),
+<     ("freshness_purchases_technical",         check_freshness_purchases_technical),
+<     ("freshness_purchases_business",          check_freshness_purchases_business),
+<     ("freshness_returns_technical",           check_freshness_returns_technical),
+<     ("freshness_returns_business",            check_freshness_returns_business),
+<     ("freshness_inventory_technical",         check_freshness_inventory_technical),
+<     ("freshness_inventory_business",          check_freshness_inventory_business),
+<     ("freshness_payments_technical",          check_freshness_payments_technical),
+<     ("freshness_payments_business",           check_freshness_payments_business),
+<     ("freshness_commissionreportin_technical", check_freshness_commissionreportin_technical),
+<     ("freshness_commissionreportin_business", check_freshness_commissionreportin_business),
+<     ("freshness_invoices_technical",          check_freshness_invoices_technical),
+<     ("freshness_invoices_business",           check_freshness_invoices_business),
+< ]
+< 
+509a488,509
+> 
+> CHECKS = [
+>     ("not_empty",              check_not_empty),
+>     ("drift_check",            check_drift),
+>     ("drift_zero_docs",        check_drift_zero_docs),
+>     ("fk_integrity",           check_fk_integrity),
+>     ("freshness",              check_freshness),
+>     ("margin_sanity",          check_margin_sanity),
+>     ("currency_normalization", check_currency_normalization),
+>     ("freshness_purchases_technical",         check_freshness_purchases_technical),
+>     ("freshness_purchases_business",          check_freshness_purchases_business),
+>     ("freshness_returns_technical",           check_freshness_returns_technical),
+>     ("freshness_returns_business",            check_freshness_returns_business),
+>     ("freshness_inventory_technical",         check_freshness_inventory_technical),
+>     ("freshness_inventory_business",          check_freshness_inventory_business),
+>     ("freshness_payments_technical",          check_freshness_payments_technical),
+>     ("freshness_payments_business",           check_freshness_payments_business),
+>     ("freshness_commissionreportin_technical", check_freshness_commissionreportin_technical),
+>     ("freshness_commissionreportin_business", check_freshness_commissionreportin_business),
+>     ("freshness_invoices_technical",          check_freshness_invoices_technical),
+>     ("freshness_invoices_business",           check_freshness_invoices_business),
+> ]
+=== контроль: сколько пар в CHECKS у holika reference/code/cf-dq/main.py (целевое содержание патча) ===
+19
+=== контроль: try/except во всех 12 check_freshness_* в целевом файле ===
+12
+8
+=== UTC anchor (end) ===
+Mon Aug 17 23:04:19 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

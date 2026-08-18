@@ -1,0 +1,202 @@
+=== UTC anchor (start) ===
+Tue Aug 18 04:14:48 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== Пункт приёмки 3: список имён 19 проверок первого естественного прогона (1787011202.5458951) ===
+[
+  {
+    "check_name": "currency_normalization", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "drift_zero_docs", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "fk_integrity", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_commissionreportin_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_commissionreportin_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_inventory_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_inventory_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_invoices_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_invoices_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_payments_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_payments_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_purchases_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_purchases_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_returns_business", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_returns_technical", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "margin_sanity", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "not_empty", 
+    "checked_at": "2026-08-18 00:04:48", 
+    "passed": "true"
+  }
+]
+=== число проверок в этом прогоне ===
+f0_
+19
+=== Пункт приёмки 4: шесть блокирующих проверок — все passed=true? ===
+[
+  {
+    "check_name": "currency_normalization", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "drift_check", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "drift_zero_docs", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "fk_integrity", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "not_empty", 
+    "passed": "true"
+  }
+]
+=== Пункт приёмки 5: двенадцать freshness_* — ни одного passed=false? ===
+[
+  {
+    "check_name": "freshness_commissionreportin_business", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_commissionreportin_technical", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_inventory_business", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_inventory_technical", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_invoices_business", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_invoices_technical", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_payments_business", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_payments_technical", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_purchases_business", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_purchases_technical", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_returns_business", 
+    "passed": "true"
+  }, 
+  {
+    "check_name": "freshness_returns_technical", 
+    "passed": "true"
+  }
+]
+=== контроль: есть ли ХОТЬ ОДНА passed=false во всём прогоне ===
+f0_
+0
+=== UTC anchor (end) ===
+Tue Aug 18 04:15:02 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

@@ -1,0 +1,48 @@
+=== UTC anchor (start) ===
+Mon Aug 17 23:00:18 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== П2/дополнение: serviceConfig.revision (LATEST BUILD, может НЕ быть обслуживающей) ===
+buildConfig:
+  source:
+    storageSource:
+      bucket: gcf-v2-sources-420804682491-asia-east1
+      generation: '1786993415115340'
+      object: cf-dq/function-source.zip
+serviceConfig:
+  revision: cf-dq-00010-kiq
+=== обслуживающая ревизия по трафику (истина) ===
+{'latestRevision': True, 'percent': 100, 'revisionName': 'cf-dq-00009-coy'}
+=== revision cf-dq-00009-coy: образ контейнера ===
+metadata:
+  creationTimestamp: '2026-08-12T19:14:36.212453Z'
+spec:
+  containers:
+  - image: asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--dq@sha256:201ac1332d14b2331e1a5d173bc83609f8e8cc04634eb4073d9297475d21f3cf
+image=asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--dq@sha256:201ac1332d14b2331e1a5d173bc83609f8e8cc04634eb4073d9297475d21f3cf
+=== revision cf-dq-00010-kiq: образ контейнера (для сравнения, НЕ обслуживает) ===
+metadata:
+  creationTimestamp: '2026-08-17T19:04:33.905006Z'
+spec:
+  containers:
+  - image: asia-east1-docker.pkg.dev/msklad-bi-prod/gcf-artifacts/msklad--bi--prod__asia--east1__cf--dq@sha256:626c71db0de44e746188aba68fdda15a6607850bfc1b81313b3e1223d7bbaf88
+=== все генерации объекта function-source.zip в бакете сборки (для сопоставления с образом) ===
+gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1786561996565446
+gs://gcf-v2-sources-420804682491-asia-east1/cf-dq/function-source.zip#1786993415115340
+=== Cloud Build история для образа ревизии cf-dq-00009-coy ===
+=== UTC anchor (end) ===
+Mon Aug 17 23:00:44 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
