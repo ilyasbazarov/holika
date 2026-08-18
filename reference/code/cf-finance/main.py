@@ -25,12 +25,13 @@ def _fetch_currency_map(token):
     url = "https://api.moysklad.ru/api/remap/1.2/entity/currency?limit=100"
     currency_map = {}
     while url:
-        resp = requests.get(url, headers=headers)
+        resp = requests.get(url, headers=headers, timeout=90)   # 02_ERP_CONTRACTS §поведение API
         time.sleep(0.25)
+        resp.raise_for_status()
         resp_json = resp.json()
         for row in resp_json.get("rows", []):
             currency_map[parse_href(row)] = row.get("isoCode")
-        url = resp_json.get("meta", {}).get("nextHref")
+        url = (resp_json.get("meta") or {}).get("nextHref")     # канон ADR-171 §6 для нового кода
     return currency_map
 
 def trigger_marts():
@@ -53,8 +54,14 @@ def run_etl():
     token = os.environ.get("MSKLAD_TOKEN") or os.environ.get("TOKEN")
     bq = bigquery.Client(project=PROJECT)
     
-    # INGEST-CURRENCY-ASSERT Шаг 3: currency UUID → isoCode, для детекции ниже.
-    currency_map = _fetch_currency_map(token)
+    # INGEST-CURRENCY-ASSERT Шаг 3: карта валют для детекции ниже. Диагностика не имеет права
+    # ронять загрузку, которую наблюдает: недоступность справочника гасит детекцию, не ETL.
+    try:
+        currency_map = _fetch_currency_map(token)
+    except Exception as e:
+        currency_map = None
+        print(f"WARNING: карта валют недоступна ({type(e).__name__}: {e}) — "
+              f"детекция INGEST-CURRENCY-ASSERT в этом прогоне НЕ выполнялась")
     currency_mismatch = 0
 
     records = []
@@ -75,16 +82,17 @@ def run_etl():
 
                 # INGEST-CURRENCY-ASSERT Шаг 4 (ADR-101 §5): бинарная детекция «валюта=KGS
                 # либо применён rate.value» — арифметика sum_kgs НЕ меняется, только лог.
-                rate_obj    = row.get("rate") or {}
-                has_rate    = rate_obj.get("value") is not None
-                currency_id = parse_href(rate_obj.get("currency"))
-                iso_code    = currency_map.get(currency_id) if currency_id else None
-                if not (iso_code == "KGS" or has_rate):
-                    currency_mismatch += 1
-                    print(
-                        f"WARNING: {entity_type} {row.get('id')}: currency={currency_id} "
-                        f"(iso={iso_code}) без rate.value — класс ошибки ADR-101 §5"
-                    )
+                if currency_map is not None:
+                    rate_obj    = row.get("rate") or {}
+                    has_rate    = rate_obj.get("value") is not None
+                    currency_id = parse_href(rate_obj.get("currency"))
+                    iso_code    = currency_map.get(currency_id) if currency_id else None
+                    if not (iso_code == "KGS" or has_rate):
+                        currency_mismatch += 1
+                        print(
+                            f"WARNING: {entity_type} {row.get('id')}: currency={currency_id} "
+                            f"(iso={iso_code}) без rate.value — класс ошибки ADR-101 §5"
+                        )
 
                 records.append({
                     "payment_id": row.get("id"),
@@ -108,11 +116,12 @@ def run_etl():
                 })
             url = resp_json.get("meta", {}).get("nextHref")
 
-    if currency_mismatch:
-        print(
-            f"WARNING: {currency_mismatch} платежей с валютой ≠ KGS без rate.value "
-            f"(currency_mismatch, INGEST-CURRENCY-ASSERT)"
-        )
+    if currency_map is None:
+        print("WARNING: детекция INGEST-CURRENCY-ASSERT в этом прогоне НЕ выполнялась "
+              "(карта валют недоступна)")
+    elif currency_mismatch:
+        print(f"WARNING: {currency_mismatch} платежей с валютой ≠ KGS без rate.value "
+              f"(currency_mismatch, INGEST-CURRENCY-ASSERT)")
 
     if records:
         print(f"Loading {len(records)} records to STG...")

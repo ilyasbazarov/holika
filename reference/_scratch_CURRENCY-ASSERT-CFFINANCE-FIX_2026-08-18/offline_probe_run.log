@@ -1,0 +1,18 @@
+Tue Aug 18 14:05:30 UTC 2026
+=== offline_probe.py run ===
+--- Сценарий (а): живая карта валют ---
+  currency_map = {'uuid-kgs': 'KGS', 'uuid-usd': 'USD'}
+  currency_mismatch = 1 (ожидание: 1 — p3: USD без rate.value)
+  РЕЗУЛЬТАТ: детекция считает как раньше — OK
+--- Сценарий (б): исключение на выборке карты валют ---
+  WARNING: карта валют недоступна (TimeoutError: connection timed out) — детекция INGEST-CURRENCY-ASSERT в этом прогоне НЕ выполнялась
+  currency_map = None — загрузка ПРОДОЛЖИЛАСЬ (исключение поймано, не упало)
+  РЕЗУЛЬТАТ: загрузка не падает, печатается «НЕ выполнялась» — OK
+--- Сценарий (в): итоговая печать — различение состояний ---
+  currency_map=None, mismatch=0 → 'WARNING: детекция INGEST-CURRENCY-ASSERT в этом прогоне НЕ выполнялась (карта валют недоступна)'
+  currency_map={}, mismatch=0   → None
+  currency_map={}, mismatch=3   → 'WARNING: 3 платежей с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)'
+  РЕЗУЛЬТАТ: «ноль несовпадений» и «не выполнялась» различимы — OK
+=== VERDICT === ALL SCENARIOS OK
+=== rc=0 ===
+Tue Aug 18 14:05:30 UTC 2026
