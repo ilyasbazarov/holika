@@ -1,0 +1,16 @@
+Tue Aug 18 13:12:21 UTC 2026
+Python 3.9.6
+OK   импорт invoices.py
+OK   импорт main.py
+  имя parse_href: есть
+  имя _fetch_currency_map: есть
+  имя run_etl: есть
+  имя trigger_marts: есть
+  имя main: есть
+  parse_href(None) = None
+  parse_href({'meta':{'href':'https://x/y/uuid-1'}}) = uuid-1
+  parse_href({'meta': None}) = ИСКЛЮЧЕНИЕ AttributeError: 'NoneType' object has no attribute 'get'
+=== VERDICT ===
+ALL IMPORTS OK
+rc=0
+Tue Aug 18 13:12:21 UTC 2026

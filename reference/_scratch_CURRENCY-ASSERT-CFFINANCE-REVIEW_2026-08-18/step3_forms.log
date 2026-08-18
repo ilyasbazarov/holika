@@ -1,0 +1,18 @@
+== все .get("meta", {}) и (x or {}) в cf-finance/main.py ==
+15:    href = (meta_obj or {}).get("meta", {}).get("href")
+28:        resp = requests.get(url, headers=headers)
+29:        time.sleep(0.25)
+33:        url = resp_json.get("meta", {}).get("nextHref")
+66:            resp = requests.get(url, headers=headers)
+67:            time.sleep(0.25)
+78:                rate_obj    = row.get("rate") or {}
+105:                        * ((row.get("rate") or {}).get("value") or 1.0)
+109:            url = resp_json.get("meta", {}).get("nextHref")
+188:    body = request.get_json(force=True, silent=True) or {}
+
+== то же в invoices.py (для сравнения идиом) ==
+63:    resp = session.get(url, headers=headers, params=params, timeout=TIMEOUT)
+69:        resp.raise_for_status()  # не ретраится — токен истёк, падаем наверх
+70:    resp.raise_for_status()
+76:    href = (meta_obj or {}).get("meta", {}).get("href")
+99:            meta_size_first = page.get("meta", {}).get("size")

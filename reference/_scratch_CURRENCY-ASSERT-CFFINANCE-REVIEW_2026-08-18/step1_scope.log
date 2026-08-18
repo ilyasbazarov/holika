@@ -1,0 +1,14 @@
+== снапшот reference/code/cf-finance ==
+b888e37761123fde176bd4fc891cd7b095ee9df61f0aaced816341042d168f1b  reference/code/cf-finance/main.py
+dc1768d973c2898addf5ee92116e831272437e3a9140683c92eb09cd74701886  reference/code/cf-finance/invoices.py
+f986310a048c5c90c93e511ec3ef0eeacf71feb2ecf591d45b001097e6707164  reference/code/cf-finance/requirements.txt
+
+== клон код-репо holika-prod, снятый 2026-08-18 (GUARD-FIX-DEPLOY-2) ==
+dc1768d973c2898addf5ee92116e831272437e3a9140683c92eb09cd74701886  reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2_2026-08-18/holika-prod/cf-finance/invoices.py
+1afbaa3707182b54fc0c14600682d0220fe94a257f92093a862e55da27a2c6df  reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2_2026-08-18/holika-prod/cf-finance/main.py
+f986310a048c5c90c93e511ec3ef0eeacf71feb2ecf591d45b001097e6707164  reference/_scratch_SALES-REFRESH-WINDOW-GUARD-FIX-DEPLOY-2_2026-08-18/holika-prod/cf-finance/requirements.txt
+
+== история снапшота main.py ==
+5f484d4 2026-08-13 docs: INGEST-CURRENCY-ASSERT шаги 1-2 — детекция «забыли ×rate» в снапшоте
+a4422d6 2026-08-03 INVOICES-LOADER-BUILD: код загрузчика счетов (T3, ADR-110) — диспетчер + модуль invoices, все проверки без секрета
+d5e1749 2026-07-14 Create main.py
