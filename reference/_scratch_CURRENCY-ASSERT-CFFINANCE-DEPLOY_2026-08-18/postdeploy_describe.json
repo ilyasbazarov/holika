@@ -1,0 +1,59 @@
+{
+  "buildConfig": {
+    "automaticUpdatePolicy": {},
+    "build": "projects/420804682491/locations/asia-east1/builds/5f79eb74-267c-4e2e-a9e8-ab6172285d3c",
+    "dockerRegistry": "ARTIFACT_REGISTRY",
+    "dockerRepository": "projects/msklad-bi-prod/locations/asia-east1/repositories/gcf-artifacts",
+    "entryPoint": "main",
+    "runtime": "python312",
+    "serviceAccount": "projects/msklad-bi-prod/serviceAccounts/420804682491-compute@developer.gserviceaccount.com",
+    "source": {
+      "storageSource": {
+        "bucket": "gcf-v2-sources-420804682491-asia-east1",
+        "generation": "1787077910394011",
+        "object": "cf-finance/function-source.zip"
+      }
+    },
+    "sourceProvenance": {
+      "resolvedStorageSource": {
+        "bucket": "gcf-v2-sources-420804682491-asia-east1",
+        "generation": "1787077910394011",
+        "object": "cf-finance/function-source.zip"
+      }
+    }
+  },
+  "createTime": "2026-06-18T19:35:48.076900935Z",
+  "environment": "GEN_2",
+  "labels": {
+    "deployment-tool": "cli-gcloud"
+  },
+  "name": "projects/msklad-bi-prod/locations/asia-east1/functions/cf-finance",
+  "satisfiesPzi": true,
+  "serviceConfig": {
+    "allTrafficOnLatestRevision": true,
+    "availableCpu": "0.3333",
+    "availableMemory": "512M",
+    "environmentVariables": {
+      "LOG_EXECUTION_ID": "true"
+    },
+    "ingressSettings": "ALLOW_ALL",
+    "maxInstanceCount": 16,
+    "maxInstanceRequestConcurrency": 1,
+    "revision": "cf-finance-00014-gub",
+    "secretEnvironmentVariables": [
+      {
+        "key": "MSKLAD_TOKEN",
+        "projectId": "420804682491",
+        "secret": "msklad-token",
+        "version": "latest"
+      }
+    ],
+    "service": "projects/msklad-bi-prod/locations/asia-east1/services/cf-finance",
+    "serviceAccountEmail": "etl-sa@msklad-bi-prod.iam.gserviceaccount.com",
+    "timeoutSeconds": 1800,
+    "uri": "https://cf-finance-xw5u2boozq-de.a.run.app"
+  },
+  "state": "ACTIVE",
+  "updateTime": "2026-08-18T18:32:45.564295005Z",
+  "url": "https://asia-east1-msklad-bi-prod.cloudfunctions.net/cf-finance"
+}

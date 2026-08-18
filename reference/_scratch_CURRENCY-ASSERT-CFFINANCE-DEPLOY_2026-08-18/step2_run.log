@@ -1,0 +1,73 @@
+=== UTC anchor (start) ===
+Tue Aug 18 18:26:24 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+
+=== База: сверяю cf-finance в голове master с архивом прода ===
+  master:cf-finance/main.py == архив прода
+  master:cf-finance/invoices.py == архив прода
+  master:cf-finance/requirements.txt == архив прода
+  ⇒ база ветки = master 9d9ecbadc2166d66670996de34c8703d053bad26 (содержимое cf-finance равно проду)
+
+=== Ветка деплоя от master ===
+  создана deploy/cf-finance-2026-08-18-currency-assert, HEAD 9d9ecbadc2166d66670996de34c8703d053bad26
+
+=== Перенос патча: ОДИН файл из снапшота репо ===
+  коммит 1636de1
+
+=== П4. Счёт файлов ПРОТИВ БАЗЫ ВЕТКИ (ожидание: ровно 1) ===
+ cf-finance/main.py | 52 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 51 insertions(+), 1 deletion(-)
+  файлов в диффе: 1
+    cf-finance/main.py
+
+=== П10. Прод-коммит обязан быть ПРЕДКОМ головы ветки ===
+  OK: e6b9627 предок HEAD
+
+=== П7. Секреты в патче — сплошной поиск с печатью совпавших строк ===
+  совпадений 0 (при непустом диффе 84 строк — ADR-044)
+
+=== П4-гигиена. .gcloudignore и мусор в каталоге функции ===
+  .gcloudignore в корне репо отсутствует
+  состав cf-finance/ (то, что уедет через --source):
+    .
+    ..
+    invoices.py
+    main.py
+    requirements.txt
+
+=== П5. Факт-проверка ИСПОЛНЕНИЕМ по содержимому ВЕТКИ (не снапшота) ===
+Python 3.9.6
+OK   импорт invoices.py
+OK   импорт main.py
+  имя parse_href: есть
+  имя _fetch_currency_map: есть
+  имя run_etl: есть
+  имя trigger_marts: есть
+  имя main: есть
+  parse_href(None) = None
+  parse_href({'meta':{'href':'https://x/y/uuid-1'}}) = uuid-1
+  parse_href({'meta': None}) = ИСКЛЮЧЕНИЕ AttributeError: 'NoneType' object has no attribute 'get'
+=== VERDICT ===
+ALL IMPORTS OK
+  rc_import=0
+
+=== Контроль: sha256 файла ветки против снапшота репо ===
+d87db5ed08ac9a6942c343cabef47dd1435ba05ad761b4550047250342fbb6fc  cf-finance/main.py
+d87db5ed08ac9a6942c343cabef47dd1435ba05ad761b4550047250342fbb6fc  /Users/ilyasbazarov/Desktop/msklad_project/holika/worktrees/CURRENCY-ASSERT-CFFINANCE-DEPLOY/reference/code/cf-finance/main.py
+=== UTC anchor (end) ===
+Tue Aug 18 18:26:25 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

@@ -1,0 +1,35 @@
+=== UTC anchor (start) ===
+Tue Aug 18 18:44:36 UTC 2026
+18:44:39Z попытка 1: 5175,2026-08-17 21:14:33
+18:45:42Z попытка 2: 5175,2026-08-17 21:14:33
+18:46:44Z попытка 3: 5175,2026-08-17 21:14:33
+18:47:47Z попытка 4: 5199,2026-08-18 18:47:34
+ЗАГРУЗКА ПРОШЛА — _loaded_at обновился
+=== хвост журнала cf-finance ===
+2026-08-18T18:46:34.236490Z		WARNING: cashout 59dce128-3221-11ef-0a80-0bad00b735cd: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:34.236734Z		WARNING: cashout 5c28da4a-7751-11ef-0a80-19220012d87d: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:34.236868Z		WARNING: cashout 5fe687c1-7740-11ef-0a80-0089000f90fc: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:46.317045Z		WARNING: cashout 7d039868-3e12-11ef-0a80-02230032f1b8: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:46.317550Z		WARNING: cashout 8239cc15-7754-11ef-0a80-14480013b158: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:46.318147Z		WARNING: cashout 8df7779f-7752-11ef-0a80-0f2800137ba3: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:46.318249Z		WARNING: cashout 8e848b5d-7755-11ef-0a80-17e20014074c: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:58.721245Z		WARNING: cashout 954e8e74-7751-11ef-0a80-0ccb0012d10d: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:58.721678Z		WARNING: cashout 9740cd50-7740-11ef-0a80-0ccb000eb05a: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:58.721934Z		WARNING: cashout 9ec3a499-7747-11ef-0a80-0ccb001064a5: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:58.722127Z		WARNING: cashout a1b3e871-7746-11ef-0a80-17e200107550: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:46:58.722236Z		WARNING: cashout a35cf22f-7744-11ef-0a80-144800100102: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:12.388629Z		WARNING: cashout ab17009a-7755-11ef-0a80-13ce0013501f: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:12.388802Z		WARNING: cashout adc72425-7754-11ef-0a80-04080014042f: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:12.389494Z		WARNING: cashout c135d9ea-7751-11ef-0a80-0f2800135391: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:12.389984Z		WARNING: cashout d0223fef-7755-11ef-0a80-00890014b5cd: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:26.471038Z		WARNING: cashout d531f1a3-7754-11ef-0a80-192200138f39: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:26.471169Z		WARNING: cashout d74e0089-7747-11ef-0a80-14480010b001: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:26.471775Z		WARNING: cashout e16508d7-7750-11ef-0a80-19220012bcd2: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:34.083414Z		WARNING: cashout edba8045-7755-11ef-0a80-14480013fd29: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:34.083754Z		WARNING: cashout f1b34665-7751-11ef-0a80-11450013572d: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:34.083931Z		WARNING: cashout f493c3b1-7754-11ef-0a80-10690013c5ab: currency=580251fe-2e47-11ef-0a80-16e40062d265 (iso=None) без rate.value — класс ошибки ADR-101 §5
+2026-08-18T18:47:34.084468Z		WARNING: 34 платежей с валютой ≠ KGS без rate.value (currency_mismatch, INGEST-CURRENCY-ASSERT)
+2026-08-18T18:47:34.084527Z		Loading 6750 records to STG...
+2026-08-18T18:47:36.615801Z		Running MERGE...
+=== UTC anchor (end) ===
+Tue Aug 18 18:47:48 UTC 2026

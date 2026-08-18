@@ -1,0 +1,14 @@
+=== UTC anchor (start) ===
+Tue Aug 18 18:33:50 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+  URI: https://cf-finance-xw5u2boozq-de.a.run.app
+WARNING: This command is using service account impersonation. All API calls will be executed as [etl-sa@msklad-bi-prod.iam.gserviceaccount.com].
+
+=== Приёмка 3. Вызов режима payments (пустое тело — режим по умолчанию) ===
