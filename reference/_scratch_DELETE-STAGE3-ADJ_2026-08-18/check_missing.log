@@ -1,0 +1,51 @@
+=== UTC (старт) ===
+Tue Aug 18 10:16:14 UTC 2026
+=== gcloud auth list (старт) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+
+--- 1. Две удалённые строки пары маркетплейса присутствуют в ядре? ---
+[
+  {
+    "_loaded_at": "2026-07-19 01:08:45", 
+    "agent_id": "31d135bc-4df8-11f1-0a80-1c8a0053c5b4", 
+    "revenue_kgs": "0.0", 
+    "transaction_date": "2026-05-12", 
+    "transaction_id": "8e05d4b486a48d5b018df201217eb7f3"
+  }, 
+  {
+    "_loaded_at": "2026-07-19 01:08:45", 
+    "agent_id": "31d135bc-4df8-11f1-0a80-1c8a0053c5b4", 
+    "revenue_kgs": "1980000.0", 
+    "transaction_date": "2026-05-12", 
+    "transaction_id": "786f54b87f1e81ecf04efead3ab59250"
+  }
+]
+
+--- 2. Есть ли в ядре ЛЮБЫЕ строки этого контрагента за 2026-05-12 ---
+[
+  {
+    "rows_cnt": "2", 
+    "sum_kgs": "1980000.0"
+  }
+]
+
+--- 3. Итог мая в ядре сейчас (для оценки материальности) ---
+[
+  {
+    "revenue_may": "9.52142058E7", 
+    "rows_cnt": "3404"
+  }
+]
+
+=== UTC (конец) ===
+Tue Aug 18 10:16:24 UTC 2026
+=== gcloud auth list (конец) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:

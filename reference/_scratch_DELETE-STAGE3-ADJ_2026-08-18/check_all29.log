@@ -1,0 +1,29 @@
+=== UTC (старт) ===
+Tue Aug 18 10:17:38 UTC 2026
+=== gcloud auth list (старт) ===
+*       ilyasbazarov4@gmail.com
+
+--- сколько из 29 присутствуют в ядре СЕЙЧАС, с датами загрузки ---
+[
+  {
+    "loaded_after_deploy": "0", 
+    "loaded_max": "2026-07-19 01:08:45", 
+    "loaded_min": "2026-07-19 01:08:45", 
+    "present_cnt": "2", 
+    "sum_kgs": "1980000.0"
+  }
+]
+
+--- распределение по датам загрузки ---
+[
+  {
+    "cnt": "2", 
+    "loaded_date": "2026-07-19", 
+    "sum_kgs": "1980000.0"
+  }
+]
+
+=== UTC (конец) ===
+Tue Aug 18 10:17:45 UTC 2026
+=== gcloud auth list (конец) ===
+*       ilyasbazarov4@gmail.com
