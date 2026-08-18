@@ -1,0 +1,38 @@
+=== date -u (start) ===
+Tue Aug 18 08:49:42 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq show (схема таблицы) ===
+rc=0
+колонки: ['agent_id', 'agent_name', 'country', 'state_name', 'state_id', 'invoice_count', 'total_invoiced_kgs', 'total_paid_kgs', 'total_unpaid_kgs', 'earliest_invoice_date', 'latest_invoice_date', 'overdue_count', '_marts_built_at', '_source_max_loaded_at']
+_marts_built_at в схеме: True
+_source_max_loaded_at в схеме: True
+=== bq query: непустота и значения двух колонок ===
+rc=0
+[
+  {
+    "built_at_nonnull": "586", 
+    "max_built_at": "2026-08-18 08:48:14", 
+    "max_source_loaded": "2026-08-17 22:00:05", 
+    "min_built_at": "2026-08-18 08:48:14", 
+    "min_source_loaded": "2026-08-17 22:00:05", 
+    "source_loaded_nonnull": "586", 
+    "total_rows": "586"
+  }
+]
+=== date -u (end) ===
+Tue Aug 18 08:49:48 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

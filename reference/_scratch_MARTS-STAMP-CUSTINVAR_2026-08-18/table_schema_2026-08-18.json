@@ -1,0 +1,100 @@
+{
+  "creationTime": "1780653630690",
+  "etag": "00aUsJ8S/PmGkcksR+vj8Q==",
+  "id": "msklad-bi-prod:marts.customer_invoices_ar",
+  "kind": "bigquery#table",
+  "lastModifiedTime": "1787042894859",
+  "location": "asia-east1",
+  "numActiveLogicalBytes": "148194",
+  "numActivePhysicalBytes": "258732",
+  "numBytes": "148194",
+  "numCurrentPhysicalBytes": "32415",
+  "numLongTermBytes": "0",
+  "numLongTermLogicalBytes": "0",
+  "numLongTermPhysicalBytes": "0",
+  "numRows": "586",
+  "numTimeTravelPhysicalBytes": "226317",
+  "numTotalLogicalBytes": "148194",
+  "numTotalPhysicalBytes": "258732",
+  "schema": {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "agent_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "agent_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "country",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "state_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "state_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "invoice_count",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "total_invoiced_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "total_paid_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "total_unpaid_kgs",
+        "type": "FLOAT"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "earliest_invoice_date",
+        "type": "DATE"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "latest_invoice_date",
+        "type": "DATE"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "overdue_count",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "_marts_built_at",
+        "type": "TIMESTAMP"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "_source_max_loaded_at",
+        "type": "TIMESTAMP"
+      }
+    ]
+  },
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/msklad-bi-prod/datasets/marts/tables/customer_invoices_ar",
+  "tableReference": {
+    "datasetId": "marts",
+    "projectId": "msklad-bi-prod",
+    "tableId": "customer_invoices_ar"
+  },
+  "type": "TABLE"
+}

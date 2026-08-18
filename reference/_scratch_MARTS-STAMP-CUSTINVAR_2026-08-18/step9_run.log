@@ -1,0 +1,29 @@
+=== date -u (start) ===
+Tue Aug 18 08:47:53 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq show --transfer_config (после исправления) ===
+rc=0
+destination_table_name_template: 'customer_invoices_ar'
+partitioning_field: ''
+write_disposition: 'WRITE_TRUNCATE'
+=== diff (query read-back vs подготовленный файл) ===
+diff rc=0
+f8d155198bafebabc0e890f8a9645f341083ec99e95f645776458c71320bf377  reference/_scratch_MARTS-STAMP-CUSTINVAR_2026-08-18/fixed_query_extracted_2026-08-18.sql
+f8d155198bafebabc0e890f8a9645f341083ec99e95f645776458c71320bf377  reference/sql/sq_marts_customer_invoices_ar_stamped_2026-08-13.sql
+=== date -u (end) ===
+Tue Aug 18 08:47:55 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+

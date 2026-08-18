@@ -1,0 +1,28 @@
+=== date -u (start) ===
+Tue Aug 18 08:36:26 UTC 2026
+=== gcloud auth list (start) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
+=== bq show --transfer_config (JSON) ===
+rc=0
+=== длины файлов (байт) ===
+     925 reference/_scratch_MARTS-STAMP-CUSTINVAR_2026-08-18/live_query_extracted_2026-08-18.sql
+     925 reference/sql/sq_marts_customer_invoices_ar.sql
+    1850 total
+=== diff (живой снимок vs снимок репо) ===
+diff rc=0
+=== date -u (end) ===
+Tue Aug 18 08:36:29 UTC 2026
+=== gcloud auth list (end) ===
+     Credentialed Accounts
+ACTIVE  ACCOUNT
+*       ilyasbazarov4@gmail.com
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+
